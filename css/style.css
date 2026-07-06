@@ -328,6 +328,11 @@ main { padding-top: 72px; }
 
 /* ---------- Pricing ---------- */
 .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+/* 4-tier variant (FlexOffice): 데스크톱 4열 → 태블릿 2×2 → 모바일 1열 */
+.price-grid.cols4 { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.price-grid.cols4 .price-card { padding: 32px 24px; }
+@media (max-width: 1024px) { .price-grid.cols4 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 720px)  { .price-grid.cols4 { grid-template-columns: 1fr; } }
 .price-card {
   background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius);
   padding: 38px 32px; display: flex; flex-direction: column;
