@@ -1,0 +1,15 @@
+{
+  "name": "넥스트코웍 NEXT COWORK",
+  "short_name": "NEXT COWORK",
+  "description": "공유오피스 컨설팅과 기업 AI 실무교육을 함께 설계하는 AI Workspace Builder",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#302D7C",
+  "lang": "ko",
+  "icons": [
+    { "src": "/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/img/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any" }
+  ]
+}
