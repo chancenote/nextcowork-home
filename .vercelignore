@@ -1,0 +1,8 @@
+# 배포(공개 웹사이트)에서 제외 — 하네스 내부·작업 산출물·문서
+# .gitignore와 별개로 vercel build는 로컬 파일시스템에서 복사하므로 필요.
+_workspace
+_workspace_prev
+.claude
+.git
+CLAUDE.md
+README.md
