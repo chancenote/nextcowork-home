@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Analytics 4 — 운영단계에 G-XXXXXXXXXX를 실제 측정 ID로 교체하고 아래 주석을 해제하세요. 주석 상태에서는 어떤 요청도 발생하지 않습니다.
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
 <title>넥스트코웍 NEXT COWORK — AI Workspace Builder | 공유오피스 컨설팅 · 기업 AI 교육</title>
 <meta name="description" content="일이 잘되는 공간, 일이 잘되는 방식. 공유오피스 도입·전환 컨설팅과 기업 AI 실무교육(AI Campus)을 함께 설계하는 컨설팅 회사. 청와대·신영증권·전북연구원 검증, 강연 106회+, 고객사 1,000+.">
 <link rel="canonical" href="https://www.nextcw.com/">
@@ -33,7 +42,12 @@
       "telephone": "+82-10-9765-7749",
       "logo": "https://www.nextcw.com/img/og.png",
       "foundingDate": "2023",
-      "address": { "@type": "PostalAddress", "addressRegion": "전북", "addressLocality": "전주", "addressCountry": "KR" },
+      "vatID": "722-88-0265",
+      "taxID": "722-88-0265",
+      "address": [
+        { "@type": "PostalAddress", "name": "본사", "streetAddress": "동부대로 687 3F", "addressLocality": "전주시 덕진구", "addressRegion": "전북특별자치도", "addressCountry": "KR" },
+        { "@type": "PostalAddress", "name": "서울사무소", "streetAddress": "강남대로97길 26 성원빌딩 4F", "addressLocality": "서초구", "addressRegion": "서울특별시", "addressCountry": "KR" }
+      ],
       "founder": { "@type": "Person", "@id": "https://www.nextcw.com/about/#person", "name": "이종찬" },
       "areaServed": "KR",
       "knowsAbout": ["공유오피스 컨설팅", "Flexible Workspace Consulting", "Office Amenity 전략", "기업 AI 교육", "AI Enablement", "사내 AI 캠퍼스 구축", "디지털 협업툴 컨설팅", "CEO AI 코칭", "코워킹스페이스 건립 자문"],
@@ -136,6 +150,7 @@
         <h2>서비스 라인업</h2>
         <p>고객의 질문에서 시작합니다. 당신의 고민은 어느 쪽에 가깝습니까?</p>
       </div>
+      <p class="reveal" style="text-align:center;margin:-8px auto 22px;font-size:14.5px;color:var(--caption);word-break:keep-all">어디서 시작할지 모르겠다면 — <a href="/contact/" style="color:var(--indigo);font-weight:700;text-decoration:none">무료 사전진단으로 방향부터 잡으세요 <span class="arr">→</span></a></p>
       <div class="bento">
         <a class="bento-card reveal" href="/flexoffice/" style="--c:#0079C4">
           <span class="bento-tag">Space · 공간을 설계한다</span>
@@ -170,10 +185,10 @@
           <span class="bento-more">자세히 보기 <span class="arr">→</span></span>
         </a>
       </div>
-      <!-- [제안값·수정가능] 결합 오퍼 배지 — Smart FlexOffice 번들가는 flexoffice/ai-campus 카드에서 관리 -->
+      <!-- 결합 오퍼 배지 — Smart FlexOffice 번들 상세·가격은 flexoffice/ai-campus 카드에서 관리 -->
       <div class="reveal" style="margin-top:24px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:center;text-align:center;background:var(--bg-soft);border:1px solid var(--hairline);border-radius:var(--radius);padding:20px 28px;word-break:keep-all">
         <span style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.02em;color:#fff;background:var(--indigo);border-radius:999px;padding:5px 12px">결합 오퍼</span>
-        <p style="margin:0;font-size:15px;color:var(--text)"><strong style="color:var(--ink)">Smart FlexOffice</strong> — 공간 구축과 입주사 AI 온보딩을 하나로. 공간과 AI를 함께 짓습니다.</p>
+        <p style="margin:0;font-size:15px;color:var(--text)"><strong style="color:var(--ink)">Smart FlexOffice</strong> — 공간과 일하는 방식을 한 팀이 한 번에. 입주사가 AI로 일하는 프리미엄 공유오피스.</p>
         <a class="btn btn-ghost" href="/flexoffice/">결합 오퍼 보기 <span class="arr">→</span></a>
       </div>
     </div>
@@ -322,7 +337,8 @@
           <strong>NEXT COWORK</strong>
           <p>넥스트코웍 주식회사 · 대표 이종찬<br>
           일이 잘되는 공간을 만들고,<br>일이 잘되는 방식을 설계합니다.<br><br>
-          ceo@nextcw.com · 010-9765-7749</p>
+          ceo@nextcw.com · <a href="tel:+821097657749" style="display:inline;color:inherit">010-9765-7749</a></p>
+          <p style="margin-top:12px;font-size:12px;line-height:1.7;color:var(--caption);word-break:keep-all">사업자등록번호 722-88-0265<br>(본사) 전북특별자치도 전주시 덕진구 동부대로 687 3F<br>(서울) 서초구 강남대로97길 26 성원빌딩 4F</p>
         </div>
         <div>
           <h5>Services</h5>

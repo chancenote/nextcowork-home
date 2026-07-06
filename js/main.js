@@ -2,7 +2,32 @@
 (function () {
   "use strict";
 
+  /* Mark JS as active so CSS can hide .reveal only when JS can reveal it.
+     If this script fails to load, .reveal stays visible (no blank page). */
+  document.documentElement.classList.add("js");
+
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* Lightweight analytics shim. No-op until a GA4 loader is enabled in <head>. */
+  function track(name, params) {
+    try { if (window.gtag) window.gtag("event", name, params || {}); } catch (e) {}
+  }
+
+  /* Copy fallback for browsers without navigator.clipboard */
+  function legacyCopy(text) {
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      return ok;
+    } catch (e) { return false; }
+  }
 
   /* Nav scroll shadow */
   var nav = document.querySelector(".nav");
@@ -131,23 +156,77 @@
     }
   }
 
-  /* Contact form → mailto fallback (until Formspree/Make endpoint is set) */
+  /* Conversion link tracking (no-op until GA4 is enabled) */
+  document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
+    a.addEventListener("click", function () { track("tel_click"); });
+  });
+  document.querySelectorAll('a[href*="open.kakao.com"]').forEach(function (a) {
+    a.addEventListener("click", function () { track("kakao_click"); });
+  });
+  document.querySelectorAll('a[href*="bit.ly/edu_cowork"], a[href*="docs.google.com/forms"]').forEach(function (a) {
+    a.addEventListener("click", function () { track("googleform_click"); });
+  });
+
+  /* Contact form → fetch endpoint if configured, else mailto. + copy-to-clipboard fallback. */
   var form = document.getElementById("contact-form");
   if (form) {
-    form.addEventListener("submit", function (ev) {
-      var endpoint = form.getAttribute("data-endpoint");
-      if (endpoint && endpoint !== "") return; // real POST endpoint configured
-      ev.preventDefault();
+    var statusEl = document.getElementById("cf-status");
+    function setStatus(msg) { if (statusEl) statusEl.textContent = msg; }
+
+    function buildMessage() {
       var d = new FormData(form);
-      var subject = "[웹사이트 문의] " + (d.get("service") || "일반") + " — " + (d.get("name") || "");
+      var service = d.get("service") || "일반";
+      var subject = "[웹사이트 문의] " + service + " — " + (d.get("name") || "");
       var body =
         "이름: " + (d.get("name") || "") + "\n" +
         "소속: " + (d.get("org") || "") + "\n" +
         "연락처: " + (d.get("phone") || "") + "\n" +
-        "관심 서비스: " + (d.get("service") || "") + "\n\n" +
+        "관심 서비스: " + service + "\n\n" +
         (d.get("message") || "");
+      return { subject: subject, body: body, service: service };
+    }
+
+    form.addEventListener("submit", function (ev) {
+      var endpoint = form.getAttribute("data-endpoint");
+      var msg = buildMessage();
+      track("form_submit", { service: msg.service });
+
+      if (endpoint && endpoint !== "") {
+        /* Real POST endpoint configured (Formspree/Make etc.) */
+        ev.preventDefault();
+        setStatus("전송 중입니다…");
+        fetch(endpoint, { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } })
+          .then(function (r) {
+            if (!r.ok) throw new Error("bad status");
+            form.reset();
+            setStatus("문의가 접수되었습니다. 영업일 1일 내 회신드립니다.");
+          })
+          .catch(function () {
+            setStatus("전송에 실패했습니다. 아래 ‘내용 복사’로 복사해 ceo@nextcw.com 으로 보내주세요.");
+          });
+        return;
+      }
+
+      /* mailto fallback */
+      ev.preventDefault();
+      setStatus("메일 앱을 엽니다. 열리지 않으면 아래 ‘내용 복사’로 복사해 ceo@nextcw.com 으로 보내주세요.");
       location.href =
-        "mailto:ceo@nextcw.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+        "mailto:ceo@nextcw.com?subject=" + encodeURIComponent(msg.subject) + "&body=" + encodeURIComponent(msg.body);
     });
+
+    var copyBtn = document.getElementById("cf-copy");
+    if (copyBtn) {
+      copyBtn.addEventListener("click", function () {
+        var msg = buildMessage();
+        var text = "받는 사람: ceo@nextcw.com\n제목: " + msg.subject + "\n\n" + msg.body;
+        function ok() { setStatus("내용을 복사했습니다. ceo@nextcw.com 으로 붙여넣어 보내주세요."); }
+        function fail() { setStatus("복사에 실패했습니다. 직접 ceo@nextcw.com 으로 보내주세요."); }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(ok).catch(function () { legacyCopy(text) ? ok() : fail(); });
+        } else {
+          legacyCopy(text) ? ok() : fail();
+        }
+      });
+    }
   }
 })();
