@@ -1,0 +1,18 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Dependencies (해당 없음 — 정적 사이트지만 안전상 제외)
+node_modules/
+
+# 하네스 작업 산출물 (진단·구현 로그 — 배포 불필요, 로컬 보존)
+_workspace/
+_workspace_prev/
+
+# 하네스 내부 (에이전트·스킬 — 사업전략 로직 포함, 공개 배포 repo에서 제외)
+# 저장소에 포함하고 싶으면 아래 줄을 삭제하세요.
+.claude/
