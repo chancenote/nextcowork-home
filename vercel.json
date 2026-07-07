@@ -1,6 +1,16 @@
 {
   "outputDirectory": ".",
   "trailingSlash": true,
+  "redirects": [
+    { "source": "/workplace_consulting", "destination": "/flexoffice/", "permanent": true },
+    { "source": "/workplace_consulting/", "destination": "/flexoffice/", "permanent": true },
+    { "source": "/ceo_ai", "destination": "/coaching/", "permanent": true },
+    { "source": "/ceo_ai/", "destination": "/coaching/", "permanent": true },
+    { "source": "/:id([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})", "destination": "/insights/", "permanent": true },
+    { "source": "/:id([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})/", "destination": "/insights/", "permanent": true },
+    { "source": "/:id([0-9a-fA-F]{32})", "destination": "/insights/", "permanent": true },
+    { "source": "/:id([0-9a-fA-F]{32})/", "destination": "/insights/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
