@@ -34,6 +34,13 @@ llms.txt · robots.txt · sitemap.xml · vercel.json · img/og.png
 4. 본문은 일반 Markdown으로 작성합니다.
 5. 터미널에서 `npm run build`를 실행합니다.
 6. 생성된 글 주소는 `/insights/{slug}/`입니다.
+7. `npm run build`는 최신 콘텐츠 목록, 글 상세 HTML, 사이트맵, CSS/JS 캐시 방지용 버전값을 함께 갱신합니다.
+
+운영 메모:
+
+- 인사이트 목록은 `js/insights-data.js`에서 그려지지만, 빌드 때 자동으로 `?v=ncw-...` 버전값이 붙습니다.
+- iPad Safari처럼 캐시가 강한 브라우저에서도 새 발행분이 빨리 보이도록 `/js/*`는 Vercel에서 `must-revalidate`로 설정했습니다.
+- 글을 새로 추가한 뒤에는 반드시 `npm run build` 결과까지 커밋합니다.
 
 예시:
 

@@ -1,10 +1,10 @@
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const siteUrl = "https://www.nextcw.com";
-const cssVersion = "20260709-insightsmd";
 const contentDir = join(root, "content", "insights");
 const outputDir = join(root, "insights");
 
@@ -253,7 +253,60 @@ function absoluteUrl(path) {
   return `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
-function renderArticle(post) {
+function versioned(path, assetVersion) {
+  return `${path}?v=${assetVersion}`;
+}
+
+async function computeAssetVersion(posts) {
+  const hash = createHash("sha1");
+  hash.update(JSON.stringify(posts.map((post) => ({
+    slug: post.slug,
+    title: post.title,
+    description: post.description,
+    date: post.date,
+    category: post.category,
+    tags: post.tags
+  }))));
+
+  for (const path of ["css/style.css", "js/main.js", "js/analytics.js", "scripts/build-insights.mjs"]) {
+    hash.update(await readFile(join(root, path), "utf8"));
+  }
+
+  return `ncw-${hash.digest("hex").slice(0, 10)}`;
+}
+
+async function listHtmlFiles(dir) {
+  const skip = new Set([".git", ".vercel", "node_modules", "content", "_workspace", "tmp"]);
+  const entries = await readdir(dir, { withFileTypes: true });
+  const files = [];
+
+  for (const entry of entries) {
+    if (entry.isDirectory()) {
+      if (skip.has(entry.name)) continue;
+      files.push(...await listHtmlFiles(join(dir, entry.name)));
+    } else if (entry.isFile() && entry.name.endsWith(".html")) {
+      files.push(join(dir, entry.name));
+    }
+  }
+
+  return files;
+}
+
+async function updateHtmlAssetVersions(assetVersion) {
+  const files = await listHtmlFiles(root);
+  for (const file of files) {
+    let html = await readFile(file, "utf8");
+    const before = html;
+    html = html
+      .replace(/\/css\/style\.css(?:\?v=[^"]*)?/g, versioned("/css/style.css", assetVersion))
+      .replace(/\/js\/analytics\.js(?:\?v=[^"]*)?/g, versioned("/js/analytics.js", assetVersion))
+      .replace(/\/js\/insights-data\.js(?:\?v=[^"]*)?/g, versioned("/js/insights-data.js", assetVersion))
+      .replace(/\/js\/main\.js(?:\?v=[^"]*)?/g, versioned("/js/main.js", assetVersion));
+    if (html !== before) await writeFile(file, html, "utf8");
+  }
+}
+
+function renderArticle(post, assetVersion) {
   const articleBody = renderMarkdown(post.body);
   const tagHtml = post.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
   const jsonLd = {
@@ -293,11 +346,12 @@ function renderArticle(post) {
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#302D7C">
+<script src="${versioned("/js/analytics.js", assetVersion)}" defer></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=${cssVersion}">
+<link rel="stylesheet" href="${versioned("/css/style.css", assetVersion)}">
 <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
 </head>
 <body class="theme-ai">
@@ -359,7 +413,7 @@ ${articleBody}
     </div>
   </div>
 </footer>
-<script src="/js/main.js" defer></script>
+<script src="${versioned("/js/main.js", assetVersion)}" defer></script>
 </body>
 </html>
 `;
@@ -410,14 +464,17 @@ async function loadPosts() {
 
 async function main() {
   const posts = await loadPosts();
+  const assetVersion = await computeAssetVersion(posts);
+
   for (const post of posts) {
     const dir = join(outputDir, post.slug);
     await mkdir(dir, { recursive: true });
-    await writeFile(join(dir, "index.html"), renderArticle(post), "utf8");
+    await writeFile(join(dir, "index.html"), renderArticle(post, assetVersion), "utf8");
   }
   await writeFile(join(root, "js", "insights-data.js"), renderFeed(posts), "utf8");
   await writeFile(join(root, "sitemap.xml"), renderSitemap(posts), "utf8");
-  console.log(`Built ${posts.length} insight post(s).`);
+  await updateHtmlAssetVersions(assetVersion);
+  console.log(`Built ${posts.length} insight post(s). Asset version: ${assetVersion}`);
 }
 
 main().catch((error) => {
