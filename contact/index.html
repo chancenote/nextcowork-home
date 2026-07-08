@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="/js/analytics.js?v=ncw-7b2ccd12b5" defer></script>
+<script src="/js/analytics.js?v=ncw-ac684ef176" defer></script>
 <title>문의하기 | 프로젝트 · 교육 · 자문 문의 — 넥스트코웍</title>
 <meta name="description" content="공유오피스 컨설팅, 기업 AI 교육, 공공 자문, CEO AI 코칭 문의. 영업일 1일 내 회신, 사전 진단 미팅 무료. ceo@nextcw.com · 010-9765-7749">
 <link rel="canonical" href="https://www.nextcw.com/contact/">
@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=ncw-7b2ccd12b5">
+<link rel="stylesheet" href="/css/style.css?v=ncw-ac684ef176">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,7 +72,7 @@
     <div class="container">
       <div class="crumb reveal">Contact / <b id="contact-crumb">프로젝트 문의</b></div>
       <h1 class="reveal" data-delay="1">일하는 공간과 방식,<br><span class="accent" style="color:var(--point)">함께 바꿔볼까요?</span></h1>
-      <p class="answer reveal" data-delay="2">어떤 형식이든 좋습니다. 카카오톡, 구글폼, 이메일 — 편한 채널로 보내주세요. <strong>영업일 1일 내에 회신</strong>드리며, 사전 진단 미팅(온라인 가능)은 <strong>무료</strong>입니다.</p>
+      <p class="answer reveal" data-delay="2">아래 온라인 문의를 기본 접수 경로로 사용합니다. 프로젝트 개요를 남겨주시면 <strong>영업일 1일 내에 회신</strong>드리며, 사전 진단 미팅(온라인 가능)은 <strong>무료</strong>입니다. 간단한 질문은 카카오톡으로 빠르게 문의하실 수 있습니다.</p>
     </div>
   </section>
 
@@ -81,14 +81,24 @@
       <div class="contact-grid">
         <div style="display:grid;gap:20px">
           <form class="form-card reveal" id="contact-form">
+            <input type="hidden" id="cf-source-page" name="source_page" value="">
+            <input type="hidden" id="cf-cta-location" name="cta_location" value="">
+            <input type="hidden" id="cf-landing-page" name="landing_page" value="">
+            <input type="hidden" id="cf-referrer" name="referrer" value="">
+            <input type="hidden" id="cf-utm-source" name="utm_source" value="">
+            <input type="hidden" id="cf-utm-medium" name="utm_medium" value="">
+            <input type="hidden" id="cf-utm-campaign" name="utm_campaign" value="">
             <h3 style="font-size:21px;margin-bottom:6px">온라인으로 바로 문의하기</h3>
-            <p style="font-size:14px;color:var(--caption);margin-bottom:22px">아래 양식을 남겨주시면 영업일 1일 내 회신드립니다. 사전 진단 미팅은 무료입니다.</p>
+            <p style="font-size:14px;color:var(--caption);margin-bottom:22px">필수 정보만 먼저 남겨주세요. 서비스·상품 문맥은 자동으로 함께 기록됩니다.</p>
             <div class="form-row">
               <div class="field"><label for="cf-name">이름 <em>*</em></label><input id="cf-name" name="name" type="text" required autocomplete="name"></div>
               <div class="field"><label for="cf-org">소속 · 회사 / 기관</label><input id="cf-org" name="org" type="text" autocomplete="organization"></div>
             </div>
             <div class="form-row">
-              <div class="field"><label for="cf-phone">연락처 <em>*</em></label><input id="cf-phone" name="phone" type="text" required autocomplete="tel" placeholder="연락 가능한 번호 또는 이메일"></div>
+              <div class="field"><label for="cf-email">이메일 <em>*</em></label><input id="cf-email" name="email" type="email" required autocomplete="email" placeholder="reply@example.com"></div>
+              <div class="field"><label for="cf-phone">전화번호</label><input id="cf-phone" name="phone" type="tel" autocomplete="tel" placeholder="문자 회신이 필요하면 남겨주세요"></div>
+            </div>
+            <div class="form-row">
               <div class="field">
                 <label for="cf-service">관심 서비스</label>
                 <select id="cf-service" name="service">
@@ -99,39 +109,79 @@
                   <option value="CEO AI 코칭" data-s="coaching">CEO AI 코칭</option>
                 </select>
               </div>
+              <div class="field">
+                <label for="cf-tier">세부 관심 상품</label>
+                <select id="cf-tier" name="tier">
+                  <option value="">먼저 관심 서비스를 선택해주세요</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="cf-org-type">기관/조직 유형</label>
+                <select id="cf-org-type" name="org_type">
+                  <option value="">선택 안 함</option>
+                  <option value="기업">기업</option>
+                  <option value="공공기관/지자체">공공기관/지자체</option>
+                  <option value="디벨로퍼/건물주">디벨로퍼/건물주</option>
+                  <option value="교육기관/대학">교육기관/대학</option>
+                  <option value="대표/임원/전문직">대표/임원/전문직</option>
+                  <option value="기타">기타</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cf-budget">예상 예산</label>
+                <select id="cf-budget" name="budget">
+                  <option value="">선택 안 함</option>
+                  <option value="300만원 미만">300만원 미만</option>
+                  <option value="300만~1,000만원">300만~1,000만원</option>
+                  <option value="1,000만~5,000만원">1,000만~5,000만원</option>
+                  <option value="5,000만원 이상">5,000만원 이상</option>
+                  <option value="아직 미정">아직 미정</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="cf-timeline">희망 일정</label>
+              <input id="cf-timeline" name="timeline" type="text" placeholder="예: 8월 중 특강, 3분기 내 컨설팅 착수, 아직 미정">
+              <p class="field-help">정확하지 않아도 괜찮습니다. 긴급도와 준비 기간을 판단하는 용도입니다.</p>
             </div>
             <div class="field">
               <label for="cf-message">문의 내용 <em>*</em></label>
               <textarea id="cf-message" name="message" required placeholder="대상·규모·희망 일정 등을 자유롭게 남겨주세요."></textarea>
             </div>
+            <div class="consent-field">
+              <input id="cf-privacy" name="privacy_agree" type="checkbox" value="동의" required>
+              <label for="cf-privacy">문의 응대와 사전 진단 안내를 위해 입력한 개인정보를 수집·이용하는 데 동의합니다. 자세한 내용은 <a href="/privacy/" target="_blank" rel="noopener">개인정보처리방침</a>에서 확인할 수 있습니다. <em>*</em></label>
+            </div>
             <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">문의 보내기 <span class="arr">→</span></button>
             <button type="button" class="btn btn-ghost" id="cf-copy" aria-label="입력한 문의 내용을 클립보드에 복사" style="width:100%;justify-content:center;margin-top:10px">내용 복사 <span aria-hidden="true">⧉</span></button>
             <p class="form-status" id="cf-status" role="status" aria-live="polite" style="font-size:13px;color:var(--ink);margin-top:12px;text-align:center;min-height:1px"></p>
-            <p style="font-size:12.5px;color:var(--caption);margin-top:10px;text-align:center">전송을 누르면 메일 앱이 열리며 내용이 자동 입력됩니다. 메일 앱이 열리지 않으면 위 ‘내용 복사’로 복사해 <a href="mailto:ceo@nextcw.com" style="color:var(--violet);font-weight:700">ceo@nextcw.com</a> 으로 보내주세요.</p>
+            <p class="form-meta-note">전송을 누르면 문의 내용이 메일로 안전하게 이어집니다. 메일 앱이 열리지 않으면 위 ‘내용 복사’로 복사해 <a href="mailto:ceo@nextcw.com" style="color:var(--violet);font-weight:700">ceo@nextcw.com</a> 으로 보내주세요.</p>
           </form>
 
-          <a class="form-card reveal" href="https://open.kakao.com/o/sfxwSCvf" target="_blank" rel="noopener" style="display:block;border-left:5px solid #FEE500">
+          <a class="form-card reveal channel-card-secondary" href="https://open.kakao.com/o/sfxwSCvf" target="_blank" rel="noopener" style="display:block;border-left:5px solid #FEE500">
             <div style="display:flex;align-items:center;gap:16px;margin-bottom:14px">
               <span style="width:52px;height:52px;border-radius:16px;background:#FEE500;display:grid;place-items:center;font-weight:800;font-size:20px;color:var(--ink)">K</span>
               <div>
-                <h3 style="font-size:21px">카카오톡으로 빠른 상담</h3>
-                <p style="font-size:13.5px;color:var(--caption)">가장 빠른 채널 · 간단한 질문 환영</p>
+                <h3 style="font-size:21px">카카오톡 빠른 질문</h3>
+                <p style="font-size:13.5px;color:var(--caption)">간단 상담 · 일정 확인 · 자료 요청</p>
               </div>
             </div>
-            <p style="font-size:15px;margin-bottom:18px">컨설팅·자문·사업제휴 등 어떤 주제든 오픈채팅으로 바로 대화를 시작하세요. 확인 즉시 답변드립니다.</p>
+            <p style="font-size:15px;margin-bottom:18px">짧게 확인하고 싶은 내용은 오픈채팅으로 남겨주세요. 정식 제안 검토가 필요한 경우 위 온라인 문의로 안내드립니다.</p>
             <span class="btn btn-primary" style="background:var(--ink)">카카오톡 오픈채팅 열기 <span class="arr">→</span></span>
           </a>
 
-          <a class="form-card reveal" data-delay="1" href="https://bit.ly/edu_cowork" target="_blank" rel="noopener" style="display:block;border-left:5px solid var(--violet)">
+          <a class="form-card reveal channel-card-secondary" data-delay="1" href="https://bit.ly/edu_cowork" target="_blank" rel="noopener" style="display:block;border-left:5px solid var(--violet)">
             <div style="display:flex;align-items:center;gap:16px;margin-bottom:14px">
               <span style="width:52px;height:52px;border-radius:16px;background:rgba(105,85,186,.1);display:grid;place-items:center;font-weight:800;font-size:20px;color:var(--violet)">✎</span>
               <div>
-                <h3 style="font-size:21px">구글폼으로 정식 문의 접수</h3>
-                <p style="font-size:13.5px;color:var(--caption)">교육 · 컨설팅 제안요청 · 상세 문의</p>
+                <h3 style="font-size:21px">구글폼 보조 접수</h3>
+                <p style="font-size:13.5px;color:var(--caption)">기관 내부 양식이 필요할 때</p>
               </div>
             </div>
-            <p style="font-size:15px;margin-bottom:18px">기관·기업 담당자용 접수 양식입니다. 대상·규모·희망 일정을 남겨주시면 맞춤 제안서로 회신드립니다.</p>
-            <span class="btn btn-primary">문의 양식 작성하기 <span class="arr">→</span></span>
+            <p style="font-size:15px;margin-bottom:18px">사이트 폼 이용이 어렵거나 내부 공유용 외부 양식이 필요한 경우에만 사용해주세요. 기본 접수는 위 온라인 문의입니다.</p>
+            <span class="btn btn-ghost">보조 양식 작성하기 <span class="arr">→</span></span>
           </a>
         </div>
 
@@ -197,12 +247,12 @@
       </div>
       <div class="footer-bottom">
         <span>© 2026 NEXT COWORK Inc. All rights reserved.</span>
-        <span>Workspace Evolution — 일하는 공간의 진화</span>
+        <span><a href="/privacy/">개인정보처리방침</a> · Workspace Evolution — 일하는 공간의 진화</span>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="/js/main.js?v=ncw-7b2ccd12b5" defer></script>
+<script src="/js/main.js?v=ncw-ac684ef176" defer></script>
 </body>
 </html>

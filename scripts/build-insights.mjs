@@ -43,7 +43,8 @@ const staticRoutes = [
   { path: "/coaching/", lastmod: "2026-07-09", priority: "0.9" },
   { path: "/about/", lastmod: "2026-07-09", priority: "0.8" },
   { path: "/insights/", lastmod: "2026-07-09", priority: "0.8" },
-  { path: "/contact/", lastmod: "2026-07-09", priority: "0.7" }
+  { path: "/contact/", lastmod: "2026-07-09", priority: "0.7" },
+  { path: "/privacy/", lastmod: "2026-07-09", priority: "0.3" }
 ];
 
 function escapeHtml(value = "") {
@@ -396,7 +397,7 @@ ${articleBody}
         <strong>이 주제를 조직에 맞게 적용하고 싶다면</strong>
         <p>AI 실무교육, CEO 코칭, 워크스페이스 컨설팅으로 연결해 드립니다.</p>
         <div class="btn-row">
-          <a class="btn btn-primary" href="/contact/">프로젝트 문의 <span class="arr">→</span></a>
+          <a class="btn btn-primary" href="/contact/?s=general&amp;t=diagnosis&amp;cta=insight_article">프로젝트 문의 <span class="arr">→</span></a>
           <a class="btn btn-ghost" href="/insights/">인사이트 더 보기 <span class="arr">→</span></a>
         </div>
       </div>
@@ -408,7 +409,7 @@ ${articleBody}
     <div class="container">
       <div class="footer-bottom">
         <span>© 2026 NEXT COWORK Inc. All rights reserved.</span>
-        <span>Workspace Evolution — 일하는 공간의 진화</span>
+        <span><a href="/privacy/">개인정보처리방침</a> · Workspace Evolution — 일하는 공간의 진화</span>
       </div>
     </div>
   </div>

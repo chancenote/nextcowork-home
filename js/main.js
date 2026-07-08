@@ -143,68 +143,235 @@
     });
   }
 
-  /* Contact: contextualize from ?s= service param (set by service page CTAs) */
-  var sParam = null;
-  try { sParam = new URLSearchParams(window.location.search).get("s"); } catch (e) { sParam = null; }
-  if (sParam) {
-    var crumbLabels = {
-      flexoffice: "FlexOffice 컨설팅 문의",
-      "ai-campus": "AI Campus 교육 문의",
-      "public": "Public Advisory 문의",
-      coaching: "CEO AI 코칭 문의"
-    };
-    var crumbEl = document.getElementById("contact-crumb");
-    if (crumbEl && crumbLabels[sParam]) crumbEl.textContent = crumbLabels[sParam];
-    var svcSelect = document.getElementById("cf-service");
-    if (svcSelect) {
-      var preOpt = svcSelect.querySelector('option[data-s="' + sParam + '"]');
-      if (preOpt) svcSelect.value = preOpt.value;
+  function searchParam(name) {
+    try { return new URLSearchParams(window.location.search).get(name) || ""; } catch (e) { return ""; }
+  }
+
+  function setFieldValue(id, value) {
+    var el = document.getElementById(id);
+    if (el) el.value = value || "";
+  }
+
+  function serviceKeyFromSelect(select) {
+    if (!select) return "";
+    var opt = select.options[select.selectedIndex];
+    return opt ? (opt.getAttribute("data-s") || "") : "";
+  }
+
+  var sParam = searchParam("s");
+  var tParam = searchParam("t");
+  var ctaParam = searchParam("cta");
+  var currentPath = window.location.pathname || "/";
+  var inferredSourcePath = currentPath;
+  try {
+    if (document.referrer) {
+      var refUrl = new URL(document.referrer);
+      if (refUrl.origin === window.location.origin) inferredSourcePath = refUrl.pathname || currentPath;
+    }
+  } catch (e) {}
+
+  var crumbLabels = {
+    flexoffice: "FlexOffice 컨설팅 문의",
+    "ai-campus": "AI Campus 교육 문의",
+    "public": "Public Advisory 문의",
+    coaching: "CEO AI 코칭 문의",
+    general: "프로젝트 문의"
+  };
+
+  var tierOptions = {
+    general: [
+      ["", "선택 안 함"],
+      ["diagnosis", "무료 사전진단"],
+      ["partnership", "협업/제휴 문의"],
+      ["other", "기타 문의"]
+    ],
+    flexoffice: [
+      ["precheck", "무료 사전 진단"],
+      ["diagnosis", "① 도입 타당성 진단"],
+      ["design", "② 컨셉·운영모델 설계"],
+      ["pf", "③ PF 사업계획서 포함"],
+      ["retainer", "④ 전 주기 동행"]
+    ],
+    "ai-campus": [
+      ["diagnosis", "무료 교육 진단"],
+      ["lecture", "AI 실무활용 특강"],
+      ["workshop", "실무 워크샵"],
+      ["campus", "사내 AI 캠퍼스 구축"],
+      ["proposal", "교육 제안요청"]
+    ],
+    "public": [
+      ["advisory", "자문·교육 문의"],
+      ["space", "공유공간 건립 자문"],
+      ["ai", "공공조직 AI 역량강화 교육"],
+      ["mentoring", "창업 심사·멘토링"]
+    ],
+    coaching: [
+      ["signature", "CEO AI 코칭"],
+      ["retainer", "월 리테이너 자문"],
+      ["team", "임원·리더 팀 패키지"]
+    ]
+  };
+
+  function updateTierOptions(serviceKey, selectedTier) {
+    var tierSelect = document.getElementById("cf-tier");
+    if (!tierSelect) return;
+    var options = tierOptions[serviceKey] || tierOptions.general;
+    tierSelect.innerHTML = "";
+    options.forEach(function (item) {
+      var opt = document.createElement("option");
+      opt.value = item[1];
+      opt.setAttribute("data-t", item[0]);
+      opt.textContent = item[1];
+      tierSelect.appendChild(opt);
+    });
+    if (selectedTier) {
+      var target = tierSelect.querySelector('option[data-t="' + selectedTier + '"]');
+      if (target) tierSelect.value = target.value;
     }
   }
 
+  function readContext(extra) {
+    var svcSelect = document.getElementById("cf-service");
+    var tierSelect = document.getElementById("cf-tier");
+    var serviceKey = serviceKeyFromSelect(svcSelect) || sParam || "general";
+    var tierOpt = tierSelect && tierSelect.options[tierSelect.selectedIndex];
+    var params = {
+      service: svcSelect ? svcSelect.value : serviceKey,
+      service_key: serviceKey,
+      tier: tierSelect ? tierSelect.value : "",
+      tier_key: tierOpt ? (tierOpt.getAttribute("data-t") || "") : tParam,
+      source_page: document.getElementById("cf-source-page") ? document.getElementById("cf-source-page").value : currentPath,
+      cta_location: document.getElementById("cf-cta-location") ? document.getElementById("cf-cta-location").value : ctaParam,
+      utm_source: searchParam("utm_source"),
+      utm_medium: searchParam("utm_medium"),
+      utm_campaign: searchParam("utm_campaign")
+    };
+    if (extra) {
+      Object.keys(extra).forEach(function (key) { params[key] = extra[key]; });
+    }
+    return params;
+  }
+
+  function fillContactContext() {
+    var crumbEl = document.getElementById("contact-crumb");
+    if (crumbEl && crumbLabels[sParam]) crumbEl.textContent = crumbLabels[sParam];
+
+    var svcSelect = document.getElementById("cf-service");
+    if (svcSelect && sParam) {
+      var preOpt = svcSelect.querySelector('option[data-s="' + sParam + '"]');
+      if (preOpt) svcSelect.value = preOpt.value;
+    }
+
+    var serviceKey = serviceKeyFromSelect(svcSelect) || sParam || "general";
+    updateTierOptions(serviceKey, tParam);
+
+    setFieldValue("cf-source-page", searchParam("source_page") || inferredSourcePath);
+    setFieldValue("cf-cta-location", ctaParam || "direct");
+    setFieldValue("cf-landing-page", window.location.href);
+    setFieldValue("cf-referrer", document.referrer || "");
+    setFieldValue("cf-utm-source", searchParam("utm_source"));
+    setFieldValue("cf-utm-medium", searchParam("utm_medium"));
+    setFieldValue("cf-utm-campaign", searchParam("utm_campaign"));
+
+    var message = document.getElementById("cf-message");
+    if (message && !message.value && serviceKey !== "general") {
+      var selectedTier = document.getElementById("cf-tier") ? document.getElementById("cf-tier").value : "";
+      message.placeholder = selectedTier ?
+        selectedTier + " 관련 문의입니다. 대상·규모·희망 일정 등을 자유롭게 남겨주세요." :
+        "대상·규모·희망 일정 등을 자유롭게 남겨주세요.";
+    }
+
+    if (svcSelect && svcSelect.getAttribute("data-context-bound") !== "true") {
+      svcSelect.setAttribute("data-context-bound", "true");
+      svcSelect.addEventListener("change", function () {
+        updateTierOptions(serviceKeyFromSelect(svcSelect) || "general", "");
+      });
+    }
+  }
+  fillContactContext();
+
   /* Conversion link tracking (no-op until GA4 is enabled) */
   document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
-    a.addEventListener("click", function () { track("tel_click"); });
+    a.addEventListener("click", function () { track("tel_click", { source_page: currentPath }); });
   });
   document.querySelectorAll('a[href*="open.kakao.com"]').forEach(function (a) {
-    a.addEventListener("click", function () { track("kakao_click"); });
+    a.addEventListener("click", function () { track("kakao_click", { source_page: currentPath }); });
   });
   document.querySelectorAll('a[href*="bit.ly/edu_cowork"], a[href*="docs.google.com/forms"]').forEach(function (a) {
-    a.addEventListener("click", function () { track("googleform_click"); });
+    a.addEventListener("click", function () { track("googleform_click", { source_page: currentPath }); });
+  });
+  document.querySelectorAll('a[href^="/contact/"]').forEach(function (a) {
+    a.addEventListener("click", function () {
+      var url;
+      try { url = new URL(a.getAttribute("href"), window.location.origin); } catch (e) { url = null; }
+      track("service_cta_click", {
+        source_page: currentPath,
+        service_key: url ? (url.searchParams.get("s") || "general") : "general",
+        tier_key: url ? (url.searchParams.get("t") || "") : "",
+        cta_location: url ? (url.searchParams.get("cta") || "") : ""
+      });
+    });
   });
 
   /* Contact form → fetch endpoint if configured, else mailto. + copy-to-clipboard fallback. */
   var form = document.getElementById("contact-form");
   if (form) {
     var statusEl = document.getElementById("cf-status");
+    var formStarted = false;
     function setStatus(msg) { if (statusEl) statusEl.textContent = msg; }
+
+    form.addEventListener("input", function () {
+      if (formStarted) return;
+      formStarted = true;
+      track("form_start", readContext());
+    });
 
     function buildMessage() {
       var d = new FormData(form);
       var service = d.get("service") || "일반";
-      var subject = "[웹사이트 문의] " + service + " — " + (d.get("name") || "");
+      var tier = d.get("tier") || "선택 안 함";
+      var subject = "[웹사이트 문의] " + service + " / " + tier + " — " + (d.get("name") || "");
       var body =
         "이름: " + (d.get("name") || "") + "\n" +
         "소속: " + (d.get("org") || "") + "\n" +
-        "연락처: " + (d.get("phone") || "") + "\n" +
-        "관심 서비스: " + service + "\n\n" +
-        (d.get("message") || "");
-      return { subject: subject, body: body, service: service };
+        "이메일: " + (d.get("email") || "") + "\n" +
+        "전화번호: " + (d.get("phone") || "") + "\n" +
+        "기관/조직 유형: " + (d.get("org_type") || "") + "\n" +
+        "관심 서비스: " + service + "\n" +
+        "세부 관심 상품: " + tier + "\n" +
+        "예상 예산: " + (d.get("budget") || "") + "\n" +
+        "희망 일정: " + (d.get("timeline") || "") + "\n" +
+        "개인정보 동의: " + (d.get("privacy_agree") || "") + "\n\n" +
+        "문의 내용:\n" + (d.get("message") || "") + "\n\n" +
+        "---\n" +
+        "source_page: " + (d.get("source_page") || "") + "\n" +
+        "cta_location: " + (d.get("cta_location") || "") + "\n" +
+        "landing_page: " + (d.get("landing_page") || "") + "\n" +
+        "referrer: " + (d.get("referrer") || "") + "\n" +
+        "utm_source: " + (d.get("utm_source") || "") + "\n" +
+        "utm_medium: " + (d.get("utm_medium") || "") + "\n" +
+        "utm_campaign: " + (d.get("utm_campaign") || "");
+      return { subject: subject, body: body, service: service, tier: tier };
     }
 
     form.addEventListener("submit", function (ev) {
       var endpoint = form.getAttribute("data-endpoint");
       var msg = buildMessage();
-      track("form_submit", { service: msg.service });
+      var params = readContext({ endpoint_type: endpoint ? "post_endpoint" : "mailto" });
+      track("form_submit_attempt", params);
+      track("form_submit", params);
 
       if (endpoint && endpoint !== "") {
         /* Real POST endpoint configured (Formspree/Make etc.) */
         ev.preventDefault();
-        setStatus("전송 중입니다…");
+        setStatus("전송 중입니다...");
         fetch(endpoint, { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } })
           .then(function (r) {
             if (!r.ok) throw new Error("bad status");
+            track("generate_lead", readContext({ endpoint_type: "post_endpoint" }));
+            track("form_submit_success", readContext({ endpoint_type: "post_endpoint" }));
             form.reset();
+            fillContactContext();
             setStatus("문의가 접수되었습니다. 영업일 1일 내 회신드립니다.");
           })
           .catch(function () {

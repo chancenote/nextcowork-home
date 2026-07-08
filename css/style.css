@@ -589,6 +589,17 @@ main { padding-top: 72px; }
   outline: none; border-color: var(--violet); box-shadow: 0 0 0 4px rgba(105,85,186,.1);
 }
 .field textarea { min-height: 140px; resize: vertical; }
+.field-help { margin-top: 6px; font-size: 12.5px; color: var(--caption); line-height: 1.6; }
+.consent-field {
+  display: flex; gap: 10px; align-items: flex-start;
+  margin: 2px 0 18px; padding: 14px 16px;
+  border: 1px solid var(--hairline); border-radius: 12px; background: var(--bg-soft);
+}
+.consent-field input { width: 18px; height: 18px; flex: 0 0 auto; margin-top: 3px; accent-color: var(--indigo); }
+.consent-field label { margin: 0; font-size: 13.5px; line-height: 1.65; color: var(--text); }
+.consent-field a { color: var(--violet); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.form-meta-note { font-size: 12.5px; color: var(--caption); margin-top: 10px; text-align: center; line-height: 1.65; }
+.channel-card-secondary { box-shadow: none; }
 .contact-aside { display: grid; gap: 16px; }
 .aside-card { background: #fff; border: 1px solid var(--hairline); border-radius: 16px; padding: 28px 28px; }
 .aside-card h4 { font-size: 16px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
@@ -615,6 +626,8 @@ main { padding-top: 72px; }
   display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
   font-size: 13px; color: rgba(255,255,255,.5);
 }
+.footer-bottom a { color: rgba(255,255,255,.72); font-weight: 700; }
+.footer-bottom a:hover { color: #fff; }
 
 /* ---------- Reveal motion ---------- */
 /* Hidden state is gated behind .js so content stays visible if JS never runs. */
