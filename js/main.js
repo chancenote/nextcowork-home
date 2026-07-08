@@ -8,9 +8,13 @@
 
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* Lightweight analytics shim. No-op until a GA4 loader is enabled in <head>. */
+  /* Lightweight analytics shim. No-op until the GA4 loader has a real Measurement ID. */
   function track(name, params) {
-    try { if (window.gtag) window.gtag("event", name, params || {}); } catch (e) {}
+    try {
+      if (window.NCW_ANALYTICS_ENABLED && window.gtag) {
+        window.gtag("event", name, params || {});
+      }
+    } catch (e) {}
   }
 
   /* Copy fallback for browsers without navigator.clipboard */
@@ -117,17 +121,19 @@
     }
   }
 
-  /* Insights feed (edit js/insights-data.js to publish) */
+  /* Insights feed (generated from content/insights/*.md) */
   var feedRoot = document.getElementById("feed");
   if (feedRoot && window.NCW_FEED) {
-    var colors = { brunch: "var(--line-public)", naver: "#03C75A", threads: "#1C1C22", notion: "var(--violet)", news: "var(--point)" };
-    var names = { brunch: "브런치", naver: "네이버 블로그", threads: "Threads", notion: "노션 자료실", news: "소식" };
+    var colors = { insight: "var(--accent)", brunch: "var(--line-public)", naver: "#03C75A", threads: "#1C1C22", notion: "var(--violet)", news: "var(--point)" };
+    var names = { insight: "인사이트", brunch: "브런치", naver: "네이버 블로그", threads: "Threads", notion: "노션 자료실", news: "소식" };
     window.NCW_FEED.slice(0, 8).forEach(function (item) {
       var a = document.createElement("a");
       a.className = "feed-item";
       a.href = item.url;
-      a.target = "_blank";
-      a.rel = "noopener";
+      if (/^https?:\/\//.test(item.url)) {
+        a.target = "_blank";
+        a.rel = "noopener";
+      }
       a.style.setProperty("--fc", colors[item.src] || "#6955BA");
       a.innerHTML =
         '<span class="feed-src">' + (names[item.src] || item.src) + "</span>" +

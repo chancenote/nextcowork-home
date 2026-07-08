@@ -16,4 +16,8 @@ _workspace_prev/
 # 하네스 내부 (에이전트·스킬 — 사업전략 로직 포함, 공개 배포 repo에서 제외)
 # 저장소에 포함하고 싶으면 아래 줄을 삭제하세요.
 .claude/
+.agents/
+.codex/
+.loom/
+AGENTS.md
 .vercel
