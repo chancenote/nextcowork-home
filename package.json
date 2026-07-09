@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build-insights.mjs",
-    "insights:build": "node scripts/build-insights.mjs"
+    "insights:build": "node scripts/build-insights.mjs",
+    "deploy": "bash scripts/deploy.sh"
   }
 }
