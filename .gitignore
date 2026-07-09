@@ -19,5 +19,6 @@ _workspace_prev/
 .agents/
 .codex/
 .loom/
+.playwright-cli/
 AGENTS.md
 .vercel

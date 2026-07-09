@@ -3,6 +3,7 @@
 _workspace
 _workspace_prev
 .claude
+.playwright-cli
 .git
 CLAUDE.md
 README.md
