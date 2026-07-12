@@ -226,10 +226,8 @@
       ["mentoring", "창업 심사·멘토링"]
     ],
     coaching: [
-      ["founding", "파운딩 4석"],
-      ["consult", "10분 무료 적합성 상담"],
-      ["signature", "CEO AI 코칭"],
-      ["retainer", "월 리테이너 자문"],
+      ["founding", "CEO AI 코칭 (4석 한정 할인)"],
+      ["consult", "10분 무료 상담"],
       ["team", "임원·리더 팀 패키지"]
     ]
   };
