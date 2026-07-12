@@ -1,0 +1,13 @@
+<svg viewBox="0 0 64 64" role="img" aria-labelledby="t03ai d03ai" class="visual-selector-icon visual-selector-ai" xmlns="http://www.w3.org/2000/svg">
+  <title id="t03ai">AI Campus — 일하는 방식을 바꾼다</title>
+  <desc id="d03ai">세 개의 노드가 위로 이어지는 워크플로우로, 단계적으로 바뀌는 업무 방식을 나타낸다.</desc>
+  <g fill="none" stroke="#6955BA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="16" y1="46" x2="32" y2="32"/>
+    <line x1="32" y1="32" x2="48" y2="18"/>
+  </g>
+  <g fill="#6955BA">
+    <circle cx="16" cy="46" r="6"/>
+    <circle cx="32" cy="32" r="6"/>
+    <circle cx="48" cy="18" r="6"/>
+  </g>
+</svg>

@@ -244,6 +244,7 @@ function normalizePost(meta, body, filePath) {
     category: meta.category || "Insight",
     tags: Array.isArray(meta.tags) ? meta.tags : [],
     image: meta.image || "/img/og.png",
+    ctaService: meta.cta_service || "general",
     body,
     url: `/insights/${slug}/`
   };
@@ -310,8 +311,7 @@ async function updateHtmlAssetVersions(assetVersion) {
 function renderArticle(post, assetVersion) {
   const articleBody = renderMarkdown(post.body);
   const tagHtml = post.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
-  const jsonLd = {
-    "@context": "https://schema.org",
+  const blogPosting = {
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
@@ -321,6 +321,18 @@ function renderArticle(post, assetVersion) {
     image: absoluteUrl(post.image),
     author: { "@type": "Person", name: "이종찬" },
     publisher: { "@id": "https://www.nextcw.com/#org" }
+  };
+  const breadcrumb = {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "홈", item: "https://www.nextcw.com/" },
+      { "@type": "ListItem", position: 2, name: "인사이트", item: "https://www.nextcw.com/insights/" },
+      { "@type": "ListItem", position: 3, name: post.title, item: absoluteUrl(post.url) }
+    ]
+  };
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [blogPosting, breadcrumb]
   };
 
   return `<!DOCTYPE html>
@@ -356,13 +368,14 @@ function renderArticle(post, assetVersion) {
 <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
 </head>
 <body class="theme-ai">
+<a class="skip-link" href="#main-content">본문 바로가기</a>
 <header class="nav">
   <div class="nav-inner">
     <a class="nav-logo" href="/"><strong>NEXT COWORK</strong><span>AI Workspace Builder</span></a>
     <nav aria-label="주요 메뉴">
       <ul class="nav-menu" id="nav-menu">
         <li class="has-sub">
-          <a href="/#services">서비스</a>
+          <a href="/#services" aria-haspopup="true">서비스</a>
           <ul class="sub">
             <li style="--sub-c:#0079C4"><a href="/flexoffice/"><b><span class="dot"></span>FlexOffice 컨설팅</b><small>공유오피스 도입·전환·개발 컨설팅</small></a></li>
             <li style="--sub-c:#6955BA"><a href="/ai-campus/"><b><span class="dot"></span>AI Campus</b><small>기업 AI 실무교육 · 사내 AI 캠퍼스 구축</small></a></li>
@@ -378,7 +391,7 @@ function renderArticle(post, assetVersion) {
     <button class="nav-burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
   </div>
 </header>
-<main>
+<main id="main-content">
   <article class="post">
     <header class="post-hero">
       <div class="container post-container">
@@ -397,7 +410,7 @@ ${articleBody}
         <strong>이 주제를 조직에 맞게 적용하고 싶다면</strong>
         <p>AI 실무교육, CEO 코칭, 워크스페이스 컨설팅으로 연결해 드립니다.</p>
         <div class="btn-row">
-          <a class="btn btn-primary" href="/contact/?s=general&amp;t=diagnosis&amp;cta=insight_article">프로젝트 문의 <span class="arr">→</span></a>
+          <a class="btn btn-primary" href="/contact/?s=${post.ctaService}&amp;t=diagnosis&amp;cta=insight_article">프로젝트 문의 <span class="arr">→</span></a>
           <a class="btn btn-ghost" href="/insights/">인사이트 더 보기 <span class="arr">→</span></a>
         </div>
       </div>
@@ -407,6 +420,36 @@ ${articleBody}
 <footer class="footer">
   <div class="footer-main">
     <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <strong>NEXT COWORK</strong>
+          <p>넥스트코웍 주식회사 · 대표 이종찬<br>
+          일이 잘되는 공간을 만들고,<br>일이 잘되는 방식을 설계합니다.<br><br>
+          ceo@nextcw.com · <a href="tel:+821097657749" style="display:inline;color:inherit">010-9765-7749</a></p>
+          <p style="margin-top:12px;font-size:12px;line-height:1.7;color:var(--caption);word-break:keep-all">사업자등록번호 722-88-0265<br>(본사) 전북특별자치도 전주시 덕진구 동부대로 687 3F<br>(서울) 서초구 강남대로97길 26 성원빌딩 4F</p>
+        </div>
+        <div>
+          <h5>Services</h5>
+          <a href="/flexoffice/">FlexOffice 컨설팅</a>
+          <a href="/ai-campus/">AI Campus</a>
+          <a href="/public/">Public Advisory</a>
+          <a href="/coaching/">CEO AI 코칭</a>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <a href="/about/">대표 스토리</a>
+          <a href="/insights/">인사이트</a>
+          <a href="/contact/">문의하기</a>
+          <a href="https://www.spacecw.com/" target="_blank" rel="noopener">스페이스코웍 ↗</a>
+        </div>
+        <div>
+          <h5>Channels</h5>
+          <a href="https://brunch.co.kr/@chancenote" target="_blank" rel="noopener">브런치 · 찬스노트</a>
+          <a href="https://blog.naver.com/chancenote" target="_blank" rel="noopener">네이버 블로그</a>
+          <a href="https://www.threads.com/@chancenote" target="_blank" rel="noopener">Threads</a>
+          <a href="https://open.kakao.com/o/sfxwSCvf" target="_blank" rel="noopener">카카오톡 채널</a>
+        </div>
+      </div>
       <div class="footer-bottom">
         <span>© 2026 NEXT COWORK Inc. All rights reserved.</span>
         <span><a href="/privacy/">개인정보처리방침</a> · Workspace Evolution — 일하는 공간의 진화</span>

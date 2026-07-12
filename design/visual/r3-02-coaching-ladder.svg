@@ -1,0 +1,71 @@
+<svg viewBox="0 0 760 300" role="img" aria-labelledby="tR302 dR302" class="visual-coaching-ladder" xmlns="http://www.w3.org/2000/svg">
+  <title id="tR302">AX 7단계 상승 사다리 — 이 코칭은 Lv.1~3에서 Lv.4(에이전트와 Cowork)까지 끌어올린다</title>
+  <desc id="dR302">왼쪽 낮은 단계에서 오른쪽 높은 단계로 올라가는 7단 계단. Lv.1 질문하기부터 Lv.7 자율 진화까지 이어지며, Lv.4 에이전트와 Cowork가 이 코칭의 목표로 강조된다. Lv.5~7은 조직 단위로 확장되는 다음 지평이라 흐리게 표시된다. 왜 Lv.4에서 멈추는지를 개인 리더 코칭 구간과 조직 확장 구간을 나누는 세로 점선으로 설명한다.</desc>
+
+  <!-- 구간 라벨 -->
+  <text x="240" y="60" text-anchor="middle" fill="var(--caption, #6E7175)" font-size="12" font-weight="700">코칭 목표 구간</text>
+  <text x="588" y="60" text-anchor="middle" fill="var(--caption, #6E7175)" font-size="12" font-weight="700">조직 단위 확장</text>
+  <!-- 구간 분리 점선 (Lv.4 / Lv.5) -->
+  <line x1="436" y1="70" x2="436" y2="258" stroke="var(--hairline, #E4E4E7)" stroke-width="1.5" stroke-dasharray="4 5"/>
+
+  <!-- 계단 블록 -->
+  <!-- Lv.1~3 : 토대(옅은 채움) -->
+  <g fill="var(--accent-soft, rgba(145,120,226,.10))" stroke="var(--accent, #9178E2)" stroke-width="1.5">
+    <rect x="44"  y="226" width="84" height="26" rx="6"/>
+    <rect x="144" y="206" width="84" height="46" rx="6"/>
+    <rect x="244" y="186" width="84" height="66" rx="6"/>
+  </g>
+  <!-- Lv.4 : 목표(진한 채움) -->
+  <rect x="344" y="166" width="84" height="86" rx="6" fill="var(--accent, #9178E2)" stroke="var(--accent, #9178E2)" stroke-width="2"/>
+  <!-- Lv.5~7 : 다음 지평(흐림) -->
+  <g fill="none" stroke="var(--hairline, #E4E4E7)" stroke-width="1.5">
+    <rect x="444" y="146" width="84" height="106" rx="6"/>
+    <rect x="544" y="126" width="84" height="126" rx="6"/>
+    <rect x="644" y="106" width="84" height="146" rx="6"/>
+  </g>
+
+  <!-- Baseline -->
+  <line x1="36" y1="252.5" x2="736" y2="252.5" stroke="var(--hairline, #E4E4E7)" stroke-width="1.5"/>
+
+  <!-- 목표 플래그 -->
+  <text x="386" y="112" text-anchor="middle" fill="var(--accent, #9178E2)" font-size="12" font-weight="800">목표</text>
+  <path d="M386 120 L386 129" fill="none" stroke="var(--accent, #9178E2)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- 단계 마커 (원 + digit, 통일 규격) -->
+  <!-- 도달 구간 Lv.1~3 -->
+  <g fill="#fff" stroke="var(--accent, #9178E2)" stroke-width="3">
+    <circle cx="86"  cy="206" r="15"/>
+    <circle cx="186" cy="186" r="15"/>
+    <circle cx="286" cy="166" r="15"/>
+  </g>
+  <g fill="var(--accent, #9178E2)" font-size="20" font-weight="800" text-anchor="middle">
+    <text x="86"  y="213">1</text>
+    <text x="186" y="193">2</text>
+    <text x="286" y="173">3</text>
+  </g>
+  <!-- 목표 Lv.4 -->
+  <circle cx="386" cy="146" r="15" fill="var(--accent, #9178E2)" stroke="var(--accent, #9178E2)" stroke-width="3"/>
+  <text x="386" y="153" text-anchor="middle" fill="#fff" font-size="20" font-weight="800">4</text>
+  <!-- 다음 지평 Lv.5~7 -->
+  <g fill="#fff" stroke="var(--hairline, #E4E4E7)" stroke-width="2">
+    <circle cx="486" cy="126" r="15"/>
+    <circle cx="586" cy="106" r="15"/>
+    <circle cx="686" cy="86"  r="15"/>
+  </g>
+  <g fill="var(--caption, #6E7175)" font-size="20" font-weight="800" text-anchor="middle">
+    <text x="486" y="133">5</text>
+    <text x="586" y="113">6</text>
+    <text x="686" y="93">7</text>
+  </g>
+
+  <!-- 단계명 (짧은 키워드 · 상세는 figcaption) -->
+  <g font-size="12" font-weight="700" text-anchor="middle">
+    <text x="86"  y="274" fill="var(--ink, #1C1C22)">질문하기</text>
+    <text x="186" y="274" fill="var(--ink, #1C1C22)">콘텐츠 생성</text>
+    <text x="286" y="274" fill="var(--ink, #1C1C22)">워크플로우</text>
+    <text x="386" y="274" fill="var(--accent-ink, #7358BF)" font-weight="800">에이전트 협업</text>
+    <text x="486" y="274" fill="var(--caption, #6E7175)">오케스트레이션</text>
+    <text x="586" y="274" fill="var(--caption, #6E7175)">조직 OS</text>
+    <text x="686" y="274" fill="var(--caption, #6E7175)">자율 진화</text>
+  </g>
+</svg>

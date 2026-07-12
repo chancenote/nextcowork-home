@@ -58,6 +58,19 @@
     });
   }
 
+  /* Submenu (has-sub) aria-expanded reflects open state on hover/focus */
+  document.querySelectorAll(".has-sub").forEach(function (li) {
+    var trigger = li.querySelector("a");
+    if (!trigger) return;
+    trigger.setAttribute("aria-haspopup", "true");
+    trigger.setAttribute("aria-expanded", "false");
+    function set(open) { trigger.setAttribute("aria-expanded", open ? "true" : "false"); }
+    li.addEventListener("mouseenter", function () { set(true); });
+    li.addEventListener("mouseleave", function () { set(false); });
+    li.addEventListener("focusin", function () { set(true); });
+    li.addEventListener("focusout", function () { set(false); });
+  });
+
   /* Reveal on scroll */
   var revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && !reduced) {
@@ -73,6 +86,12 @@
       { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
     );
     revealEls.forEach(function (el) { io.observe(el); });
+    /* Safety fallback: force-reveal anything still hidden after 3.5s so
+       no-scroll renderers (screenshots, crawlers) and fast/anchor jumps
+       never leave content blank. Adding .in to already-shown els is a no-op. */
+    window.setTimeout(function () {
+      revealEls.forEach(function (el) { el.classList.add("in"); });
+    }, 3500);
   } else {
     revealEls.forEach(function (el) { el.classList.add("in"); });
   }
@@ -197,6 +216,7 @@
       ["lecture", "AI 실무활용 특강"],
       ["workshop", "실무 워크샵"],
       ["campus", "사내 AI 캠퍼스 구축"],
+      ["sprint", "8주 파일럿 (업무 전환)"],
       ["proposal", "교육 제안요청"]
     ],
     "public": [
@@ -206,6 +226,8 @@
       ["mentoring", "창업 심사·멘토링"]
     ],
     coaching: [
+      ["founding", "파운딩 4석"],
+      ["consult", "10분 무료 적합성 상담"],
       ["signature", "CEO AI 코칭"],
       ["retainer", "월 리테이너 자문"],
       ["team", "임원·리더 팀 패키지"]
@@ -401,5 +423,28 @@
         }
       });
     }
+  }
+
+  /* Newsletter form → fetch endpoint (no navigation). Falls back to form action if JS-less. */
+  var news = document.getElementById("newsletter-form");
+  if (news) {
+    var newsStatus = document.getElementById("newsletter-status");
+    news.addEventListener("submit", function (ev) {
+      var endpoint = news.getAttribute("data-endpoint") || news.getAttribute("action");
+      if (!endpoint) return;
+      ev.preventDefault();
+      if (newsStatus) newsStatus.textContent = "구독 신청 중입니다...";
+      track("newsletter_submit", { source_page: currentPath });
+      fetch(endpoint, { method: "POST", body: new FormData(news), headers: { "Accept": "application/json" } })
+        .then(function (r) {
+          if (!r.ok) throw new Error("bad status");
+          track("generate_lead", { source_page: currentPath, form_type: "newsletter" });
+          news.reset();
+          if (newsStatus) newsStatus.textContent = "구독 신청이 접수되었습니다. 감사합니다.";
+        })
+        .catch(function () {
+          if (newsStatus) newsStatus.textContent = "신청에 실패했습니다. 카카오톡 채널로 신청해주세요.";
+        });
+    });
   }
 })();

@@ -1,0 +1,48 @@
+<svg viewBox="0 0 640 340" role="img" aria-labelledby="tR303 dR303" class="visual-coaching-outcome" xmlns="http://www.w3.org/2000/svg">
+  <title id="tR303">5주 후, 대표의 4대 반복 업무가 Before에서 After로 바뀐다</title>
+  <desc id="dR303">신규 아이템 검토·보고서·의사결정 검증·사내 전파 네 가지 반복 업무마다, 왼쪽의 코칭 전(Before) 상태에서 화살표를 지나 오른쪽의 코칭 후(After) 상태로 이동한다. 특히 신규 아이템 검토는 며칠에서 2시간으로 줄어드는 실측 대비다. 왼쪽은 회색(전), 오른쪽은 코칭 색상(후)으로 구분된다.</desc>
+
+  <!-- 기간 배지 -->
+  <rect x="20" y="8" width="80" height="30" rx="15" fill="var(--accent-soft, rgba(145,120,226,.10))" stroke="var(--accent, #9178E2)" stroke-width="1.5"/>
+  <text x="60" y="28" text-anchor="middle" fill="var(--accent-ink, #7358BF)" font-size="14" font-weight="800">5주 후</text>
+  <!-- 열 구분 헤더 -->
+  <text x="235" y="28" text-anchor="middle" fill="var(--caption, #6E7175)" font-size="12" font-weight="700">Before · 코칭 전</text>
+  <text x="486" y="28" text-anchor="middle" fill="var(--accent-ink, #7358BF)" font-size="12" font-weight="700">After · 코칭 후</text>
+  <line x1="20" y1="48" x2="620" y2="48" stroke="var(--hairline, #E4E4E7)" stroke-width="1.5"/>
+
+  <!-- Row 1 : 신규 아이템 검토 (실측 정량 대비) -->
+  <text x="20" y="99" fill="var(--ink, #1C1C22)" font-size="14" font-weight="800">신규 아이템 검토</text>
+  <rect x="180" y="74" width="110" height="40" rx="8" fill="var(--bg-soft, #F4F4F5)" stroke="var(--hairline, #E4E4E7)" stroke-width="1.5"/>
+  <text x="235" y="99" text-anchor="middle" fill="var(--caption, #6E7175)" font-size="14" font-weight="700">며칠</text>
+  <path d="M300 94 L344 94" fill="none" stroke="var(--accent, #9178E2)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M336 88 L344 94 L336 100" fill="none" stroke="var(--accent, #9178E2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="352" y="74" width="268" height="40" rx="8" fill="var(--accent-soft, rgba(145,120,226,.10))" stroke="var(--accent, #9178E2)" stroke-width="1.5"/>
+  <text x="486" y="99" text-anchor="middle" fill="var(--accent-ink, #7358BF)" font-size="14" font-weight="700">2시간 안에 의사결정 브리핑</text>
+
+  <!-- Row 2 : 보고서·제안서 -->
+  <text x="20" y="167" fill="var(--ink, #1C1C22)" font-size="14" font-weight="800">보고서·제안서</text>
+  <rect x="180" y="142" width="110" height="40" rx="8" fill="var(--bg-soft, #F4F4F5)" stroke="var(--hairline, #E4E4E7)" stroke-width="1.5"/>
+  <text x="235" y="167" text-anchor="middle" fill="var(--caption, #6E7175)" font-size="14" font-weight="700">매번 새로</text>
+  <path d="M300 162 L344 162" fill="none" stroke="var(--accent, #9178E2)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M336 156 L344 162 L336 168" fill="none" stroke="var(--accent, #9178E2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="352" y="142" width="268" height="40" rx="8" fill="var(--accent-soft, rgba(145,120,226,.10))" stroke="var(--accent, #9178E2)" stroke-width="1.5"/>
+  <text x="486" y="167" text-anchor="middle" fill="var(--accent-ink, #7358BF)" font-size="14" font-weight="700">판단 기준 반영 구조 재사용</text>
+
+  <!-- Row 3 : 의사결정 검증 -->
+  <text x="20" y="235" fill="var(--ink, #1C1C22)" font-size="14" font-weight="800">의사결정 검증</text>
+  <rect x="180" y="210" width="110" height="40" rx="8" fill="var(--bg-soft, #F4F4F5)" stroke="var(--hairline, #E4E4E7)" stroke-width="1.5"/>
+  <text x="235" y="235" text-anchor="middle" fill="var(--caption, #6E7175)" font-size="14" font-weight="700">감·자료 과부하</text>
+  <path d="M300 230 L344 230" fill="none" stroke="var(--accent, #9178E2)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M336 224 L344 230 L336 236" fill="none" stroke="var(--accent, #9178E2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="352" y="210" width="268" height="40" rx="8" fill="var(--accent-soft, rgba(145,120,226,.10))" stroke="var(--accent, #9178E2)" stroke-width="1.5"/>
+  <text x="486" y="235" text-anchor="middle" fill="var(--accent-ink, #7358BF)" font-size="14" font-weight="700">선택지·리스크 함께 점검</text>
+
+  <!-- Row 4 : 사내 전파 -->
+  <text x="20" y="303" fill="var(--ink, #1C1C22)" font-size="14" font-weight="800">사내 전파</text>
+  <rect x="180" y="278" width="110" height="40" rx="8" fill="var(--bg-soft, #F4F4F5)" stroke="var(--hairline, #E4E4E7)" stroke-width="1.5"/>
+  <text x="235" y="303" text-anchor="middle" fill="var(--caption, #6E7175)" font-size="14" font-weight="700">보여줄 장면 없음</text>
+  <path d="M300 298 L344 298" fill="none" stroke="var(--accent, #9178E2)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M336 292 L344 298 L336 304" fill="none" stroke="var(--accent, #9178E2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="352" y="278" width="268" height="40" rx="8" fill="var(--accent-soft, rgba(145,120,226,.10))" stroke="var(--accent, #9178E2)" stroke-width="1.5"/>
+  <text x="486" y="303" text-anchor="middle" fill="var(--accent-ink, #7358BF)" font-size="14" font-weight="700">시연 킷으로 첫 사례 시연</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg viewBox="0 0 720 220" role="img" aria-labelledby="t07 d07" class="visual-public-lifecycle" xmlns="http://www.w3.org/2000/svg">
+  <title id="t07">건립·운영·활성화 생애주기 — 일반 용역은 건립에서 끝나지만, 넥스트코웍은 개관 이후까지 설계한다</title>
+  <desc id="d07">건립·운영·활성화 세 단계가 왼쪽에서 오른쪽으로 이어진다. 위쪽 괄호는 일반 건축·용역의 범위가 건립에서 끝남을, 아래쪽 괄호는 넥스트코웍이 운영·활성화까지 전 생애주기를 맡음을 나타낸다. 운영·활성화 두 단계는 강조색으로 표시된다.</desc>
+
+  <!-- Top bracket: 일반 용역 = 건립까지 -->
+  <text x="160" y="46" fill="var(--caption, #6E7175)" font-size="14" font-weight="700" text-anchor="middle">일반 건축·용역 — 건립에서 종료</text>
+  <path d="M70 66 L70 58 L250 58 L250 66" fill="none" stroke="var(--caption, #6E7175)" stroke-width="2"/>
+
+  <!-- Phase 1: 건립 (공통 영역, 중립색) -->
+  <rect x="70" y="90" width="180" height="64" rx="8" fill="var(--bg-soft, #F4F4F5)" stroke="var(--hairline, #E4E4E7)" stroke-width="2"/>
+  <text x="160" y="129" fill="var(--ink, #1C1C22)" font-size="16" font-weight="700" text-anchor="middle">건립</text>
+
+  <!-- flow chevron -->
+  <path d="M258 112 L268 122 L258 132" fill="none" stroke="var(--accent-ink, #0C7B69)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Phase 2: 운영 (넥스트코웍 차별 영역, 강조색) -->
+  <rect x="270" y="90" width="180" height="64" rx="8" fill="var(--accent-soft, rgba(37,197,168,.10))" stroke="var(--accent-ink, #0C7B69)" stroke-width="2"/>
+  <text x="360" y="129" fill="var(--accent-ink, #0C7B69)" font-size="16" font-weight="700" text-anchor="middle">운영</text>
+
+  <!-- flow chevron -->
+  <path d="M458 112 L468 122 L458 132" fill="none" stroke="var(--accent-ink, #0C7B69)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Phase 3: 활성화 (넥스트코웍 차별 영역, 강조색) -->
+  <rect x="470" y="90" width="180" height="64" rx="8" fill="var(--accent-soft, rgba(37,197,168,.10))" stroke="var(--accent-ink, #0C7B69)" stroke-width="2"/>
+  <text x="560" y="129" fill="var(--accent-ink, #0C7B69)" font-size="16" font-weight="700" text-anchor="middle">활성화</text>
+
+  <!-- Bottom bracket: 넥스트코웍 = 전 생애주기 -->
+  <path d="M70 178 L70 186 L650 186 L650 178" fill="none" stroke="var(--accent-ink, #0C7B69)" stroke-width="2"/>
+  <text x="360" y="208" fill="var(--accent-ink, #0C7B69)" font-size="16" font-weight="800" text-anchor="middle">넥스트코웍 — 개관 이후 운영·활성화까지 설계</text>
+</svg>

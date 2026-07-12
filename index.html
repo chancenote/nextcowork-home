@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="/js/analytics.js?v=ncw-0e65c66888" defer></script>
+<script src="/js/analytics.js?v=ncw-7c37e8a7b4" defer></script>
 <title>넥스트코웍 NEXT COWORK — AI Workspace Builder | 공유오피스 컨설팅 · 기업 AI 교육</title>
 <meta name="description" content="일이 잘되는 공간, 일이 잘되는 방식. 공유오피스 도입·전환 컨설팅과 기업 AI 실무교육(AI Campus)을 함께 설계하는 컨설팅 회사. 청와대·신영증권·전북연구원 검증, 강연 106회+, 고객사 1,000+.">
 <link rel="canonical" href="https://www.nextcw.com/">
@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=ncw-0e65c66888">
+<link rel="stylesheet" href="/css/style.css?v=ncw-7c37e8a7b4">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -76,18 +76,19 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">본문 바로가기</a>
 <header class="nav">
   <div class="nav-inner">
     <a class="nav-logo" href="/"><strong>NEXT COWORK</strong><span>AI Workspace Builder</span></a>
     <nav aria-label="주요 메뉴">
       <ul class="nav-menu" id="nav-menu">
         <li class="has-sub">
-          <a href="/#services">서비스</a>
+          <a href="/#services" aria-haspopup="true">서비스</a>
           <ul class="sub">
-            <li style="--sub-c:#0079C4"><a href="/flexoffice/"><b><span class="dot"></span>FlexOffice 컨설팅</b><small>공유오피스 도입·전환·개발 컨설팅</small></a></li>
-            <li style="--sub-c:#6955BA"><a href="/ai-campus/"><b><span class="dot"></span>AI Campus</b><small>기업 AI 실무교육 · 사내 AI 캠퍼스 구축</small></a></li>
-            <li style="--sub-c:#25C5A8"><a href="/public/"><b><span class="dot"></span>Public Advisory</b><small>공공 공유공간·AI 역량강화 자문</small></a></li>
-            <li style="--sub-c:#9178E2"><a href="/coaching/"><b><span class="dot"></span>CEO AI 코칭</b><small>경영자 1:1 시그니처 프로그램</small></a></li>
+            <li style="--sub-c:var(--line-space)"><a href="/flexoffice/"><b><span class="dot"></span>FlexOffice 컨설팅</b><small>공유오피스 도입·전환·개발 컨설팅</small></a></li>
+            <li style="--sub-c:var(--line-ai)"><a href="/ai-campus/"><b><span class="dot"></span>AI Campus</b><small>기업 AI 실무교육 · 사내 AI 캠퍼스 구축</small></a></li>
+            <li style="--sub-c:var(--line-public)"><a href="/public/"><b><span class="dot"></span>Public Advisory</b><small>공공 공유공간·AI 역량강화 자문</small></a></li>
+            <li style="--sub-c:var(--line-coaching)"><a href="/coaching/"><b><span class="dot"></span>CEO AI 코칭</b><small>경영자 1:1 시그니처 프로그램</small></a></li>
           </ul>
         </li>
         <li><a href="/about/">대표 스토리</a></li>
@@ -101,12 +102,12 @@
   </div>
 </header>
 
-<main>
+<main id="main-content">
 
   <!-- 1. Hero -->
   <section class="hero">
     <div class="container">
-      <span class="hero-badge reveal">Next Cowork · Workspace Evolution</span>
+      <span class="hero-badge reveal">NEXT COWORK · Workspace Evolution</span>
       <h1 class="reveal" data-delay="1">일이 잘되는 공간,<br>일이 잘되는 <span class="accent">방식.</span></h1>
       <p class="lead reveal" data-delay="2">공간을 지어본 사람이, 일하는 방식을 설계합니다.<br>
       넥스트코웍은 공유오피스 컨설팅과 기업 AI 실무교육을 하나로 연결하는 <strong>AI Workspace Builder</strong>입니다.</p>
@@ -115,6 +116,35 @@
         <a class="btn btn-ghost" href="#services">서비스 살펴보기 <span class="arr">→</span></a>
       </div>
       <p class="reveal" data-delay="3" style="margin-top:16px;font-size:14.5px;color:var(--caption)">사전 진단은 무료입니다. 영업일 1일 내 회신드립니다.</p>
+    </div>
+  </section>
+
+  <!-- 1.5 자기분류 셀렉터 : hero 직하 (아이콘 색은 카드 --c → currentColor 상속) -->
+  <section class="selector" aria-label="어느 고민에 가까운지 선택">
+    <div class="container">
+      <p class="selector-q reveal">당신의 고민은 — 어느 쪽에 가깝습니까?</p>
+      <div class="selector-grid">
+        <a class="selector-card reveal" href="/flexoffice/" style="--c:var(--line-space)">
+          <span class="selector-ic"><svg viewBox="0 0 64 64" role="img" aria-labelledby="t03fx d03fx" xmlns="http://www.w3.org/2000/svg"><title id="t03fx">FlexOffice — 공간을 설계한다</title><desc id="d03fx">공유오피스 평면 모듈을 위에서 내려다본 추상 도형으로 공간 설계를 나타낸다.</desc><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="11" width="48" height="42" rx="6"/><line x1="32" y1="11" x2="32" y2="53"/></g><g fill="currentColor"><rect x="15" y="19" width="11" height="7" rx="2"/><circle cx="20.5" cy="42" r="4"/><rect x="38" y="38" width="11" height="7" rx="2"/><circle cx="43.5" cy="23" r="4"/></g></svg></span>
+          <b>공유오피스, 우리 프로젝트에 넣으면 진짜 수익이 납니까?</b>
+          <span class="selector-name">FlexOffice 컨설팅 <span class="arr">→</span></span>
+        </a>
+        <a class="selector-card reveal" data-delay="1" href="/ai-campus/" style="--c:var(--line-ai)">
+          <span class="selector-ic"><svg viewBox="0 0 64 64" role="img" aria-labelledby="t03ai d03ai" xmlns="http://www.w3.org/2000/svg"><title id="t03ai">AI Campus — 일하는 방식을 바꾼다</title><desc id="d03ai">세 개의 노드가 위로 이어지는 워크플로우로, 단계적으로 바뀌는 업무 방식을 나타낸다.</desc><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="16" y1="46" x2="32" y2="32"/><line x1="32" y1="32" x2="48" y2="18"/></g><g fill="currentColor"><circle cx="16" cy="46" r="6"/><circle cx="32" cy="32" r="6"/><circle cx="48" cy="18" r="6"/></g></svg></span>
+          <b>AI 교육 시켰는데 다음 주가 되니까 아무것도 안 변했어요.</b>
+          <span class="selector-name">AI Campus <span class="arr">→</span></span>
+        </a>
+        <a class="selector-card reveal" data-delay="2" href="/public/" style="--c:var(--line-public)">
+          <span class="selector-ic"><svg viewBox="0 0 64 64" role="img" aria-labelledby="t03pb d03pb" xmlns="http://www.w3.org/2000/svg"><title id="t03pb">Public Advisory — 공공과 함께한다</title><desc id="d03pb">공유 지붕(캐노피)이 기둥과 바닥 위에 놓인 추상 도형으로 공공의 공유공간을 나타낸다.</desc><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 34 a20 20 0 0 1 40 0"/><line x1="12" y1="34" x2="12" y2="50"/><line x1="52" y1="34" x2="52" y2="50"/><line x1="32" y1="15" x2="32" y2="50"/><line x1="7" y1="54" x2="57" y2="54"/></g></svg></span>
+          <b>공유공간, 만들고 나서 운영이 안 되면 그게 다 감사 지적사항이에요.</b>
+          <span class="selector-name">Public Advisory <span class="arr">→</span></span>
+        </a>
+        <a class="selector-card reveal" data-delay="3" href="/coaching/" style="--c:var(--line-coaching)">
+          <span class="selector-ic"><svg viewBox="0 0 64 64" role="img" aria-labelledby="t03co d03co" xmlns="http://www.w3.org/2000/svg"><title id="t03co">CEO AI 코칭 — 리더의 시간을 설계한다</title><desc id="d03co">한 초점(경영자)에서 위로 뻗는 성장 경로로, 1:1 코칭과 리더의 성장을 나타낸다.</desc><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="41" r="11"/><path d="M24 41 L45 20"/><path d="M36 20 L45 20 L45 29"/></g><circle cx="24" cy="41" r="4" fill="currentColor"/></svg></span>
+          <b>제 업무에 바로 쓸 수 있는 것만 콕 집어 배우고 싶어요.</b>
+          <span class="selector-name">CEO AI 코칭 <span class="arr">→</span></span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -132,7 +162,7 @@
   <div class="logo-strip" aria-label="주요 레퍼런스 기관">
     <div class="logo-track">
       <span><b>청와대(대통령실)</b></span><span>중소벤처기업부</span><span>행정안전부</span><span>산업통상자원부</span><span><b>신영증권</b></span><span>전북연구원</span><span>고려대학교</span><span>아주대학교</span><span>포스코ENG</span><span>㈜리슬</span><span>전라북도</span><span>충청남도</span><span>국토정보공사</span><span>전북테크노파크</span>
-      <span><b>청와대(대통령실)</b></span><span>중소벤처기업부</span><span>행정안전부</span><span>산업통상자원부</span><span><b>신영증권</b></span><span>전북연구원</span><span>고려대학교</span><span>아주대학교</span><span>포스코ENG</span><span>㈜리슬</span><span>전라북도</span><span>충청남도</span><span>국토정보공사</span><span>전북테크노파크</span>
+      <span aria-hidden="true" style="display:contents"><span><b>청와대(대통령실)</b></span><span>중소벤처기업부</span><span>행정안전부</span><span>산업통상자원부</span><span><b>신영증권</b></span><span>전북연구원</span><span>고려대학교</span><span>아주대학교</span><span>포스코ENG</span><span>㈜리슬</span><span>전라북도</span><span>충청남도</span><span>국토정보공사</span><span>전북테크노파크</span></span>
     </div>
   </div>
 
@@ -144,6 +174,32 @@
         <h2>AI는 미래가 아니라,<br>오늘의 업무 도구입니다.</h2>
         <p>일하는 공간과 일하는 방식이 동시에 바뀌고 있습니다. 공간만 바꾸면 반쪽이고, 툴만 도입하면 겉돕니다. 넥스트코웍은 그 교차점 — <strong style="color:var(--ink)">공간(Space) × 일하는 방식(AI Work)</strong> — 을 함께 설계하는 국내에서 드문 컨설팅 회사입니다.</p>
       </div>
+      <!-- R3-6 · Space × AI Work 교집합 벤 (design/visual/r3-06-home-intersection.svg) -->
+      <figure class="visual-figure reveal">
+        <svg viewBox="0 0 520 330" role="img" aria-labelledby="tR306 dR306" class="visual-home-intersection" xmlns="http://www.w3.org/2000/svg">
+          <title id="tR306">공간(Space) × 일하는 방식(AI Work)의 교집합 = AI Workspace Builder</title>
+          <desc id="dR306">왼쪽 원은 공간을 지어본 역량(Space), 오른쪽 원은 일하는 방식을 바꾸는 역량(AI Work)을 나타낸다. 두 원이 겹치는 교집합이 넥스트코웍의 자리이며, 그 교집합이 AI Workspace Builder다. 국내에서 두 역량을 함께 가진 회사가 드물다는 차별점을 보여준다.</desc>
+          <clipPath id="lensR306"><circle cx="196" cy="134" r="110"/></clipPath>
+          <circle cx="196" cy="134" r="110" fill="var(--line-space, #0079C4)" fill-opacity="0.08" stroke="var(--line-space, #0079C4)" stroke-width="2"/>
+          <circle cx="324" cy="134" r="110" fill="var(--line-ai, #6955BA)" fill-opacity="0.08" stroke="var(--line-ai, #6955BA)" stroke-width="2"/>
+          <circle cx="324" cy="134" r="110" fill="var(--indigo, #302D7C)" fill-opacity="0.12" clip-path="url(#lensR306)"/>
+          <g text-anchor="middle">
+            <text x="150" y="118" fill="var(--caption, #6E7175)" font-size="12" font-weight="700" letter-spacing="0.06em">SPACE</text>
+            <text x="150" y="140" fill="var(--line-space, #0079C4)" font-size="16" font-weight="800">공간</text>
+            <text x="150" y="160" fill="var(--caption, #6E7175)" font-size="12" font-weight="400">지어본 사람</text>
+          </g>
+          <g text-anchor="middle">
+            <text x="370" y="118" fill="var(--caption, #6E7175)" font-size="12" font-weight="700" letter-spacing="0.06em">AI WORK</text>
+            <text x="370" y="140" fill="var(--line-ai, #6955BA)" font-size="16" font-weight="800">AI 업무</text>
+            <text x="370" y="160" fill="var(--caption, #6E7175)" font-size="12" font-weight="400">바꾸는 사람</text>
+          </g>
+          <text x="260" y="138" text-anchor="middle" fill="var(--indigo, #302D7C)" font-size="12" font-weight="700">교집합</text>
+          <path d="M260 240 L260 268" fill="none" stroke="var(--indigo, #302D7C)" stroke-width="2"/>
+          <path d="M253 261 L260 269 L267 261" fill="none" stroke="var(--indigo, #302D7C)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="260" y="298" text-anchor="middle" fill="var(--indigo, #302D7C)" font-size="20" font-weight="800">= AI Workspace Builder</text>
+        </svg>
+        <figcaption>공간을 지어본 역량과 일하는 방식을 바꾸는 역량 — 이 둘이 겹치는 곳이 넥스트코웍의 자리입니다. 그 교집합의 이름이 AI Workspace Builder이고, 국내에서 두 역량을 함께 가진 회사는 드뭅니다.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -155,9 +211,9 @@
         <h2>서비스 라인업</h2>
         <p>고객의 질문에서 시작합니다. 당신의 고민은 어느 쪽에 가깝습니까?</p>
       </div>
-      <p class="reveal" style="text-align:center;margin:-8px auto 22px;font-size:14.5px;color:var(--caption);word-break:keep-all">어디서 시작할지 모르겠다면 — <a href="/contact/?s=general&amp;t=diagnosis&amp;cta=home_services_hint" style="color:var(--indigo);font-weight:700;text-decoration:none">무료 사전진단으로 방향부터 잡으세요 <span class="arr">→</span></a></p>
+      <p class="reveal" style="text-align:center;margin:-8px auto 22px;font-size:14.5px;color:var(--caption);word-break:keep-all">어디서 시작할지 모르겠다면 — <a class="link-indigo" href="/contact/?s=general&amp;t=diagnosis&amp;cta=home_services_hint">무료 사전진단으로 방향부터 잡으세요 <span class="arr">→</span></a></p>
       <div class="bento">
-        <a class="bento-card reveal" href="/flexoffice/" style="--c:#0079C4">
+        <a class="bento-card reveal" href="/flexoffice/" style="--c:var(--line-space)">
           <span class="bento-tag">Space · 공간을 설계한다</span>
           <p class="bento-voc">공유오피스, 우리 프로젝트에 넣으면 진짜 수익이 납니까?</p>
           <h3>FlexOffice 컨설팅</h3>
@@ -165,7 +221,7 @@
           <p>대형 복합개발 PM으로 공간을 지어본 경험과 공유오피스 4개 지점을 직접 운영한 숫자로, 도입 타당성부터 운영 설계·PF 어메니티 전략까지 원스톱 자문합니다.</p>
           <span class="bento-more">자세히 보기 <span class="arr">→</span></span>
         </a>
-        <a class="bento-card reveal" data-delay="1" href="/ai-campus/" style="--c:#6955BA">
+        <a class="bento-card reveal" data-delay="1" href="/ai-campus/" style="--c:var(--line-ai)">
           <span class="bento-tag">AI Work · 방식을 바꾼다</span>
           <p class="bento-voc">AI 교육 시켰는데 다음 주가 되니까 아무것도 안 변했어요.</p>
           <h3>AI Campus</h3>
@@ -173,7 +229,7 @@
           <p>한 번의 특강으로 조직은 변하지 않습니다. 진단→맞춤 커리큘럼→실무 워크샵→사내 전파자 양성→정착 팔로업까지, 그 회사의 실제 업무 위에서 가르칩니다.</p>
           <span class="bento-more">자세히 보기 <span class="arr">→</span></span>
         </a>
-        <a class="bento-card reveal" data-delay="1" href="/public/" style="--c:#25C5A8">
+        <a class="bento-card reveal" data-delay="1" href="/public/" style="--c:var(--line-public)">
           <span class="bento-tag">Public · 공공과 함께한다</span>
           <p class="bento-voc">공유공간, 만들고 나서 운영이 안 되면 그게 다 감사 지적사항이에요.</p>
           <h3>Public Advisory</h3>
@@ -181,7 +237,7 @@
           <p>민관협력 프로젝트 100건 이상. 공공의 절차와 언어를 이해하는 파트너가 건립 타당성부터 운영 모델, AI 역량강화 교육까지 근거가 남는 자문을 제공합니다.</p>
           <span class="bento-more">자세히 보기 <span class="arr">→</span></span>
         </a>
-        <a class="bento-card reveal" data-delay="2" href="/coaching/" style="--c:#9178E2">
+        <a class="bento-card reveal" data-delay="2" href="/coaching/" style="--c:var(--line-coaching)">
           <span class="bento-tag">Signature · 리더의 시간을 설계한다</span>
           <p class="bento-voc">제 업무에 바로 쓸 수 있는 것만 콕 집어 배우고 싶어요.</p>
           <h3>CEO AI 코칭</h3>
@@ -191,7 +247,7 @@
         </a>
       </div>
       <!-- 결합 오퍼 배지 — Smart FlexOffice 번들 상세·가격은 flexoffice/ai-campus 카드에서 관리 -->
-      <div class="reveal" style="margin-top:24px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:center;text-align:center;background:var(--bg-soft);border:1px solid var(--hairline);border-radius:var(--radius);padding:20px 28px;word-break:keep-all">
+      <div class="reveal callout" style="margin-top:24px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:center;text-align:center">
         <span style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.02em;color:#fff;background:var(--indigo);border-radius:999px;padding:5px 12px">결합 오퍼</span>
         <p style="margin:0;font-size:15px;color:var(--text)"><strong style="color:var(--ink)">Smart FlexOffice</strong> — 공간과 일하는 방식을 한 팀이 한 번에. 입주사가 AI로 일하는 프리미엄 공유오피스.</p>
         <a class="btn btn-ghost" href="/flexoffice/">결합 오퍼 보기 <span class="arr">→</span></a>
@@ -208,32 +264,32 @@
         <p>모든 경력이 지금의 서비스를 위해 존재했습니다. 공간을 지었고, 운영했고, 이제 일하는 방식을 바꿉니다.</p>
       </div>
       <div class="timeline">
-        <div class="tl-item reveal" style="--tc:#0079C4">
+        <div class="tl-item reveal" style="--tc:var(--line-space)">
           <div class="tl-years">2006 – 2014</div>
           <div class="tl-phase">BUILD</div>
           <h3>공간을 짓다</h3>
           <p>우림건설 신규사업 PM. 서울 상암 카이저팰리스(사업규모 2,900억), APT, 지식산업센터 등 대형개발사업의 PM으로 공간이 탄생하는 전 과정을 배웠습니다.</p>
         </div>
-        <div class="tl-item reveal" data-delay="1" style="--tc:#0095C3">
+        <div class="tl-item reveal" data-delay="1" style="--tc:var(--line-space)">
           <div class="tl-years">2015 – 2023</div>
           <div class="tl-phase">OPERATE</div>
           <h3>공간을 열다</h3>
           <p>스페이스코웍 창업. 호남권 최대 민간투자 공유오피스를 0에서 만들어 4개 지점, 고객사 1,000+, 누적대관 7,000+, 연매출 17.9억의 일터를 운영했습니다.</p>
         </div>
-        <div class="tl-item reveal" data-delay="2" style="--tc:#6955BA">
+        <div class="tl-item reveal" data-delay="2" style="--tc:var(--line-ai)">
           <div class="tl-years">2018 – 현재</div>
           <div class="tl-phase">SCALE</div>
           <h3>브랜드를 키우다</h3>
           <p>㈜리슬 고문/사외이사. 모던한복 글로벌 1위 브랜드의 디지털 AI 전환을 자문하며 동반 성장했습니다. 전략적 제휴, 글로벌마케팅, AI 실무활용, 정부지원사업 수주 등을 조력합니다. </p>
         </div>
-        <div class="tl-item reveal" data-delay="3" style="--tc:#E54B78">
+        <div class="tl-item reveal" data-delay="3" style="--tc:var(--point)">
           <div class="tl-years">2023 – 현재</div>
           <div class="tl-phase">TRANSFORM</div>
           <h3>공간을 바꾸다</h3>
-          <p>넥스트코웍 설립. AI Workspace Builder를 지향합니다. 공간의 경험 위에 AI를 더해, 복합개발 공간내 코워킹 어메니티 인프라를 도입합니다 (ex. 송도 센트럴비즈 한라). AI 실무활용술을 나눕니다. </p>
+          <p>넥스트코웍 설립. AI Workspace Builder입니다. 공간의 경험 위에 AI를 더해, 복합개발 공간내 코워킹 어메니티 인프라를 도입합니다 (ex. 송도 센트럴비즈 한라). AI 실무활용술을 나눕니다. </p>
         </div>
       </div>
-      <div style="margin-top:48px" class="reveal">
+      <div style="margin-top:40px" class="reveal">
         <a class="btn btn-ghost" href="/about/">대표 스토리 전체 보기 <span class="arr">→</span></a>
       </div>
     </div>
@@ -250,7 +306,7 @@
         <article class="case-card reveal">
           <div class="case-kicker" style="color:var(--line-space)">공간의 증명 · Space</div>
           <h3>스페이스코웍 — 0에서 호남권 최대까지</h3>
-          <p>공간 기획부터 시공, 운영, 마케팅, 매각 검토까지 공유오피스 비즈니스의 전 주기를 직접 경험했습니다. 창업 초부터 Digital SaaS 50여 종을 도입해 5개년 평균성장률 154%를 견인했습니다.</p>
+          <p>공간 기획부터 시공, 운영, 마케팅, 매각 검토까지 공유오피스 비즈니스의 전 주기를 직접 경험했습니다. 창업 초부터 Digital SaaS 50여 종을 도입해 평균성장률 154%를 견인했습니다.</p>
           <div class="case-metrics">
             <div><b>4<em>개</em></b><span>직영 지점</span></div>
             <div><b>1,000<em>+</em></b><span>누적 고객사</span></div>
@@ -375,6 +431,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=ncw-0e65c66888" defer></script>
+<script src="/js/main.js?v=ncw-7c37e8a7b4" defer></script>
 </body>
 </html>

@@ -1,0 +1,34 @@
+<svg viewBox="0 0 520 330" role="img" aria-labelledby="tR306 dR306" class="visual-home-intersection" xmlns="http://www.w3.org/2000/svg">
+  <title id="tR306">공간(Space) × 일하는 방식(AI Work)의 교집합 = AI Workspace Builder</title>
+  <desc id="dR306">왼쪽 원은 공간을 지어본 역량(Space), 오른쪽 원은 일하는 방식을 바꾸는 역량(AI Work)을 나타낸다. 두 원이 겹치는 교집합이 넥스트코웍의 자리이며, 그 교집합이 AI Workspace Builder다. 국내에서 두 역량을 함께 가진 회사가 드물다는 차별점을 보여준다.</desc>
+
+  <!-- 교집합(렌즈) 하이라이트: 오른쪽 원을 왼쪽 원으로 클립 -->
+  <clipPath id="lensR306"><circle cx="196" cy="134" r="110"/></clipPath>
+
+  <!-- Space circle (좌) -->
+  <circle cx="196" cy="134" r="110" fill="var(--line-space, #0079C4)" fill-opacity="0.08" stroke="var(--line-space, #0079C4)" stroke-width="2"/>
+  <!-- AI Work circle (우) -->
+  <circle cx="324" cy="134" r="110" fill="var(--line-ai, #6955BA)" fill-opacity="0.08" stroke="var(--line-ai, #6955BA)" stroke-width="2"/>
+  <!-- 교집합 강조 (brand indigo) -->
+  <circle cx="324" cy="134" r="110" fill="var(--indigo, #302D7C)" fill-opacity="0.12" clip-path="url(#lensR306)"/>
+
+  <!-- Space labels (좌 비겹침 영역) -->
+  <g text-anchor="middle">
+    <text x="150" y="118" fill="var(--caption, #6E7175)" font-size="12" font-weight="700" letter-spacing="0.06em">SPACE</text>
+    <text x="150" y="140" fill="var(--line-space, #0079C4)" font-size="16" font-weight="800">공간</text>
+    <text x="150" y="160" fill="var(--caption, #6E7175)" font-size="12" font-weight="400">지어본 사람</text>
+  </g>
+  <!-- AI Work labels (우 비겹침 영역) -->
+  <g text-anchor="middle">
+    <text x="370" y="118" fill="var(--caption, #6E7175)" font-size="12" font-weight="700" letter-spacing="0.06em">AI WORK</text>
+    <text x="370" y="140" fill="var(--line-ai, #6955BA)" font-size="16" font-weight="800">AI 업무</text>
+    <text x="370" y="160" fill="var(--caption, #6E7175)" font-size="12" font-weight="400">바꾸는 사람</text>
+  </g>
+  <!-- 교집합 라벨 -->
+  <text x="260" y="138" text-anchor="middle" fill="var(--indigo, #302D7C)" font-size="12" font-weight="700">교집합</text>
+
+  <!-- 연결선 → 결론 -->
+  <path d="M260 240 L260 268" fill="none" stroke="var(--indigo, #302D7C)" stroke-width="2"/>
+  <path d="M253 261 L260 269 L267 261" fill="none" stroke="var(--indigo, #302D7C)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="260" y="298" text-anchor="middle" fill="var(--indigo, #302D7C)" font-size="20" font-weight="800">= AI Workspace Builder</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg viewBox="0 0 64 64" role="img" aria-labelledby="t03fx d03fx" class="visual-selector-icon visual-selector-flexoffice" xmlns="http://www.w3.org/2000/svg">
+  <title id="t03fx">FlexOffice — 공간을 설계한다</title>
+  <desc id="d03fx">공유오피스 평면 모듈을 위에서 내려다본 추상 도형으로 공간 설계를 나타낸다.</desc>
+  <g fill="none" stroke="#0079C4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="8" y="11" width="48" height="42" rx="6"/>
+    <line x1="32" y1="11" x2="32" y2="53"/>
+  </g>
+  <g fill="#0079C4">
+    <rect x="15" y="19" width="11" height="7" rx="2"/>
+    <circle cx="20.5" cy="42" r="4"/>
+    <rect x="38" y="38" width="11" height="7" rx="2"/>
+    <circle cx="43.5" cy="23" r="4"/>
+  </g>
+</svg>

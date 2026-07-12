@@ -1,0 +1,32 @@
+<svg viewBox="0 0 720 150" role="img" aria-labelledby="t06 d06" class="visual-aicampus-strip" xmlns="http://www.w3.org/2000/svg">
+  <title id="t06">한 번의 특강이 아니라, 진단·실무 전환·정착이 하나로 이어지는 학습 체계</title>
+  <desc id="d06">진단, 실무 전환, 정착 세 단계가 하나의 연속된 트랙 위에 놓여 앞으로 이어진다. 세 단계가 끊기지 않고 연결되어 1회성 특강과 달리 지속되는 체계임을 나타낸다.</desc>
+
+  <!-- Continuous track = 끊기지 않는 체계 -->
+  <rect x="132" y="53" width="456" height="18" rx="9" fill="var(--accent-soft, rgba(105,85,186,.08))"/>
+
+  <!-- Forward chevrons = 흐름 방향 -->
+  <g fill="none" stroke="var(--accent, #6955BA)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M255 53 L266 62 L255 71"/>
+    <path d="M455 53 L466 62 L455 71"/>
+  </g>
+
+  <!-- Stage nodes -->
+  <g fill="#FFFFFF" stroke="var(--accent, #6955BA)" stroke-width="3">
+    <circle cx="160" cy="62" r="28"/>
+    <circle cx="360" cy="62" r="28"/>
+    <circle cx="560" cy="62" r="28"/>
+  </g>
+  <g fill="var(--accent, #6955BA)" font-size="20" font-weight="800" text-anchor="middle">
+    <text x="160" y="70">1</text>
+    <text x="360" y="70">2</text>
+    <text x="560" y="70">3</text>
+  </g>
+
+  <!-- Stage labels -->
+  <g fill="var(--ink, #1C1C22)" font-size="16" font-weight="700" text-anchor="middle">
+    <text x="160" y="126">진단</text>
+    <text x="360" y="126">실무 전환</text>
+    <text x="560" y="126">정착</text>
+  </g>
+</svg>

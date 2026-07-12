@@ -1,0 +1,45 @@
+<svg viewBox="0 0 640 320" role="img" aria-labelledby="t04 d04" class="visual-flexoffice-matrix" xmlns="http://www.w3.org/2000/svg">
+  <title id="t04">운영구조별 수지 비교 — 직영·위탁·임대 3구조를 수익성·운영부담·리스크로 실측 검증</title>
+  <desc id="d04">행은 직영·위탁·임대 세 가지 운영구조, 열은 수익성·운영부담·리스크 세 축. 각 칸의 채워진 점 개수(3개=높음, 1개=낮음)로 구조별 프로파일을 비교한다. 직영은 세 축 모두 높고, 임대는 모두 낮으며, 위탁은 중간 균형을 보인다.</desc>
+
+  <!-- Column headers -->
+  <g fill="var(--ink, #1C1C22)" font-size="20" font-weight="700" text-anchor="middle">
+    <text x="240" y="64">수익성</text>
+    <text x="400" y="64">운영부담</text>
+    <text x="560" y="64">리스크</text>
+  </g>
+
+  <!-- Row labels -->
+  <g fill="var(--ink, #1C1C22)" font-size="20" font-weight="700" text-anchor="end">
+    <text x="150" y="152">직영</text>
+    <text x="150" y="225">위탁</text>
+    <text x="150" y="298">임대</text>
+  </g>
+
+  <!-- Grid separators -->
+  <g stroke="var(--hairline, #E4E4E7)" stroke-width="1.5">
+    <line x1="170" y1="90" x2="170" y2="312"/>
+    <line x1="180" y1="182" x2="620" y2="182"/>
+    <line x1="180" y1="255" x2="620" y2="255"/>
+  </g>
+
+  <!-- Rating dots: filled = 높음 (accent = 페이지 테마색, flexoffice=#0079C4) -->
+  <g fill="var(--accent, #0079C4)">
+    <circle cx="210" cy="145" r="9"/><circle cx="240" cy="145" r="9"/><circle cx="270" cy="145" r="9"/>
+    <circle cx="370" cy="145" r="9"/><circle cx="400" cy="145" r="9"/><circle cx="430" cy="145" r="9"/>
+    <circle cx="530" cy="145" r="9"/><circle cx="560" cy="145" r="9"/><circle cx="590" cy="145" r="9"/>
+    <circle cx="210" cy="218" r="9"/><circle cx="240" cy="218" r="9"/>
+    <circle cx="370" cy="218" r="9"/>
+    <circle cx="530" cy="218" r="9"/><circle cx="560" cy="218" r="9"/>
+    <circle cx="210" cy="291" r="9"/>
+    <circle cx="370" cy="291" r="9"/>
+    <circle cx="530" cy="291" r="9"/>
+  </g>
+  <!-- Rating dots: empty = 낮음 (윤곽선만 = 형태로 구분, 색상 단독 아님) -->
+  <g fill="#FFFFFF" stroke="var(--caption, #6E7175)" stroke-width="2">
+    <circle cx="270" cy="218" r="9"/><circle cx="400" cy="218" r="9"/><circle cx="430" cy="218" r="9"/><circle cx="590" cy="218" r="9"/>
+    <circle cx="240" cy="291" r="9"/><circle cx="270" cy="291" r="9"/>
+    <circle cx="400" cy="291" r="9"/><circle cx="430" cy="291" r="9"/>
+    <circle cx="560" cy="291" r="9"/><circle cx="590" cy="291" r="9"/>
+  </g>
+</svg>

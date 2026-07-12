@@ -1,0 +1,43 @@
+<svg viewBox="0 0 640 344" role="img" aria-labelledby="t05 d05" class="visual-flexoffice-ladder" xmlns="http://www.w3.org/2000/svg">
+  <title id="t05">4티어 계단 사다리 — 위로 갈수록 산출물이 누적되고, 진단비는 설계 진행 시 전액 공제된다</title>
+  <desc id="d05">①진단·②설계·③PF·④동행 네 단계가 왼쪽에서 오른쪽으로 높아지는 계단. 각 단계는 아래 단계를 모두 포함(옅은 블록=이어받은 산출물, 진한 블록=그 단계가 새로 더하는 산출물)하며 위로 갈수록 쌓인다. ②에서 ①로 향하는 화살표는 진단비가 설계비에서 전액 공제됨을 나타낸다.</desc>
+
+  <!-- Inherited deliverables (옅은 블록 = 하위 단계에서 이어받음) -->
+  <g fill="var(--accent-soft, rgba(0,121,196,.08))" stroke="var(--accent, #0079C4)" stroke-width="2">
+    <rect x="246" y="208" width="96" height="42" rx="6"/>
+    <rect x="392" y="208" width="96" height="42" rx="6"/>
+    <rect x="392" y="160" width="96" height="42" rx="6"/>
+    <rect x="538" y="208" width="96" height="42" rx="6"/>
+    <rect x="538" y="160" width="96" height="42" rx="6"/>
+    <rect x="538" y="112" width="96" height="42" rx="6"/>
+  </g>
+  <!-- Own new deliverable (진한 블록 = 각 단계가 새로 더함) -->
+  <g fill="var(--accent, #0079C4)" stroke="var(--accent, #0079C4)" stroke-width="2">
+    <rect x="100" y="208" width="96" height="42" rx="6"/>
+    <rect x="246" y="160" width="96" height="42" rx="6"/>
+    <rect x="392" y="112" width="96" height="42" rx="6"/>
+    <rect x="538" y="64" width="96" height="42" rx="6"/>
+  </g>
+
+  <!-- Baseline -->
+  <line x1="90" y1="250.5" x2="646" y2="250.5" stroke="var(--hairline, #E4E4E7)" stroke-width="1.5"/>
+
+  <!-- Tier markers (원+digit, 06 스트립과 통일된 단계 마커 규칙) -->
+  <g fill="#fff" stroke="var(--accent, #0079C4)" stroke-width="3">
+    <circle cx="148" cy="274" r="18"/>
+    <circle cx="294" cy="274" r="18"/>
+    <circle cx="440" cy="274" r="18"/>
+    <circle cx="586" cy="274" r="18"/>
+  </g>
+  <g fill="var(--accent, #0079C4)" font-size="20" font-weight="800" text-anchor="middle">
+    <text x="148" y="282">1</text>
+    <text x="294" y="282">2</text>
+    <text x="440" y="282">3</text>
+    <text x="586" y="282">4</text>
+  </g>
+
+  <!-- Refund arrow: ② → ① 진단비 전액 공제 -->
+  <path d="M272 300 C 240 324, 198 324, 176 306" fill="none" stroke="var(--point, #E54B78)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M168 298 L176 307 L186 302" fill="none" stroke="var(--point, #E54B78)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="230" y="340" fill="var(--point, #E54B78)" font-size="14" font-weight="700" text-anchor="middle">진단비 전액 공제</text>
+</svg>

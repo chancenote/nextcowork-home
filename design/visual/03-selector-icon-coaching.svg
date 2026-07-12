@@ -1,0 +1,10 @@
+<svg viewBox="0 0 64 64" role="img" aria-labelledby="t03co d03co" class="visual-selector-icon visual-selector-coaching" xmlns="http://www.w3.org/2000/svg">
+  <title id="t03co">CEO AI 코칭 — 리더의 시간을 설계한다</title>
+  <desc id="d03co">한 초점(경영자)에서 위로 뻗는 성장 경로로, 1:1 코칭과 리더의 성장을 나타낸다.</desc>
+  <g fill="none" stroke="#9178E2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="41" r="11"/>
+    <path d="M24 41 L45 20"/>
+    <path d="M36 20 L45 20 L45 29"/>
+  </g>
+  <circle cx="24" cy="41" r="4" fill="#9178E2"/>
+</svg>

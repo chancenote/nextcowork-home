@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="/js/analytics.js?v=ncw-0e65c66888" defer></script>
+<script src="/js/analytics.js?v=ncw-7c37e8a7b4" defer></script>
 <title>CEO AI 코칭 | 경영자를 위한 1:1 AX 전환 프로그램 — 넥스트코웍</title>
 <meta name="description" content="질문하는 경영자에서 AI 에이전트와 협업하는 경영자로. 완전 비공개 1:1, 2시간×5회, 파운딩 프라이스 200만원. CEO AI Readiness 진단, Agent 플레이북, 사내 시연 킷까지 남기는 경영자 AX 코칭.">
 <link rel="canonical" href="https://www.nextcw.com/coaching/">
@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=ncw-0e65c66888">
+<link rel="stylesheet" href="/css/style.css?v=ncw-7c37e8a7b4">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -74,18 +74,19 @@
 </head>
 <body class="theme-coaching">
 
+<a class="skip-link" href="#main-content">본문 바로가기</a>
 <header class="nav">
   <div class="nav-inner">
     <a class="nav-logo" href="/"><strong>NEXT COWORK</strong><span>AI Workspace Builder</span></a>
     <nav aria-label="주요 메뉴">
       <ul class="nav-menu" id="nav-menu">
         <li class="has-sub">
-          <a href="/#services" class="active">서비스</a>
+          <a href="/#services" class="active" aria-haspopup="true">서비스</a>
           <ul class="sub">
-            <li style="--sub-c:#0079C4"><a href="/flexoffice/"><b><span class="dot"></span>FlexOffice 컨설팅</b><small>공유오피스 도입·전환·개발 컨설팅</small></a></li>
-            <li style="--sub-c:#6955BA"><a href="/ai-campus/"><b><span class="dot"></span>AI Campus</b><small>기업 AI 실무교육 · 사내 AI 캠퍼스 구축</small></a></li>
-            <li style="--sub-c:#25C5A8"><a href="/public/"><b><span class="dot"></span>Public Advisory</b><small>공공 공유공간·AI 역량강화 자문</small></a></li>
-            <li style="--sub-c:#9178E2"><a href="/coaching/"><b><span class="dot"></span>CEO AI 코칭</b><small>경영자 1:1 시그니처 프로그램</small></a></li>
+            <li style="--sub-c:var(--line-space)"><a href="/flexoffice/"><b><span class="dot"></span>FlexOffice 컨설팅</b><small>공유오피스 도입·전환·개발 컨설팅</small></a></li>
+            <li style="--sub-c:var(--line-ai)"><a href="/ai-campus/"><b><span class="dot"></span>AI Campus</b><small>기업 AI 실무교육 · 사내 AI 캠퍼스 구축</small></a></li>
+            <li style="--sub-c:var(--line-public)"><a href="/public/"><b><span class="dot"></span>Public Advisory</b><small>공공 공유공간·AI 역량강화 자문</small></a></li>
+            <li style="--sub-c:var(--line-coaching)"><a href="/coaching/"><b><span class="dot"></span>CEO AI 코칭</b><small>경영자 1:1 시그니처 프로그램</small></a></li>
           </ul>
         </li>
         <li><a href="/about/">대표 스토리</a></li>
@@ -97,19 +98,79 @@
   </div>
 </header>
 
-<main>
+<main id="main-content">
 
+  <!-- R3-1 · 산출물 7종 아이콘 심볼 시트 (페이지 1회 · design/visual/r3-01-deliverable-icons.svg 원본) -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="visual-deliverable-icons" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" focusable="false">
+    <symbol id="deliv-report" viewBox="0 0 24 24">
+      <title>진단 리포트</title>
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 3 h8 l4 4 v14 h-12 z"/>
+        <path d="M9 17 v-2 M12 17 v-5 M15 17 v-8"/>
+      </g>
+    </symbol>
+    <symbol id="deliv-matrix" viewBox="0 0 24 24">
+      <title>업무분해 매트릭스</title>
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="4" width="16" height="16" rx="2"/>
+        <path d="M12 4 v16 M4 12 h16"/>
+      </g>
+    </symbol>
+    <symbol id="deliv-playbook" viewBox="0 0 24 24">
+      <title>Agent 플레이북</title>
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="5" y="4" width="14" height="16" rx="2"/>
+        <path d="M9 4 v16"/>
+        <path d="M13 9 l4 3 l-4 3 z"/>
+      </g>
+    </symbol>
+    <symbol id="deliv-wiki" viewBox="0 0 24 24">
+      <title>Notion 위키</title>
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="8" y="3" width="12" height="14" rx="2"/>
+        <path d="M8 7 H5 a1 1 0 0 0 -1 1 v11 a1 1 0 0 0 1 1 h10 a1 1 0 0 0 1 -1 v-2"/>
+        <path d="M11 8 h6 M11 12 h6"/>
+      </g>
+    </symbol>
+    <symbol id="deliv-note" viewBox="0 0 24 24">
+      <title>프롬프트·스킬 노트</title>
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="5" width="14" height="16" rx="2"/>
+        <path d="M7 10 h6 M7 13 h8 M7 16 h5"/>
+        <path d="M18 3 v4 M16 5 h4"/>
+      </g>
+    </symbol>
+    <symbol id="deliv-demo" viewBox="0 0 24 24">
+      <title>사내 시연 킷</title>
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="5" width="18" height="12" rx="2"/>
+        <path d="M12 17 v3 M8 20 h8"/>
+        <path d="M10 9 l4 2.5 l-4 2.5 z"/>
+      </g>
+    </symbol>
+    <symbol id="deliv-plan" viewBox="0 0 24 24">
+      <title>90일 실행 플랜</title>
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="5" width="16" height="15" rx="2"/>
+        <path d="M4 9 h16 M8 3 v4 M16 3 v4"/>
+        <path d="M8.5 14.5 l2.5 2.5 l4.5 -4.5"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <!-- 1. Hero (R3-5 · H1을 VOC 인용구 위로 / R3-2 · 사다리 렌더 제거→참조) -->
   <section class="page-hero coaching-hero">
     <div class="container coaching-hero-grid">
       <div class="coaching-hero-copy">
         <div class="crumb reveal">Services / <b>CEO AI Coaching</b></div>
         <span class="hero-badge coaching-badge reveal">Executive AX Coaching · Founding 4 Seats</span>
-        <p class="voc reveal" data-delay="1">"제 업무에 바로 쓸 수 있는 것만 <b>콕 집어 배우고 싶어요.</b> 배우는 시간조차 내기 힘들거든요."</p>
         <h1 class="reveal" data-delay="1">질문하는 경영자에서,<br><span class="accent">AI와 Cowork하는 경영자</span>로.</h1>
-        <p class="answer reveal" data-delay="2">10시간이면 됩니다. CEO AI 코칭은 경영자의 실제 업무 위에 AI 워크플로우와 Agent 플레이북을 함께 구축하는 완전 비공개 1:1 AX 전환 프로그램입니다.</p>
+        <p class="voc reveal" data-delay="2">"제 업무에 바로 쓸 수 있는 것만 <b>콕 집어 배우고 싶어요.</b> 배우는 시간조차 내기 힘들거든요."</p>
+        <p class="answer reveal" data-delay="2">주 1회 2시간, 5주면 됩니다. CEO AI 코칭은 경영자의 실제 업무 위에 AI 워크플로우와 Agent 플레이북을 함께 구축하는 1:1 AX(AI Transformation·AI 전환) 프로그램입니다.</p>
         <div class="btn-row reveal" data-delay="3">
           <a class="btn btn-accent" href="/contact/?s=coaching&amp;t=founding&amp;cta=hero_founder">파운딩 4석 신청하기 <span class="arr">→</span></a>
           <a class="btn btn-ghost" href="#diagnosis">내 AX 단계 진단하기</a>
+          <a class="btn btn-ghost" href="/contact/?s=coaching&amp;t=consult&amp;cta=hero_low">10분 무료 적합성 상담 <span class="arr">→</span></a>
         </div>
         <div class="hero-proof reveal" data-delay="3" aria-label="프로그램 핵심 정보">
           <span>완전 비공개 1:1</span>
@@ -118,40 +179,20 @@
           <span>30일 팔로업</span>
         </div>
       </div>
-      <aside class="ax-hero-panel reveal" data-delay="2" aria-label="CEO AX 단계 지도">
+      <aside class="ax-hero-panel reveal" data-delay="2" aria-label="CEO AX 단계 요약">
         <div class="panel-kicker">CEO AX Route</div>
         <h2>AI와 Cowork하는 단계, <span>Lv.4</span>까지</h2>
-        <div class="ax-ladder">
-          <div class="ax-level">
-            <strong>Lv.1</strong>
-            <b>질문하기</b>
-            <p>필요할 때만 AI에게 물어보는 상태</p>
-          </div>
-          <div class="ax-level">
-            <strong>Lv.2</strong>
-            <b>콘텐츠 생성</b>
-            <p>글·요약·아이디어를 빠르게 만드는 상태</p>
-          </div>
-          <div class="ax-level">
-            <strong>Lv.3</strong>
-            <b>워크플로우 설계</b>
-            <p>반복 업무를 단계별로 나누는 상태</p>
-          </div>
-          <div class="ax-level active">
-            <strong>Lv.4</strong>
-            <b>에이전트와 Cowork</b>
-            <p>대표의 반복 업무에 AI 동료가 붙는 상태</p>
-          </div>
-        </div>
+        <p class="panel-ref">질문하기(Lv.1)에서 에이전트와 Cowork(Lv.4)까지 끌어올립니다. 전체 7단계 사다리는 <a href="#diagnosis">아래 진단</a>에서 한눈에 확인하세요.</p>
         <div class="ax-panel-stats">
           <div><b>10h</b><span>집중 코칭</span></div>
-          <div><b>4석</b><span>파운딩 한정</span></div>
-          <div><b>7개</b><span>실무 산출물</span></div>
+          <div><b>5주</b><span>주 1회 과정</span></div>
+          <div><b>Lv.4</b><span>도달 목표</span></div>
         </div>
       </aside>
     </div>
   </section>
 
+  <!-- 2. For Leaders (통증) -->
   <section class="section compact">
     <div class="container">
       <div class="section-head reveal">
@@ -184,11 +225,84 @@
     </div>
   </section>
 
-  <section class="section soft" id="diagnosis">
+  <!-- 3. ★성과 Outcome (R3-3 · Before/After 다이어그램 · 성과/산출물 라벨 분리) -->
+  <section class="section soft" id="outcome">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Outcome · 성과</span>
+        <h2>5주 후, 대표님의 일은 이렇게 달라집니다</h2>
+        <p>추상적인 AI 활용법이 아니라, 매주 반복되는 4대 경영 업무 장면을 기준으로 코칭 전·후를 비교합니다.</p>
+      </div>
+      <figure class="visual-figure reveal">
+        <svg viewBox="0 0 640 340" role="img" aria-labelledby="tR303 dR303" class="visual-coaching-outcome" xmlns="http://www.w3.org/2000/svg">
+          <title id="tR303">5주 후, 대표의 4대 반복 업무가 Before에서 After로 바뀐다</title>
+          <desc id="dR303">신규 아이템 검토·보고서·의사결정 검증·사내 전파 네 가지 반복 업무마다, 왼쪽의 코칭 전(Before) 상태에서 화살표를 지나 오른쪽의 코칭 후(After) 상태로 이동한다. 특히 신규 아이템 검토는 며칠에서 2시간으로 줄어드는 실측 대비다. 왼쪽은 회색(전), 오른쪽은 코칭 색상(후)으로 구분된다.</desc>
+          <rect x="20" y="8" width="80" height="30" rx="15" fill="var(--accent-soft, rgba(145,120,226,.10))" stroke="var(--accent, #9178E2)" stroke-width="1.5"/>
+          <text x="60" y="28" text-anchor="middle" fill="var(--accent-ink, #7358BF)" font-size="14" font-weight="800">5주 후</text>
+          <text x="235" y="28" text-anchor="middle" fill="var(--caption, #6E7175)" font-size="12" font-weight="700">Before · 코칭 전</text>
+          <text x="486" y="28" text-anchor="middle" fill="var(--accent-ink, #7358BF)" font-size="12" font-weight="700">After · 코칭 후</text>
+          <line x1="20" y1="48" x2="620" y2="48" stroke="var(--hairline, #E4E4E7)" stroke-width="1.5"/>
+          <text x="20" y="99" fill="var(--ink, #1C1C22)" font-size="14" font-weight="800">신규 아이템 검토</text>
+          <rect x="180" y="74" width="110" height="40" rx="8" fill="var(--bg-soft, #F4F4F5)" stroke="var(--hairline, #E4E4E7)" stroke-width="1.5"/>
+          <text x="235" y="99" text-anchor="middle" fill="var(--caption, #6E7175)" font-size="14" font-weight="700">며칠</text>
+          <path d="M300 94 L344 94" fill="none" stroke="var(--accent, #9178E2)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M336 88 L344 94 L336 100" fill="none" stroke="var(--accent, #9178E2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="352" y="74" width="268" height="40" rx="8" fill="var(--accent-soft, rgba(145,120,226,.10))" stroke="var(--accent, #9178E2)" stroke-width="1.5"/>
+          <text x="486" y="99" text-anchor="middle" fill="var(--accent-ink, #7358BF)" font-size="14" font-weight="700">2시간 안에 의사결정 브리핑</text>
+          <text x="20" y="167" fill="var(--ink, #1C1C22)" font-size="14" font-weight="800">보고서·제안서</text>
+          <rect x="180" y="142" width="110" height="40" rx="8" fill="var(--bg-soft, #F4F4F5)" stroke="var(--hairline, #E4E4E7)" stroke-width="1.5"/>
+          <text x="235" y="167" text-anchor="middle" fill="var(--caption, #6E7175)" font-size="14" font-weight="700">매번 새로</text>
+          <path d="M300 162 L344 162" fill="none" stroke="var(--accent, #9178E2)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M336 156 L344 162 L336 168" fill="none" stroke="var(--accent, #9178E2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="352" y="142" width="268" height="40" rx="8" fill="var(--accent-soft, rgba(145,120,226,.10))" stroke="var(--accent, #9178E2)" stroke-width="1.5"/>
+          <text x="486" y="167" text-anchor="middle" fill="var(--accent-ink, #7358BF)" font-size="14" font-weight="700">판단 기준 반영 구조 재사용</text>
+          <text x="20" y="235" fill="var(--ink, #1C1C22)" font-size="14" font-weight="800">의사결정 검증</text>
+          <rect x="180" y="210" width="110" height="40" rx="8" fill="var(--bg-soft, #F4F4F5)" stroke="var(--hairline, #E4E4E7)" stroke-width="1.5"/>
+          <text x="235" y="235" text-anchor="middle" fill="var(--caption, #6E7175)" font-size="14" font-weight="700">감·자료 과부하</text>
+          <path d="M300 230 L344 230" fill="none" stroke="var(--accent, #9178E2)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M336 224 L344 230 L336 236" fill="none" stroke="var(--accent, #9178E2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="352" y="210" width="268" height="40" rx="8" fill="var(--accent-soft, rgba(145,120,226,.10))" stroke="var(--accent, #9178E2)" stroke-width="1.5"/>
+          <text x="486" y="235" text-anchor="middle" fill="var(--accent-ink, #7358BF)" font-size="14" font-weight="700">선택지·리스크 함께 점검</text>
+          <text x="20" y="303" fill="var(--ink, #1C1C22)" font-size="14" font-weight="800">사내 전파</text>
+          <rect x="180" y="278" width="110" height="40" rx="8" fill="var(--bg-soft, #F4F4F5)" stroke="var(--hairline, #E4E4E7)" stroke-width="1.5"/>
+          <text x="235" y="303" text-anchor="middle" fill="var(--caption, #6E7175)" font-size="14" font-weight="700">보여줄 장면 없음</text>
+          <path d="M300 298 L344 298" fill="none" stroke="var(--accent, #9178E2)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M336 292 L344 298 L336 304" fill="none" stroke="var(--accent, #9178E2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="352" y="278" width="268" height="40" rx="8" fill="var(--accent-soft, rgba(145,120,226,.10))" stroke="var(--accent, #9178E2)" stroke-width="1.5"/>
+          <text x="486" y="303" text-anchor="middle" fill="var(--accent-ink, #7358BF)" font-size="14" font-weight="700">시연 킷으로 첫 사례 시연</text>
+        </svg>
+        <figcaption>매주 반복되는 4대 경영 업무 장면으로 5주 전·후를 비교합니다. 신규 아이템 검토는 며칠에서 2시간으로 줄어듭니다(실측). 나머지는 재사용·점검·시연이 가능한 구조로 바뀝니다.</figcaption>
+      </figure>
+      <p class="outcome-summary reveal">프로그램을 마치면 대표님은 최소 3개 반복 업무에 재사용 가능한 Agent 워크플로우와, 팀에 바로 시연할 킷을 손에 쥡니다.</p>
+    </div>
+  </section>
+
+  <!-- 4. ★결과물 Deliverables (R3-1 · 아이콘 + 수량/형식 라벨 · value-stack 흡수) -->
+  <section class="section soft">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Deliverable · 산출물</span>
+        <h2>손에 남는 7가지 산출물</h2>
+        <p>성과를 만드는 것은 손에 남는 자료입니다. 아래 7종이 파운딩·정규 프로그램에 모두 포함되며, 코칭이 끝난 뒤에도 대표님이 계속 씁니다.</p>
+      </div>
+      <div class="deliverable-grid">
+        <div class="deliverable-card reveal"><svg class="deliverable-ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#deliv-report"></use></svg><span>01</span><h3>CEO AI Readiness 진단 리포트</h3><p class="deliv-spec">A4 1장 · 현재 AX 레벨 + 업무별 적용 지도</p><p>현재 AX 레벨과 업무별 AI 적용 가능성을 한 장의 지도로 정리합니다.</p></div>
+        <div class="deliverable-card reveal" data-delay="1"><svg class="deliverable-ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#deliv-matrix"></use></svg><span>02</span><h3>업무분해 매트릭스</h3><p class="deliv-spec">표 1식 · 정보·문서·의사결정·자동화 4분류</p><p>대표님의 반복 업무를 정보·문서·의사결정·자동화 단위로 나눕니다.</p></div>
+        <div class="deliverable-card reveal" data-delay="1"><svg class="deliverable-ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#deliv-playbook"></use></svg><span>03</span><h3>핵심 업무 Agent 플레이북</h3><p class="deliv-spec">핵심 반복 업무 3개 · 바로 실행하는 운용서</p><p>시장 브리핑, 보고서, 검토 업무처럼 바로 쓰는 에이전트 운용법을 문서화합니다.</p></div>
+        <div class="deliverable-card reveal" data-delay="2"><svg class="deliverable-ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#deliv-wiki"></use></svg><span>04</span><h3>나만의 Notion 위키</h3><p class="deliv-spec">운영 위키 1식 · 코칭 후에도 대표님 소유</p><p>코칭 기록과 프롬프트, 업무 프로세스를 대표님의 운영 지식으로 남깁니다.</p></div>
+        <div class="deliverable-card reveal"><svg class="deliverable-ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#deliv-note"></use></svg><span>05</span><h3>프롬프트·스킬 노트</h3><p class="deliv-spec">검증된 프롬프트·업무 루틴 모음</p><p>강의식 프롬프트 모음이 아니라, 실제 업무에서 검증한 문장과 루틴을 모읍니다.</p></div>
+        <div class="deliverable-card reveal" data-delay="1"><svg class="deliverable-ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#deliv-demo"></use></svg><span>06</span><h3>사내 시연 킷</h3><p class="deliv-spec">팀 시연용 예시 + 설명 흐름 1세트</p><p>팀에게 보여줄 수 있는 AI 활용 예시와 설명 흐름을 준비합니다.</p></div>
+        <div class="deliverable-card reveal" data-delay="2"><svg class="deliverable-ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#deliv-plan"></use></svg><span>07</span><h3>90일 실행 플랜 + 30일 팔로업</h3><p class="deliv-spec">90일 우선순위 + 30일 점검 체크리스트</p><p>코칭 이후 어떤 업무부터 정착시킬지 우선순위를 잡고 30일간 점검합니다.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 자가진단 + 내 단계 (R3-2 · AX 7단계 사다리 유일 렌더) -->
+  <section class="section" id="diagnosis">
     <div class="container">
       <div class="diagnosis-grid">
         <div class="diagnosis-card reveal">
-          <span class="eyebrow">Free Preview</span>
+          <span class="eyebrow">Self-Diagnosis</span>
           <h2>나는 AX 몇 단계인가</h2>
           <p>아래 항목 중 4개 이상이 낯설다면, 아직 Lv.1~2 구간에 머물 가능성이 높습니다. 코칭의 목표는 질문을 잘하는 사람이 아니라 AI와 함께 일하는 경영자가 되는 것입니다.</p>
           <ol class="mini-checklist">
@@ -200,90 +314,74 @@
             <li>나만의 프롬프트와 Agent 플레이북이 문서화되어 있다.</li>
             <li>90일 안에 어떤 업무부터 자동화할지 우선순위가 있다.</li>
           </ol>
-          <a class="btn btn-accent" href="/contact/?s=coaching&amp;t=diagnosis&amp;cta=ax_diagnosis">진단 결과 상담하기 <span class="arr">→</span></a>
+          <a class="btn btn-accent" href="/contact/?s=coaching&amp;t=consult&amp;cta=ax_diagnosis">진단 결과 상담하기 <span class="arr">→</span></a>
         </div>
-        <div class="ax-map reveal" data-delay="1" aria-label="AX 7단계 지도">
-          <div class="ax-map-item"><b>Lv.1</b><span>질문하기</span><small>AI에게 물어보는 단계</small></div>
-          <div class="ax-map-item"><b>Lv.2</b><span>콘텐츠 생성</span><small>글·요약·아이디어 생산</small></div>
-          <div class="ax-map-item"><b>Lv.3</b><span>워크플로우 설계</span><small>업무를 분해하고 구조화</small></div>
-          <div class="ax-map-item target"><b>Lv.4</b><span>에이전트와 Cowork</span><small>대표 업무에 AI 동료 연결</small></div>
-          <div class="ax-map-item"><b>Lv.5</b><span>오케스트레이션</span><small>여러 자동화 흐름을 연결</small></div>
-          <div class="ax-map-item"><b>Lv.6</b><span>조직 OS</span><small>팀 전체의 업무 방식 전환</small></div>
-          <div class="ax-map-item"><b>Lv.7</b><span>자율 진화</span><small>운영 데이터가 계속 개선</small></div>
-        </div>
+        <figure class="visual-figure reveal" data-delay="1">
+          <svg viewBox="0 0 760 300" role="img" aria-labelledby="tR302 dR302" class="visual-coaching-ladder" xmlns="http://www.w3.org/2000/svg">
+            <title id="tR302">AX 7단계 상승 사다리 — 이 코칭은 Lv.1~3에서 Lv.4(에이전트와 Cowork)까지 끌어올린다</title>
+            <desc id="dR302">왼쪽 낮은 단계에서 오른쪽 높은 단계로 올라가는 7단 계단. Lv.1 질문하기부터 Lv.7 자율 진화까지 이어지며, Lv.4 에이전트와 Cowork가 이 코칭의 목표로 강조된다. Lv.5~7은 조직 단위로 확장되는 다음 지평이라 흐리게 표시된다. 왜 Lv.4에서 멈추는지를 개인 리더 코칭 구간과 조직 확장 구간을 나누는 세로 점선으로 설명한다.</desc>
+            <text x="240" y="60" text-anchor="middle" fill="var(--caption, #6E7175)" font-size="12" font-weight="700">코칭 목표 구간</text>
+            <text x="588" y="60" text-anchor="middle" fill="var(--caption, #6E7175)" font-size="12" font-weight="700">조직 단위 확장</text>
+            <line x1="436" y1="70" x2="436" y2="258" stroke="var(--hairline, #E4E4E7)" stroke-width="1.5" stroke-dasharray="4 5"/>
+            <g fill="var(--accent-soft, rgba(145,120,226,.10))" stroke="var(--accent, #9178E2)" stroke-width="1.5">
+              <rect x="44"  y="226" width="84" height="26" rx="6"/>
+              <rect x="144" y="206" width="84" height="46" rx="6"/>
+              <rect x="244" y="186" width="84" height="66" rx="6"/>
+            </g>
+            <rect x="344" y="166" width="84" height="86" rx="6" fill="var(--accent, #9178E2)" stroke="var(--accent, #9178E2)" stroke-width="2"/>
+            <g fill="none" stroke="var(--hairline, #E4E4E7)" stroke-width="1.5">
+              <rect x="444" y="146" width="84" height="106" rx="6"/>
+              <rect x="544" y="126" width="84" height="126" rx="6"/>
+              <rect x="644" y="106" width="84" height="146" rx="6"/>
+            </g>
+            <line x1="36" y1="252.5" x2="736" y2="252.5" stroke="var(--hairline, #E4E4E7)" stroke-width="1.5"/>
+            <text x="386" y="112" text-anchor="middle" fill="var(--accent, #9178E2)" font-size="12" font-weight="800">목표</text>
+            <path d="M386 120 L386 129" fill="none" stroke="var(--accent, #9178E2)" stroke-width="2" stroke-linecap="round"/>
+            <g fill="#fff" stroke="var(--accent, #9178E2)" stroke-width="3">
+              <circle cx="86"  cy="206" r="15"/>
+              <circle cx="186" cy="186" r="15"/>
+              <circle cx="286" cy="166" r="15"/>
+            </g>
+            <g fill="var(--accent, #9178E2)" font-size="20" font-weight="800" text-anchor="middle">
+              <text x="86"  y="213">1</text>
+              <text x="186" y="193">2</text>
+              <text x="286" y="173">3</text>
+            </g>
+            <circle cx="386" cy="146" r="15" fill="var(--accent, #9178E2)" stroke="var(--accent, #9178E2)" stroke-width="3"/>
+            <text x="386" y="153" text-anchor="middle" fill="#fff" font-size="20" font-weight="800">4</text>
+            <g fill="#fff" stroke="var(--hairline, #E4E4E7)" stroke-width="2">
+              <circle cx="486" cy="126" r="15"/>
+              <circle cx="586" cy="106" r="15"/>
+              <circle cx="686" cy="86"  r="15"/>
+            </g>
+            <g fill="var(--caption, #6E7175)" font-size="20" font-weight="800" text-anchor="middle">
+              <text x="486" y="133">5</text>
+              <text x="586" y="113">6</text>
+              <text x="686" y="93">7</text>
+            </g>
+            <g font-size="12" font-weight="700" text-anchor="middle">
+              <text x="86"  y="274" fill="var(--ink, #1C1C22)">질문하기</text>
+              <text x="186" y="274" fill="var(--ink, #1C1C22)">콘텐츠 생성</text>
+              <text x="286" y="274" fill="var(--ink, #1C1C22)">워크플로우</text>
+              <text x="386" y="274" fill="var(--accent-ink, #7358BF)" font-weight="800">에이전트 협업</text>
+              <text x="486" y="274" fill="var(--caption, #6E7175)">오케스트레이션</text>
+              <text x="586" y="274" fill="var(--caption, #6E7175)">조직 OS</text>
+              <text x="686" y="274" fill="var(--caption, #6E7175)">자율 진화</text>
+            </g>
+          </svg>
+          <figcaption>AX는 7단계로 오릅니다 — Lv.1 질문하기 · Lv.2 콘텐츠 생성 · Lv.3 워크플로우 설계 · <b>Lv.4 에이전트와 Cowork(이 코칭의 목표)</b> · Lv.5 오케스트레이션 · Lv.6 조직 OS · Lv.7 자율 진화. 개인 리더 코칭은 Lv.4까지, 그 위 조직 단위 전환은 AI Campus로 확장됩니다.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Transformation</span>
-        <h2>5회 후, 대표님의 일은 이렇게 달라집니다</h2>
-        <p>추상적인 AI 활용법이 아니라, 매주 반복되는 경영 업무 장면을 기준으로 Before → After를 설계합니다.</p>
-      </div>
-      <div class="after-grid">
-        <article class="after-card reveal">
-          <span>Market Briefing</span>
-          <h3>신규 아이템 검토</h3>
-          <div class="before-after">
-            <p><b>Before</b>시장조사·경쟁사 비교·가격대 검토에 며칠이 걸립니다.</p>
-            <p><b>After</b>2시간 안에 의사결정용 브리핑과 다음 액션이 정리됩니다.</p>
-          </div>
-        </article>
-        <article class="after-card reveal" data-delay="1">
-          <span>Document Work</span>
-          <h3>보고서와 제안서</h3>
-          <div class="before-after">
-            <p><b>Before</b>초안을 매번 새로 쓰고, 수정 방향을 말로 설명합니다.</p>
-            <p><b>After</b>대표님의 판단 기준이 반영된 문서 구조가 반복 재사용됩니다.</p>
-          </div>
-        </article>
-        <article class="after-card reveal" data-delay="1">
-          <span>Decision Support</span>
-          <h3>의사결정 검증</h3>
-          <div class="before-after">
-            <p><b>Before</b>감으로 판단하거나, 자료가 너무 많아 검토가 늦어집니다.</p>
-            <p><b>After</b>선택지·리스크·반대 논리를 AI가 함께 점검합니다.</p>
-          </div>
-        </article>
-        <article class="after-card reveal" data-delay="2">
-          <span>Team Demo</span>
-          <h3>사내 설득과 전파</h3>
-          <div class="before-after">
-            <p><b>Before</b>AI를 쓰라고 말하지만, 팀이 따라올 장면이 없습니다.</p>
-            <p><b>After</b>대표가 직접 만든 시연 킷으로 조직 전환의 첫 사례를 보여줍니다.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section soft">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Deliverables</span>
-        <h2>손에 남는 7가지 산출물</h2>
-        <p>코칭이 끝난 뒤에도 계속 쓰는 자료를 남깁니다. 가격을 보기 전에, 먼저 무엇을 가져가는지 확인하세요.</p>
-      </div>
-      <div class="deliverable-grid">
-        <div class="deliverable-card reveal"><span>01</span><h3>CEO AI Readiness 진단 리포트</h3><p>현재 AX 레벨과 업무별 AI 적용 가능성을 한 장의 지도로 정리합니다.</p></div>
-        <div class="deliverable-card reveal" data-delay="1"><span>02</span><h3>업무분해 매트릭스</h3><p>대표님의 반복 업무를 정보·문서·의사결정·자동화 단위로 나눕니다.</p></div>
-        <div class="deliverable-card reveal" data-delay="1"><span>03</span><h3>핵심 업무 Agent 플레이북</h3><p>시장 브리핑, 보고서, 검토 업무처럼 바로 쓰는 에이전트 운용법을 문서화합니다.</p></div>
-        <div class="deliverable-card reveal" data-delay="2"><span>04</span><h3>나만의 Notion 위키</h3><p>코칭 기록과 프롬프트, 업무 프로세스를 대표님의 운영 지식으로 남깁니다.</p></div>
-        <div class="deliverable-card reveal"><span>05</span><h3>프롬프트·스킬 노트</h3><p>강의식 프롬프트 모음이 아니라, 실제 업무에서 검증한 문장과 루틴을 모읍니다.</p></div>
-        <div class="deliverable-card reveal" data-delay="1"><span>06</span><h3>사내 시연 킷</h3><p>팀에게 보여줄 수 있는 AI 활용 예시와 설명 흐름을 준비합니다.</p></div>
-        <div class="deliverable-card reveal" data-delay="2"><span>07</span><h3>90일 실행 플랜 + 30일 팔로업</h3><p>코칭 이후 어떤 업무부터 정착시킬지 우선순위를 잡고 30일간 점검합니다.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="program">
+  <!-- 6. 진행 방식 + 신뢰 (R3-5 · Program + Why 병합 / Quote 1줄 흡수) -->
+  <section class="section soft" id="program">
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Program</span>
-        <h2>2시간 × 5회, 표준 70%와 맞춤 30%</h2>
-        <p>검증된 코어 구조는 유지하되, 1회차 진단 후 대표님의 실제 업무에 맞춰 회차별 난이도와 산출물을 조정합니다.</p>
+        <h2>주 1회 2시간 × 5회, 5주 코스</h2>
+        <p>AI로 혼자 열 사람 몫을 한다는 말의 진짜 조건은 도구가 아니라 워크플로우입니다. 검증된 코어 구조는 유지하되, 1회차 진단 후 대표님의 실제 업무에 맞춰 회차별 난이도와 산출물을 조정합니다.</p>
       </div>
       <div class="session-grid">
         <article class="session-card reveal">
@@ -317,13 +415,8 @@
           <p>사내 시연 킷과 Agent 플레이북을 완성하고, 다음 90일 실행 플랜을 확정합니다.</p>
         </article>
       </div>
-    </div>
-  </section>
-
-  <section class="section soft">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Why Next Cowork</span>
+      <div class="section-head reveal merge-head">
+        <span class="eyebrow">Why NEXT COWORK</span>
         <h2>경영을 해본 사람이, 경영자의 언어로 코칭합니다</h2>
       </div>
       <div class="why-grid">
@@ -349,38 +442,40 @@
     </div>
   </section>
 
+  <!-- 7. 가격 · 신청 (R3-4 · 티어 3역할 비교 스트립 · 가격 값 불변) -->
   <section class="section" id="pricing">
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Founding Offer</span>
-        <h2>파운딩 프라이스 200만원, 4석 한정</h2>
-        <p>정규 Signature 프로그램 전환 전, 초기 고객의 피드백과 사례화 협조를 전제로 한 한시 오퍼입니다. 공개 범위는 사전 협의합니다.</p>
+        <h2>정규 300만원 → 파운딩 200만원, 4석 한정</h2>
+        <p>파운딩은 낮은 등급이 아니라, 정규 Signature와 <b>동일 구성</b>을 사례화에 협조하는 초기 4석에 한해 200만원에 드리는 시점 할인입니다. 공개 범위는 사전 협의합니다.</p>
       </div>
       <div class="pricing-focus">
-        <div class="value-stack reveal">
-          <span>Value Stack</span>
-          <h3>포함되는 가치</h3>
-          <ul>
-            <li>2시간 × 5회 완전 비공개 1:1 코칭</li>
-            <li>CEO AI Readiness 진단 리포트</li>
-            <li>업무분해 매트릭스와 90일 우선순위 맵</li>
-            <li>대표님의 핵심 업무 Agent 플레이북</li>
-            <li>Notion 위키와 프롬프트·스킬 노트</li>
-            <li>사내 시연 킷과 30일 메신저 팔로업</li>
-          </ul>
+        <div class="tier-strip reveal">
+          <div class="tier-row is-core">
+            <div class="tier-role">Core · 파운딩/정규</div>
+            <div class="tier-delta">2시간×5회 빌드 + 산출물 7종 전부 포함</div>
+            <div class="tier-price"><s>정규 300만</s> 파운딩 200만</div>
+          </div>
+          <div class="tier-row">
+            <div class="tier-role">Signature+</div>
+            <div class="tier-delta">Core + 90일 리테이너 실행 동행(정착까지 곁에)</div>
+            <div class="tier-price">480만</div>
+          </div>
+          <div class="tier-row">
+            <div class="tier-role">이후 · 월 자문</div>
+            <div class="tier-delta">5회 종료 후 월 단위 운영 파트너로 전환</div>
+            <div class="tier-price">월 100만~</div>
+          </div>
+          <p class="tier-foot">임원·리더 팀 단위 전환은 AI Campus와 결합해 별도로 설계합니다.</p>
         </div>
         <div class="price-card featured coaching-price reveal" data-delay="1">
           <span class="flag">Founding 4 Seats</span>
-          <h4>CEO AI 코칭</h4>
+          <h4>CEO AI 코칭 · 파운딩</h4>
           <div class="for">경영자 · 임원 · 1인기업 대표 · 전문직</div>
-          <div class="price-value">200만원<small> · 2시간×5회</small></div>
+          <div class="price-value">200만원<small> · 2시간×5회 · 5주</small></div>
           <div class="price-note">대면 또는 온라인 · 일정 협의 · 2026년 9월까지 한시 적용</div>
-          <ul>
-            <li>정규 Signature 예정가 300만원</li>
-            <li>Signature+ 리테이너 번들 예정가 480만원</li>
-            <li>5회 종료 후 월 자문 전환 가능, 월 100만원부터</li>
-            <li>임원·리더 팀 단위는 AI Campus와 결합 설계</li>
-          </ul>
+          <p class="price-incl">위 산출물 7종 전부 포함 · 30일 메신저 팔로업</p>
           <a class="btn btn-accent" href="/contact/?s=coaching&amp;t=founding&amp;cta=pricing">파운딩 4석 신청하기 <span class="arr">→</span></a>
         </div>
       </div>
@@ -391,22 +486,8 @@
     </div>
   </section>
 
+  <!-- 8. FAQ -->
   <section class="section soft">
-    <div class="container">
-      <div class="quote-wrap reveal">
-        <span class="quote-mark">“</span>
-        <blockquote>AI로 혼자서 열 사람 몫을 한다는데,<br><span class="hl">그게 진짜 가능한가요?</span></blockquote>
-        <div class="quote-cite">
-          <div class="who">
-            <b>가능합니다. 단, 도구가 아니라 워크플로우를 가져야 합니다.</b>
-            <span>그 차이를 5회 안에 몸으로 확인하게 해드리는 것이 이 프로그램의 약속입니다.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">FAQ</span>
@@ -446,7 +527,7 @@
 <footer class="footer">
   <div class="footer-cta">
     <div class="container">
-      <span class="en">Executive AX Coaching — Founding 4 Seats</span>
+      <span class="en">경영자 AX 코칭 — 파운딩 4석 한정</span>
       <h2>이번 분기, 대표님의 업무 위에<br>AI 동료를 붙이세요.</h2>
       <p>리더의 10시간이 조직의 1000시간을 바꿉니다.</p>
       <a class="btn btn-point" href="/contact/?s=coaching&amp;t=founding&amp;cta=footer_founder">CEO AI 코칭 신청 <span class="arr">→</span></a>
@@ -492,6 +573,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=ncw-0e65c66888" defer></script>
+<script src="/js/main.js?v=ncw-7c37e8a7b4" defer></script>
 </body>
 </html>
