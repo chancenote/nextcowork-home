@@ -751,8 +751,10 @@ main { padding-top: 72px; }
   background:
     radial-gradient(340px 340px at 82% 14%, rgba(255,255,255,.16), transparent 60%),
     radial-gradient(500px 300px at 10% 100%, rgba(229,75,120,.22), transparent 55%);
+  z-index: 1;
 }
-.profile-visual .pv-text { position: relative; color: #fff; }
+.profile-visual .pv-photo { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.profile-visual .pv-text { position: relative; z-index: 2; color: #fff; text-shadow: 0 1px 14px rgba(48,45,124,.42); }
 .profile-visual .pv-text .en { font-family: var(--font-num); font-size: 12px; letter-spacing: .22em; font-weight: 700; opacity: .78; text-transform: uppercase; display: block; margin-bottom: 12px; }
 .profile-visual .pv-text p { font-size: 24px; font-weight: 800; line-height: 1.45; letter-spacing: -0.01em; }
 
