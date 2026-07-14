@@ -739,6 +739,7 @@ main { padding-top: 72px; }
 /* ---------- About page ---------- */
 .profile-hero { display: grid; grid-template-columns: 1.35fr 1fr; gap: 64px; align-items: center; }
 .profile-hero .roles { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 28px; }
+.profile-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
 .role-chip { font-size: 13.5px; font-weight: 700; padding: 8px 16px; border-radius: 999px; background: var(--bg-soft); color: var(--ink); border: 1px solid var(--hairline); }
 .profile-visual {
   aspect-ratio: 4/4.6; border-radius: 24px; position: relative; overflow: hidden;
