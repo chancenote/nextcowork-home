@@ -149,9 +149,9 @@ main p a.link-indigo { color: var(--indigo); font-weight: 700; text-decoration: 
 
 /* ---------- Sections ---------- */
 main { padding-top: 72px; }
-.section { padding: 108px 0; }
+.section { padding: 76px 0; }
 .section.soft { background: var(--bg-soft); }
-.section-head { max-width: 760px; margin-bottom: 56px; }
+.section-head { max-width: 760px; margin-bottom: 34px; }
 .eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--font-num); font-size: 12.5px; font-weight: 700;
@@ -165,7 +165,7 @@ main { padding-top: 72px; }
 /* ---------- Hero (home) ---------- */
 .hero {
   position: relative; overflow: hidden;
-  padding: 120px 0 96px;
+  padding: 88px 0 64px;
   background:
     radial-gradient(1000px 600px at 85% -10%, rgba(185, 158, 255, .16), transparent 60%),
     radial-gradient(800px 500px at -10% 110%, rgba(0, 121, 196, .07), transparent 55%),
@@ -207,7 +207,7 @@ main { padding-top: 72px; }
 /* ---------- Trust bar ---------- */
 .trust { border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); background: #fff; }
 .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-.trust-item { padding: 44px 20px; text-align: center; border-left: 1px solid var(--hairline); }
+.trust-item { padding: 30px 20px; text-align: center; border-left: 1px solid var(--hairline); }
 .trust-item:first-child { border-left: none; }
 .trust-num {
   font-family: var(--font-num); font-weight: 800; font-size: clamp(34px, 4.6vw, 54px);
@@ -216,7 +216,7 @@ main { padding-top: 72px; }
 .trust-num .plus { color: var(--point); font-size: .6em; vertical-align: super; }
 .trust-label { margin-top: 8px; font-size: 14.5px; color: var(--caption); font-weight: 600; }
 
-.logo-strip { overflow: hidden; padding: 26px 0; border-bottom: 1px solid var(--hairline); background: #fff; }
+.logo-strip { overflow: hidden; padding: 18px 0; border-bottom: 1px solid var(--hairline); background: #fff; }
 .logo-track { display: flex; gap: 56px; width: max-content; animation: marquee 36s linear infinite; }
 .logo-track span { font-size: 15px; font-weight: 700; color: var(--caption); letter-spacing: .02em; white-space: nowrap; }
 .logo-track span b { color: var(--text); }
@@ -226,11 +226,11 @@ main { padding-top: 72px; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 /* ---------- Bento services ---------- */
-.bento { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.bento { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 .bento-card {
   position: relative; overflow: hidden;
   background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius);
-  padding: 40px 36px 100px;
+  padding: 34px 30px 88px;
   transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
 }
 .bento-card::before {
@@ -261,7 +261,7 @@ main { padding-top: 72px; }
 /* ---------- Timeline (home summary + about) ---------- */
 .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
 .timeline::before { content: ""; position: absolute; top: 9px; left: 2%; right: 2%; height: 2px; background: linear-gradient(90deg, var(--line-space), var(--violet), var(--point)); border-radius: 2px; }
-.tl-item { padding: 40px 22px 0 0; position: relative; }
+.tl-item { padding: 32px 22px 0 0; position: relative; }
 .tl-item::before { content: ""; position: absolute; top: 2px; left: 0; width: 16px; height: 16px; border-radius: 50%; background: #fff; border: 4px solid var(--tc, var(--violet)); }
 .tl-years { font-family: var(--font-num); font-weight: 800; font-size: 15px; color: var(--tc, var(--violet)); letter-spacing: .02em; }
 .tl-phase { font-family: var(--font-num); font-size: 11.5px; font-weight: 700; letter-spacing: .18em; color: var(--caption); margin: 2px 0 10px; }
@@ -269,10 +269,10 @@ main { padding-top: 72px; }
 .tl-item p { font-size: 14.5px; line-height: 1.65; }
 
 /* ---------- Case study ---------- */
-.case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .case-card {
   background: #fff; border-radius: var(--radius); border: 1px solid var(--hairline);
-  padding: 44px 40px; transition: transform .28s, box-shadow .28s;
+  padding: 36px 34px; transition: transform .28s, box-shadow .28s;
 }
 .case-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
 .case-kicker { font-family: var(--font-num); font-size: 12.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 16px; }
@@ -290,7 +290,7 @@ main { padding-top: 72px; }
 .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; counter-reset: step; }
 .step {
   background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius-md);
-  padding: 28px 22px; counter-increment: step; position: relative;
+  padding: 24px 20px; counter-increment: step; position: relative;
 }
 .step::before {
   content: "0" counter(step);
@@ -302,7 +302,7 @@ main { padding-top: 72px; }
 
 /* ---------- Quote / signature ---------- */
 .quote-wrap { max-width: 900px; margin: 0 auto; text-align: center; }
-.quote-mark { font-family: Georgia, serif; font-size: 84px; line-height: .5; color: var(--lavender); display: block; margin-bottom: 28px; }
+.quote-mark { font-family: Georgia, serif; font-size: 84px; line-height: .5; color: var(--lavender); display: block; margin-bottom: 20px; }
 .quote-wrap blockquote { font-size: clamp(24px, 3.4vw, 36px); font-weight: 800; color: var(--ink); line-height: 1.45; letter-spacing: -0.02em; }
 .quote-wrap blockquote .hl { background: linear-gradient(transparent 62%, var(--lavender-pale) 62%); }
 .quote-cite { margin-top: 30px; display: flex; align-items: center; justify-content: center; gap: 14px; }
@@ -311,7 +311,7 @@ main { padding-top: 72px; }
 
 /* ---------- VOC page hero ---------- */
 .page-hero {
-  position: relative; padding: 96px 0 72px; overflow: hidden;
+  position: relative; padding: 68px 0 50px; overflow: hidden;
   background:
     radial-gradient(900px 480px at 90% -20%, var(--accent-soft), transparent 60%),
     var(--bg);
@@ -331,8 +331,8 @@ main { padding-top: 72px; }
 .page-hero .answer strong { color: var(--ink); }
 
 /* ---------- CEO coaching landing ---------- */
-.section.compact { padding: 88px 0; }
-.coaching-hero { padding: 84px 0 48px; } /* C5 · shorter desktop hero → next section peeks (mobile overridden ≤720) */
+.section.compact { padding: 62px 0; }
+.coaching-hero { padding: 68px 0 40px; } /* C5 · shorter desktop hero → next section peeks (mobile overridden ≤720) */
 .coaching-hero-grid {
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, 460px);
   gap: 64px; align-items: center;
@@ -390,7 +390,7 @@ main { padding-top: 72px; }
 .pain-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .pain-card {
   background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius);
-  padding: 30px 26px; box-shadow: var(--shadow-card);
+  padding: 26px 22px; box-shadow: var(--shadow-card);
 }
 .pain-card span, .after-card span, .value-stack > span {
   display: inline-flex; align-items: center; min-height: 28px; padding: 4px 10px;
@@ -407,7 +407,7 @@ main { padding-top: 72px; }
 }
 .diagnosis-card, .ax-map {
   background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius);
-  padding: 36px; box-shadow: var(--shadow-card);
+  padding: 30px; box-shadow: var(--shadow-card);
 }
 .diagnosis-card h2 { font-size: var(--h2); letter-spacing: 0; margin-bottom: 12px; }
 .diagnosis-card > p { font-size: 16px; line-height: 1.74; margin-bottom: 22px; }
@@ -442,7 +442,7 @@ main { padding-top: 72px; }
 .after-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .after-card {
   background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius);
-  padding: 30px 26px; box-shadow: var(--shadow-card);
+  padding: 26px 22px; box-shadow: var(--shadow-card);
 }
 .after-card h3 { font-size: 18px; letter-spacing: 0; margin-bottom: 18px; }
 .before-after { display: grid; gap: 12px; }
@@ -514,7 +514,7 @@ main { padding-top: 72px; }
 
 /* ---------- Why blocks ---------- */
 .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.why-card { background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius); padding: 34px 30px; }
+.why-card { background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius); padding: 28px 26px; }
 .why-card .num { font-family: var(--font-num); font-weight: 800; font-size: 36px; color: var(--accent-ink); letter-spacing: -0.02em; line-height: 1.1; }
 .why-card .num small { font-size: .5em; font-weight: 700; }
 .why-card h4 { font-size: 18px; margin: 14px 0 8px; }
@@ -591,12 +591,12 @@ main { padding-top: 72px; }
 .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
 /* 4-tier variant (FlexOffice): 데스크톱 4열 → 태블릿 2×2 → 모바일 1열 */
 .price-grid.cols4 { grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.price-grid.cols4 .price-card { padding: 32px 24px; }
+.price-grid.cols4 .price-card { padding: 28px 22px; }
 @media (max-width: 1024px) { .price-grid.cols4 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 720px)  { .price-grid.cols4 { grid-template-columns: 1fr; } }
 .price-card {
   background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius);
-  padding: 38px 32px; display: flex; flex-direction: column;
+  padding: 32px 28px; display: flex; flex-direction: column;
   transition: transform .25s, box-shadow .25s;
 }
 .price-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
@@ -630,12 +630,12 @@ main { padding-top: 72px; }
 .faq details { border-bottom: 1px solid var(--hairline); }
 .faq summary {
   cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;
-  gap: 20px; padding: 24px 4px; font-size: 17px; font-weight: 700; color: var(--ink);
+  gap: 20px; padding: 20px 4px; font-size: 17px; font-weight: 700; color: var(--ink);
 }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after { content: "+"; font-family: var(--font-num); font-size: 24px; font-weight: 400; color: var(--accent-ink); transition: transform .25s; }
 .faq details[open] summary::after { transform: rotate(45deg); }
-.faq .faq-a { padding: 0 4px 26px; font-size: 16px; line-height: 1.75; color: var(--text); max-width: 700px; }
+.faq .faq-a { padding: 0 4px 22px; font-size: 16px; line-height: 1.75; color: var(--text); max-width: 700px; }
 
 /* ---------- Insights hub ---------- */
 .channel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -703,9 +703,9 @@ main { padding-top: 72px; }
   color: var(--text); font-size: 18px; line-height: 1.9;
 }
 .post-body h2 {
-  margin: 52px 0 16px; font-size: clamp(24px, 3vw, 32px); letter-spacing: 0;
+  margin: 40px 0 14px; font-size: clamp(24px, 3vw, 32px); letter-spacing: 0;
 }
-.post-body h3 { margin: 34px 0 12px; font-size: 22px; letter-spacing: 0; }
+.post-body h3 { margin: 26px 0 10px; font-size: 22px; letter-spacing: 0; }
 .post-body p { margin: 0 0 22px; }
 .post-body a { color: var(--accent-ink); font-weight: 800; text-decoration: underline; text-underline-offset: 4px; }
 .post-body ul, .post-body ol { margin: 0 0 24px 22px; }
@@ -891,7 +891,7 @@ main { padding-top: 72px; }
 .public-experience-stats span { display: block; margin-top: 5px; color: var(--caption); font-size: 12.5px; line-height: 1.45; }
 .public-space-cta { max-width: 1040px; margin: 32px auto 0; }
 
-.public-process-section .section-head { max-width: 900px; margin-bottom: 36px; }
+.public-process-section .section-head { max-width: 900px; margin-bottom: 28px; }
 .public-process-section .section-head p { line-height: 1.86; }
 .public-fee-list { max-width: 980px; margin: 0 auto; display: grid; gap: 12px; }
 .public-fee-row {
@@ -915,8 +915,8 @@ main { padding-top: 72px; }
   max-width: 980px; margin: 16px auto 0; color: var(--caption);
   font-size: 13px; line-height: 1.8; word-break: keep-all;
 }
-.public-process-section .public-process-steps { margin-top: 44px; gap: 16px; }
-.public-process-section .step { min-height: 168px; padding: 30px 24px; }
+.public-process-section .public-process-steps { margin-top: 30px; gap: 16px; }
+.public-process-section .step { min-height: 152px; padding: 26px 22px; }
 .public-process-section .step p { line-height: 1.7; }
 .public-process-cta { margin-top: 40px; }
 .public-faq { max-width: 920px; }
@@ -939,7 +939,7 @@ main { padding-top: 72px; }
   .public-experience-stats { gap: 8px; }
   .public-experience-stats div { padding: 15px 12px; }
   .public-experience-stats b { font-size: 19px; }
-  .public-process-section .section-head { margin-bottom: 28px; }
+  .public-process-section .section-head { margin-bottom: 22px; }
   .public-fee-row { grid-template-columns: 1fr; gap: 10px; padding: 22px 20px; }
   .public-fee-value { text-align: left; white-space: normal; }
   .public-process-section .public-process-steps { grid-template-columns: 1fr; gap: 12px; }
@@ -950,7 +950,7 @@ main { padding-top: 72px; }
 
 /* ---------- Contact ---------- */
 .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: flex-start; }
-.form-card { background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius); padding: 42px; box-shadow: var(--shadow-card); }
+.form-card { background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius); padding: 34px; box-shadow: var(--shadow-card); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .field { margin-bottom: 18px; }
 .field label { display: block; font-size: 13.5px; font-weight: 700; color: var(--ink); margin-bottom: 7px; }
@@ -985,7 +985,7 @@ main { padding-top: 72px; }
 .form-meta-note { font-size: 12.5px; color: var(--caption); margin-top: 10px; text-align: center; line-height: 1.65; }
 .channel-card-secondary { box-shadow: none; }
 .contact-aside { display: grid; gap: 16px; }
-.aside-card { background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius-md); padding: 28px 28px; }
+.aside-card { background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius-md); padding: 24px 24px; }
 .aside-card h4 { font-size: 17px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
 .aside-card h4 .ic { width: 34px; height: 34px; border-radius: 10px; background: var(--accent-soft); color: var(--violet); display: grid; place-items: center; font-size: 15px; }
 .aside-card p, .aside-card a.link { font-size: 14.5px; line-height: 1.7; }
@@ -994,11 +994,11 @@ main { padding-top: 72px; }
 
 /* ---------- Footer ---------- */
 .footer { background: var(--indigo); color: rgba(255,255,255,.78); margin-top: 0; }
-.footer-cta { padding: 96px 0 72px; text-align: center; border-bottom: 1px solid rgba(255,255,255,.14); }
+.footer-cta { padding: 66px 0 50px; text-align: center; border-bottom: 1px solid rgba(255,255,255,.14); }
 .footer-cta .en { font-family: var(--font-num); font-size: 13px; letter-spacing: .24em; font-weight: 700; text-transform: uppercase; color: var(--lavender); display: block; margin-bottom: 18px; }
 .footer-cta h2 { color: #fff; font-size: clamp(30px, 4.6vw, 48px); letter-spacing: -0.02em; margin-bottom: 16px; }
-.footer-cta p { font-size: 17px; margin-bottom: 36px; }
-.footer-main { padding: 56px 0 28px; }
+.footer-cta p { font-size: 17px; margin-bottom: 25px; }
+.footer-main { padding: 44px 0 24px; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 44px; }
 .footer h5 { color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 16px; letter-spacing: .04em; }
 .footer-grid a, .footer-grid p { display: block; font-size: 14px; line-height: 2.1; color: rgba(255,255,255,.66); }
@@ -1037,7 +1037,7 @@ main { padding-top: 72px; }
 }
 
 /* ---------- Self-classify selector (home hero / insights routing) ---------- */
-.selector { padding: 44px 0 52px; }
+.selector { padding: 35px 0 42px; }
 .selector-q {
   text-align: center; font-size: clamp(17px, 2.1vw, 21px); font-weight: 800;
   color: var(--ink); letter-spacing: -0.01em; margin-bottom: 22px; word-break: keep-all;
@@ -1059,7 +1059,7 @@ main { padding-top: 72px; }
 }
 
 /* ---------- Inserted visual figures (inline SVG diagrams) ---------- */
-.visual-figure { margin: 30px auto 0; max-width: 720px; text-align: center; }
+.visual-figure { margin: 24px auto 0; max-width: 720px; text-align: center; }
 .visual-figure svg { width: 100%; height: auto; display: block; }
 .visual-figure figcaption {
   margin: 14px auto 0; max-width: 660px; font-size: 13.5px; line-height: 1.7;
@@ -1070,7 +1070,7 @@ main { padding-top: 72px; }
 /* ---------- Callout / info box (converged inline boxes) ---------- */
 .callout {
   background: var(--bg-soft); border: 1px solid var(--hairline);
-  border-radius: var(--radius); padding: 28px 32px; word-break: keep-all;
+  border-radius: var(--radius); padding: 24px 28px; word-break: keep-all;
 }
 .callout--feature { border-color: var(--accent); }
 
@@ -1087,7 +1087,7 @@ main { padding-top: 72px; }
 }
 .panel-ref { font-size: 14px; line-height: 1.7; color: var(--text); margin-bottom: 20px; word-break: keep-all; }
 .panel-ref a { color: var(--accent-ink); font-weight: 700; }
-.merge-head { margin-top: 56px; }
+.merge-head { margin-top: 38px; }
 .diagnosis-grid .visual-figure { margin: 0; max-width: none; align-self: center; }
 .price-incl { margin: 4px 0 18px; font-size: 13.5px; line-height: 1.6; color: var(--caption); word-break: keep-all; }
 .tier-strip { display: grid; gap: 12px; align-content: start; }
@@ -1154,10 +1154,10 @@ main { padding-top: 72px; }
 
 @media (max-width: 720px) {
   body { font-size: 17px; }
-  .section { padding: 76px 0; }
-  .section.compact { padding: 64px 0; }
+  .section { padding: 54px 0; }
+  .section.compact { padding: 46px 0; }
   /* B2 · compress coaching mobile hero (was 152%vh) so the AX evidence card + 2nd CTA enter the first ~1.2 screens */
-  .coaching-hero { padding: 48px 0 36px; }
+  .coaching-hero { padding: 38px 0 30px; }
   .coaching-hero-grid { gap: 22px; }
   .coaching-hero h1 { margin-bottom: 12px; }
   .coaching-hero .voc { margin-bottom: 16px; padding-top: 2px; padding-bottom: 2px; }
