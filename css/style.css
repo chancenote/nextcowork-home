@@ -244,7 +244,7 @@ main { padding-top: 72px; }
   background: color-mix(in srgb, var(--c, var(--indigo)) 9%, #fff);
   padding: 6px 12px; border-radius: 999px; margin-bottom: 20px;
 }
-.bento-voc { font-size: 15px; color: var(--caption); font-style: normal; margin-bottom: 14px; line-height: 1.6; }
+.bento-voc { font-size: 15px; color: var(--caption); font-style: normal; margin-bottom: 14px; line-height: 1.65; }
 .bento-voc::before { content: "“"; color: var(--c, var(--indigo)); font-weight: 800; }
 .bento-voc::after { content: "”"; color: var(--c, var(--indigo)); font-weight: 800; }
 .bento-card h3 { font-size: 24px; margin-bottom: 6px; }
@@ -266,7 +266,7 @@ main { padding-top: 72px; }
 .tl-years { font-family: var(--font-num); font-weight: 800; font-size: 15px; color: var(--tc, var(--violet)); letter-spacing: .02em; }
 .tl-phase { font-family: var(--font-num); font-size: 11.5px; font-weight: 700; letter-spacing: .18em; color: var(--caption); margin: 2px 0 10px; }
 .tl-item h3 { font-size: 20px; margin-bottom: 8px; }
-.tl-item p { font-size: 14.5px; line-height: 1.66; }
+.tl-item p { font-size: 14.5px; line-height: 1.65; }
 
 /* ---------- Case study ---------- */
 .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -276,7 +276,7 @@ main { padding-top: 72px; }
 }
 .case-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
 .case-kicker { font-family: var(--font-num); font-size: 12.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 16px; }
-.case-card h3 { font-size: 23px; margin-bottom: 10px; }
+.case-card h3 { font-size: 24px; margin-bottom: 10px; }
 .case-card > p { font-size: 15.5px; margin-bottom: 26px; }
 .case-metrics { display: flex; gap: 36px; padding-top: 24px; border-top: 1px solid var(--hairline); }
 .case-metrics div b {
@@ -298,7 +298,7 @@ main { padding-top: 72px; }
   display: block; margin-bottom: 12px; letter-spacing: .04em;
 }
 .step h4 { font-size: 17px; margin-bottom: 6px; }
-.step p { font-size: 13.5px; line-height: 1.6; color: var(--caption); }
+.step p { font-size: 13.5px; line-height: 1.65; color: var(--caption); }
 
 /* ---------- Quote / signature ---------- */
 .quote-wrap { max-width: 900px; margin: 0 auto; text-align: center; }
@@ -370,7 +370,7 @@ main { padding-top: 72px; }
   font-weight: 800; color: var(--accent-ink);
 }
 .ax-level b { color: var(--ink); font-size: 15px; }
-.ax-level p { font-size: 13px; line-height: 1.55; color: var(--caption); }
+.ax-level p { font-size: 13px; line-height: 1.6; color: var(--caption); }
 .ax-level.active {
   background: linear-gradient(135deg, var(--indigo), var(--violet));
   border-color: transparent; color: #fff;
@@ -399,7 +399,7 @@ main { padding-top: 72px; }
   text-transform: uppercase; margin-bottom: 16px;
 }
 .pain-card h3 { font-size: 18px; letter-spacing: 0; margin-bottom: 8px; }
-.pain-card p { font-size: 14.5px; line-height: 1.66; color: var(--caption); }
+.pain-card p { font-size: 14.5px; line-height: 1.65; color: var(--caption); }
 
 .diagnosis-grid {
   display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
@@ -415,7 +415,7 @@ main { padding-top: 72px; }
 .mini-checklist li {
   position: relative; min-height: 42px; padding: 10px 12px 10px 44px;
   border: 1px solid var(--hairline); border-radius: var(--radius-sm); background: var(--bg-soft);
-  font-size: 14.5px; line-height: 1.55; color: var(--text);
+  font-size: 14.5px; line-height: 1.65; color: var(--text);
 }
 .mini-checklist li::before {
   counter-increment: mini; content: counter(mini);
@@ -447,7 +447,7 @@ main { padding-top: 72px; }
 .after-card h3 { font-size: 18px; letter-spacing: 0; margin-bottom: 18px; }
 .before-after { display: grid; gap: 12px; }
 .before-after p {
-  font-size: 14px; line-height: 1.62; color: var(--caption); padding-left: 13px;
+  font-size: 14.5px; line-height: 1.65; color: var(--caption); padding-left: 13px;
   border-left: 2px solid var(--hairline);
 }
 .before-after p:last-child { border-left-color: var(--accent); color: var(--text); }
@@ -466,7 +466,7 @@ main { padding-top: 72px; }
   margin-bottom: 18px;
 }
 .deliverable-card h3 { font-size: 18px; letter-spacing: 0; margin-bottom: 10px; }
-.deliverable-card p { font-size: 14px; line-height: 1.62; color: var(--caption); }
+.deliverable-card p { font-size: 14.5px; line-height: 1.65; color: var(--caption); }
 
 .session-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
 .session-card {
@@ -478,7 +478,7 @@ main { padding-top: 72px; }
   font-weight: 800; color: var(--accent-ink);
 }
 .session-card h3 { font-size: 18px; letter-spacing: 0; margin-bottom: 8px; }
-.session-card p { font-size: 13.5px; line-height: 1.62; color: var(--caption); }
+.session-card p { font-size: 13.5px; line-height: 1.65; color: var(--caption); }
 .level-badge {
   display: inline-flex; align-items: center; min-height: 26px; padding: 4px 9px;
   border-radius: 999px; background: var(--accent-soft); color: var(--accent-ink);
@@ -494,7 +494,7 @@ main { padding-top: 72px; }
   background: var(--bg-soft); border: 1px solid var(--hairline); border-radius: var(--radius);
   padding: 38px 34px;
 }
-.value-stack h3 { font-size: 26px; letter-spacing: 0; margin-bottom: 18px; }
+.value-stack h3 { font-size: 24px; letter-spacing: 0; margin-bottom: 18px; }
 .value-stack ul { display: grid; gap: 12px; }
 .value-stack li {
   position: relative; padding-left: 28px; color: var(--text); font-size: 15.5px; line-height: 1.65;
@@ -518,7 +518,7 @@ main { padding-top: 72px; }
 .why-card .num { font-family: var(--font-num); font-weight: 800; font-size: 36px; color: var(--accent-ink); letter-spacing: -0.02em; line-height: 1.1; }
 .why-card .num small { font-size: .5em; font-weight: 700; }
 .why-card h4 { font-size: 18px; margin: 14px 0 8px; }
-.why-card p { font-size: 14.5px; line-height: 1.66; }
+.why-card p { font-size: 14.5px; line-height: 1.65; }
 
 /* ---------- Scope list ---------- */
 .scope-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
@@ -531,8 +531,8 @@ main { padding-top: 72px; }
   background: var(--accent-soft); color: var(--accent-ink);
   display: grid; place-items: center; font-weight: 800; font-size: 14px; margin-top: 2px;
 }
-.scope-item h4 { font-size: 16.5px; margin-bottom: 4px; }
-.scope-item p { font-size: 14px; color: var(--caption); line-height: 1.6; }
+.scope-item h4 { font-size: 17px; margin-bottom: 4px; }
+.scope-item p { font-size: 14.5px; color: var(--caption); line-height: 1.65; }
 
 .amenity-spaces { margin-top: clamp(34px, 5vw, 56px); }
 /* B1(b) · segment the amenity gallery from the soft scope band with a white panel — restores W/soft rhythm inside the long soft section */
@@ -556,7 +556,7 @@ main { padding-top: 72px; }
 .public-ref-list li {
   display: flex; gap: 12px; align-items: baseline; background: #fff;
   border: 1px solid var(--hairline); border-radius: var(--radius-xs);
-  padding: 14px 16px; font-size: 14.5px; line-height: 1.55; min-width: 0;
+  padding: 14px 16px; font-size: 14.5px; line-height: 1.6; min-width: 0;
 }
 .public-ref-list li i {
   font-style: normal; font-family: var(--font-num); font-size: 12px; font-weight: 800;
@@ -579,7 +579,7 @@ main { padding-top: 72px; }
   font-family: var(--font-num); font-size: 12px; font-weight: 800; color: var(--accent-ink); line-height: 1;
 }
 .amenity-space-card h4 { font-size: 18px; letter-spacing: 0; margin: 8px 0 7px; }
-.amenity-space-card p { font-size: 14px; color: var(--caption); line-height: 1.6; margin-bottom: 14px; }
+.amenity-space-card p { font-size: 14.5px; color: var(--caption); line-height: 1.65; margin-bottom: 14px; }
 .amenity-space-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
 .amenity-space-tags span {
   display: inline-flex; align-items: center; min-height: 28px; padding: 5px 8px;
@@ -605,7 +605,7 @@ main { padding-top: 72px; }
   position: absolute; top: -13px; left: 30px; background: var(--accent); color: #fff;
   font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 999px; letter-spacing: .04em;
 }
-.price-card h4 { font-size: 19px; margin-bottom: 4px; }
+.price-card h4 { font-size: 18px; margin-bottom: 4px; }
 .price-card .for { font-size: 13.5px; color: var(--caption); margin-bottom: 20px; }
 .price-value { font-family: var(--font-num); font-weight: 800; font-size: 32px; letter-spacing: -0.02em; color: var(--ink); }
 .price-value small { font-size: 14px; font-weight: 600; color: var(--caption); letter-spacing: 0; }
@@ -635,7 +635,7 @@ main { padding-top: 72px; }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after { content: "+"; font-family: var(--font-num); font-size: 24px; font-weight: 400; color: var(--accent-ink); transition: transform .25s; }
 .faq details[open] summary::after { transform: rotate(45deg); }
-.faq .faq-a { padding: 0 4px 26px; font-size: 15.5px; color: var(--text); max-width: 700px; }
+.faq .faq-a { padding: 0 4px 26px; font-size: 16px; line-height: 1.75; color: var(--text); max-width: 700px; }
 
 /* ---------- Insights hub ---------- */
 .channel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -650,7 +650,7 @@ main { padding-top: 72px; }
   font-family: var(--font-num); font-weight: 800; font-size: 17px; color: #fff;
   background: var(--cc, var(--indigo)); margin-bottom: 8px;
 }
-.channel-card h4 { font-size: 18.5px; }
+.channel-card h4 { font-size: 18px; }
 .channel-card .ctype { font-family: var(--font-num); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--cc, var(--indigo)); }
 .channel-card p { font-size: 14.5px; line-height: 1.62; flex: 1; }
 .channel-card .go { font-size: 14.5px; font-weight: 700; color: var(--cc, var(--indigo)); display: inline-flex; gap: 7px; align-items: center; }
@@ -668,7 +668,7 @@ main { padding-top: 72px; }
   background: color-mix(in srgb, var(--fc, var(--violet)) 9%, #fff);
   padding: 5px 12px; border-radius: 999px;
 }
-.feed-item h4 { font-size: 16.5px; flex: 1; font-weight: 700; }
+.feed-item h4 { font-size: 17px; flex: 1; font-weight: 700; }
 .feed-item .date { flex: none; font-family: var(--font-num); font-size: 13px; color: var(--caption); }
 
 /* ---------- Insight post ---------- */
@@ -782,7 +782,7 @@ main { padding-top: 72px; }
   width: 52px; height: 52px; border: 1.5px solid var(--hairline); border-radius: var(--radius-md);
   display: grid; place-items: center;
 }
-.sig-item h4 { font-size: 17.5px; margin-bottom: 5px; }
+.sig-item h4 { font-size: 17px; margin-bottom: 5px; }
 .sig-item p { font-size: 14.5px; line-height: 1.64; }
 
 /* ---------- About story landing refinements ---------- */
@@ -864,7 +864,7 @@ main { padding-top: 72px; }
   border-left: 3px solid var(--accent); border-radius: var(--radius-md);
   background: var(--bg); box-shadow: var(--shadow-card);
 }
-.public-space-service h3 { margin-bottom: 10px; font-size: 19px; letter-spacing: 0; line-height: 1.48; }
+.public-space-service h3 { margin-bottom: 10px; font-size: 18px; letter-spacing: 0; line-height: 1.48; }
 .public-space-service p { color: var(--caption); font-size: 14.5px; line-height: 1.8; }
 .public-experience {
   max-width: 1040px; margin: 24px auto 0; padding: 34px;
@@ -986,7 +986,7 @@ main { padding-top: 72px; }
 .channel-card-secondary { box-shadow: none; }
 .contact-aside { display: grid; gap: 16px; }
 .aside-card { background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius-md); padding: 28px 28px; }
-.aside-card h4 { font-size: 16px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+.aside-card h4 { font-size: 17px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
 .aside-card h4 .ic { width: 34px; height: 34px; border-radius: 10px; background: var(--accent-soft); color: var(--violet); display: grid; place-items: center; font-size: 15px; }
 .aside-card p, .aside-card a.link { font-size: 14.5px; line-height: 1.7; }
 .aside-card a.link { color: var(--violet); font-weight: 700; }
@@ -1098,7 +1098,7 @@ main { padding-top: 72px; }
 }
 .tier-row.is-core { border-color: var(--accent); background: var(--accent-soft); }
 .tier-role { font-weight: 800; font-size: 15px; color: var(--ink); word-break: keep-all; }
-.tier-delta { font-size: 14px; line-height: 1.55; color: var(--caption); word-break: keep-all; }
+.tier-delta { font-size: 14px; line-height: 1.6; color: var(--caption); word-break: keep-all; }
 .tier-price { font-family: var(--font-num); font-weight: 800; font-size: 15px; color: var(--accent-ink); text-align: right; word-break: keep-all; }
 .tier-price s { color: var(--caption); font-weight: 700; margin-right: 4px; }
 .tier-foot { margin-top: 4px; font-size: 13px; line-height: 1.6; color: var(--caption); word-break: keep-all; }
