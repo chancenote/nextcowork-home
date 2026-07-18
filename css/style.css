@@ -1037,7 +1037,7 @@ main { padding-top: 72px; }
 }
 
 /* ---------- Self-classify selector (home hero / insights routing) ---------- */
-.selector { padding: 44px 0 4px; }
+.selector { padding: 44px 0 52px; }
 .selector-q {
   text-align: center; font-size: clamp(17px, 2.1vw, 21px); font-weight: 800;
   color: var(--ink); letter-spacing: -0.01em; margin-bottom: 22px; word-break: keep-all;
