@@ -230,7 +230,7 @@ main { padding-top: 72px; }
 .bento-card {
   position: relative; overflow: hidden;
   background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius);
-  padding: 26px 24px 56px;
+  padding: 26px 24px 72px;
   transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
 }
 .bento-card::before {
@@ -251,7 +251,7 @@ main { padding-top: 72px; }
 .bento-card .en { font-family: var(--font-num); font-size: 13px; font-weight: 700; letter-spacing: .06em; color: var(--c, var(--indigo)); margin-bottom: 14px; }
 .bento-card p { font-size: 15.5px; }
 .bento-more {
-  position: absolute; left: 36px; bottom: 34px;
+  position: absolute; left: 24px; bottom: 26px;
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 15px; font-weight: 700; color: var(--c, var(--indigo));
 }
