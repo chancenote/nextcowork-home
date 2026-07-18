@@ -63,7 +63,7 @@ body {
   color: var(--text);
   background: var(--bg);
   line-height: 1.72;
-  font-size: 17px;
+  font-size: 18px;
   word-break: keep-all;
   overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
@@ -558,8 +558,6 @@ main { padding-top: 72px; }
   border: 1px solid var(--hairline); border-radius: var(--radius-xs);
   padding: 14px 16px; font-size: 14.5px; line-height: 1.55; min-width: 0;
 }
-/* C4 · 9 items in 2 cols → last row orphan spans full width */
-.public-ref-list li:last-child { grid-column: 1 / -1; }
 .public-ref-list li i {
   font-style: normal; font-family: var(--font-num); font-size: 12px; font-weight: 800;
   color: var(--accent-ink); line-height: 1; flex-shrink: 0;
@@ -1155,7 +1153,7 @@ main { padding-top: 72px; }
 }
 
 @media (max-width: 720px) {
-  body { font-size: 16px; }
+  body { font-size: 17px; }
   .section { padding: 76px 0; }
   .section.compact { padding: 64px 0; }
   /* B2 · compress coaching mobile hero (was 152%vh) so the AX evidence card + 2nd CTA enter the first ~1.2 screens */
@@ -1220,7 +1218,7 @@ main { padding-top: 72px; }
   .footer-grid a { padding-block: 6px; }
   .feed-item { flex-wrap: wrap; gap: 10px; }
   .post-hero { padding-top: 98px; }
-  .post-body { font-size: 16.5px; line-height: 1.85; }
+  .post-body { font-size: 17.5px; line-height: 1.85; }
   .post-body h2 { margin-top: 42px; }
   .post-cta { padding: 24px 22px; }
   .sig-item { grid-template-columns: 1fr; }

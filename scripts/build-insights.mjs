@@ -452,7 +452,7 @@ ${articleBody}
       </div>
       <div class="footer-bottom">
         <span>© 2026 NEXT COWORK Inc. All rights reserved.</span>
-        <span><a href="/privacy/">개인정보처리방침</a> · Workspace Evolution — 일하는 공간의 진화</span>
+        <span><a href="/privacy/">개인정보처리방침</a> · AI Workspace Builder — 일하는 공간과 방식의 진화</span>
       </div>
     </div>
   </div>

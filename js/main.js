@@ -394,6 +394,11 @@
             form.reset();
             fillContactContext();
             setStatus("문의가 접수되었습니다. 영업일 1일 내 회신드립니다.");
+            var done = document.getElementById("cf-success");
+            if (done) {
+              done.hidden = false;
+              try { done.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) { /* older browsers */ }
+            }
           })
           .catch(function () {
             setStatus("전송에 실패했습니다. 아래 ‘내용 복사’로 복사해 ceo@nextcw.com 으로 보내주세요.");
@@ -424,10 +429,11 @@
     }
   }
 
-  /* Newsletter form → fetch endpoint (no navigation). Falls back to form action if JS-less. */
-  var news = document.getElementById("newsletter-form");
-  if (news) {
-    var newsStatus = document.getElementById("newsletter-status");
+  /* Newsletter forms → fetch endpoint (no navigation). Falls back to form action if JS-less.
+     insights의 #newsletter-form 외에 서비스 페이지의 form[data-newsletter]도 같은 로직으로 바인딩 */
+  var newsForms = document.querySelectorAll("#newsletter-form, form[data-newsletter]");
+  Array.prototype.forEach.call(newsForms, function (news) {
+    var newsStatus = news.querySelector(".form-status");
     news.addEventListener("submit", function (ev) {
       var endpoint = news.getAttribute("data-endpoint") || news.getAttribute("action");
       if (!endpoint) return;
@@ -445,5 +451,5 @@
           if (newsStatus) newsStatus.textContent = "신청에 실패했습니다. 카카오톡 채널로 신청해주세요.";
         });
     });
-  }
+  });
 })();
