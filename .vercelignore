@@ -2,8 +2,19 @@
 # .gitignore와 별개로 vercel build는 로컬 파일시스템에서 복사하므로 필요.
 _workspace
 _workspace_prev
-.claude
-.playwright-cli
+output
+node_modules
 .git
+
+# 하네스 내부 (에이전트·스킬 — 사업전략 로직 포함)
+.claude
+.agents
+.codex
+.loom
+.playwright-cli
+.vercel
+
+# 프로젝트 문서
 CLAUDE.md
 README.md
+AGENTS.md
