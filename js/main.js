@@ -49,11 +49,14 @@
       var open = menu.classList.toggle("open");
       burger.classList.toggle("open", open);
       burger.setAttribute("aria-expanded", open ? "true" : "false");
+      burger.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
     });
     menu.querySelectorAll("a").forEach(function (a) {
       a.addEventListener("click", function () {
         menu.classList.remove("open");
         burger.classList.remove("open");
+        burger.setAttribute("aria-expanded", "false");
+        burger.setAttribute("aria-label", "메뉴 열기");
       });
     });
   }
@@ -140,10 +143,20 @@
     }
   }
 
-  /* Insights feed (generated from content/insights/*.md) */
+  /* Insights feed (generated from content/insights/*.md)
+     빌드가 insights/index.html의 FEED:START/END 사이에 같은 마크업을 정적으로 써 둔다.
+     여기는 폴백 전용 — 이미 정적 항목이 있으면 렌더하지 않는다(중복 방지).
+     색상·라벨 맵을 고치면 scripts/build-insights.mjs의 feedColors/feedNames도 함께 고칠 것. */
   var feedRoot = document.getElementById("feed");
-  if (feedRoot && window.NCW_FEED) {
-    var colors = { insight: "var(--accent)", brunch: "var(--line-public)", naver: "#03C75A", threads: "#1C1C22", notion: "var(--violet)", news: "var(--point)" };
+  if (feedRoot && window.NCW_FEED && !feedRoot.firstElementChild) {
+    var colors = {
+      insight: { line: "var(--accent)", ink: "var(--accent-ink)" },
+      brunch: { line: "var(--line-public)", ink: "var(--line-public-ink)" },
+      naver: { line: "#03C75A", ink: "var(--naver-ink)" },
+      threads: { line: "#1C1C22", ink: "#1C1C22" },
+      notion: { line: "var(--violet)", ink: "var(--line-ai-ink)" },
+      news: { line: "var(--point)", ink: "var(--point-action)" }
+    };
     var names = { insight: "인사이트", brunch: "브런치", naver: "네이버 블로그", threads: "Threads", notion: "노션 자료실", news: "소식" };
     window.NCW_FEED.slice(0, 8).forEach(function (item) {
       var a = document.createElement("a");
@@ -153,7 +166,9 @@
         a.target = "_blank";
         a.rel = "noopener";
       }
-      a.style.setProperty("--fc", colors[item.src] || "#6955BA");
+      var feedColor = colors[item.src] || colors.insight;
+      a.style.setProperty("--fc", feedColor.line);
+      a.style.setProperty("--fc-ink", feedColor.ink);
       a.innerHTML =
         '<span class="feed-src">' + (names[item.src] || item.src) + "</span>" +
         "<h4>" + item.title + "</h4>" +

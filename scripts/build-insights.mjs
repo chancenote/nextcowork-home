@@ -35,6 +35,43 @@ const externalFeed = [
   }
 ];
 
+/* 피드 항목 색상·라벨 — js/main.js의 폴백 렌더와 동일하게 유지할 것. */
+const feedColors = {
+  insight: { line: "var(--accent)", ink: "var(--accent-ink)" },
+  brunch: { line: "var(--line-public)", ink: "var(--line-public-ink)" },
+  naver: { line: "#03C75A", ink: "var(--naver-ink)" },
+  threads: { line: "#1C1C22", ink: "#1C1C22" },
+  notion: { line: "var(--violet)", ink: "var(--line-ai-ink)" },
+  news: { line: "var(--point)", ink: "var(--point-action)" }
+};
+
+const feedNames = {
+  insight: "인사이트",
+  brunch: "브런치",
+  naver: "네이버 블로그",
+  threads: "Threads",
+  notion: "노션 자료실",
+  news: "소식"
+};
+
+/* 아티클 JSON-LD에 인라인으로 넣는 발행처 노드.
+   홈(index.html)의 #org 노드를 페이지 단위로 해석 가능하게 만드는 용도 — 값이 홈과 어긋나면 안 된다. */
+const orgNode = {
+  "@type": "Organization",
+  "@id": "https://www.nextcw.com/#org",
+  name: "넥스트코웍",
+  alternateName: "NEXT COWORK",
+  url: "https://www.nextcw.com/",
+  logo: "https://www.nextcw.com/img/og.png",
+  email: "ceo@nextcw.com",
+  telephone: "+82-10-9765-7749",
+  sameAs: [
+    "https://brunch.co.kr/@chancenote",
+    "https://www.threads.com/@chancenote",
+    "https://blog.naver.com/chancenote"
+  ]
+};
+
 const staticRoutes = [
   { path: "/", lastmod: "2026-07-09", priority: "1.0" },
   { path: "/flexoffice/", lastmod: "2026-07-09", priority: "0.9" },
@@ -318,8 +355,10 @@ function renderArticle(post, assetVersion) {
     datePublished: post.date,
     dateModified: post.date,
     url: absoluteUrl(post.url),
+    mainEntityOfPage: { "@type": "WebPage", "@id": absoluteUrl(post.url) },
+    inLanguage: "ko",
     image: absoluteUrl(post.image),
-    author: { "@type": "Person", name: "이종찬" },
+    author: { "@type": "Person", "@id": "https://www.nextcw.com/about/#person", name: "이종찬" },
     publisher: { "@id": "https://www.nextcw.com/#org" }
   };
   const breadcrumb = {
@@ -332,7 +371,7 @@ function renderArticle(post, assetVersion) {
   };
   const jsonLd = {
     "@context": "https://schema.org",
-    "@graph": [blogPosting, breadcrumb]
+    "@graph": [orgNode, blogPosting, breadcrumb]
   };
 
   return `<!DOCTYPE html>
@@ -377,14 +416,14 @@ function renderArticle(post, assetVersion) {
         <li class="has-sub">
           <a href="/#services" aria-haspopup="true">서비스</a>
           <ul class="sub">
-            <li style="--sub-c:#0079C4"><a href="/flexoffice/"><b><span class="dot"></span>FlexOffice 컨설팅</b><small>공유오피스 도입·전환·개발 컨설팅</small></a></li>
-            <li style="--sub-c:#6955BA"><a href="/ai-campus/"><b><span class="dot"></span>AI Campus</b><small>기업 AI 실무교육 · 사내 AI 캠퍼스 구축</small></a></li>
-            <li style="--sub-c:#25C5A8"><a href="/public/"><b><span class="dot"></span>Public Advisory</b><small>공공 공유공간·AI 역량강화 자문</small></a></li>
-            <li style="--sub-c:#9178E2"><a href="/coaching/"><b><span class="dot"></span>CEO AI 코칭</b><small>경영자 1:1 시그니처 프로그램</small></a></li>
+            <li style="--sub-c:var(--line-space)"><a href="/flexoffice/"><b><span class="dot"></span>FlexOffice 컨설팅</b><small>공유오피스 도입·전환·개발 컨설팅</small></a></li>
+            <li style="--sub-c:var(--line-ai)"><a href="/ai-campus/"><b><span class="dot"></span>AI Campus</b><small>기업 AI 실무교육 · 사내 AI 캠퍼스 구축</small></a></li>
+            <li style="--sub-c:var(--line-public)"><a href="/public/"><b><span class="dot"></span>Public Advisory</b><small>공공 공유공간·AI 역량강화 자문</small></a></li>
+            <li style="--sub-c:var(--line-coaching)"><a href="/coaching/"><b><span class="dot"></span>CEO AI 코칭</b><small>경영자 1:1 시그니처 프로그램</small></a></li>
           </ul>
         </li>
         <li><a href="/about/">대표 스토리</a></li>
-        <li><a href="/insights/" class="active">인사이트</a></li>
+        <li><a href="/insights/" class="active" aria-current="page">인사이트</a></li>
         <li><a class="nav-cta" href="/contact/">프로젝트 문의</a></li>
       </ul>
     </nav>
@@ -425,8 +464,8 @@ ${articleBody}
           <strong>NEXT COWORK</strong>
           <p>넥스트코웍 주식회사 · 대표 이종찬<br>
           일이 잘되는 공간을 만들고,<br>일이 잘되는 방식을 설계합니다.<br><br>
-          ceo@nextcw.com · <a href="tel:+821097657749" style="display:inline;color:inherit">010-9765-7749</a></p>
-          <p style="margin-top:12px;font-size:12px;line-height:1.7;color:var(--caption);word-break:keep-all">사업자등록번호 722-88-0265<br>(본사) 전북특별자치도 전주시 덕진구 동부대로 687 3F<br>(서울) 서초구 강남대로97길 26 성원빌딩 4F</p>
+          ceo@nextcw.com · <a class="footer-phone" href="tel:+821097657749">010-9765-7749</a></p>
+          <p class="footer-legal">사업자등록번호 722-88-0265<br>(본사) 전북특별자치도 전주시 덕진구 동부대로 687 3F<br>(서울) 서초구 강남대로97길 26 성원빌딩 4F</p>
         </div>
         <div>
           <h5>Services</h5>
@@ -463,22 +502,62 @@ ${articleBody}
 `;
 }
 
-function renderFeed(posts) {
+function buildFeed(posts) {
   const generated = posts.map((post) => ({
     src: "insight",
     title: post.title,
     url: post.url,
     date: formatDate(post.date)
   }));
-  const feed = [...generated, ...externalFeed];
+  return [...generated, ...externalFeed];
+}
+
+/* 허브의 '최신 콘텐츠' 목록을 정적 HTML로 생성한다.
+   AI 크롤러(GPTBot·ClaudeBot·PerplexityBot 등)는 JS를 실행하지 않으므로
+   목록이 원본 HTML에 없으면 글이 발견되지 않는다.
+   마크업은 js/main.js의 폴백 렌더와 동일해야 한다. */
+function renderFeedHtml(feed) {
+  return feed.slice(0, 8).map((item) => {
+    const color = feedColors[item.src] || feedColors.insight;
+    const external = /^https?:\/\//.test(item.url);
+    return `<a class="feed-item" href="${escapeAttr(item.url)}"${external ? ' target="_blank" rel="noopener"' : ""} style="--fc: ${color.line}; --fc-ink: ${color.ink};">`
+      + `<span class="feed-src">${escapeHtml(feedNames[item.src] || item.src)}</span>`
+      + `<h4>${escapeHtml(item.title)}</h4>`
+      + `<span class="date">${escapeHtml(item.date || "")}</span></a>`;
+  }).join("\n        ");
+}
+
+function renderFeedJs(feed) {
   return `/* ==========================================================
    NCW_FEED — 인사이트 허브 '최신 콘텐츠' 목록
    이 파일은 npm run build 실행 시 content/insights/*.md에서 자동 생성됩니다.
    외부 채널 링크는 scripts/build-insights.mjs의 externalFeed에서 관리합니다.
    src: insight | brunch | naver | threads | notion | news
+
+   주의: 허브 목록의 원본은 insights/index.html의 정적 HTML이다.
+   이 파일은 그 영역이 비어 있을 때만 쓰이는 폴백 데이터다.
    ========================================================== */
 window.NCW_FEED = ${JSON.stringify(feed, null, 2)};
 `;
+}
+
+async function updateInsightsHub(feedHtml) {
+  const file = join(outputDir, "index.html");
+  const html = await readFile(file, "utf8");
+  const startMark = "<!-- FEED:START -->";
+  const endMark = "<!-- FEED:END -->";
+  const start = html.indexOf(startMark);
+  const end = html.indexOf(endMark);
+
+  if (start === -1 || end === -1 || end < start) {
+    throw new Error("insights/index.html: FEED:START / FEED:END 마커를 찾을 수 없습니다. 마커를 복구한 뒤 다시 빌드하세요.");
+  }
+
+  const next = html.slice(0, start + startMark.length)
+    + `\n        ${feedHtml}\n        `
+    + html.slice(end);
+
+  if (next !== html) await writeFile(file, next, "utf8");
 }
 
 function renderSitemap(posts) {
@@ -508,6 +587,7 @@ async function loadPosts() {
 
 async function main() {
   const posts = await loadPosts();
+  const feed = buildFeed(posts);
   const assetVersion = await computeAssetVersion(posts);
 
   for (const post of posts) {
@@ -515,10 +595,11 @@ async function main() {
     await mkdir(dir, { recursive: true });
     await writeFile(join(dir, "index.html"), renderArticle(post, assetVersion), "utf8");
   }
-  await writeFile(join(root, "js", "insights-data.js"), renderFeed(posts), "utf8");
+  await writeFile(join(root, "js", "insights-data.js"), renderFeedJs(feed), "utf8");
   await writeFile(join(root, "sitemap.xml"), renderSitemap(posts), "utf8");
+  await updateInsightsHub(renderFeedHtml(feed));
   await updateHtmlAssetVersions(assetVersion);
-  console.log(`Built ${posts.length} insight post(s). Asset version: ${assetVersion}`);
+  console.log(`Built ${posts.length} insight post(s), ${Math.min(feed.length, 8)} feed item(s) rendered statically. Asset version: ${assetVersion}`);
 }
 
 main().catch((error) => {

@@ -3,6 +3,9 @@
    이 파일은 npm run build 실행 시 content/insights/*.md에서 자동 생성됩니다.
    외부 채널 링크는 scripts/build-insights.mjs의 externalFeed에서 관리합니다.
    src: insight | brunch | naver | threads | notion | news
+
+   주의: 허브 목록의 원본은 insights/index.html의 정적 HTML이다.
+   이 파일은 그 영역이 비어 있을 때만 쓰이는 폴백 데이터다.
    ========================================================== */
 window.NCW_FEED = [
   {

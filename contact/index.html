@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="/js/analytics.js?v=ncw-82ff0f9b07" defer></script>
+<script src="/js/analytics.js?v=ncw-cfd08bf601" defer></script>
 <title>문의하기 | 프로젝트 · 교육 · 자문 문의 — 넥스트코웍</title>
 <meta name="description" content="공유오피스 컨설팅, 기업 AI 교육, 공공 자문, CEO AI 코칭 문의. 영업일 1일 내 회신, 사전 진단 미팅 무료. ceo@nextcw.com · 010-9765-7749">
 <link rel="canonical" href="https://www.nextcw.com/contact/">
@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=ncw-82ff0f9b07">
+<link rel="stylesheet" href="/css/style.css?v=ncw-cfd08bf601">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -60,7 +60,7 @@
         </li>
         <li><a href="/about/">대표 스토리</a></li>
         <li><a href="/insights/">인사이트</a></li>
-        <li><a class="nav-cta" href="/contact/">프로젝트 문의</a></li>
+        <li><a class="nav-cta" href="/contact/" aria-current="page">프로젝트 문의</a></li>
       </ul>
     </nav>
     <button class="nav-burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
@@ -81,7 +81,7 @@
     <div class="container">
       <h2 class="sr-only">문의 방법</h2>
       <div class="contact-grid">
-        <div style="display:grid;gap:20px">
+        <div class="form-stack">
           <form class="form-card reveal" id="contact-form" data-endpoint="https://hook.us1.make.com/li5ucmemlr73l6hfuwcx27hb861zaemg">
             <input type="hidden" id="cf-source-page" name="source_page" value="">
             <input type="hidden" id="cf-cta-location" name="cta_location" value="">
@@ -90,8 +90,8 @@
             <input type="hidden" id="cf-utm-source" name="utm_source" value="">
             <input type="hidden" id="cf-utm-medium" name="utm_medium" value="">
             <input type="hidden" id="cf-utm-campaign" name="utm_campaign" value="">
-            <h3 style="font-size:21px;margin-bottom:6px">온라인으로 바로 문의하기</h3>
-            <p style="font-size:14px;color:var(--caption);margin-bottom:14px">필수 정보만 먼저 남겨주세요. 서비스·상품 문맥은 자동으로 함께 기록됩니다.</p>
+            <h3 class="form-card-title">온라인으로 바로 문의하기</h3>
+            <p class="form-card-lead">필수 정보만 먼저 남겨주세요. 서비스·상품 문맥은 자동으로 함께 기록됩니다.</p>
             <p class="form-required-note"><em>*</em> 는 필수 항목입니다.</p>
             <div class="form-row">
               <div class="field"><label for="cf-name">이름 <em>*</em></label><input id="cf-name" name="name" type="text" required autocomplete="name"></div>
@@ -162,10 +162,10 @@
               <input id="cf-privacy" name="privacy_agree" type="checkbox" value="동의" required>
               <label for="cf-privacy">문의 응대와 사전 진단 안내를 위해 입력한 개인정보를 수집·이용하는 데 동의합니다. 자세한 내용은 <a href="/privacy/" target="_blank" rel="noopener">개인정보처리방침</a>에서 확인할 수 있습니다. <em>*</em></label>
             </div>
-            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">문의 보내기 <span class="arr">→</span></button>
-            <button type="button" class="btn btn-ghost" id="cf-copy" aria-label="입력한 문의 내용을 클립보드에 복사" style="width:100%;justify-content:center;margin-top:10px">내용 복사 <span aria-hidden="true">⧉</span></button>
-            <p class="form-status" id="cf-status" role="status" aria-live="polite" style="font-size:13px;color:var(--ink);margin-top:12px;text-align:center;min-height:1px"></p>
-            <p class="form-meta-note">전송 즉시 접수되며 영업일 1일 내 회신드립니다. 전송이 어려우면 위 ‘내용 복사’로 복사해 <a href="mailto:ceo@nextcw.com" style="color:var(--violet);font-weight:700">ceo@nextcw.com</a> 으로 보내주세요.</p>
+            <button type="submit" class="btn btn-primary form-action">문의 보내기 <span class="arr">→</span></button>
+            <button type="button" class="btn btn-ghost btn-utility form-action" id="cf-copy" aria-label="입력한 문의 내용을 클립보드에 복사">내용 복사 <span aria-hidden="true">⧉</span></button>
+            <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
+            <p class="form-meta-note">전송 즉시 접수되며 영업일 1일 내 회신드립니다. 전송이 어려우면 위 ‘내용 복사’로 복사해 <a class="link-accent" href="mailto:ceo@nextcw.com">ceo@nextcw.com</a> 으로 보내주세요.</p>
           </form>
 
           <!-- Wave3 D4 · 폼 성공 카드 (16_cx M7) — 접수 확신 + 다음 단계 안내. js/main.js 성공 콜백에서 hidden 해제 -->
@@ -238,8 +238,8 @@
           <strong>NEXT COWORK</strong>
           <p>넥스트코웍 주식회사 · 대표 이종찬<br>
           일이 잘되는 공간을 만들고,<br>일이 잘되는 방식을 설계합니다.<br><br>
-          ceo@nextcw.com · <a href="tel:+821097657749" style="display:inline;color:inherit">010-9765-7749</a></p>
-          <p style="margin-top:12px;font-size:12px;line-height:1.7;color:var(--caption);word-break:keep-all">사업자등록번호 722-88-0265<br>(본사) 전북특별자치도 전주시 덕진구 동부대로 687 3F<br>(서울) 서초구 강남대로97길 26 성원빌딩 4F</p>
+          ceo@nextcw.com · <a class="footer-phone" href="tel:+821097657749">010-9765-7749</a></p>
+          <p class="footer-legal">사업자등록번호 722-88-0265<br>(본사) 전북특별자치도 전주시 덕진구 동부대로 687 3F<br>(서울) 서초구 강남대로97길 26 성원빌딩 4F</p>
         </div>
         <div>
           <h5>Services</h5>
@@ -271,6 +271,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=ncw-82ff0f9b07" defer></script>
+<script src="/js/main.js?v=ncw-cfd08bf601" defer></script>
 </body>
 </html>
