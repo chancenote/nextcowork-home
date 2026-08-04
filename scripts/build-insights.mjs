@@ -72,16 +72,18 @@ const orgNode = {
   ]
 };
 
+/* lastmod는 하드코딩하지 않는다. 각 페이지의 실제 내용이 바뀐 날을
+   scripts/lastmod.json에 기록해 두고 재사용한다(계산 방식은 resolveLastmod 참고). */
 const staticRoutes = [
-  { path: "/", lastmod: "2026-07-09", priority: "1.0" },
-  { path: "/flexoffice/", lastmod: "2026-07-09", priority: "0.9" },
-  { path: "/ai-campus/", lastmod: "2026-07-09", priority: "0.9" },
-  { path: "/public/", lastmod: "2026-07-09", priority: "0.9" },
-  { path: "/coaching/", lastmod: "2026-07-09", priority: "0.9" },
-  { path: "/about/", lastmod: "2026-07-09", priority: "0.8" },
-  { path: "/insights/", lastmod: "2026-07-09", priority: "0.8" },
-  { path: "/contact/", lastmod: "2026-07-09", priority: "0.7" },
-  { path: "/privacy/", lastmod: "2026-07-09", priority: "0.3" }
+  { path: "/", file: "index.html", priority: "1.0" },
+  { path: "/flexoffice/", file: "flexoffice/index.html", priority: "0.9" },
+  { path: "/ai-campus/", file: "ai-campus/index.html", priority: "0.9" },
+  { path: "/public/", file: "public/index.html", priority: "0.9" },
+  { path: "/coaching/", file: "coaching/index.html", priority: "0.9" },
+  { path: "/about/", file: "about/index.html", priority: "0.8" },
+  { path: "/insights/", file: "insights/index.html", priority: "0.8" },
+  { path: "/contact/", file: "contact/index.html", priority: "0.7" },
+  { path: "/privacy/", file: "privacy/index.html", priority: "0.3" }
 ];
 
 function escapeHtml(value = "") {
@@ -779,11 +781,53 @@ async function updateLlmsTxt(posts) {
   if (next !== text) await writeFile(file, next, "utf8");
 }
 
-function renderSitemap(posts) {
-  const routes = [
-    ...staticRoutes,
-    ...posts.map((post) => ({ path: post.url, lastmod: post.date, priority: "0.7" }))
-  ];
+/* ---------- lastmod ----------
+   빌드는 매번 전 페이지의 캐시 버전값(?v=ncw-…)을 갱신한다. 그것까지 "수정"으로 치면
+   글 하나를 발행할 때마다 개인정보처리방침까지 바뀐 것으로 신고하게 되므로,
+   버전값을 제거한 내용 해시로 실제 변경만 판별해 날짜를 갱신한다. */
+
+const lastmodFile = join(root, "scripts", "lastmod.json");
+
+function contentHash(text) {
+  return createHash("sha1")
+    .update(String(text).replace(/\?v=ncw-[0-9a-f]+/g, ""))
+    .digest("hex")
+    .slice(0, 12);
+}
+
+function todayInSeoul() {
+  return new Date(Date.now() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
+}
+
+async function loadLastmodState() {
+  try {
+    return JSON.parse(await readFile(lastmodFile, "utf8"));
+  } catch {
+    return {};
+  }
+}
+
+/* entries: [{ path, source, fallback }]
+   source = 그 URL의 "의미 있는 내용", fallback = 기록이 아예 없을 때 쓸 날짜.
+   글은 발행일이 곧 최초 수정일이므로 fallback으로 발행일을 넘긴다 — 안 그러면
+   기존 글이 처음 빌드하는 날 전부 "오늘 수정"으로 잘못 신고된다. */
+function resolveLastmod(state, entries, today) {
+  const next = {};
+  for (const { path, source, fallback } of entries) {
+    const hash = contentHash(source);
+    const previous = state[path];
+    if (previous && previous.hash === hash) {
+      next[path] = { hash, date: previous.date };
+    } else if (!previous && fallback) {
+      next[path] = { hash, date: fallback };
+    } else {
+      next[path] = { hash, date: today };
+    }
+  }
+  return next;
+}
+
+function renderSitemap(routes) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${routes.map((route) => `  <url><loc>${siteUrl}${route.path}</loc><lastmod>${route.lastmod}</lastmod><priority>${route.priority}</priority></url>`).join("\n")}
@@ -799,7 +843,8 @@ async function loadPosts() {
     const filePath = join(contentDir, file);
     const source = await readFile(filePath, "utf8");
     const { meta, body } = parseFrontMatter(source, filePath);
-    posts.push(normalizePost(meta, body, filePath));
+    // 원문을 들고 다닌다 — lastmod 판정에 쓴다(생성된 HTML이 아니라 원고가 바뀐 날이 기준).
+    posts.push({ ...normalizePost(meta, body, filePath), source });
   }
   return posts.sort((a, b) => String(b.date).localeCompare(String(a.date)));
 }
@@ -815,10 +860,28 @@ async function main() {
     await writeFile(join(dir, "index.html"), renderArticle(post, assetVersion), "utf8");
   }
   await writeFile(join(root, "js", "insights-data.js"), renderFeedJs(feed), "utf8");
-  await writeFile(join(root, "sitemap.xml"), renderSitemap(posts), "utf8");
   await writeFile(join(root, "rss.xml"), renderRss(posts), "utf8");
+  // 허브·llms.txt를 먼저 갱신해야 그 내용 변화가 lastmod에 반영된다.
   await updateInsightsHub(renderFeedHtml(feed));
   await updateLlmsTxt(posts);
+
+  const today = todayInSeoul();
+  const previousState = await loadLastmodState();
+  const entries = [
+    ...await Promise.all(staticRoutes.map(async (route) => ({
+      path: route.path,
+      source: await readFile(join(root, route.file), "utf8")
+    }))),
+    ...posts.map((post) => ({ path: post.url, source: post.source, fallback: post.date }))
+  ];
+  const lastmodState = resolveLastmod(previousState, entries, today);
+  const routes = [
+    ...staticRoutes.map((route) => ({ ...route, lastmod: lastmodState[route.path].date })),
+    ...posts.map((post) => ({ path: post.url, lastmod: lastmodState[post.url].date, priority: "0.7" }))
+  ];
+  await writeFile(join(root, "sitemap.xml"), renderSitemap(routes), "utf8");
+  await writeFile(lastmodFile, `${JSON.stringify(lastmodState, null, 2)}\n`, "utf8");
+
   await updateHtmlAssetVersions(assetVersion);
 
   const faqCount = posts.reduce((sum, post) => sum + extractFaq(post.body).length, 0);
