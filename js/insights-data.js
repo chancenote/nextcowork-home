@@ -10,6 +10,12 @@
 window.NCW_FEED = [
   {
     "src": "insight",
+    "title": "공유오피스 도입 타당성 검토, 무엇부터 봐야 하나요",
+    "url": "/insights/flexoffice-feasibility-checklist/",
+    "date": "2026.08.04"
+  },
+  {
+    "src": "insight",
     "title": "넥스트코웍은 AI Workspace Builder입니다",
     "url": "/insights/ai-workspace-builder/",
     "date": "2026.07.09"
