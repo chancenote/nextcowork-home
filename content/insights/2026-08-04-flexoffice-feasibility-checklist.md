@@ -5,7 +5,7 @@ date: "2026-08-04"
 category: "공간 컨설팅"
 tags: ["공유오피스", "도입 타당성", "디벨로퍼", "공실", "플렉스 오피스"]
 slug: "flexoffice-feasibility-checklist"
-image: "/img/og.png"
+image: "/img/insights/og-flexoffice-feasibility.jpg"
 cta_service: "flexoffice"
 ---
 

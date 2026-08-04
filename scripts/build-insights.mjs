@@ -762,6 +762,64 @@ function renderLlmsInsights(posts) {
     .join("\n");
 }
 
+/* ---------- 서비스 페이지 ↔ 인사이트 글 상호 링크 ----------
+   글은 서비스 페이지로 나가는 링크를 갖는데 받는 링크가 허브 하나뿐이면
+   크롤러의 발견 경로도, 검토 중인 방문자가 읽을 경로도 끊긴다.
+   각 서비스 페이지의 "Not Ready Yet?" 콜아웃 안에 마커를 두고,
+   cta_service가 일치하는 최신 글을 최대 2개까지 빌드가 채운다.
+   일치하는 글이 없으면 아무것도 넣지 않는다(분량 0). */
+
+const RELATED_LIMIT = 2;
+
+const relatedTargets = [
+  { file: "flexoffice/index.html", service: "flexoffice" },
+  { file: "ai-campus/index.html", service: "ai-campus" },
+  { file: "public/index.html", service: "public" },
+  { file: "coaching/index.html", service: "coaching" }
+];
+
+function renderRelatedHtml(posts) {
+  if (!posts.length) return "";
+  const items = posts.map((post) =>
+    `<a class="related-post" href="${escapeAttr(post.url)}"><span class="related-post-label">인사이트</span>`
+    + `<span>${escapeHtml(post.title)}</span><span class="arr">→</span></a>`
+  ).join("\n          ");
+  return `<div class="related-posts">\n          ${items}\n        </div>`;
+}
+
+async function updateRelatedLinks(posts) {
+  const startMark = "<!-- RELATED:START -->";
+  const endMark = "<!-- RELATED:END -->";
+  let filled = 0;
+
+  for (const target of relatedTargets) {
+    const file = join(root, target.file);
+    let html;
+    try {
+      html = await readFile(file, "utf8");
+    } catch {
+      continue;
+    }
+
+    const start = html.indexOf(startMark);
+    if (start === -1) continue; // 마커를 아직 안 넣은 페이지는 조용히 건너뛴다
+    const end = html.indexOf(endMark);
+    if (end === -1 || end < start) {
+      throw new Error(`${target.file}: RELATED:START는 있는데 RELATED:END가 없습니다.`);
+    }
+
+    const matched = posts.filter((post) => post.ctaService === target.service).slice(0, RELATED_LIMIT);
+    const block = renderRelatedHtml(matched);
+    const next = html.slice(0, start + startMark.length)
+      + (block ? `\n        ${block}\n        ` : "\n        ")
+      + html.slice(end);
+
+    if (next !== html) await writeFile(file, next, "utf8");
+    filled += matched.length;
+  }
+  return filled;
+}
+
 async function updateLlmsTxt(posts) {
   const file = join(root, "llms.txt");
   const text = await readFile(file, "utf8");
@@ -863,6 +921,7 @@ async function main() {
   await writeFile(join(root, "rss.xml"), renderRss(posts), "utf8");
   // 허브·llms.txt를 먼저 갱신해야 그 내용 변화가 lastmod에 반영된다.
   await updateInsightsHub(renderFeedHtml(feed));
+  const relatedCount = await updateRelatedLinks(posts);
   await updateLlmsTxt(posts);
 
   const today = todayInSeoul();
@@ -887,7 +946,8 @@ async function main() {
   const faqCount = posts.reduce((sum, post) => sum + extractFaq(post.body).length, 0);
   console.log(
     `Built ${posts.length} insight post(s), ${Math.min(feed.length, 8)} feed item(s) static, `
-    + `${faqCount} FAQ entr(ies), rss.xml + llms.txt updated. Asset version: ${assetVersion}`
+    + `${faqCount} FAQ entr(ies), ${relatedCount} related link(s) on service pages, `
+    + `rss.xml + llms.txt updated. Asset version: ${assetVersion}`
   );
 }
 
