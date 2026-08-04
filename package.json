@@ -6,6 +6,8 @@
   "scripts": {
     "build": "node scripts/build-insights.mjs",
     "insights:build": "node scripts/build-insights.mjs",
+    "sync": "node scripts/sync-insights.mjs && node scripts/build-insights.mjs",
+    "sync:dry": "node scripts/sync-insights.mjs --dry",
     "deploy": "bash scripts/deploy.sh"
   },
   "dependencies": {

@@ -36,9 +36,34 @@ llms.txt · robots.txt · sitemap.xml · vercel.json · img/og.png
 6. 생성된 글 주소는 `/insights/{slug}/`입니다.
 7. `npm run build`는 최신 콘텐츠 목록, 글 상세 HTML, 사이트맵, CSS/JS 캐시 방지용 버전값을 함께 갱신합니다.
 
+### 옵시디언에서 발행하기 (권장 — 모바일 작성 가능)
+
+옵시디언 "NEXT COWORK" 볼트의 `08. 브랜드ㆍ콘텐츠엔진/03. 발행_인사이트/`에 글을 쓰고 동기화합니다.
+
+1. 볼트에서 `_템플릿 — 인사이트 발행.md`를 복사해 새 노트를 만듭니다.
+2. front matter에서 `publish: true`로 바꾸고 `slug`·`publish_date`를 채웁니다.
+3. `npm run sync:dry` — 무엇이 발행될지, 미지원 문법은 없는지 미리 봅니다.
+4. `npm run sync` — 변환 + 빌드까지 한 번에 실행합니다.
+
+동기화가 자동으로 처리하는 것:
+
+- 볼트 frontmatter(`service`·`summary` 등) → 사이트 frontmatter(`cta_service`·`description` 등) 변환
+- `![[이미지.png]]` 임베드 → `첨부_이미지/`에서 `img/insights/`로 복사 후 표준 마크다운으로 교체
+- `[[위키링크]]` → 일반 텍스트 (웹에 대응 URL이 없으므로. 링크가 필요하면 `[표시](/flexoffice/)`로 직접 씁니다)
+- `> [!note]` 콜아웃 → 일반 인용문
+- 중첩 목록·이탤릭·H4·체크박스 등 미지원 문법 경고
+
+볼트는 **읽기 전용**으로만 다룹니다. 동기화가 볼트 노트를 고치지 않습니다.
+볼트 경로가 다르면 `NCW_VAULT` 환경변수로 지정합니다.
+
 운영 메모:
 
-- 인사이트 목록은 `js/insights-data.js`에서 그려지지만, 빌드 때 자동으로 `?v=ncw-...` 버전값이 붙습니다.
+- 인사이트 목록은 `insights/index.html`의 `FEED:START`/`FEED:END` 사이에 **정적 HTML로 생성**됩니다. AI 크롤러는 JS를 실행하지 않으므로 이 정적 목록이 원본이고, `js/insights-data.js`는 폴백입니다. 마커를 지우면 빌드가 중단됩니다.
+- `llms.txt`도 `INSIGHTS:START`/`INSIGHTS:END` 마커 사이를 빌드가 자동 갱신합니다.
+- `npm run build`는 글 HTML·최신 목록·`sitemap.xml`·`rss.xml`·`llms.txt`·캐시 버전값을 함께 갱신합니다.
+- 본문에서 쓸 수 있는 문법: H2·H3, 목록, **표**, **이미지**, 인용, 코드블록, `**굵게**`, 링크. 중첩 목록·이탤릭·H4 이상은 미지원입니다.
+- 본문에 `## 자주 묻는 질문` 섹션을 두고 `### 질문`을 쓰면 FAQPage 스키마가 자동 생성됩니다.
+- 이미지 `alt`가 비어 있으면 빌드가 중단됩니다(접근성).
 - iPad Safari처럼 캐시가 강한 브라우저에서도 새 발행분이 빨리 보이도록 `/js/*`는 Vercel에서 `must-revalidate`로 설정했습니다.
 - 글을 새로 추가한 뒤에는 반드시 `npm run build` 결과까지 커밋합니다.
 
