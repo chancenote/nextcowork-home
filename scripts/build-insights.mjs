@@ -143,6 +143,11 @@ function renderInline(raw) {
   let text = escapeHtml(raw);
   text = text.replace(/`([^`]+)`/g, "<code>$1</code>");
   text = text.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+  // 이미지가 링크보다 먼저 — 순서가 바뀌면 ![alt](src)가 "!" + 링크로 깨진다.
+  text = text.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (_m, alt, src) => {
+    const url = src.replace(/&amp;/g, "&");
+    return `<img src="${escapeAttr(url)}" alt="${escapeAttr(alt)}" loading="lazy" decoding="async">`;
+  });
   text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, label, href) => {
     const url = href.replace(/&amp;/g, "&");
     const external = /^https?:\/\//.test(url);
@@ -151,7 +156,42 @@ function renderInline(raw) {
   return text;
 }
 
-function renderMarkdown(markdown) {
+/* ---------- 표 ---------- */
+
+function splitTableRow(line) {
+  let text = line.trim();
+  if (text.startsWith("|")) text = text.slice(1);
+  if (text.endsWith("|")) text = text.slice(0, -1);
+  return text.split("|").map((cell) => cell.trim());
+}
+
+function isTableSeparator(line) {
+  if (!line || !line.trim().startsWith("|")) return false;
+  const cells = splitTableRow(line);
+  return cells.length > 0 && cells.every((cell) => /^:?-{2,}:?$/.test(cell));
+}
+
+function tableAlignments(separatorCells) {
+  return separatorCells.map((cell) => {
+    const left = cell.startsWith(":");
+    const right = cell.endsWith(":");
+    if (left && right) return "center";
+    if (right) return "right";
+    return "";
+  });
+}
+
+function renderTable(headCells, alignments, bodyRows) {
+  const align = (index) => (alignments[index] ? ` style="text-align:${alignments[index]}"` : "");
+  const head = headCells.map((cell, i) => `<th${align(i)}>${renderInline(cell)}</th>`).join("");
+  const body = bodyRows
+    .map((row) => `<tr>${row.map((cell, i) => `<td${align(i)}>${renderInline(cell)}</td>`).join("")}</tr>`)
+    .join("\n");
+  // 모바일에서 표가 페이지를 밀지 않도록 스크롤 래퍼로 감싼다.
+  return `<div class="post-table"><table><thead><tr>${head}</tr></thead><tbody>\n${body}\n</tbody></table></div>`;
+}
+
+function renderMarkdown(markdown, label = "") {
   const lines = markdown.replace(/\r\n/g, "\n").split("\n");
   const html = [];
   let paragraph = [];
@@ -179,7 +219,8 @@ function renderMarkdown(markdown) {
     html.push(`<${type}>`);
   }
 
-  for (const rawLine of lines) {
+  for (let index = 0; index < lines.length; index += 1) {
+    const rawLine = lines[index];
     const line = rawLine.trimEnd();
     const trimmed = line.trim();
 
@@ -215,6 +256,40 @@ function renderMarkdown(markdown) {
       closeList();
       const level = heading[1].length <= 2 ? 2 : 3;
       html.push(`<h${level}>${renderInline(heading[2])}</h${level}>`);
+      continue;
+    }
+
+    // 표 — 헤더 행 다음 줄이 구분선일 때만 표로 본다.
+    if (trimmed.startsWith("|") && isTableSeparator(lines[index + 1])) {
+      flushParagraph();
+      closeList();
+      const headCells = splitTableRow(trimmed);
+      const alignments = tableAlignments(splitTableRow(lines[index + 1]));
+      const bodyRows = [];
+      let cursor = index + 2;
+      while (cursor < lines.length && lines[cursor].trim().startsWith("|")) {
+        bodyRows.push(splitTableRow(lines[cursor]));
+        cursor += 1;
+      }
+      html.push(renderTable(headCells, alignments, bodyRows));
+      index = cursor - 1;
+      continue;
+    }
+
+    // 단독 줄 이미지 → figure. 제목 문법 ![alt](src "캡션")을 쓰면 figcaption이 붙는다.
+    const standaloneImage = trimmed.match(/^!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)$/);
+    if (standaloneImage) {
+      flushParagraph();
+      closeList();
+      const [, alt, src, caption] = standaloneImage;
+      if (!alt.trim()) {
+        throw new Error(`${label || "본문"}: 이미지 alt 텍스트가 비어 있습니다 (${src}). 접근성상 alt는 필수입니다.`);
+      }
+      html.push(
+        `<figure class="post-figure"><img src="${escapeAttr(src)}" alt="${escapeAttr(alt)}" loading="lazy" decoding="async">`
+        + (caption ? `<figcaption>${renderInline(caption)}</figcaption>` : "")
+        + "</figure>"
+      );
       continue;
     }
 
@@ -263,6 +338,66 @@ function renderMarkdown(markdown) {
 
 function formatDate(date) {
   return String(date || "").replaceAll("-", ".");
+}
+
+/* ---------- FAQ → FAQPage 스키마 ----------
+   본문에 "## FAQ" 또는 "## 자주 묻는 질문" 섹션을 두고 그 아래 "### 질문"을 쓰면
+   화면에는 평범한 소제목으로 렌더되고, 동시에 FAQPage JSON-LD가 생성된다.
+   구글 가이드상 스키마의 Q&A는 화면에도 보여야 하므로 본문에서 지우지 않는다. */
+
+// 제목 전체가 일치해야 한다. /^FAQ/ 같은 접두 매칭이면 "FAQ 작성법" 같은 제목까지 FAQ로 오인한다.
+const FAQ_HEADING = /^(FAQ|Q&A|자주\s*묻는\s*질문)$/i;
+
+function toPlainText(markdown) {
+  return markdown
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => {
+      // 목록 항목은 "· "로 구분해 붙인다. 그냥 이으면 문장 경계가 사라져 답변이 뭉개진다.
+      if (/^[-*]\s+/.test(line) || /^\d+\.\s+/.test(line)) {
+        return `· ${line.replace(/^[-*]\s+/, "").replace(/^\d+\.\s+/, "")}`;
+      }
+      return line.replace(/^>\s*/, "");
+    })
+    .join(" ")
+    .replace(/!\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/`([^`]+)`/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function extractFaq(markdown) {
+  const lines = markdown.replace(/\r\n/g, "\n").split("\n");
+  const collected = [];
+  let inFaqSection = false;
+  let current = null;
+
+  for (const rawLine of lines) {
+    const trimmed = rawLine.trim();
+    const h3 = trimmed.match(/^###\s+(.+)$/);
+    const h2 = trimmed.match(/^##\s+(.+)$/);
+
+    if (h3) {
+      if (!inFaqSection) continue;
+      if (current) collected.push(current);
+      current = { question: h3[1].trim(), lines: [] };
+      continue;
+    }
+    if (h2) {
+      if (current) { collected.push(current); current = null; }
+      inFaqSection = FAQ_HEADING.test(h2[1].trim());
+      continue;
+    }
+    if (current) current.lines.push(rawLine);
+  }
+  if (current) collected.push(current);
+
+  return collected
+    .map((item) => ({ question: item.question, answer: toPlainText(item.lines.join("\n")) }))
+    .filter((item) => item.question && item.answer);
 }
 
 function normalizePost(meta, body, filePath) {
@@ -346,8 +481,9 @@ async function updateHtmlAssetVersions(assetVersion) {
 }
 
 function renderArticle(post, assetVersion) {
-  const articleBody = renderMarkdown(post.body);
+  const articleBody = renderMarkdown(post.body, `content/insights/${post.slug}`);
   const tagHtml = post.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
+  const faq = extractFaq(post.body);
   const blogPosting = {
     "@type": "BlogPosting",
     headline: post.title,
@@ -369,9 +505,19 @@ function renderArticle(post, assetVersion) {
       { "@type": "ListItem", position: 3, name: post.title, item: absoluteUrl(post.url) }
     ]
   };
+  const faqPage = faq.length ? {
+    "@type": "FAQPage",
+    "@id": `${absoluteUrl(post.url)}#faq`,
+    mainEntity: faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer }
+    }))
+  } : null;
+
   const jsonLd = {
     "@context": "https://schema.org",
-    "@graph": [orgNode, blogPosting, breadcrumb]
+    "@graph": [orgNode, blogPosting, breadcrumb, ...(faqPage ? [faqPage] : [])]
   };
 
   return `<!DOCTYPE html>
@@ -397,6 +543,7 @@ function renderArticle(post, assetVersion) {
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="넥스트코웍 인사이트" href="/rss.xml">
 <meta name="theme-color" content="#302D7C">
 <script src="${versioned("/js/analytics.js", assetVersion)}" defer></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
@@ -560,6 +707,78 @@ async function updateInsightsHub(feedHtml) {
   if (next !== html) await writeFile(file, next, "utf8");
 }
 
+/* ---------- RSS ----------
+   자사 발행 글만 싣는다(외부 채널 링크는 우리 콘텐츠가 아니므로 제외). */
+
+const RSS_WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const RSS_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+function toRfc822(date) {
+  // 요일은 UTC 자정 기준으로 뽑는다. KST 자정(+09:00)으로 만들면 UTC에서 전날이 되어 요일이 하루 밀린다.
+  const parsed = new Date(`${date}T00:00:00Z`);
+  if (Number.isNaN(parsed.getTime())) {
+    throw new Error(`날짜 형식이 잘못되었습니다: ${date} (YYYY-MM-DD로 적어주세요)`);
+  }
+  const [year, month, day] = String(date).split("-").map(Number);
+  return `${RSS_WEEKDAYS[parsed.getUTCDay()]}, ${String(day).padStart(2, "0")} ${RSS_MONTHS[month - 1]} ${year} 00:00:00 +0900`;
+}
+
+function renderRss(posts) {
+  const items = posts.map((post) => `    <item>
+      <title>${escapeHtml(post.title)}</title>
+      <link>${absoluteUrl(post.url)}</link>
+      <guid isPermaLink="true">${absoluteUrl(post.url)}</guid>
+      <pubDate>${toRfc822(post.date)}</pubDate>
+      <category>${escapeHtml(post.category)}</category>
+      <description>${escapeHtml(post.description)}</description>
+    </item>`).join("\n");
+
+  const latest = posts.length ? toRfc822(posts[0].date) : toRfc822("2026-07-09");
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>넥스트코웍 인사이트 — 찬스노트 ChanceNote</title>
+    <link>${siteUrl}/insights/</link>
+    <atom:link href="${siteUrl}/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>AI 실무활용과 워크스페이스 인사이트 — 넥스트코웍이 발행하는 콘텐츠.</description>
+    <language>ko</language>
+    <lastBuildDate>${latest}</lastBuildDate>
+${items}
+  </channel>
+</rss>
+`;
+}
+
+/* ---------- llms.txt ----------
+   AI에게 최신 글 목록을 넘기는 통로. 마커 사이만 자동 생성한다. */
+
+function renderLlmsInsights(posts) {
+  if (!posts.length) return "- (발행된 인사이트 아티클이 없습니다)";
+  return posts
+    .map((post) => `- ${post.title} (${post.date}): ${absoluteUrl(post.url)}\n  ${post.description}`)
+    .join("\n");
+}
+
+async function updateLlmsTxt(posts) {
+  const file = join(root, "llms.txt");
+  const text = await readFile(file, "utf8");
+  const startMark = "<!-- INSIGHTS:START -->";
+  const endMark = "<!-- INSIGHTS:END -->";
+  const start = text.indexOf(startMark);
+  const end = text.indexOf(endMark);
+
+  if (start === -1 || end === -1 || end < start) {
+    throw new Error("llms.txt: INSIGHTS:START / INSIGHTS:END 마커를 찾을 수 없습니다. 마커를 복구한 뒤 다시 빌드하세요.");
+  }
+
+  const next = text.slice(0, start + startMark.length)
+    + `\n${renderLlmsInsights(posts)}\n`
+    + text.slice(end);
+
+  if (next !== text) await writeFile(file, next, "utf8");
+}
+
 function renderSitemap(posts) {
   const routes = [
     ...staticRoutes,
@@ -597,9 +816,16 @@ async function main() {
   }
   await writeFile(join(root, "js", "insights-data.js"), renderFeedJs(feed), "utf8");
   await writeFile(join(root, "sitemap.xml"), renderSitemap(posts), "utf8");
+  await writeFile(join(root, "rss.xml"), renderRss(posts), "utf8");
   await updateInsightsHub(renderFeedHtml(feed));
+  await updateLlmsTxt(posts);
   await updateHtmlAssetVersions(assetVersion);
-  console.log(`Built ${posts.length} insight post(s), ${Math.min(feed.length, 8)} feed item(s) rendered statically. Asset version: ${assetVersion}`);
+
+  const faqCount = posts.reduce((sum, post) => sum + extractFaq(post.body).length, 0);
+  console.log(
+    `Built ${posts.length} insight post(s), ${Math.min(feed.length, 8)} feed item(s) static, `
+    + `${faqCount} FAQ entr(ies), rss.xml + llms.txt updated. Asset version: ${assetVersion}`
+  );
 }
 
 main().catch((error) => {

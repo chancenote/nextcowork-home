@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>넥스트코웍 인사이트 — 찬스노트 ChanceNote</title>
+    <link>https://www.nextcw.com/insights/</link>
+    <atom:link href="https://www.nextcw.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>AI 실무활용과 워크스페이스 인사이트 — 넥스트코웍이 발행하는 콘텐츠.</description>
+    <language>ko</language>
+    <lastBuildDate>Thu, 09 Jul 2026 00:00:00 +0900</lastBuildDate>
+    <item>
+      <title>넥스트코웍은 AI Workspace Builder입니다</title>
+      <link>https://www.nextcw.com/insights/ai-workspace-builder/</link>
+      <guid isPermaLink="true">https://www.nextcw.com/insights/ai-workspace-builder/</guid>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 +0900</pubDate>
+      <category>Company</category>
+      <description>넥스트코웍이 말하는 워크스페이스는 사무실만이 아니라, AI와 도구와 운영 방식이 함께 작동하는 업무 환경입니다.</description>
+    </item>
+  </channel>
+</rss>

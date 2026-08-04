@@ -773,6 +773,19 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
   padding: 2px 6px; border-radius: 6px; background: var(--bg-soft); color: var(--ink); font-size: .92em;
 }
 .post-body hr { border: none; border-top: 1px solid var(--hairline); margin: 42px 0; }
+/* 표 — 래퍼가 가로 스크롤을 흡수해 좁은 화면에서 페이지가 밀리지 않는다. */
+.post-table { overflow-x: auto; margin: 28px 0; border: 1px solid var(--hairline); border-radius: var(--radius-xs); }
+.post-table table { width: 100%; border-collapse: collapse; font-size: 16px; line-height: 1.65; }
+.post-table th, .post-table td { padding: 13px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--hairline); }
+.post-table thead th { background: var(--bg-soft); color: var(--ink); font-weight: 800; white-space: nowrap; }
+.post-table tbody tr:last-child td { border-bottom: none; }
+.post-table td { color: var(--text); }
+.post-table strong { color: var(--ink); }
+/* 본문 이미지 */
+.post-figure { margin: 30px 0; }
+.post-figure img { display: block; width: 100%; height: auto; border-radius: var(--radius-xs); border: 1px solid var(--hairline); }
+.post-figure figcaption { margin-top: 10px; color: var(--caption); font-size: 14px; line-height: 1.65; text-align: center; }
+.post-body p img { max-width: 100%; height: auto; border-radius: var(--radius-xs); }
 .post-cta {
   margin-bottom: clamp(72px, 10vw, 110px); padding: 30px;
   border: 1px solid var(--hairline); border-radius: var(--radius-xs); background: var(--bg); box-shadow: var(--shadow-card);
@@ -1376,6 +1389,9 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
   .post-hero { padding-top: 98px; }
   .post-body { font-size: 17.5px; line-height: 1.85; }
   .post-body h2 { margin-top: 42px; }
+  .post-table table { font-size: 15px; }
+  .post-table th, .post-table td { padding: 11px 13px; }
+  .post-figure { margin: 24px 0; }
   .post-cta { padding: 24px 22px; }
   .sig-item { grid-template-columns: 1fr; }
   .sig-no { display: none; }
