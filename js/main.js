@@ -467,4 +467,29 @@
         });
     });
   });
+
+  /* R9 · 좌측 고정 섹션 내비(.side-nav) 스크롤스파이 — 해당 요소가 있는 페이지에서만 동작 */
+  var sideNav = document.querySelector(".side-nav");
+  if (sideNav && "IntersectionObserver" in window) {
+    var sideLinks = Array.prototype.slice.call(sideNav.querySelectorAll('a[href^="#"]'));
+    var sideMap = {};
+    var sideSections = sideLinks
+      .map(function (a) {
+        var el = document.getElementById(a.getAttribute("href").slice(1));
+        if (el) sideMap[el.id] = a;
+        return el;
+      })
+      .filter(Boolean);
+    var sideSpy = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            sideLinks.forEach(function (a) { a.classList.toggle("active", a === sideMap[en.target.id]); });
+          }
+        });
+      },
+      { rootMargin: "-35% 0px -55% 0px" }
+    );
+    sideSections.forEach(function (s) { sideSpy.observe(s); });
+  }
 })();

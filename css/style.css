@@ -1610,3 +1610,58 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
   .before-after-photos { grid-template-columns: 1fr; gap: 10px; }
   .before-after-photos figure { aspect-ratio: 16 / 10; }
 }
+
+/* ================================================================
+   R9 · Public Advisory 재구성 (2026-08-05 대표 지시)
+   — 공간개발·AI 교육 2트랙 최상단 강조(.pillar-*), 비용 표기 전면 삭제,
+     좌측 고정 섹션 내비(.side-nav, ≥1400px 전용 — 그 아래에선 quick-nav 사용)
+   ================================================================ */
+.pillar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.pillar-card {
+  display: flex; flex-direction: column; overflow: hidden;
+  border: 1px solid var(--hairline); border-top: 3px solid var(--accent);
+  border-radius: var(--radius-md); background: var(--bg); box-shadow: var(--shadow-card);
+  transition: transform .25s, box-shadow .25s;
+}
+.pillar-card:hover, .pillar-card:focus-visible { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
+.pillar-card figure { margin: 0; aspect-ratio: 21 / 9; overflow: hidden; background: var(--bg-soft); }
+.pillar-card figure img { width: 100%; height: 100%; object-fit: cover; transition: filter .35s ease; }
+.pillar-card:hover figure img { filter: saturate(1.05); }
+.pillar-body { padding: 20px 24px 22px; display: flex; flex-direction: column; gap: 8px; }
+.pillar-no { font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); }
+.pillar-body h3 { font-size: 24px; letter-spacing: -0.01em; color: var(--ink); }
+.pillar-body p { font-size: 14.5px; line-height: 1.65; color: var(--text); word-break: keep-all; }
+.pillar-more { margin-top: 4px; font-size: 14px; font-weight: 700; color: var(--accent-ink); }
+@media (max-width: 860px) {
+  .pillar-grid { grid-template-columns: 1fr; gap: 14px; }
+  .pillar-card figure { aspect-ratio: 21 / 8; }
+  .pillar-body { padding: 18px 20px 20px; }
+  .pillar-body h3 { font-size: 21px; }
+}
+
+/* 공간개발 섹션 말미 CTA 2버튼 정렬 */
+.public-space-cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+/* 좌측 고정 섹션 내비 — 대형 데스크톱 전용. 컨테이너(1200px) 밖 여백에만 선다 */
+.side-nav { display: none; }
+@media (min-width: 1400px) {
+  .side-nav {
+    display: flex; flex-direction: column; gap: 2px;
+    position: fixed; left: 18px; top: 50%; transform: translateY(-50%); z-index: 90;
+  }
+  .side-nav a {
+    position: relative; padding: 6px 10px 6px 24px; font-size: 12.5px; font-weight: 600;
+    color: var(--caption); border-radius: 999px; white-space: nowrap;
+    transition: color .2s, background .2s;
+  }
+  .side-nav a::before {
+    content: ""; position: absolute; left: 9px; top: 50%; transform: translateY(-50%);
+    width: 6px; height: 6px; border-radius: 50%; background: var(--hairline);
+    transition: background .2s;
+  }
+  .side-nav a:hover, .side-nav a:focus-visible { color: var(--accent-ink); }
+  .side-nav a.active { color: var(--accent-ink); font-weight: 800; background: var(--accent-soft); }
+  .side-nav a.active::before, .side-nav a:hover::before { background: var(--accent-ink); }
+  /* side-nav가 뜨는 폭에서는 상단 quick-nav 중복 제거 */
+  .quick-nav--side { display: none; }
+}

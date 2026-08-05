@@ -51,8 +51,8 @@
       "areaServed": "KR",
       "description": "공공영역 공유공간·코워킹스페이스 건립 타당성 검토와 운영모델 설계, 공공조직 AI 역량강화 교육, 창업 심사·멘토링, 사업계획서 작성 컨설팅. 도시재생·복합개발 프로젝트의 민간 개발주체 대상 공간전략 자문도 수행합니다.",
       "offers": [
-        { "@type": "Offer", "name": "공공조직 AI 역량강화 컨설팅(교육설계·구축)", "priceCurrency": "KRW", "price": "10000000", "description": "공공조직 대상 AI 역량강화 컨설팅 — 교육 설계·구축. 견적 1,000만원부터, 과업 규모에 따라 산정" },
-        { "@type": "Offer", "name": "공공조직 AI 역량강화 단회 특강", "priceCurrency": "KRW", "price": "1500000", "description": "공무원·연구진·공공기관 직원 대상 단회 특강. AI Campus 특강 요금 준용 150만원부터 (인원·구성에 따라 산정)" },
+        { "@type": "Offer", "name": "공공조직 AI 역량강화 컨설팅(교육설계·구축)", "description": "공공조직 대상 AI 역량강화 컨설팅 — 교육 설계·구축. 과업 규모에 따라 별도 협의" },
+        { "@type": "Offer", "name": "공공조직 AI 역량강화 특강·워크숍", "description": "공무원·연구진·공공기관 직원 대상 특강·워크숍. AI Campus 프로그램 준용, 인원·구성에 따라 협의" },
         { "@type": "Offer", "name": "공유공간·코워킹스페이스 기획·운영 컨설팅", "description": "공간기획 리포트와 운영계획 보고서 산출. 기관 예산·조달방식·과업 규모에 따라 산정" },
         { "@type": "Offer", "name": "지방정부 워케이션센터 건립 용역", "description": "공간기획 리포트·운영모델 설계서·운영계획서 및 매뉴얼 산출. 기관 예산·조달방식·과업 규모에 따라 산정" },
         { "@type": "Offer", "name": "개관 후 활성화 자문·AI 교육프로그램 제공", "description": "홍보마케팅 전략서·교육 프로그램 운영 기획서 산출. 과업 규모·회차별 산정" }
@@ -111,25 +111,200 @@
       <p class="answer reveal" data-delay="2">건립 기획부터 운영모델·개관 후 활성화, AI 역량강화 교육까지 — <strong>감사·의회·주민 앞에서 설명할 수 있는 근거</strong>가 남게 설계합니다. <strong>민관협력 100건+</strong>, 공공의 절차와 언어를 아는 파트너입니다.</p>
       <div class="btn-row reveal" data-delay="3">
         <a class="btn btn-accent" href="/contact/?s=public&amp;t=advisory&amp;cta=hero">자문·교육 문의 <span class="arr">→</span></a>
-        <a class="btn btn-ghost" href="#refs">공공 레퍼런스 보기</a>
+        <a class="btn btn-ghost" href="#pillars">핵심 자문 영역 보기</a>
       </div>
     </div>
   </section>
 
-  <nav class="quick-nav" aria-label="Public Advisory 페이지 바로가기">
+  <!-- R9 · quick-nav는 좌측 고정 내비(.side-nav)가 뜨는 대형 데스크톱에서 숨김 -->
+  <nav class="quick-nav quick-nav--side" aria-label="Public Advisory 페이지 바로가기">
     <div class="container">
       <div class="quick-nav-list">
-        <a href="#scope-space">공유공간·운영</a>
-        <a href="#scope-ai">AI 역량강화</a>
-        <a href="#refs">공공 사례</a>
-        <a href="#regional-hub">지역 거점 공간</a>
-        <a href="#fees">비용·진행</a>
+        <a href="#space">공간개발</a>
+        <a href="#ai">AI 교육</a>
+        <a href="#more">그 밖의 자문</a>
+        <a href="#refs">레퍼런스</a>
+        <a href="#process">진행 방식</a>
         <a href="#faq">FAQ</a>
       </div>
     </div>
   </nav>
 
-  <section class="section" id="why">
+  <!-- R9 · 좌측 고정 섹션 내비 — 데스크톱(≥1400px) 전용, main.js 스크롤스파이로 활성 표시 -->
+  <nav class="side-nav" aria-label="Public Advisory 섹션 내비게이션">
+    <a href="#pillars">핵심 영역</a>
+    <a href="#space">공간개발</a>
+    <a href="#ai">AI 교육</a>
+    <a href="#more">그 밖의 자문</a>
+    <a href="#refs">레퍼런스</a>
+    <a href="#process">진행 방식</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+  <!-- R9 · 핵심 2트랙 최상단 강조 (대표 지시 2026-08-05: 공간개발·AI교육 중심, 기타 영역은 #more로 분리, 비용 표기 삭제) -->
+  <section class="section compact" id="pillars">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Core Advisory</span>
+        <h2>두 가지를 중심으로 자문합니다</h2>
+        <p>공간을 만드는 일과 사람을 준비시키는 일 — 거점의 성패를 가르는 두 축입니다.</p>
+      </div>
+      <div class="pillar-grid">
+        <a class="pillar-card reveal" href="#space">
+          <figure><img src="/img/public/space-coworking-lounge.webp" width="1600" height="901" loading="lazy" decoding="async" alt="자연광이 드는 라운지와 서가를 갖춘 공공 코워킹 공간"></figure>
+          <div class="pillar-body">
+            <span class="pillar-no">Core 1 · Space Development</span>
+            <h3>공유공간·거점 인프라 개발 자문</h3>
+            <p>코워킹스페이스·워케이션센터·앵커시설 — 기획부터 건립 자문, 운영모델, 개관 후 활성화까지 전 주기.</p>
+            <span class="pillar-more">자세히 보기 <span class="arr">↓</span></span>
+          </div>
+        </a>
+        <a class="pillar-card reveal" data-delay="1" href="#ai">
+          <figure><img src="/img/ai-campus/workshop-session.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="참가자들이 노트북을 펴고 함께 실습하는 AI 역량강화 워크숍 장면"></figure>
+          <div class="pillar-body">
+            <span class="pillar-no">Core 2 · AI Enablement</span>
+            <h3>공공조직 AI 역량강화 교육</h3>
+            <p>공무원·연구진·기관 직원 — 그 기관의 실제 문서와 업무로 실습하는 맞춤 교육과 AX 전환 컨설팅.</p>
+            <span class="pillar-more">자세히 보기 <span class="arr">↓</span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- R9 · Core 1 — 공간개발 (기존 #regional-hub에 생애주기 도식·위탁운영 콜아웃·추천사를 통합) -->
+  <section class="section soft public-space-section" id="space">
+    <div class="container">
+      <div class="section-head public-space-head reveal">
+        <span class="eyebrow">Core 1 · Space Development</span>
+        <h2>지방 균형발전의 거점 공간,<br>기획부터 건립·운영·활성화까지</h2>
+        <div class="public-space-intro">
+          <p>지방 투자 시대에는 산업시설만큼이나 사람이 머물고 일하며 연결되는 <strong>거점 인프라</strong>가 중요합니다. 호텔처럼 머물기 편한 코워킹스페이스, 국내외 이용자가 함께 일하는 글로벌 업무공간, 자연풍광과 업무를 잇는 워케이션 공간, 일·학습·문화·커뮤니티가 만나는 제4의 공간 — 넥스트코웍은 이를 보기 좋은 시설로 끝내지 않고 <strong>기획부터 건립 자문, 운영모델, 개관 후 활성화까지</strong> 하나의 흐름으로 설계합니다.</p>
+        </div>
+      </div>
+
+      <p class="public-space-thesis reveal">공간은 건물이 아니라, 사람과 투자와 새로운 활동을 연결하는 <strong>지역의 운영 인프라</strong>입니다.</p>
+
+      <div class="reference-gallery public-space-gallery reveal" role="group" aria-label="지방 거점 인프라 공간 사례">
+        <figure class="reference-shot public-space-shot">
+          <img src="/img/public/space-hospitality.webp" width="1200" height="800" loading="lazy" decoding="async" alt="호텔의 편안함과 업무 기능이 결합된 코워킹 라운지">
+        </figure>
+        <figure class="reference-shot public-space-shot">
+          <img src="/img/public/space-global-coworking.webp" width="1200" height="800" loading="lazy" decoding="async" alt="다양한 이용자가 함께 일하는 글로벌 코워킹스페이스">
+        </figure>
+        <figure class="reference-shot public-space-shot">
+          <img src="/img/public/space-workation.webp" width="1200" height="800" loading="lazy" decoding="async" alt="자연풍광과 업무 환경이 연결된 워케이션 공간">
+        </figure>
+        <figure class="reference-shot public-space-shot">
+          <img src="/img/public/space-fourth-place.webp" width="1200" height="800" loading="lazy" decoding="async" alt="일과 문화와 커뮤니티가 만나는 개방형 제4의 공간">
+        </figure>
+      </div>
+
+      <!-- 시각자산 #7 · 건립→운영→활성화 생애주기 (design/visual/07-public-lifecycle.svg) — R9에서 Why 섹션→공간개발 섹션으로 이동 -->
+      <figure class="visual-figure reveal is-scrollable">
+        <div class="visual-scroll-frame" style="--visual-min:680px" tabindex="0" role="group" aria-label="공공 공간의 건립·운영·활성화 생애주기 도표">
+        <svg viewBox="0 0 720 220" role="img" aria-labelledby="t07 d07" xmlns="http://www.w3.org/2000/svg">
+          <title id="t07">건립·운영·활성화 생애주기 — 일반 용역은 건립에서 끝나지만, 넥스트코웍은 개관 이후까지 설계한다</title>
+          <desc id="d07">건립·운영·활성화 세 단계가 왼쪽에서 오른쪽으로 이어진다. 위쪽 괄호는 일반 건축·용역의 범위가 건립에서 끝남을, 아래쪽 괄호는 넥스트코웍이 운영·활성화까지 전 생애주기를 맡음을 나타낸다. 운영·활성화 두 단계는 강조색으로 표시된다.</desc>
+          <text x="160" y="46" fill="var(--caption, #6E7175)" font-size="14" font-weight="700" text-anchor="middle">일반 건축·용역 — 건립에서 종료</text>
+          <path d="M70 66 L70 58 L250 58 L250 66" fill="none" stroke="var(--caption, #6E7175)" stroke-width="2"/>
+          <rect x="70" y="90" width="180" height="64" rx="8" fill="var(--bg-soft, #F4F4F5)" stroke="var(--hairline, #E4E4E7)" stroke-width="2"/>
+          <text x="160" y="129" fill="var(--ink, #1C1C22)" font-size="16" font-weight="700" text-anchor="middle">건립</text>
+          <path d="M258 112 L268 122 L258 132" fill="none" stroke="var(--accent-ink, #0C7B69)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="270" y="90" width="180" height="64" rx="8" fill="var(--accent-soft, rgba(37,197,168,.10))" stroke="var(--accent-ink, #0C7B69)" stroke-width="2"/>
+          <text x="360" y="129" fill="var(--accent-ink, #0C7B69)" font-size="16" font-weight="700" text-anchor="middle">운영</text>
+          <path d="M458 112 L468 122 L458 132" fill="none" stroke="var(--accent-ink, #0C7B69)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="470" y="90" width="180" height="64" rx="8" fill="var(--accent-soft, rgba(37,197,168,.10))" stroke="var(--accent-ink, #0C7B69)" stroke-width="2"/>
+          <text x="560" y="129" fill="var(--accent-ink, #0C7B69)" font-size="16" font-weight="700" text-anchor="middle">활성화</text>
+          <path d="M70 178 L70 186 L650 186 L650 178" fill="none" stroke="var(--accent-ink, #0C7B69)" stroke-width="2"/>
+          <text x="360" y="208" fill="var(--accent-ink, #0C7B69)" font-size="16" font-weight="800" text-anchor="middle">넥스트코웍 — 개관 이후 운영·활성화까지 설계</text>
+        </svg>
+        </div>
+        <figcaption>도식 읽는 법 — 위 괄호는 일반 용역이 <b>건립</b>에서 끝나는 범위, 아래 괄호는 넥스트코웍이 <b>운영·활성화</b>까지 맡는 범위입니다. 공유공간을 직접 창업하고 운영한 경험이 '개관 이후'를 설계하는 근거입니다.</figcaption>
+      </figure>
+
+      <div class="public-space-services">
+        <article class="public-space-service reveal">
+          <h3>지역 거점 공간 기획</h3>
+          <p>지역의 정책 목표와 개발 방향, 주요 이용자와 필요한 활동을 연결해 공간의 역할을 정의합니다. 혁신거점·도시재생·복합개발·지식산업센터·산업단지 안에서 코워킹스페이스, 워케이션센터, 앵커시설, 생활SOC와 공공기여시설의 기본 구상과 공간 프로그램을 설계합니다.</p>
+        </article>
+        <article class="public-space-service reveal" data-delay="1">
+          <h3>공간 건립·구축 자문</h3>
+          <p>공공 공간은 예산 확보만으로 서지 않습니다 — 지방재정 투자심사, 공유재산 관리계획, 규모에 따른 타당성 검토, 민간위탁 시 의회 동의까지 넘어야 첫 삽을 뜹니다. 이 관문에 대응하는 사업 논리와 근거 문서를 공간 기본계획·세부 도입시설·운영시스템 검토와 함께 준비하고, 설계·시공 파트너가 이미 정해진 경우에도 이용자·운영 관점에서 개관 준비 과업을 구체화합니다.</p>
+        </article>
+        <article class="public-space-service reveal">
+          <h3>운영모델·활성화 자문</h3>
+          <p>공간의 성패는 개관 이후에 결정됩니다. 위탁운영사 선정기준과 과업지시서, 운영계획서와 매뉴얼, 관리 프로그램, 콘텐츠·홍보마케팅, AI 교육·워크숍까지 설계해 사람이 계속 찾고 활동이 이어지는 공간을 준비합니다.</p>
+        </article>
+        <article class="public-space-service reveal" data-delay="1">
+          <h3>공공과 민간을 연결하는 협업</h3>
+          <p>지방정부·공공기관의 사업 목적과 절차, 건설사·투자사·디벨로퍼의 개발 방향과 운영 현실을 함께 이해합니다. 기본계획과 공모·사업계획 단계부터 역할과 산출물을 구체화하고, 건립 이후 실제 운영까지 이어지는 협업 구조를 만듭니다.</p>
+        </article>
+      </div>
+
+      <!-- R8 · 복합개발 개념도. 개념 이미지이므로 "실제 단면도"로 서술 금지 -->
+      <figure class="public-space-figure reveal">
+        <img src="/img/public/mixed-use-section.webp" width="1600" height="1067" loading="lazy" decoding="async" alt="저층 상업시설, 중층 공용 라운지·다이닝, 상층 주거가 한 건물에 겹쳐 있는 복합개발 건물의 절개 개념도">
+        <figcaption><b>거점은 한 층이 아니라 한 채로 설계됩니다.</b> 저층 상업, 중층 공용 라운지·다이닝, 상층 주거가 겹치는 복합개발 구조 안에서 코워킹스페이스와 공용공간이 어디에 놓일지를 함께 정합니다.</figcaption>
+      </figure>
+
+      <!-- R9 · 위탁운영 RFP 콜아웃 — 기존 비용 섹션에서 이동(운영모델·활성화 자문의 연장) -->
+      <div class="reveal callout" style="margin-top:8px;margin-bottom:28px">
+        <p style="margin:0;font-size:15px;color:var(--text);line-height:1.85"><strong style="color:var(--ink)">위탁운영은 공모를 띄우는 순간이 아니라, 기준을 설계하는 순간 성패가 갈립니다.</strong> 예탁결제원 창업지원공간·지식산업센터 위탁운영기관 심사 등 위원·심사 활동으로 평가 기준을 다뤄 봤고, 공유오피스 4개 지점을 직접 운영하며 운영사가 매일 감당하는 현실도 겪었습니다. 심사석과 운영 현장, <strong style="color:var(--ink)">양쪽을 아는 경험</strong>으로 — 좋은 운영사를 가려내는 <strong style="color:var(--ink)">과업지시서(RFP)</strong>, 방어 가능한 <strong style="color:var(--ink)">평가지표</strong>, 개관 후 성과를 담보하는 <strong style="color:var(--ink)">운영성과협약과 성과지표(KPI)</strong>를 산출물로 설계합니다.</p>
+      </div>
+
+      <!-- 추천사 · 게시(대표 고객 승인 확인 2026-07-18). 귀속은 익명 표기 — 대표가 기관명·직위 공개 동의 회신 시 figcaption만 교체 -->
+      <figure class="reveal callout testimonial testimonial--after">
+        <blockquote>"공간기획의 핵심 요소들을 잘 정리해 주셔서 내부 보고가 빨랐습니다. 개관 이후 운영과 활성화까지 미리 설계한 것이 이후 운영계획 수립에도 큰 도움이 됐습니다."</blockquote>
+        <figcaption>— 창업·기업지원 공간기획 담당자</figcaption>
+      </figure>
+
+      <div class="public-space-cta reveal">
+        <a class="btn btn-accent" href="/contact/?s=public&amp;t=advisory&amp;cta=space">공간개발 자문 문의 <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="/contact/?s=public&amp;t=dev&amp;cta=bridge">개발사업 협업 가능성 검토 <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- R9 · Core 2 — 공공 AI 교육 (기존 scope 항목 2개를 전용 섹션으로 격상) -->
+  <section class="section" id="ai">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Core 2 · AI Enablement</span>
+        <h2>공공조직 AI 역량강화 —<br>눈높이가 다른 조직마다, 다른 커리큘럼</h2>
+        <p>공무원, 박사급 연구진, 복지센터 관리자까지 — 사전 설문으로 수준을 진단하고, 그 기관의 실제 문서·업무로 실습합니다. 청와대·중앙부처·연구기관에서 검증된 <a class="link-accent" href="/ai-campus/">AI Campus 프로그램</a>이 기준입니다.</p>
+      </div>
+      <div class="scope-grid">
+        <div class="scope-item reveal"><span class="check">✓</span><div><h4>AI 실무교육 · 워크숍</h4><p>공무원·연구직·공공기관 직원 대상 AI 실무교육과 활용 워크숍 — 특강부터 정규 과정까지</p></div></div>
+        <div class="scope-item reveal" data-delay="1"><span class="check">✓</span><div><h4>AX 전환 진단 · 컨설팅</h4><p>팀별 AX 도입과제 설정, 생성형 AI 도입·활용 지원, 조직 맞춤 플레이북 제작</p></div></div>
+        <div class="scope-item reveal"><span class="check">✓</span><div><h4>운영팀 온보딩 · 개관 후 교육 프로그램</h4><p>거점 공간 운영팀 온보딩 교육과 개관 후 이용자 대상 AI 교육 프로그램 운영 — 공간개발 자문과 연결됩니다</p></div></div>
+        <div class="scope-item reveal" data-delay="1"><span class="check">✓</span><div><h4>교육효과 측정</h4><p>사전/사후 진단과 실습 산출물로 변화를 측정 — '몇 명이 들었다'가 아니라 '무엇이 만들어졌다'로 보고됩니다</p></div></div>
+      </div>
+      <div class="reveal section-actions--center">
+        <a class="btn btn-accent" href="/contact/?s=public&amp;t=advisory&amp;cta=ai_edu">AI 교육 문의 <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- R9 · 확장 영역 — 두 축의 경험이 이어지는 자문 활동(자연스러운 소개, 비용 미표기) -->
+  <section class="section soft" id="more">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">And More</span>
+        <h2>두 축과 함께, 이런 요청도 받습니다</h2>
+        <p>공간과 AI를 오가며 쌓인 경험이 심사·위원회·강연으로 이어집니다.</p>
+      </div>
+      <div class="scope-grid">
+        <div class="scope-item reveal"><span class="check">✓</span><div><h4>창업 심사 · 멘토링</h4><p>지원사업 심사, 예비·초기창업가 멘토링, 창업자 AI 활용 지원</p></div></div>
+        <div class="scope-item reveal" data-delay="1"><span class="check">✓</span><div><h4>정책 위원회 · 자문 활동</h4><p>공유경제·공간정책 위원회 참여, 위탁운영기관 심사, 공공 공간사업 정책자문</p></div></div>
+        <div class="scope-item reveal"><span class="check">✓</span><div><h4>컨퍼런스 · 포럼 · 특강</h4><p>[공간] 복합거점공간·코워킹스페이스 기획운영·제4의 공간 국내외 사례 [AI] AX 트렌드·AI 실무활용술</p></div></div>
+        <div class="scope-item reveal" data-delay="1"><span class="check">✓</span><div><h4>사업계획 컨설팅</h4><p>공공·민관협력 사업의 사업계획서 작성 컨설팅, 공모 대응 논리 정리</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- R9 · 신뢰·레퍼런스 통합 (기존 Why + Reference + 경험 스탯) -->
+  <section class="section" id="refs">
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Why NEXT COWORK</span>
@@ -153,59 +328,6 @@
           <p>공유공간을 직접 창업하고 운영한 경험으로 '개관 이후'를 설계할 수 있습니다. 건립보다 운영, 실적보다 지속 — 사용자 만족도가 강한 공간활성화 모델을 만듭니다.</p>
         </div>
       </div>
-
-      <!-- 시각자산 #7 · 건립→운영→활성화 생애주기 (design/visual/07-public-lifecycle.svg) -->
-      <figure class="visual-figure reveal is-scrollable">
-        <div class="visual-scroll-frame" style="--visual-min:680px" tabindex="0" role="group" aria-label="공공 공간의 건립·운영·활성화 생애주기 도표">
-        <svg viewBox="0 0 720 220" role="img" aria-labelledby="t07 d07" xmlns="http://www.w3.org/2000/svg">
-          <title id="t07">건립·운영·활성화 생애주기 — 일반 용역은 건립에서 끝나지만, 넥스트코웍은 개관 이후까지 설계한다</title>
-          <desc id="d07">건립·운영·활성화 세 단계가 왼쪽에서 오른쪽으로 이어진다. 위쪽 괄호는 일반 건축·용역의 범위가 건립에서 끝남을, 아래쪽 괄호는 넥스트코웍이 운영·활성화까지 전 생애주기를 맡음을 나타낸다. 운영·활성화 두 단계는 강조색으로 표시된다.</desc>
-          <text x="160" y="46" fill="var(--caption, #6E7175)" font-size="14" font-weight="700" text-anchor="middle">일반 건축·용역 — 건립에서 종료</text>
-          <path d="M70 66 L70 58 L250 58 L250 66" fill="none" stroke="var(--caption, #6E7175)" stroke-width="2"/>
-          <rect x="70" y="90" width="180" height="64" rx="8" fill="var(--bg-soft, #F4F4F5)" stroke="var(--hairline, #E4E4E7)" stroke-width="2"/>
-          <text x="160" y="129" fill="var(--ink, #1C1C22)" font-size="16" font-weight="700" text-anchor="middle">건립</text>
-          <path d="M258 112 L268 122 L258 132" fill="none" stroke="var(--accent-ink, #0C7B69)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          <rect x="270" y="90" width="180" height="64" rx="8" fill="var(--accent-soft, rgba(37,197,168,.10))" stroke="var(--accent-ink, #0C7B69)" stroke-width="2"/>
-          <text x="360" y="129" fill="var(--accent-ink, #0C7B69)" font-size="16" font-weight="700" text-anchor="middle">운영</text>
-          <path d="M458 112 L468 122 L458 132" fill="none" stroke="var(--accent-ink, #0C7B69)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          <rect x="470" y="90" width="180" height="64" rx="8" fill="var(--accent-soft, rgba(37,197,168,.10))" stroke="var(--accent-ink, #0C7B69)" stroke-width="2"/>
-          <text x="560" y="129" fill="var(--accent-ink, #0C7B69)" font-size="16" font-weight="700" text-anchor="middle">활성화</text>
-          <path d="M70 178 L70 186 L650 186 L650 178" fill="none" stroke="var(--accent-ink, #0C7B69)" stroke-width="2"/>
-          <text x="360" y="208" fill="var(--accent-ink, #0C7B69)" font-size="16" font-weight="800" text-anchor="middle">넥스트코웍 — 개관 이후 운영·활성화까지 설계</text>
-        </svg>
-        </div>
-        <figcaption>도식 읽는 법 — 위 괄호는 일반 용역이 <b>건립</b>에서 끝나는 범위, 아래 괄호는 넥스트코웍이 <b>운영·활성화</b>까지 맡는 범위입니다. 공유공간을 직접 창업하고 운영한 경험이 '개관 이후'를 설계하는 근거입니다.</figcaption>
-      </figure>
-
-      <div class="reveal section-actions--center">
-        <a class="btn btn-ghost" href="/about/">대표 이력 전체 보기 <span class="arr">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section soft" id="scope">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Scope</span>
-        <h2>자문 용역 범위</h2>
-      </div>
-      <div class="scope-grid">
-        <div class="scope-item reveal" id="scope-space"><span class="check">✓</span><div><h4>앵커시설·코워킹스페이스 건립 자문</h4><p>공간 기본계획 수립, 공간 프로그램 설계, 도입 세부시설 자문, 운영시스템 구축, 투자심사·타당성 검토 대응 논리 설계</p><a class="path-inline-link" href="#fee-space">공유공간 비용 보기 →</a></div></div>
-        <div class="scope-item reveal" data-delay="1"><span class="check">✓</span><div><h4>공공 구축 공간활성화 방안 수립</h4><p>운영 전략, 콘텐츠 프로그램, 홍보마케팅, 운영팀 온보딩 교육 위탁</p></div></div>
-        <div class="scope-item reveal" id="scope-ai"><span class="check">✓</span><div><h4>공공조직 AI 역량강화 교육</h4><p>공무원·연구직·공공기관 직원 대상 AI 실무교육, AI활용 워크숍 </p><a class="path-inline-link" href="#fee-ai">AI 역량강화 비용 보기 →</a></div></div>
-        <div class="scope-item reveal" data-delay="1"><span class="check">✓</span><div><h4>창업 심사 · 멘토링</h4><p>지원사업 심사, 예비·초기창업가 멘토링, 정책자문, 창업자 AI활용 지원 </p></div></div>
-        <div class="scope-item reveal"><span class="check">✓</span><div><h4>AX 전환 진단 및 컨설팅</h4><p>팀별 AX 도입과제 설정, 생성형 AI 도입 및 활용 지원, 플레이북 제작</p></div></div>
-        <div class="scope-item reveal" data-delay="1"><span class="check">✓</span><div><h4>컨퍼런스 · 포럼 · 발표 및 특강  </h4><p>[공간] 복합거점공간, 코워킹스페이스 기획운영, 생활인구 유입을 위한 제4의 공간 국내외 사례, [AI] AX 트렌드, AI 실무활용술, 인공지능 시대 살아가기     </p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="refs">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Reference</span>
-        <h2>공공 협력 레퍼런스</h2>
-      </div>
       <div class="ref-cols">
         <div class="ref-col reveal">
           <h4>중앙 · 광역</h4>
@@ -219,67 +341,6 @@
           <h4>위원 · 심사 활동</h4>
           <p>전라북도 공유활성화위원회 위원 · <b>전주시 공유촉진위원회 부위원장</b> · 완주군 위원회(미래발전/공약평가/정보화/사회적경제) · 충남 내포혁신플랫폼 건립 자문 · 전북테크노파크 오픈랩 공간디자인 자문 · 지식산업센터 위탁운영기관 심사 · 예탁결제원 창업지원공간  </p>
         </div>
-      </div>
-
-      <!-- 추천사 · 게시(대표 고객 승인 확인 2026-07-18). 귀속은 익명 표기 — 대표가 기관명·직위 공개 동의 회신 시 figcaption만 교체 -->
-      <figure class="reveal callout testimonial testimonial--after">
-        <blockquote>"공간기획의 핵심 요소들을 잘 정리해 주셔서 내부 보고가 빨랐습니다. 개관 이후 운영과 활성화까지 미리 설계한 것이 이후 운영계획 수립에도 큰 도움이 됐습니다."</blockquote>
-        <figcaption>— 창업·기업지원 공간기획 담당자</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="section public-space-section" id="regional-hub">
-    <div class="container">
-      <div class="section-head public-space-head reveal">
-        <span class="eyebrow">Regional Hub Infrastructure</span>
-        <h2>지방 균형발전에는 새로운 공간이 필요합니다</h2>
-        <div class="public-space-intro">
-          <p>지방 투자 시대에는 산업시설만큼이나, 사람이 머물고 일하며 연결되는 <strong>거점 인프라</strong>가 중요합니다. 지역 청년과 기업, 창업가, 이전 전문인력, 글로벌 방문객이 함께 일하고 교류할 공간이 있어야 투자가 지역의 활동으로 이어집니다.</p>
-          <p>호텔처럼 머물기 편한 코워킹스페이스, 국내외 이용자가 함께 일하는 글로벌 업무공간, 자연풍광과 업무를 잇는 워케이션 공간, 일·학습·문화·커뮤니티가 만나는 제4의 공간. 넥스트코웍은 이를 보기 좋은 시설로 끝내지 않고 <strong>기획부터 건립 자문, 운영모델, 개관 후 활성화까지</strong> 하나의 흐름으로 설계합니다.</p>
-        </div>
-      </div>
-
-      <p class="public-space-thesis reveal">공간은 건물이 아니라, 사람과 투자와 새로운 활동을 연결하는 <strong>지역의 운영 인프라</strong>입니다.</p>
-
-      <div class="reference-gallery public-space-gallery reveal" role="group" aria-label="지방 거점 인프라 공간 사례">
-        <figure class="reference-shot public-space-shot">
-          <img src="/img/public/space-hospitality.webp" width="1200" height="800" loading="lazy" decoding="async" alt="호텔의 편안함과 업무 기능이 결합된 코워킹 라운지">
-        </figure>
-        <figure class="reference-shot public-space-shot">
-          <img src="/img/public/space-global-coworking.webp" width="1200" height="800" loading="lazy" decoding="async" alt="다양한 이용자가 함께 일하는 글로벌 코워킹스페이스">
-        </figure>
-        <figure class="reference-shot public-space-shot">
-          <img src="/img/public/space-workation.webp" width="1200" height="800" loading="lazy" decoding="async" alt="자연풍광과 업무 환경이 연결된 워케이션 공간">
-        </figure>
-        <figure class="reference-shot public-space-shot">
-          <img src="/img/public/space-fourth-place.webp" width="1200" height="800" loading="lazy" decoding="async" alt="일과 문화와 커뮤니티가 만나는 개방형 제4의 공간">
-        </figure>
-      </div>
-
-      <!-- R8 · 복합개발 개념도. 개념 이미지이므로 "실제 단면도"로 서술 금지 -->
-      <figure class="public-space-figure reveal">
-        <img src="/img/public/mixed-use-section.webp" width="1600" height="1067" loading="lazy" decoding="async" alt="저층 상업시설, 중층 공용 라운지·다이닝, 상층 주거가 한 건물에 겹쳐 있는 복합개발 건물의 절개 개념도">
-        <figcaption><b>거점은 한 층이 아니라 한 채로 설계됩니다.</b> 저층 상업, 중층 공용 라운지·다이닝, 상층 주거가 겹치는 복합개발 구조 안에서 코워킹스페이스와 공용공간이 어디에 놓일지를 함께 정합니다.</figcaption>
-      </figure>
-
-      <div class="public-space-services">
-        <article class="public-space-service reveal">
-          <h3>지역 거점 공간 기획</h3>
-          <p>지역의 정책 목표와 개발 방향, 주요 이용자와 필요한 활동을 연결해 공간의 역할을 정의합니다. 혁신거점·도시재생·복합개발·지식산업센터·산업단지 안에서 코워킹스페이스, 워케이션센터, 앵커시설, 생활SOC와 공공기여시설의 기본 구상과 공간 프로그램을 설계합니다.</p>
-        </article>
-        <article class="public-space-service reveal" data-delay="1">
-          <h3>공간 건립·구축 자문</h3>
-          <p>공공 공간은 예산 확보만으로 서지 않습니다 — 지방재정 투자심사, 공유재산 관리계획, 규모에 따른 타당성 검토, 민간위탁 시 의회 동의까지 넘어야 첫 삽을 뜹니다. 이 관문에 대응하는 사업 논리와 근거 문서를 공간 기본계획·세부 도입시설·운영시스템 검토와 함께 준비하고, 설계·시공 파트너가 이미 정해진 경우에도 이용자·운영 관점에서 개관 준비 과업을 구체화합니다.</p>
-        </article>
-        <article class="public-space-service reveal">
-          <h3>운영모델·활성화 자문</h3>
-          <p>공간의 성패는 개관 이후에 결정됩니다. 위탁운영사 선정기준과 과업지시서, 운영계획서와 매뉴얼, 관리 프로그램, 콘텐츠·홍보마케팅, AI 교육·워크숍까지 설계해 사람이 계속 찾고 활동이 이어지는 공간을 준비합니다.</p>
-        </article>
-        <article class="public-space-service reveal" data-delay="1">
-          <h3>공공과 민간을 연결하는 협업</h3>
-          <p>지방정부·공공기관의 사업 목적과 절차, 건설사·투자사·디벨로퍼의 개발 방향과 운영 현실을 함께 이해합니다. 기본계획과 공모·사업계획 단계부터 역할과 산출물을 구체화하고, 건립 이후 실제 운영까지 이어지는 협업 구조를 만듭니다.</p>
-        </article>
       </div>
 
       <aside class="public-experience reveal" aria-label="넥스트코웍 공간개발 및 공공협력 경험">
@@ -296,49 +357,24 @@
         </div>
       </aside>
 
-      <div class="public-space-cta reveal">
-        <a class="btn btn-ghost" href="/contact/?s=public&amp;t=dev&amp;cta=bridge">개발사업 협업 가능성 검토 <span class="arr">→</span></a>
+      <div class="reveal section-actions--center">
+        <a class="btn btn-ghost" href="/about/">대표 이력 전체 보기 <span class="arr">→</span></a>
       </div>
     </div>
   </section>
 
-  <section class="section soft public-process-section" id="fees">
+  <!-- R9 · 진행 방식 — 비용 표기 전면 삭제(대표 지시), 조달·계약 절차와 산출물 중심 -->
+  <section class="section soft public-process-section" id="process">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow">Process & Fee</span>
-        <h2>진행 방식과 비용</h2>
-        <p>과업 범위에 따라 <strong style="color:var(--ink)">별도 견적</strong>으로 산정하며, 기관의 조달·계약 절차(수의계약·입찰·자문위촉)에 맞춰 진행합니다. 사전 협의는 무료입니다. 과업에 따라 <strong style="color:var(--ink)">사업계획서 · 공간기획 리포트 · 홍보 마케팅 기획안 · 공간운영 매뉴얼북 </strong> 등 근거가 남는 문서를 산출합니다. 공공조직 AI 역량강화 교육은 <a class="link-accent" href="/ai-campus/">AI Campus 프로그램</a>을 기준으로 제공됩니다.</p>
+        <span class="eyebrow">Process</span>
+        <h2>진행 방식</h2>
+        <p>기관의 조달·계약 절차(수의계약·입찰·자문위촉)에 맞춰 진행합니다. 과업에 따라 <strong style="color:var(--ink)">사업계획서 · 공간기획 리포트 · 홍보마케팅 기획안 · 공간운영 매뉴얼북</strong> 등 근거가 남는 문서를 산출합니다. 사전 협의는 무료입니다.</p>
       </div>
-
-      <div class="reveal callout" style="margin-top:8px;margin-bottom:28px">
-        <p style="margin:0;font-size:15px;color:var(--text);line-height:1.85"><strong style="color:var(--ink)">위탁운영은 공모를 띄우는 순간이 아니라, 기준을 설계하는 순간 성패가 갈립니다.</strong> 예탁결제원 창업지원공간·지식산업센터 위탁운영기관 심사 등 위원·심사 활동으로 평가 기준을 다뤄 봤고, 공유오피스 4개 지점을 직접 운영하며 운영사가 매일 감당하는 현실도 겪었습니다. 심사석과 운영 현장, <strong style="color:var(--ink)">양쪽을 아는 경험</strong>으로 — 좋은 운영사를 가려내는 <strong style="color:var(--ink)">과업지시서(RFP)</strong>, 방어 가능한 <strong style="color:var(--ink)">평가지표</strong>, 개관 후 성과를 담보하는 <strong style="color:var(--ink)">운영성과협약과 성과지표(KPI)</strong>를 산출물로 설계합니다.</p>
-      </div>
-
-      <!-- [제안값·대표확인] 공공 과업별 안내 — AI 역량강화는 컨설팅(교육설계·구축) 견적 1,000만원~ + 단회 특강 150만원~(AI Campus 준용) 2단 구조. JSON-LD도 컨설팅(1,000만)·특강(150만) 2오퍼로 분리해 정합. 건립·위탁운영 자문은 과업 규모·조달방식별 산정(단일 저가 앵커 미표기) -->
-      <div class="public-fee-list reveal">
-        <article class="public-fee-row is-core" id="fee-ai">
-          <div class="public-fee-copy"><b class="public-fee-title">공공조직 AI 역량강화 컨설팅(교육설계·구축)</b><span class="public-fee-output">산출물: 교육 설계서 · 실습 산출물(기관 문서 기반) · <a href="/ai-campus/">AI Campus 프로그램</a> 활용</span><span class="public-fee-note">단회 특강은 150만원~ (AI Campus 특강 준용)</span></div>
-          <!-- [제안값·대표확인] 컨설팅(교육설계·구축) 견적 1,000만원~ / 단회 특강 150만원~(AI Campus 특강 준용) — 본문·JSON-LD·면책 4곳 정합 -->
-          <div class="public-fee-value">견적 1,000만원~</div>
-        </article>
-        <article class="public-fee-row" id="fee-space">
-          <div class="public-fee-copy"><b class="public-fee-title">공유공간·코워킹스페이스 기획 · 운영 컨설팅</b><span class="public-fee-output">산출물: 공간기획 리포트 및 운영계획 보고서</span></div>
-          <div class="public-fee-value">과업 규모·조달방식에 따라 산정</div>
-        </article>
-        <article class="public-fee-row">
-          <div class="public-fee-copy"><b class="public-fee-title">지방정부 워케이션센터 건립 용역</b><span class="public-fee-output">산출물: 공간기획 리포트 · 운영모델 설계서 · 운영계획서 및 매뉴얼</span></div>
-          <div class="public-fee-value">과업 규모·조달방식에 따라 산정</div>
-        </article>
-        <article class="public-fee-row">
-          <div class="public-fee-copy"><b class="public-fee-title">개관 후 활성화 자문 · AI 교육프로그램 제공</b><span class="public-fee-output">산출물: 홍보마케팅 전략서 · 교육 프로그램 운영 기획서</span></div>
-          <div class="public-fee-value">과업·회차별 산정</div>
-        </article>
-      </div>
-      <p class="public-fee-disclaimer reveal">표기된 AI 역량강화 컨설팅·특강 요금은 예산 편성·품의를 위한 참고가이며, 건립·위탁운영 자문 비용은 기관의 예산·조달방식(수의계약·입찰·자문위촉)과 과업 범위에 따라 산정됩니다. 사전 협의는 무료입니다.</p>
 
       <div class="steps public-process-steps">
         <div class="step reveal"><h4>사전 협의</h4><p>과업 개요를 보내주시면 영업일 1일 내 회신 · 필요 시 과업 개요서 양식 안내</p></div>
-        <div class="step reveal" data-delay="1"><h4>과업 설계</h4><p>산출물·범위 정의, 견적 제출</p></div>
+        <div class="step reveal" data-delay="1"><h4>과업 설계</h4><p>산출물·범위 정의, 과업 설계서 제안</p></div>
         <div class="step reveal" data-delay="1"><h4>계약</h4><p>기관 절차에 맞춘 계약 체결</p></div>
         <div class="step reveal" data-delay="2"><h4>수행</h4><p>중간보고 포함 과업 수행</p></div>
         <div class="step reveal" data-delay="2"><h4>결과 보고</h4><p>보고서·증빙 등 근거가 남는 마무리</p></div>
@@ -418,7 +454,7 @@
     <div class="container">
       <span class="en">AI Workspace Builder — 지금 시작</span>
       <h2>근거가 남는 자문,<br>지속되는 공간을 만듭니다.</h2>
-      <p>과업 개요를 보내주시면, 수행 가능 범위와 견적을 안내드립니다.</p>
+      <p>과업 개요를 보내주시면, 수행 가능 범위와 진행 방식을 안내드립니다.</p>
       <a class="btn btn-point" href="/contact/?s=public&amp;t=advisory&amp;cta=footer">Public Advisory 문의 <span class="arr">→</span></a>
     </div>
   </div>
