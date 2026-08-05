@@ -919,12 +919,12 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
 .public-space-head .public-space-intro p { font-size: 18px; line-height: 1.86; }
 .public-space-head strong { color: var(--ink); }
 .public-space-thesis {
-  max-width: 980px; margin: 0 0 30px; padding: 20px 24px;
+  max-width: 980px; margin: 0 0 24px; padding: 20px 24px;
   border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   background: var(--bg); box-shadow: var(--shadow-card);
   color: var(--ink); font-size: clamp(18px, 2.2vw, 23px); font-weight: 700; line-height: 1.62;
 }
-.reference-gallery.public-space-gallery { margin-bottom: 32px; }
+.reference-gallery.public-space-gallery { margin-bottom: 24px; }
 .reference-shot.public-space-shot {
   aspect-ratio: 16 / 9; border-radius: var(--radius-md); box-shadow: var(--shadow-card);
 }
@@ -1006,7 +1006,7 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
   .public-space-head { margin-bottom: 28px; }
   .public-space-head .public-space-intro p { font-size: 16.5px; line-height: 1.82; }
   .public-space-thesis { margin-bottom: 24px; padding: 18px 18px; }
-  .reference-gallery.public-space-gallery { gap: 10px; margin-bottom: 32px; }
+  .reference-gallery.public-space-gallery { gap: 10px; margin-bottom: 24px; }
   .public-space-services { grid-template-columns: 1fr; gap: 12px; }
   .public-space-service { padding: 24px 20px; }
   .public-experience { margin-top: 16px; padding: 24px 20px; gap: 24px; }
@@ -1463,4 +1463,124 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
   .about-delivery { padding: 28px 22px; border-radius: var(--radius-md); }
   .about-delivery-list > div { grid-template-columns: 30px 76px 1fr; gap: 8px; }
   .about-delivery-list p { font-size: 13.5px; }
+}
+
+/* ================================================================
+   R8 · 실사진 자산 (라운드 8 비주얼 리프레시)
+   원칙 — 사진=느낌 / SVG=구조. 두 역할을 섞지 않는다.
+   배경으로 쓰는 사진은 예외 없이 스크림(화이트 그라데이션)을 얹어
+   본문 텍스트 대비를 확보한다. 콘텐츠성 사진은 .reference-gallery /
+   .photo-band / .public-space-figure 세 패턴으로만 쓴다.
+   주의 — coaching 사진 2종은 파일명과 내용이 서로 반대다.
+     reflection-window.webp = 우드 테이블 1:1 세션(2인)  → 히어로 배경
+     hero-session.webp      = 창가 1인 회고 장면         → 신청 후 절차 콜아웃
+   배치는 21_image_placement_plan.md가 슬롯마다 지정한 "내용" 기준을 따랐다.
+   ================================================================ */
+
+/* 홈 히어로 — 사진 배경 + 좌→우 화이트 스크림(본문은 좌측 640px 안에 머문다) */
+.hero::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,0) 74%, rgba(255,255,255,.72) 90%, #fff 100%),
+    linear-gradient(96deg, #fff 0%, #fff 31%, rgba(255,255,255,.95) 44%, rgba(255,255,255,.74) 58%, rgba(255,255,255,.52) 74%, rgba(255,255,255,.60) 100%),
+    url("/img/home/hero-space-ai.webp");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: 0 0, 0 0, right center;
+  background-size: auto, auto, cover;
+}
+.hero > .container { position: relative; z-index: 1; }
+
+/* CEO 코칭 히어로 — 사진 배경(우측) + 스크림. 우측 .ax-hero-panel은 불투명 카드라 사진 위에 얹힌다 */
+.coaching-hero::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,0) 78%, rgba(255,255,255,.70) 92%, var(--bg) 100%),
+    linear-gradient(94deg, var(--bg) 0%, var(--bg) 32%, rgba(255,255,255,.93) 46%, rgba(255,255,255,.72) 64%, rgba(255,255,255,.58) 100%),
+    url("/img/coaching/reflection-window.webp");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: 0 0, 0 0, right center;
+  background-size: auto, auto, cover;
+}
+.coaching-hero > .container { position: relative; z-index: 1; }
+
+/* 콜아웃 배경 사진 — --callout-photo 로 이미지를 주입(.selector-card 의 --c 인라인 변수 관례와 동일) */
+.callout--photo {
+  background-image:
+    linear-gradient(94deg, var(--accent-soft) 0%, var(--accent-soft) 45%, rgba(255,255,255,0) 76%),
+    linear-gradient(94deg, #fff 0%, #fff 39%, rgba(255,255,255,.94) 53%, rgba(255,255,255,.78) 72%, rgba(255,255,255,.70) 100%),
+    var(--callout-photo, none);
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: 0 0, 0 0, right center;
+  background-size: auto, auto, cover;
+}
+
+/* 와이드 포토 밴드 — 섹션 상단 신뢰 이미지(높이 고정, 크롭) */
+.photo-band {
+  margin: 0 0 22px; overflow: hidden; border-radius: var(--radius-md);
+  border: 1px solid var(--hairline); background: var(--bg-soft); box-shadow: var(--shadow-card);
+}
+.photo-band img { display: block; width: 100%; height: 128px; object-fit: cover; object-position: center 46%; }
+
+/* 추천사 + 산출물 사진 2열 */
+.testimonial--with-shot {
+  display: grid; grid-template-columns: minmax(0, 190px) minmax(0, 1fr);
+  column-gap: 20px; align-items: center;
+}
+.testimonial--with-shot .testimonial-shot {
+  grid-row: 1 / span 2; align-self: center; display: block; width: 100%; height: auto;
+  aspect-ratio: 3 / 2; object-fit: cover;
+  border: 1px solid var(--hairline); border-radius: var(--radius-xs); background: var(--bg-soft);
+}
+.testimonial--with-shot blockquote, .testimonial--with-shot figcaption { grid-column: 2; }
+
+/* 공공 — 복합개발 개념도 + 설명 2열 */
+.public-space-figure {
+  max-width: 1040px; margin: 0 auto 16px;
+  display: grid; grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+  gap: 22px; align-items: center;
+  padding: 18px 22px; border: 1px solid var(--hairline); border-left: 3px solid var(--accent);
+  border-radius: var(--radius-md); background: var(--bg); box-shadow: var(--shadow-card);
+}
+.public-space-figure img {
+  display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover;
+  border-radius: var(--radius-xs); background: var(--bg-soft);
+}
+.public-space-figure figcaption { font-size: 14.5px; line-height: 1.7; color: var(--caption); word-break: keep-all; }
+.public-space-figure figcaption b { color: var(--ink); }
+
+@media (max-width: 860px) {
+  .public-space-figure { grid-template-columns: 1fr; gap: 12px; padding: 14px; }
+  .public-space-figure img { aspect-ratio: 2 / 1; }
+  .public-space-figure figcaption { font-size: 14px; line-height: 1.65; }
+  .testimonial--with-shot { grid-template-columns: minmax(0, 150px) minmax(0, 1fr); column-gap: 16px; }
+}
+
+/* 모바일 — 본문이 전폭을 쓰므로 텍스트 뒤 사진은 대비를 해친다.
+   홈: 배경을 끄고 히어로 하단 풀블리드 밴드로 전환(사진은 보이되 글자 위에 겹치지 않게).
+   코칭: 우측 패널이 세로로 쌓이므로 균일한 화이트 베일로 낮춰 질감만 남긴다. */
+@media (max-width: 900px) {
+  .hero::before { display: none; }
+  .hero::after {
+    content: ""; display: block; height: 150px; margin: 26px 0 -36px;
+    background-image:
+      linear-gradient(180deg, rgba(255,255,255,.45) 0%, rgba(255,255,255,0) 42%),
+      url("/img/home/hero-space-ai.webp");
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 0, center 42%;
+    background-size: auto, cover;
+  }
+  .coaching-hero::before {
+    background-image:
+      linear-gradient(180deg, rgba(255,255,255,.93) 0%, rgba(255,255,255,.90) 60%, var(--bg) 100%),
+      url("/img/coaching/reflection-window.webp");
+    background-position: 0 0, center 45%;
+  }
+}
+
+@media (max-width: 720px) {
+  .photo-band img { height: 118px; }
+  .photo-band { margin-bottom: 20px; }
+  .testimonial--with-shot { grid-template-columns: 1fr; row-gap: 12px; }
+  .testimonial--with-shot .testimonial-shot { grid-row: auto; aspect-ratio: 2 / 1; }
+  .testimonial--with-shot blockquote, .testimonial--with-shot figcaption { grid-column: 1; }
 }
