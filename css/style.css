@@ -1825,6 +1825,7 @@ body.theme-public { --px-dark: #0E2B28; --px-dark2: #134E48; --px-line: #CDEAE2;
 .px-essay-body p { margin-bottom: 12px; }
 .px-essay-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; list-style: none; padding: 0; }
 .px-essay-tags li { font-size: 13.3px; font-weight: 650; color: var(--accent-ink); background: #fff; border: 1px solid var(--px-line); border-radius: 100px; padding: 6px 14px; }
+.px-essay-body .public-space-figure { margin: 18px 0 4px; max-width: none; background: #fff; }
 
 /* Cards 2col */
 .px-cards2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
