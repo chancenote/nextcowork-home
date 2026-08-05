@@ -15,6 +15,11 @@ _workspace/
 _workspace_prev/
 output/
 
+# 원본 생성 이미지 대기 폴더 — 최적화 전 원본(대개 큰 PNG)을 그대로 커밋하지 않기 위함.
+# 처리 후에는 img/{페이지}/ 아래 WebP로 정식 배치됨.
+img/_incoming/*
+!img/_incoming/.gitkeep
+
 # 하네스 내부 (에이전트·스킬 — 사업전략 로직 포함, 공개 배포 repo에서 제외)
 # 저장소에 포함하고 싶으면 아래 줄을 삭제하세요.
 .claude/
