@@ -492,4 +492,28 @@
     );
     sideSections.forEach(function (s) { sideSpy.observe(s); });
   }
+
+  /* R10 · Public v2 — 좌측 레일(.px-rail)·모바일 칩바(.px-chipbar) 스크롤스파이.
+     섹션이 길어 IO 대신 스크롤 위치 기준(참조 설계안 방식)으로 활성화한다. */
+  var pxSpyLinks = Array.prototype.slice.call(document.querySelectorAll(".px-rail a.spy, .px-chipbar a.spy"));
+  if (pxSpyLinks.length) {
+    var pxIds = [];
+    pxSpyLinks.forEach(function (a) {
+      var id = a.getAttribute("href").slice(1);
+      if (pxIds.indexOf(id) === -1) pxIds.push(id);
+    });
+    var pxSecs = pxIds.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+    var pxOnScroll = function () {
+      var y = window.scrollY + 150;
+      var cur = null;
+      pxSecs.forEach(function (s) {
+        if (s.getBoundingClientRect().top + window.scrollY <= y) cur = s.id;
+      });
+      pxSpyLinks.forEach(function (a) {
+        a.classList.toggle("active", a.getAttribute("href") === "#" + cur);
+      });
+    };
+    window.addEventListener("scroll", pxOnScroll, { passive: true });
+    pxOnScroll();
+  }
 })();
