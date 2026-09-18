@@ -148,7 +148,7 @@
      여기는 폴백 전용 — 이미 정적 항목이 있으면 렌더하지 않는다(중복 방지).
      색상·라벨 맵을 고치면 scripts/build-insights.mjs의 feedColors/feedNames도 함께 고칠 것. */
   var feedRoot = document.getElementById("feed");
-  if (feedRoot && window.NCW_FEED && !feedRoot.firstElementChild) {
+  if (feedRoot && !feedRoot.classList.contains("thumbnail-feed") && window.NCW_FEED && !feedRoot.firstElementChild) {
     var colors = {
       insight: { line: "var(--accent)", ink: "var(--accent-ink)" },
       brunch: { line: "var(--line-public)", ink: "var(--line-public-ink)" },

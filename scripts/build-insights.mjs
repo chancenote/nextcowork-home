@@ -1,3 +1,4 @@
+import { renderMagazine, renderLatestNote } from "../js/insights-cards.js";
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { dirname, join, relative } from "node:path";
@@ -416,8 +417,11 @@ function normalizePost(meta, body, filePath) {
     description: meta.description,
     date: meta.date,
     category: meta.category || "Insight",
+    topic: meta.topic || (meta.category === "Company" ? "넥스트코웍 이야기" : ({flexoffice:"공간 비즈니스",public:"공공공간·지역",coaching:"AI 업무전환","ai-campus":"AI 업무전환"}[meta.cta_service] || "넥스트코웍 이야기")),
     tags: Array.isArray(meta.tags) ? meta.tags : [],
     image: meta.image || "/img/og.png",
+    thumbnail: meta.thumbnail || meta.image || "/img/og.png",
+    imageAlt: meta.image_alt || "",
     ctaService: meta.cta_service || "general",
     body,
     url: `/insights/${slug}/`
@@ -444,7 +448,7 @@ async function computeAssetVersion(posts) {
     tags: post.tags
   }))));
 
-  for (const path of ["css/style.css", "js/main.js", "js/analytics.js", "scripts/build-insights.mjs"]) {
+  for (const path of ["css/style.css", "js/main.js", "js/analytics.js", "scripts/build-insights.mjs", "css/insights-magazine.css", "js/insights-cards.js", "js/insights-magazine.js"]) {
     hash.update(await readFile(join(root, path), "utf8"));
   }
 
@@ -477,6 +481,8 @@ async function updateHtmlAssetVersions(assetVersion) {
       .replace(/\/css\/style\.css(?:\?v=[^"]*)?/g, versioned("/css/style.css", assetVersion))
       .replace(/\/js\/analytics\.js(?:\?v=[^"]*)?/g, versioned("/js/analytics.js", assetVersion))
       .replace(/\/js\/insights-data\.js(?:\?v=[^"]*)?/g, versioned("/js/insights-data.js", assetVersion))
+      .replace(/\/css\/insights-magazine\.css(?:\?v=[^"]*)?/g, versioned("/css/insights-magazine.css", assetVersion))
+      .replace(/\/js\/insights-magazine\.js(?:\?v=[^"]*)?/g, versioned("/js/insights-magazine.js", assetVersion))
       .replace(/\/js\/main\.js(?:\?v=[^"]*)?/g, versioned("/js/main.js", assetVersion));
     if (html !== before) await writeFile(file, html, "utf8");
   }
@@ -553,6 +559,7 @@ function renderArticle(post, assetVersion) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
 <link rel="stylesheet" href="${versioned("/css/style.css", assetVersion)}">
+<link rel="stylesheet" href="${versioned("/css/insights-magazine.css", assetVersion)}">
 <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
 </head>
 <body class="theme-ai">
@@ -588,6 +595,7 @@ function renderArticle(post, assetVersion) {
         <h1 class="reveal" data-delay="2">${escapeHtml(post.title)}</h1>
         <p class="post-lead reveal" data-delay="3">${escapeHtml(post.description)}</p>
         ${tagHtml ? `<div class="post-tags reveal" data-delay="3">${tagHtml}</div>` : ""}
+        ${post.topic ? `<a class="post-topic-link reveal" data-delay="3" href="/insights/?topic=${encodeURIComponent(post.topic)}#latest-content">이 주제의 글 더 보기 <span class="arr">→</span></a>` : ""}
       </div>
     </header>
     <div class="container post-container">
@@ -604,6 +612,21 @@ ${articleBody}
       </div>
     </div>
   </article>
+  <section class="insights-subscribe" aria-labelledby="subscribe-heading" id="insights-subscribe">
+    <div class="container post-container"><div class="subscribe-panel">
+      <div class="subscribe-copy"><h2 id="subscribe-heading">AI 실무 인사이트를 이메일로 받아보세요</h2><p>업무에 적용할 AI 활용법과 넥스트코웍의 새로운 글을 전합니다. 광고성 메일은 보내지 않습니다.</p></div>
+      <form class="insights-subscribe-form" id="newsletter-form" data-endpoint="https://hook.us1.make.com/li5ucmemlr73l6hfuwcx27hb861zaemg" action="https://hook.us1.make.com/li5ucmemlr73l6hfuwcx27hb861zaemg" method="post">
+        <input type="hidden" name="form_type" value="newsletter">
+        <label class="subscribe-label" for="insights-subscribe-email">이메일 주소</label>
+        <div class="newsletter-row">
+          <input class="newsletter-input" id="insights-subscribe-email" type="email" name="email" required autocomplete="email" placeholder="name@company.com" aria-label="구독할 이메일 주소">
+          <button type="submit" class="btn btn-primary">인사이트 받아보기 <span class="arr">→</span></button>
+        </div>
+        <p class="form-status" id="newsletter-status" role="status" aria-live="polite"></p>
+        <p class="newsletter-note">이메일 구독이 어려우면 <a class="link-accent" href="https://open.kakao.com/o/sfxwSCvf" target="_blank" rel="noopener">카카오톡 채널</a>로도 신청하실 수 있습니다.</p>
+      </form>
+    </div></div>
+  </section>
 </main>
 <footer class="footer">
   <div class="footer-main">
@@ -656,7 +679,10 @@ function buildFeed(posts) {
     src: "insight",
     title: post.title,
     url: post.url,
-    date: formatDate(post.date)
+    date: formatDate(post.date),
+    description: post.description, category: post.category, image: post.image,
+    thumbnail: post.thumbnail, imageAlt: post.imageAlt,
+    topic: post.topic, tags: post.tags, searchText: toPlainText(post.body)
   }));
   return [...generated, ...externalFeed];
 }
@@ -666,14 +692,7 @@ function buildFeed(posts) {
    목록이 원본 HTML에 없으면 글이 발견되지 않는다.
    마크업은 js/main.js의 폴백 렌더와 동일해야 한다. */
 function renderFeedHtml(feed) {
-  return feed.slice(0, 8).map((item) => {
-    const color = feedColors[item.src] || feedColors.insight;
-    const external = /^https?:\/\//.test(item.url);
-    return `<a class="feed-item" href="${escapeAttr(item.url)}"${external ? ' target="_blank" rel="noopener"' : ""} style="--fc: ${color.line}; --fc-ink: ${color.ink};">`
-      + `<span class="feed-src">${escapeHtml(feedNames[item.src] || item.src)}</span>`
-      + `<h4>${escapeHtml(item.title)}</h4>`
-      + `<span class="date">${escapeHtml(item.date || "")}</span></a>`;
-  }).join("\n        ");
+  return renderMagazine(feed);
 }
 
 function renderFeedJs(feed) {
@@ -690,7 +709,7 @@ window.NCW_FEED = ${JSON.stringify(feed, null, 2)};
 `;
 }
 
-async function updateInsightsHub(feedHtml) {
+async function updateInsightsHub(feedHtml, heroHtml) {
   const file = join(outputDir, "index.html");
   const html = await readFile(file, "utf8");
   const startMark = "<!-- FEED:START -->";
@@ -702,10 +721,12 @@ async function updateInsightsHub(feedHtml) {
     throw new Error("insights/index.html: FEED:START / FEED:END 마커를 찾을 수 없습니다. 마커를 복구한 뒤 다시 빌드하세요.");
   }
 
-  const next = html.slice(0, start + startMark.length)
+  let next = html.slice(0, start + startMark.length)
     + `\n        ${feedHtml}\n        `
     + html.slice(end);
 
+  if (!next.includes("<!-- HERO:START -->") || !next.includes("<!-- HERO:END -->")) throw new Error("Missing hero markers");
+  next = next.replace(/<!-- HERO:START -->[\s\S]*?<!-- HERO:END -->/, () => "<!-- HERO:START -->" + heroHtml + "<!-- HERO:END -->");
   if (next !== html) await writeFile(file, next, "utf8");
 }
 
@@ -810,7 +831,7 @@ async function updateRelatedLinks(posts) {
 
     const matched = posts.filter((post) => post.ctaService === target.service).slice(0, RELATED_LIMIT);
     const block = renderRelatedHtml(matched);
-    const next = html.slice(0, start + startMark.length)
+    let next = html.slice(0, start + startMark.length)
       + (block ? `\n        ${block}\n        ` : "\n        ")
       + html.slice(end);
 
@@ -920,7 +941,7 @@ async function main() {
   await writeFile(join(root, "js", "insights-data.js"), renderFeedJs(feed), "utf8");
   await writeFile(join(root, "rss.xml"), renderRss(posts), "utf8");
   // 허브·llms.txt를 먼저 갱신해야 그 내용 변화가 lastmod에 반영된다.
-  await updateInsightsHub(renderFeedHtml(feed));
+  await updateInsightsHub(renderFeedHtml(feed), renderLatestNote(feed));
   const relatedCount = await updateRelatedLinks(posts);
   await updateLlmsTxt(posts);
 
@@ -945,7 +966,7 @@ async function main() {
 
   const faqCount = posts.reduce((sum, post) => sum + extractFaq(post.body).length, 0);
   console.log(
-    `Built ${posts.length} insight post(s), ${Math.min(feed.length, 8)} feed item(s) static, `
+    `Built ${posts.length} insight post(s), ${feed.length} thumbnail card(s) static, `
     + `${faqCount} FAQ entr(ies), ${relatedCount} related link(s) on service pages, `
     + `rss.xml + llms.txt updated. Asset version: ${assetVersion}`
   );
