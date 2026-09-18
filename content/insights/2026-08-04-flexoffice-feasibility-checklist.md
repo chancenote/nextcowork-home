@@ -6,6 +6,8 @@ category: "공간 컨설팅"
 tags: ["공유오피스", "도입 타당성", "디벨로퍼", "공실", "플렉스 오피스"]
 slug: "flexoffice-feasibility-checklist"
 image: "/img/insights/og-flexoffice-feasibility.jpg"
+thumbnail: "/img/insights/coworking-lounge-amenity.webp"
+image_alt: "좌석과 라운지, 카페가 연결된 공유오피스 공간 이미지"
 cta_service: "flexoffice"
 ---
 
