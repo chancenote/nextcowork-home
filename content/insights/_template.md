@@ -3,9 +3,12 @@ title: "글 제목을 입력하세요"
 description: "검색 결과와 공유 카드에 보일 1~2문장 요약입니다."
 date: "2026-07-09"
 category: "AI 실무활용"
+topic: "AI 업무전환"
 tags: ["ChatGPT", "업무자동화"]
 slug: "english-url-slug"
 image: "/img/og.png"
+thumbnail: "/img/og.png"
+image_alt: "대표 이미지 설명"
 cta_service: "ai-campus"
 ---
 

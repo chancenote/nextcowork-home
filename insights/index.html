@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="/js/analytics.js?v=ncw-00e160d047" defer></script>
+<script src="/js/analytics.js?v=ncw-56dd8bca23" defer></script>
 <title>인사이트 허브 | 찬스노트 ChanceNote — AI 실무활용 · 워크스페이스 지식 — 넥스트코웍</title>
 <meta name="description" content="AI 트렌드를 비즈니스 언어로 번역하는 콘텐츠 브랜드 찬스노트(ChanceNote). 브런치·네이버 블로그·Threads에서 발행되는 AI 실무활용술과 워크스페이스 인사이트, AI 플레이북과 실무 자료실.">
 <link rel="canonical" href="https://www.nextcw.com/insights/">
@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=ncw-00e160d047">
+<link rel="stylesheet" href="/css/style.css?v=ncw-56dd8bca23">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -43,6 +43,7 @@
   "publisher": { "@id": "https://www.nextcw.com/#org" }
 }
 </script>
+<link rel="stylesheet" href="/css/insights-magazine.css?v=ncw-56dd8bca23">
 </head>
 <body class="theme-ai">
 
@@ -72,48 +73,56 @@
 
 <main id="main-content">
 
-  <section class="page-hero">
+  <section class="insights-intro">
     <div class="container">
-      <div class="crumb reveal">Insights / <b>찬스노트 ChanceNote</b></div>
-      <h1 class="reveal" data-delay="1">계속 발행되는<br><span class="accent">살아있는 지식.</span></h1>
-      <p class="answer reveal" data-delay="2"><strong>찬스노트(ChanceNote)</strong>는 AI 트렌드를 비즈니스 언어로 번역하는 넥스트코웍의 콘텐츠 브랜드입니다. 브런치의 긴 글, 네이버 블로그의 실무 가이드, Threads의 매일 기록 — 흩어져 있던 지식이 여기서 연결됩니다. 강의와 컨설팅에서 검증된 내용만 콘텐츠가 됩니다.</p>
+      <div class="insights-heading"><div><div class="crumb">Insights / <b>찬스노트 ChanceNote</b></div><h1>공간과 AI, 현장에서 얻은 판단 기준.</h1></div><a href="#latest-content">모든 콘텐츠 살펴보기 ↓</a></div>
+      <div id="latest-note"><!-- HERO:START --><a class="latest-note" href="/insights/flexoffice-feasibility-checklist/"><div class="latest-note-cover"><img src="/img/insights/coworking-lounge-amenity.webp" alt="좌석과 라운지, 카페가 연결된 공유오피스 공간 이미지" width="1600" height="900" fetchpriority="high"></div><div class="latest-note-copy"><span class="eyebrow">Latest Note · 공간 비즈니스</span><h2>공유오피스 도입 타당성 검토, 무엇부터 봐야 하나요</h2><p>수요 조사보다 먼저 계산해야 할 숫자가 있습니다. 공유오피스 4개 지점을 직접 운영하며 확인한 도입 타당성 검토의 순서와 판단 기준을 정리했습니다.</p><div class="latest-note-meta"><span>2026.08.04</span><strong>노트 읽기 <span aria-hidden="true">→</span></strong></div></div></a><!-- HERO:END --></div>
     </div>
   </section>
 
   <!-- Latest feed -->
-  <section class="section soft">
+  <section class="section soft" id="latest-content">
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Latest</span>
         <h2>최신 콘텐츠</h2>
         <p>새 글이 발행되면 이곳에 업데이트됩니다.</p>
       </div>
+      <div class="insights-discovery" id="insights-discovery" hidden>
+        <form id="insights-search" role="search" aria-label="인사이트 검색">
+          <label for="insights-query">콘텐츠 검색</label>
+          <div class="insights-search-row"><input id="insights-query" type="search" name="q" placeholder="제목·내용으로 검색" autocomplete="off"><button type="submit" class="btn btn-primary">검색 <span aria-hidden="true">→</span></button></div>
+        </form>
+        <div class="insights-topics-block">
+          <span class="insights-topics-label" id="insights-topics-label">주제</span>
+          <div class="insights-topics" id="insights-topics" role="group" aria-labelledby="insights-topics-label"></div>
+        </div>
+        <section class="tag-browser" aria-labelledby="tag-browser-title">
+          <div class="tag-browser-head"><div><h3 id="tag-browser-title">태그로 찾기</h3><p>태그를 선택하면 관련 노트만 모아봅니다. 숫자는 현재 검색어·주제 조건에서 연결되는 노트 수입니다.</p></div><div class="tag-search-wrap"><label for="insights-tag-query">태그 이름 검색</label><input type="search" id="insights-tag-query" placeholder="예: 공유오피스" autocomplete="off" aria-controls="insights-tags"></div></div>
+          <div id="insights-tags" role="group" aria-label="태그 선택"></div>
+          <div class="tag-browser-bottom"><p id="tag-match-count" role="status" aria-live="polite"></p><button type="button" id="tag-show-all" aria-expanded="false" aria-controls="insights-tags">전체 태그 보기</button></div>
+        </section>
+        <div id="insights-selected-tag" class="selected-tag-row" hidden></div>
+        <div class="insights-results-bar"><p id="insights-result-count" role="status" aria-live="polite"></p><button type="button" id="insights-reset" hidden>조건 초기화</button></div>
+      </div>
       <!-- 최신 콘텐츠 목록 — npm run build가 FEED:START/END 사이를 자동 생성합니다.
            정적 HTML이 원본입니다(AI 크롤러는 JS를 실행하지 않음).
            js/main.js는 이 영역이 비어 있을 때만 폴백으로 렌더합니다. 마커를 지우면 빌드가 중단됩니다. -->
-      <div class="feed-list reveal" id="feed">
+      <div class="feed-list thumbnail-feed" id="feed">
         <!-- FEED:START -->
-        <a class="feed-item" href="/insights/flexoffice-feasibility-checklist/" style="--fc: var(--accent); --fc-ink: var(--accent-ink);"><span class="feed-src">인사이트</span><h4>공유오피스 도입 타당성 검토, 무엇부터 봐야 하나요</h4><span class="date">2026.08.04</span></a>
-        <a class="feed-item" href="/insights/ai-workspace-builder/" style="--fc: var(--accent); --fc-ink: var(--accent-ink);"><span class="feed-src">인사이트</span><h4>넥스트코웍은 AI Workspace Builder입니다</h4><span class="date">2026.07.09</span></a>
-        <a class="feed-item" href="https://brunch.co.kr/@chancenote" target="_blank" rel="noopener" style="--fc: var(--line-public); --fc-ink: var(--line-public-ink);"><span class="feed-src">브런치</span><h4>일이 잘되는 공간과 방법을 연구합니다 — 찬스노트</h4><span class="date">브런치</span></a>
-        <a class="feed-item" href="https://www.threads.com/@chancenote" target="_blank" rel="noopener" style="--fc: #1C1C22; --fc-ink: #1C1C22;"><span class="feed-src">Threads</span><h4>매일 기록하는 AI 실무활용 노트 — @chancenote</h4><span class="date">Threads</span></a>
-        <a class="feed-item" href="https://nextcw.notion.site/ai-cowork-book" target="_blank" rel="noopener" style="--fc: var(--violet); --fc-ink: var(--line-ai-ink);"><span class="feed-src">노션 자료실</span><h4>AI 플레이북 — 실무에 바로 쓰는 AI Tool 가이드</h4><span class="date">자료실</span></a>
-        <a class="feed-item" href="https://nextcw.notion.site/portfolio" target="_blank" rel="noopener" style="--fc: var(--violet); --fc-ink: var(--line-ai-ink);"><span class="feed-src">노션 자료실</span><h4>포트폴리오 — 마케팅·교육·세미나 수행 레퍼런스</h4><span class="date">자료실</span></a>
+        <article class="thumb-card"><a href="/insights/flexoffice-feasibility-checklist/"><div class="thumb-cover thumb-article"><img src="/img/insights/coworking-lounge-amenity.webp" alt="좌석과 라운지, 카페가 연결된 공유오피스 공간 이미지" width="1600" height="900" loading="eager"></div><div class="thumb-body"><div class="thumb-topline"><span class="thumb-source">인사이트</span><span class="sep" aria-hidden="true">·</span><span class="thumb-category">공간 컨설팅</span></div><h3>공유오피스 도입 타당성 검토, 무엇부터 봐야 하나요</h3><div class="thumb-meta"><span>2026.08.04</span><span aria-hidden="true">→</span></div></div></a></article>
+<article class="thumb-card"><a href="/insights/ai-workspace-builder/"><div class="thumb-cover thumb-article"><img src="/img/home/hero-space-ai.webp" alt="물리적 공간과 디지털 업무 환경을 연결한 이미지" width="1600" height="900" loading="eager"></div><div class="thumb-body"><div class="thumb-topline"><span class="thumb-source">인사이트</span><span class="sep" aria-hidden="true">·</span><span class="thumb-category">Company</span></div><h3>넥스트코웍은 AI Workspace Builder입니다</h3><div class="thumb-meta"><span>2026.07.09</span><span aria-hidden="true">→</span></div></div></a></article>
+<article class="thumb-card"><a href="https://brunch.co.kr/@chancenote" target="_blank" rel="noopener"><div class="thumb-cover thumb-space"><img src="/img/flexoffice/space-lounge.webp" alt="" width="1600" height="900" loading="eager"><span class="thumb-editorial"><small>SPACE &amp; WORK</small><strong>일이 잘되는 공간과 방법</strong></span></div><div class="thumb-body"><div class="thumb-topline"><span class="thumb-source">채널·자료실 ↗</span><span class="sep" aria-hidden="true">·</span><span class="thumb-category">브런치 · 에세이</span></div><h3>일이 잘되는 공간과 방법을 연구합니다 — 찬스노트</h3><div class="thumb-meta"><span>외부 채널에서 보기</span><span aria-hidden="true">↗</span></div></div></a></article>
+<article class="thumb-card"><a href="https://www.threads.com/@chancenote" target="_blank" rel="noopener"><div class="thumb-cover thumb-ai"><img src="/img/ai-campus/dashboard-desk.webp" alt="" width="1600" height="900" loading="eager"><span class="thumb-editorial"><small>DAILY NOTE</small><strong>일하는 방식의 작은 발견</strong></span></div><div class="thumb-body"><div class="thumb-topline"><span class="thumb-source">채널·자료실 ↗</span><span class="sep" aria-hidden="true">·</span><span class="thumb-category">Threads · 기록</span></div><h3>매일 기록하는 AI 실무활용 노트 — @chancenote</h3><div class="thumb-meta"><span>외부 채널에서 보기</span><span aria-hidden="true">↗</span></div></div></a></article>
+<article class="thumb-card"><a href="https://nextcw.notion.site/ai-cowork-book" target="_blank" rel="noopener"><div class="thumb-cover thumb-playbook"><span class="thumb-monogram" aria-hidden="true">AI<span>↗</span></span><span class="thumb-editorial"><small>AI PLAYBOOK</small><strong>업무에 바로 쓰는 AI</strong></span></div><div class="thumb-body"><div class="thumb-topline"><span class="thumb-source">채널·자료실 ↗</span><span class="sep" aria-hidden="true">·</span><span class="thumb-category">노션 · 자료실</span></div><h3>AI 플레이북 — 실무에 바로 쓰는 AI Tool 가이드</h3><div class="thumb-meta"><span>외부 채널에서 보기</span><span aria-hidden="true">↗</span></div></div></a></article>
+<article class="thumb-card"><a href="https://nextcw.notion.site/portfolio" target="_blank" rel="noopener"><div class="thumb-cover thumb-space"><img src="/img/ai-campus/workshop-session.webp" alt="" width="1600" height="900" loading="eager"><span class="thumb-editorial"><small>IN PRACTICE</small><strong>현장에서 쌓아 온 경험</strong></span></div><div class="thumb-body"><div class="thumb-topline"><span class="thumb-source">채널·자료실 ↗</span><span class="sep" aria-hidden="true">·</span><span class="thumb-category">노션 · 포트폴리오</span></div><h3>포트폴리오 — 마케팅·교육·세미나 수행 레퍼런스</h3><div class="thumb-meta"><span>외부 채널에서 보기</span><span aria-hidden="true">↗</span></div></div></a></article>
         <!-- FEED:END -->
       </div>
 
-      <!-- 뉴스레터 구독 — Make 웹훅으로 POST. JS 있으면 fetch로 내비게이션 없이 인라인 처리, 없으면 form action 폴백 -->
-      <form class="reveal callout newsletter-box" id="newsletter-form" data-endpoint="https://hook.us1.make.com/li5ucmemlr73l6hfuwcx27hb861zaemg" action="https://hook.us1.make.com/li5ucmemlr73l6hfuwcx27hb861zaemg" method="post">
-        <input type="hidden" name="form_type" value="newsletter">
-        <div class="newsletter-title">AI 실무 인사이트를 이메일로 받기</div>
-        <p class="newsletter-lead">새 글·AI 플레이북 소식을 이메일로 보내드립니다. 광고성 메일은 보내지 않습니다.</p>
-        <div class="newsletter-row">
-          <input class="newsletter-input" type="email" name="email" required autocomplete="email" placeholder="이메일 주소" aria-label="구독할 이메일 주소">
-          <button type="submit" class="btn btn-primary">구독 신청 <span class="arr">→</span></button>
-        </div>
-        <p class="form-status" id="newsletter-status" role="status" aria-live="polite"></p>
-        <p class="newsletter-note">이메일 구독이 어려우면 <a class="link-accent" href="https://open.kakao.com/o/sfxwSCvf" target="_blank" rel="noopener">카카오톡 채널</a>로도 신청하실 수 있습니다.</p>
-      </form>
+      <nav id="insights-pagination" class="insights-pagination" aria-label="콘텐츠 페이지" hidden></nav>
+      <noscript><p>검색은 JavaScript가 켜져 있을 때 사용할 수 있습니다. 아래 목록에서 모든 콘텐츠를 읽을 수 있습니다.</p></noscript>
+
+
     </div>
   </section>
 
@@ -228,6 +237,22 @@
     </div>
   </section>
 
+  <section class="insights-subscribe" aria-labelledby="subscribe-heading" id="insights-subscribe">
+    <div class="container"><div class="subscribe-panel">
+      <div class="subscribe-copy"><h2 id="subscribe-heading">AI 실무 인사이트를 이메일로 받아보세요</h2><p>업무에 적용할 AI 활용법과 넥스트코웍의 새로운 글을 전합니다. 광고성 메일은 보내지 않습니다.</p></div>
+      <form class="insights-subscribe-form" id="newsletter-form" data-endpoint="https://hook.us1.make.com/li5ucmemlr73l6hfuwcx27hb861zaemg" action="https://hook.us1.make.com/li5ucmemlr73l6hfuwcx27hb861zaemg" method="post">
+        <input type="hidden" name="form_type" value="newsletter">
+        <label class="subscribe-label" for="insights-subscribe-email">이메일 주소</label>
+        <div class="newsletter-row">
+          <input class="newsletter-input" id="insights-subscribe-email" type="email" name="email" required autocomplete="email" placeholder="name@company.com" aria-label="구독할 이메일 주소">
+          <button type="submit" class="btn btn-primary">인사이트 받아보기 <span class="arr">→</span></button>
+        </div>
+        <p class="form-status" id="newsletter-status" role="status" aria-live="polite"></p>
+        <p class="newsletter-note">이메일 구독이 어려우면 <a class="link-accent" href="https://open.kakao.com/o/sfxwSCvf" target="_blank" rel="noopener">카카오톡 채널</a>로도 신청하실 수 있습니다.</p>
+      </form>
+    </div></div>
+  </section>
+
 </main>
 
 <footer class="footer">
@@ -279,7 +304,8 @@
   </div>
 </footer>
 
-<script src="/js/insights-data.js?v=ncw-00e160d047"></script>
-<script src="/js/main.js?v=ncw-00e160d047" defer></script>
+<script src="/js/insights-data.js?v=ncw-56dd8bca23"></script>
+<script src="/js/main.js?v=ncw-56dd8bca23" defer></script>
+<script type="module" src="/js/insights-magazine.js?v=ncw-56dd8bca23"></script>
 </body>
 </html>

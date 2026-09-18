@@ -234,6 +234,9 @@ function toSiteFrontMatter(meta, noteName) {
     `tags: [${tags.map((tag) => quoted(tag)).join(", ")}]`,
     `slug: ${quoted(slug)}`,
     `image: ${quoted(meta.image || "/img/og.png")}`,
+    `thumbnail: ${quoted(meta.thumbnail || meta.image || "/img/og.png")}`,
+    `image_alt: ${quoted(meta.image_alt || "")}`,
+    `topic: ${quoted(meta.topic || "")}`,
     `cta_service: ${quoted(ctaService)}`,
     "---",
     ""
