@@ -8,8 +8,8 @@
     "date": "2026-08-05"
   },
   "/ai-campus/": {
-    "hash": "12abb25220ff",
-    "date": "2026-08-05"
+    "hash": "0b977a450d08",
+    "date": "2026-10-03"
   },
   "/public/": {
     "hash": "ebd2794fcf54",
@@ -24,8 +24,8 @@
     "date": "2026-08-05"
   },
   "/insights/": {
-    "hash": "8d11a0348ff4",
-    "date": "2026-09-18"
+    "hash": "b9227c0fd8af",
+    "date": "2026-10-03"
   },
   "/contact/": {
     "hash": "eaa64a2905e1",
@@ -34,6 +34,10 @@
   "/privacy/": {
     "hash": "cec2887a60ac",
     "date": "2026-08-04"
+  },
+  "/insights/ai-fast-failure/": {
+    "hash": "088d02e84d50",
+    "date": "2026-10-03"
   },
   "/insights/flexoffice-feasibility-checklist/": {
     "hash": "cd77fc7afbec",

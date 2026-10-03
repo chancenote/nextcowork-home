@@ -6,7 +6,15 @@
     <atom:link href="https://www.nextcw.com/rss.xml" rel="self" type="application/rss+xml"/>
     <description>AI 실무활용과 워크스페이스 인사이트 — 넥스트코웍이 발행하는 콘텐츠.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 00:00:00 +0900</lastBuildDate>
+    <item>
+      <title>AI가 제일 싸게 만든 건 오답입니다 — 실무 회고 템플릿과 프롬프트 3종</title>
+      <link>https://www.nextcw.com/insights/ai-fast-failure/</link>
+      <guid isPermaLink="true">https://www.nextcw.com/insights/ai-fast-failure/</guid>
+      <pubDate>Sat, 03 Oct 2026 00:00:00 +0900</pubDate>
+      <category>AI 실무활용</category>
+      <description>AI로 만든 결과물이 아쉬웠다면, 그 작업에서 다음 규칙을 꺼내보세요. 카드뉴스로 쉽게 이해하고 제안서·보고서에 바로 쓰는 회고 양식과 AI 프롬프트 3종을 가져가세요.</description>
+    </item>
     <item>
       <title>공유오피스 도입 타당성 검토, 무엇부터 봐야 하나요</title>
       <link>https://www.nextcw.com/insights/flexoffice-feasibility-checklist/</link>
