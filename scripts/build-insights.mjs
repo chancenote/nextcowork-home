@@ -620,10 +620,16 @@ ${articleBody}
       <div class="subscribe-copy"><h2 id="subscribe-heading">AI 실무 인사이트를 이메일로 받아보세요</h2><p>업무에 적용할 AI 활용법과 넥스트코웍의 새로운 글을 전합니다. 광고성 메일은 보내지 않습니다.</p></div>
       <form class="insights-subscribe-form" id="newsletter-form" data-endpoint="https://hook.us1.make.com/li5ucmemlr73l6hfuwcx27hb861zaemg" action="https://hook.us1.make.com/li5ucmemlr73l6hfuwcx27hb861zaemg" method="post">
         <input type="hidden" name="form_type" value="newsletter">
+        <input type="hidden" name="interest" value="general">
+        <input type="hidden" name="consent_version" value="2026-10">
         <label class="subscribe-label" for="insights-subscribe-email">이메일 주소</label>
         <div class="newsletter-row">
           <input class="newsletter-input" id="insights-subscribe-email" type="email" name="email" required autocomplete="email" placeholder="name@company.com" aria-label="구독할 이메일 주소">
           <button type="submit" class="btn btn-primary">인사이트 받아보기 <span class="arr">→</span></button>
+        </div>
+        <div class="consent-field newsletter-consent">
+          <input id="insights-subscribe-agree" name="newsletter_agree" type="checkbox" value="동의" required>
+          <label for="insights-subscribe-agree">소식 수신에 동의합니다 (언제든 메일의 수신거부 또는 ceo@nextcw.com으로 해지)</label>
         </div>
         <p class="form-status" id="newsletter-status" role="status" aria-live="polite"></p>
         <p class="newsletter-note">이메일 구독이 어려우면 <a class="link-accent" href="mailto:ceo@nextcw.com">ceo@nextcw.com</a>으로 메일 주시면 등록해 드립니다.</p>
