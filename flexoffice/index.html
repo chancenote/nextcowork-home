@@ -51,10 +51,11 @@
       "areaServed": "KR",
       "description": "공유오피스 도입 타당성 검토, 컨셉·운영모델 설계, 복합개발 PF 사업계획 내 Office Amenity 전략, 오픈 후 마케팅까지 공간 비즈니스 전 주기 자문.",
       "offers": [
-        { "@type": "Offer", "name": "도입 타당성 진단", "priceCurrency": "KRW", "price": "10000000", "description": "입지·수요·경쟁 분석과 운영구조별 수지 시나리오를 담은 타당성 보고서 1부. 1,000만원부터 (연면적·범위에 따라 산정)" },
-        { "@type": "Offer", "name": "컨셉·운영모델 설계", "priceCurrency": "KRW", "price": "50000000", "description": "컨셉북·공간 프로그램·운영모델 설계서·수익구조표 산출. 5,000만원부터 (프로젝트 규모별 산정)" },
-        { "@type": "Offer", "name": "PF 사업계획서 포함 설계", "priceCurrency": "KRW", "price": "100000000", "description": "설계에 PF 사업성 검토·수지 구조화와 금융기관 제출용 사업계획서 작성을 포함. 1억원부터 (범위에 따라 산정)" },
-        { "@type": "Offer", "name": "전 주기 동행 (리테이너)", "priceCurrency": "KRW", "price": "5000000", "description": "구축·오픈·마케팅·개관 후 KPI까지 월 단위 자문. 월 500만원부터 (기간 협의)" }
+        { "@type": "Offer", "name": "도입 타당성 진단", "priceCurrency": "KRW", "price": "10000000", "priceSpecification": { "@type": "PriceSpecification", "minPrice": 10000000, "priceCurrency": "KRW" }, "description": "입지·수요·경쟁 분석과 운영구조별 수지 시나리오를 담은 타당성 보고서 1부. 1,000만원부터 (연면적·범위에 따라 산정)" },
+        { "@type": "Offer", "name": "컨셉·운영모델 설계", "priceCurrency": "KRW", "price": "50000000", "priceSpecification": { "@type": "PriceSpecification", "minPrice": 50000000, "priceCurrency": "KRW" }, "description": "컨셉북·공간 프로그램·운영모델 설계서·수익구조표 산출. 5,000만원부터 (프로젝트 규모별 산정)" },
+        { "@type": "Offer", "name": "PF 사업계획서 포함 설계", "priceCurrency": "KRW", "price": "100000000", "priceSpecification": { "@type": "PriceSpecification", "minPrice": 100000000, "priceCurrency": "KRW" }, "description": "설계에 PF 사업성 검토·수지 구조화와 금융기관 제출용 사업계획서 작성을 포함. 1억원부터 (범위에 따라 산정)" },
+        { "@type": "Offer", "name": "전 주기 동행 (리테이너)", "priceCurrency": "KRW", "price": "5000000", "priceSpecification": { "@type": "UnitPriceSpecification", "price": 5000000, "priceCurrency": "KRW", "unitCode": "MON", "unitText": "월" }, "description": "구축·오픈·마케팅·개관 후 KPI까지 월 단위 자문. 월 500만원부터 (기간 협의)" },
+        { "@type": "Offer", "name": "Smart FlexOffice — 공간과 일하는 방식을 한 팀이 한 번에", "priceCurrency": "KRW", "price": "55000000", "priceSpecification": { "@type": "PriceSpecification", "minPrice": 55000000, "priceCurrency": "KRW" }, "description": "② 컨셉·운영모델 설계에 운영팀 대상 AI Campus 워크샵(온보딩 3회 + 정착 5회)을 결합. 5,500만원부터 (범위에 따라 산정 · 사전 진단 후 확정 견적)" }
       ]
     },
     {
