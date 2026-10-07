@@ -1966,6 +1966,23 @@ body.theme-public { --px-dark: #0E2B28; --px-dark2: #134E48; --px-line: #CDEAE2;
 .px-outcap p { font-size: 16px; font-weight: 650; }
 .px-outcap p b { color: #7FE0C6; }
 .px-outcap span { font-size: 13px; color: rgba(255,255,255,.65); }
+.px-chooser { margin-top: 18px; display: flex; align-items: center; justify-content: space-between; gap: 14px 18px; flex-wrap: wrap; padding: 16px 20px; border: 1px solid var(--hairline); border-radius: var(--radius-md); background: #fff; }
+.px-chooser p { font-size: 15.3px; font-weight: 700; color: var(--ink); }
+.px-chooser p small { display: block; font-weight: 500; font-size: 13.3px; color: var(--caption); margin-top: 2px; }
+.px-chooser-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.px-adv-note { font-size: 14px; color: var(--caption); margin: -6px 0 18px; }
+.px-stagedocs { margin-bottom: 22px; min-width: 0; }
+.px-stagedocs h4 { font-size: 17px; color: var(--ink); margin-bottom: 10px; }
+.px-stagetable-wrap { overflow-x: auto; max-width: 100%; border: 1px solid var(--hairline); border-radius: var(--radius-sm); background: #fff; }
+.px-stagetable { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.6; }
+@media (max-width: 620px) { .px-stagetable th, .px-stagetable td { padding: 9px 10px; font-size: 13.5px; } }
+.px-stagetable th, .px-stagetable td { padding: 10px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--hairline); }
+.px-stagetable thead th { font-size: 13px; color: var(--caption); background: var(--bg-soft); font-weight: 700; }
+.px-stagetable tbody th { color: var(--indigo); font-weight: 750; white-space: nowrap; }
+.px-stagetable tbody tr:last-child th, .px-stagetable tbody tr:last-child td { border-bottom: 0; }
+.px-stagedocs-note { font-size: 13.5px; color: var(--caption); margin-top: 10px; }
+.px-stagedocs-prep { font-size: 14px; color: var(--text); margin-top: 8px; }
+.px-stagedocs-prep b { color: var(--ink); margin-right: 8px; }
 
 /* Reference */
 .px-refhero { background: linear-gradient(135deg, var(--px-dark), #155A52); border-radius: var(--radius-md); color: #fff; padding: 26px 30px; margin-bottom: 18px; display: flex; gap: 24px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
