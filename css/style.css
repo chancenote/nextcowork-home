@@ -941,6 +941,22 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
 .about-delivery-list span { color: rgba(255,255,255,.6); font-family: var(--font-num); font-size: 12px; font-weight: 800; }
 .about-delivery-list b { color: #fff; font-size: 15px; }
 .about-delivery-list p { color: rgba(255,255,255,.72); font-size: 13px; line-height: 1.5; word-break: keep-all; }
+/* About R12 — 수행 책임·실적 주체 태그·관련 서비스 */
+.about-duty { display: grid; gap: 8px; margin: 18px 0 0; max-width: 560px; }
+.about-duty > div { display: grid; grid-template-columns: 132px 1fr; gap: 12px; padding: 10px 14px; border-radius: var(--radius-xs); background: rgba(255,255,255,.1); }
+.about-duty dt { color: #fff; font-size: 14px; font-weight: 800; }
+.about-duty dd { margin: 0; color: rgba(255,255,255,.85); font-size: 14px; line-height: 1.6; word-break: keep-all; }
+.subject-tag { display: inline-block; margin: 0 6px 2px 0; padding: 1px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-ink); font-size: 11.5px; font-weight: 800; letter-spacing: .02em; vertical-align: 1px; white-space: nowrap; }
+.trust-label .subject-tag { display: table; margin: 0 auto 4px; }
+.sig-item.first .subject-tag { background: rgba(255,255,255,.18); color: #fff; }
+.about-related-section { padding-top: 0; }
+.about-related-title { font-size: 18px; color: var(--ink); margin-bottom: 12px; }
+.about-related { grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; }
+@media (max-width: 720px) {
+  .about-duty > div { grid-template-columns: 1fr; gap: 2px; }
+  .about-related { grid-template-columns: 1fr; }
+  .subject-tag { white-space: normal; }
+}
 
 /* C1 · unified split-head value system (matches .amenity-spaces-head) */
 .reference-gallery-head {
