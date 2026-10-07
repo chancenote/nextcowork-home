@@ -330,9 +330,6 @@
   document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
     a.addEventListener("click", function () { track("tel_click", { source_page: currentPath }); });
   });
-  document.querySelectorAll('a[href*="open.kakao.com"]').forEach(function (a) {
-    a.addEventListener("click", function () { track("kakao_click", { source_page: currentPath }); });
-  });
   document.querySelectorAll('a[href*="bit.ly/edu_cowork"], a[href*="docs.google.com/forms"]').forEach(function (a) {
     a.addEventListener("click", function () { track("googleform_click", { source_page: currentPath }); });
   });
@@ -463,7 +460,7 @@
           if (newsStatus) newsStatus.textContent = "구독 신청이 접수되었습니다. 감사합니다.";
         })
         .catch(function () {
-          if (newsStatus) newsStatus.textContent = "신청에 실패했습니다. 카카오톡 채널로 신청해주세요.";
+          if (newsStatus) newsStatus.textContent = "신청에 실패했습니다. ceo@nextcw.com으로 메일 주시면 등록해 드립니다.";
         });
     });
   });

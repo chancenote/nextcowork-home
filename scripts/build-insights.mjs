@@ -623,7 +623,7 @@ ${articleBody}
           <button type="submit" class="btn btn-primary">인사이트 받아보기 <span class="arr">→</span></button>
         </div>
         <p class="form-status" id="newsletter-status" role="status" aria-live="polite"></p>
-        <p class="newsletter-note">이메일 구독이 어려우면 <a class="link-accent" href="https://open.kakao.com/o/sfxwSCvf" target="_blank" rel="noopener">카카오톡 채널</a>로도 신청하실 수 있습니다.</p>
+        <p class="newsletter-note">이메일 구독이 어려우면 <a class="link-accent" href="mailto:ceo@nextcw.com">ceo@nextcw.com</a>으로 메일 주시면 등록해 드립니다.</p>
       </form>
     </div></div>
   </section>
@@ -658,7 +658,6 @@ ${articleBody}
           <a href="https://brunch.co.kr/@chancenote" target="_blank" rel="noopener">브런치 · 찬스노트</a>
           <a href="https://blog.naver.com/chancenote" target="_blank" rel="noopener">네이버 블로그</a>
           <a href="https://www.threads.com/@chancenote" target="_blank" rel="noopener">Threads</a>
-          <a href="https://open.kakao.com/o/sfxwSCvf" target="_blank" rel="noopener">카카오톡 채널</a>
         </div>
       </div>
       <div class="footer-bottom">
