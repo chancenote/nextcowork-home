@@ -387,33 +387,113 @@
       return { subject: subject, body: body, service: service, tier: tier };
     }
 
+    /* 요청키: 한 번의 문의에 붙는 고유값. 실패·재시도에도 유지하고, 원장 저장이 확인된 뒤에만 새로 만든다. */
+    var requestKeyEl = document.getElementById("cf-request-key");
+    function newRequestKey() {
+      var key;
+      try { key = (window.crypto && window.crypto.randomUUID) ? window.crypto.randomUUID() : null; } catch (e) { key = null; }
+      if (!key) key = "rk-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
+      if (requestKeyEl) requestKeyEl.value = key;
+      return key;
+    }
+    if (requestKeyEl && !requestKeyEl.value) newRequestKey();
+
+    var submitBtn = document.getElementById("cf-submit") || form.querySelector('button[type="submit"]');
+    var submitLabel = submitBtn ? submitBtn.innerHTML : "";
+    var sending = false;
+    var lastSavedId = "";
+    function setSending(on, label) {
+      sending = on;
+      if (!submitBtn) return;
+      submitBtn.disabled = on;
+      submitBtn.innerHTML = on ? "전송 중…" : (label || submitLabel);
+    }
+    function showSuccessCard(inquiryId) {
+      var done = document.getElementById("cf-success");
+      var idEl = document.getElementById("cf-inquiry-id");
+      if (idEl) {
+        idEl.hidden = !inquiryId;
+        idEl.textContent = inquiryId ? "접수번호: " + inquiryId : "";
+      }
+      if (done) {
+        done.hidden = false;
+        try { done.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) { /* older browsers */ }
+      }
+    }
+    function parseSaved(r) {
+      /* Make가 Webhook Response 모듈로 {status:"saved", inquiry_id} 를 돌려줄 때만 "저장 완료"로 본다. */
+      return r.text().then(function (txt) {
+        var data = null;
+        try { data = JSON.parse(txt); } catch (e) { data = null; }
+        if (data && data.status === "saved" && data.inquiry_id) return { saved: true, id: String(data.inquiry_id) };
+        if (data && data.status === "failed") throw new Error("failed");
+        return { saved: false, id: "" };
+      });
+    }
+
     form.addEventListener("submit", function (ev) {
       var endpoint = form.getAttribute("data-endpoint");
       var msg = buildMessage();
+
+      if (sending) { ev.preventDefault(); return; }
+
+      if (typeof form.checkValidity === "function" && !form.checkValidity()) {
+        ev.preventDefault();
+        var firstInvalid = form.querySelector(":invalid");
+        if (firstInvalid && typeof firstInvalid.focus === "function") firstInvalid.focus();
+        if (typeof form.reportValidity === "function") form.reportValidity();
+        setStatus("입력하지 않은 필수 항목이 있습니다. 표시된 칸을 확인해주세요.");
+        return;
+      }
+
       var params = readContext({ endpoint_type: endpoint ? "post_endpoint" : "mailto" });
-      track("form_submit_attempt", params);
-      track("form_submit", params);
+      track("inquiry_submit_attempt", params);
 
       if (endpoint && endpoint !== "") {
-        /* Real POST endpoint configured (Formspree/Make etc.) */
+        /* Real POST endpoint configured (Make etc.) — JS 없이도 action/method=post 로 같은 곳에 전송된다. */
         ev.preventDefault();
+        setSending(true);
         setStatus("전송 중입니다...");
-        fetch(endpoint, { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } })
+        var controller = (typeof AbortController === "function") ? new AbortController() : null;
+        var timer = controller ? setTimeout(function () { controller.abort(); }, 15000) : null;
+        var opts = { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } };
+        if (controller) opts.signal = controller.signal;
+        fetch(endpoint, opts)
           .then(function (r) {
-            if (!r.ok) throw new Error("bad status");
-            track("generate_lead", readContext({ endpoint_type: "post_endpoint" }));
-            track("form_submit_success", readContext({ endpoint_type: "post_endpoint" }));
-            form.reset();
-            fillContactContext();
-            setStatus("문의가 접수되었습니다. 영업일 1일 내 회신드립니다.");
-            var done = document.getElementById("cf-success");
-            if (done) {
-              done.hidden = false;
-              try { done.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) { /* older browsers */ }
+            if (timer) clearTimeout(timer);
+            if (!r.ok) throw new Error("status_" + r.status);
+            return parseSaved(r);
+          })
+          .then(function (res) {
+            if (res.saved) {
+              if (res.id !== lastSavedId) {
+                lastSavedId = res.id;
+                track("inquiry_saved", readContext({ endpoint_type: "post_endpoint" }));
+                track("generate_lead", readContext({ endpoint_type: "post_endpoint" }));
+              }
+              form.reset();
+              fillContactContext();
+              newRequestKey();
+              setSending(false);
+              setStatus("문의가 저장되었습니다. 영업일 1일 내 회신드립니다.");
+              showSuccessCard(res.id);
+            } else {
+              track("inquiry_sent_unconfirmed", readContext({ endpoint_type: "post_endpoint" }));
+              setSending(false);
+              setStatus("접수를 보냈습니다. 저장 확인 중입니다 — 같은 내용으로 다시 보내도 중복 저장되지 않습니다.");
+              showSuccessCard("");
             }
           })
-          .catch(function () {
-            setStatus("전송에 실패했습니다. 아래 ‘내용 복사’로 복사해 ceo@nextcw.com 으로 보내주세요.");
+          .catch(function (err) {
+            if (timer) clearTimeout(timer);
+            var reason = (err && err.name === "AbortError") ? "timeout" : ((err && err.message) || "network");
+            track("inquiry_error", readContext({ endpoint_type: "post_endpoint", reason: reason }));
+            setSending(false, "다시 보내기 <span class=\"arr\">→</span>");
+            if (reason === "timeout" || reason === "network" || reason === "Failed to fetch" || /fetch/i.test(reason)) {
+              setStatus("저장 확인이 안 됐습니다. 잠시 후 ‘다시 보내기’를 누르거나 ceo@nextcw.com으로 보내주세요.");
+            } else {
+              setStatus("전송에 실패했습니다. ‘다시 보내기’를 누르거나 아래 ‘내용 복사’로 복사해 ceo@nextcw.com 으로 보내주세요.");
+            }
           });
         return;
       }
@@ -446,22 +526,37 @@
   var newsForms = document.querySelectorAll("#newsletter-form, form[data-newsletter]");
   Array.prototype.forEach.call(newsForms, function (news) {
     var newsStatus = news.querySelector(".form-status");
+    var newsBtn = news.querySelector('button[type="submit"]');
+    var newsSending = false;
     news.addEventListener("submit", function (ev) {
       var endpoint = news.getAttribute("data-endpoint") || news.getAttribute("action");
       if (!endpoint) return;
       ev.preventDefault();
+      if (newsSending) return;
+      var agree = news.querySelector('input[name="newsletter_agree"]');
+      if (agree && !agree.checked) {
+        if (newsStatus) newsStatus.textContent = "소식 수신에 동의해주셔야 구독 신청이 됩니다.";
+        try { agree.focus(); } catch (e) {}
+        return;
+      }
+      if (typeof news.checkValidity === "function" && !news.checkValidity()) {
+        if (typeof news.reportValidity === "function") news.reportValidity();
+        return;
+      }
+      newsSending = true;
+      if (newsBtn) newsBtn.disabled = true;
       if (newsStatus) newsStatus.textContent = "구독 신청 중입니다...";
-      track("newsletter_submit", { source_page: currentPath });
       fetch(endpoint, { method: "POST", body: new FormData(news), headers: { "Accept": "application/json" } })
         .then(function (r) {
           if (!r.ok) throw new Error("bad status");
-          track("generate_lead", { source_page: currentPath, form_type: "newsletter" });
+          track("newsletter_signup", { source_page: currentPath, interest: (news.querySelector('input[name="interest"]') || {}).value || "general" });
           news.reset();
           if (newsStatus) newsStatus.textContent = "구독 신청이 접수되었습니다. 감사합니다.";
         })
         .catch(function () {
           if (newsStatus) newsStatus.textContent = "신청에 실패했습니다. ceo@nextcw.com으로 메일 주시면 등록해 드립니다.";
-        });
+        })
+        .then(function () { newsSending = false; if (newsBtn) newsBtn.disabled = false; });
     });
   });
 

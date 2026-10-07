@@ -1223,6 +1223,7 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
 }
 .newsletter-mini .btn { flex: 0 0 auto; }
 .newsletter-mini .form-status { flex-basis: 100%; margin: 0; }
+.newsletter-mini .consent-field, .insights-subscribe-form .consent-field { flex-basis: 100%; margin: 4px 0 0; }
 .newsletter-box { max-width: 560px; margin: 30px auto 0; background: var(--bg); box-shadow: var(--shadow-card); }
 .newsletter-title { margin-bottom: 6px; color: var(--ink); font-size: 17px; font-weight: 800; }
 .newsletter-lead { margin-bottom: 16px; color: var(--caption-strong); font-size: 13.5px; line-height: 1.7; }
