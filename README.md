@@ -112,6 +112,9 @@ image: "/img/og.png"
 - 출처(인사이트 / 채널·자료실 ↗)와 분류는 커버 이미지 위가 아니라 카드 본문 첫 줄(`.thumb-topline`)에 14px로 함께 표시합니다.
 - `npm run build`가 목록을 생성합니다. 정적 HTML과 브라우저 폴백은 `js/insights-cards.js`의 동일 함수를 사용합니다. 현재 6개 카드를 모두 표시하며 새 글이 추가되면 목록이 늘어납니다.
 - 글 상세 디자인은 기존 그대로입니다. Obsidian 동기화에서도 thumbnail/image_alt를 전달합니다.
+- **선택 front matter `audience`(대상)·`takeaway`(가져갈 것)**: 값이 있을 때만 카드 제목 아래 `.thumb-brief`와 글 상세 요약 아래 `.post-brief`에 표시됩니다. 없으면 요소를 만들지 않습니다(자리표시 없음). 빈 문자열은 빌드 오류입니다. Obsidian 동기화는 같은 키를 그대로 넘깁니다.
+- **글 상세 메타 줄 `.post-meta`**: `author`(선택, 있을 때만) · 읽기 시간(본문 평문 글자 수 ÷ 500자/분, 올림 — 빌드가 계산) · `updated`(선택, YYYY-MM-DD, 있을 때만 "갱신" 표시 + JSON-LD `dateModified`). 파일 수정 시각으로 갱신일을 만들지 않습니다.
+- **홈 최신 글 마커**: `index.html`에 `<!-- HOME_LATEST:START -->`…`<!-- HOME_LATEST:END -->`를 두면 빌드가 자체 글 최신 3편을 허브와 같은 썸네일 카드로 채웁니다. 마커가 없으면 건너뜁니다(마커 주변에 `.thumbnail-feed` 컨테이너와 `css/insights-magazine.css` 로드가 필요).
 - 운영용 `npm run deploy`는 전체 커밋·푸시·배포를 수행하므로 시안 확인에는 사용하지 않습니다.
 
 ### 최신 노트와 검색 (3차 시안)
