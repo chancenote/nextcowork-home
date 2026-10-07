@@ -523,6 +523,29 @@ main { padding-top: var(--header-h); }
 }
 .session-card h3 { font-size: 18px; letter-spacing: 0; margin-bottom: 8px; }
 .session-card p { font-size: 14px; line-height: 1.65; color: var(--caption-strong); }
+.anchor-alias { display: block; height: 0; }
+.session-table { border: 1px solid var(--hairline); border-top: 3px solid var(--accent); border-radius: var(--radius); background: var(--bg); overflow: hidden; }
+.session-table table { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.65; }
+.session-table th, .session-table td { padding: 16px 18px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--hairline); }
+.session-table thead th { background: var(--bg-soft); color: var(--ink); font-size: 14px; font-weight: 800; }
+.session-table tbody th { width: 22%; color: var(--ink); font-size: 16px; font-weight: 800; }
+.session-table tbody th b { font-family: var(--font-num); color: var(--accent-ink); margin-right: 6px; }
+.session-table tbody th small { display: block; margin-top: 4px; font-size: 13px; font-weight: 600; color: var(--caption); }
+.session-table td { color: var(--caption-strong); }
+.session-table td strong { color: var(--ink); }
+.session-table tbody tr:last-child > * { border-bottom: none; }
+.session-table-span > * { background: var(--bg-soft); }
+.coaching-scope-title { margin: 0 0 10px; font-size: 16.5px; font-weight: 800; color: var(--ink); }
+.coaching-scope ul { margin: 0; padding-left: 18px; font-size: 14.5px; line-height: 1.7; color: var(--text); }
+.coaching-scope li + li { margin-top: 4px; }
+@media (max-width: 720px) {
+  .session-table thead { display: none; }
+  .session-table tr { display: block; padding: 14px 16px; border-bottom: 1px solid var(--hairline); }
+  .session-table tbody tr:last-child { border-bottom: none; }
+  .session-table th, .session-table td { display: block; width: auto; padding: 0; border: none; }
+  .session-table tbody th { width: auto; margin-bottom: 6px; }
+  .session-table td + td { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--hairline); }
+}
 .level-badge {
   display: inline-flex; align-items: center; min-height: 26px; padding: 4px 9px;
   border-radius: 999px; background: var(--accent-soft); color: var(--accent-ink);
