@@ -238,6 +238,10 @@ function toSiteFrontMatter(meta, noteName) {
     `image_alt: ${quoted(meta.image_alt || "")}`,
     `topic: ${quoted(meta.topic || "")}`,
     `cta_service: ${quoted(ctaService)}`,
+    // 선택 필드 — 볼트에 값이 있을 때만 넘긴다(없으면 줄 자체를 쓰지 않는다).
+    ...["audience", "takeaway", "author", "updated"]
+      .filter((key) => meta[key] !== undefined && String(meta[key]).trim())
+      .map((key) => `${key}: ${quoted(String(meta[key]).trim())}`),
     "---",
     ""
   ].join("\n");

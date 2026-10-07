@@ -19,6 +19,14 @@
 .thumbnail-feed .thumb-topline .sep { color:var(--hairline); }
 .thumbnail-feed .thumb-category { color:var(--accent-ink); font-size:.875rem; line-height:1.6; font-weight:600; }
 .thumbnail-feed h3 { font-size:1.375rem; line-height:1.5; font-weight:700; margin:0; letter-spacing:-.02em; }
+/* 대상·가져갈 것 — 원고에 audience/takeaway가 있을 때만 생성된다(없으면 요소 자체가 없음). */
+.thumbnail-feed .thumb-brief { display:flex; flex-direction:column; gap:3px; margin:10px 0 0; font-size:.875rem; line-height:1.6; color:var(--text); }
+.thumbnail-feed .thumb-brief b { color:var(--accent-ink); font-weight:700; margin-right:4px; }
+.post-meta { display:flex; flex-wrap:wrap; gap:6px 14px; margin-top:12px; font-size:.9375rem; line-height:1.6; color:var(--caption); }
+.post-brief { display:grid; gap:8px; margin:18px 0 0; padding:16px 18px; border-radius:var(--radius-sm); background:var(--accent-soft); font-size:1rem; line-height:1.65; color:var(--text); }
+.post-brief>div { display:flex; gap:10px; }
+.post-brief dt { flex-shrink:0; color:var(--accent-ink); font-weight:700; }
+.post-brief dd { margin:0; }
 .thumbnail-feed .thumb-meta { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; padding-top:13px; margin-top:auto; font-size:.875rem; line-height:1.6; color:var(--caption); }
 .thumbnail-feed .thumb-meta>span:last-child { font-size:1.25rem; color:var(--accent-ink); line-height:1; }
 @media(max-width:1023px) { .thumbnail-feed h3 { font-size:1.25rem; } .thumbnail-feed .thumb-editorial strong { font-size:1.25rem; } }

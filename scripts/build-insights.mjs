@@ -411,6 +411,17 @@ function normalizePost(meta, body, filePath) {
   if (!meta.title || !meta.description || !meta.date) {
     throw new Error(`${relative(root, filePath)}: title, description, date가 필요합니다.`);
   }
+  // 선택 필드 — 있으면 비어 있지 않은 문자열이어야 하고, 없으면 화면에 아무것도 그리지 않는다.
+  const optionalText = (key) => {
+    if (meta[key] === undefined) return "";
+    const value = String(meta[key]).trim();
+    if (!value) throw new Error(`${relative(root, filePath)}: ${key}는 비워 둘 수 없습니다(줄을 지우거나 값을 적으세요).`);
+    return value;
+  };
+  const updated = optionalText("updated");
+  if (updated && !/^\d{4}-\d{2}-\d{2}$/.test(updated)) {
+    throw new Error(`${relative(root, filePath)}: updated는 YYYY-MM-DD 형식이어야 합니다.`);
+  }
   return {
     slug,
     title: meta.title,
@@ -423,9 +434,18 @@ function normalizePost(meta, body, filePath) {
     thumbnail: meta.thumbnail || meta.image || "/img/og.png",
     imageAlt: meta.image_alt || "",
     ctaService: meta.cta_service || "general",
+    audience: optionalText("audience"),
+    takeaway: optionalText("takeaway"),
+    author: optionalText("author"),
+    updated,
     body,
     url: `/insights/${slug}/`
   };
+}
+
+/* 읽기 시간 — 본문 평문 글자 수 기준 500자/분, 올림. 원고에 적지 않고 매 빌드 때 계산한다. */
+function readingMinutes(body) {
+  return Math.max(1, Math.ceil(toPlainText(body).replace(/\s/g, "").length / 500));
 }
 
 function absoluteUrl(path) {
@@ -500,7 +520,7 @@ function renderArticle(post, assetVersion) {
     headline: post.title,
     description: post.description,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updated || post.date,
     url: absoluteUrl(post.url),
     mainEntityOfPage: { "@type": "WebPage", "@id": absoluteUrl(post.url) },
     inLanguage: "ko",
@@ -597,6 +617,7 @@ function renderArticle(post, assetVersion) {
         <div class="post-kicker reveal" data-delay="1">${escapeHtml(post.category)} · ${formatDate(post.date)}</div>
         <h1 class="reveal" data-delay="2">${escapeHtml(post.title)}</h1>
         <p class="post-lead reveal" data-delay="3">${escapeHtml(post.description)}</p>
+        <p class="post-meta reveal" data-delay="3">${post.author ? `<span>${escapeHtml(post.author)}</span>` : ""}<span>읽기 약 ${readingMinutes(post.body)}분</span>${post.updated ? `<span>갱신 ${formatDate(post.updated)}</span>` : ""}</p>${post.audience || post.takeaway ? `\n        <dl class="post-brief reveal" data-delay="3">${post.audience ? `<div><dt>대상</dt><dd>${escapeHtml(post.audience)}</dd></div>` : ""}${post.takeaway ? `<div><dt>가져갈 것</dt><dd>${escapeHtml(post.takeaway)}</dd></div>` : ""}</dl>` : ""}
         ${tagHtml ? `<div class="post-tags reveal" data-delay="3">${tagHtml}</div>` : ""}
         ${post.topic ? `<a class="post-topic-link reveal" data-delay="3" href="/insights/?topic=${encodeURIComponent(post.topic)}#latest-content">이 주제의 글 더 보기 <span class="arr">→</span></a>` : ""}
       </div>
@@ -690,7 +711,9 @@ function buildFeed(posts) {
     date: formatDate(post.date),
     description: post.description, category: post.category, image: post.image,
     thumbnail: post.thumbnail, imageAlt: post.imageAlt,
-    topic: post.topic, tags: post.tags, searchText: toPlainText(post.body)
+    topic: post.topic, tags: post.tags, searchText: toPlainText(post.body),
+    ...(post.audience ? { audience: post.audience } : {}),
+    ...(post.takeaway ? { takeaway: post.takeaway } : {})
   }));
   return [...generated, ...externalFeed];
 }
@@ -736,6 +759,31 @@ async function updateInsightsHub(feedHtml, heroHtml) {
   if (!next.includes("<!-- HERO:START -->") || !next.includes("<!-- HERO:END -->")) throw new Error("Missing hero markers");
   next = next.replace(/<!-- HERO:START -->[\s\S]*?<!-- HERO:END -->/, () => "<!-- HERO:START -->" + heroHtml + "<!-- HERO:END -->");
   if (next !== html) await writeFile(file, next, "utf8");
+}
+
+/* ---------- 홈 최신 글 ----------
+   index.html에 HOME_LATEST:START / END 마커가 있으면 자체 글 최신 3편을
+   허브와 같은 카드 렌더러로 채운다. 마커가 없으면 조용히 건너뛴다(홈 개편 전 상태). */
+
+const HOME_LATEST_LIMIT = 3;
+
+async function updateHomeLatest(feed) {
+  const file = join(root, "index.html");
+  const html = await readFile(file, "utf8");
+  const startMark = "<!-- HOME_LATEST:START -->";
+  const endMark = "<!-- HOME_LATEST:END -->";
+  const start = html.indexOf(startMark);
+  if (start === -1) return 0;
+  const end = html.indexOf(endMark);
+  if (end === -1 || end < start) {
+    throw new Error("index.html: HOME_LATEST:START는 있는데 HOME_LATEST:END가 없습니다.");
+  }
+  const latest = feed.filter((item) => item.src === "insight").slice(0, HOME_LATEST_LIMIT);
+  const next = html.slice(0, start + startMark.length)
+    + `\n        ${renderMagazine(latest)}\n        `
+    + html.slice(end);
+  if (next !== html) await writeFile(file, next, "utf8");
+  return latest.length;
 }
 
 /* ---------- RSS ----------
@@ -950,6 +998,7 @@ async function main() {
   await writeFile(join(root, "rss.xml"), renderRss(posts), "utf8");
   // 허브·llms.txt를 먼저 갱신해야 그 내용 변화가 lastmod에 반영된다.
   await updateInsightsHub(renderFeedHtml(feed), renderLatestNote(feed));
+  const homeLatestCount = await updateHomeLatest(feed);
   const relatedCount = await updateRelatedLinks(posts);
   await updateLlmsTxt(posts);
 
@@ -975,7 +1024,7 @@ async function main() {
   const faqCount = posts.reduce((sum, post) => sum + extractFaq(post.body).length, 0);
   console.log(
     `Built ${posts.length} insight post(s), ${feed.length} thumbnail card(s) static, `
-    + `${faqCount} FAQ entr(ies), ${relatedCount} related link(s) on service pages, `
+    + `${faqCount} FAQ entr(ies), ${relatedCount} related link(s) on service pages, ${homeLatestCount} home latest card(s), `
     + `rss.xml + llms.txt updated. Asset version: ${assetVersion}`
   );
 }
