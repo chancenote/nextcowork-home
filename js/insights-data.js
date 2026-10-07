@@ -56,8 +56,8 @@ window.NCW_FEED = [
     "description": "넥스트코웍이 말하는 워크스페이스는 사무실만이 아니라, AI와 도구와 운영 방식이 함께 작동하는 업무 환경입니다.",
     "category": "Company",
     "image": "/img/og.png",
-    "thumbnail": "/img/home/hero-space-ai.webp",
-    "imageAlt": "물리적 공간과 디지털 업무 환경을 연결한 이미지",
+    "thumbnail": "/img/ai-campus/dashboard-desk.webp",
+    "imageAlt": "창가 책상 위 노트북에 AI 업무 대시보드가 떠 있는 워크스페이스",
     "topic": "넥스트코웍 이야기",
     "tags": [
       "AI Workspace Builder",

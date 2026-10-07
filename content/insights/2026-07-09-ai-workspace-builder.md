@@ -6,8 +6,8 @@ category: "Company"
 tags: ["AI Workspace Builder", "워크스페이스", "공유오피스", "AI 실무교육"]
 slug: "ai-workspace-builder"
 image: "/img/og.png"
-thumbnail: "/img/home/hero-space-ai.webp"
-image_alt: "물리적 공간과 디지털 업무 환경을 연결한 이미지"
+thumbnail: "/img/ai-campus/dashboard-desk.webp"
+image_alt: "창가 책상 위 노트북에 AI 업무 대시보드가 떠 있는 워크스페이스"
 cta_service: "ai-campus"
 ---
 
