@@ -1959,3 +1959,30 @@ body.theme-public { --px-dark: #0E2B28; --px-dark2: #134E48; --px-line: #CDEAE2;
 .px-resource h3 { font-size: 18.5px; margin-bottom: 7px; }
 .px-resource p { font-size: 14.6px; max-width: 560px; line-height: 1.75; word-break: keep-all; }
 .px-r-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+
+/* ================================================================
+   WP-3 R07 · 홈 정보구조 (홈 한정 modifier — 다른 페이지 영향 없음)
+   ================================================================ */
+.selector--questions .selector-card { grid-template-rows: auto auto auto; }
+.selector--questions .selector-ic { grid-row: 1 / span 3; }
+.selector--questions .selector-take { font-size: 13px; line-height: 1.5; color: var(--caption); word-break: keep-all; }
+.bento--compact .bento-card { padding: 26px 24px; }
+.bento--compact .bento-card h3 { font-size: 20px; margin-bottom: 4px; }
+.bento--compact .bento-card .en { margin-bottom: 10px; }
+.bento--compact .bento-card p { font-size: 14.5px; line-height: 1.65; }
+.steps--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.steps--4 > * { grid-column: auto; }
+.home-latest-feed { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.home-latest .section-actions { justify-content: center; margin-top: 28px; }
+@media (max-width: 1024px) {
+  .steps--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps--4 > * { grid-column: auto; }
+}
+@media (max-width: 900px) { .home-latest-feed { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; } }
+@media (max-width: 720px) { .steps--4 { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .home-latest-feed { gap: 12px; } }
+@media (max-width: 359px) { .home-latest-feed { grid-template-columns: 1fr; } }
+.home-latest { padding-top: 50px; }
+.home-latest-feed h3 { font-size: 1.125rem; line-height: 1.45; }
+.home-latest-feed .thumb-body { padding: 14px 18px 12px; }
+.home-latest .section-actions { margin-top: 22px; }
