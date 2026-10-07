@@ -333,6 +333,13 @@
   document.querySelectorAll('a[href*="bit.ly/edu_cowork"], a[href*="docs.google.com/forms"]').forEach(function (a) {
     a.addEventListener("click", function () { track("googleform_click", { source_page: currentPath }); });
   });
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="/files/"]');
+    if (!a) return;
+    var path = a.getAttribute("href").split(/[?#]/)[0];
+    if (!/\.pdf$/i.test(path)) return;
+    track("file_download", { file_name: path.split("/").pop(), link_url: path, source_page: currentPath });
+  });
   document.querySelectorAll('a[href^="/contact/"]').forEach(function (a) {
     a.addEventListener("click", function () {
       var url;

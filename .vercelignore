@@ -22,3 +22,6 @@ AGENTS.md
 # AI 회고 글의 준비 원고와 고해상도 원본 — 발행용 WebP만 공개
 insights/ai-fast-failure-lesson
 img/insights/ai-fast-failure-lesson1/*.png
+
+# 다운로드 자료의 HTML 원본 — 생성된 PDF만 공개
+files/_src
