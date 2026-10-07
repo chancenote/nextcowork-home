@@ -2048,3 +2048,9 @@ body.theme-public { --px-dark: #0E2B28; --px-dark2: #134E48; --px-line: #CDEAE2;
 .home-latest-feed h3 { font-size: 1.125rem; line-height: 1.45; }
 .home-latest-feed .thumb-body { padding: 14px 18px 12px; }
 .home-latest .section-actions { margin-top: 22px; }
+
+/* R09 · 4열 비교(FlexOffice 단계 비교) — 데스크톱 4열, 태블릿 2열, 모바일 1열 */
+.ref-cols.ref-cols--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.ref-cols--4 .ref-col h4 { font-size: 13px; padding: 5px 12px; margin-bottom: 12px; }
+@media (max-width: 1024px) { .ref-cols.ref-cols--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .ref-cols.ref-cols--4 { grid-template-columns: 1fr; } }
