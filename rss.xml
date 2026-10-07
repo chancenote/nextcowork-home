@@ -6,7 +6,15 @@
     <atom:link href="https://www.nextcw.com/rss.xml" rel="self" type="application/rss+xml"/>
     <description>AI 실무활용과 워크스페이스 인사이트 — 넥스트코웍이 발행하는 콘텐츠.</description>
     <language>ko</language>
-    <lastBuildDate>Sat, 03 Oct 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 00:00:00 +0900</lastBuildDate>
+    <item>
+      <title>2027년 AI 교육, 교육업체에 무엇을 요청해야 할까요? — 기획요청서 한 장 양식</title>
+      <link>https://www.nextcw.com/insights/ai-training-request-brief/</link>
+      <guid isPermaLink="true">https://www.nextcw.com/insights/ai-training-request-brief/</guid>
+      <pubDate>Wed, 07 Oct 2026 00:00:00 +0900</pubDate>
+      <category>AI 실무교육</category>
+      <description>2027년 AI 교육을 준비하는 교육·기획 담당자를 위한 실무 가이드. 바꿀 업무·참여자·실습 자료·확인할 결과를 한 장에 담는 기획요청서 양식과 특강·워크숍·사내 AI 캠퍼스 선택 기준을 제공합니다.</description>
+    </item>
     <item>
       <title>AI가 제일 싸게 만든 건 오답입니다 — 실무 회고 템플릿과 프롬프트 3종</title>
       <link>https://www.nextcw.com/insights/ai-fast-failure/</link>
