@@ -31,6 +31,38 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
 <link rel="stylesheet" href="/css/style.css?v=ncw-708ea3cc00">
+<!-- 라운드13 · Public 페이지 전용 보정 (공통 style.css 미변경 — 캐시 버전 대상 밖의 별도 CSS 파일 대신 페이지 내 블록) -->
+<style>
+  .px-hero-for { font-size: 15.5px; line-height: 1.7; color: var(--text); max-width: 800px; margin: -10px 0 22px; padding-left: 14px; border-left: 3px solid var(--accent); word-break: keep-all; }
+  .px-hero-for b { color: var(--ink); }
+  .px-hero-more { font-size: 14px; color: var(--caption); margin: -8px 0 24px; }
+  .px-core-body .px-core-gets { font-size: 13.8px; color: var(--text); margin: -6px 0 12px; }
+  .px-core-body .px-core-gets b { color: var(--accent-ink); margin-right: 8px; }
+  .px-stagedocs-edu { font-size: 14px; color: var(--text); margin-top: 10px; }
+  .px-stagedocs-edu b { color: var(--ink); margin-right: 8px; }
+  .px-stagedocs .note { margin-top: 12px; }
+  .px-stagedocs-cta { margin-top: 14px; }
+  .px-chipbar a { min-height: 44px; display: flex; align-items: center; }
+  .px-core-visual { height: 140px; }
+  .px-part { padding-top: 56px; }
+  .px-part-head { margin-bottom: 28px; padding-bottom: 20px; }
+  .px-adv { margin-bottom: 40px; }
+  .px-flow3 { margin-bottom: 20px; }
+  .px-adv-compact { padding: 20px 24px; }
+  .px-ext-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: stretch; }
+  .px-ext-grid .px-adv-compact { margin-bottom: 0; }
+  @media (max-width: 900px) { .px-ext-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) {
+    .px-steps, .px-steps--five { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .px-step { padding: 14px 12px; }
+  }
+  @media (max-width: 720px) {
+    .px-hero-for { font-size: 15px; margin-top: -6px; }
+    .px-core-visual { display: none; }
+    .px-core-body { padding: 18px 20px 20px; }
+    .px-hero .btn-row .btn { flex: 1 1 100%; justify-content: center; }
+  }
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -113,15 +145,16 @@
       <div class="crumb reveal">Services / <b>Public Advisory</b></div>
       <p class="px-badge reveal">청와대 · 중앙부처 · 지방정부와 함께해 온 공공 자문 파트너</p>
       <h1 class="reveal" data-delay="1">일이 잘되는 <em>공간</em>을 만들고,<br>일이 잘되는 <em>방식</em>을 정착시킵니다.</h1>
-      <p class="px-sub reveal" data-delay="2">넥스트코웍 Public Advisory는 공공의 공간과 조직이 성과로 답하도록 돕습니다. 공유공간·거점시설의 기획부터 개관 후 활성화까지, 그리고 공공조직의 AI 역량강화까지 — 담당자께서 감사·의회·주민 앞에서 <strong>설명하실 수 있는 근거</strong>가 남도록 자문합니다.</p>
+      <p class="px-sub reveal" data-delay="2">넥스트코웍 Public Advisory는 공공의 공간과 조직이 성과로 답하도록 돕습니다. 담당자께서 감사·의회·주민 앞에서 <strong>설명하실 수 있는 근거</strong>가 남도록 자문합니다.</p>
+      <p class="px-hero-for reveal" data-delay="2"><b>공공기관·지자체 담당자</b>를 위한 두 가지 과업 — <b>공간 과업</b>(공유공간·거점시설의 기획·건립·운영·활성화)과 <b>기관 교육</b>(공공조직 AI 역량강화). 과업마다 <b>근거 문서</b>(공간기획 리포트·운영계획서·위탁운영 RFP·교육 설계서)로 마무리합니다.</p>
       <div class="btn-row reveal" data-delay="3">
-        <a class="btn btn-accent" href="/contact/?s=public&amp;t=advisory&amp;cta=hero">자문·교육 문의 <span class="arr">→</span></a>
-        <a class="btn btn-ghost" href="#refs">공공 레퍼런스 보기</a>
+        <a class="btn btn-accent" href="/contact/?s=public&amp;t=space&amp;cta=hero_space">공간 과업 문의하기 <span class="arr">→</span></a>
+        <a class="btn btn-accent" href="/contact/?s=public&amp;t=ai&amp;cta=hero_ai">기관 교육 문의하기 <span class="arr">→</span></a>
       </div>
+      <p class="px-hero-more reveal" data-delay="3"><a class="link-accent" href="#refs">공공 레퍼런스 보기 →</a> · 사전 협의는 무료이며 영업일 1일 내 회신드립니다.</p>
 
       <p class="px-core-eyebrow reveal">Core Advisory</p>
       <p class="px-core-head reveal">두 가지를 중심으로 자문합니다</p>
-      <p class="px-core-desc reveal">공간을 만드는 일과 사람을 준비시키는 일 — 거점의 성패를 가르는 두 축입니다.</p>
       <div class="px-core-grid">
         <a class="px-core-card reveal" href="#space-build">
           <figure class="px-core-visual"><img src="/img/public/space-coworking-lounge.webp" width="1600" height="901" loading="lazy" decoding="async" alt="자연광이 드는 라운지와 서가를 갖춘 공공 코워킹 공간"></figure>
@@ -129,6 +162,7 @@
             <span class="px-core-tag">Core 1 · Space Development</span>
             <h3>공유공간·거점 인프라 개발 자문</h3>
             <p>코워킹스페이스·워케이션센터·앵커시설 — 기획부터 건립 자문, 운영모델, 개관 후 활성화까지 전 주기.</p>
+            <p class="px-core-gets"><b>받는 문서</b>공간기획 리포트 · 운영계획서 · 위탁운영 RFP·KPI</p>
             <span class="px-go">자세히 보기 ↓</span>
           </div>
         </a>
@@ -138,16 +172,10 @@
             <span class="px-core-tag">Core 2 · AI Enablement</span>
             <h3>공공조직 AI 역량강화 교육</h3>
             <p>공무원·연구진·기관 실무자 — 그 기관의 실제 문서와 업무로 실습하는 맞춤 교육과 AX 전환 컨설팅.</p>
+            <p class="px-core-gets"><b>받는 문서</b>교육 설계서 · 기관 문서 기반 실습 산출물</p>
             <span class="px-go">자세히 보기 ↓</span>
           </div>
         </a>
-      </div>
-      <div class="px-chooser reveal">
-        <p>두 가지 과업 중 어디에 해당하시나요?<small>과업이 정해지면 담당자께 필요한 범위와 문서부터 안내드립니다.</small></p>
-        <div class="px-chooser-actions">
-          <a class="btn btn-ghost" href="/contact/?s=public&amp;t=space&amp;cta=chooser_space">공간 과업 문의 <span class="arr">→</span></a>
-          <a class="btn btn-ghost" href="/contact/?s=public&amp;t=ai&amp;cta=chooser_ai">기관 교육 문의 <span class="arr">→</span></a>
-        </div>
       </div>
     </div>
   </section>
@@ -220,7 +248,7 @@
         <li><a href="#refs" class="spy">공공 레퍼런스</a></li>
         <li><a href="#process" class="spy">진행 방식 · FAQ</a></li>
       </ul>
-      <div class="px-rail-cta"><a class="btn btn-accent" style="padding:10px 18px;font-size:14px" href="/contact/?s=public&amp;t=advisory&amp;cta=rail">자문·교육 문의</a></div>
+      <div class="px-rail-cta"><a class="btn btn-accent" style="padding:10px 18px;font-size:14px" href="/contact/?s=public&amp;t=advisory&amp;cta=rail">자문·교육 문의하기</a></div>
     </aside>
 
     <div class="px-main">
@@ -265,24 +293,8 @@
             </div>
           </div>
 
-          <!-- 거점 공간 유형 4컷 (기존 자산 유지) -->
-          <div class="reference-gallery public-space-gallery reveal" role="group" aria-label="지방 거점 인프라 공간 사례">
-            <figure class="reference-shot public-space-shot">
-              <img src="/img/public/space-hospitality.webp" width="1200" height="800" loading="lazy" decoding="async" alt="호텔의 편안함과 업무 기능이 결합된 코워킹 라운지">
-            </figure>
-            <figure class="reference-shot public-space-shot">
-              <img src="/img/public/space-global-coworking.webp" width="1200" height="800" loading="lazy" decoding="async" alt="다양한 이용자가 함께 일하는 글로벌 코워킹스페이스">
-            </figure>
-            <figure class="reference-shot public-space-shot">
-              <img src="/img/public/space-workation.webp" width="1200" height="800" loading="lazy" decoding="async" alt="자연풍광과 업무 환경이 연결된 워케이션 공간">
-            </figure>
-            <figure class="reference-shot public-space-shot">
-              <img src="/img/public/space-fourth-place.webp" width="1200" height="800" loading="lazy" decoding="async" alt="일과 문화와 커뮤니티가 만나는 개방형 제4의 공간">
-            </figure>
-          </div>
-
           <details class="px-essay reveal">
-            <summary>왜 지금, 지방 균형발전에 거점 공간이 필요한가</summary>
+            <summary>왜 지금, 지방 균형발전에 거점 공간이 필요한가 — 거점 공간 유형 보기</summary>
             <div class="px-essay-body">
               <p>지방 투자 시대에는 산업시설만큼이나, 사람이 머물고 일하며 연결되는 <strong>거점 인프라</strong>가 중요합니다. 지역 청년과 기업, 창업가, 이전·상주 전문인력, 방문객과 생활인구가 함께 일하고 배우고 교류할 공간이 있어야 투자가 지역의 새로운 활동으로 이어집니다.</p>
               <p>공간은 건물이 아니라, 사람과 투자와 새로운 활동을 연결하는 <strong>지역의 운영 인프라</strong>입니다. 넥스트코웍은 이러한 공간을 보기 좋은 시설로 끝내지 않고, 기획부터 건립 자문, 운영모델, 개관 후 활성화까지 하나의 흐름으로 설계합니다.</p>
@@ -292,6 +304,21 @@
                 <li>자연풍광과 업무를 연결한 워케이션센터</li>
                 <li>일·학습·문화가 만나는 제4의 공간</li>
               </ul>
+              <!-- 거점 공간 유형 4컷 (기존 자산 유지 · 라운드13에서 접이식 안으로 이동) -->
+              <div class="reference-gallery public-space-gallery" role="group" aria-label="거점 공간 유형 예시">
+                <figure class="reference-shot public-space-shot">
+                  <img src="/img/public/space-hospitality.webp" width="1200" height="800" loading="lazy" decoding="async" alt="호텔의 편안함과 업무 기능이 결합된 코워킹 라운지">
+                </figure>
+                <figure class="reference-shot public-space-shot">
+                  <img src="/img/public/space-global-coworking.webp" width="1200" height="800" loading="lazy" decoding="async" alt="다양한 이용자가 함께 일하는 글로벌 코워킹스페이스">
+                </figure>
+                <figure class="reference-shot public-space-shot">
+                  <img src="/img/public/space-workation.webp" width="1200" height="800" loading="lazy" decoding="async" alt="자연풍광과 업무 환경이 연결된 워케이션 공간">
+                </figure>
+                <figure class="reference-shot public-space-shot">
+                  <img src="/img/public/space-fourth-place.webp" width="1200" height="800" loading="lazy" decoding="async" alt="일과 문화와 커뮤니티가 만나는 개방형 제4의 공간">
+                </figure>
+              </div>
               <!-- R8 · 복합개발 개념도 — R11 대표 지시로 담론 접이식 안으로 이동, '예시' 표기. 개념 이미지이므로 "실제 단면도"로 서술 금지 -->
               <figure class="public-space-figure">
                 <img src="/img/public/mixed-use-section.webp" width="1600" height="1067" loading="lazy" decoding="async" alt="저층 상업시설, 중층 공용 라운지·다이닝, 상층 주거가 한 건물에 겹쳐 있는 복합개발 건물의 절개 개념도 예시">
@@ -307,8 +334,7 @@
             <span class="px-adv-no">02</span>
             <h3>구축 공간 운영·활성화 자문</h3>
           </div>
-          <p class="px-adv-lead">공간의 성패는 개관 이후에 결정됩니다. 위탁운영의 기준을 설계하고, 사람이 계속 찾는 공간이 되도록 운영 전략과 콘텐츠, 홍보마케팅, 운영팀 온보딩까지 준비합니다. 건축사무소가 이미 정해져 있거나 운영 자문만 필요한 경우에도 참여할 수 있습니다.</p>
-          <p class="px-adv-note">운영 대행은 하지 않으며, 운영 방식 설계와 수탁기관 선정·평가 기준 자문을 합니다.</p>
+          <p class="px-adv-lead">공간의 성패는 개관 이후에 결정됩니다. 위탁운영의 기준을 설계하고, 사람이 계속 찾는 공간이 되도록 운영 전략과 콘텐츠, 홍보마케팅, 운영팀 온보딩까지 준비합니다. 건축사무소가 이미 정해져 있거나 운영 자문만 필요한 경우에도 참여할 수 있습니다. <b>운영 대행은 하지 않으며, 운영 방식 설계와 수탁기관 선정·평가 기준 자문을 합니다.</b></p>
 
           <div class="px-cards2">
             <div class="px-card reveal">
@@ -323,10 +349,6 @@
             </div>
           </div>
 
-          <div class="px-minicta reveal">
-            <p>공간개발 과업을 검토하고 계신가요?<small>기본구상·예산 편성 전 단계라도 괜찮습니다. 사전 협의는 무료입니다.</small></p>
-            <a class="btn btn-accent" href="/contact/?s=public&amp;t=space&amp;cta=part_space">공간개발 자문 문의 <span class="arr">→</span></a>
-          </div>
         </div>
       </section>
 
@@ -346,39 +368,6 @@
           <div class="px-flow-node"><b>보고 · 증빙 · 성과</b><span>내부 보고 · 감사 대응 · 운영 실행</span></div>
         </div>
 
-        <div class="px-docgrid">
-          <div class="px-doc reveal">
-            <h4>공간기획 리포트</h4>
-            <p>공간의 역할 정의, 공간 프로그램과 도입 세부시설의 근거를 담습니다.</p>
-            <ul class="px-doc-use"><li>투자심사</li><li>내부 보고</li></ul>
-          </div>
-          <div class="px-doc reveal" data-delay="1">
-            <h4>운영모델 설계서 · 운영계획서</h4>
-            <p>개관 이후의 운영 방식과 관리 프로그램을 미리 준비하는 실행 문서입니다.</p>
-            <ul class="px-doc-use"><li>위탁·직영 검토</li><li>개관 준비</li></ul>
-          </div>
-          <div class="px-doc reveal" data-delay="2">
-            <h4>위탁운영 RFP · 평가지표 · KPI</h4>
-            <p>운영사 선정 기준과 성과 관리 체계 — 공모와 평가를 방어 가능하게 만듭니다.</p>
-            <ul class="px-doc-use"><li>공모·심사</li><li>의회·감사</li></ul>
-          </div>
-          <div class="px-doc reveal">
-            <h4>공간운영 매뉴얼북</h4>
-            <p>운영팀 온보딩과 인수인계까지 — 사람이 바뀌어도 운영이 이어지게 합니다.</p>
-            <ul class="px-doc-use"><li>운영 정착</li><li>인수인계</li></ul>
-          </div>
-          <div class="px-doc reveal" data-delay="1">
-            <h4>홍보마케팅 전략서</h4>
-            <p>개관 후 활성화를 위한 콘텐츠·홍보 실행 계획을 담습니다.</p>
-            <ul class="px-doc-use"><li>활성화 실행</li></ul>
-          </div>
-          <div class="px-doc reveal" data-delay="2">
-            <h4>교육 설계서 · 실습 산출물</h4>
-            <p>기관 문서 기반 실습 결과가 그대로 교육의 증빙이 됩니다.</p>
-            <ul class="px-doc-use"><li>연수 실적</li><li>품의 근거</li></ul>
-          </div>
-        </div>
-
         <div class="px-stagedocs reveal">
           <h4>공간 과업 — 단계별로 받는 문서</h4>
           <div class="px-stagetable-wrap">
@@ -393,13 +382,11 @@
               </tbody>
             </table>
           </div>
-          <p class="px-stagedocs-note">필요한 단계만 맡기셔도 됩니다. 문서별 세부 목차는 과업 범위 협의 시 제시합니다.</p>
-          <p class="px-stagedocs-prep"><b>준비해 주시면 좋은 자료</b>기존 기본계획·사업계획서 · 확보 예산과 편성 일정 · 부지·건물 정보 · 조달·발주 일정 — 없어도 상담은 가능합니다.</p>
-        </div>
-
-        <div class="px-outcap reveal">
-          <p>조언은 회의에서 끝나지만, <b>문서는 행정에서 힘이 됩니다.</b></p>
-          <span>모든 과업은 근거가 남는 문서로 마무리됩니다.</span>
+          <p class="px-stagedocs-edu"><b>기관 교육 과업</b>교육 설계서 · 기관 문서 기반 실습 산출물 — 연수 실적과 품의 근거로 쓰입니다.</p>
+          <div class="note">
+            <p><b>필요한 단계만 맡기셔도 됩니다.</b> 문서별 세부 목차는 과업 범위 협의 시 제시합니다. 준비해 주시면 좋은 자료 — 기존 기본계획·사업계획서 · 확보 예산과 편성 일정 · 부지·건물 정보 · 조달·발주 일정. 없어도 상담은 가능합니다.</p>
+          </div>
+          <div class="px-stagedocs-cta"><a class="btn btn-ghost" href="/contact/?s=public&amp;t=space&amp;cta=stagedocs">이 단계로 문의하기 <span class="arr">→</span></a></div>
         </div>
       </section>
 
@@ -464,7 +451,7 @@
             <li>교육 → 정착 연계 설계</li>
           </ul>
           <div class="px-compact-cta">
-            <a class="btn btn-accent" href="/contact/?s=public&amp;t=ai&amp;cta=part_work">AI 교육·AX 컨설팅 문의 <span class="arr">→</span></a>
+            <a class="btn btn-accent" href="/contact/?s=public&amp;t=ai&amp;cta=part_work">기관 교육·AX 컨설팅 문의하기 <span class="arr">→</span></a>
           </div>
         </div>
       </section>
@@ -474,9 +461,10 @@
         <div class="px-part-head reveal">
           <p class="px-part-label">Part C · Advisory &amp; Talks</p>
           <h2>정책 자문 파트너</h2>
-          <p>공간과 AI, 두 현장에서 축적한 경험을 위원회·심사·자문과 강연으로 나눕니다. 공공의 절차와 언어를 이해하는 자문입니다.</p>
+          <p>공간과 AI, 두 현장에서 축적한 경험을 위원회·심사·자문과 강연으로 나눕니다. 공공의 절차와 언어를 이해하는 자문입니다. 과업의 범위와 형태(자문위촉 · 심사 · 강연 · 용역)는 사전 협의에서 함께 정의합니다.</p>
         </div>
 
+        <div class="px-ext-grid">
         <!-- 05 창업 심사·멘토링 -->
         <div class="px-adv px-adv-compact reveal" id="startup">
           <div class="px-adv-head">
@@ -506,8 +494,7 @@
             <li>[AI] 인공지능 시대 살아가기</li>
           </ul>
         </div>
-
-        <p class="px-ext-note">과업의 범위와 형태(자문위촉 · 심사 · 강연 · 용역)는 사전 협의에서 함께 정의합니다.</p>
+        </div>
       </section>
 
       <!-- ========== 공공 레퍼런스 ========== -->
