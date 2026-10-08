@@ -1,0 +1,40 @@
+/* AI Campus 전용 — 라운드 13 (간결·임팩트). 공통 컴포넌트는 style.css, 여기는 이 페이지의 배치만 */
+
+/* 비교표: 모든 폭에서 핵심 행만 먼저, 상세 행은 "단계별 상세 비교"를 펼치면 보인다 (:has 미지원 브라우저는 전부 표시) */
+.page-ai-campus .compare-more { display: block; border-top: 1px solid var(--hairline); }
+.page-ai-campus .compare-wrap:has(.compare-more:not([open])) .compare-detail { display: none; }
+.page-ai-campus .compare-more summary {
+  cursor: pointer; list-style: none; padding: 14px 16px; min-height: 44px;
+  font-size: 14.5px; font-weight: 800; color: var(--accent-ink);
+}
+.page-ai-campus .compare-more summary::-webkit-details-marker { display: none; }
+.page-ai-campus .compare-more summary::after { content: " +"; }
+.page-ai-campus .compare-more[open] summary::after { content: " −"; }
+
+/* 블록 간격 — 가격 섹션 안 블록을 같은 흐름 간격으로 */
+.page-ai-campus #price .container > * + * { margin-top: var(--flow); }
+.page-ai-campus #price .container > .section-head + * { margin-top: 0; }
+.page-ai-campus #compare { margin-bottom: 12px; }
+.page-ai-campus #compare + .compare-wrap { margin-top: 0; }
+
+/* 대상 업무 3카드 — 레퍼런스 카드보다 촘촘하게 */
+.page-ai-campus #fit { margin-top: var(--flow); }
+.page-ai-campus #fit .ref-col { padding: 18px 22px; }
+.page-ai-campus #fit .ref-col p { font-size: 14px; line-height: 1.65; }
+
+/* 품의 자료 링크 — 넓은 화면에서 한 줄에 */
+.page-ai-campus #kit .related-posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 8px; margin: 10px 0; }
+
+/* 8주 파일럿 — 제목·설명·버튼을 한 줄 흐름으로 */
+.page-ai-campus #price .callout--feature { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; justify-content: space-between; }
+.page-ai-campus #price .callout--feature .block-title { margin: 0; flex: 1 1 100%; }
+.page-ai-campus #price .callout--feature p { margin: 0; }
+
+/* 레퍼런스 기관 목록 — 줄간격 조정 */
+.page-ai-campus #references .ref-col { padding: 24px 26px; }
+.page-ai-campus #references .ref-col p { line-height: 1.65; }
+
+/* 히어로 — 구매 정보 묶음을 한 화면에 */
+.page-ai-campus .page-hero .answer { margin-bottom: 24px; }
+.page-ai-campus .page-hero .quick-links { margin-top: 14px; }
+.page-ai-campus .page-hero .price-note { margin-top: 10px; }
