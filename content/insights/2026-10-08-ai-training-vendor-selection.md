@@ -6,9 +6,9 @@ category: "AI 실무교육"
 topic: "AI 업무전환"
 tags: ["AI 교육", "교육 업체 선정", "제안서 비교", "AI 실무교육", "교육 기획"]
 slug: "ai-training-vendor-selection"
-image: "/img/ai-campus/workshop-session.webp"
-thumbnail: "/img/ai-campus/workshop-session.webp"
-image_alt: "참여자들이 노트북을 펴고 강사의 설명을 들으며 실습하는 AI 교육 워크샵 장면"
+image: "/img/insights/og-ai-training-vendor-selection.jpg"
+thumbnail: "/img/insights/ai-training-vendor-selection.webp"
+image_alt: "회의 테이블 위에 업체 제안서 세 부와 체크 표시된 비교표, 노트북이 놓인 장면을 표현한 AI 생성 이미지"
 cta_service: "ai-campus"
 audience: "AI 교육 제안서를 비교하는 기업·기관 교육·인사·기획 담당자"
 takeaway: "AI 교육 업체 비교표 12항목·업체 미팅 질문 스크립트"
@@ -23,6 +23,8 @@ AI 교육 업체는 강사의 이력이나 커리큘럼의 화려함보다 **우
 기준이 다르면 가장 말을 잘한 제안서가 뽑히기 쉽기 때문입니다. 어떤 업체는 강사 이력을, 어떤 업체는 도구 목록을, 어떤 업체는 가격을 앞에 둡니다. 그대로 나란히 놓으면 내부 보고에서 "왜 이 업체인가"를 설명하기 어렵습니다.
 
 같은 표를 쓰면 두 가지가 좋아집니다. 빈칸이 곧 업체에 다시 물어볼 질문이 되고, 선정 사유를 품의 문서에 그대로 옮길 수 있습니다.
+
+![AI 교육 업체 선정 3단계: 제안서 2~3곳을 12항목 비교표에 채우고, 빈칸을 미팅 질문으로 확인하고, 표의 항목 이름 그대로 선정 사유를 품의에 보고한다](/img/insights/ai-training-vendor-selection/diagram-01-selection-steps.svg "표를 채우면 빈칸이 질문이 되고, 항목 이름이 그대로 선정 사유가 됩니다.")
 
 ## 무엇부터 확인해야 하나요?
 
