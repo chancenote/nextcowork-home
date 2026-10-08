@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="t d">
+<title id="t">넥스트코웍의 여정: 공간을 짓고, 열고, 성장을 돕고, 방법을 찾다</title>
+<desc id="d">왼쪽에서 오른쪽으로 이어지는 네 단계 카드. 2006–2014 BUILD 공간을 짓다(개발사업 PM, 누계 5,100억), 2015–2023 OPERATE 공간을 열다(공유오피스 4개 지점, 고객사 1,000+), 2018–현재 SCALE UP 성장을 돕다(㈜리슬 고문·사외이사, AI 전환 자문), 2023–현재 THINK UP 방법을 찾다(넥스트코웍 설립, 공간과 AI 교육). 네 카드 아래로 하나의 띠가 이어져 Build the Next Workspace로 모인다.</desc>
+<defs><marker id="arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#302D7C"/></marker></defs>
+<rect width="1200" height="560" fill="#F8F0FF"/>
+<g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif" text-anchor="middle">
+<rect x="40" y="48" width="252" height="340" rx="24" fill="#FFFFFF" stroke="#302D7C" stroke-width="3"/>
+<text x="166.0" y="104" font-size="24" font-weight="600" fill="#7950E8">2006–2014</text>
+<text x="166.0" y="172" font-size="40" font-weight="800" fill="#302D7C" font-family="Inter, Pretendard, sans-serif" letter-spacing="1">BUILD</text>
+<text x="166.0" y="228" font-size="34" font-weight="800" fill="#302D7C">공간을 짓다</text>
+<rect x="140.0" y="254" width="52" height="5" rx="2.5" fill="#7950E8"/>
+<text x="166.0" y="304" font-size="23" font-weight="500" fill="#3F3F46">개발사업 PM</text>
+<text x="166.0" y="344" font-size="23" font-weight="700" fill="#3F3F46">누계 5,100억</text>
+<line x1="298" y1="218.0" x2="328" y2="218.0" stroke="#302D7C" stroke-width="4" marker-end="url(#arw)"/>
+<rect x="336" y="48" width="252" height="340" rx="24" fill="#FFFFFF" stroke="#302D7C" stroke-width="3"/>
+<text x="462.0" y="104" font-size="24" font-weight="600" fill="#7950E8">2015–2023</text>
+<text x="462.0" y="172" font-size="40" font-weight="800" fill="#302D7C" font-family="Inter, Pretendard, sans-serif" letter-spacing="1">OPERATE</text>
+<text x="462.0" y="228" font-size="34" font-weight="800" fill="#302D7C">공간을 열다</text>
+<rect x="436.0" y="254" width="52" height="5" rx="2.5" fill="#7950E8"/>
+<text x="462.0" y="304" font-size="23" font-weight="500" fill="#3F3F46">공유오피스 4개 지점</text>
+<text x="462.0" y="344" font-size="23" font-weight="700" fill="#3F3F46">고객사 1,000+</text>
+<line x1="594" y1="218.0" x2="624" y2="218.0" stroke="#302D7C" stroke-width="4" marker-end="url(#arw)"/>
+<rect x="632" y="48" width="252" height="340" rx="24" fill="#FFFFFF" stroke="#302D7C" stroke-width="3"/>
+<text x="758.0" y="104" font-size="24" font-weight="600" fill="#7950E8">2018–현재</text>
+<text x="758.0" y="172" font-size="36" font-weight="800" fill="#302D7C" font-family="Inter, Pretendard, sans-serif" letter-spacing="1">SCALE UP</text>
+<text x="758.0" y="228" font-size="34" font-weight="800" fill="#302D7C">성장을 돕다</text>
+<rect x="732.0" y="254" width="52" height="5" rx="2.5" fill="#7950E8"/>
+<text x="758.0" y="304" font-size="23" font-weight="500" fill="#3F3F46">㈜리슬 고문·사외이사</text>
+<text x="758.0" y="344" font-size="23" font-weight="700" fill="#3F3F46">AI 전환 자문</text>
+<line x1="890" y1="218.0" x2="920" y2="218.0" stroke="#302D7C" stroke-width="4" marker-end="url(#arw)"/>
+<rect x="928" y="48" width="252" height="340" rx="24" fill="#302D7C" stroke="#302D7C" stroke-width="3"/>
+<text x="1054.0" y="104" font-size="24" font-weight="600" fill="#DCCEFF">2023–현재</text>
+<text x="1054.0" y="172" font-size="36" font-weight="800" fill="#FFFFFF" font-family="Inter, Pretendard, sans-serif" letter-spacing="1">THINK UP</text>
+<text x="1054.0" y="228" font-size="34" font-weight="800" fill="#FFFFFF">방법을 찾다</text>
+<rect x="1028.0" y="254" width="52" height="5" rx="2.5" fill="#DCCEFF"/>
+<text x="1054.0" y="304" font-size="23" font-weight="500" fill="#FFFFFF">넥스트코웍 설립</text>
+<text x="1054.0" y="344" font-size="23" font-weight="700" fill="#FFFFFF">공간 × AI 교육</text>
+<line x1="166.0" y1="388" x2="166.0" y2="428" stroke="#B99EFF" stroke-width="3" stroke-dasharray="6 6"/>
+<line x1="462.0" y1="388" x2="462.0" y2="428" stroke="#B99EFF" stroke-width="3" stroke-dasharray="6 6"/>
+<line x1="758.0" y1="388" x2="758.0" y2="428" stroke="#B99EFF" stroke-width="3" stroke-dasharray="6 6"/>
+<line x1="1054.0" y1="388" x2="1054.0" y2="428" stroke="#B99EFF" stroke-width="3" stroke-dasharray="6 6"/>
+<rect x="40" y="428" width="1120" height="84" rx="42" fill="#7950E8"/>
+<text x="600.0" y="482" font-size="34" font-weight="800" fill="#FFFFFF"><tspan font-family="Inter, Pretendard, sans-serif">Build the Next Workspace</tspan><tspan font-weight="600" dx="14">— 다음 일터를 함께 짓습니다</tspan></text>
+</g></svg>
