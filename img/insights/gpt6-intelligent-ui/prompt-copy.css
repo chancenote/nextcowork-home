@@ -1,0 +1,95 @@
+/* GPT-6 인사이트 전용 — 터미널형 프롬프트 박스 + 복사 버튼.
+   JS가 꺼져도 :has()로 어두운 박스와 줄바꿈은 적용되고, 버튼만 생략된다. */
+.post--gpt6-intelligent-ui .post-body pre:has(> code.language-text),
+.post--gpt6-intelligent-ui .post-body .gpt6-prompt > pre:has(> code.language-text) {
+  margin: 28px 0;
+  padding: 20px 22px;
+  border: 1px solid #302D7C;
+  border-top: 4px solid #7950E8;
+  border-radius: 12px;
+  background: #1D1B4A;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+.post--gpt6-intelligent-ui .post-body pre:has(> code.language-text) > code,
+.post--gpt6-intelligent-ui .post-body .gpt6-prompt > pre > code {
+  color: #fff;
+  background: none;
+  padding: 0;
+}
+.post--gpt6-intelligent-ui .post-body pre:has(> code.language-text):focus-visible,
+.post--gpt6-intelligent-ui .post-body .gpt6-prompt > pre:focus-visible {
+  outline: 3px solid #FFBC55;
+  outline-offset: 3px;
+}
+
+/* JS 적용 후: 래퍼 기준으로 버튼을 우측 상단에 고정(본문 스크롤과 무관) */
+.post--gpt6-intelligent-ui .post-body .gpt6-prompt {
+  position: relative;
+  margin: 28px 0;
+}
+.post--gpt6-intelligent-ui .post-body .gpt6-prompt > pre:has(> code.language-text) {
+  margin: 0;
+  padding-top: 64px;
+}
+.post--gpt6-intelligent-ui .gpt6-prompt__copy {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid #7950E8;
+  border-radius: 8px;
+  background: #302D7C;
+  color: #fff;
+  font: inherit;
+  font-size: .9375rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color .15s ease;
+}
+.post--gpt6-intelligent-ui .gpt6-prompt__copy:hover {
+  background: #7950E8;
+}
+.post--gpt6-intelligent-ui .gpt6-prompt__copy:focus-visible {
+  outline: 3px solid #FFBC55;
+  outline-offset: 2px;
+}
+.post--gpt6-intelligent-ui .gpt6-prompt__copy.is-done {
+  background: #7950E8;
+}
+.post--gpt6-intelligent-ui .gpt6-prompt__status {
+  margin: 8px 0 0;
+  color: #302D7C;
+  font-size: .9375rem;
+  line-height: 1.6;
+}
+.post--gpt6-intelligent-ui .gpt6-prompt__status:empty {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .post--gpt6-intelligent-ui .post-body pre:has(> code.language-text),
+  .post--gpt6-intelligent-ui .post-body .gpt6-prompt > pre:has(> code.language-text) {
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: .9375rem;
+  }
+  .post--gpt6-intelligent-ui .post-body .gpt6-prompt > pre:has(> code.language-text) {
+    padding-top: 64px;
+  }
+  .post--gpt6-intelligent-ui .gpt6-prompt__copy {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .post--gpt6-intelligent-ui .gpt6-prompt__copy { transition: none; }
+}

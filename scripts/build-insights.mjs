@@ -586,7 +586,9 @@ function renderArticle(post, assetVersion) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
 <link rel="stylesheet" href="${versioned("/css/style.css", assetVersion)}">
-<link rel="stylesheet" href="${versioned("/css/insights-magazine.css", assetVersion)}">
+<link rel="stylesheet" href="${versioned("/css/insights-magazine.css", assetVersion)}">${post.slug === "gpt6-intelligent-ui" ? `
+<link rel="stylesheet" href="${versioned("/img/insights/gpt6-intelligent-ui/prompt-copy.css", assetVersion)}">
+<script src="${versioned("/img/insights/gpt6-intelligent-ui/prompt-copy.js", assetVersion)}" defer></script>` : ""}
 <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
 </head>
 <body class="theme-ai">
