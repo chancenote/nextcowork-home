@@ -133,3 +133,44 @@ image: "/img/og.png"
 - 라벨은 역할이 다릅니다 — `콘텐츠 검색`은 글을, `태그 이름 검색`은 선택할 태그를 찾습니다.
 - 상세 글의 태그 아래에는 `이 주제의 글 더 보기 →` 링크가 `/insights/?topic=…#latest-content`로 연결됩니다.
 - 인사이트 글자 크기(모바일 기준): 상세 본문 18px·제목 30px·요약 19px, 카드 제목 18px, 검색/태그칩/입력/버튼 16px, 날짜·개수 등 보조 정보 14px. PC는 각각 19/44/21/22px입니다. 읽어야 하는 텍스트에 8~13px를 쓰지 않습니다.
+
+## 디자인 컴포넌트 (라운드 13 · 간결·임팩트 기준)
+
+공통 클래스는 `css/style.css` 끝의 "라운드 13 · 공통 디자인 컴포넌트" 블록에 있습니다. 새 블록을 만들 때 아래 6가지 중에서 고르고, 인라인 `style`·새 색은 쓰지 않습니다. 기준 문서: `_workspace/43_concise_impact_brief.md`.
+
+| 역할 | 클래스 | 규칙 |
+|---|---|---|
+| 정보·준비물·경계 | `.note` | 회색 면, 테두리 없음, 굵은 첫 문장이 제목. 연속 2개 금지 |
+| 오퍼·핵심 제안 | `.callout.callout--feature` | 흰 면 + 서비스 색 1px 테두리, 페이지당 최대 1개 |
+| 인용 | `.testimonial` | 기존 그대로 |
+| 단계·상품 비교 | `.compare-wrap > table.compare-table` | 행=기준, 열=상품, 첫 열 고정. 모바일은 `.compare-core` 행만, 나머지는 펼침 |
+| 하위 블록 제목 | `.block-title` | 섹션(H2)당 영문 아이브로 1개, 그 아래 라벨은 이것 |
+| 바로가기 줄 | `ul.quick-links` | 긴 서비스 페이지 히어로 아래, 이미 있는 앵커 4~5개 |
+
+블록 사이 간격은 부모에 `.flow`를 붙이면 `--flow`(28px)로 통일됩니다. `.callout--spaced`, `.callout--spaced-lg`는 같은 간격의 별칭으로만 남아 있습니다(정리 예정).
+
+```html
+<div class="note"><b>준비해 주시면 좋은 자료</b><p>기본계획·예산 일정·부지 정보</p></div>
+
+<div class="callout callout--feature"><b>8주 파일럿</b> — 한 팀의 실제 업무로 먼저 검증합니다.</div>
+
+<h3 class="block-title">교육에서 만드는 것과 만들지 않는 것</h3>
+
+<ul class="quick-links"><li><a href="#price">가격</a></li><li><a href="#process">진행 절차</a></li><li><a href="#faq">FAQ</a></li></ul>
+
+<div class="compare-wrap">
+  <table class="compare-table">
+    <thead><tr><th scope="col">기준</th><th scope="col">특강<small>150만원부터</small></th><th scope="col">실무 워크샵<small>300만원부터</small></th></tr></thead>
+    <tbody class="compare-core">
+      <tr><th scope="row">이런 상황에</th><td>…</td><td>…</td></tr>
+      <tr><th scope="row">받는 것</th><td>…</td><td>…</td></tr>
+    </tbody>
+    <tbody class="compare-detail">
+      <tr><th scope="row">제외·선행</th><td>…</td><td>…</td></tr>
+    </tbody>
+  </table>
+  <details class="compare-more"><summary>단계별 상세 비교</summary></details>
+</div>
+```
+
+문의 버튼 문구: 문의 폼으로 가는 주 버튼은 "…문의하기"(헤더·푸터 "프로젝트 문의하기"), 페이지 안 이동·자료는 "…보기"/"…받기" 고스트 버튼.

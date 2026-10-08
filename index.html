@@ -32,8 +32,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=ncw-62a6bc8ba8">
-<link rel="stylesheet" href="/css/insights-magazine.css?v=ncw-62a6bc8ba8">
+<link rel="stylesheet" href="/css/style.css?v=ncw-708ea3cc00">
+<link rel="stylesheet" href="/css/insights-magazine.css?v=ncw-708ea3cc00">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -96,7 +96,7 @@
         </li>
         <li><a href="/about/">대표 스토리</a></li>
         <li><a href="/insights/">인사이트</a></li>
-        <li><a class="nav-cta" href="/contact/">프로젝트 문의</a></li>
+        <li><a class="nav-cta" href="/contact/">프로젝트 문의하기</a></li>
       </ul>
     </nav>
     <button class="nav-burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-menu">
@@ -164,8 +164,7 @@
         <p>공간만 바꾸면 반쪽이고, 툴만 도입하면 겉돕니다. 넥스트코웍은 그 교차점 — <strong style="color:var(--ink)">공간(Space) × 일하는 방식(AI Work)</strong> — 을 함께 설계합니다. 국내에서 드문 조합입니다.</p>
       </div>
       <!-- R3-6 · Space × AI Work 교집합 벤 (design/visual/r3-06-home-intersection.svg) -->
-      <figure class="visual-figure reveal is-scrollable">
-        <div class="visual-scroll-frame" style="--visual-min:520px" tabindex="0" role="group" aria-label="공간과 AI 업무의 교집합 도표">
+      <figure class="visual-figure reveal venn-figure">
         <svg viewBox="0 0 520 330" role="img" aria-labelledby="tR306 dR306" class="visual-home-intersection" xmlns="http://www.w3.org/2000/svg">
           <title id="tR306">공간(Space) × 일하는 방식(AI Work)의 교집합 = AI Workspace Builder</title>
           <desc id="dR306">왼쪽 원은 공간을 지어본 역량(Space), 오른쪽 원은 일하는 방식을 바꾸는 역량(AI Work)을 나타낸다. 두 원이 겹치는 교집합이 넥스트코웍의 자리이며, 그 교집합이 AI Workspace Builder다. 국내에서 두 역량을 함께 가진 회사가 드물다는 차별점을 보여준다.</desc>
@@ -188,7 +187,29 @@
           <path d="M253 261 L260 269 L267 261" fill="none" stroke="var(--indigo, #302D7C)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           <text x="260" y="298" text-anchor="middle" fill="var(--indigo, #302D7C)" font-size="20" font-weight="800">= AI Workspace Builder</text>
         </svg>
-        </div>
+        <!-- 모바일(≤768px) 세로 배치판 — 같은 의미·색, 가로 스크롤 없음 -->
+        <svg viewBox="0 0 320 360" role="img" aria-labelledby="tR306s dR306s" class="visual-home-intersection--stack" xmlns="http://www.w3.org/2000/svg">
+          <title id="tR306s">공간(Space) × 일하는 방식(AI Work)의 교집합 = AI Workspace Builder</title>
+          <desc id="dR306s">위쪽 원은 공간을 지어본 역량(Space), 아래쪽 원은 일하는 방식을 바꾸는 역량(AI Work)이다. 두 원이 겹치는 교집합이 넥스트코웍의 자리이며, 그 교집합이 AI Workspace Builder다.</desc>
+          <clipPath id="lensR306s"><circle cx="160" cy="100" r="88"/></clipPath>
+          <circle cx="160" cy="100" r="88" fill="var(--line-space, #0079C4)" fill-opacity="0.08" stroke="var(--line-space, #0079C4)" stroke-width="2"/>
+          <circle cx="160" cy="196" r="88" fill="var(--line-ai, #6955BA)" fill-opacity="0.08" stroke="var(--line-ai, #6955BA)" stroke-width="2"/>
+          <circle cx="160" cy="196" r="88" fill="var(--indigo, #302D7C)" fill-opacity="0.12" clip-path="url(#lensR306s)"/>
+          <g text-anchor="middle">
+            <text x="160" y="46" fill="var(--caption, #6E7175)" font-size="12" font-weight="700" letter-spacing="0.06em">SPACE</text>
+            <text x="160" y="68" fill="var(--line-space, #0079C4)" font-size="16" font-weight="800">공간</text>
+            <text x="160" y="86" fill="var(--caption, #6E7175)" font-size="12" font-weight="400">지어본 사람</text>
+          </g>
+          <text x="160" y="152" text-anchor="middle" fill="var(--indigo, #302D7C)" font-size="12" font-weight="700">교집합</text>
+          <g text-anchor="middle">
+            <text x="160" y="222" fill="var(--caption, #6E7175)" font-size="12" font-weight="700" letter-spacing="0.06em">AI WORK</text>
+            <text x="160" y="244" fill="var(--line-ai, #6955BA)" font-size="16" font-weight="800">AI 업무</text>
+            <text x="160" y="262" fill="var(--caption, #6E7175)" font-size="12" font-weight="400">바꾸는 사람</text>
+          </g>
+          <path d="M160 292 L160 316" fill="none" stroke="var(--indigo, #302D7C)" stroke-width="2"/>
+          <path d="M153 309 L160 317 L167 309" fill="none" stroke="var(--indigo, #302D7C)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="160" y="346" text-anchor="middle" fill="var(--indigo, #302D7C)" font-size="20" font-weight="800">= AI Workspace Builder</text>
+        </svg>
         <figcaption>공간을 지어본 역량과 일하는 방식을 바꾸는 역량 — 이 둘이 겹치는 곳이 넥스트코웍의 자리입니다. 그 교집합의 이름이 AI Workspace Builder이고, 국내에서 두 역량을 함께 가진 회사는 드뭅니다.</figcaption>
       </figure>
     </div>
@@ -440,6 +461,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=ncw-62a6bc8ba8" defer></script>
+<script src="/js/main.js?v=ncw-708ea3cc00" defer></script>
 </body>
 </html>
