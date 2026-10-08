@@ -641,11 +641,13 @@ ${articleBody}
       <div class="subscribe-copy"><h2 id="subscribe-heading">AI 실무 인사이트를 이메일로 받아보세요</h2><p>업무에 적용할 AI 활용법과 넥스트코웍의 새로운 글을 전합니다. 광고성 메일은 보내지 않습니다.</p></div>
       <form class="insights-subscribe-form" id="newsletter-form" data-endpoint="https://hook.us1.make.com/li5ucmemlr73l6hfuwcx27hb861zaemg" action="https://hook.us1.make.com/li5ucmemlr73l6hfuwcx27hb861zaemg" method="post">
         <input type="hidden" name="form_type" value="newsletter">
+        <div class="hp-field" aria-hidden="true"><label>회사 홈페이지<input type="text" name="company_url" tabindex="-1" autocomplete="off" value=""></label></div>
+        <input type="hidden" name="form_elapsed_ms" value="">
         <input type="hidden" name="interest" value="general">
         <input type="hidden" name="consent_version" value="2026-10">
         <label class="subscribe-label" for="insights-subscribe-email">이메일 주소</label>
         <div class="newsletter-row">
-          <input class="newsletter-input" id="insights-subscribe-email" type="email" name="email" required autocomplete="email" placeholder="name@company.com" aria-label="구독할 이메일 주소">
+          <input class="newsletter-input" id="insights-subscribe-email" type="email" name="email" maxlength="254" required autocomplete="email" placeholder="name@company.com" aria-label="구독할 이메일 주소">
           <button type="submit" class="btn btn-primary">인사이트 받아보기 <span class="arr">→</span></button>
         </div>
         <div class="consent-field newsletter-consent">

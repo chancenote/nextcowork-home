@@ -2054,3 +2054,6 @@ body.theme-public { --px-dark: #0E2B28; --px-dark2: #134E48; --px-line: #CDEAE2;
 .ref-cols--4 .ref-col h4 { font-size: 13px; padding: 5px 12px; margin-bottom: 12px; }
 @media (max-width: 1024px) { .ref-cols.ref-cols--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 720px) { .ref-cols.ref-cols--4 { grid-template-columns: 1fr; } }
+
+/* 스팸 방어용 숨김 입력칸 — 화면·탭 이동·낭독에서 제외 (display:none은 봇이 건너뛰므로 화면 밖 배치) */
+.hp-field { position: absolute !important; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
