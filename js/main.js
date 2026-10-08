@@ -45,19 +45,23 @@
   var burger = document.querySelector(".nav-burger");
   var menu = document.querySelector(".nav-menu");
   if (burger && menu) {
-    burger.addEventListener("click", function () {
-      var open = menu.classList.toggle("open");
+    var setMenu = function (open) {
+      menu.classList.toggle("open", open);
       burger.classList.toggle("open", open);
       burger.setAttribute("aria-expanded", open ? "true" : "false");
       burger.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
+    };
+    burger.addEventListener("click", function () {
+      var open = !menu.classList.contains("open");
+      setMenu(open);
+      // The button follows the menu in DOM order, so move keyboard focus into the menu.
+      if (open) { var first = menu.querySelector("a"); if (first) first.focus(); }
     });
     menu.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        menu.classList.remove("open");
-        burger.classList.remove("open");
-        burger.setAttribute("aria-expanded", "false");
-        burger.setAttribute("aria-label", "메뉴 열기");
-      });
+      a.addEventListener("click", function () { setMenu(false); });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && menu.classList.contains("open")) { setMenu(false); burger.focus(); }
     });
   }
 
@@ -437,6 +441,18 @@
         return { saved: false, id: "" };
       });
     }
+
+    // Native validation blocks submit before the handler below runs, so announce and mark fields here.
+    form.addEventListener("invalid", function (ev) {
+      ev.target.setAttribute("aria-invalid", "true");
+      setStatus("입력하지 않은 필수 항목이 있습니다. 표시된 칸을 확인해주세요.");
+    }, true);
+    form.addEventListener("input", function (ev) {
+      if (ev.target.getAttribute("aria-invalid") === "true" && ev.target.checkValidity()) ev.target.removeAttribute("aria-invalid");
+    });
+    form.addEventListener("change", function (ev) {
+      if (ev.target.getAttribute("aria-invalid") === "true" && ev.target.checkValidity()) ev.target.removeAttribute("aria-invalid");
+    });
 
     form.addEventListener("submit", function (ev) {
       var endpoint = form.getAttribute("data-endpoint");
