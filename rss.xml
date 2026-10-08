@@ -6,7 +6,15 @@
     <atom:link href="https://www.nextcw.com/rss.xml" rel="self" type="application/rss+xml"/>
     <description>AI 실무활용과 워크스페이스 인사이트 — 넥스트코웍이 발행하는 콘텐츠.</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 07 Oct 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 00:00:00 +0900</lastBuildDate>
+    <item>
+      <title>AI 교육 업체, 무엇으로 비교해 선정하나요? — 제안서 비교표 12항목</title>
+      <link>https://www.nextcw.com/insights/ai-training-vendor-selection/</link>
+      <guid isPermaLink="true">https://www.nextcw.com/insights/ai-training-vendor-selection/</guid>
+      <pubDate>Thu, 08 Oct 2026 00:00:00 +0900</pubDate>
+      <category>AI 실무교육</category>
+      <description>AI 교육 제안서를 여러 곳에서 받은 교육·기획 담당자를 위한 실무 가이드. 업무 연결·실습 자료·결과물·보안·견적 조건을 같은 기준으로 비교하는 12항목 비교표와 업체 미팅 질문 스크립트를 제공합니다.</description>
+    </item>
     <item>
       <title>2027년 AI 교육, 교육업체에 무엇을 요청해야 할까요? — 기획요청서 한 장 양식</title>
       <link>https://www.nextcw.com/insights/ai-training-request-brief/</link>

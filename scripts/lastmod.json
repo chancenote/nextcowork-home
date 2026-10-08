@@ -1,6 +1,6 @@
 {
   "/": {
-    "hash": "f3f515f4f74f",
+    "hash": "ee0d47520978",
     "date": "2026-10-08"
   },
   "/flexoffice/": {
@@ -8,7 +8,7 @@
     "date": "2026-10-08"
   },
   "/ai-campus/": {
-    "hash": "3dbcf4a06276",
+    "hash": "1e43a9feeb96",
     "date": "2026-10-08"
   },
   "/public/": {
@@ -24,7 +24,7 @@
     "date": "2026-10-08"
   },
   "/insights/": {
-    "hash": "8b2b83b93f41",
+    "hash": "08a8a5e4fb5c",
     "date": "2026-10-08"
   },
   "/contact/": {
@@ -33,6 +33,10 @@
   },
   "/privacy/": {
     "hash": "b75bdfc3bc45",
+    "date": "2026-10-08"
+  },
+  "/insights/ai-training-vendor-selection/": {
+    "hash": "8370973cce7e",
     "date": "2026-10-08"
   },
   "/insights/ai-training-request-brief/": {
