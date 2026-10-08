@@ -1,6 +1,6 @@
 # NEXT COWORK 넥스트코웍
 
-> AI Workspace Builder — 일이 잘되는 공간을 만들고, 일이 잘되는 방식을 설계하는 한국의 컨설팅 회사.
+> Build the Next Workspace — 일이 잘되는 공간을 만들고, 일이 잘되는 방식을 설계하는 한국의 컨설팅 회사.
 > 공유오피스 도입·전환 컨설팅(Flexible Workspace Consulting)과 기업 AI 실무교육(AI Enablement)을 함께 제공하는 국내에서 드문 포지션.
 
 - 회사명: 넥스트코웍 주식회사 (NEXT COWORK Inc.)

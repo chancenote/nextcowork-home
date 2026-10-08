@@ -593,7 +593,7 @@ function renderArticle(post, assetVersion) {
 <a class="skip-link" href="#main-content">본문 바로가기</a>
 <header class="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="/"><img class="nav-logo-img" src="/img/brand/nextcowork-logo-purple.svg" alt="NEXT COWORK" width="96" height="60"><span>AI Workspace Builder</span></a>
+    <a class="nav-logo" href="/"><img class="nav-logo-img" src="/img/brand/nextcowork-logo-purple.svg" alt="NEXT COWORK" width="96" height="60"><span>Build the Next Workspace</span></a>
     <nav aria-label="주요 메뉴">
       <ul class="nav-menu" id="nav-menu">
         <li class="has-sub">
@@ -698,7 +698,7 @@ ${articleBody}
       </div>
       <div class="footer-bottom">
         <span>© 2026 NEXT COWORK Inc. All rights reserved.</span>
-        <span><a href="/privacy/">개인정보처리방침</a> · AI Workspace Builder — 일하는 공간과 방식의 진화</span>
+        <span><a href="/privacy/">개인정보처리방침</a> · Build the Next Workspace — 일하는 공간과 방식의 진화</span>
       </div>
     </div>
   </div>

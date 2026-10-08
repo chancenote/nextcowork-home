@@ -1,7 +1,7 @@
 {
   "name": "넥스트코웍 NEXT COWORK",
   "short_name": "NEXT COWORK",
-  "description": "공유오피스 컨설팅과 기업 AI 실무교육을 함께 설계하는 AI Workspace Builder",
+  "description": "공유오피스 컨설팅과 기업 AI 실무교육을 함께 설계하는 넥스트코웍 — Build the Next Workspace",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
