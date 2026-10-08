@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="/js/analytics.js?v=ncw-301a5679bf" defer></script>
+<script src="/js/analytics.js?v=ncw-f43d3105e0" defer></script>
 <title>문의하기 | 프로젝트 · 교육 · 자문 문의 — 넥스트코웍</title>
 <meta name="description" content="공유오피스 컨설팅, 기업 AI 교육, 공공 자문, CEO AI 코칭 문의. 영업일 1일 내 회신, 사전 진단 미팅 무료. ceo@nextcw.com · 010-9765-7749">
 <link rel="canonical" href="https://www.nextcw.com/contact/">
@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=ncw-301a5679bf">
+<link rel="stylesheet" href="/css/style.css?v=ncw-f43d3105e0">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -86,6 +86,8 @@
             <input type="hidden" id="cf-form-type" name="form_type" value="inquiry">
             <input type="hidden" id="cf-request-key" name="request_key" value="">
             <input type="hidden" id="cf-consent-version" name="consent_version" value="2026-10">
+            <div class="hp-field" aria-hidden="true"><label>회사 홈페이지<input type="text" name="company_url" tabindex="-1" autocomplete="off" value=""></label></div>
+            <input type="hidden" id="cf-elapsed" name="form_elapsed_ms" value="">
             <input type="hidden" id="cf-source-page" name="source_page" value="">
             <input type="hidden" id="cf-cta-location" name="cta_location" value="">
             <input type="hidden" id="cf-landing-page" name="landing_page" value="">
@@ -97,12 +99,12 @@
             <p class="form-card-lead">필수 정보만 먼저 남겨주세요. 서비스·상품 문맥은 자동으로 함께 기록됩니다.</p>
             <p class="form-required-note"><em>*</em> 는 필수 항목입니다.</p>
             <div class="form-row">
-              <div class="field"><label for="cf-name">이름 <em>*</em></label><input id="cf-name" name="name" type="text" required autocomplete="name"></div>
-              <div class="field"><label for="cf-org">소속 · 회사 / 기관</label><input id="cf-org" name="org" type="text" autocomplete="organization"></div>
+              <div class="field"><label for="cf-name">이름 <em>*</em></label><input id="cf-name" name="name" maxlength="50" type="text" required autocomplete="name"></div>
+              <div class="field"><label for="cf-org">소속 · 회사 / 기관</label><input id="cf-org" name="org" maxlength="100" type="text" autocomplete="organization"></div>
             </div>
             <div class="form-row">
-              <div class="field"><label for="cf-email">이메일 <em>*</em></label><input id="cf-email" name="email" type="email" required autocomplete="email" placeholder="reply@example.com"></div>
-              <div class="field"><label for="cf-phone">전화번호</label><input id="cf-phone" name="phone" type="tel" autocomplete="tel" placeholder="문자 회신이 필요하면 남겨주세요"></div>
+              <div class="field"><label for="cf-email">이메일 <em>*</em></label><input id="cf-email" name="email" maxlength="254" type="email" required autocomplete="email" placeholder="reply@example.com"></div>
+              <div class="field"><label for="cf-phone">전화번호</label><input id="cf-phone" name="phone" maxlength="30" type="tel" autocomplete="tel" placeholder="문자 회신이 필요하면 남겨주세요"></div>
             </div>
             <div class="form-row">
               <div class="field">
@@ -159,7 +161,7 @@
             </details>
             <div class="field">
               <label for="cf-message">문의 내용 <em>*</em></label>
-              <textarea id="cf-message" name="message" required placeholder="대상·규모·희망 일정 등을 자유롭게 남겨주세요."></textarea>
+              <textarea id="cf-message" name="message" maxlength="3000" required placeholder="대상·규모·희망 일정 등을 자유롭게 남겨주세요."></textarea>
             </div>
             <div class="consent-field">
               <input id="cf-privacy" name="privacy_agree" type="checkbox" value="동의" required>
@@ -278,6 +280,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=ncw-301a5679bf" defer></script>
+<script src="/js/main.js?v=ncw-f43d3105e0" defer></script>
 </body>
 </html>

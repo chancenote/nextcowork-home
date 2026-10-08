@@ -8,6 +8,17 @@
 
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* 스팸 방어: 페이지를 연 뒤 제출까지 걸린 시간(ms)과 숨김 입력칸(company_url). 판정은 서버(Make)가 한다. */
+  var pageLoadedAt = Date.now();
+  function markElapsed(f) {
+    var el = f.querySelector('input[name="form_elapsed_ms"]');
+    if (el) el.value = String(Date.now() - pageLoadedAt);
+  }
+  function honeypotFilled(f) {
+    var hp = f.querySelector('input[name="company_url"]');
+    return !!(hp && hp.value);
+  }
+
   /* Lightweight analytics shim. No-op until the GA4 loader has a real Measurement ID. */
   function track(name, params) {
     try {
@@ -453,6 +464,13 @@
         return;
       }
 
+      if (honeypotFilled(form)) {
+        ev.preventDefault();
+        setStatus("접수를 보냈습니다. 저장 확인 중입니다 — 같은 내용으로 다시 보내도 중복 저장되지 않습니다.");
+        return;
+      }
+      markElapsed(form);
+
       var params = readContext({ endpoint_type: endpoint ? "post_endpoint" : "mailto" });
       track("inquiry_submit_attempt", params);
 
@@ -550,6 +568,11 @@
         if (typeof news.reportValidity === "function") news.reportValidity();
         return;
       }
+      if (honeypotFilled(news)) {
+        if (newsStatus) newsStatus.textContent = "구독 신청이 접수되었습니다. 감사합니다.";
+        return;
+      }
+      markElapsed(news);
       newsSending = true;
       if (newsBtn) newsBtn.disabled = true;
       if (newsStatus) newsStatus.textContent = "구독 신청 중입니다...";
