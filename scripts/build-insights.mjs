@@ -470,7 +470,8 @@ async function computeAssetVersion(posts) {
     tags: post.tags
   }))));
 
-  for (const path of ["css/style.css", "js/main.js", "js/analytics.js", "scripts/build-insights.mjs", "css/insights-magazine.css", "js/insights-cards.js", "js/insights-magazine.js"]) {
+  const pageCss = (await readdir(join(root, "css"))).filter((name) => /^page-[\w-]+\.css$/.test(name)).sort().map((name) => `css/${name}`);
+  for (const path of ["css/style.css", "js/main.js", "js/analytics.js", "scripts/build-insights.mjs", "css/insights-magazine.css", "js/insights-cards.js", "js/insights-magazine.js", ...pageCss]) {
     hash.update(await readFile(join(root, path), "utf8"));
   }
 
@@ -505,7 +506,8 @@ async function updateHtmlAssetVersions(assetVersion) {
       .replace(/\/js\/insights-data\.js(?:\?v=[^"]*)?/g, versioned("/js/insights-data.js", assetVersion))
       .replace(/\/css\/insights-magazine\.css(?:\?v=[^"]*)?/g, versioned("/css/insights-magazine.css", assetVersion))
       .replace(/\/js\/insights-magazine\.js(?:\?v=[^"]*)?/g, versioned("/js/insights-magazine.js", assetVersion))
-      .replace(/\/js\/main\.js(?:\?v=[^"]*)?/g, versioned("/js/main.js", assetVersion));
+      .replace(/\/js\/main\.js(?:\?v=[^"]*)?/g, versioned("/js/main.js", assetVersion))
+      .replace(/\/css\/(page-[\w-]+\.css)(?:\?v=[^"]*)?/g, (_, name) => versioned(`/css/${name}`, assetVersion));
     if (html !== before) await writeFile(file, html, "utf8");
   }
 }
