@@ -661,4 +661,56 @@
     window.addEventListener("scroll", pxOnScroll, { passive: true });
     pxOnScroll();
   }
+  /* 연출 영상(data-autoplay-inview) — 화면에 40% 이상 보일 때만 소리 없이 재생, 벗어나거나 탭이 숨으면 정지.
+     preload="none"이라 화면 근처에 오기 전에는 내려받지 않는다. 동작 줄이기·데이터 절약이면 자동 재생 안 함(기본 컨트롤 유지). */
+  Array.prototype.forEach.call(document.querySelectorAll("video[data-autoplay-inview]"), function (v) {
+    var frame = v.closest("figure") || v.parentNode;
+    var ctrl = frame.querySelector(".fx-film-ctrl");
+    var conn = navigator.connection || {};
+    var lite = conn.saveData || /(^|-)2g$/.test(conn.effectiveType || "");
+    if (reduced || lite || !("IntersectionObserver" in window) || !ctrl) return;
+
+    v.removeAttribute("controls");
+    ctrl.hidden = false;
+    var btnPlay = ctrl.querySelector('[data-film="play"]');
+    var btnSound = ctrl.querySelector('[data-film="sound"]');
+    var userPaused = false, inView = false;
+
+    function sync() {
+      frame.classList.toggle("is-paused", v.paused);
+      btnPlay.setAttribute("aria-label", v.paused ? "영상 재생" : "영상 일시정지");
+    }
+    function tryPlay() {
+      if (userPaused || !inView || document.hidden) return;
+      var p = v.play();
+      if (p && p.catch) p.catch(function () { sync(); });
+    }
+    v.addEventListener("play", sync);
+    v.addEventListener("pause", sync);
+
+    btnPlay.addEventListener("click", function () {
+      if (v.paused) { userPaused = false; inView = true; tryPlay(); }
+      else { userPaused = true; v.pause(); }
+      track("video_control", { action: v.paused ? "pause" : "play", video: "flexoffice_new_standard" });
+    });
+    btnSound.addEventListener("click", function () {
+      v.muted = !v.muted;
+      frame.classList.toggle("is-sound", !v.muted);
+      btnSound.setAttribute("aria-pressed", String(!v.muted));
+      btnSound.setAttribute("aria-label", v.muted ? "소리 켜기" : "소리 끄기");
+      if (!v.muted && v.paused) { userPaused = false; inView = true; tryPlay(); }
+      track("video_control", { action: v.muted ? "mute" : "unmute", video: "flexoffice_new_standard" });
+    });
+
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        inView = e.isIntersecting && e.intersectionRatio >= 0.4;
+        if (inView) tryPlay(); else if (!v.paused) v.pause();
+      });
+    }, { threshold: [0, 0.4] }).observe(v);
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) { if (!v.paused) v.pause(); } else tryPlay();
+    });
+    sync();
+  });
 })();

@@ -25,3 +25,6 @@ img/insights/ai-fast-failure-lesson1/*.png
 
 # 다운로드 자료의 HTML 원본 — 생성된 PDF만 공개
 files/_src
+
+# 원본 영상(웹 인코딩본은 media/에 있음)
+/nextcowork_newstandard_15s_web.MP4

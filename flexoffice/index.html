@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="/js/analytics.js?v=ncw-0e1c3cd49c" defer></script>
+<script src="/js/analytics.js?v=ncw-68e7c31b55" defer></script>
 <title>FlexOffice 컨설팅 | 공유오피스 도입 타당성·운영모델·PF 전략 — 넥스트코웍</title>
 <meta name="description" content="건물주·자산운용사·개발 주체를 위한 공유오피스 도입·전환 컨설팅. 도입 타당성 진단 1,000만원부터, 운영모델 설계·PF 사업계획서까지 직영 구조로 설계합니다. 사전 진단 미팅 무료.">
 <link rel="canonical" href="https://www.nextcw.com/flexoffice/">
@@ -30,8 +30,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=ncw-0e1c3cd49c">
-<link rel="stylesheet" href="/css/page-flexoffice.css?v=ncw-0e1c3cd49c">
+<link rel="stylesheet" href="/css/style.css?v=ncw-68e7c31b55">
+<link rel="stylesheet" href="/css/page-flexoffice.css?v=ncw-68e7c31b55">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -120,6 +120,32 @@
         <li><a href="#references">레퍼런스</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
+    </div>
+  </section>
+
+  <!-- 브랜드 연출 영상 — 화면에 들어오면 소리 없이 자동 재생, 벗어나면 정지. 동작 줄이기·데이터 절약 설정이면 자동 재생 안 함 -->
+  <section class="fx-film" aria-labelledby="fx-film-title">
+    <div class="container">
+      <figure class="fx-film-frame reveal">
+        <video class="fx-film-video" data-autoplay-inview controls muted loop playsinline preload="none" poster="/img/flexoffice/new-standard-poster.webp" width="1920" height="1080" aria-describedby="fx-film-cap">
+          <source src="/media/flexoffice/new-standard-1080.mp4" type="video/mp4" media="(min-width: 769px)">
+          <source src="/media/flexoffice/new-standard-720.mp4" type="video/mp4">
+        </video>
+        <div class="fx-film-ctrl" hidden>
+          <button type="button" class="fx-film-btn" data-film="play" aria-label="영상 일시정지">
+            <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+            <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>
+          </button>
+          <button type="button" class="fx-film-btn" data-film="sound" aria-label="소리 켜기" aria-pressed="false">
+            <svg class="i-muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9.5l5 5m0-5l-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <svg class="i-sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4.5 4.5 0 010 6m2.5-8.5a8 8 0 010 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <figcaption id="fx-film-cap">
+          <h2 id="fx-film-title" class="fx-film-title">The New Standard of Workspace</h2>
+          <p>입지와 수요를 읽고, 공간 프로그램을 나누고, 운영이 작동하는 공간으로 조립합니다. 넥스트코웍이 공간을 설계하는 순서를 15초에 담았습니다. <span class="fx-film-note">연출 영상</span></p>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
@@ -588,6 +614,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=ncw-0e1c3cd49c" defer></script>
+<script src="/js/main.js?v=ncw-68e7c31b55" defer></script>
 </body>
 </html>

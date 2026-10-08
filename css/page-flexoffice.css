@@ -57,3 +57,38 @@
   #why .block-title { margin-top: 36px; }
   .fx-steps-title { margin-top: 32px; }
 }
+
+/* 브랜드 연출 영상 — 히어로와 적합 여부 사이. 16:9 고정으로 레이아웃 흔들림(CLS) 0 */
+.fx-film { padding: 32px 0 8px; }
+.fx-film-frame { position: relative; margin: 0; }
+.fx-film-video {
+  display: block; width: 100%; height: auto; aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md); background: var(--indigo); object-fit: cover;
+  box-shadow: var(--shadow-lift);
+}
+.fx-film-ctrl { position: absolute; right: 14px; top: 14px; display: flex; gap: 8px; }
+.fx-film-ctrl[hidden] { display: none; }
+.fx-film-btn {
+  display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px;
+  border-radius: 999px; color: #fff; background: rgba(28, 28, 34, .55);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  transition: background .2s;
+}
+.fx-film-btn:hover { background: rgba(28, 28, 34, .78); }
+.fx-film-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.fx-film-btn svg { width: 20px; height: 20px; fill: currentColor; }
+.fx-film-btn .i-play, .fx-film-btn .i-sound { display: none; }
+.fx-film-frame.is-paused .i-pause { display: none; }
+.fx-film-frame.is-paused .i-play { display: block; }
+.fx-film-frame.is-sound .i-muted { display: none; }
+.fx-film-frame.is-sound .i-sound { display: block; }
+.fx-film-frame figcaption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; margin-top: 16px; }
+.fx-film-title { margin: 0; font-size: 18px; letter-spacing: -.01em; color: var(--ink); }
+.fx-film-frame figcaption p { flex: 1 1 420px; margin: 0; font-size: 14.5px; line-height: 1.65; color: var(--text); word-break: keep-all; }
+.fx-film-note { margin-left: 6px; font-size: 12.5px; color: var(--caption); white-space: nowrap; }
+@media (max-width: 768px) {
+  .fx-film { padding: 20px 0 0; }
+  .fx-film-video { border-radius: var(--radius-sm); }
+  .fx-film-ctrl { right: 8px; top: 8px; gap: 6px; }
+  .fx-film-frame figcaption { margin-top: 12px; }
+}
