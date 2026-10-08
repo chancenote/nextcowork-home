@@ -52,6 +52,18 @@
   ]
 }
 </script>
+<style>
+/* About 전용(라운드 13) — 모바일 밀도: 현장 사진 8장 중 4장만, 카드 최소 높이·여백 축소 (데스크톱·내용 무변경) */
+@media (max-width: 720px) {
+  .reference-gallery .reference-shot:nth-child(n+5) { display: none; }
+  .about-audience-card { min-height: 0; padding: 16px 16px 36px; }
+  .about-audience-card h3 { margin: 8px 0 6px; }
+  .about-audience-card .arr { bottom: 12px; }
+  .about-bridge-card { min-height: 0; padding: 16px; }
+  .about-bridge-card h3 { margin-bottom: 6px; }
+  .about-bridge-card p { min-height: 0; }
+}
+</style>
 </head>
 <body>
 
@@ -141,10 +153,10 @@
         <p>현장에 남는 성과를 위해, 어떤 문제를 함께 풀 수 있는지 바로 확인할 수 있습니다.</p>
       </div>
       <div class="about-audience-grid">
-        <a class="about-audience-card reveal" href="/flexoffice/"><span class="about-audience-kicker">SPACE</span><h3>새로운 협업·공유공간을 기획한다면</h3><p>개발 타당성, 공간 프로그램, 운영모델과 개관 이후 활성화까지 연결합니다.</p><span class="arr">→</span></a>
-        <a class="about-audience-card reveal" data-delay="1" href="/ai-campus/?cta=about_audience"><span class="about-audience-kicker">AI &amp; COWORK</span><h3>기업·공공조직의 업무활용을 높이려면</h3><p>단순한 도구 소개가 아니라, 실제 직무에 최적화된 AI 업무전환을 설계합니다.</p><span class="arr">→</span></a>
-        <a class="about-audience-card reveal" data-delay="2" href="/public/#space"><span class="about-audience-kicker">Anchor Infra</span><h3>지역균형발전에 공간정책이 필요하다면</h3><p>거점 복합앵커시설 기획부터 커뮤니티 프로그램 운영 설계까지 전과정의 흐름을 제시합니다. </p><span class="arr">→</span></a>
-        <a class="about-audience-card reveal" data-delay="3" href="/coaching/"><span class="about-audience-kicker">AX PARTNER</span><h3>AI 코칭 파트너를 찾는다면</h3><p>최고경영진에게 AI 도입과 활용의 핵심 전략을 제시하고, 필요한 Agentic Workflow 구축을 함께합니다.</p><span class="arr">→</span></a>
+        <a class="about-audience-card reveal" href="/flexoffice/"><span class="about-audience-kicker">FLEXOFFICE</span><h3>새로운 협업·공유공간을 기획한다면</h3><p>개발 타당성, 공간 프로그램, 운영모델과 개관 이후 활성화까지 연결합니다.</p><span class="arr">→</span></a>
+        <a class="about-audience-card reveal" data-delay="1" href="/ai-campus/?cta=about_audience"><span class="about-audience-kicker">AI CAMPUS</span><h3>기업·공공조직의 업무활용을 높이려면</h3><p>단순한 도구 소개가 아니라, 실제 직무에 최적화된 AI 업무전환을 설계합니다.</p><span class="arr">→</span></a>
+        <a class="about-audience-card reveal" data-delay="2" href="/public/#space"><span class="about-audience-kicker">PUBLIC</span><h3>지역균형발전에 공간정책이 필요하다면</h3><p>거점 복합앵커시설 기획부터 커뮤니티 프로그램 운영 설계까지 전과정의 흐름을 제시합니다. </p><span class="arr">→</span></a>
+        <a class="about-audience-card reveal" data-delay="3" href="/coaching/"><span class="about-audience-kicker">CEO AI COACHING</span><h3>CEO AI 코칭 — 대표 업무에 AI를 붙이려면</h3><p>최고경영진에게 AI 도입과 활용의 핵심 전략을 제시하고, 필요한 Agentic Workflow 구축을 함께합니다.</p><span class="arr">→</span></a>
       </div>
     </div>
   </section>
@@ -263,7 +275,7 @@
         </div>
       </div>
       <div style="margin-top:28px" class="reveal">
-        <a class="btn btn-ghost" href="/contact/?s=general&amp;t=diagnosis&amp;cta=about_case">이 경험을 우리 조직에 — 무료 사전진단 <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="/contact/?s=general&amp;t=diagnosis&amp;cta=about_case">관련 서비스 문의하기 <span class="arr">→</span></a>
       </div>
     </div>
   </section>
@@ -280,12 +292,7 @@
             <div><dt>대표 · 이종찬</dt><dd>과제 정의, 핵심 설계, 최종 검토를 직접 책임집니다.</dd></div>
             <div><dt>과업별 인력 · 산출물</dt><dd>필요한 인력, 산출물, 후속 범위는 제안 단계에서 합의해 제안서에 적습니다.</dd></div>
           </dl>
-          <a class="btn btn-ghost" href="/contact/?s=general&amp;t=diagnosis&amp;cta=about_complex">협업 / 교육 문의 <span class="arr">→</span></a>
-        </div>
-        <div class="about-delivery-list">
-          <div><span>01</span><b>진단</b><p>수요·목표·제약 조건을 함께 정리합니다.</p></div>
-          <div><span>02</span><b>방향 설계</b><p>공간·운영·디지털·교육의 연결 구조를 만듭니다.</p></div>
-          <div><span>03</span><b>산출물 연결</b><p>보고서·운영안·교안·워크플로를 과업에 맞춥니다.</p></div>
+          <a class="btn btn-ghost" href="/contact/?s=general&amp;t=diagnosis&amp;cta=about_complex">복합 과업 문의하기 <span class="arr">→</span></a>
         </div>
       </div>
     </div>
@@ -348,35 +355,6 @@
         <div class="ref-col reveal" data-delay="2">
           <h4>기업 · 민간</h4>
           <p><b>신영증권</b> · 스타트업얼라이언스 · JTV · AMCG · 디오니 · <b>㈜리슬</b> · 와디즈 · 한국모금가협회 · 브렉퍼스트필름 · 클레이 · 술테마박물관 · 효자/삼례 복지센터 · 진안·삼례 청년들 · 더원법률사무소 · 노무법인태산 · 연공간디자인 · 상공회의소 · 울산청년센터 · 완주 일자리정책 포럼 · 전북벤처산업발전협의회 · <b>포스코ENG</b> 등 다수 </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Related services -->
-  <section class="section about-related-section" aria-labelledby="about-related-title">
-    <div class="container">
-      <h2 id="about-related-title" class="about-related-title reveal">관련 서비스 — 이런 과제라면</h2>
-      <div class="related-posts about-related">
-        <a class="related-post" href="/flexoffice/"><span class="related-post-label">FlexOffice</span><span>이 자산에 공유오피스를 도입할 만한가?</span><span class="arr">→</span></a>
-        <a class="related-post" href="/ai-campus/"><span class="related-post-label">AI Campus</span><span>우리 팀이 AI를 실제 업무에 쓰게 하려면?</span><span class="arr">→</span></a>
-        <a class="related-post" href="/public/"><span class="related-post-label">Public</span><span>공공 공간 과업·기관 교육을 어떻게 준비하나?</span><span class="arr">→</span></a>
-        <a class="related-post" href="/coaching/"><span class="related-post-label">CEO 코칭</span><span>대표의 반복 업무 중 무엇부터 바꿀까?</span><span class="arr">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- View -->
-  <section class="section">
-    <div class="container">
-      <div class="quote-wrap reveal">
-        <span class="quote-mark">“</span>
-        <blockquote>예측 불가한 AI Moment —<br>위기 대신 <span class="hl">기회로 읽는 조직</span>만이<br>창의성과 생산성을 모두 선점합니다.</blockquote>
-        <div class="quote-cite">
-          <div class="who">
-            <b>이종찬 · JC Lee</b>
-            <span>AI는 먼 미래가 아닌, 오늘 바로 쓰는 실용적인 업무 도구입니다.</span>
-          </div>
         </div>
       </div>
     </div>
