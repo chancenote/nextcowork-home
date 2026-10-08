@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" role="img" aria-labelledby="t d">
+<title id="t">AI 시대의 두 일터: 물리적 공간(SPACE)과 에이전트와 함께 일하는 공간(Workspace)</title>
+<desc id="d">왼쪽 카드 SPACE는 책상·회의실·라운지, 사람이 모이고 만나고 집중하는 곳. 오른쪽 카드 Workspace는 문서·데이터·협업 도구·AI 에이전트, 일이 기록되고 처리되고 이어지는 곳. 가운데에는 사람을 중심으로 두 일터를 잇는 양방향 화살표와 예시 세 가지(회의는 회의록과 할 일로, 문의는 응대와 예약으로, 운영 데이터는 공간 결정으로)가 있다. 아래 띠에는 두 일터가 연결될 때 일이 잘된다고 적혀 있다.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#302D7C"/></marker></defs>
+<rect width="1200" height="580" fill="#F8F0FF"/>
+<g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif" text-anchor="middle">
+<rect x="40" y="40" width="380" height="380" rx="28" fill="#FFFFFF" stroke="#302D7C" stroke-width="3"/>
+<text x="230" y="112" font-size="46" font-weight="800" fill="#302D7C" font-family="Inter, Pretendard, sans-serif" letter-spacing="1">SPACE</text>
+<text x="230" y="158" font-size="28" font-weight="700" fill="#7950E8">물리적 공간</text>
+<rect x="204" y="184" width="52" height="5" rx="2.5" fill="#7950E8"/>
+<text x="230" y="240" font-size="27" font-weight="600" fill="#3F3F46">책상 · 회의실 · 라운지</text>
+<text x="230" y="280" font-size="27" font-weight="600" fill="#3F3F46">이동 · 만남 · 집중</text>
+<text x="230" y="370" font-size="25" font-weight="700" fill="#302D7C">사람이 모이고</text>
+<text x="230" y="402" font-size="25" font-weight="700" fill="#302D7C">만나는 곳</text>
+<rect x="780" y="40" width="380" height="380" rx="28" fill="#302D7C" stroke="#302D7C" stroke-width="3"/>
+<text x="970" y="112" font-size="46" font-weight="800" fill="#FFFFFF" font-family="Inter, Pretendard, sans-serif" letter-spacing="1">Workspace</text>
+<text x="970" y="158" font-size="28" font-weight="700" fill="#DCCEFF">에이전트와 함께 일하는 공간</text>
+<rect x="944" y="184" width="52" height="5" rx="2.5" fill="#DCCEFF"/>
+<text x="970" y="240" font-size="27" font-weight="600" fill="#FFFFFF">문서 · 데이터 · 협업 도구</text>
+<text x="970" y="280" font-size="27" font-weight="600" fill="#FFFFFF">AI 에이전트</text>
+<text x="970" y="370" font-size="25" font-weight="700" fill="#FFFFFF">일이 기록되고</text>
+<text x="970" y="402" font-size="25" font-weight="700" fill="#FFFFFF">처리되는 곳</text>
+<circle cx="600" cy="110" r="46" fill="#7950E8"/><text x="600" y="120" font-size="28" font-weight="800" fill="#FFFFFF">사람</text>
+<line x1="438" y1="218" x2="762" y2="218" stroke="#302D7C" stroke-width="3" marker-start="url(#a)" marker-end="url(#a)" opacity=".35"/>
+<rect x="458" y="186" width="284" height="56" rx="28" fill="#FFFFFF" stroke="#B99EFF" stroke-width="2"/>
+<text x="600" y="223" font-size="23" font-weight="700" fill="#302D7C">회의 <tspan fill="#7950E8">→</tspan> 회의록 · 할 일</text>
+<line x1="438" y1="294" x2="762" y2="294" stroke="#302D7C" stroke-width="3" marker-start="url(#a)" marker-end="url(#a)" opacity=".35"/>
+<rect x="458" y="262" width="284" height="56" rx="28" fill="#FFFFFF" stroke="#B99EFF" stroke-width="2"/>
+<text x="600" y="299" font-size="23" font-weight="700" fill="#302D7C">문의 <tspan fill="#7950E8">→</tspan> 응대 · 예약</text>
+<line x1="438" y1="370" x2="762" y2="370" stroke="#302D7C" stroke-width="3" marker-start="url(#a)" marker-end="url(#a)" opacity=".35"/>
+<rect x="458" y="338" width="284" height="56" rx="28" fill="#FFFFFF" stroke="#B99EFF" stroke-width="2"/>
+<text x="600" y="375" font-size="23" font-weight="700" fill="#302D7C">운영 데이터 <tspan fill="#7950E8">→</tspan> 공간 결정</text>
+<rect x="40" y="456" width="1120" height="84" rx="42" fill="#7950E8"/>
+<text x="600" y="510" font-size="32" font-weight="800" fill="#FFFFFF">두 일터가 연결될 때, 일이 잘됩니다</text>
+</g></svg>
