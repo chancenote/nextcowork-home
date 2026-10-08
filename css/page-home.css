@@ -1,0 +1,44 @@
+/* 홈 전용 — 모바일 압축 (라운드 13). 데스크톱은 공통 style.css 그대로. */
+@media (max-width: 720px) {
+  /* 섹션 여백: 38px → 32px */
+  main > .section { padding: 32px 0; }
+  main > .section.compact { padding: 30px 0; }
+  main > .section .section-head { margin-bottom: 20px; }
+  main > .section .section-head p { font-size: 16px; }
+  main > .section .section-actions { margin-top: 20px; }
+
+  /* 서비스 결과물 4장 — 질문 카드와 같은 가로 스와이프 행 */
+  #services .bento--compact {
+    grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(82vw, 320px);
+    gap: 10px; overflow-x: auto; padding: 4px 4px 14px; margin-inline: -4px;
+    scroll-snap-type: inline mandatory; overscroll-behavior-inline: contain; scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+  #services .bento--compact .bento-card { scroll-snap-align: start; padding: 22px 20px; }
+  #services .bento--compact .bento-card:hover,
+  #services .bento--compact .bento-card:focus-visible { transform: none; }
+  #services .callout { margin-top: 16px !important; padding: 16px; }
+
+  /* 진행 4단계 — 2×2 */
+  .steps--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .steps--4 .step { padding: 16px 14px; }
+  .steps--4 .step h4 { font-size: 16px; }
+  .steps--4 .step p { font-size: 14px; line-height: 1.6; }
+
+  /* 최근 글 3편 — 가로 스와이프 행 */
+  #latest .home-latest-feed {
+    grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(76vw, 300px);
+    gap: 10px; overflow-x: auto; padding: 4px 4px 14px; margin-inline: -4px;
+    scroll-snap-type: inline mandatory; overscroll-behavior-inline: contain; scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+  #latest .home-latest-feed .thumb-card { scroll-snap-align: start; }
+  #latest .home-latest-feed .thumb-cover { aspect-ratio: 16 / 9; }
+  .home-latest { padding-top: 40px; }
+}
+@media (max-width: 359px) {
+  .steps--4 { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #services .bento--compact, #latest .home-latest-feed { scroll-behavior: auto; }
+}
