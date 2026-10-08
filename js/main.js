@@ -430,6 +430,11 @@
       submitBtn.disabled = on;
       submitBtn.innerHTML = on ? "전송 중…" : (label || submitLabel);
     }
+    function hideSuccessCard() {
+      var done = document.getElementById("cf-success");
+      if (done) done.hidden = true;
+    }
+    /* 성공 카드는 Make가 접수번호와 함께 saved를 돌려준 경우에만 보인다. */
     function showSuccessCard(inquiryId) {
       var done = document.getElementById("cf-success");
       var idEl = document.getElementById("cf-inquiry-id");
@@ -494,6 +499,7 @@
         /* Real POST endpoint configured (Make etc.) — JS 없이도 action/method=post 로 같은 곳에 전송된다. */
         ev.preventDefault();
         setSending(true);
+        hideSuccessCard();
         setStatus("전송 중입니다...");
         var controller = (typeof AbortController === "function") ? new AbortController() : null;
         var timer = controller ? setTimeout(function () { controller.abort(); }, 15000) : null;
@@ -521,8 +527,8 @@
             } else {
               track("inquiry_sent_unconfirmed", readContext({ endpoint_type: "post_endpoint" }));
               setSending(false);
-              setStatus("접수를 보냈습니다. 저장 확인 중입니다 — 같은 내용으로 다시 보내도 중복 저장되지 않습니다.");
-              showSuccessCard("");
+              hideSuccessCard();
+              setStatus("전송했습니다 — 저장 확인 중입니다. 접수번호가 표시되지 않았다면 잠시 후 같은 내용으로 다시 보내 주세요(중복 저장되지 않습니다). 영업일 1일 내 회신이 없으면 ceo@nextcw.com 또는 010-9765-7749로 알려 주세요.");
             }
           })
           .catch(function (err) {
@@ -530,6 +536,7 @@
             var reason = (err && err.name === "AbortError") ? "timeout" : ((err && err.message) || "network");
             track("inquiry_error", readContext({ endpoint_type: "post_endpoint", reason: reason }));
             setSending(false, "다시 보내기 <span class=\"arr\">→</span>");
+            hideSuccessCard();
             if (reason === "timeout" || reason === "network" || reason === "Failed to fetch" || /fetch/i.test(reason)) {
               setStatus("저장 확인이 안 됐습니다. 잠시 후 ‘다시 보내기’를 누르거나 ceo@nextcw.com으로 보내주세요.");
             } else {

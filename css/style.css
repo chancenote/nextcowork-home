@@ -2028,7 +2028,8 @@ body.theme-public { --px-dark: #0E2B28; --px-dark2: #134E48; --px-line: #CDEAE2;
 .selector--questions .selector-card { grid-template-rows: auto auto auto; }
 .selector--questions .selector-ic { grid-row: 1 / span 3; }
 .selector--questions .selector-take { font-size: 13px; line-height: 1.5; color: var(--caption); word-break: keep-all; }
-.bento--compact .bento-card { padding: 26px 24px; }
+.bento--compact .bento-card { padding: 26px 24px; display: flex; flex-direction: column; }
+.bento--compact .bento-more { position: static; margin-top: auto; padding-top: 14px; }
 .bento--compact .bento-card h3 { font-size: 20px; margin-bottom: 4px; }
 .bento--compact .bento-card .en { margin-bottom: 10px; }
 .bento--compact .bento-card p { font-size: 14.5px; line-height: 1.65; }

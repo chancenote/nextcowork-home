@@ -92,4 +92,4 @@ cta_service: "flexoffice"
 
 세 번째까지 해보시면 이 프로젝트의 진짜 난이도가 보입니다. 그 숫자를 들고 오시면 사전 진단 미팅에서 함께 검증해 드립니다.
 
-[FlexOffice 컨설팅 서비스 보기](/flexoffice/) · [사전 진단 미팅 신청하기](/contact/?s=flexoffice&t=diagnosis)
+[FlexOffice 컨설팅 서비스 보기](/flexoffice/) · [사전 진단 미팅 신청하기](/contact/?s=flexoffice&t=precheck&cta=insight_body)
