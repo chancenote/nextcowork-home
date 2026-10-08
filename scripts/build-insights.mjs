@@ -1,6 +1,7 @@
 import { renderMagazine, renderLatestNote } from "../js/insights-cards.js";
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
+import { existsSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -191,7 +192,8 @@ function renderTable(headCells, alignments, bodyRows) {
     .map((row) => `<tr>${row.map((cell, i) => `<td${align(i)}>${renderInline(cell)}</td>`).join("")}</tr>`)
     .join("\n");
   // 모바일에서 표가 페이지를 밀지 않도록 스크롤 래퍼로 감싼다.
-  return `<div class="post-table"><table><thead><tr>${head}</tr></thead><tbody>\n${body}\n</tbody></table></div>`;
+  // tabindex: 키보드 사용자도 가로 스크롤 영역에 초점을 두고 화살표로 스크롤할 수 있게 한다.
+  return `<div class="post-table" tabindex="0" role="region" aria-label="표 (가로로 스크롤)"><table><thead><tr>${head}</tr></thead><tbody>\n${body}\n</tbody></table></div>`;
 }
 
 function renderMarkdown(markdown, label = "") {
@@ -229,7 +231,7 @@ function renderMarkdown(markdown, label = "") {
 
     if (trimmed.startsWith("```")) {
       if (inCode) {
-        html.push(`<pre><code${codeLang ? ` class="language-${escapeAttr(codeLang)}"` : ""}>${escapeHtml(codeLines.join("\n"))}</code></pre>`);
+        html.push(`<pre tabindex="0"><code${codeLang ? ` class="language-${escapeAttr(codeLang)}"` : ""}>${escapeHtml(codeLines.join("\n"))}</code></pre>`);
         inCode = false;
         codeLang = "";
         codeLines = [];
@@ -333,7 +335,7 @@ function renderMarkdown(markdown, label = "") {
   closeList();
 
   if (inCode) {
-    html.push(`<pre><code>${escapeHtml(codeLines.join("\n"))}</code></pre>`);
+    html.push(`<pre tabindex="0"><code>${escapeHtml(codeLines.join("\n"))}</code></pre>`);
   }
 
   return html.join("\n");
@@ -713,6 +715,7 @@ function buildFeed(posts) {
     date: formatDate(post.date),
     description: post.description, category: post.category, image: post.image,
     thumbnail: post.thumbnail, imageAlt: post.imageAlt,
+    ...(cardVariant(post.thumbnail) ? { thumbnailCard: cardVariant(post.thumbnail) } : {}),
     topic: post.topic, tags: post.tags, searchText: toPlainText(post.body),
     ...(post.audience ? { audience: post.audience } : {}),
     ...(post.takeaway ? { takeaway: post.takeaway } : {})
@@ -726,6 +729,13 @@ function buildFeed(posts) {
    마크업은 js/main.js의 폴백 렌더와 동일해야 한다. */
 function renderFeedHtml(feed) {
   return renderMagazine(feed);
+}
+
+// 카드 썸네일용 경량본: 원본 옆에 `<이름>-720w.webp`가 있으면 카드에서 그것을 쓴다(원본은 글 본문·공유용으로 유지).
+function cardVariant(src) {
+  if (!src || !/^\/img\/.+\.(webp|jpe?g|png)$/i.test(src)) return "";
+  const variant = src.replace(/\.(webp|jpe?g|png)$/i, "-720w.webp");
+  return existsSync(join(root, variant.slice(1))) ? variant : "";
 }
 
 function renderFeedJs(feed) {
@@ -782,7 +792,7 @@ async function updateHomeLatest(feed) {
   }
   const latest = feed.filter((item) => item.src === "insight").slice(0, HOME_LATEST_LIMIT);
   const next = html.slice(0, start + startMark.length)
-    + `\n        ${renderMagazine(latest)}\n        `
+    + `\n        ${renderMagazine(latest, { eagerCount: 0 })}\n        `
     + html.slice(end);
   if (next !== html) await writeFile(file, next, "utf8");
   return latest.length;

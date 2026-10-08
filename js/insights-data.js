@@ -18,6 +18,7 @@ window.NCW_FEED = [
     "image": "/img/insights/og-ai-training-request-brief.jpg",
     "thumbnail": "/img/insights/ai-training-request-brief.webp",
     "imageAlt": "회의 테이블 위에 AI 교육 기획요청서 초안과 노트북이 놓인 업무 공간을 표현한 AI 생성 이미지",
+    "thumbnailCard": "/img/insights/ai-training-request-brief-720w.webp",
     "topic": "AI 업무전환",
     "tags": [
       "AI 교육",
@@ -40,6 +41,7 @@ window.NCW_FEED = [
     "image": "/img/insights/ai-fast-failure-lesson1/cover-ai-retrospective-photo.webp",
     "thumbnail": "/img/insights/ai-fast-failure-lesson1/cover-ai-retrospective-photo.webp",
     "imageAlt": "따뜻한 업무 공간의 나무 테이블 위 노트북, 제안서 시안 세 장과 회고 노트를 표현한 AI 생성 이미지",
+    "thumbnailCard": "/img/insights/ai-fast-failure-lesson1/cover-ai-retrospective-photo-720w.webp",
     "topic": "AI 업무전환",
     "tags": [
       "AI 회고",
@@ -60,6 +62,7 @@ window.NCW_FEED = [
     "image": "/img/insights/og-flexoffice-feasibility.jpg",
     "thumbnail": "/img/insights/coworking-lounge-amenity.webp",
     "imageAlt": "좌석과 라운지, 카페가 연결된 공유오피스 공간 이미지",
+    "thumbnailCard": "/img/insights/coworking-lounge-amenity-720w.webp",
     "topic": "공간 비즈니스",
     "tags": [
       "공유오피스",
@@ -80,6 +83,7 @@ window.NCW_FEED = [
     "image": "/img/og.png",
     "thumbnail": "/img/ai-campus/dashboard-desk.webp",
     "imageAlt": "창가 책상 위 노트북에 AI 업무 대시보드가 떠 있는 워크스페이스",
+    "thumbnailCard": "/img/ai-campus/dashboard-desk-720w.webp",
     "topic": "넥스트코웍 이야기",
     "tags": [
       "AI Workspace Builder",
