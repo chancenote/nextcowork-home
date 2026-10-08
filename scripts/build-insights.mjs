@@ -605,7 +605,7 @@ function renderArticle(post, assetVersion) {
         </li>
         <li><a href="/about/">대표 스토리</a></li>
         <li><a href="/insights/" class="active" aria-current="page">인사이트</a></li>
-        <li><a class="nav-cta" href="/contact/">프로젝트 문의</a></li>
+        <li><a class="nav-cta" href="/contact/">프로젝트 문의하기</a></li>
       </ul>
     </nav>
     <button class="nav-burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
@@ -632,7 +632,7 @@ ${articleBody}
         <strong>이 주제를 조직에 맞게 적용하고 싶다면</strong>
         <p>${post.slug === "ai-fast-failure" ? "팀의 실제 업무에 AI를 적용하고 싶다면, AI Campus 교육에서 우리 조직에 맞는 활용 방법을 함께 살펴보세요." : "AI 실무교육, CEO 코칭, 워크스페이스 컨설팅으로 연결해 드립니다."}</p>
         <div class="btn-row">
-          <a class="btn btn-primary" href="/contact/?s=${post.ctaService}&amp;t=${CTA_TIER_BY_SERVICE[post.ctaService] || "diagnosis"}&amp;cta=insight_article">${post.slug === "ai-fast-failure" ? "우리 팀 AI 교육 문의" : "프로젝트 문의"} <span class="arr">→</span></a>
+          <a class="btn btn-primary" href="/contact/?s=${post.ctaService}&amp;t=${CTA_TIER_BY_SERVICE[post.ctaService] || "diagnosis"}&amp;cta=insight_article">${post.slug === "ai-fast-failure" ? "우리 팀 AI 교육 문의하기" : "프로젝트 문의하기"} <span class="arr">→</span></a>
           <a class="btn btn-ghost" href="/insights/">인사이트 더 보기 <span class="arr">→</span></a>
         </div>
       </div>
