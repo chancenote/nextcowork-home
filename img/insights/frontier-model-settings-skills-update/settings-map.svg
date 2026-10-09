@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="1120" viewBox="0 0 1320 1120" role="img" aria-labelledby="title desc">
+<title id="title">AI 지침, 무엇을 어디에 둘까요?</title><desc id="desc">전역에는 공통 협업 방식, 프로젝트에는 업무 맥락, 스킬에는 반복 절차, 이번 요청에는 지금 필요한 결과를 적습니다. 제품별 명령 우선순위 도식이 아닌 작성 내용 분류입니다.</desc>
+<rect width="1320" height="1120" fill="#F8F0FF"/>
+<g font-family="Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif">
+<text x="72" y="100" fill="#302D7C" font-size="54" font-weight="700">AI 지침, 무엇을 어디에 둘까요?</text>
+<text x="74" y="152" fill="#545659" font-size="28">내용의 적용 범위에 따라 나누면 정리하기 편해집니다.</text>
+<rect x="64" y="210" width="1192" height="164" rx="24" fill="white"/>
+<rect x="64" y="210" width="14" height="164" rx="7" fill="#302D7C"/>
+<text x="104" y="268" fill="#302D7C" font-size="26" font-weight="700">01 / 공통 협업 방식</text>
+<text x="104" y="333" fill="#302D7C" font-size="44" font-weight="700">전역 지침</text>
+<text x="454" y="281" fill="#302D7C" font-size="35" font-weight="600">말투 · 설명 방식 · 확인 원칙</text>
+<text x="454" y="333" fill="#545659" font-size="29">여러 업무에 계속 적용할 기준을 적어요.</text>
+<rect x="64" y="400" width="1192" height="164" rx="24" fill="white"/>
+<rect x="64" y="400" width="14" height="164" rx="7" fill="#7950E8"/>
+<text x="104" y="458" fill="#7950E8" font-size="26" font-weight="700">02 / 이 업무의 맥락</text>
+<text x="104" y="523" fill="#302D7C" font-size="44" font-weight="700">프로젝트 지침</text>
+<text x="454" y="471" fill="#302D7C" font-size="35" font-weight="600">고객 · 기준 자료 · 업무 범위</text>
+<text x="454" y="523" fill="#545659" font-size="29">그 프로젝트에서 필요한 조건을 적어요.</text>
+<rect x="64" y="590" width="1192" height="164" rx="24" fill="white"/>
+<rect x="64" y="590" width="14" height="164" rx="7" fill="#00AEB7"/>
+<text x="104" y="648" fill="#302D7C" font-size="26" font-weight="700">03 / 반복 업무의 방법</text>
+<text x="104" y="713" fill="#302D7C" font-size="44" font-weight="700">스킬</text>
+<text x="454" y="661" fill="#302D7C" font-size="35" font-weight="600">호출 조건 · 절차 · 참고 자료</text>
+<text x="454" y="713" fill="#545659" font-size="29">필요할 때 꺼내 쓸 작업 방법을 담아요.</text>
+<rect x="64" y="780" width="1192" height="164" rx="24" fill="white"/>
+<rect x="64" y="780" width="14" height="164" rx="7" fill="#B99EFF"/>
+<text x="104" y="838" fill="#7950E8" font-size="26" font-weight="700">04 / 지금 필요한 결과</text>
+<text x="104" y="903" fill="#302D7C" font-size="44" font-weight="700">이번 요청</text>
+<text x="454" y="851" fill="#302D7C" font-size="35" font-weight="600">대상 독자 · 자료 · 원하는 결과</text>
+<text x="454" y="903" fill="#545659" font-size="29">이번에 맡길 일과 완료 기준을 알려줘요.</text>
+<text x="74" y="1006" fill="#302D7C" font-size="29" font-weight="600">플러그인: 스킬과 도구 등을 설치·공유하는 묶음</text>
+<text x="74" y="1060" fill="#545659" font-size="25">AI 작성 도식 · 정보 분류 예시이며 제품별 명령 우선순위를 뜻하지 않습니다.</text>
+</g></svg>

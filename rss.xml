@@ -6,7 +6,15 @@
     <atom:link href="https://www.nextcw.com/rss.xml" rel="self" type="application/rss+xml"/>
     <description>AI 실무활용과 워크스페이스 인사이트 — 넥스트코웍이 발행하는 콘텐츠.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 08 Oct 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0900</lastBuildDate>
+    <item>
+      <title>GPT·Claude 새 모델이 나왔나요? 전역 설정과 스킬, 이렇게 점검하세요</title>
+      <link>https://www.nextcw.com/insights/frontier-model-settings-skills-update/</link>
+      <guid isPermaLink="true">https://www.nextcw.com/insights/frontier-model-settings-skills-update/</guid>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 +0900</pubDate>
+      <category>AI 실무활용</category>
+      <description>한글날, AI 설정을 다시 정리하며 확인한 OpenAI·Anthropic 공식 가이드. 전역 지침과 프로젝트 지침을 나누고, 플러그인·스킬을 점검하는 방법과 복사해서 쓸 양식을 소개합니다.</description>
+    </item>
     <item>
       <title>AI 교육 업체, 무엇으로 비교해 선정하나요? — 제안서 비교표 12항목</title>
       <link>https://www.nextcw.com/insights/ai-training-vendor-selection/</link>

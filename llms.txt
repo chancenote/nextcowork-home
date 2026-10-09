@@ -55,6 +55,8 @@ https://www.nextcw.com/coaching/
 ## 인사이트 아티클 (최신순)
 
 <!-- INSIGHTS:START -->
+- GPT·Claude 새 모델이 나왔나요? 전역 설정과 스킬, 이렇게 점검하세요 (2026-10-09): https://www.nextcw.com/insights/frontier-model-settings-skills-update/
+  한글날, AI 설정을 다시 정리하며 확인한 OpenAI·Anthropic 공식 가이드. 전역 지침과 프로젝트 지침을 나누고, 플러그인·스킬을 점검하는 방법과 복사해서 쓸 양식을 소개합니다.
 - AI 교육 업체, 무엇으로 비교해 선정하나요? — 제안서 비교표 12항목 (2026-10-08): https://www.nextcw.com/insights/ai-training-vendor-selection/
   AI 교육 제안서를 여러 곳에서 받은 교육·기획 담당자를 위한 실무 가이드. 업무 연결·실습 자료·결과물·보안·견적 조건을 같은 기준으로 비교하는 12항목 비교표와 업체 미팅 질문 스크립트를 제공합니다.
 - GPT-6 Intelligent UI가 바꾸는 일의 방식 (2026-10-08): https://www.nextcw.com/insights/gpt6-intelligent-ui/

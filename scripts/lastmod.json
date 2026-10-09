@@ -1,7 +1,7 @@
 {
   "/": {
-    "hash": "ef890e2dd6f6",
-    "date": "2026-10-08"
+    "hash": "36dcadd2b381",
+    "date": "2026-10-09"
   },
   "/flexoffice/": {
     "hash": "d21569f36a59",
@@ -24,8 +24,8 @@
     "date": "2026-10-08"
   },
   "/insights/": {
-    "hash": "ede45c04a237",
-    "date": "2026-10-08"
+    "hash": "1f2f8a501e19",
+    "date": "2026-10-09"
   },
   "/contact/": {
     "hash": "01a686f74d25",
@@ -34,6 +34,10 @@
   "/privacy/": {
     "hash": "815c74f7b935",
     "date": "2026-10-08"
+  },
+  "/insights/frontier-model-settings-skills-update/": {
+    "hash": "c6d576874818",
+    "date": "2026-10-09"
   },
   "/insights/ai-training-vendor-selection/": {
     "hash": "1012c9056150",
