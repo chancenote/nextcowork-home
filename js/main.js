@@ -666,6 +666,7 @@
   Array.prototype.forEach.call(document.querySelectorAll("video[data-autoplay-inview]"), function (v) {
     var frame = v.closest("figure") || v.parentNode;
     var ctrl = frame.querySelector(".fx-film-ctrl");
+    var vName = v.getAttribute("data-video-name") || "brand_video";
     var conn = navigator.connection || {};
     var lite = conn.saveData || /(^|-)2g$/.test(conn.effectiveType || "");
     if (reduced || lite || !("IntersectionObserver" in window) || !ctrl) return;
@@ -691,7 +692,7 @@
     btnPlay.addEventListener("click", function () {
       if (v.paused) { userPaused = false; inView = true; tryPlay(); }
       else { userPaused = true; v.pause(); }
-      track("video_control", { action: v.paused ? "pause" : "play", video: "flexoffice_new_standard" });
+      track("video_control", { action: v.paused ? "pause" : "play", video: vName });
     });
     btnSound.addEventListener("click", function () {
       v.muted = !v.muted;
@@ -699,7 +700,7 @@
       btnSound.setAttribute("aria-pressed", String(!v.muted));
       btnSound.setAttribute("aria-label", v.muted ? "소리 켜기" : "소리 끄기");
       if (!v.muted && v.paused) { userPaused = false; inView = true; tryPlay(); }
-      track("video_control", { action: v.muted ? "mute" : "unmute", video: "flexoffice_new_standard" });
+      track("video_control", { action: v.muted ? "mute" : "unmute", video: vName });
     });
 
     new IntersectionObserver(function (entries) {
