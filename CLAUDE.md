@@ -2,6 +2,16 @@
 
 정적 HTML/CSS/JS 사이트(프레임워크·빌드 없음). 운영 가이드는 `README.md` 참조.
 
+## 작업 경계 (2026-10-09 현행)
+
+공통 기준은 `../nextcw-ops/00_brief/CLAUDE.md`(역할·승인·사업 사실·브랜드)다. 이 파일과 다르면 그 문서와 해당 작업의 대표 승인 기록을 따른다.
+
+- **이 폴더의 파일을 고치는 것은 Claude Code/Harness뿐이다.** 서비스 페이지·CRM 구현뿐 아니라 **인사이트 원고 반영, 이미지 배치, `npm run build`·`npm run sync`, 생성물 갱신, QA, 커밋·푸시, 미리보기, 운영 배포, 실제 URL 확인**까지 모두 맡는다.
+- Codex는 `nextcw-ops` 안에서만 수정한다(2026-10-03 인사이트 직접 발행 예외는 2026-10-09 종료). Codex가 준비한 원고·이미지·요청서는 ops 경로에서 읽어 반영한다. 원고 `../nextcw-ops/01_content/insights/`, 이미지 `../nextcw-ops/04_assets/images/insights/<slug>/`, 요청서 `../nextcw-ops/02_requests/`, 인계 `../nextcw-ops/00_brief/_handoff/`, 기능 기획 `../nextcw-ops/06_features/`.
+- **승인 범위만 실행한다.** 원고 초안·문서 갱신 요청을 사이트 변경이나 배포 승인으로 해석하지 않는다. 기능 기획서(FS)가 `draft`면 구현하지 않는다.
+- 배포는 2단계다. 브랜치 푸시로 Vercel 미리보기를 만들어 대표 승인을 받고, "운영 반영" 승인 뒤에 main에 병합해 배포한다. 혼합 작업트리에서는 `git add -A`·`npm run deploy`를 쓰지 않는다.
+- 처리 결과(실제 URL·커밋)는 해당 CR 처리 기록에 남겨, ops 쪽이 `published`·`deployed`를 기록할 근거로 쓰게 한다.
+
 ---
 
 ## 하네스: 넥스트코웍 웹사이트 완성도 향상
@@ -37,3 +47,4 @@
 | 2026-07-18 | 라운드 7-3 — 스크롤 부담 -30% 달성 (구조·밀도·크기 조정, 본문 텍스트 무변경) | css/style.css, index.html | 대표 지시 "본문만 그대로, 구조·밀도·크기 조정 가능". 홈 8,024→5,612px(**-30.1%**, Playwright 실측·섹션별 측정 기반 정밀 타격). 대형 타이포 비례 축소(히어로 h1 76→52max, --h2 42→34max, 인용 36→28max, 푸터 CTA 48→34max), 섹션 패딩 108→60(-44%), 홈 벤 섹션 제목↔도식 2열(.split-head 유틸 신설), 서비스 라인업 벤토 2×2→4열(상단 선택 카드 4열과 호응, 태블릿 2열·모바일 1열 유지), 인용 섹션 compact, 이미지 비율 평탄화(4/3→16/11, 3/2→16/9), 카드 min-height -13~15%, 도식 폭 720→560. 타 페이지 동반 축소(flexoffice 8,536 · ai-campus 7,114 · coaching 7,664 · public 7,671px). |
 | 2026-07-18 | 라운드 6 프리뷰 반영 — 추천사 최종본 + 직영 집중 정합 | 5개 페이지, flexoffice | 추천사 최종 문구·귀속(19_testimonial_spec.md "추천사 최종" 표) 반영: 홈 추천사 삭제, ai-campus(공공 연구원·박사급)·coaching(패션 이커머스 CEO, 에이전트 도구 문구)·flexoffice(송도 의뢰고객)·public(창업·기업지원 담당자) 게시. **대표 방침(위탁운영·임대 미수행, 고객 직영 집중)에 맞춰** flexoffice 서비스 제안 맥락의 위탁운영/임대/수익공유 열거를 직영 중심 서술로 전면 교체(FAQ 본문+JSON-LD 동기화, scope, 가격카드). flexoffice 추천사의 "위탁운영 결정" 문구도 "운영 방향 결정"으로 정합. 과거 실적 팩트(송도 위탁운영 방안 수립·예탁결제원 위탁운영 심사)는 사실이라 유지. main 병합 안 함(프리뷰 확인 단계). |
 | 2026-09-19 | 라운드 12 — 인사이트 매거진 리뉴얼 마감 (Codex 시안 1→3 위에 구독 패널·태그 탐색·타이포 스케일 구현, 브랜치 feat/insights-magazine, 미커밋·승인 대기) | insights/index.html, css/insights-magazine.css, css/style.css(.post-*), js/insights-magazine.js, js/insights-cards.js, scripts/build-insights.mjs(상세 템플릿), README | Codex 기획(codex_insights_daily_publishing_plan.md 최신 보완 절)을 리더 브리프 _workspace/22로 확정 후 web-implementer 구현→site-qa 통과(Blocker/Major 0, Minor 2 해소). 구독 패널을 목록·상세 `</main>` 직전 1회 배치(진한 푸터 연속), 태그 6개 기본·20개 단위·0개 비활성·16px 칩, 본문 19/18px·폭 740px, 카드 제목 22/20/18px, 출처 배지를 커버 위→카드 본문 상단으로 이동, 상세 "이 주제의 글 더 보기" 링크. 인사이트 외 페이지 변경은 캐시 버전값뿐. 배포 전 대표 미리보기 승인 필요. |
+| 2026-10-09 | 작업 경계 절 신설 — 인사이트 포함 모든 사이트 반영·빌드·QA·배포는 Claude Code, Codex는 nextcw-ops 안에서만 수정. ops 인계 경로·2단계 배포 명시 | CLAUDE.md, AGENTS.md, README.md, skills/nextcw-site-orchestrator | 대표 지시(ops 00_brief/CLAUDE.md 2절 2026-10-09 역할 변경, _handoff/2026-10-09_claude-code-role-alignment.md). 문서 동기화만 — 화면·기능·배포 변경 없음 |

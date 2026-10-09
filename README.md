@@ -1,5 +1,18 @@
 # nextcw.com 웹사이트 — 운영 가이드
 
+## 0. 작업 흐름과 담당 (2026-10-09 현행)
+
+**ops 준비 → 대표 결정 → Claude Code 사이트 실행.** 역할·승인 기준은 `../nextcw-ops/00_brief/CLAUDE.md`가 정본입니다.
+
+| 단계 | 담당 | 위치 |
+|---|---|---|
+| 조사·기획·원고·이미지·변경 요청서·발행 패키지 | Codex / Cowork / Claude Code ops 하네스 | `../nextcw-ops` (Codex는 이 폴더 밖을 수정하지 않음) |
+| 범위·가격·발행·배포 승인 | 찬스 | 요청서 승인 문구 |
+| 사이트 반영·빌드·QA·미리보기·운영 배포·실제 URL 확인 | **Claude Code/Harness** (인사이트 포함) | 이 폴더 |
+
+- 2026-10-03의 "Codex 인사이트 직접 발행" 예외는 2026-10-09 종료되었습니다. 그 사이 Codex가 이 저장소에 남긴 발행 커밋은 이력으로만 봅니다.
+- 원고 초안·문서 갱신 요청은 사이트 변경·배포 승인이 아닙니다. 기능 기획서(FS)가 `draft`면 구현하지 않습니다.
+
 ## 1. 구성
 
 정적 HTML/CSS/JS 기반입니다. 인사이트 글만 Markdown(`.md`)으로 작성하고 `npm run build`로 HTML을 생성합니다.
@@ -12,19 +25,21 @@ content/insights/*.md (인사이트 원고)  scripts/build-insights.mjs (MD → 
 llms.txt · robots.txt · sitemap.xml · vercel.json · img/og.png
 ```
 
-## 2. 배포 (Vercel)
+## 2. 배포 (Vercel · GitHub 연동)
 
-1. vercel.com → Add New Project → 이 폴더 업로드(또는 GitHub 연결)
-2. Framework Preset: **Other** (빌드 명령 없음) → Deploy
-3. 도메인 연결: Settings → Domains → nextcw.com 추가 → DNS를 Vercel 안내대로 변경
+- 프로젝트 `nextcowork-home`은 GitHub 저장소와 연동되어 있습니다. **브랜치 푸시 = 자동 미리보기**(Vercel 로그인 필요), **main 푸시 = 운영 배포**입니다.
+- 순서: 승인 범위 파일만 브랜치에 커밋·푸시 → 미리보기 URL로 대표 확인 → "운영 반영" 승인 → main 병합 → `npm run build`(캐시값·lastmod 갱신) → main 푸시 → 실제 URL 확인.
+- 병합 충돌이 `?v=` 캐시값뿐이어도 파일 단위로 한쪽을 통째로 받지 않습니다. `-X ours` 병합 후 브랜치가 추가한 줄이 결과 파일에 모두 있는지 대조합니다.
+- `npm run deploy`(scripts/deploy.sh)는 `git add -A`부터 운영 배포까지 한 번에 하므로 다른 작업이 섞인 작업트리에서는 쓰지 않습니다.
+- 도메인: nextcw.com (Vercel Settings → Domains).
 
 ✅ 노션 자료실 링크는 nextcw.notion.site 주소로 교체 완료 — DNS를 전환해도 자료실이 유지됩니다. (아카이브 루트: https://nextcw.notion.site/NEXT-COWORK-12f87cb032f88076b330cb6cc049d3ed)
 
 ## 3. 콘텐츠 업데이트 (살아있는 사이트 운영법)
 
-- **새 글 발행 시**: `content/insights/`에 Markdown 파일 추가 → `npm run build` 실행 → `/insights/글주소/` HTML, `js/insights-data.js`, `sitemap.xml` 자동 생성 → 커밋/재배포
+- **새 글 발행 시**: (승인된 발행 요청이면 ops의 `01_content/insights/` 원고·`04_assets/images/insights/<slug>/` 이미지를 Claude Code가 옮겨) `content/insights/`에 Markdown 파일 추가 → `npm run build` 실행 → `/insights/글주소/` HTML, `js/insights-data.js`, `sitemap.xml` 자동 생성 → 미리보기 → 승인 후 운영 배포
 - **가격 변경**: `/ai-campus/index.html`, `/coaching/index.html`의 price-card + JSON-LD Offer 두 곳 수정
-- **문의 채널**: 카카오톡 오픈채팅(open.kakao.com/o/sfxwSCvf) + 구글폼(bit.ly/edu_cowork) 연동 완료. 구글폼 주소가 바뀌면 `contact/index.html`에서 교체
+- **문의 채널**: `/contact/` 온라인 문의 폼 → Make 웹훅(접수번호 응답·스팸 방어) → Notion CRM 원장 + ceo@nextcw.com 메일. 서비스·상품 문맥은 URL의 `s`/`t`/`cta`로 들어와 폼의 `service`/`tier`/`cta_location`에 기록됩니다(`js/main.js`). 접수번호 응답은 Make 임시 저장 기준이며, Notion 기록·알림·후속 처리는 별도로 확인합니다(ops `00_brief/runbook_문의접수_운영복구.md`). 과거 카카오톡 오픈채팅·구글폼 안내는 현행 절차가 아닙니다.
 
 ### 인사이트 Markdown 발행법
 
@@ -36,7 +51,7 @@ llms.txt · robots.txt · sitemap.xml · vercel.json · img/og.png
 6. 생성된 글 주소는 `/insights/{slug}/`입니다.
 7. `npm run build`는 최신 콘텐츠 목록, 글 상세 HTML, 사이트맵, CSS/JS 캐시 방지용 버전값을 함께 갱신합니다.
 
-### 옵시디언에서 발행하기 (권장 — 모바일 작성 가능)
+### 옵시디언에서 발행하기 (찬스 직접 경로 — 모바일 작성 가능)
 
 옵시디언 "NEXT COWORK" 볼트의 `08. 브랜드ㆍ콘텐츠엔진/03. 발행_인사이트/`에 글을 쓰고 동기화합니다.
 
@@ -101,7 +116,7 @@ image: "/img/og.png"
 |---|---|---|
 | 네이버 블로그 | blog.naver.com/chancenote | ✅ 확정 |
 | 노션 자료실 | nextcw.notion.site (플레이북·포트폴리오) | ✅ 교체 완료 |
-| 문의 채널 | 카카오톡 + 구글폼 | ✅ 연동 완료 |
+| 문의 채널 | `/contact/` 온라인 폼 → Make → Notion CRM·메일 | ✅ 운영 중 (카카오톡·구글폼은 과거 안내) |
 | CEO 코칭 가격 | 300만원 (2h×5회) | ✅ 공개가 (2026-10-07 4석 한정 할인 종료) |
 | AI Campus 가격 | 특강 150만원~ / 워크샵 300만원~ | 제안값 — 변경 시 두 곳 수정(본문+JSON-LD) |
 
