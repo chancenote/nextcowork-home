@@ -1,6 +1,6 @@
 {
   "/": {
-    "hash": "9516a330f769",
+    "hash": "468e13a634de",
     "date": "2026-10-10"
   },
   "/flexoffice/": {
@@ -8,8 +8,8 @@
     "date": "2026-10-10"
   },
   "/ai-campus/": {
-    "hash": "ffefe2663eb6",
-    "date": "2026-10-08"
+    "hash": "e89ce7b0934c",
+    "date": "2026-10-10"
   },
   "/public/": {
     "hash": "a4de1d41c8ba",
@@ -24,8 +24,8 @@
     "date": "2026-10-08"
   },
   "/insights/": {
-    "hash": "1f2f8a501e19",
-    "date": "2026-10-09"
+    "hash": "a18e3b68c567",
+    "date": "2026-10-10"
   },
   "/contact/": {
     "hash": "01a686f74d25",
@@ -34,6 +34,10 @@
   "/privacy/": {
     "hash": "815c74f7b935",
     "date": "2026-10-08"
+  },
+  "/insights/ai-cowork-six-conditions/": {
+    "hash": "d48ae34f4b2f",
+    "date": "2026-10-10"
   },
   "/insights/frontier-model-settings-skills-update/": {
     "hash": "c6d576874818",

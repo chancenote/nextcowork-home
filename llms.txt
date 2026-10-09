@@ -55,6 +55,8 @@ https://www.nextcw.com/coaching/
 ## 인사이트 아티클 (최신순)
 
 <!-- INSIGHTS:START -->
+- AI 에이전트 협업, 사람과 AI가 함께 일하는 6가지 조건은? (2026-10-10): https://www.nextcw.com/insights/ai-cowork-six-conditions/
+  AI를 들였는데 회사가 그대로라면 에이전트보다 일하는 판이 먼저입니다. 사람과 AI 에이전트가 함께 일하는 여섯 조건 COWORK의 정의·점검 질문과 이번 주 3단계 COWORK 체크리스트를 정리했습니다.
 - GPT·Claude 새 모델이 나왔나요? 전역 설정과 스킬, 이렇게 점검하세요 (2026-10-09): https://www.nextcw.com/insights/frontier-model-settings-skills-update/
   한글날, AI 설정을 다시 정리하며 확인한 OpenAI·Anthropic 공식 가이드. 전역 지침과 프로젝트 지침을 나누고, 플러그인·스킬을 점검하는 방법과 복사해서 쓸 양식을 소개합니다.
 - AI 교육 업체, 무엇으로 비교해 선정하나요? — 제안서 비교표 12항목 (2026-10-08): https://www.nextcw.com/insights/ai-training-vendor-selection/

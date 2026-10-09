@@ -6,7 +6,15 @@
     <atom:link href="https://www.nextcw.com/rss.xml" rel="self" type="application/rss+xml"/>
     <description>AI 실무활용과 워크스페이스 인사이트 — 넥스트코웍이 발행하는 콘텐츠.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 00:00:00 +0900</lastBuildDate>
+    <item>
+      <title>AI 에이전트 협업, 사람과 AI가 함께 일하는 6가지 조건은?</title>
+      <link>https://www.nextcw.com/insights/ai-cowork-six-conditions/</link>
+      <guid isPermaLink="true">https://www.nextcw.com/insights/ai-cowork-six-conditions/</guid>
+      <pubDate>Sat, 10 Oct 2026 00:00:00 +0900</pubDate>
+      <category>AI &amp; Work</category>
+      <description>AI를 들였는데 회사가 그대로라면 에이전트보다 일하는 판이 먼저입니다. 사람과 AI 에이전트가 함께 일하는 여섯 조건 COWORK의 정의·점검 질문과 이번 주 3단계 COWORK 체크리스트를 정리했습니다.</description>
+    </item>
     <item>
       <title>GPT·Claude 새 모델이 나왔나요? 전역 설정과 스킬, 이렇게 점검하세요</title>
       <link>https://www.nextcw.com/insights/frontier-model-settings-skills-update/</link>

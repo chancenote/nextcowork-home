@@ -837,6 +837,7 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
 .post-body p img { max-width: 100%; height: auto; border-radius: var(--radius-xs); }
 /* 회고 글: 세로 카드의 원래 비율을 유지하고 복사용 양식을 좁은 화면에서도 읽기 쉽게 표시한다. */
 .post--ai-fast-failure .post-figure img[src*="/card-"] { max-width: 560px; margin-inline: auto; }
+.post--ai-cowork-six-conditions .post-figure img[src*="/card-"] { max-width: 560px; margin-inline: auto; }
 .post--ai-fast-failure .post-body pre { white-space: pre-wrap; overflow-wrap: anywhere; }
 .post-cta {
   margin-bottom: clamp(24px, 4vw, 40px); padding: 30px;
