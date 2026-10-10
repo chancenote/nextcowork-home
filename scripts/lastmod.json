@@ -1,6 +1,6 @@
 {
   "/": {
-    "hash": "468e13a634de",
+    "hash": "87452e3f01fb",
     "date": "2026-10-10"
   },
   "/flexoffice/": {
@@ -8,20 +8,20 @@
     "date": "2026-10-10"
   },
   "/ai-campus/": {
-    "hash": "29e08bb0b721",
+    "hash": "62006fc02b2f",
     "date": "2026-10-10"
   },
   "/public/": {
-    "hash": "a4de1d41c8ba",
-    "date": "2026-10-08"
+    "hash": "9b2a3a7c9084",
+    "date": "2026-10-10"
   },
   "/coaching/": {
-    "hash": "0cf9134d5a4a",
+    "hash": "3df6c2be9135",
     "date": "2026-10-10"
   },
   "/about/": {
-    "hash": "88f30dd100c4",
-    "date": "2026-10-08"
+    "hash": "5d8f5bb560cf",
+    "date": "2026-10-10"
   },
   "/insights/": {
     "hash": "a18e3b68c567",
@@ -64,7 +64,7 @@
     "date": "2026-10-08"
   },
   "/insights/ai-workspace-builder/": {
-    "hash": "1b4006986355",
-    "date": "2026-10-08"
+    "hash": "2f4475ebd16e",
+    "date": "2026-10-10"
   }
 }
