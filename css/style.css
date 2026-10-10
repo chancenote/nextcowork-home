@@ -2156,6 +2156,8 @@ body.theme-public { --px-dark: #0E2B28; --px-dark2: #134E48; --px-line: #CDEAE2;
 /* 브랜드 연출 영상(공용 — 홈·FlexOffice). 16:9 고정으로 레이아웃 흔들림(CLS) 0. 재생 제어는 js/main.js data-autoplay-inview */
 .fx-film { padding: 32px 0 8px; }
 .fx-film-frame { position: relative; margin: 0; }
+.coaching-hero .fx-film-frame--coaching { margin-top: 32px; }
+@media (max-width: 768px) { .coaching-hero .fx-film-frame--coaching { margin-top: 22px; } }
 .fx-film-video {
   display: block; width: 100%; height: auto; aspect-ratio: 16 / 9;
   border-radius: var(--radius-md); background: var(--indigo); object-fit: cover;

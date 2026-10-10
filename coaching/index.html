@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="/js/analytics.js?v=ncw-5e97352e2b" defer></script>
+<script src="/js/analytics.js?v=ncw-ecf6a03d5b" defer></script>
 <title>CEO AI 코칭 | 대표 업무로 하는 1:1 AI 코칭 2시간×5회 — 넥스트코웍</title>
 <meta name="description" content="AI를 직접 써서 일하고 싶은 경영자를 위한 1:1 비공개 코칭. 대표님의 실제 업무로 AI 에이전트 활용부터 바이브 코딩까지, 회차별 결과물을 남깁니다. 2시간×5회 300만원, 10분 무료 상담.">
 <link rel="canonical" href="https://www.nextcw.com/coaching/">
@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=ncw-5e97352e2b">
+<link rel="stylesheet" href="/css/style.css?v=ncw-ecf6a03d5b">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -161,6 +161,25 @@
           </div>
         </div>
       </aside>
+    </div>
+    <!-- CEO AI 코칭 릴 — 화면에 들어오면 소리 없이 자동 재생, 벗어나면 정지(재생 제어: js/main.js data-autoplay-inview) -->
+    <div class="container">
+      <figure class="fx-film-frame fx-film-frame--coaching reveal" data-delay="3">
+        <video class="fx-film-video" data-autoplay-inview data-video-name="coaching_reel" controls muted loop playsinline preload="none" poster="/img/coaching/ceo-ai-coaching-reel-poster.webp" width="1920" height="1080" aria-label="CEO AI 코칭 15초 소개 영상">
+          <source src="/media/coaching/ceo-ai-coaching-reel-1080.mp4" type="video/mp4" media="(min-width: 769px)">
+          <source src="/media/coaching/ceo-ai-coaching-reel-720.mp4" type="video/mp4">
+        </video>
+        <div class="fx-film-ctrl" hidden>
+          <button type="button" class="fx-film-btn" data-film="play" aria-label="영상 일시정지">
+            <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+            <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>
+          </button>
+          <button type="button" class="fx-film-btn" data-film="sound" aria-label="소리 켜기" aria-pressed="false">
+            <svg class="i-muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9.5l5 5m0-5l-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <svg class="i-sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4.5 4.5 0 010 6m2.5-8.5a8 8 0 010 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </figure>
     </div>
   </section>
 
@@ -515,6 +534,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=ncw-5e97352e2b" defer></script>
+<script src="/js/main.js?v=ncw-ecf6a03d5b" defer></script>
 </body>
 </html>
