@@ -38,3 +38,5 @@
 .page-ai-campus .page-hero .answer { margin-bottom: 24px; }
 .page-ai-campus .page-hero .quick-links { margin-top: 14px; }
 .page-ai-campus .page-hero .price-note { margin-top: 10px; }
+.page-ai-campus .page-hero .fx-film-frame--hero { margin: 22px 0 6px; }
+.page-ai-campus .page-hero .fx-film-frame--hero + .quick-links { margin-top: 18px; }
