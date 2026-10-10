@@ -1,4 +1,4 @@
-/* Public Advisory v3 — 서브내비 스크롤스파이 · 옛 앵커 호환 · 이력 복사. 전역 main.js와 독립(CSP: script-src 'self'). */
+/* Public Advisory v4 — 서브내비 스크롤스파이 · 옛 앵커 호환 · 자문 영역 펼침 라벨 · 이력 탭/복사. 전역 main.js와 독립(CSP: script-src 'self'). */
 (function () {
   "use strict";
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -10,8 +10,7 @@
     new IntersectionObserver(function (es) {
       es.forEach(function (e) { subnav.classList.toggle("is-on", !e.isIntersecting && e.boundingClientRect.top < 0); });
     }, { threshold: 0 }).observe(hero);
-
-    var links = Array.prototype.slice.call(subnav.querySelectorAll("a[href^='#']"));
+    var links = Array.prototype.slice.call(subnav.querySelectorAll("ul a[href^='#']"));
     var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); }).filter(Boolean);
     var spy = function () {
       var y = window.scrollY + 140, cur = null;
@@ -27,7 +26,7 @@
     "space-build": "scope-space", "space-activate": "scope-space", "space": "scope-space",
     "ai": "scope-work", "ax": "scope-work", "work": "scope-work",
     "startup": "scope-standard", "forum": "scope-standard", "ext": "scope-standard",
-    "outcomes": "process", "refs": "refs", "top": "top"
+    "outcomes": "process"
   };
   function openFor(hash) {
     var id = (hash || "").replace("#", "");
@@ -35,16 +34,24 @@
     var target = alias[id] || id;
     var el = document.getElementById(target);
     if (!el) return;
-    var det = el.matches("details") ? el : el.querySelector("details");
+    var det = el.querySelector("details");
     if (det && /^scope-/.test(target)) det.open = true;
-    if (alias[id] && alias[id] !== id) {
+    if (alias[id]) {
       setTimeout(function () { el.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" }); }, 30);
     }
   }
   openFor(location.hash);
   window.addEventListener("hashchange", function () { openFor(location.hash); });
+  /* 히어로 Core 카드 → 자문 영역 행을 펼친 채로 이동 */
+  Array.prototype.forEach.call(document.querySelectorAll(".pa-core-card[href^='#scope-']"), function (a) {
+    a.addEventListener("click", function () {
+      var el = document.getElementById(a.getAttribute("href").slice(1));
+      var det = el && el.querySelector("details");
+      if (det) det.open = true;
+    });
+  });
 
-  /* 3) 자문 영역 행 — 한 번에 하나만 펼치지 않는다(비교 가능). 펼침 버튼 라벨만 동기화 */
+  /* 3) 자문 영역 행 — 펼침 버튼 라벨 동기화 */
   Array.prototype.forEach.call(document.querySelectorAll(".pa-row details"), function (d) {
     var sum = d.querySelector("summary .pa-row-toggle");
     var sync = function () { if (sum) sum.textContent = d.open ? "접기" : "자세히"; };
@@ -88,18 +95,5 @@
         }
       });
     }
-  }
-
-  /* 5) Final CTA 과업 유형 칩 — 선택하면 문의 링크의 t 값이 바뀐다 */
-  var cta = document.querySelector(".pa-final");
-  if (cta) {
-    var chips = cta.querySelectorAll(".pa-chip");
-    var go = cta.querySelector(".pa-final-go");
-    chips.forEach(function (c) {
-      c.addEventListener("click", function () {
-        chips.forEach(function (x) { x.classList.toggle("is-active", x === c); x.setAttribute("aria-pressed", x === c ? "true" : "false"); });
-        if (go) { go.setAttribute("href", "/contact/?s=public&t=" + c.getAttribute("data-t") + "&cta=public_final"); go.textContent = c.getAttribute("data-cta") + " →"; }
-      });
-    });
   }
 })();
