@@ -845,6 +845,90 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
 }
 .post-cta strong { display: block; color: var(--ink); font-size: 1.375rem; line-height: 1.5; margin-bottom: 6px; }
 .post-cta p { font-size: 1.125rem; line-height: 1.7; color: var(--caption-strong); margin-bottom: 16px; }
+
+/* 인사이트 공유 레일 — 넓은 화면: 본문 오른쪽 여백에서 스크롤을 따라오는 박스 / 좁은 화면: 우하단 플로팅 버튼 + 하단 시트.
+   채널 색은 각 서비스의 공식 브랜드색이라 컴포넌트 안에서만 정의한다. */
+.post-main { position: relative; }
+.post-share {
+  --share-kakao: #FEE500; --share-facebook: #1877F2; --share-threads: #000; --share-x: #000;
+  --share-linkedin: #0A66C2; --share-band: #00C73C;
+  position: absolute; top: clamp(44px, 6vw, 70px); bottom: 0; left: calc(100% + 12px); width: 76px; z-index: 20;
+}
+.post-share-box {
+  position: sticky; top: calc(var(--header-h) + 28px);
+  display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 8px 10px;
+  background: var(--bg); border: 1px solid var(--hairline); border-radius: var(--radius-sm); box-shadow: var(--shadow-card);
+}
+.post-share-eyebrow { font-family: var(--font-num); font-size: 10.5px; font-weight: 800; letter-spacing: .12em; color: var(--caption); }
+.post-share-toggle, .post-share-quick {
+  display: flex; flex-direction: column; align-items: center; gap: 3px; width: 58px; padding: 8px 0 6px;
+  border: 0; border-radius: var(--radius-xs); background: transparent; color: var(--ink);
+  font: inherit; font-size: 12.5px; font-weight: 700; cursor: pointer; transition: background .2s ease, color .2s ease;
+}
+.post-share-toggle svg, .post-share-quick svg { width: 24px; height: 24px; }
+.post-share-toggle:hover, .post-share-quick:hover,
+.post-share-toggle:focus-visible, .post-share-quick:focus-visible,
+.post-share.is-open .post-share-toggle { background: var(--accent-soft); color: var(--accent-ink); }
+.post-share-panel {
+  position: absolute; top: 0; right: calc(100% + 12px); width: 344px; padding: 18px 18px 14px;
+  background: var(--bg); border: 1px solid var(--hairline); border-radius: var(--radius-sm); box-shadow: var(--shadow-lift);
+}
+.post-share-panel[hidden] { display: none; }
+.post-share-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.post-share-head strong { font-size: 1rem; color: var(--ink); }
+.post-share-close {
+  width: 36px; height: 36px; border: 0; border-radius: 50%; background: transparent;
+  color: var(--caption-strong); font-size: 24px; line-height: 1; cursor: pointer;
+}
+.post-share-close:hover, .post-share-close:focus-visible { background: var(--bg-soft); }
+.post-share-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.post-share-list .share-item {
+  display: flex; flex-direction: column; align-items: center; gap: 7px; width: 100%; padding: 8px 0;
+  border: 0; border-radius: var(--radius-xs); background: transparent; color: var(--text);
+  font: inherit; font-size: 12.5px; font-weight: 600; text-decoration: none; cursor: pointer; word-break: keep-all;
+}
+.post-share-list .share-item:hover, .post-share-list .share-item:focus-visible { background: var(--bg-soft); color: var(--ink); }
+.share-ico {
+  display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%;
+  background: var(--bg-soft); color: var(--ink); transition: transform .2s ease;
+}
+.share-item:hover .share-ico { transform: translateY(-2px); }
+.share-ico svg { width: 26px; height: 26px; }
+.share-ico--kakao { background: var(--share-kakao); }
+.share-ico--facebook { background: var(--share-facebook); }
+.share-ico--threads { background: var(--share-threads); }
+.share-ico--x { background: var(--share-x); }
+.share-ico--linkedin { background: var(--share-linkedin); }
+.share-ico--band { background: var(--share-band); }
+.share-ico--copy, .share-ico--mail { background: var(--bg-soft); border: 1px solid var(--hairline); }
+.post-share-toast {
+  position: absolute; top: 0; right: calc(100% + 12px); white-space: nowrap;
+  padding: 10px 14px; border-radius: var(--radius-xs); background: var(--ink); color: #fff;
+  font-size: 14px; font-weight: 600; opacity: 0; transform: translateY(4px); pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.post-share.is-toast .post-share-toast { opacity: 1; transform: none; }
+/* 본문 오른쪽 여백이 레일을 담지 못하는 폭부터는 플로팅 버튼으로 전환 */
+@media (max-width: 1099px) {
+  .post-share { position: fixed; top: auto; left: auto; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); width: auto; z-index: 80;
+    opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity .25s ease, transform .25s ease, visibility .25s; }
+  .post-share.is-past-hero, .post-share.is-open { opacity: 1; visibility: visible; transform: none; }
+  .post-share-box { position: static; padding: 0; border: 0; background: transparent; box-shadow: none; }
+  .post-share-eyebrow, .post-share-quick { display: none; }
+  .post-share-toggle {
+    width: 56px; height: 56px; padding: 0; justify-content: center; gap: 0; border-radius: 50%;
+    background: var(--bg); border: 1px solid var(--hairline); box-shadow: var(--shadow-lift);
+  }
+  .post-share-toggle span { display: none; }
+  .post-share-panel {
+    position: fixed; top: auto; left: 0; right: 0; bottom: 0; width: auto;
+    padding: 20px 20px calc(20px + env(safe-area-inset-bottom)); border-radius: var(--radius) var(--radius) 0 0;
+  }
+  .post-share-toast { top: auto; bottom: calc(100% + 10px); right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .post-share, .post-share-toast, .share-ico { transition: none; }
+}
 /* 인사이트 상세 타이포 스케일 — 태블릿 */
 @media (max-width: 1023px) {
   .post-hero h1 { font-size: 2.25rem; }

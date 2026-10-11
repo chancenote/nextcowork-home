@@ -471,7 +471,7 @@ async function computeAssetVersion(posts) {
   }))));
 
   const pageCss = (await readdir(join(root, "css"))).filter((name) => /^page-[\w-]+\.css$/.test(name)).sort().map((name) => `css/${name}`);
-  for (const path of ["css/style.css", "js/main.js", "js/analytics.js", "scripts/build-insights.mjs", "css/insights-magazine.css", "js/insights-cards.js", "js/insights-magazine.js", ...pageCss]) {
+  for (const path of ["css/style.css", "js/main.js", "js/analytics.js", "scripts/build-insights.mjs", "css/insights-magazine.css", "js/insights-cards.js", "js/insights-magazine.js", "js/insights-share.js", ...pageCss]) {
     hash.update(await readFile(join(root, path), "utf8"));
   }
 
@@ -628,7 +628,8 @@ function renderArticle(post, assetVersion) {
         ${post.topic ? `<a class="post-topic-link reveal" data-delay="3" href="/insights/?topic=${encodeURIComponent(post.topic)}#latest-content">이 주제의 글 더 보기 <span class="arr">→</span></a>` : ""}
       </div>
     </header>
-    <div class="container post-container">
+    <div class="container post-container post-main">
+${renderShare(post)}
       <div class="post-body">
 ${articleBody}
       </div>
@@ -706,9 +707,59 @@ ${articleBody}
   </div>
 </footer>
 <script src="${versioned("/js/main.js", assetVersion)}" defer></script>
+<script src="${versioned("/js/insights-share.js", assetVersion)}" defer></script>
 </body>
 </html>
 `;
+}
+
+/* 공유 레일 — 데스크톱은 본문 오른쪽에서 따라오는 박스, 좁은 화면은 우하단 플로팅 버튼.
+   링크형 채널은 빌드 시 URL을 완성해 JS 없이도 동작하고, 카카오톡·링크 복사는 js/insights-share.js가 처리한다. */
+const SHARE_ICONS = {
+  kakao: `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#3C1E1E" d="M12 5.2c-4.4 0-8 2.8-8 6.2 0 2.2 1.5 4.2 3.7 5.3l-.8 3c-.1.3.2.5.4.3l3.5-2.3c.4 0 .8.1 1.2.1 4.4 0 8-2.8 8-6.2s-3.6-6.4-8-6.4z"/></svg>`,
+  copy: `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></svg>`,
+  facebook: `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M13.5 21v-7h2.4l.4-2.9h-2.8V9.3c0-.8.2-1.4 1.4-1.4h1.5V5.3c-.3 0-1.1-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.1H8v2.9h2.5v7h3z"/></svg>`,
+  threads: `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="2.9"/><path d="M14.9 12v1.2c0 1.5.9 2.3 2 2.3s2.1-.9 2.1-3.5c0-3.9-3.1-7-7-7s-7 3.1-7 7 3.1 7 7 7c1.5 0 2.9-.4 4-1.2"/></svg>`,
+  x: `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" transform="translate(5.6 5.6) scale(.53)" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>`,
+  mail: `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="m4.6 7 7.4 6 7.4-6"/></svg>`,
+  linkedin: `<svg viewBox="0 0 24 24" aria-hidden="true" fill="#fff"><rect x="6.9" y="10" width="2.5" height="7.6"/><circle cx="8.15" cy="7.4" r="1.45"/><path d="M11.3 10h2.4v1.1c.4-.7 1.3-1.3 2.5-1.3 2.1 0 2.7 1.4 2.7 3.3v4.5h-2.5v-4c0-.9-.2-1.7-1.2-1.7s-1.4.7-1.4 1.8v3.9h-2.5z"/></svg>`,
+  band: `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M9 5.5v12"/><circle cx="12.6" cy="14.1" r="3.6"/></svg>`,
+  share: `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="17.5" cy="5.5" r="2.5"/><circle cx="6.5" cy="12" r="2.5"/><circle cx="17.5" cy="18.5" r="2.5"/><path d="m8.7 10.8 6.6-4M8.7 13.2l6.6 4"/></svg>`
+};
+
+function renderShare(post) {
+  const url = absoluteUrl(post.url);
+  const u = encodeURIComponent(url);
+  const t = encodeURIComponent(post.title);
+  const channels = [
+    { key: "kakao", label: "카카오톡" },
+    { key: "copy", label: "URL 복사" },
+    { key: "facebook", label: "페이스북", href: `https://www.facebook.com/sharer/sharer.php?u=${u}` },
+    { key: "threads", label: "스레드", href: `https://www.threads.com/intent/post?text=${encodeURIComponent(`${post.title}\n${url}`)}` },
+    { key: "x", label: "X(트위터)", href: `https://x.com/intent/post?text=${t}&url=${u}` },
+    { key: "mail", label: "메일", href: `mailto:?subject=${t}&body=${encodeURIComponent(`${post.title}\n\n${post.description}\n\n${url}`)}` },
+    { key: "linkedin", label: "링크드인", href: `https://www.linkedin.com/sharing/share-offsite/?url=${u}` },
+    { key: "band", label: "밴드", href: `https://band.us/plugin/share?body=${encodeURIComponent(`${post.title}\n${url}`)}&route=${encodeURIComponent(siteUrl)}` }
+  ];
+  const items = channels.map((ch) => {
+    const inner = `<span class="share-ico share-ico--${ch.key}">${SHARE_ICONS[ch.key]}</span><span class="share-label">${ch.label}</span>`;
+    const tag = ch.href
+      ? `<a class="share-item" data-share="${ch.key}" href="${escapeAttr(ch.href)}"${ch.key === "mail" ? "" : ` target="_blank" rel="noopener"`}>${inner}</a>`
+      : `<button type="button" class="share-item" data-share="${ch.key}">${inner}</button>`;
+    return `<li>${tag}</li>`;
+  }).join("");
+  return `      <aside class="post-share" aria-label="이 글 공유하기" data-share-url="${escapeAttr(url)}" data-share-title="${escapeAttr(post.title)}" data-share-text="${escapeAttr(post.description)}" data-share-image="${escapeAttr(absoluteUrl(post.image))}" data-share-slug="${escapeAttr(post.slug)}">
+        <div class="post-share-box">
+          <span class="post-share-eyebrow">SHARE</span>
+          <button type="button" class="post-share-toggle" aria-expanded="false" aria-controls="post-share-panel" aria-label="공유하기">${SHARE_ICONS.share}<span>공유</span></button>
+          <button type="button" class="post-share-quick share-item" data-share="copy" aria-label="링크 복사">${SHARE_ICONS.copy}<span>링크</span></button>
+          <div class="post-share-panel" id="post-share-panel" role="dialog" aria-label="공유 채널 선택" hidden>
+            <div class="post-share-head"><strong>이 글 공유하기</strong><button type="button" class="post-share-close" aria-label="닫기">×</button></div>
+            <ul class="post-share-list">${items}</ul>
+          </div>
+          <p class="post-share-toast" role="status" aria-live="polite"></p>
+        </div>
+      </aside>`;
 }
 
 function buildFeed(posts) {
