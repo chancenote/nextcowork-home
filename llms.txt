@@ -54,6 +54,8 @@ https://www.nextcw.com/coaching/
 ## 인사이트 아티클 (최신순)
 
 <!-- INSIGHTS:START -->
+- ChatGPT 스페이스, 무엇이 달라졌을까요? AI 동료와 일하는 핵심 기능 10가지 (2026-10-11): https://www.nextcw.com/insights/chatgpt-space-10-features/
+  넥스트코웍 찬스가 ChatGPT Space의 핵심 기능 10가지를 공식 이미지와 업무 예시로 설명합니다. UI 변화의 의미, 초기 사용자 반응, AI를 동료로 활용하는 방법까지 살펴보세요.
 - AI 에이전트 협업, 사람과 AI가 함께 일하는 6가지 조건은? (2026-10-10): https://www.nextcw.com/insights/ai-cowork-six-conditions/
   AI를 들였는데 회사가 그대로라면 에이전트보다 일하는 판이 먼저입니다. 사람과 AI 에이전트가 함께 일하는 여섯 조건 COWORK의 정의·점검 질문과 이번 주 3단계 COWORK 체크리스트를 정리했습니다.
 - GPT·Claude 새 모델이 나왔나요? 전역 설정과 스킬, 이렇게 점검하세요 (2026-10-09): https://www.nextcw.com/insights/frontier-model-settings-skills-update/

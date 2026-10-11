@@ -1,7 +1,7 @@
 {
   "/": {
-    "hash": "87452e3f01fb",
-    "date": "2026-10-10"
+    "hash": "b755d61b06e7",
+    "date": "2026-10-11"
   },
   "/flexoffice/": {
     "hash": "adb4f72f6ec6",
@@ -12,8 +12,8 @@
     "date": "2026-10-10"
   },
   "/public/": {
-    "hash": "4f6741ac27f2",
-    "date": "2026-10-10"
+    "hash": "2c83c466bb7d",
+    "date": "2026-10-11"
   },
   "/coaching/": {
     "hash": "3df6c2be9135",
@@ -24,8 +24,8 @@
     "date": "2026-10-10"
   },
   "/insights/": {
-    "hash": "a18e3b68c567",
-    "date": "2026-10-10"
+    "hash": "c2a06f988582",
+    "date": "2026-10-11"
   },
   "/contact/": {
     "hash": "01a686f74d25",
@@ -34,6 +34,10 @@
   "/privacy/": {
     "hash": "815c74f7b935",
     "date": "2026-10-08"
+  },
+  "/insights/chatgpt-space-10-features/": {
+    "hash": "e13b49bf5269",
+    "date": "2026-10-11"
   },
   "/insights/ai-cowork-six-conditions/": {
     "hash": "d48ae34f4b2f",

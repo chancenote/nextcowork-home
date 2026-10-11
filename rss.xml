@@ -6,7 +6,15 @@
     <atom:link href="https://www.nextcw.com/rss.xml" rel="self" type="application/rss+xml"/>
     <description>AI 실무활용과 워크스페이스 인사이트 — 넥스트코웍이 발행하는 콘텐츠.</description>
     <language>ko</language>
-    <lastBuildDate>Sat, 10 Oct 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 00:00:00 +0900</lastBuildDate>
+    <item>
+      <title>ChatGPT 스페이스, 무엇이 달라졌을까요? AI 동료와 일하는 핵심 기능 10가지</title>
+      <link>https://www.nextcw.com/insights/chatgpt-space-10-features/</link>
+      <guid isPermaLink="true">https://www.nextcw.com/insights/chatgpt-space-10-features/</guid>
+      <pubDate>Sun, 11 Oct 2026 00:00:00 +0900</pubDate>
+      <category>AI &amp; Work</category>
+      <description>넥스트코웍 찬스가 ChatGPT Space의 핵심 기능 10가지를 공식 이미지와 업무 예시로 설명합니다. UI 변화의 의미, 초기 사용자 반응, AI를 동료로 활용하는 방법까지 살펴보세요.</description>
+    </item>
     <item>
       <title>AI 에이전트 협업, 사람과 AI가 함께 일하는 6가지 조건은?</title>
       <link>https://www.nextcw.com/insights/ai-cowork-six-conditions/</link>
