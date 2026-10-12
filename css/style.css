@@ -1990,3 +1990,6 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
 /* AX 도입 가이드: 결정서의 긴 문장을 읽고 선택·복사할 수 있도록 줄바꿈. */
 .post--ax-one-workflow-playbook .post-body pre { white-space: pre-wrap; overflow-wrap: anywhere; }
 .post--ax-one-workflow-playbook .post-table table { min-width: 40rem; }
+
+/* AX 가이드 개정: 설명 카드 한 장을 데스크톱에서도 적정 폭으로 읽는다. */
+.post--ax-one-workflow-playbook .post-figure img[src*="/v2/card-"] { max-width: 35rem; margin-inline: auto; }
