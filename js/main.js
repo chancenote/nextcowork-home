@@ -219,6 +219,48 @@
     }
   } catch (e) {}
 
+  /* 유입 정보 — 문의가 어느 채널·어느 글에서 왔는지 Make·Notion까지 넘긴다(이름·연락처는 넣지 않는다).
+     · URL에 utm_source가 있으면 그 값이 이 탭 세션의 유입이 된다(새 채널이 이전 값을 덮는다).
+     · UTM 없이 외부 사이트에서 들어오면 이전 유입을 지운다 — 오래된 카카오 방문이 다른 채널 유입으로 남지 않게.
+     · 같은 사이트 안 이동은 유입을 유지한다(글 읽기 → 문의). 원글은 마지막으로 읽은 인사이트 글 slug. */
+  var ATTR_KEY = "ncw_attr";
+  var ARTICLE_KEY = "ncw_last_article";
+  var TRACKING_VERSION = "kakao_cta_v2";
+  var UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content"];
+  function sessionGet(key) {
+    try { return JSON.parse(window.sessionStorage.getItem(key) || "null"); } catch (e) { return null; }
+  }
+  function sessionSet(key, value) {
+    try {
+      if (value === null) window.sessionStorage.removeItem(key);
+      else window.sessionStorage.setItem(key, JSON.stringify(value));
+    } catch (e) {}
+  }
+  var urlAttr = null;
+  if (searchParam("utm_source")) {
+    urlAttr = {};
+    UTM_KEYS.forEach(function (key) { urlAttr[key] = searchParam(key); });
+    sessionSet(ATTR_KEY, urlAttr);
+    sessionSet(ARTICLE_KEY, null);
+  } else if (document.referrer) {
+    try {
+      if (new URL(document.referrer).origin !== window.location.origin) {
+        sessionSet(ATTR_KEY, null);
+        sessionSet(ARTICLE_KEY, null);
+      }
+    } catch (e) {}
+  }
+  var sessionAttr = urlAttr || sessionGet(ATTR_KEY) || {};
+  var articleMatch = currentPath.match(/^\/insights\/([a-z0-9-]+)\/$/);
+  if (articleMatch) sessionSet(ARTICLE_KEY, articleMatch[1]);
+  function attrValue(key) { return sessionAttr[key] || ""; }
+  function originArticleSlug() {
+    var fromReferrer = inferredSourcePath.match(/^\/insights\/([a-z0-9-]+)\/$/);
+    if (fromReferrer) return fromReferrer[1];
+    if (urlAttr && ctaParam === "kakao_share" && urlAttr.utm_campaign) return urlAttr.utm_campaign;
+    return sessionGet(ARTICLE_KEY) || "";
+  }
+
   var crumbLabels = {
     flexoffice: "FlexOffice 컨설팅 문의",
     "ai-campus": "AI Campus 교육 문의",
@@ -293,9 +335,11 @@
       tier_key: tierOpt ? (tierOpt.getAttribute("data-t") || "") : tParam,
       source_page: document.getElementById("cf-source-page") ? document.getElementById("cf-source-page").value : currentPath,
       cta_location: document.getElementById("cf-cta-location") ? document.getElementById("cf-cta-location").value : ctaParam,
-      utm_source: searchParam("utm_source"),
-      utm_medium: searchParam("utm_medium"),
-      utm_campaign: searchParam("utm_campaign")
+      utm_source: attrValue("utm_source"),
+      utm_medium: attrValue("utm_medium"),
+      utm_campaign: attrValue("utm_campaign"),
+      utm_content: attrValue("utm_content"),
+      origin_article_slug: originArticleSlug()
     };
     if (extra) {
       Object.keys(extra).forEach(function (key) { params[key] = extra[key]; });
@@ -320,9 +364,12 @@
     setFieldValue("cf-cta-location", ctaParam || "direct");
     setFieldValue("cf-landing-page", window.location.href);
     setFieldValue("cf-referrer", document.referrer || "");
-    setFieldValue("cf-utm-source", searchParam("utm_source"));
-    setFieldValue("cf-utm-medium", searchParam("utm_medium"));
-    setFieldValue("cf-utm-campaign", searchParam("utm_campaign"));
+    setFieldValue("cf-utm-source", attrValue("utm_source"));
+    setFieldValue("cf-utm-medium", attrValue("utm_medium"));
+    setFieldValue("cf-utm-campaign", attrValue("utm_campaign"));
+    setFieldValue("cf-utm-content", attrValue("utm_content"));
+    setFieldValue("cf-origin-article", originArticleSlug());
+    setFieldValue("cf-tracking-version", TRACKING_VERSION);
 
     var message = document.getElementById("cf-message");
     if (message && !message.value && serviceKey !== "general") {

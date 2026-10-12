@@ -523,9 +523,18 @@ function contactPath(post, cta) {
 }
 
 /* 채널별 유입을 GA4에서 구분하는 UTM. campaign은 글 slug. URL 복사는 붙이지 않는다(CR-20261012-02 D1). */
-function withUtm(url, source, medium, campaign) {
-  return `${url}${url.includes("?") ? "&" : "?"}utm_source=${source}&utm_medium=${medium}&utm_campaign=${campaign}`;
+function withUtm(url, source, medium, campaign, content) {
+  return `${url}${url.includes("?") ? "&" : "?"}utm_source=${source}&utm_medium=${medium}&utm_campaign=${campaign}${content ? `&utm_content=${content}` : ""}`;
 }
+
+/* 카카오톡 공유 카드의 두 번째 버튼 문구 — 글의 cta_service별. 카카오 버튼 문구 제한(10자) 안. */
+const KAKAO_CONTACT_LABEL = {
+  "ai-campus": "교육 문의",
+  flexoffice: "공간사업 상담",
+  public: "공공사업 자문",
+  coaching: "대표 코칭 문의",
+  general: "프로젝트 문의"
+};
 
 /* 배포 키트 채널 링크 — [utm_source, utm_medium]. 공유 버튼은 모두 medium=share. */
 const KIT_CHANNELS = {
@@ -846,7 +855,9 @@ function renderShare(post) {
     { key: "linkedin", label: "링크드인", href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shared("linkedin"))}` },
     { key: "band", label: "밴드", href: `https://band.us/plugin/share?body=${encodeURIComponent(`${post.title}\n${shared("band")}`)}&route=${encodeURIComponent(siteUrl)}` }
   ];
-  const kakaoContact = withUtm(absoluteUrl(contactPath(post, "kakao_share")), "kakao", "share", post.slug);
+  const kakaoRead = withUtm(url, "kakao", "share", post.slug, "read_article");
+  const kakaoContact = withUtm(absoluteUrl(contactPath(post, "kakao_share")), "kakao", "share", post.slug, `contact_${post.ctaService}`);
+  const kakaoContactLabel = KAKAO_CONTACT_LABEL[post.ctaService] || KAKAO_CONTACT_LABEL.general;
   const items = channels.map((ch) => {
     const inner = `<span class="share-ico share-ico--${ch.key}">${SHARE_ICONS[ch.key]}</span><span class="share-label">${ch.label}</span>`;
     const tag = ch.href
@@ -854,7 +865,7 @@ function renderShare(post) {
       : `<button type="button" class="share-item" data-share="${ch.key}">${inner}</button>`;
     return `<li>${tag}</li>`;
   }).join("");
-  return `      <aside class="post-share" aria-label="이 글 공유하기" data-share-url="${escapeAttr(url)}" data-share-title="${escapeAttr(post.title)}" data-share-text="${escapeAttr(post.description)}" data-share-image="${escapeAttr(absoluteUrl(post.og.url))}"${post.og.width ? ` data-share-image-width="${post.og.width}" data-share-image-height="${post.og.height}"` : ""} data-share-slug="${escapeAttr(post.slug)}" data-share-kakao-url="${escapeAttr(shared("kakao"))}" data-share-contact="${escapeAttr(kakaoContact)}">
+  return `      <aside class="post-share" aria-label="이 글 공유하기" data-share-url="${escapeAttr(url)}" data-share-title="${escapeAttr(post.title)}" data-share-text="${escapeAttr(post.description)}" data-share-image="${escapeAttr(absoluteUrl(post.og.url))}"${post.og.width ? ` data-share-image-width="${post.og.width}" data-share-image-height="${post.og.height}"` : ""} data-share-slug="${escapeAttr(post.slug)}" data-share-kakao-url="${escapeAttr(kakaoRead)}" data-share-contact="${escapeAttr(kakaoContact)}" data-share-contact-label="${escapeAttr(kakaoContactLabel)}">
         <div class="post-share-box">
           <span class="post-share-eyebrow">SHARE</span>
           <button type="button" class="post-share-toggle" aria-expanded="false" aria-controls="post-share-panel" aria-label="공유하기">${SHARE_ICONS.share}<span>공유</span></button>

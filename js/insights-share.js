@@ -23,7 +23,8 @@
     imageHeight: Number(root.getAttribute("data-share-image-height")) || undefined,
     slug: root.getAttribute("data-share-slug") || "",
     kakaoUrl: root.getAttribute("data-share-kakao-url") || "",
-    contact: root.getAttribute("data-share-contact") || ""
+    contact: root.getAttribute("data-share-contact") || "",
+    contactLabel: root.getAttribute("data-share-contact-label") || "프로젝트 문의"
   };
   var toastTimer = null;
 
@@ -112,7 +113,7 @@
     copyLink("링크를 복사했습니다. 카카오톡 대화창에 붙여넣어 주세요");
   }
 
-  /* 카드·버튼 링크는 빌드가 넣은 UTM 링크(utm_source=kakao)를 쓴다. 두 번째 버튼은 문의 폼으로 바로 간다. */
+  /* 카드·버튼 링크는 빌드가 넣은 UTM 링크(utm_source=kakao)를 쓴다. 두 번째 버튼은 글의 서비스별 문의 폼으로 바로 간다(문구는 빌드가 넣는다). */
   function shareKakao() {
     if (!KAKAO_JS_KEY) { kakaoFallback(); return; }
     loadKakao(function () {
@@ -120,7 +121,7 @@
         if (!window.Kakao.isInitialized()) window.Kakao.init(KAKAO_JS_KEY);
         var readLink = { mobileWebUrl: data.kakaoUrl || data.url, webUrl: data.kakaoUrl || data.url };
         var buttons = [{ title: "글 읽기", link: readLink }];
-        if (data.contact) buttons.push({ title: "무료 진단 문의", link: { mobileWebUrl: data.contact, webUrl: data.contact } });
+        if (data.contact) buttons.push({ title: data.contactLabel, link: { mobileWebUrl: data.contact, webUrl: data.contact } });
         window.Kakao.Share.sendDefault({
           objectType: "feed",
           content: {
