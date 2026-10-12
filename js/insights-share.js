@@ -44,6 +44,7 @@
     panel.hidden = false;
     toggle.setAttribute("aria-expanded", "true");
     root.classList.add("is-open");
+    if (KAKAO_JS_KEY) loadKakao();
     var first = panel.querySelector(".share-item");
     if (first) first.focus();
   }
@@ -78,14 +79,29 @@
     }
   }
 
+  /* SDK는 공유 패널을 열 때 미리 받는다. 카카오톡 버튼 클릭 뒤에 받으면 공유 창(window.open)이
+     사용자 클릭과 떨어져 실행돼 사파리 등에서 팝업 차단에 걸릴 수 있다. */
+  var kakaoScript = null;
+  var kakaoWaiters = [];
+
   function loadKakao(callback) {
-    if (window.Kakao) { callback(); return; }
-    var script = document.createElement("script");
-    script.src = KAKAO_SDK;
-    script.crossOrigin = "anonymous";
-    script.onload = callback;
-    script.onerror = function () { kakaoFallback(); };
-    document.head.appendChild(script);
+    if (window.Kakao) { if (callback) callback(); return; }
+    if (callback) kakaoWaiters.push(callback);
+    if (kakaoScript) return;
+    kakaoScript = document.createElement("script");
+    kakaoScript.src = KAKAO_SDK;
+    kakaoScript.crossOrigin = "anonymous";
+    kakaoScript.onload = function () {
+      var waiters = kakaoWaiters; kakaoWaiters = [];
+      waiters.forEach(function (fn) { fn(); });
+    };
+    kakaoScript.onerror = function () {
+      console.warn("[share] 카카오 SDK를 불러오지 못했습니다:", KAKAO_SDK);
+      var hadWaiters = kakaoWaiters.length > 0;
+      kakaoWaiters = []; kakaoScript = null;
+      if (hadWaiters) kakaoFallback();
+    };
+    document.head.appendChild(kakaoScript);
   }
 
   function kakaoFallback() {
@@ -118,6 +134,7 @@
           buttons: buttons
         });
       } catch (e) {
+        console.warn("[share] 카카오톡 공유 실패:", e);
         kakaoFallback();
       }
     });
