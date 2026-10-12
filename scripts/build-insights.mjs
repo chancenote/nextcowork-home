@@ -540,8 +540,10 @@ const KIT_CHANNELS = {
   email: ["email", "email"]
 };
 
-/* 글 1편을 채널별로 재가공할 때 쓰는 데이터. output/은 .vercelignore·.gitignore 대상이라 공개되지 않는다. */
+/* 글 1편을 채널별로 재가공할 때 쓰는 데이터. 로컬 빌드에서만 만든다 —
+   Vercel은 서버에서 이 빌드를 다시 돌리고 루트(.)를 그대로 공개하므로, 거기서 만들면 .vercelignore와 무관하게 노출된다. */
 const distributionDir = join(root, "output", "distribution-kits");
+const writeDistributionKits = !process.env.VERCEL;
 
 function renderDistributionKit(post) {
   const url = absoluteUrl(post.url);
@@ -1160,13 +1162,13 @@ async function main() {
   const feed = buildFeed(posts);
   const assetVersion = await computeAssetVersion(posts);
 
-  await mkdir(distributionDir, { recursive: true });
+  if (writeDistributionKits) await mkdir(distributionDir, { recursive: true });
   for (const post of posts) {
     const dir = join(outputDir, post.slug);
     await mkdir(dir, { recursive: true });
     post.og = await resolveOgImage(post);
     await writeFile(join(dir, "index.html"), renderArticle(post, assetVersion), "utf8");
-    await writeFile(join(distributionDir, `${post.slug}.json`), renderDistributionKit(post), "utf8");
+    if (writeDistributionKits) await writeFile(join(distributionDir, `${post.slug}.json`), renderDistributionKit(post), "utf8");
   }
   await writeFile(join(root, "js", "insights-data.js"), renderFeedJs(feed), "utf8");
   await writeFile(join(root, "rss.xml"), renderRss(posts), "utf8");
