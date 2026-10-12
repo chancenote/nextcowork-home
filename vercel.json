@@ -3,6 +3,10 @@
   "outputDirectory": ".",
   "trailingSlash": true,
   "redirects": [
+    { "source": "/ai-cowork-book", "destination": "https://nextcw.notion.site/ai-cowork-book", "permanent": true },
+    { "source": "/ai-cowork-book/", "destination": "https://nextcw.notion.site/ai-cowork-book", "permanent": true },
+    { "source": "/portfolio", "destination": "https://nextcw.notion.site/portfolio", "permanent": true },
+    { "source": "/portfolio/", "destination": "https://nextcw.notion.site/portfolio", "permanent": true },
     { "source": "/space_consulting", "destination": "/flexoffice/", "permanent": true },
     { "source": "/space_consulting/", "destination": "/flexoffice/", "permanent": true },
     { "source": "/chance_lecture", "destination": "/ai-campus/", "permanent": true },
