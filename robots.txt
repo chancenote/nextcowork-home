@@ -32,5 +32,6 @@ User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://www.nextcw.com/sitemap.xml
+Sitemap: https://www.nextcw.com/rss.xml
 
 #DaumWebMasterTool:e4529f533efba8e6785cb374fb86d4ae10975191915eed37aebff661d5d92e46:zgfNBpWN9qxCw+eDaoF1MQ==

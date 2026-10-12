@@ -1011,7 +1011,7 @@ function renderRss(posts) {
       <content:encoded><![CDATA[${escapeCdata(renderRssBody(post))}]]></content:encoded>
     </item>`).join("\n");
 
-  const latest = posts.length ? toRfc822(posts[0].date) : toRfc822("2026-07-09");
+  const lastBuildDate = new Date().toUTCString();
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
@@ -1021,7 +1021,7 @@ function renderRss(posts) {
     <atom:link href="${siteUrl}/rss.xml" rel="self" type="application/rss+xml"/>
     <description>AI 실무활용과 워크스페이스 인사이트 — 넥스트코웍이 발행하는 콘텐츠.</description>
     <language>ko</language>
-    <lastBuildDate>${latest}</lastBuildDate>
+    <lastBuildDate>${lastBuildDate}</lastBuildDate>
 ${items}
   </channel>
 </rss>
