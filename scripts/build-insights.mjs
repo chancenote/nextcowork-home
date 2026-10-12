@@ -517,6 +517,57 @@ async function updateHtmlAssetVersions(assetVersion) {
 // 문의 폼 tierOptions(js/main.js)의 서비스별 기본 상품 키. 서비스에 없는 값을 쓰면 유료 첫 옵션으로 떨어진다.
 const CTA_TIER_BY_SERVICE = { "ai-campus": "diagnosis", flexoffice: "precheck", public: "advisory", coaching: "consult" };
 
+/* 글 하단 CTA와 카카오톡 공유 카드의 '무료 진단 문의' 버튼이 같이 쓰는 문의 경로. */
+function contactPath(post, cta) {
+  return `/contact/?s=${post.ctaService}&t=${CTA_TIER_BY_SERVICE[post.ctaService] || "diagnosis"}&cta=${cta}`;
+}
+
+/* 채널별 유입을 GA4에서 구분하는 UTM. campaign은 글 slug. URL 복사는 붙이지 않는다(CR-20261012-02 D1). */
+function withUtm(url, source, medium, campaign) {
+  return `${url}${url.includes("?") ? "&" : "?"}utm_source=${source}&utm_medium=${medium}&utm_campaign=${campaign}`;
+}
+
+/* 배포 키트 채널 링크 — [utm_source, utm_medium]. 공유 버튼은 모두 medium=share. */
+const KIT_CHANNELS = {
+  threads: ["threads", "social"],
+  linkedin: ["linkedin", "social"],
+  facebook: ["facebook", "social"],
+  kakao: ["kakao", "share"],
+  newsletter: ["newsletter", "email"],
+  naver: ["naver", "referral"],
+  brunch: ["brunch", "referral"],
+  sales: ["sales", "dm"],
+  email: ["email", "email"]
+};
+
+/* 글 1편을 채널별로 재가공할 때 쓰는 데이터. output/은 .vercelignore·.gitignore 대상이라 공개되지 않는다. */
+const distributionDir = join(root, "output", "distribution-kits");
+
+function renderDistributionKit(post) {
+  const url = absoluteUrl(post.url);
+  const images = [...post.body.matchAll(/!\[([^\]]*)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g)]
+    .map(([, alt, src]) => ({ src: absoluteUrl(src), alt }));
+  const links = Object.fromEntries(Object.entries(KIT_CHANNELS)
+    .map(([key, [source, medium]]) => [key, withUtm(url, source, medium, post.slug)]));
+  const kit = {
+    slug: post.slug,
+    title: post.title,
+    description: post.description,
+    audience: post.audience,
+    takeaway: post.takeaway,
+    date: post.date,
+    category: post.category,
+    tags: post.tags,
+    ctaService: post.ctaService,
+    url,
+    ogImage: absoluteUrl(post.og.url),
+    images,
+    faq: extractFaq(post.body).map((item) => item.question),
+    links
+  };
+  return `${JSON.stringify(kit, null, 2)}\n`;
+}
+
 /* 공유 미리보기(OG) 이미지 — 카카오톡·페이스북에 글마다 대표 사진이 뜨도록 빌드 때 정한다.
    1) image → thumbnail → 본문 첫 이미지 순으로, 사이트 기본 이미지(/img/og.png)가 아닌 첫 실재 파일을 고른다.
    2) JPG/PNG가 아니면(webp 등) 카카오가 미리보기를 못 띄울 수 있어 같은 폴더에 긴 변 1200px JPG(이름.og.jpg)를 만든다(macOS sips, 한 번 만들면 재사용).
@@ -688,7 +739,7 @@ ${articleBody}
         <strong>이 주제를 조직에 맞게 적용하고 싶다면</strong>
         <p>${post.slug === "ai-fast-failure" ? "팀의 실제 업무에 AI를 적용하고 싶다면, AI Campus 교육에서 우리 조직에 맞는 활용 방법을 함께 살펴보세요." : "AI 실무교육, CEO 코칭, 워크스페이스 컨설팅으로 연결해 드립니다."}</p>
         <div class="btn-row">
-          <a class="btn btn-primary" href="/contact/?s=${post.ctaService}&amp;t=${CTA_TIER_BY_SERVICE[post.ctaService] || "diagnosis"}&amp;cta=insight_article">${post.slug === "ai-fast-failure" ? "우리 팀 AI 교육 문의하기" : "프로젝트 문의하기"} <span class="arr">→</span></a>
+          <a class="btn btn-primary" href="${escapeAttr(contactPath(post, "insight_article"))}">${post.slug === "ai-fast-failure" ? "우리 팀 AI 교육 문의하기" : "프로젝트 문의하기"} <span class="arr">→</span></a>
           <a class="btn btn-ghost" href="/insights/">인사이트 더 보기 <span class="arr">→</span></a>
         </div>
       </div>
@@ -712,6 +763,7 @@ ${articleBody}
           <input id="insights-subscribe-agree" name="newsletter_agree" type="checkbox" value="동의" required>
           <label for="insights-subscribe-agree">소식 수신에 동의합니다 (언제든 메일의 수신거부 또는 ceo@nextcw.com으로 해지)</label>
         </div>
+        <p class="newsletter-note"><a class="link-accent" href="/rss.xml">RSS로 받기 →</a></p>
         <p class="form-status" id="newsletter-status" role="status" aria-live="polite"></p>
         <p class="newsletter-note">이메일 구독이 어려우면 <a class="link-accent" href="mailto:ceo@nextcw.com">ceo@nextcw.com</a>으로 메일 주시면 등록해 드립니다.</p>
       </form>
@@ -780,18 +832,19 @@ const SHARE_ICONS = {
 
 function renderShare(post) {
   const url = absoluteUrl(post.url);
-  const u = encodeURIComponent(url);
+  const shared = (source) => withUtm(url, source, "share", post.slug);
   const t = encodeURIComponent(post.title);
   const channels = [
     { key: "kakao", label: "카카오톡" },
     { key: "copy", label: "URL 복사" },
-    { key: "facebook", label: "페이스북", href: `https://www.facebook.com/sharer/sharer.php?u=${u}` },
-    { key: "threads", label: "스레드", href: `https://www.threads.com/intent/post?text=${encodeURIComponent(`${post.title}\n${url}`)}` },
-    { key: "x", label: "X(트위터)", href: `https://x.com/intent/post?text=${t}&url=${u}` },
-    { key: "mail", label: "메일", href: `mailto:?subject=${t}&body=${encodeURIComponent(`${post.title}\n\n${post.description}\n\n${url}`)}` },
-    { key: "linkedin", label: "링크드인", href: `https://www.linkedin.com/sharing/share-offsite/?url=${u}` },
-    { key: "band", label: "밴드", href: `https://band.us/plugin/share?body=${encodeURIComponent(`${post.title}\n${url}`)}&route=${encodeURIComponent(siteUrl)}` }
+    { key: "facebook", label: "페이스북", href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shared("facebook"))}` },
+    { key: "threads", label: "스레드", href: `https://www.threads.com/intent/post?text=${encodeURIComponent(`${post.title}\n${shared("threads")}`)}` },
+    { key: "x", label: "X(트위터)", href: `https://x.com/intent/post?text=${t}&url=${encodeURIComponent(shared("x"))}` },
+    { key: "mail", label: "메일", href: `mailto:?subject=${t}&body=${encodeURIComponent(`${post.title}\n\n${post.description}\n\n${shared("email")}`)}` },
+    { key: "linkedin", label: "링크드인", href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shared("linkedin"))}` },
+    { key: "band", label: "밴드", href: `https://band.us/plugin/share?body=${encodeURIComponent(`${post.title}\n${shared("band")}`)}&route=${encodeURIComponent(siteUrl)}` }
   ];
+  const kakaoContact = withUtm(absoluteUrl(contactPath(post, "kakao_share")), "kakao", "share", post.slug);
   const items = channels.map((ch) => {
     const inner = `<span class="share-ico share-ico--${ch.key}">${SHARE_ICONS[ch.key]}</span><span class="share-label">${ch.label}</span>`;
     const tag = ch.href
@@ -799,7 +852,7 @@ function renderShare(post) {
       : `<button type="button" class="share-item" data-share="${ch.key}">${inner}</button>`;
     return `<li>${tag}</li>`;
   }).join("");
-  return `      <aside class="post-share" aria-label="이 글 공유하기" data-share-url="${escapeAttr(url)}" data-share-title="${escapeAttr(post.title)}" data-share-text="${escapeAttr(post.description)}" data-share-image="${escapeAttr(absoluteUrl(post.og.url))}"${post.og.width ? ` data-share-image-width="${post.og.width}" data-share-image-height="${post.og.height}"` : ""} data-share-slug="${escapeAttr(post.slug)}">
+  return `      <aside class="post-share" aria-label="이 글 공유하기" data-share-url="${escapeAttr(url)}" data-share-title="${escapeAttr(post.title)}" data-share-text="${escapeAttr(post.description)}" data-share-image="${escapeAttr(absoluteUrl(post.og.url))}"${post.og.width ? ` data-share-image-width="${post.og.width}" data-share-image-height="${post.og.height}"` : ""} data-share-slug="${escapeAttr(post.slug)}" data-share-kakao-url="${escapeAttr(shared("kakao"))}" data-share-contact="${escapeAttr(kakaoContact)}">
         <div class="post-share-box">
           <span class="post-share-eyebrow">SHARE</span>
           <button type="button" class="post-share-toggle" aria-expanded="false" aria-controls="post-share-panel" aria-label="공유하기">${SHARE_ICONS.share}<span>공유</span></button>
@@ -1107,11 +1160,13 @@ async function main() {
   const feed = buildFeed(posts);
   const assetVersion = await computeAssetVersion(posts);
 
+  await mkdir(distributionDir, { recursive: true });
   for (const post of posts) {
     const dir = join(outputDir, post.slug);
     await mkdir(dir, { recursive: true });
     post.og = await resolveOgImage(post);
     await writeFile(join(dir, "index.html"), renderArticle(post, assetVersion), "utf8");
+    await writeFile(join(distributionDir, `${post.slug}.json`), renderDistributionKit(post), "utf8");
   }
   await writeFile(join(root, "js", "insights-data.js"), renderFeedJs(feed), "utf8");
   await writeFile(join(root, "rss.xml"), renderRss(posts), "utf8");
