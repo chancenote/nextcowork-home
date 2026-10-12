@@ -1,6 +1,6 @@
 {
   "/": {
-    "hash": "5863990668f3",
+    "hash": "0f2067e24ae2",
     "date": "2026-10-12"
   },
   "/flexoffice/": {
@@ -24,7 +24,7 @@
     "date": "2026-10-10"
   },
   "/insights/": {
-    "hash": "ba7462381474",
+    "hash": "6d7a19324838",
     "date": "2026-10-12"
   },
   "/contact/": {
@@ -34,6 +34,10 @@
   "/privacy/": {
     "hash": "815c74f7b935",
     "date": "2026-10-08"
+  },
+  "/insights/ax-one-workflow-playbook/": {
+    "hash": "7762dda3971e",
+    "date": "2026-10-12"
   },
   "/insights/development-finance-ai-review-im/": {
     "hash": "62a5d284edee",

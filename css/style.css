@@ -1986,3 +1986,7 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
   .fx-film-ctrl { right: 8px; top: 8px; gap: 6px; }
   .fx-film-frame figcaption { margin-top: 12px; }
 }
+
+/* AX 도입 가이드: 결정서의 긴 문장을 읽고 선택·복사할 수 있도록 줄바꿈. */
+.post--ax-one-workflow-playbook .post-body pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+.post--ax-one-workflow-playbook .post-table table { min-width: 40rem; }
