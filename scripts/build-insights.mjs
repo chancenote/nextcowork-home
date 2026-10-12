@@ -987,6 +987,19 @@ function toRfc822(date) {
   return `${RSS_WEEKDAYS[parsed.getUTCDay()]}, ${String(day).padStart(2, "0")} ${RSS_MONTHS[month - 1]} ${year} 00:00:00 +0900`;
 }
 
+// RSS 리더에서도 본문의 링크와 이미지를 사용할 수 있도록 문서 URL 기준으로 절대화한다.
+function renderRssBody(post) {
+  const html = renderMarkdown(post.body, `content/insights/${post.slug}`);
+  return html.replace(/\b(href|src)="([^"]*)"/g, (_match, attribute, value) => {
+    const url = value.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+    return `${attribute}="${escapeAttr(new URL(url, absoluteUrl(post.url)).href)}"`;
+  });
+}
+
+function escapeCdata(value) {
+  return String(value).replace(/\]\]>/g, "]]]]><![CDATA[>");
+}
+
 function renderRss(posts) {
   const items = posts.map((post) => `    <item>
       <title>${escapeHtml(post.title)}</title>
@@ -995,12 +1008,13 @@ function renderRss(posts) {
       <pubDate>${toRfc822(post.date)}</pubDate>
       <category>${escapeHtml(post.category)}</category>
       <description>${escapeHtml(post.description)}</description>
+      <content:encoded><![CDATA[${escapeCdata(renderRssBody(post))}]]></content:encoded>
     </item>`).join("\n");
 
   const latest = posts.length ? toRfc822(posts[0].date) : toRfc822("2026-07-09");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>넥스트코웍 인사이트 — 찬스노트 ChanceNote</title>
     <link>${siteUrl}/insights/</link>
