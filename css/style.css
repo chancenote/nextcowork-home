@@ -1993,3 +1993,6 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
 
 /* AX 가이드 개정: 설명 카드 한 장을 데스크톱에서도 적정 폭으로 읽는다. */
 .post--ax-one-workflow-playbook .post-figure img[src*="/v2/card-"] { max-width: 35rem; margin-inline: auto; }
+/* Aside Browser 글: 복사용 요청 양식이 모바일에서 잘리지 않도록 줄바꿈, 4열 표는 좁은 화면 여백 축소. */
+.post--aside-browser-workflow .post-body pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+@media (max-width: 600px) { .post--aside-browser-workflow .post-table th, .post--aside-browser-workflow .post-table td { padding: 10px 8px; font-size: 14.5px; } }
