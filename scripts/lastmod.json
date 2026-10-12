@@ -1,15 +1,15 @@
 {
   "/": {
-    "hash": "b755d61b06e7",
-    "date": "2026-10-11"
+    "hash": "5863990668f3",
+    "date": "2026-10-12"
   },
   "/flexoffice/": {
     "hash": "adb4f72f6ec6",
     "date": "2026-10-10"
   },
   "/ai-campus/": {
-    "hash": "2935a21367f3",
-    "date": "2026-10-10"
+    "hash": "80459ca1521f",
+    "date": "2026-10-12"
   },
   "/public/": {
     "hash": "2c83c466bb7d",
@@ -24,7 +24,7 @@
     "date": "2026-10-10"
   },
   "/insights/": {
-    "hash": "29366ffa16ee",
+    "hash": "ba7462381474",
     "date": "2026-10-12"
   },
   "/contact/": {
@@ -34,6 +34,10 @@
   "/privacy/": {
     "hash": "815c74f7b935",
     "date": "2026-10-08"
+  },
+  "/insights/development-finance-ai-review-im/": {
+    "hash": "62a5d284edee",
+    "date": "2026-10-12"
   },
   "/insights/chatgpt-space-10-features/": {
     "hash": "e13b49bf5269",

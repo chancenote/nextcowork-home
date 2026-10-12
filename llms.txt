@@ -54,6 +54,8 @@ https://www.nextcw.com/coaching/
 ## 인사이트 아티클 (최신순)
 
 <!-- INSIGHTS:START -->
+- 노트북을 닫아도 일하는 AI, 개발금융의 숫자와 IM 품질은 어떻게 지킬까요? (2026-10-12): https://www.nextcw.com/insights/development-finance-ai-review-im/
+  부동산개발금융 실무진의 투자검토회의 준비를 사례로, AI에 맡길 업무와 인허가·사업수지·금융 수치 검증 기준을 설명합니다. IM 템플릿 재사용 요청문과 입력 전 점검표를 제공합니다.
 - ChatGPT 스페이스, 무엇이 달라졌을까요? AI 동료와 일하는 핵심 기능 10가지 (2026-10-11): https://www.nextcw.com/insights/chatgpt-space-10-features/
   넥스트코웍 찬스가 ChatGPT Space의 핵심 기능 10가지를 공식 이미지와 업무 예시로 설명합니다. UI 변화의 의미, 초기 사용자 반응, AI를 동료로 활용하는 방법까지 살펴보세요.
 - AI 에이전트 협업, 사람과 AI가 함께 일하는 6가지 조건은? (2026-10-10): https://www.nextcw.com/insights/ai-cowork-six-conditions/
