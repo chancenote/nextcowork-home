@@ -4,6 +4,8 @@ import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const siteUrl = "https://www.nextcw.com";
@@ -515,6 +517,51 @@ async function updateHtmlAssetVersions(assetVersion) {
 // 문의 폼 tierOptions(js/main.js)의 서비스별 기본 상품 키. 서비스에 없는 값을 쓰면 유료 첫 옵션으로 떨어진다.
 const CTA_TIER_BY_SERVICE = { "ai-campus": "diagnosis", flexoffice: "precheck", public: "advisory", coaching: "consult" };
 
+/* 공유 미리보기(OG) 이미지 — 카카오톡·페이스북에 글마다 대표 사진이 뜨도록 빌드 때 정한다.
+   1) image → thumbnail → 본문 첫 이미지 순으로, 사이트 기본 이미지(/img/og.png)가 아닌 첫 실재 파일을 고른다.
+   2) JPG/PNG가 아니면(webp 등) 카카오가 미리보기를 못 띄울 수 있어 같은 폴더에 긴 변 1200px JPG(이름.og.jpg)를 만든다(macOS sips, 한 번 만들면 재사용).
+   3) 크기를 읽어 og:image:width/height로 적는다 — 페이스북이 첫 공유부터 이미지를 띄운다. */
+const DEFAULT_OG_IMAGE = "/img/og.png";
+const execFileP = promisify(execFile);
+
+async function resolveOgImage(post) {
+  const bodyImage = (post.body.match(/!\[[^\]]*\]\(([^)\s]+)/) || [])[1];
+  const candidates = [post.image, post.thumbnail, bodyImage]
+    .filter((path) => path && path !== DEFAULT_OG_IMAGE && path.startsWith("/") && existsSync(join(root, path)));
+  let path = candidates[0] || DEFAULT_OG_IMAGE;
+  if (!/\.(jpe?g|png)$/i.test(path)) {
+    const jpg = path.replace(/\.[a-z0-9]+$/i, ".og.jpg");
+    if (!existsSync(join(root, jpg))) {
+      try {
+        await execFileP("sips", ["-s", "format", "jpeg", "-s", "formatOptions", "85", "-Z", "1200", join(root, path), "--out", join(root, jpg)]);
+      } catch (error) {
+        console.warn(`OG 이미지 JPG 변환 실패(${path}) — 원본을 그대로 씁니다: ${error.message}`);
+      }
+    }
+    if (existsSync(join(root, jpg))) path = jpg;
+  }
+  return { url: path, ...imageSize(await readFile(join(root, path))) };
+}
+
+/* JPG·PNG 헤더에서 가로·세로를 읽는다(외부 의존성 없음). 읽지 못하면 빈 값. */
+function imageSize(buf) {
+  if (buf[0] === 0x89 && buf.toString("ascii", 1, 4) === "PNG") {
+    return { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) };
+  }
+  if (buf[0] === 0xff && buf[1] === 0xd8) {
+    let i = 2;
+    while (i < buf.length - 9) {
+      if (buf[i] !== 0xff) { i++; continue; }
+      const marker = buf[i + 1];
+      if (marker >= 0xc0 && marker <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marker)) {
+        return { width: buf.readUInt16BE(i + 7), height: buf.readUInt16BE(i + 5) };
+      }
+      i += 2 + buf.readUInt16BE(i + 2);
+    }
+  }
+  return {};
+}
+
 function renderArticle(post, assetVersion) {
   const articleBody = renderMarkdown(post.body, `content/insights/${post.slug}`);
   const tagHtml = post.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
@@ -528,7 +575,7 @@ function renderArticle(post, assetVersion) {
     url: absoluteUrl(post.url),
     mainEntityOfPage: { "@type": "WebPage", "@id": absoluteUrl(post.url) },
     inLanguage: "ko",
-    image: absoluteUrl(post.image),
+    image: absoluteUrl(post.og.url),
     author: { "@type": "Person", "@id": "https://www.nextcw.com/about/#person", name: "이종찬" },
     publisher: { "@id": "https://www.nextcw.com/#org" }
   };
@@ -567,13 +614,17 @@ function renderArticle(post, assetVersion) {
 <meta property="og:title" content="${escapeAttr(post.title)}">
 <meta property="og:description" content="${escapeAttr(post.description)}">
 <meta property="og:url" content="${absoluteUrl(post.url)}">
-<meta property="og:image" content="${absoluteUrl(post.image)}">
+<meta property="og:image" content="${absoluteUrl(post.og.url)}">${post.og.width ? `
+<meta property="og:image:width" content="${post.og.width}">
+<meta property="og:image:height" content="${post.og.height}">` : ""}
+<meta property="og:image:alt" content="${escapeAttr(post.imageAlt || post.title)}">
+<meta property="article:published_time" content="${escapeAttr(post.date)}">
 <meta property="og:site_name" content="넥스트코웍 NEXT COWORK">
 <meta property="og:locale" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${escapeAttr(post.title)}">
 <meta name="twitter:description" content="${escapeAttr(post.description)}">
-<meta name="twitter:image" content="${absoluteUrl(post.image)}">
+<meta name="twitter:image" content="${absoluteUrl(post.og.url)}">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -748,7 +799,7 @@ function renderShare(post) {
       : `<button type="button" class="share-item" data-share="${ch.key}">${inner}</button>`;
     return `<li>${tag}</li>`;
   }).join("");
-  return `      <aside class="post-share" aria-label="이 글 공유하기" data-share-url="${escapeAttr(url)}" data-share-title="${escapeAttr(post.title)}" data-share-text="${escapeAttr(post.description)}" data-share-image="${escapeAttr(absoluteUrl(post.image))}" data-share-slug="${escapeAttr(post.slug)}">
+  return `      <aside class="post-share" aria-label="이 글 공유하기" data-share-url="${escapeAttr(url)}" data-share-title="${escapeAttr(post.title)}" data-share-text="${escapeAttr(post.description)}" data-share-image="${escapeAttr(absoluteUrl(post.og.url))}"${post.og.width ? ` data-share-image-width="${post.og.width}" data-share-image-height="${post.og.height}"` : ""} data-share-slug="${escapeAttr(post.slug)}">
         <div class="post-share-box">
           <span class="post-share-eyebrow">SHARE</span>
           <button type="button" class="post-share-toggle" aria-expanded="false" aria-controls="post-share-panel" aria-label="공유하기">${SHARE_ICONS.share}<span>공유</span></button>
@@ -1059,6 +1110,7 @@ async function main() {
   for (const post of posts) {
     const dir = join(outputDir, post.slug);
     await mkdir(dir, { recursive: true });
+    post.og = await resolveOgImage(post);
     await writeFile(join(dir, "index.html"), renderArticle(post, assetVersion), "utf8");
   }
   await writeFile(join(root, "js", "insights-data.js"), renderFeedJs(feed), "utf8");

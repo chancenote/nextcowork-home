@@ -4,7 +4,7 @@
 (function () {
   "use strict";
 
-  var KAKAO_JS_KEY = "";
+  var KAKAO_JS_KEY = "06a3143a0c8f02ecdd765a43ef90cb54";
   var KAKAO_SDK = "https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js";
 
   var root = document.querySelector(".post-share");
@@ -19,6 +19,8 @@
     title: root.getAttribute("data-share-title") || document.title,
     text: root.getAttribute("data-share-text") || "",
     image: root.getAttribute("data-share-image") || "",
+    imageWidth: Number(root.getAttribute("data-share-image-width")) || undefined,
+    imageHeight: Number(root.getAttribute("data-share-image-height")) || undefined,
     slug: root.getAttribute("data-share-slug") || ""
   };
   var toastTimer = null;
@@ -103,6 +105,8 @@
             title: data.title,
             description: data.text,
             imageUrl: data.image,
+            imageWidth: data.imageWidth,
+            imageHeight: data.imageHeight,
             link: { mobileWebUrl: data.url, webUrl: data.url }
           },
           buttons: [{ title: "글 읽기", link: { mobileWebUrl: data.url, webUrl: data.url } }]
