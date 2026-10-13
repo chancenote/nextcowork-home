@@ -697,6 +697,23 @@ function imageSize(buf) {
       i += 2 + buf.readUInt16BE(i + 2);
     }
   }
+  // WebP thumbnail dimensions are read from the actual RIFF chunks, not a fixed ratio.
+  if (buf.toString("ascii", 0, 4) === "RIFF" && buf.toString("ascii", 8, 12) === "WEBP") {
+    let offset = 12;
+    while (offset + 8 <= buf.length) {
+      const kind = buf.toString("ascii", offset, offset + 4);
+      const size = buf.readUInt32LE(offset + 4);
+      const data = offset + 8;
+      if (data + size > buf.length) break;
+      if (kind === "VP8X" && size >= 10) return { width: buf.readUIntLE(data + 4, 3) + 1, height: buf.readUIntLE(data + 7, 3) + 1 };
+      if (kind === "VP8 " && size >= 10 && buf[data + 3] === 0x9d && buf[data + 4] === 0x01 && buf[data + 5] === 0x2a) return { width: buf.readUInt16LE(data + 6) & 0x3fff, height: buf.readUInt16LE(data + 8) & 0x3fff };
+      if (kind === "VP8L" && size >= 5 && buf[data] === 0x2f) {
+        const bits = buf.readUInt32LE(data + 1);
+        return { width: (bits & 0x3fff) + 1, height: ((bits >>> 14) & 0x3fff) + 1 };
+      }
+      offset = data + size + (size % 2);
+    }
+  }
   return {};
 }
 
@@ -969,6 +986,9 @@ function buildFeed(posts) {
     description: post.description, category: post.category, image: post.image,
     thumbnail: post.thumbnail, imageAlt: post.imageAlt,
     ...(cardVariant(post.thumbnail) ? { thumbnailCard: cardVariant(post.thumbnail) } : {}),
+    // Both server-rendered and browser-filtered cards use the actual file dimensions.
+    thumbnailSize: localImageSize(post.thumbnail || post.image),
+    thumbnailCardSize: localImageSize(cardVariant(post.thumbnail) || post.thumbnail || post.image),
     topic: post.topic, tags: post.tags, searchText: toPlainText(post.body),
     ...(post.audience ? { audience: post.audience } : {}),
     ...(post.takeaway ? { takeaway: post.takeaway } : {})
@@ -989,6 +1009,12 @@ function cardVariant(src) {
   if (!src || !/^\/img\/.+\.(webp|jpe?g|png)$/i.test(src)) return "";
   const variant = src.replace(/\.(webp|jpe?g|png)$/i, "-720w.webp");
   return existsSync(join(root, variant.slice(1))) ? variant : "";
+}
+
+function localImageSize(src) {
+  if (!src || !src.startsWith("/")) return {};
+  const file = join(root, src);
+  return existsSync(file) ? imageSize(readFileSync(file)) : {};
 }
 
 function renderFeedJs(feed) {
@@ -1221,19 +1247,20 @@ async function loadLastmodState() {
   }
 }
 
-/* entries: [{ path, source, fallback }]
-   source = 그 URL의 "의미 있는 내용", fallback = 기록이 아예 없을 때 쓸 날짜.
-   글은 발행일이 곧 최초 수정일이므로 fallback으로 발행일을 넘긴다 — 안 그러면
-   기존 글이 처음 빌드하는 날 전부 "오늘 수정"으로 잘못 신고된다. */
+/* entries: [{ path, source, modified? }]
+   Articles use the author's explicitly recorded substantive modification date
+   (updated || date), shared with BlogPosting.dateModified. Formatting, tracking
+   queries, cache changes and rebuilding never advance an article's date.
+   Static pages retain the existing cache-normalized content-hash policy. */
 function resolveLastmod(state, entries, today) {
   const next = {};
-  for (const { path, source, fallback } of entries) {
+  for (const { path, source, modified } of entries) {
     const hash = contentHash(source);
     const previous = state[path];
-    if (previous && previous.hash === hash) {
+    if (modified) {
+      next[path] = { hash, date: modified };
+    } else if (previous && previous.hash === hash) {
       next[path] = { hash, date: previous.date };
-    } else if (!previous && fallback) {
-      next[path] = { hash, date: fallback };
     } else {
       next[path] = { hash, date: today };
     }
@@ -1291,7 +1318,7 @@ async function main() {
       path: route.path,
       source: await readFile(join(root, route.file), "utf8")
     }))),
-    ...posts.map((post) => ({ path: post.url, source: post.source, fallback: post.date }))
+    ...posts.map((post) => ({ path: post.url, source: post.source, modified: post.updated || post.date }))
   ];
   const lastmodState = resolveLastmod(previousState, entries, today);
   const routes = [

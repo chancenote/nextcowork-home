@@ -2,7 +2,7 @@
 title: "넥스트코웍은 AI Workspace Builder입니다"
 description: "AI 시대의 일터는 두 겹입니다. 사람이 모이는 물리적 공간(SPACE)과, AI 에이전트와 함께 일하는 공간(Workspace). 넥스트코웍이 왜 Workspace에 주목하는지, 실제로 어떤 일을 하는지 정리했습니다."
 date: "2026-07-09"
-updated: "2026-10-08"
+updated: "2026-10-10"
 category: "Company"
 tags: ["Build the Next Workspace", "회사소개", "AI Workspace Builder", "워크스페이스", "AI 에이전트", "공유오피스", "AI 실무교육"]
 slug: "ai-workspace-builder"
