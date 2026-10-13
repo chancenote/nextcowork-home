@@ -57,7 +57,7 @@ https://www.nextcw.com/coaching/
 - Aside Browser는 어떻게 탭의 홍수를 실제 업무 결과로 바꿀까? (2026-10-13): https://www.nextcw.com/insights/aside-browser-workflow/
   Aside Browser의 사이드바·화면 분할·AI 작업이 연결되는 과정을 3개의 움직이는 장면으로 살펴봅니다. 공개 자료 비교 시연, 복사해 쓸 요청문, 도입 판단 기준까지 담았습니다.
 - AI는 쓰는데 왜 일이 줄지 않을까요? 대표님을 위한 첫 AX 실행 가이드 (2026-10-12): https://www.nextcw.com/insights/ax-one-workflow-playbook/
-  넥스트코웍 찬스가 가상 경영진의 고객 문의 한 건을 함께 풀어봅니다. 그림과 화면 예시로 AX의 방향을 이해하고, AI·사람·기존 도구의 역할과 이번 주 첫 실행을 정리해보세요.
+  AI 초안은 빨라졌는데 고객 답변이 늦는 이유를 네 개의 움직이는 장면으로 풀어봅니다. 첫 과제 선정, AI·사람·기존 도구의 인계, 성과 판단과 회의용 한 장까지.
 - 노트북을 닫아도 일하는 AI, 개발금융의 숫자와 IM 품질은 어떻게 지킬까요? (2026-10-12): https://www.nextcw.com/insights/development-finance-ai-review-im/
   부동산개발금융 실무진의 투자검토회의 준비를 사례로, AI에 맡길 업무와 인허가·사업수지·금융 수치 검증 기준을 설명합니다. IM 템플릿 재사용 요청문과 입력 전 점검표를 제공합니다.
 - ChatGPT 스페이스, 무엇이 달라졌을까요? AI 동료와 일하는 핵심 기능 10가지 (2026-10-11): https://www.nextcw.com/insights/chatgpt-space-10-features/

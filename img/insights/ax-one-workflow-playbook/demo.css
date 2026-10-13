@@ -1,0 +1,181 @@
+.ax-demo {
+  --ax-indigo: var(--indigo, #302D7C);
+  --ax-violet: var(--violet, #6955BA);
+  --ax-lavender: var(--violet-light, #9178E2);
+  --ax-point: var(--point, #E54B78);
+  --ax-teal: var(--line-public, #25C5A8);
+  --ax-ink: var(--ink, #1C1C22);
+  --ax-text: var(--text, #545659);
+  --ax-caption: var(--caption, #66696D);
+  --ax-bg: var(--bg, #fff);
+  --ax-soft: var(--bg-soft, #F4F4F5);
+  --ax-border: var(--hairline, #E4E4E7);
+  --ax-radius: var(--radius, 20px);
+  --ax-shadow: var(--shadow-card, 0 10px 30px rgba(28,28,34,.08));
+  box-sizing: border-box;
+  max-width: 980px;
+  padding: clamp(18px, 3vw, 32px);
+  border: 1px solid var(--ax-border);
+  border-radius: var(--ax-radius);
+  background: var(--ax-bg);
+  box-shadow: var(--ax-shadow);
+  color: var(--ax-ink);
+  font-family: var(--font-kr, "Pretendard Variable", Pretendard, system-ui, sans-serif);
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+.ax-demo *, .ax-demo *::before, .ax-demo *::after { box-sizing: border-box; }
+.ax-demo p, .ax-demo ol, .ax-demo ul { margin: 0; }
+.ax-demo ol, .ax-demo ul { padding: 0; list-style: none; }
+.post--ax-one-workflow-playbook .ax-demo-figure { margin: 32px 0; }
+.post--ax-one-workflow-playbook .ax-demo-figure figcaption { margin: 8px 0 0; color: var(--ax-caption, var(--caption)); font-size: 12px; line-height: 1.5; text-align: center; }
+.ax-demo-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin: 0 0 22px; }
+.ax-demo-kicker { display: flex; align-items: center; gap: 8px; margin: 0 0 7px !important; color: var(--ax-violet); font-size: 11px; line-height: 1.3; font-weight: 800; letter-spacing: .12em; }
+.ax-demo-kicker span { width: 7px; height: 7px; border-radius: 50%; background: var(--ax-point); box-shadow: 0 0 0 4px rgba(229,75,120,.13); }
+.ax-demo h1, .ax-demo h3 { margin: 0; color: var(--ax-indigo); font-size: clamp(23px, 3.1vw, 32px); line-height: 1.22; letter-spacing: -.04em; }
+.ax-demo-deck { margin-top: 6px !important; color: var(--ax-text); font-size: 14px; line-height: 1.55; }
+.ax-motion-toggle { flex: none; padding: 8px 12px; border: 1px solid var(--ax-border); border-radius: 999px; background: var(--ax-bg); color: var(--ax-indigo); font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
+.ax-motion-toggle:hover { border-color: var(--ax-violet); }
+.ax-motion-toggle:focus-visible { outline: 3px solid var(--ax-indigo); outline-offset: 3px; }
+.ax-motion-toggle[hidden], .ax-scene { display: none; }
+.ax-scene.is-active { display: block; }
+.ax-scene-note { margin-top: 11px !important; color: var(--ax-caption); font-size: 11px; line-height: 1.5; }
+.ax-stage-top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 14px 18px; border-bottom: 1px solid var(--ax-border); }
+.ax-stage-top span { color: var(--ax-violet); font: 800 10px/1.3 var(--font-num, Inter, sans-serif); letter-spacing: .08em; }
+.ax-stage-top strong { color: var(--ax-indigo); font-size: 13px; }
+
+/* 1 · The whole route remains visible while the active bottleneck travels. */
+.ax-bottleneck-stage, .ax-select-stage, .ax-measure-stage { overflow: hidden; border: 1px solid var(--ax-border); border-radius: 16px; background: var(--ax-bg); }
+.ax-route { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 0; padding: 22px 16px 16px !important; }
+.ax-route li { position: relative; display: flex; align-items: flex-start; gap: 8px; min-width: 0; margin: 0 4px; padding: 14px 10px; border: 1px solid var(--ax-border); border-radius: 12px; background: var(--ax-bg); animation: ax-route-focus 8s ease-in-out infinite; }
+.ax-route li:not(:last-child)::after { content: ""; position: absolute; top: 50%; right: -10px; z-index: 2; width: 8px; height: 8px; border-top: 2px solid var(--ax-violet); border-right: 2px solid var(--ax-violet); transform: rotate(45deg); }
+.ax-route li:nth-child(2) { animation-delay: 2s; }
+.ax-route li:nth-child(3) { animation-delay: 4s; }
+.ax-route li:nth-child(4) { animation-delay: 6s; }
+.ax-route-icon { display: grid; place-items: center; flex: none; width: 28px; height: 28px; border-radius: 8px; background: var(--ax-indigo); color: white; font-size: 14px; }
+.ax-route li:nth-child(n+2) .ax-route-icon { background: var(--ax-soft); color: var(--ax-violet); }
+.ax-route li div { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.ax-route small { color: var(--ax-caption); font-size: 10px; }
+.ax-route strong { color: var(--ax-indigo); font-size: 12px; line-height: 1.3; }
+.ax-route li div span { color: var(--ax-text); font-size: 10px; line-height: 1.4; }
+.ax-route em { position: absolute; bottom: 10px; right: 9px; color: var(--ax-point); font-size: 9px; font-style: normal; font-weight: 800; }
+.ax-route li:first-child em { color: var(--ax-violet); }
+.ax-bottleneck-callout { display: flex; align-items: center; gap: 12px; margin: 0 20px 20px; padding: 16px 18px; border-radius: 12px; background: var(--ax-indigo); color: white; }
+.ax-bottleneck-callout div { display: flex; flex-direction: column; gap: 3px; }
+.ax-bottleneck-callout strong { font-size: 17px; }
+.ax-bottleneck-callout div span { color: rgba(255,255,255,.78); font-size: 11px; line-height: 1.5; }
+.ax-pulse-dot { flex: none; width: 11px; height: 11px; border-radius: 50%; background: var(--ax-point); animation: ax-dot 2s ease-in-out infinite; }
+
+/* 2 · Three gates light in sequence, then the chosen test appears. */
+.ax-select-stage { background: linear-gradient(145deg, var(--ax-bg), var(--ax-soft)); }
+.ax-gate-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; padding: 18px; }
+.ax-gate { position: relative; min-width: 0; padding: 16px; border: 1px solid var(--ax-border); border-radius: 13px; background: var(--ax-bg); box-shadow: var(--ax-shadow); animation: ax-gate-focus 9s ease-in-out infinite; }
+.ax-gate:nth-child(2) { animation-delay: 3s; }
+.ax-gate:nth-child(3) { animation-delay: 6s; }
+.ax-gate-number { color: var(--ax-violet); font: 800 11px var(--font-num, Inter, sans-serif); letter-spacing: .08em; }
+.ax-gate-symbol { display: grid; place-items: center; width: 35px; height: 35px; margin: 14px 0 8px; border-radius: 10px; background: var(--ax-indigo); color: white; font-size: 23px; line-height: 1; }
+.ax-gate h4 { margin: 0 0 7px; color: var(--ax-indigo); font-size: 15px; line-height: 1.3; }
+.ax-gate p { min-height: 44px; color: var(--ax-text); font-size: 11px; line-height: 1.55; }
+.ax-gate-answer { display: inline-block; margin-top: 10px; padding: 5px 7px; border-radius: 6px; background: var(--ax-soft); color: var(--ax-violet); font-size: 10px; font-weight: 800; }
+.ax-select-result { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 12px; margin: 0 18px 18px; padding: 15px 18px; border-radius: 12px; background: var(--ax-indigo); color: white; animation: ax-result-breathe 9s ease-in-out infinite; }
+.ax-select-result span { color: rgba(255,255,255,.72); font-size: 10px; }
+.ax-select-result strong { font-size: 15px; }
+.ax-select-result small { flex-basis: 100%; color: rgba(255,255,255,.8); font-size: 10px; }
+
+/* 3 · A single fictional ticket passes through clear handoff states. */
+.ax-handoff-stage { padding: 18px; border-radius: 16px; background: var(--ax-indigo); color: white; }
+.ax-ticket { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 15px; border-radius: 10px; background: white; color: var(--ax-indigo); }
+.ax-ticket span { color: var(--ax-violet); font: 800 10px var(--font-num, Inter, sans-serif); white-space: nowrap; }
+.ax-ticket strong { font-size: 13px; line-height: 1.4; }
+.ax-handoff-flow { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; margin: 15px 0 !important; }
+.ax-handoff-flow li { position: relative; min-width: 0; min-height: 172px; padding: 13px 12px; border: 1px solid rgba(255,255,255,.28); border-radius: 11px; background: rgba(255,255,255,.08); animation: ax-handoff-focus 12s ease-in-out infinite; }
+.ax-handoff-flow li:nth-child(2) { animation-delay: 3s; }
+.ax-handoff-flow li:nth-child(3) { animation-delay: 6s; }
+.ax-handoff-flow li:nth-child(4) { animation-delay: 9s; }
+.ax-handoff-marker { display: inline-block; margin-bottom: 13px; color: var(--ax-teal); font: 800 12px var(--font-num, Inter, sans-serif); }
+.ax-handoff-hold .ax-handoff-marker { color: var(--ax-point); }
+.ax-handoff-flow small { display: block; margin-bottom: 6px; color: rgba(255,255,255,.86); font-size: 10px; }
+.ax-handoff-flow strong { display: block; margin-bottom: 7px; color: white; font-size: 12px; line-height: 1.4; }
+.ax-handoff-flow p { color: rgba(255,255,255,.92); font-size: 10px; line-height: 1.55; }
+.ax-handoff-end { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; padding: 11px 14px; border-radius: 9px; background: white; color: var(--ax-indigo); }
+.ax-handoff-end span { margin-right: auto; color: var(--ax-violet); font-size: 10px; font-weight: 800; }
+.ax-handoff-end strong { padding: 5px 8px; border-radius: 6px; background: var(--ax-soft); font-size: 11px; }
+
+/* 4 · Bars visibly grow to show why a faster draft can worsen the total. */
+.ax-measure-stage { background: var(--ax-soft); }
+.ax-measure-bars { display: grid; gap: 18px; padding: 24px 23px 18px; }
+.ax-measure-row > div { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 7px; font-size: 13px; }
+.ax-measure-row strong { color: var(--ax-indigo); }
+.ax-measure-row span { color: var(--ax-violet); font-weight: 800; }
+.ax-measure-row:nth-child(2) span { color: var(--ax-point); }
+.ax-bar-track { display: block; width: 100%; height: 15px; overflow: hidden; border-radius: 99px; background: var(--ax-bg); }
+.ax-bar-track i { display: block; height: 100%; border-radius: inherit; transform-origin: left center; animation: ax-bar-fill 7s ease-in-out infinite; }
+.ax-bar-save { width: 66.6667%; background: var(--ax-violet); }
+.ax-bar-review { width: 100%; background: var(--ax-point); animation-delay: 1.3s !important; }
+.ax-measure-result { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin: 0 23px 18px; padding: 15px 18px; border-radius: 12px; background: var(--ax-indigo); color: white; animation: ax-result-breathe 7s ease-in-out infinite; }
+.ax-measure-result > span { color: rgba(255,255,255,.72); font-size: 11px; }
+.ax-measure-result strong { font-size: 21px; }
+.ax-measure-result em { color: var(--ax-point); font-style: normal; }
+.ax-measure-result small { flex-basis: 100%; color: rgba(255,255,255,.8); font-size: 10px; }
+.ax-measure-checks { padding: 0 23px 22px; }
+.ax-measure-checks > span { display: block; margin-bottom: 8px; color: var(--ax-indigo); font-size: 12px; font-weight: 800; }
+.ax-measure-checks ul { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 7px; }
+.ax-measure-checks li { padding: 9px; border: 1px solid var(--ax-border); border-radius: 8px; background: white; color: var(--ax-text); font-size: 11px; line-height: 1.4; }
+
+.ax-demo.is-paused *, .ax-demo.is-paused *::before, .ax-demo.is-paused *::after { animation-play-state: paused !important; }
+@keyframes ax-route-focus { 0%, 20%, 100% { border-color: var(--ax-border); box-shadow: none; transform: translateY(0); } 10% { border-color: var(--ax-violet); box-shadow: 0 0 0 4px rgba(105,85,186,.16); transform: translateY(-4px); } }
+@keyframes ax-dot { 0%, 100% { box-shadow: 0 0 0 0 rgba(229,75,120,.45); } 50% { box-shadow: 0 0 0 8px rgba(229,75,120,0); } }
+@keyframes ax-gate-focus { 0%, 27%, 100% { border-color: var(--ax-border); transform: translateY(0); } 12% { border-color: var(--ax-violet); transform: translateY(-5px); } }
+@keyframes ax-result-breathe { 0%, 100% { box-shadow: none; } 55% { box-shadow: 0 0 0 5px rgba(105,85,186,.17); } }
+@keyframes ax-handoff-focus { 0%, 24%, 100% { background: rgba(255,255,255,.08); transform: translateY(0); } 12% { background: rgba(255,255,255,.2); transform: translateY(-4px); } }
+@keyframes ax-bar-fill { 0%, 10% { transform: scaleX(.05); } 48%, 80% { transform: scaleX(1); } 100% { transform: scaleX(.05); } }
+
+@media (max-width: 620px) {
+  .ax-demo { padding: 17px 13px; }
+  .ax-demo-head { margin-bottom: 16px; }
+  .ax-demo h1, .ax-demo h3 { font-size: 22px; }
+  .ax-demo-deck { font-size: 12px; }
+  .ax-motion-toggle { padding: 6px 7px; font-size: 10px; }
+  .ax-stage-top { flex-direction: column; gap: 3px; padding: 11px 12px; }
+  .ax-stage-top strong { font-size: 12px; }
+  .ax-route { grid-template-columns: 1fr; gap: 9px; padding: 12px !important; }
+  .ax-route li { min-height: 67px; margin: 0; padding: 9px 10px; }
+  .ax-route li:not(:last-child)::after { top: auto; bottom: -12px; right: 50%; transform: rotate(135deg); }
+  .ax-route li div { flex-direction: row; align-items: baseline; flex-wrap: wrap; gap: 2px 7px; padding-right: 48px; }
+  .ax-route strong { font-size: 12px; }
+  .ax-route li div span { flex-basis: 100%; font-size: 10px; }
+  .ax-route em { bottom: auto; top: 12px; }
+  .ax-bottleneck-callout { margin: 0 12px 12px; padding: 12px; }
+  .ax-bottleneck-callout strong { font-size: 14px; }
+  .ax-gate-grid { grid-template-columns: 1fr; gap: 8px; padding: 12px; }
+  .ax-gate { display: grid; grid-template-columns: 32px 1fr; column-gap: 8px; padding: 10px; }
+  .ax-gate-number { grid-column: 1; }
+  .ax-gate-symbol { grid-column: 1; grid-row: 2 / 4; width: 28px; height: 28px; margin: 2px 0 0; font-size: 18px; }
+  .ax-gate h4 { grid-column: 2; grid-row: 1; margin: 0; font-size: 13px; }
+  .ax-gate p { grid-column: 2; min-height: 0; font-size: 11px; }
+  .ax-gate-answer { grid-column: 2; margin-top: 5px; }
+  .ax-select-result { margin: 0 12px 12px; padding: 12px; }
+  .ax-select-result strong { font-size: 13px; }
+  .ax-handoff-stage { padding: 12px; }
+  .ax-ticket { flex-direction: column; align-items: flex-start; gap: 5px; }
+  .ax-ticket strong { font-size: 12px; }
+  .ax-handoff-flow { grid-template-columns: 1fr; gap: 7px; margin: 10px 0 !important; }
+  .ax-handoff-flow li { display: grid; grid-template-columns: 30px 1fr; min-height: 0; padding: 9px; }
+  .ax-handoff-marker { grid-column: 1; margin: 0; }
+  .ax-handoff-flow li div { grid-column: 2; }
+  .ax-handoff-flow strong { font-size: 12px; }
+  .ax-handoff-flow small, .ax-handoff-flow p { font-size: 11px; }
+  .ax-handoff-end span { flex-basis: 100%; }
+  .ax-handoff-end strong { font-size: 10px; }
+  .ax-measure-bars { gap: 15px; padding: 18px 14px 14px; }
+  .ax-measure-row > div { font-size: 12px; }
+  .ax-measure-result { margin: 0 14px 14px; padding: 12px; }
+  .ax-measure-result strong { font-size: 18px; }
+  .ax-measure-checks { padding: 0 14px 14px; }
+  .ax-measure-checks ul { grid-template-columns: 1fr; gap: 5px; }
+  .ax-measure-checks li { padding: 7px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ax-demo *, .ax-demo *::before, .ax-demo *::after { animation: none !important; scroll-behavior: auto !important; }
+}

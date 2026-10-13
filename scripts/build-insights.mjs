@@ -34,6 +34,29 @@ function renderAsideDemo(scene) {
   </figure>`;
 }
 
+// AX 글의 네 장면만 허용한다. Markdown에서 임의 HTML을 허용하지 않는다.
+const axDemoMeta = {
+  bottleneck: { title: "초안은 끝났는데, 고객 답변은 어디에 있죠?", deck: "속도를 재는 지점을 바꾸면, 막힌 일이 보입니다.", note: "초안과 전체 업무 병목" },
+  select: { title: "첫 AX 과제는 어떻게 고를까요?", deck: "반복 · 현재 자료 · 사람 검토, 세 문을 통과하는 작은 업무부터.", note: "첫 업무 선택 기준" },
+  handoff: { title: "문의 024는 누가 끝내나요?", deck: "AI, 사람, 기존 도구가 확인 지점을 두고 이어받습니다.", note: "가상 문의 024 역할 넘김" },
+  measure: { title: "20분 절약, 30분 추가 검토라면?", deck: "초안 시간만으로 성공을 말할 수 없는 이유를 계산합니다.", note: "가상 시간 비교 장면" }
+};
+const axDemoSource = readFileSync(join(root, "img/insights/ax-one-workflow-playbook/demo.html"), "utf8");
+
+function renderAxDemo(scene) {
+  const meta = axDemoMeta[scene];
+  const section = axDemoSource.match(new RegExp(`<section class="ax-scene ax-scene-${scene}(?: is-active)?"[\\s\\S]*?<\\/section>`));
+  if (!section) throw new Error(`AX demo scene ${scene} not found`);
+  const activeSection = section[0].replace(new RegExp(`class="ax-scene ax-scene-${scene}(?: is-active)?"`), `class="ax-scene ax-scene-${scene} is-active"`);
+  return `<figure class="ax-demo-figure" id="ax-demo-${scene}">
+    <div class="ax-demo" data-scene="${scene}">
+      <header class="ax-demo-head"><div><p class="ax-demo-kicker"><span></span> NEXT COWORK · AX FIELD NOTE</p><h3>${escapeHtml(meta.title)}</h3><p class="ax-demo-deck">${escapeHtml(meta.deck)}</p></div><button class="ax-motion-toggle" type="button" hidden aria-pressed="false">일시정지</button></header>
+      ${activeSection}
+    </div>
+    <figcaption>움직이는 개념 시연 · ${escapeHtml(meta.note)}. 가상 예시이며, 일시정지 또는 기기 설정으로 움직임을 조정할 수 있습니다.</figcaption>
+  </figure>`;
+}
+
 const externalFeed = [
   {
     src: "brunch",
@@ -293,6 +316,22 @@ function renderMarkdown(markdown, label = "", output = "article") {
     if (trimmed.startsWith("::aside-demo[")) {
       throw new Error(`${label || "본문"}: 지원하지 않는 Aside 시연 장면입니다 (${trimmed}).`);
     }
+    const axDemo = trimmed.match(/^::ax-demo\[(bottleneck|select|handoff|measure)\]$/);
+    if (axDemo) {
+      if (label !== "content/insights/ax-one-workflow-playbook") {
+        throw new Error(`${label || "본문"}: AX 시연은 지정된 글에서만 사용할 수 있습니다.`);
+      }
+      flushParagraph();
+      closeList();
+      const scene = axDemo[1];
+      html.push(output === "rss"
+        ? `<p><a href="https://www.nextcw.com/insights/ax-one-workflow-playbook/#ax-demo-${scene}">${escapeHtml(axDemoMeta[scene].note)}을 글에서 보기</a></p>`
+        : renderAxDemo(scene));
+      continue;
+    }
+    if (trimmed.startsWith("::ax-demo[")) {
+      throw new Error(`${label || "본문"}: 지원하지 않는 AX 시연 장면입니다 (${trimmed}).`);
+    }
 
     const heading = trimmed.match(/^(#{1,3})\s+(.+)$/);
     if (heading) {
@@ -396,7 +435,7 @@ function toPlainText(markdown) {
   return markdown
     .split("\n")
     .map((line) => line.trim())
-    .filter((line) => line && !/^::aside-demo\[(flow|appeal|case)\]$/.test(line))
+    .filter((line) => line && !/^::(?:aside-demo\[(?:flow|appeal|case)\]|ax-demo\[(?:bottleneck|select|handoff|measure)\])$/.test(line))
     .map((line) => {
       // 목록 항목은 "· "로 구분해 붙인다. 그냥 이으면 문장 경계가 사라져 답변이 뭉개진다.
       if (/^[-*]\s+/.test(line) || /^\d+\.\s+/.test(line)) {
@@ -510,7 +549,7 @@ async function computeAssetVersion(posts) {
   }))));
 
   const pageCss = (await readdir(join(root, "css"))).filter((name) => /^page-[\w-]+\.css$/.test(name)).sort().map((name) => `css/${name}`);
-  for (const path of ["css/style.css", "js/main.js", "js/analytics.js", "scripts/build-insights.mjs", "css/insights-magazine.css", "js/insights-cards.js", "js/insights-magazine.js", "js/insights-share.js", "img/insights/aside-browser-workflow/demo.html", "img/insights/aside-browser-workflow/demo.css", "img/insights/aside-browser-workflow/demo.js", ...pageCss]) {
+  for (const path of ["css/style.css", "js/main.js", "js/analytics.js", "scripts/build-insights.mjs", "css/insights-magazine.css", "js/insights-cards.js", "js/insights-magazine.js", "js/insights-share.js", "img/insights/aside-browser-workflow/demo.html", "img/insights/aside-browser-workflow/demo.css", "img/insights/aside-browser-workflow/demo.js", "img/insights/ax-one-workflow-playbook/demo.html", "img/insights/ax-one-workflow-playbook/demo.css", "img/insights/ax-one-workflow-playbook/demo.js", ...pageCss]) {
     hash.update(await readFile(join(root, path), "utf8"));
   }
 
@@ -739,7 +778,9 @@ function renderArticle(post, assetVersion) {
 <link rel="stylesheet" href="${versioned("/css/style.css", assetVersion)}">
 <link rel="stylesheet" href="${versioned("/css/insights-magazine.css", assetVersion)}">${post.slug === "aside-browser-workflow" ? `
 <link rel="stylesheet" href="${versioned("/img/insights/aside-browser-workflow/demo.css", assetVersion)}">
-<script src="${versioned("/img/insights/aside-browser-workflow/demo.js", assetVersion)}" defer></script>` : ""}${post.slug === "gpt6-intelligent-ui" ? `
+<script src="${versioned("/img/insights/aside-browser-workflow/demo.js", assetVersion)}" defer></script>` : ""}${post.slug === "ax-one-workflow-playbook" ? `
+<link rel="stylesheet" href="${versioned("/img/insights/ax-one-workflow-playbook/demo.css", assetVersion)}">
+<script src="${versioned("/img/insights/ax-one-workflow-playbook/demo.js", assetVersion)}" defer></script>` : ""}${post.slug === "gpt6-intelligent-ui" ? `
 <link rel="stylesheet" href="${versioned("/img/insights/gpt6-intelligent-ui/prompt-copy.css", assetVersion)}">
 <script src="${versioned("/img/insights/gpt6-intelligent-ui/prompt-copy.js", assetVersion)}" defer></script>` : ""}
 <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>

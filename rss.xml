@@ -6,7 +6,7 @@
     <atom:link href="https://www.nextcw.com/rss.xml" rel="self" type="application/rss+xml"/>
     <description>AI 실무활용과 워크스페이스 인사이트 — 넥스트코웍이 발행하는 콘텐츠.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 13 Oct 2026 05:11:19 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 05:53:33 GMT</lastBuildDate>
     <item>
       <title>Aside Browser는 어떻게 탭의 홍수를 실제 업무 결과로 바꿀까?</title>
       <link>https://www.nextcw.com/insights/aside-browser-workflow/</link>
@@ -151,12 +151,12 @@
       <guid isPermaLink="true">https://www.nextcw.com/insights/ax-one-workflow-playbook/</guid>
       <pubDate>Mon, 12 Oct 2026 00:00:00 +0900</pubDate>
       <category>AI &amp; Work</category>
-      <description>넥스트코웍 찬스가 가상 경영진의 고객 문의 한 건을 함께 풀어봅니다. 그림과 화면 예시로 AX의 방향을 이해하고, AI·사람·기존 도구의 역할과 이번 주 첫 실행을 정리해보세요.</description>
+      <description>AI 초안은 빨라졌는데 고객 답변이 늦는 이유를 네 개의 움직이는 장면으로 풀어봅니다. 첫 과제 선정, AI·사람·기존 도구의 인계, 성과 판단과 회의용 한 장까지.</description>
       <content:encoded><![CDATA[<p>첫 AX는 반복되는 업무 하나를 골라, 사람이 확인하며 실제 완료까지 이어지게 만드는 데서 시작하면 좋습니다.</p>
 <p>안녕하세요. 여러분의 CEO AI 코치, <strong>넥스트코웍 찬스</strong>입니다.</p>
 <p>“직원들은 AI를 잘 쓰는데, 왜 고객 답변은 여전히 늦을까요?”</p>
 <p>오늘은 이 질문을 가진 가상의 박 대표와 함께 업무 한 건을 펼쳐보겠습니다. 어려운 기술 목록을 외우기보다, 자료를 찾고 초안을 만들고 승인하고 다음 연락을 남기는 장면을 따라가 보세요.</p>
-<p>이 글에서 AX는 <strong>AI를 활용해 실제 일하는 흐름을 바꾸는 것</strong>이라는 뜻으로 쓰겠습니다. 읽고 나면 우리 팀에서 먼저 바꿀 업무와 사람이 맡아야 할 일을 한 장에 적을 수 있습니다.</p>
+<p>이 글에서 AX는 <strong>AI를 활용해 실제 일하는 흐름을 바꾸는 것</strong>이라는 뜻으로 쓰겠습니다. 네 개의 움직이는 장면을 따라가며 병목, 첫 과제, 역할과 승인, 성과 판단을 확인해보세요. 글 끝에는 팀 회의에서 바로 채울 <strong>‘첫 AX 시험 1장’</strong>을 남깁니다. 움직이는 장면은 가상 업무를 설명하는 개념 시연이며 실제 고객 사례나 구현된 서비스 화면이 아닙니다.</p>
 <figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/hero.webp" alt="AI 생성 일러스트: 가상의 경영진이 업무를 함께 검토하는 장면" loading="lazy" decoding="async"><figcaption>AI 생성 일러스트. 등장인물·회사·문의·화면·수치는 이해를 돕는 가상 예시이며, 실제 고객 사례나 성과가 아닙니다.</figcaption></figure>
 <h2>AI를 쓰는데 왜 일은 그대로일까요?</h2>
 <p>초안이 빨라져도 자료 확인·승인 대기·후속 연락이 그대로면 전체 업무는 여전히 늦을 수 있습니다.</p>
@@ -165,7 +165,8 @@
 <p>이 팀장은 AI로 답변 초안을 금방 만들었습니다. 그런데 가격표는 지난달 파일이고, 재고는 다른 담당자가 알고 있습니다. 박 대표가 승인해야 발송할 수 있고, 답변한 뒤 언제 다시 연락할지는 적혀 있지 않습니다.</p>
 <p>박 대표가 묻습니다. “AI가 일을 다 한 줄 알았는데, 아직 확인할 게 많네요?”</p>
 <p>저라면 여기서 초안 작성 속도보다 <strong>고객에게 답변이 나가기까지 어디에서 멈췄는지</strong> 먼저 보겠습니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/v2/card-01-bottleneck.webp" alt="AI 생성 카드뉴스: 초안이 완성돼도 가격 확인과 승인·후속 연락은 남아 있는 상황" loading="lazy" decoding="async"><figcaption>AI 생성 카드뉴스 1/6. ‘초안 완성’ 이후에 남아 있는 일을 찾는 것이 출발점입니다.</figcaption></figure>
+<p><a href="https://www.nextcw.com/insights/ax-one-workflow-playbook/#ax-demo-bottleneck">초안과 전체 업무 병목을 글에서 보기</a></p>
+<p><strong>우리 팀에 대입할 질문:</strong> AI가 초안을 만든 뒤에도 누구의 확인을 기다리고, 어떤 기록을 남기지 못해 일이 멈추나요?</p>
 <p>제품 A의 예를 이어가면 목표는 이렇게 달라집니다.</p>
 <p>“견적 초안을 빨리 만들자”에서 <strong>“현재 가격과 납품 가능일을 확인해 답변하고, 다음 연락까지 남기자”</strong>로 바꾸는 것입니다. 필요한 곳에 AI를 붙이되, 사람의 확인과 기존 도구의 기록도 함께 설계합니다.</p>
 <p><strong>오늘 해볼 일:</strong> 최근 처리한 문의 한 건을 펼치고, 자료 찾기·확인 요청·승인 대기·후속 연락에 표시해보세요.</p>
@@ -176,11 +177,13 @@
 <p><strong>둘째, 맡길 작업에 맞춰 성능·속도·비용을 비교합니다.</strong> Anthropic은 9월 28일 Sonnet 5.5를 발표하며 작업별 성능과 비용 개선을 설명했습니다. 제 해석은 이렇습니다. 새 모델이 나올 때마다 바꾸기보다, 우리 문의를 같은 조건으로 처리해보고 검수 부담까지 비교하는 편이 좋겠습니다. 제품사의 평가를 우리 회사 성과로 바꿔 읽지는 마세요. <a href="https://www.anthropic.com/claude-sonnet-5-5" target="_blank" rel="noopener">Anthropic 공식 발표</a></p>
 <p><strong>셋째, 실제 실행에는 회사의 규칙이 붙습니다.</strong> OpenAI가 7월 22일 발표한 Presence는 회사 시스템 연결, 승인된 행동, 사람에게 넘기는 규칙과 운영 중 개선을 함께 설명합니다. 발표 기준으로 제한된 기업 도입 프로그램이며, 누구나 바로 가입하는 제품은 아닙니다. 여기서 가져갈 원리는 <strong>업무를 맡길 때 자료·권한·승인·검증을 함께 정한다</strong>는 것입니다. <a href="https://openai.com/index/introducing-openai-presence/" target="_blank" rel="noopener">OpenAI 공식 발표</a></p>
 <p>저는 이 변화를 “이제 전부 자동으로 맡겨도 된다”로 읽기보다, <strong>일을 맡길 범위와 완료 기준을 더 구체적으로 정해야 한다</strong>는 신호로 봅니다.</p>
+<p>도구의 새 소식과 관계없이 박 대표의 이번 주 첫 행동은 같습니다. <strong>반복되는 문의 한 건을 고르고, 실제 완료까지 이어지는 길을 그려보는 것</strong>입니다.</p>
 <h2>첫 업무는 무엇으로 고르면 좋을까요?</h2>
 <p>반복되고, 쓸 자료가 있고, 결과를 확인할 사람이 있는 업무를 먼저 고릅니다.</p>
 <p>박 대표의 팀은 처음에 고객관리 시스템 전체를 새로 만들려고 했습니다. 저라면 시스템을 고르기 전에 최근 문의 몇 건부터 같이 보겠습니다.</p>
 <p>이 팀장이 비슷한 문의를 매주 처리하고, 승인 가격표가 있으며, 박 대표와 재고 담당자가 답을 확인할 수 있습니다. 그러면 ‘제품 A 문의의 답변 준비’는 작은 시험의 후보가 됩니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/v2/card-02-first-task.webp" alt="AI 생성 카드뉴스: 첫 업무를 반복성·자료·검토자로 고르는 장면" loading="lazy" decoding="async"><figcaption>AI 생성 카드뉴스 2/6. 첫 과제는 거창한 시스템보다 작게 확인할 수 있는 업무로 고릅니다.</figcaption></figure>
+<p><a href="https://www.nextcw.com/insights/ax-one-workflow-playbook/#ax-demo-select">첫 업무 선택 기준을 글에서 보기</a></p>
+<p><strong>우리 팀에 대입할 질문:</strong> 반복되는 일·사용할 수 있는 자료·결과를 확인할 사람이 모두 있는 업무는 무엇인가요?</p>
 <p>팀 회의에서는 세 질문이면 충분합니다.</p>
 <ul>
 <li><strong>반복되나요?</strong> 비슷한 건을 여러 번 보고 비교할 수 있는가?</li>
@@ -192,7 +195,8 @@
 <h2>AI·사람·기존 도구는 무엇을 맡나요?</h2>
 <p>AI는 자료 정리와 초안을, 사람은 중요한 조건의 확인과 승인을, 기존 도구는 계산과 기록을 맡는 식으로 나눠보세요.</p>
 <p>제품 A 문의에서는 AI가 ‘제품·수량·희망 납품일’을 뽑아 정리할 수 있습니다. 확인된 가격으로 금액을 계산하는 것은 검증된 계산식에 맡깁니다. 납품 가능일과 예외 가격은 담당자가 확인해야 합니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/v2/card-03-roles.webp" alt="AI 생성 카드뉴스: 자료 정리·초안 작성과 가격 확인·발송 승인을 구분하는 장면" loading="lazy" decoding="async"><figcaption>AI 생성 카드뉴스 3/6. 모든 판단을 AI에 넘기지 않고 업무마다 역할을 정합니다.</figcaption></figure>
+<p><a href="https://www.nextcw.com/insights/ax-one-workflow-playbook/#ax-demo-handoff">가상 문의 024 역할 넘김을 글에서 보기</a></p>
+<p><strong>우리 팀에 대입할 질문:</strong> 정보가 비었을 때 누가 확인하고, 어떤 조건을 만족해야 다음 단계로 넘기나요?</p>
 <div class="post-table" tabindex="0" role="region" aria-label="표 (가로로 스크롤)"><table><thead><tr><th>담당</th><th>이번 문의에서 할 일</th></tr></thead><tbody>
 <tr><td>AI</td><td>문의 내용 정리, 빠진 정보 찾기, 확인된 자료로 답변 초안 만들기.</td></tr>
 <tr><td>사람</td><td>재고·납품일·가격 조건 확인, 수신자와 최종 문장 검토, 발송 승인.</td></tr>
@@ -208,7 +212,7 @@
 <h2>자료와 결과는 어떻게 이어져야 하나요?</h2>
 <p>어떤 자료를 기준으로 답했는지, 누가 확인했는지, 다음 행동이 무엇인지 같은 문의 안에서 볼 수 있어야 합니다.</p>
 <p>최 이사가 고객관리표와 별도 문서의 상태가 다르다는 것을 발견합니다. 이때는 “전부 연결하자”에 앞서 <strong>고객 상태는 어느 기록을 기준으로 삼을지</strong> 정해야 합니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/v2/card-04-evidence.webp" alt="AI 생성 카드뉴스: 최신 가격표·사용 가능한 사례·고객 기록의 기준을 정하는 장면" loading="lazy" decoding="async"><figcaption>AI 생성 카드뉴스 4/6. 자료마다 출처·확인일·담당자와 사용 범위를 붙입니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/v2/card-04-evidence.webp" alt="AI 생성 요약 카드: 최신 가격표·사용 가능한 사례·고객 기록의 기준을 정하는 장면" loading="lazy" decoding="async"><figcaption>AI 생성 요약 카드. 자료마다 출처·확인일·담당자와 사용 범위를 붙입니다.</figcaption></figure>
 <p>예를 들어 문의 번호 ‘024’에 고객 질문, 승인 가격표, 답변 초안, 확인 담당자, 다음 연락일이 함께 보이도록 정리할 수 있습니다.</p>
 <figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/v2/inquiry-board.webp" alt="가상 업무 화면 예시: 문의 024의 고객 질문과 자료·확인할 항목을 한곳에서 보는 화면" loading="lazy" decoding="async"><figcaption>설명용 가상 화면입니다. 실제 제품 화면이나 구현된 서비스가 아닙니다. 제품 A·수량·가격·날짜는 작성 예시입니다.</figcaption></figure>
 <p>이 화면에서 단가 20,000원과 수량 20개가 확인됐다면 금액은 계산식으로 400,000원이 됩니다. 하지만 납품일은 별도 확인이 필요하므로 AI가 확정해서 쓰면 안 됩니다. 가격은 가상 값이며 실제 판매 조건이 아닙니다.</p>
@@ -218,7 +222,6 @@
 <h2>“초안을 만들었다”와 “일을 끝냈다”는 어떻게 다른가요?</h2>
 <p>발송 여부와 다음 행동이 실제 기록에 남았는지까지 확인해야 합니다.</p>
 <p>박 대표가 승인한 답변을 이 팀장이 발송했습니다. 여기서 끝내면 다음 문의 때 같은 자료를 다시 찾고, 후속 연락도 놓칠 수 있습니다. 문의 024의 상태를 ‘발송 완료’로 바꾸고 담당자와 다음 연락일을 남깁니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/v2/card-05-done.webp" alt="AI 생성 카드뉴스: 초안·승인·발송·후속 기록을 구분하는 장면" loading="lazy" decoding="async"><figcaption>AI 생성 카드뉴스 5/6. AI의 완료 문구보다 실제 발송과 기록을 확인합니다.</figcaption></figure>
 <p>아래처럼 초안 옆에 확인할 항목과 다음 행동이 보이면 검토하기가 쉬워집니다.</p>
 <figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/v2/review-board.webp" alt="가상 검토 화면 예시: 답변 초안과 가격·납품일·수신자 확인, 승인 대기와 후속 행동" loading="lazy" decoding="async"><figcaption>설명용 가상 화면입니다. ‘확인 중’인 납품일은 확정되지 않았고, 승인 대기는 실제 발송 완료와 다릅니다.</figcaption></figure>
 <p>승인한 뒤 가격·수신자·조건을 바꾸면 다시 확인해야 합니다. 중요한 실행은 실제 시스템에서도 권한과 승인을 확인해야 하며, AI에게 “승인받아라”라고 적는 것만으로 충분하지 않습니다. <a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/" target="_blank" rel="noopener">OWASP의 실행 권한 지침</a></p>
@@ -237,6 +240,8 @@
 <h2>잘됐다는 것은 무엇으로 확인하나요?</h2>
 <p>초안 생성 시간에 더해 사람의 검토·수정, 고객에게 답하기까지의 기다림, 오류와 후속 누락을 함께 봅니다.</p>
 <p>가령 초안은 20분 빨라졌는데 사람이 확인하는 데 30분이 더 든다면 업무가 개선됐다고 보기 어렵습니다. 이 수치는 계산 원리를 설명하는 가상 예시입니다.</p>
+<p><a href="https://www.nextcw.com/insights/ax-one-workflow-playbook/#ax-demo-measure">가상 시간 비교 장면을 글에서 보기</a></p>
+<p><strong>우리 팀에 대입할 질문:</strong> 초안 시간뿐 아니라 검토·대기·수정과 후속 기록까지 합치면 실제 부담은 어떻게 달라졌나요?</p>
 <p>이 팀장에게는 ‘빨리 만들었나요?’와 함께 이렇게 묻겠습니다.</p>
 <ul>
 <li>틀린 가격이나 확인하지 않은 납품일이 들어갔나요?</li>
@@ -248,10 +253,10 @@
 <p>Anthropic은 초기 평가를 실제 실패에서 가져온 20~50개 과제로 시작할 수 있다고 설명합니다. 작은 시험의 출발점이지 운영 안전 보증은 아닙니다. <a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents" target="_blank" rel="noopener">에이전트 평가 가이드</a></p>
 <h2>이번 주에는 무엇부터 해보면 좋을까요?</h2>
 <p>최근 업무 한 건을 보고, 역할을 나누고, 가상 자료로 함께 시험하는 세 가지부터 해보세요.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/v2/card-06-first-week.webp" alt="AI 생성 카드뉴스: 최근 업무 한 건 관찰·역할 분담·가상 자료 시험의 세 단계" loading="lazy" decoding="async"><figcaption>AI 생성 카드뉴스 6/6. 이 세 가지를 팀 회의의 첫 안건으로 가져가 보세요.</figcaption></figure>
-<p><strong>첫째, 최근 문의 한 건을 펼칩니다.</strong> 어디에서 자료를 다시 찾고, 누구의 확인을 기다리고, 무엇을 기록하지 않았는지 보세요.</p>
-<p><strong>둘째, AI와 사람이 할 일을 적습니다.</strong> AI는 자료 정리와 초안, 사람은 중요한 조건 확인과 승인처럼 작은 범위로 시작합니다.</p>
-<p><strong>셋째, 가상 자료로 함께 시험합니다.</strong> 실제 사용자에게 써보게 하고, 빠진 정보나 오류가 있을 때 어떻게 처리되는지 확인합니다. 실제 고객 자료 사용과 외부 실행은 조직의 권한·승인 조건을 확인한 뒤 진행하세요.</p>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/v2/card-06-first-week.webp" alt="AI 생성 요약 카드: 최근 업무 한 건 관찰·역할 분담·가상 자료 시험의 세 단계" loading="lazy" decoding="async"><figcaption>AI 생성 요약 카드. 이 세 가지를 팀 회의의 첫 안건으로 가져가 보세요.</figcaption></figure>
+<p><strong>1. 최근 문의 한 건을 펼칩니다.</strong> 어디에서 자료를 다시 찾고, 누구의 확인을 기다리고, 무엇을 기록하지 않았는지 보세요.</p>
+<p><strong>2. AI와 사람이 할 일을 적습니다.</strong> AI는 자료 정리와 초안, 사람은 중요한 조건 확인과 승인처럼 작은 범위로 시작합니다.</p>
+<p><strong>3. 가상 자료로 함께 시험합니다.</strong> 실제 사용자에게 써보게 하고, 빠진 정보나 오류가 있을 때 어떻게 처리되는지 확인합니다. 실제 고객 자료 사용과 외부 실행은 조직의 권한·승인 조건을 확인한 뒤 진행하세요.</p>
 <figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/workflow.webp" alt="설명용 업무 흐름도: 접수부터 근거 확인·초안·승인·발송·다음 행동까지 연결" loading="lazy" decoding="async"><figcaption>팀이 업무를 정리할 때 참고할 전체 흐름입니다. 처음부터 모든 단계를 자동화할 필요는 없습니다.</figcaption></figure>
 <p>다음 한 장을 복사해 회의에서 채워보셔도 좋겠습니다.</p>
 <pre tabindex="0"><code class="language-text">우리 팀의 첫 AX 시험
@@ -274,15 +279,15 @@
 <p>오늘 글의 핵심은 <strong>“AI가 무엇을 만들었나” 다음에 “우리 일이 어디까지 끝났나”를 묻는 것</strong>입니다. 저는 이 질문을 팀이 함께 설명할 수 있을 때 첫 AX의 방향이 더 또렷해진다고 봅니다.</p>
 <p>여러분의 CEO AI 코치, <strong>넥스트코웍 찬스</strong>였습니다.</p>
 <h2>자주 묻는 질문</h2>
-<h3>개발자가 없어도 시작할 수 있나요?</h3>
+<h3>1. 개발자가 없어도 시작할 수 있나요?</h3>
 <p>기존 도구에서 자료 정리·초안·사람 검토를 작은 범위로 시험할 수 있습니다. 고객 데이터 분리·내부 시스템 연결·외부 자동 실행은 책임 있는 기술·보안 검토를 붙이세요.</p>
-<h3>AI 교육부터 해야 하나요, 업무부터 골라야 하나요?</h3>
+<h3>2. AI 교육부터 해야 하나요, 업무부터 골라야 하나요?</h3>
 <p>바꿀 업무를 먼저 고르고, 그 업무를 수행하고 검토하는 데 필요한 교육과 시험을 함께 설계하면 좋습니다. 기능을 배운 뒤 실제 업무 한 건에 적용하고 피드백을 받는 과정까지 이어가세요.</p>
-<h3>첫 시험에서 무엇이 나오면 성공인가요?</h3>
+<h3>3. 첫 시험에서 무엇이 나오면 성공인가요?</h3>
 <p>품질 기준을 지키면서 전체 부담이 줄고, 담당자가 반복해서 사용할 수 있는지 확인해야 합니다. 초안 생성 속도나 한 번의 시연만으로 성공을 판단하지 마세요.</p>
 <h2>우리 팀의 첫 AX를 함께 정리하고 싶다면</h2>
-<p>팀원들이 실제 업무를 함께 연습하고 AI 활용 방법을 맞추려면 <a href="https://www.nextcw.com/ai-campus/">AI Campus 기업 AI 실무교육</a>을, 대표님이 먼저 반복 업무와 의사결정 흐름을 정리하고 싶다면 <a href="https://www.nextcw.com/coaching/">CEO AI 코칭</a>을 살펴보세요.</p>
-<p>어떤 방식부터 시작할지 고민된다면, <strong>바꾸고 싶은 업무 한 건·현재 쓰는 자료·사람이 확인해야 할 조건</strong>을 적어 <a href="https://www.nextcw.com/contact/?s=coaching&amp;t=consult&amp;cta=ax_one_workflow_playbook">우리 조직의 첫 AX 교육·코칭 문의하기</a>로 이야기를 나눠보세요. 글에서 정리한 역할과 완료 기준을 바탕으로 우리 팀에 필요한 다음 단계를 논의할 수 있습니다.</p>]]></content:encoded>
+<p>대표님이 먼저 반복 업무와 의사결정 흐름을 정리하고 싶다면 <a href="https://www.nextcw.com/coaching/">CEO AI 코칭</a>에서 첫 과제를 함께 고를 수 있습니다. 팀원들이 같은 업무를 놓고 실습하고 AI 활용 방법을 맞춰야 한다면 <a href="https://www.nextcw.com/ai-campus/">AI Campus 기업 AI 실무교육</a>을 살펴보세요.</p>
+<p>어떤 업무부터 시작할지 고민된다면, <strong>바꾸고 싶은 업무 한 건·현재 쓰는 자료·사람이 확인해야 할 조건</strong>을 적어 <a href="https://www.nextcw.com/contact/?s=coaching&amp;t=consult&amp;cta=ax_one_workflow_playbook">대표님의 첫 AX 코칭 문의하기</a>로 이야기를 나눠보세요. 글에서 정리한 역할과 완료 기준을 바탕으로 다음 단계를 논의할 수 있습니다.</p>]]></content:encoded>
     </item>
     <item>
       <title>노트북을 닫아도 일하는 AI, 개발금융의 숫자와 IM 품질은 어떻게 지킬까요?</title>
