@@ -1,7 +1,7 @@
 import { renderMagazine, renderLatestNote } from "../js/insights-cards.js";
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFile } from "node:child_process";
@@ -11,6 +11,28 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const siteUrl = "https://www.nextcw.com";
 const contentDir = join(root, "content", "insights");
 const outputDir = join(root, "insights");
+
+// Aside 글의 세 장면만 허용한다. Markdown에서 임의 HTML을 허용하지 않는다.
+const asideDemoMeta = {
+  flow: { title: "Aside는 어떻게 작동할까?", deck: "탐색, 화면 분할, 현재 페이지 첨부가 한 업무에서 이어지는 방식", note: "작동 방식 개념 시연" },
+  appeal: { title: "왜 이 흐름이 매력적일까?", deck: "여러 화면을 오가는 동작보다, 한 결과물에 집중하는 사용 경험", note: "사용 경험 개념 시연" },
+  case: { title: "어떤 일을 맡기면 좋을까?", deck: "공개 교육 프로그램 두 곳을 근거가 있는 비교 초안으로 바꾸는 시연", note: "공개 프로그램 비교 시연" }
+};
+const asideDemoSource = readFileSync(join(root, "img/insights/aside-browser-workflow/demo.html"), "utf8");
+
+function renderAsideDemo(scene) {
+  const meta = asideDemoMeta[scene];
+  const section = asideDemoSource.match(new RegExp(`<section class="scene scene-${scene}(?: is-active)?"[\\s\\S]*?<\\/section>`));
+  if (!section) throw new Error(`Aside demo scene ${scene} not found`);
+  const activeSection = section[0].replace(new RegExp(`class="scene scene-${scene}(?: is-active)?"`), `class="scene scene-${scene} is-active"`);
+  return `<figure class="aside-demo-figure" id="aside-demo-${scene}">
+    <div class="demo aside-demo" data-scene="${scene}">
+      <header class="demo-head"><div><p class="demo-kicker"><span class="demo-kicker-dot"></span> NEXT COWORK · INTERACTIVE NOTE</p><h3>${escapeHtml(meta.title)}</h3><p class="demo-deck">${escapeHtml(meta.deck)}</p></div><button class="motion-toggle" type="button" hidden aria-pressed="false">일시정지</button></header>
+      ${activeSection}
+    </div>
+    <figcaption>움직이는 개념 시연 · ${escapeHtml(meta.note)}. 움직임은 일시정지 또는 기기 설정으로 조정할 수 있습니다.</figcaption>
+  </figure>`;
+}
 
 const externalFeed = [
   {
@@ -198,7 +220,7 @@ function renderTable(headCells, alignments, bodyRows) {
   return `<div class="post-table" tabindex="0" role="region" aria-label="표 (가로로 스크롤)"><table><thead><tr>${head}</tr></thead><tbody>\n${body}\n</tbody></table></div>`;
 }
 
-function renderMarkdown(markdown, label = "") {
+function renderMarkdown(markdown, label = "", output = "article") {
   const lines = markdown.replace(/\r\n/g, "\n").split("\n");
   const html = [];
   let paragraph = [];
@@ -255,6 +277,21 @@ function renderMarkdown(markdown, label = "") {
       flushParagraph();
       closeList();
       continue;
+    }
+
+    // 단독 줄 shortcode만 허용. RSS에는 움직이는 컴포넌트 대신 원문 위치 링크를 쓴다.
+    const asideDemo = trimmed.match(/^::aside-demo\[(flow|appeal|case)\]$/);
+    if (asideDemo) {
+      flushParagraph();
+      closeList();
+      const scene = asideDemo[1];
+      html.push(output === "rss"
+        ? `<p><a href="https://www.nextcw.com/insights/aside-browser-workflow/#aside-demo-${scene}">${escapeHtml(asideDemoMeta[scene].note)}을 글에서 보기</a></p>`
+        : renderAsideDemo(scene));
+      continue;
+    }
+    if (trimmed.startsWith("::aside-demo[")) {
+      throw new Error(`${label || "본문"}: 지원하지 않는 Aside 시연 장면입니다 (${trimmed}).`);
     }
 
     const heading = trimmed.match(/^(#{1,3})\s+(.+)$/);
@@ -359,7 +396,7 @@ function toPlainText(markdown) {
   return markdown
     .split("\n")
     .map((line) => line.trim())
-    .filter(Boolean)
+    .filter((line) => line && !/^::aside-demo\[(flow|appeal|case)\]$/.test(line))
     .map((line) => {
       // 목록 항목은 "· "로 구분해 붙인다. 그냥 이으면 문장 경계가 사라져 답변이 뭉개진다.
       if (/^[-*]\s+/.test(line) || /^\d+\.\s+/.test(line)) {
@@ -473,7 +510,7 @@ async function computeAssetVersion(posts) {
   }))));
 
   const pageCss = (await readdir(join(root, "css"))).filter((name) => /^page-[\w-]+\.css$/.test(name)).sort().map((name) => `css/${name}`);
-  for (const path of ["css/style.css", "js/main.js", "js/analytics.js", "scripts/build-insights.mjs", "css/insights-magazine.css", "js/insights-cards.js", "js/insights-magazine.js", "js/insights-share.js", ...pageCss]) {
+  for (const path of ["css/style.css", "js/main.js", "js/analytics.js", "scripts/build-insights.mjs", "css/insights-magazine.css", "js/insights-cards.js", "js/insights-magazine.js", "js/insights-share.js", "img/insights/aside-browser-workflow/demo.html", "img/insights/aside-browser-workflow/demo.css", "img/insights/aside-browser-workflow/demo.js", ...pageCss]) {
     hash.update(await readFile(join(root, path), "utf8"));
   }
 
@@ -700,7 +737,9 @@ function renderArticle(post, assetVersion) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
 <link rel="stylesheet" href="${versioned("/css/style.css", assetVersion)}">
-<link rel="stylesheet" href="${versioned("/css/insights-magazine.css", assetVersion)}">${post.slug === "gpt6-intelligent-ui" ? `
+<link rel="stylesheet" href="${versioned("/css/insights-magazine.css", assetVersion)}">${post.slug === "aside-browser-workflow" ? `
+<link rel="stylesheet" href="${versioned("/img/insights/aside-browser-workflow/demo.css", assetVersion)}">
+<script src="${versioned("/img/insights/aside-browser-workflow/demo.js", assetVersion)}" defer></script>` : ""}${post.slug === "gpt6-intelligent-ui" ? `
 <link rel="stylesheet" href="${versioned("/img/insights/gpt6-intelligent-ui/prompt-copy.css", assetVersion)}">
 <script src="${versioned("/img/insights/gpt6-intelligent-ui/prompt-copy.js", assetVersion)}" defer></script>` : ""}
 <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
@@ -989,7 +1028,7 @@ function toRfc822(date) {
 
 // RSS 리더에서도 본문의 링크와 이미지를 사용할 수 있도록 문서 URL 기준으로 절대화한다.
 function renderRssBody(post) {
-  const html = renderMarkdown(post.body, `content/insights/${post.slug}`);
+  const html = renderMarkdown(post.body, `content/insights/${post.slug}`, "rss");
   return html.replace(/\b(href|src)="([^"]*)"/g, (_match, attribute, value) => {
     const url = value.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
     return `${attribute}="${escapeAttr(new URL(url, absoluteUrl(post.url)).href)}"`;

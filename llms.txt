@@ -54,8 +54,8 @@ https://www.nextcw.com/coaching/
 ## 인사이트 아티클 (최신순)
 
 <!-- INSIGHTS:START -->
-- Aside Browser는 어떻게 탭의 홍수를 업무 흐름으로 바꿀까? (2026-10-13): https://www.nextcw.com/insights/aside-browser-workflow/
-  사이드바에서 시작된 작은 변화가 페이지 맥락과 AI 업무 위임으로 이어집니다. Aside Browser의 사용 경험과 함께, 직접 적용할 업무 요청 양식과 도입 판단 기준을 살펴봅니다.
+- Aside Browser는 어떻게 탭의 홍수를 실제 업무 결과로 바꿀까? (2026-10-13): https://www.nextcw.com/insights/aside-browser-workflow/
+  Aside Browser의 사이드바·화면 분할·AI 작업이 연결되는 과정을 3개의 움직이는 장면으로 살펴봅니다. 공개 자료 비교 시연, 복사해 쓸 요청문, 도입 판단 기준까지 담았습니다.
 - AI는 쓰는데 왜 일이 줄지 않을까요? 대표님을 위한 첫 AX 실행 가이드 (2026-10-12): https://www.nextcw.com/insights/ax-one-workflow-playbook/
   넥스트코웍 찬스가 가상 경영진의 고객 문의 한 건을 함께 풀어봅니다. 그림과 화면 예시로 AX의 방향을 이해하고, AI·사람·기존 도구의 역할과 이번 주 첫 실행을 정리해보세요.
 - 노트북을 닫아도 일하는 AI, 개발금융의 숫자와 IM 품질은 어떻게 지킬까요? (2026-10-12): https://www.nextcw.com/insights/development-finance-ai-review-im/
