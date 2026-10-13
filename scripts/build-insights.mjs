@@ -788,9 +788,9 @@ ${articleBody}
       </div>
       <div class="post-cta reveal">
         <strong>${isAxPlaybook ? "첫 AX 회의를 준비해보세요" : "이 주제를 조직에 맞게 적용하고 싶다면"}</strong>
-        <p>${isAxPlaybook ? "최근 업무 한 건을 고르고, 위 도입 결정서에 책임자·자료·승인·완료 기준을 적어보세요." : post.slug === "ai-fast-failure" ? "팀의 실제 업무에 AI를 적용하고 싶다면, AI Campus 교육에서 우리 조직에 맞는 활용 방법을 함께 살펴보세요." : "AI 실무교육, CEO 코칭, 워크스페이스 컨설팅으로 연결해 드립니다."}</p>
+        <p>${isAxPlaybook ? "최근 업무 한 건을 고르고, 위 도입 결정서에 책임자·자료·승인·완료 기준을 적어보세요." : post.slug === "aside-browser-workflow" ? "대표님의 실제 업무에서 AI에게 맡길 범위와 결과 확인 방법을 정하고 싶다면, CEO AI 코칭에서 함께 정리할 수 있습니다." : post.slug === "ai-fast-failure" ? "팀의 실제 업무에 AI를 적용하고 싶다면, AI Campus 교육에서 우리 조직에 맞는 활용 방법을 함께 살펴보세요." : "AI 실무교육, CEO 코칭, 워크스페이스 컨설팅으로 연결해 드립니다."}</p>
         <div class="btn-row">
-          ${isAxPlaybook ? "" : `<a class="btn btn-primary" href="${escapeAttr(contactPath(post, "insight_article"))}">${post.slug === "ai-fast-failure" ? "우리 팀 AI 교육 문의하기" : "프로젝트 문의하기"} <span class="arr">→</span></a>`}
+          ${isAxPlaybook ? "" : `<a class="btn btn-primary" href="${escapeAttr(contactPath(post, "insight_article"))}">${post.slug === "aside-browser-workflow" ? "CEO AI 코칭 문의하기" : post.slug === "ai-fast-failure" ? "우리 팀 AI 교육 문의하기" : "프로젝트 문의하기"} <span class="arr">→</span></a>`}
           <a class="btn btn-ghost" href="/insights/">인사이트 더 보기 <span class="arr">→</span></a>
         </div>
       </div>
