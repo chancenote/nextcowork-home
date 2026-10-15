@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">Claude Dashboards &amp; Motion — NEXT COWORK</title>
+<desc id="desc">보라색 배경에 데이터 분석 차트와 애니메이션 재생 화면이 함께 나타난 인사이트 대표 이미지</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#302D7C"/><stop offset=".56" stop-color="#6955BA"/><stop offset="1" stop-color="#00AEB7"/></linearGradient>
+<linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff" stop-opacity=".21"/><stop offset="1" stop-color="#ffffff" stop-opacity=".07"/></linearGradient>
+<filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="18" stdDeviation="25" flood-opacity=".24"/></filter>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<circle cx="1166" cy="18" r="300" fill="#ffffff" opacity=".045"/><circle cx="1033" cy="516" r="340" fill="none" stroke="#fff" opacity=".12" stroke-width="2"/>
+<text x="76" y="82" fill="#C9F8EF" font-family="Pretendard,Arial,sans-serif" font-size="22" letter-spacing="5" font-weight="700">NEXT COWORK · AI INSIGHT</text>
+<text x="76" y="187" fill="#fff" font-family="Pretendard,Arial,sans-serif" font-size="59" font-weight="800">Claude Dashboards</text>
+<text x="76" y="260" fill="#fff" font-family="Pretendard,Arial,sans-serif" font-size="59" font-weight="800">&amp; Motion</text>
+<text x="76" y="329" fill="#F1EEFF" font-family="Pretendard,'Apple SD Gothic Neo',sans-serif" font-size="30" font-weight="500">데이터는 판단으로, 자료는 설명으로</text>
+<rect x="76" y="398" width="418" height="1" fill="#fff" opacity=".45"/>
+<text x="76" y="452" fill="#F1EEFF" font-family="Pretendard,'Apple SD Gothic Neo',sans-serif" font-size="24">실무 활용법 · 10장 인터랙티브 카드뉴스</text>
+<text x="76" y="567" fill="#D3C9FF" font-family="Pretendard,Arial,sans-serif" font-size="20" font-weight="600">Build the Next Workspace</text>
+<g filter="url(#shadow)" transform="translate(640 115)">
+<rect width="430" height="300" rx="28" fill="url(#panel)" stroke="#fff" stroke-opacity=".42" />
+<rect x="31" y="31" width="369" height="52" rx="13" fill="#ffffff" opacity=".17"/>
+<circle cx="63" cy="57" r="8" fill="#25C5A8"/><rect x="86" y="49" width="173" height="14" rx="7" fill="#fff" opacity=".8"/>
+<path d="M50 243L122 187L195 207L260 119L327 145L380 102" fill="none" stroke="#25C5A8" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M50 246L122 226L195 236L260 199L327 210L380 171" fill="none" stroke="#E3C5FF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+<circle cx="260" cy="119" r="11" fill="#fff" stroke="#25C5A8" stroke-width="5"/>
+</g>
+<g transform="translate(885 340)" filter="url(#shadow)">
+<rect width="215" height="176" rx="28" fill="#F8F7FF"/><rect x="22" y="22" width="171" height="132" rx="21" fill="#302D7C"/>
+<circle cx="107" cy="88" r="41" fill="#25C5A8"/><path d="M94 63L129 88L94 113Z" fill="#302D7C"/>
+<rect x="55" y="158" width="105" height="5" rx="2" fill="#B99EFF"/>
+</g>
+</svg>
