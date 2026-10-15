@@ -1,15 +1,15 @@
 {
   "/": {
-    "hash": "157dc650ac4e",
-    "date": "2026-10-13"
+    "hash": "592b487a5542",
+    "date": "2026-10-16"
   },
   "/flexoffice/": {
     "hash": "adb4f72f6ec6",
     "date": "2026-10-10"
   },
   "/ai-campus/": {
-    "hash": "80459ca1521f",
-    "date": "2026-10-12"
+    "hash": "207af5216b64",
+    "date": "2026-10-16"
   },
   "/public/": {
     "hash": "2c83c466bb7d",
@@ -20,12 +20,12 @@
     "date": "2026-10-10"
   },
   "/about/": {
-    "hash": "5d8f5bb560cf",
-    "date": "2026-10-10"
+    "hash": "c13790557972",
+    "date": "2026-10-16"
   },
   "/insights/": {
-    "hash": "34784f0b7123",
-    "date": "2026-10-13"
+    "hash": "f84af105561f",
+    "date": "2026-10-16"
   },
   "/contact/": {
     "hash": "14026e5944f1",
@@ -35,8 +35,12 @@
     "hash": "815c74f7b935",
     "date": "2026-10-08"
   },
+  "/insights/claude-motion-dashboards-workflow/": {
+    "hash": "3e73b2adaf93",
+    "date": "2026-10-16"
+  },
   "/insights/aside-browser-workflow/": {
-    "hash": "286db1225440",
+    "hash": "ffe1a1743f07",
     "date": "2026-10-13"
   },
   "/insights/ax-one-workflow-playbook/": {
@@ -69,7 +73,7 @@
   },
   "/insights/ai-training-request-brief/": {
     "hash": "aa08b75bb054",
-    "date": "2026-10-08"
+    "date": "2026-10-07"
   },
   "/insights/ai-fast-failure/": {
     "hash": "6c92d66524e8",
@@ -77,10 +81,10 @@
   },
   "/insights/flexoffice-feasibility-checklist/": {
     "hash": "983f2a7461e2",
-    "date": "2026-10-08"
+    "date": "2026-08-04"
   },
   "/insights/ai-workspace-builder/": {
-    "hash": "2f4475ebd16e",
+    "hash": "135ff0c2b62b",
     "date": "2026-10-10"
   }
 }

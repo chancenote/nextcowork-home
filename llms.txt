@@ -54,6 +54,8 @@ https://www.nextcw.com/coaching/
 ## 인사이트 아티클 (최신순)
 
 <!-- INSIGHTS:START -->
+- Claude Dashboards와 Motion, 업무에서는 어떻게 이어 쓸까? (2026-10-16): https://www.nextcw.com/insights/claude-motion-dashboards-workflow/
+  Claude의 새 기능 Dashboards는 데이터를 판단할 화면으로, Motion은 자료를 짧은 설명 애니메이션으로 바꿉니다. 두 기능의 차이, 플랜별 사용 가능 여부, 숫자를 믿기 전에 확인할 기준, 교육·공간·세일즈 업무에 적용하는 첫 실험을 카드뉴스 10장으로 정리했습니다.
 - Aside Browser는 어떻게 탭의 홍수를 실제 업무 결과로 바꿀까? (2026-10-13): https://www.nextcw.com/insights/aside-browser-workflow/
   Aside Browser의 사이드바·화면 분할·AI 작업이 연결되는 과정을 3개의 움직이는 장면으로 살펴봅니다. 공개 자료 비교 시연, 복사해 쓸 요청문, 도입 판단 기준까지 담았습니다.
 - AI는 쓰는데 왜 일이 줄지 않을까요? 대표님을 위한 첫 AX 실행 가이드 (2026-10-12): https://www.nextcw.com/insights/ax-one-workflow-playbook/
