@@ -27,6 +27,12 @@ llms.txt · robots.txt · sitemap.xml · vercel.json · img/og.png
 
 ## 2. 배포 (Vercel · GitHub 연동)
 
+읽기 전용 SEO 회귀 점검:
+
+- `node scripts/verify-search-readiness.mjs`: 로컬 사이트맵·canonical·내부 링크·이미지 치수·수정일 정책 검사. 새 글은 이미지 치수 기준표에도 추가합니다.
+- `python3 scripts/verify-url-routing.py --output /tmp/nextcw-routing.json`: 현재 운영 사이트맵, 4개 도메인 형태, 과거 주소, 404 응답 감사. 결과 파일은 공개 사이트 폴더 밖에 저장합니다.
+- Search Console 예시 URL을 한 줄씩 저장한 파일은 `--extra-url-file /tmp/gsc-urls.txt`로 추가 검사합니다. HTTP 200은 실제 Google 색인 또는 외부 Notion 본문 공개의 증거가 아닙니다.
+
 - 프로젝트 `nextcowork-home`은 GitHub 저장소와 연동되어 있습니다. **브랜치 푸시 = 자동 미리보기**(Vercel 로그인 필요), **main 푸시 = 운영 배포**입니다.
 - 순서: 승인 범위 파일만 브랜치에 커밋·푸시 → 미리보기 URL로 대표 확인 → "운영 반영" 승인 → main 병합 → `npm run build`(캐시값·lastmod 갱신) → main 푸시 → 실제 URL 확인.
 - 병합 충돌이 `?v=` 캐시값뿐이어도 파일 단위로 한쪽을 통째로 받지 않습니다. `-X ours` 병합 후 브랜치가 추가한 줄이 결과 파일에 모두 있는지 대조합니다.
