@@ -3,6 +3,26 @@ const root = document.getElementById('feed');
 const data = window.NCW_FEED || [];
 const discovery = document.getElementById('insights-discovery');
 const pageSize = 12;
+/* 구매의도 검색어 → 기존 서비스. s/t 값은 main.js의 crumbLabels·tierOptions에 있는 값만 쓴다. 순서가 우선순위. */
+const serviceIntents = [
+  {s:'public', t:'advisory', path:'/public/', name:'Public Advisory', inquiry:'Public Advisory 문의', re:/공공(기관|조직|자문|ai)|기관자문|기관컨설팅|publicadvisory/},
+  {s:'coaching', t:'consult', path:'/coaching/', name:'CEO AI 코칭', inquiry:'CEO AI 코칭 문의', re:/대표코칭|ceo코칭|ceoai코칭|경영자코칭|임원코칭|대표ai코칭/},
+  {s:'flexoffice', t:'precheck', path:'/flexoffice/', name:'FlexOffice', inquiry:'FlexOffice 컨설팅 문의', re:/공간컨설팅|공유오피스|플렉스오피스|flexoffice/},
+  {s:'ai-campus', t:'diagnosis', path:'/ai-campus/', name:'AI Campus', inquiry:'AI Campus 교육 문의', re:/기업교육|ai교육|교육견적|교육제안|교육문의|사내교육|aicampus/}
+];
+function matchServiceIntent(q) {
+  const key = String(q || '').normalize('NFKC').toLowerCase().replace(/\s+/g, '');
+  if (!key) return null;
+  const hit = serviceIntents.find(service => service.re.test(key));
+  if (!hit) return null;
+  return {...hit, t: hit.s === 'ai-campus' && /견적|제안/.test(key) ? 'proposal' : hit.t};
+}
+const contactHref = (s, t, cta) => '/contact/?' + (s ? 's=' + s + '&t=' + t + '&' : '') + 'cta=' + cta;
+function link(className, text, href, cta) {
+  const a = document.createElement('a'); a.className = className; a.href = href; a.textContent = text;
+  if (cta) a.dataset.ctaLocation = cta;
+  return a;
+}
 function imageFallbacks() {
   document.querySelectorAll('.thumb-cover img, .latest-note-cover img').forEach(image => {
     const fallback = () => { if (image.getAttribute('src') !== '/img/og.png') image.src = '/img/og.png'; };
@@ -17,6 +37,9 @@ if (root && discovery && data.length) {
   const tagsRoot = document.getElementById('insights-tags');
   const pagination = document.getElementById('insights-pagination');
   const reset = document.getElementById('insights-reset');
+  const serviceBox = document.createElement('div');
+  serviceBox.id = 'insights-service-match'; serviceBox.setAttribute('aria-live', 'polite');
+  root.before(serviceBox);
   const posts = data.filter(item=>item.src==='insight');
   const topics = [...new Set(posts.map(item=>item.topic).filter(Boolean))];
   const tags = [...new Set(posts.flatMap(item=>item.tags || []))];
@@ -85,6 +108,20 @@ if (root && discovery && data.length) {
     const pageItems=matches.slice((state.page-1)*pageSize,state.page*pageSize);
     root.innerHTML=pageItems.length?renderMagazine(pageItems):'<div class="insights-empty"><h3>조건에 맞는 노트가 없습니다.</h3><p>검색어를 줄이거나 주제·태그 조건을 지워 다시 찾아보세요.</p><button type="button" class="btn btn-ghost" id="empty-reset">조건 초기화</button></div>';
     document.getElementById('latest-note').hidden=active;
+    /* 구매의도 검색 또는 실제 0건에서만 서비스·문의 안내를 보인다. 검색어(q)는 문구에 넣지 않는다. */
+    const intent=matchServiceIntent(state.q), zero=!pageItems.length;
+    serviceBox.replaceChildren();
+    if(intent && state.page===1) {
+      const group=document.createElement('section');group.className='insights-service-match';group.setAttribute('role','group');group.setAttribute('aria-labelledby','insights-service-title');
+      const title=document.createElement('h3');title.id='insights-service-title';title.textContent=intent.name+' 서비스';
+      const actions=document.createElement('div');actions.className='insights-service-actions';
+      actions.append(link('btn btn-ghost',intent.name+' 서비스 보기',intent.path,'insights_search_service'),link('btn btn-primary',intent.inquiry,contactHref(intent.s,intent.t,zero?'insights_zero_inquiry':'insights_search_inquiry'),zero?'insights_zero_inquiry':'insights_search_inquiry'));
+      group.append(title,actions);serviceBox.append(group);
+    }
+    if(zero && !intent) {
+      const empty=root.querySelector('.insights-empty');
+      if(empty) empty.append(link('btn btn-primary insights-zero-inquiry','프로젝트 문의',contactHref('','','insights_zero_inquiry'),'insights_zero_inquiry'));
+    }
     const count=document.getElementById('insights-result-count');
     count.textContent=active ? `${state.q ? '“'+state.q+'” · ' : ''}${[state.topic,state.tag].filter(Boolean).join(' · ')}${state.topic||state.tag?' · ':''}노트 ${matches.length}개 · ${state.q.trim()?'관련도순':'최신순'}` : `노트 ${posts.length}개 · 채널·자료실 ${data.length-posts.length}개`;
     reset.hidden=!active;

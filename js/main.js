@@ -402,16 +402,19 @@
     if (!/\.pdf$/i.test(path)) return;
     track("file_download", { file_name: path.split("/").pop(), link_url: path, source_page: currentPath });
   });
-  document.querySelectorAll('a[href^="/contact/"]').forEach(function (a) {
-    a.addEventListener("click", function () {
-      var url;
-      try { url = new URL(a.getAttribute("href"), window.location.origin); } catch (e) { url = null; }
-      track("service_cta_click", {
-        source_page: currentPath,
-        service_key: url ? (url.searchParams.get("s") || "general") : "general",
-        tier_key: url ? (url.searchParams.get("t") || "") : "",
-        cta_location: url ? (url.searchParams.get("cta") || "") : ""
-      });
+  /* Delegation also covers inquiry links rendered after a search/filter change.
+     Preserve the existing event/fields; never include the visitor's search text. */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="/contact/"]');
+    if (!a) return;
+    var url;
+    try { url = new URL(a.getAttribute("href"), window.location.origin); } catch (error) { return; }
+    if (url.origin !== window.location.origin || url.pathname !== "/contact/") return;
+    track("service_cta_click", {
+      source_page: currentPath,
+      service_key: url.searchParams.get("s") || "general",
+      tier_key: url.searchParams.get("t") || "",
+      cta_location: url.searchParams.get("cta") || ""
     });
   });
 
