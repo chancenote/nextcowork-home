@@ -1996,3 +1996,15 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
 /* Aside Browser 글: 복사용 요청 양식이 모바일에서 잘리지 않도록 줄바꿈, 4열 표는 좁은 화면 여백 축소. */
 .post--aside-browser-workflow .post-body pre { white-space: pre-wrap; overflow-wrap: anywhere; }
 @media (max-width: 600px) { .post--aside-browser-workflow .post-table th, .post--aside-browser-workflow .post-table td { padding: 10px 8px; font-size: 14.5px; } }
+
+/* 인사이트 검색 → 서비스·문의 안내 (구매의도 검색·0건에서만) */
+#insights-service-match:empty { display: none; }
+.insights-service-match { margin: 0 0 20px; padding: 18px 20px; border: 1px solid var(--control-border, #d9d9e3); border-radius: var(--radius, 12px); background: var(--bg, #fff); }
+.insights-service-match h3 { margin: 0 0 12px; font-size: 1.0625rem; }
+.insights-service-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.insights-empty .insights-zero-inquiry { margin-left: 8px; }
+@media (max-width: 640px) {
+  .insights-service-actions { flex-direction: column; }
+  .insights-service-actions .btn { width: 100%; text-align: center; }
+  .insights-empty .insights-zero-inquiry { margin: 10px 0 0; }
+}
