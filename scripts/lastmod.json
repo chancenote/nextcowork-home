@@ -1,31 +1,31 @@
 {
   "/": {
-    "hash": "592b487a5542",
-    "date": "2026-10-16"
+    "hash": "1768b75d564f",
+    "date": "2026-10-19"
   },
   "/flexoffice/": {
-    "hash": "adb4f72f6ec6",
-    "date": "2026-10-10"
+    "hash": "576731c61dcc",
+    "date": "2026-10-19"
   },
   "/ai-campus/": {
-    "hash": "207af5216b64",
-    "date": "2026-10-16"
+    "hash": "e7bab1c3e0a6",
+    "date": "2026-10-19"
   },
   "/public/": {
-    "hash": "2c83c466bb7d",
-    "date": "2026-10-11"
+    "hash": "2d579b6a8fc5",
+    "date": "2026-10-19"
   },
   "/coaching/": {
-    "hash": "3df6c2be9135",
-    "date": "2026-10-10"
+    "hash": "069c3a5abedd",
+    "date": "2026-10-19"
   },
   "/about/": {
     "hash": "c13790557972",
     "date": "2026-10-16"
   },
   "/insights/": {
-    "hash": "f84af105561f",
-    "date": "2026-10-16"
+    "hash": "7d5b8cd8933e",
+    "date": "2026-10-19"
   },
   "/contact/": {
     "hash": "14026e5944f1",
@@ -34,6 +34,10 @@
   "/privacy/": {
     "hash": "815c74f7b935",
     "date": "2026-10-08"
+  },
+  "/insights/nextcowork-space-ai-intersection/": {
+    "hash": "7e37c38e6c8f",
+    "date": "2026-10-20"
   },
   "/insights/claude-motion-dashboards-workflow/": {
     "hash": "3e73b2adaf93",
