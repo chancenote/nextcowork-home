@@ -127,6 +127,7 @@ const staticRoutes = [
   { path: "/", file: "index.html", priority: "1.0" },
   { path: "/flexoffice/", file: "flexoffice/index.html", priority: "0.9" },
   { path: "/ai-campus/", file: "ai-campus/index.html", priority: "0.9" },
+  { path: "/ai-campus/ceo-ax-workshop/", file: "ai-campus/ceo-ax-workshop/index.html", priority: "0.8" },
   { path: "/public/", file: "public/index.html", priority: "0.9" },
   { path: "/coaching/", file: "coaching/index.html", priority: "0.9" },
   { path: "/about/", file: "about/index.html", priority: "0.8" },
@@ -1342,3 +1343,4 @@ main().catch((error) => {
   console.error(error.message);
   process.exit(1);
 });
+
