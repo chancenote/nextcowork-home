@@ -287,6 +287,7 @@
       ["diagnosis", "무료 교육 진단"],
       ["lecture", "AI 실무활용 특강"],
       ["workshop", "실무 워크샵"],
+      ["ceo-ax-workshop", "CEO·전문직 AI·AX 워크숍 · 첫 기수 상담"],
       ["campus", "사내 AI 캠퍼스 구축"],
       ["sprint", "8주 파일럿 (업무 전환)"],
       ["proposal", "교육 제안요청"]
@@ -347,6 +348,47 @@
     return params;
   }
 
+  function isCeoWorkshop() {
+    var service = document.getElementById("cf-service");
+    var tier = document.getElementById("cf-tier");
+    var opt = tier && tier.options[tier.selectedIndex];
+    return serviceKeyFromSelect(service) === "ai-campus" && !!opt && opt.getAttribute("data-t") === "ceo-ax-workshop";
+  }
+
+  /* Only the workshop asks for these details. Disabled fields never enter other inquiries. */
+  function updateWorkshopFields() {
+    var fields = document.getElementById("cf-workshop-fields");
+    if (!fields) return;
+    var active = isCeoWorkshop();
+    fields.hidden = !active;
+    fields.disabled = !active;
+    fields.querySelectorAll("[data-workshop-required]").forEach(function (el) {
+      el.required = active;
+      if (!active) el.removeAttribute("aria-invalid");
+    });
+    var optional = document.getElementById("cf-project-details");
+    if (optional) {
+      optional.hidden = active;
+      optional.querySelectorAll("input, select").forEach(function (el) { el.disabled = active; });
+    }
+    var message = document.getElementById("cf-message");
+    var label = document.getElementById("cf-message-label");
+    if (label) label.innerHTML = active ? "해결하고 싶은 업무 <em>*</em>" : "문의 내용 <em>*</em>";
+    if (message) {
+      message.maxLength = active ? 2000 : 3000;
+      var selected = document.getElementById("cf-tier");
+      message.placeholder = active ? "예: 매주 회의 메모를 정리해 의사결정 보고서를 만듭니다. AI 초안을 계속 고쳐야 해서 다시 쓰기 어렵습니다. 고객명·기밀은 제외해주세요." :
+        ((selected && selected.value) ? selected.value + " 관련 문의입니다. 대상·규모·희망 일정 등을 자유롭게 남겨주세요." : "대상·규모·희망 일정 등을 자유롭게 남겨주세요.");
+    }
+    var title = document.getElementById("cf-form-title");
+    var lead = document.getElementById("cf-form-lead");
+    if (title) title.textContent = active ? "첫 기수 참여 상담 신청" : "온라인으로 바로 문의하기";
+    if (lead) lead.textContent = active ? "내 업무로 참여할 수 있을지 먼저 확인합니다. 상담 신청은 결제·참가 확정이 아닙니다. 가격·정원·일정은 확정 후 별도로 안내합니다." : "필수 정보만 먼저 남겨주세요. 서비스·상품 문맥은 자동으로 함께 기록됩니다.";
+    var crumb = document.getElementById("contact-crumb");
+    var serviceKey = serviceKeyFromSelect(document.getElementById("cf-service")) || "general";
+    if (crumb) crumb.textContent = active ? "CEO AI·AX 워크숍 상담" : (crumbLabels[serviceKey] || crumbLabels.general);
+  }
+
   function fillContactContext() {
     var crumbEl = document.getElementById("contact-crumb");
     if (crumbEl && crumbLabels[sParam]) crumbEl.textContent = crumbLabels[sParam];
@@ -383,8 +425,15 @@
       svcSelect.setAttribute("data-context-bound", "true");
       svcSelect.addEventListener("change", function () {
         updateTierOptions(serviceKeyFromSelect(svcSelect) || "general", "");
+        updateWorkshopFields();
       });
     }
+    var tierSelect = document.getElementById("cf-tier");
+    if (tierSelect && tierSelect.getAttribute("data-workshop-bound") !== "true") {
+      tierSelect.setAttribute("data-workshop-bound", "true");
+      tierSelect.addEventListener("change", updateWorkshopFields);
+    }
+    updateWorkshopFields();
   }
   fillContactContext();
 
@@ -431,8 +480,25 @@
       track("form_start", readContext());
     });
 
-    function buildMessage() {
+    /* Keep details in the existing message too: downstream Make/CRM mappings need no new columns.
+       Build from fresh FormData; never mutate the textarea (retries/copy cannot duplicate this block). */
+    function buildContactData() {
       var d = new FormData(form);
+      if (isCeoWorkshop()) {
+        var details = "[CEO·전문직 AI·AX 워크숍 · 첫 기수 참여 상담]\n" +
+          "업종: " + (d.get("workshop_industry") || "") + "\n" +
+          "직책: " + (d.get("workshop_role") || "") + "\n" +
+          "AI 사용 경험: " + (d.get("workshop_ai_experience") || "") + "\n" +
+          "참여 검토 단계: " + (d.get("workshop_intent") || "미입력") + "\n" +
+          "희망 일정: " + (d.get("workshop_schedule") || "미입력") + "\n\n" +
+          "해결하고 싶은 업무:\n" + (d.get("message") || "");
+        d.set("message", details);
+      }
+      return d;
+    }
+
+    function buildMessage() {
+      var d = buildContactData();
       var service = d.get("service") || "일반";
       var tier = d.get("tier") || "선택 안 함";
       var subject = "[웹사이트 문의] " + service + " / " + tier + " — " + (d.get("name") || "");
@@ -553,7 +619,7 @@
         setStatus("전송 중입니다...");
         var controller = (typeof AbortController === "function") ? new AbortController() : null;
         var timer = controller ? setTimeout(function () { controller.abort(); }, 15000) : null;
-        var opts = { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } };
+        var opts = { method: "POST", body: buildContactData(), headers: { "Accept": "application/json" } };
         if (controller) opts.signal = controller.signal;
         fetch(endpoint, opts)
           .then(function (r) {
@@ -765,3 +831,4 @@
     sync();
   });
 })();
+

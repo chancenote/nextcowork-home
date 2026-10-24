@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="/js/analytics.js?v=ncw-770727abfc" defer></script>
+<script src="/js/analytics.js?v=ncw-443c62e40b" defer></script>
 <title>문의하기 | 공유오피스·AI 교육·공공 자문·CEO 코칭 상담 — 넥스트코웍</title>
 <meta name="description" content="공유오피스 컨설팅, 기업 AI 교육, 공공 자문, CEO AI 코칭 문의. 이름·이메일·과제만 적어 주시면 접수번호를 드리고 영업일 1일 내 회신합니다. 사전 진단 미팅 무료.">
 <link rel="canonical" href="https://www.nextcw.com/contact/">
@@ -30,7 +30,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=ncw-770727abfc">
+<link rel="stylesheet" href="/css/style.css?v=ncw-443c62e40b">
+<link rel="stylesheet" href="/css/page-workshop.css?v=ncw-443c62e40b">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -85,7 +86,7 @@
           <form class="form-card reveal" id="contact-form" data-endpoint="https://hook.us1.make.com/li5ucmemlr73l6hfuwcx27hb861zaemg" action="https://hook.us1.make.com/li5ucmemlr73l6hfuwcx27hb861zaemg" method="post">
             <input type="hidden" id="cf-form-type" name="form_type" value="inquiry">
             <input type="hidden" id="cf-request-key" name="request_key" value="">
-            <input type="hidden" id="cf-consent-version" name="consent_version" value="2026-10">
+            <input type="hidden" id="cf-consent-version" name="consent_version" value="2026-10-workshop-v1">
             <div class="hp-field" aria-hidden="true"><label>회사 홈페이지<input type="text" name="company_url" tabindex="-1" autocomplete="off" value=""></label></div>
             <input type="hidden" id="cf-elapsed" name="form_elapsed_ms" value="">
             <input type="hidden" id="cf-source-page" name="source_page" value="">
@@ -98,8 +99,8 @@
             <input type="hidden" id="cf-utm-content" name="utm_content" value="">
             <input type="hidden" id="cf-origin-article" name="origin_article_slug" value="">
             <input type="hidden" id="cf-tracking-version" name="tracking_version" value="">
-            <h3 class="form-card-title">온라인으로 바로 문의하기</h3>
-            <p class="form-card-lead">필수 정보만 먼저 남겨주세요. 서비스·상품 문맥은 자동으로 함께 기록됩니다.</p>
+            <h3 class="form-card-title" id="cf-form-title">온라인으로 바로 문의하기</h3>
+            <p class="form-card-lead" id="cf-form-lead">필수 정보만 먼저 남겨주세요. 서비스·상품 문맥은 자동으로 함께 기록됩니다.</p>
             <p class="form-required-note"><em>*</em> 는 필수 항목입니다.</p>
             <div class="form-row">
               <div class="field"><label for="cf-name">이름 <em>*</em></label><input id="cf-name" name="name" maxlength="50" type="text" required autocomplete="name"></div>
@@ -127,7 +128,36 @@
                 </select>
               </div>
             </div>
-            <details class="field-optional">
+            <fieldset class="workshop-fields" id="cf-workshop-fields" hidden disabled aria-describedby="cf-workshop-note">
+              <legend>워크숍 참여 상담</legend>
+              <p class="field-help" id="cf-workshop-note">업무와 AI 경험을 바탕으로 참여 적합성과 필요한 준비를 확인합니다. 고객 개인정보·기밀 자료는 적지 마세요.</p>
+              <div class="form-row">
+                <div class="field"><label for="cf-workshop-industry">업종 <em>*</em></label><input id="cf-workshop-industry" name="workshop_industry" type="text" maxlength="100" data-workshop-required placeholder="예: 제조업, 법률, 세무, 공간 컨설팅"></div>
+                <div class="field"><label for="cf-workshop-role">직책 <em>*</em></label><input id="cf-workshop-role" name="workshop_role" type="text" maxlength="100" autocomplete="organization-title" data-workshop-required placeholder="예: 대표, 임원, 전문직 대표"></div>
+              </div>
+              <div class="field">
+                <label for="cf-workshop-experience">AI 사용 경험 <em>*</em></label>
+                <select id="cf-workshop-experience" name="workshop_ai_experience" data-workshop-required>
+                  <option value="">선택해주세요</option>
+                  <option>아직 사용해 보지 않았습니다</option>
+                  <option>질문·검색·요약에 가끔 사용합니다</option>
+                  <option>실제 업무 초안에 사용하지만 반복 활용이 어렵습니다</option>
+                  <option>업무 지침·프로젝트·자동화를 사용하고 있습니다</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cf-workshop-intent">참여 검토 단계 <span class="field-help">(선택)</span></label>
+                <select id="cf-workshop-intent" name="workshop_intent">
+                  <option value="">선택 안 함</option>
+                  <option>가격·일정이 맞으면 참여를 검토하고 싶습니다</option>
+                  <option>회사 예산·결재 확인이 필요합니다</option>
+                  <option>내 업무에 맞는지 먼저 알고 싶습니다</option>
+                </select>
+              </div>
+              <div class="field"><label for="cf-workshop-schedule">참여 가능한 일정 <span class="field-help">(선택)</span></label><input id="cf-workshop-schedule" name="workshop_schedule" type="text" maxlength="150" placeholder="예: 평일 오후, 주말, 아직 미정"></div>
+            </fieldset>
+            <noscript><p class="note">워크숍 상담은 아래 문의 내용에 업종·직책·해결하고 싶은 업무·AI 사용 경험과 ‘CEO AI·AX 워크숍 상담’을 함께 적어주세요. 상담 신청은 결제·참가 확정이 아닙니다.</p></noscript>
+            <details class="field-optional" id="cf-project-details">
               <summary>선택 입력 <span>(더 정확한 상담을 위해)</span></summary>
               <div class="field-optional-body">
                 <div class="form-row">
@@ -163,12 +193,12 @@
               </div>
             </details>
             <div class="field">
-              <label for="cf-message">문의 내용 <em>*</em></label>
+              <label for="cf-message" id="cf-message-label">문의 내용 <em>*</em></label>
               <textarea id="cf-message" name="message" maxlength="3000" required placeholder="대상·규모·희망 일정 등을 자유롭게 남겨주세요."></textarea>
             </div>
             <div class="consent-field">
               <input id="cf-privacy" name="privacy_agree" type="checkbox" value="동의" required>
-              <label for="cf-privacy">문의 응대와 상담 안내를 위해 개인정보를 수집·이용하는 데 동의합니다. <em>*</em><br><span style="font-size:13.5px;color:var(--caption)">수집 항목: 이름·이메일·문의 내용(선택 입력 항목 포함) · 보유 기간: 문의 처리 완료 후 3년 이내 파기 · 동의하지 않으시면 문의를 접수할 수 없습니다. 자세한 내용은 <a href="/privacy/" target="_blank" rel="noopener">개인정보처리방침</a>에서 확인할 수 있습니다.</span></label>
+              <label for="cf-privacy">문의 응대와 상담 안내를 위해 개인정보를 수집·이용하는 데 동의합니다. <em>*</em><br><span style="font-size:13.5px;color:var(--caption)">수집 항목: 이름·이메일·문의 내용, 워크숍 상담 시 업종·직책·AI 사용 경험(선택 입력 항목 포함) · 보유 기간: 문의 처리 완료 후 3년 이내 파기 · 동의하지 않으시면 문의를 접수할 수 없습니다. 자세한 내용은 <a href="/privacy/" target="_blank" rel="noopener">개인정보처리방침</a>에서 확인할 수 있습니다.</span></label>
             </div>
             <div class="consent-field">
               <input id="cf-marketing" name="marketing_agree" type="checkbox" value="동의">
@@ -283,6 +313,7 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=ncw-770727abfc" defer></script>
+<script src="/js/main.js?v=ncw-443c62e40b" defer></script>
 </body>
 </html>
+

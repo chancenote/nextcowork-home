@@ -8,8 +8,8 @@
     "date": "2026-10-19"
   },
   "/ai-campus/": {
-    "hash": "e7bab1c3e0a6",
-    "date": "2026-10-19"
+    "hash": "225e840f0af2",
+    "date": "2026-10-24"
   },
   "/public/": {
     "hash": "2d579b6a8fc5",
@@ -28,12 +28,12 @@
     "date": "2026-10-19"
   },
   "/contact/": {
-    "hash": "14026e5944f1",
-    "date": "2026-10-12"
+    "hash": "a4ff15790982",
+    "date": "2026-10-24"
   },
   "/privacy/": {
-    "hash": "815c74f7b935",
-    "date": "2026-10-08"
+    "hash": "b30b41cc2ac6",
+    "date": "2026-10-24"
   },
   "/insights/nextcowork-space-ai-intersection/": {
     "hash": "7e37c38e6c8f",
@@ -90,5 +90,9 @@
   "/insights/ai-workspace-builder/": {
     "hash": "135ff0c2b62b",
     "date": "2026-10-10"
+  },
+  "/ai-campus/ceo-ax-workshop/": {
+    "hash": "1625af6ebc31",
+    "date": "2026-10-24"
   }
 }
