@@ -54,6 +54,8 @@ https://www.nextcw.com/coaching/
 ## 인사이트 아티클 (최신순)
 
 <!-- INSIGHTS:START -->
+- 티커 ANT, 우리가 사게 될 건 주식이 아니라 ‘일하는 방식’입니다 (2026-10-28): https://www.nextcw.com/insights/anthropic-ipo-s1/
+  앤스로픽이 공개 제출한 상장 신청서(S-1)를 숫자·실리콘밸리 평가·SK의 두 번의 베팅·클로드 제품 지도·지배구조로 해부하고, 2027년 일터의 변화와 개인·조직의 90일 대비책까지 정리했습니다.
 - 넥스트코웍, 공유오피스와 AI의 교차점에서 (2026-10-20): https://www.nextcw.com/insights/nextcowork-space-ai-intersection/
   빈 층을 가진 자산 담당자, 공공 공간을 맡은 공무원, AI 전환을 맡은 경영진과 교육 담당자에게. 넥스트코웍이 공간과 일하는 방식을 함께 설계하는 이유와 서비스·실적·시작 방법을 회사소개서와 함께 정리했습니다.
 - Claude Dashboards와 Motion, 업무에서는 어떻게 이어 쓸까? (2026-10-16): https://www.nextcw.com/insights/claude-motion-dashboards-workflow/

@@ -1,15 +1,15 @@
 {
   "/": {
-    "hash": "1768b75d564f",
-    "date": "2026-10-19"
+    "hash": "a134c1763536",
+    "date": "2026-10-28"
   },
   "/flexoffice/": {
     "hash": "576731c61dcc",
     "date": "2026-10-19"
   },
   "/ai-campus/": {
-    "hash": "e7bab1c3e0a6",
-    "date": "2026-10-19"
+    "hash": "4c220045833c",
+    "date": "2026-10-28"
   },
   "/public/": {
     "hash": "2d579b6a8fc5",
@@ -24,8 +24,8 @@
     "date": "2026-10-16"
   },
   "/insights/": {
-    "hash": "7d5b8cd8933e",
-    "date": "2026-10-19"
+    "hash": "e7f761d8591d",
+    "date": "2026-10-28"
   },
   "/contact/": {
     "hash": "14026e5944f1",
@@ -34,6 +34,10 @@
   "/privacy/": {
     "hash": "815c74f7b935",
     "date": "2026-10-08"
+  },
+  "/insights/anthropic-ipo-s1/": {
+    "hash": "6d791477de0b",
+    "date": "2026-10-28"
   },
   "/insights/nextcowork-space-ai-intersection/": {
     "hash": "7e37c38e6c8f",
