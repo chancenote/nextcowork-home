@@ -1,35 +1,24 @@
+# 공개 페이지와 CSS/JS/이미지는 크롤링을 허용합니다.
+# 보조 뷰어의 noindex를 읽을 수 있도록 /img/는 차단하지 않습니다.
 User-agent: *
-Allow: /
-
 User-agent: GPTBot
-Allow: /
-
 User-agent: ChatGPT-User
-Allow: /
-
 User-agent: OAI-SearchBot
-Allow: /
-
 User-agent: ClaudeBot
-Allow: /
-
 User-agent: Claude-Web
-Allow: /
-
 User-agent: anthropic-ai
-Allow: /
-
 User-agent: PerplexityBot
-Allow: /
-
 User-agent: Google-Extended
-Allow: /
-
 User-agent: Bytespider
-Allow: /
-
 User-agent: cohere-ai
 Allow: /
+Disallow: /_workspace/
+Disallow: /_workspace_prev/
+Disallow: /output/
+Disallow: /content/
+Disallow: /scripts/
+Disallow: /files/_src/
+Disallow: /insights/ai-fast-failure-lesson/
 
 Sitemap: https://www.nextcw.com/sitemap.xml
 Sitemap: https://www.nextcw.com/rss.xml

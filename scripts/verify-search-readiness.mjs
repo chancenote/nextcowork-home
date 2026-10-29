@@ -47,18 +47,59 @@ for (const [from, html] of pages) {
   }
 }
 assert.ok((await read('about/index.html')).includes('href="/public/#scope-space"'));
-const expected = { 'claude-motion-dashboards-workflow':[1600,900], 'aside-browser-workflow':[1200,630], 'ax-one-workflow-playbook':[720,405], 'development-finance-ai-review-im':[1200,675], 'chatgpt-space-10-features':[1600,910], 'ai-cowork-six-conditions':[1600,900], 'frontier-model-settings-skills-update':[1672,941], 'ai-training-vendor-selection':[720,405], 'gpt6-intelligent-ui':[1672,941], 'ai-training-request-brief':[720,406], 'ai-fast-failure':[720,406], 'flexoffice-feasibility-checklist':[720,406], 'ai-workspace-builder':[720,405] };
+// Compare feed dimensions with the image bytes, so new posts need no test fixture.
+function imageDimensions(buf) {
+  if (buf.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))) {
+    return [buf.readUInt32BE(16), buf.readUInt32BE(20)];
+  }
+  if (buf[0] === 0xff && buf[1] === 0xd8) {
+    for (let i = 2; i + 9 < buf.length;) {
+      if (buf[i] !== 0xff) { i++; continue; }
+      const marker = buf[i + 1];
+      if (marker === 0xff) { i++; continue; }
+      if (marker === 0xd9 || marker === 0xda) break;
+      if (marker >= 0xc0 && marker <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marker)) {
+        return [buf.readUInt16BE(i + 7), buf.readUInt16BE(i + 5)];
+      }
+      const size = buf.readUInt16BE(i + 2);
+      assert.ok(size >= 2, 'invalid JPEG segment');
+      i += size + 2;
+    }
+  }
+  if (buf.toString('ascii', 0, 4) === 'RIFF' && buf.toString('ascii', 8, 12) === 'WEBP') {
+    for (let offset = 12; offset + 8 <= buf.length;) {
+      const kind = buf.toString('ascii', offset, offset + 4);
+      const size = buf.readUInt32LE(offset + 4), data = offset + 8;
+      assert.ok(data + size <= buf.length, 'invalid WebP chunk');
+      if (kind === 'VP8X' && size >= 10) return [buf.readUIntLE(data + 4, 3) + 1, buf.readUIntLE(data + 7, 3) + 1];
+      if (kind === 'VP8 ' && size >= 10) return [buf.readUInt16LE(data + 6) & 0x3fff, buf.readUInt16LE(data + 8) & 0x3fff];
+      if (kind === 'VP8L' && size >= 5) {
+        const bits = buf.readUInt32LE(data + 1);
+        return [(bits & 0x3fff) + 1, ((bits >>> 14) & 0x3fff) + 1];
+      }
+      offset = data + size + (size % 2);
+    }
+  }
+  assert.fail('unsupported or invalid thumbnail image');
+}
 const feedJs = await read('js/insights-data.js');
 const feed = JSON.parse(feedJs.match(/window\.NCW_FEED = ([\s\S]*);\s*$/)[1]);
-for (const item of feed.filter(item => item.src === 'insight')) {
+const insightItems = feed.filter(item => item.src === 'insight');
+for (const item of insightItems) {
   const slug = item.url.split('/').filter(Boolean).at(-1), dimensions = item.thumbnailCard ? item.thumbnailCardSize : item.thumbnailSize;
-  assert.deepEqual([dimensions.width, dimensions.height], expected[slug], slug + ': thumbnail size');
+  const image = new URL(item.thumbnailCard || item.thumbnail, origin);
+  assert.equal(image.origin, origin, slug + ': thumbnail must be a local asset');
+  const actual = imageDimensions(await readFile(join(root, decodeURIComponent(image.pathname))));
+  assert.deepEqual([dimensions?.width, dimensions?.height], actual, slug + ': thumbnail size');
   const rendered = renderMagazine([item]);
   assert.ok(rendered.includes('width="' + dimensions.width + '" height="' + dimensions.height + '"'));
 }
-const latest = feed.find(item => item.src === 'insight');
-const latestSize = latest.thumbnailCard ? latest.thumbnailCardSize : latest.thumbnailSize;
-assert.ok(renderLatestNote(feed).includes('width="' + latestSize.width + '" height="' + latestSize.height + '"'));
+const latestImage = renderLatestNote(feed).match(/<img\b[^>]*>/)?.[0];
+assert.ok(latestImage, 'latest note: missing image');
+const latestPath = new URL(latestImage.match(/\bsrc="([^"]+)"/)[1], origin);
+assert.equal(latestPath.origin, origin, 'latest note: image must be local');
+const latestActual = imageDimensions(await readFile(join(root, decodeURIComponent(latestPath.pathname))));
+assert.deepEqual(['width', 'height'].map(key => Number(latestImage.match(new RegExp('\\b' + key + '="(\\d+)"'))?.[1])), latestActual, 'latest note: image dimensions');
 const build = await read('scripts/build-insights.mjs');
 const hashSource = build.match(/function contentHash\(text\) \{[\s\S]*?\n\}/)[0];
 const resolveSource = build.match(/function resolveLastmod\(state, entries, today\) \{[\s\S]*?\n\}/)[0];
@@ -69,4 +110,4 @@ assert.equal(resolve(stale,[{path:'/article/',source:'real correction',modified:
 const first = resolve({},[{path:'/static/',source:'cache?v=ncw-ab12'}],'2026-10-10');
 assert.equal(resolve(first,[{path:'/static/',source:'cache?v=ncw-ff34'}],'2026-10-13')['/static/'].date,'2026-10-10');
 assert.equal(resolve(first,[{path:'/static/',source:'meaningful link edit'}],'2026-10-13')['/static/'].date,'2026-10-13');
-console.log(JSON.stringify({result:'PASS',pages:pages.size,articles,internalLinks:links,thumbnailDimensions:Object.keys(expected).length,lastmodPolicyCases:4}));
+console.log(JSON.stringify({result:'PASS',pages:pages.size,articles,internalLinks:links,thumbnailDimensions:insightItems.length,lastmodPolicyCases:4}));
