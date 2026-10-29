@@ -996,8 +996,7 @@ function buildFeed(posts) {
     thumbnailCardSize: localImageSize(cardVariant(post.thumbnail) || post.thumbnail || post.image),
     topic: post.topic, tags: post.tags, searchText: toPlainText(post.body),
     ...(post.audience ? { audience: post.audience } : {}),
-    ...(post.takeaway ? { takeaway: post.takeaway } : {}),
-    ...(post.layout === "standalone" ? { newWindow: true } : {})
+    ...(post.takeaway ? { takeaway: post.takeaway } : {})
   }));
   return [...generated, ...externalFeed];
 }
@@ -1169,7 +1168,7 @@ const relatedTargets = [
 function renderRelatedHtml(posts) {
   if (!posts.length) return "";
   const items = posts.map((post) =>
-    `<a class="related-post" href="${escapeAttr(post.url)}"${post.layout === "standalone" ? ' target="_blank" rel="noopener"' : ""}><span class="related-post-label">인사이트</span>`
+    `<a class="related-post" href="${escapeAttr(post.url)}"><span class="related-post-label">인사이트</span>`
     + `<span>${escapeHtml(post.title)}</span><span class="arr">→</span></a>`
   ).join("\n          ");
   return `<div class="related-posts">\n          ${items}\n        </div>`;
@@ -1307,7 +1306,7 @@ async function main() {
     await mkdir(dir, { recursive: true });
     post.og = await resolveOgImage(post);
     // 단독 레이아웃(layout: standalone): 본문 HTML은 insights/<slug>/index.html을 손으로 관리한다.
-    // 빌드는 덮어쓰지 않고, 목록(새 창 열기)·RSS·사이트맵·llms.txt에만 싣는다. 페이지가 바뀌면 lastmod도 갱신된다.
+    // 빌드는 덮어쓰지 않고, 목록·RSS·사이트맵·llms.txt에만 싣는다(목록에서는 다른 글처럼 같은 탭으로 연다). 페이지가 바뀌면 lastmod도 갱신된다.
     if (post.layout === "standalone") {
       const page = join(dir, "index.html");
       if (!existsSync(page)) throw new Error(`${relative(root, page)}: layout standalone 글의 페이지 파일이 없습니다.`);
