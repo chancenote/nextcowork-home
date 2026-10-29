@@ -6,18 +6,18 @@
     <atom:link href="https://www.nextcw.com/rss.xml" rel="self" type="application/rss+xml"/>
     <description>AI 실무활용과 워크스페이스 인사이트 — 넥스트코웍이 발행하는 콘텐츠.</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 28 Oct 2026 04:45:46 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 06:02:00 GMT</lastBuildDate>
     <item>
       <title>티커 ANT, 우리가 사게 될 건 주식이 아니라 ‘일하는 방식’입니다</title>
       <link>https://www.nextcw.com/insights/anthropic-ipo-s1/</link>
       <guid isPermaLink="true">https://www.nextcw.com/insights/anthropic-ipo-s1/</guid>
       <pubDate>Wed, 28 Oct 2026 00:00:00 +0900</pubDate>
       <category>AI &amp; Work</category>
-      <description>앤스로픽이 공개 제출한 상장 신청서(S-1)를 숫자·실리콘밸리 평가·SK의 두 번의 베팅·클로드 제품 지도·지배구조로 해부하고, 2027년 일터의 변화와 개인·조직의 90일 대비책까지 정리했습니다.</description>
-      <content:encoded><![CDATA[<p>앤스로픽이 미국 증권거래위원회(SEC)에 공개 제출한 상장 신청서(S-1)를 꼼꼼히 읽어 봤습니다. 국내 기사에 잘 안 나온 숫자, 실리콘밸리의 엇갈린 평가, SK가 두 번 베팅한 이유, 클로드 제품 지도, 그리고 우리 일터에 올 변화까지 한 번에 정리합니다.</p>
+      <description>앤트로픽이 공개 제출한 상장 신청서(S-1)를 숫자·실리콘밸리 평가·SK의 두 번의 베팅·클로드 제품 지도·지배구조로 해부하고, 2027년 일터의 변화와 개인·조직의 90일 대비책까지 정리했습니다.</description>
+      <content:encoded><![CDATA[<p>앤트로픽이 미국 증권거래위원회(SEC)에 공개 제출한 상장 신청서(S-1)를 꼼꼼히 읽어 봤습니다. 국내 기사에 잘 안 나온 숫자, 실리콘밸리의 엇갈린 평가, SK가 두 번 베팅한 이유, 클로드 제품 지도, 그리고 우리 일터에 올 변화까지 한 번에 정리합니다.</p>
 <h2>3줄 요약</h2>
 <ul>
-<li>앤스로픽은 10월 26일 S-1을 공개 제출했고, 나스닥 티커는 ANT입니다. 올해 상반기 매출만 163억 달러로 지난해 전체의 3.5배입니다.</li>
+<li>앤트로픽은 10월 26일 S-1을 공개 제출했고, 나스닥 티커는 ANT입니다. 올해 상반기 매출만 163억 달러로 지난해 전체의 3.5배입니다.</li>
 <li>숫자보다 중요한 건 방향입니다. 신청서에 거듭 등장하는 말은 ‘가상 협업자(Virtual Collaborators)’, 곧 몇 시간에서 몇 주짜리 일을 통째로 맡는 AI 동료입니다.</li>
 <li>개인은 ‘잘 맡기고 잘 검수하는 법’을, 조직은 ‘AI에게 맡길 일의 지도’를 지금 그려야 합니다. 마지막 장에 90일 실행안을 넣었습니다.</li>
 </ul>
