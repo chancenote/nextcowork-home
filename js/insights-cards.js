@@ -2,8 +2,8 @@
 const esc = value => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
 const safeImage = value => /^\/(?!\/)/.test(value || "") || /^https?:\/\//.test(value || "") ? value : "/img/og.png";
 const externalCovers = {
-  brunch: { label: "브런치 · 에세이", image: "/img/flexoffice/space-lounge-720w.webp", kicker: "SPACE & WORK", headline: "일이 잘되는 공간과 방법", type: "space" },
-  threads: { label: "Threads · 기록", image: "/img/ai-campus/dashboard-desk-720w.webp", kicker: "DAILY NOTE", headline: "일하는 방식의 작은 발견", type: "ai" },
+  brunch: { label: "브런치 · 에세이", image: "/img/flexoffice/space-lounge-720w.webp", imageSize: { width: 720, height: 406 }, kicker: "SPACE & WORK", headline: "일이 잘되는 공간과 방법", type: "space" },
+  threads: { label: "Threads · 기록", image: "/img/ai-campus/dashboard-desk-720w.webp", imageSize: { width: 720, height: 481 }, kicker: "DAILY NOTE", headline: "일하는 방식의 작은 발견", type: "ai" },
   notion: { label: "노션 · 자료실", kicker: "AI PLAYBOOK", headline: "업무에 바로 쓰는 AI", type: "playbook" }
 };
 const imageDimensions = size => Number.isInteger(size?.width) && size.width > 0 && Number.isInteger(size?.height) && size.height > 0 ? ` width="${size.width}" height="${size.height}"` : '';
@@ -12,9 +12,9 @@ export function renderMagazine(feed, { eagerCount = 3 } = {}) {
   return feed.map((item, index) => {
     const external = /^https?:\/\//.test(item.url);
     let cover = external ? (externalCovers[item.src] || {label:"외부 콘텐츠",type:"ai"}) : { label:item.category || "인사이트", type:"article" };
-    if (external && /portfolio/.test(item.url)) cover = { label:"노션 · 포트폴리오", image:"/img/ai-campus/workshop-session-720w.webp", kicker:"IN PRACTICE", headline:"현장에서 쌓아 온 경험", type:"space" };
+    if (external && /portfolio/.test(item.url)) cover = { label:"노션 · 포트폴리오", image:"/img/ai-campus/workshop-session-720w.webp", imageSize: { width: 720, height: 540 }, kicker:"IN PRACTICE", headline:"현장에서 쌓아 온 경험", type:"space" };
     const image = external ? cover.image : (item.thumbnailCard || item.thumbnail || item.image || "/img/og.png");
-    const dimensions = external ? "" : imageDimensions(item.thumbnailCard ? item.thumbnailCardSize : item.thumbnailSize);
+    const dimensions = imageDimensions(external ? cover.imageSize : (item.thumbnailCard ? item.thumbnailCardSize : item.thumbnailSize));
     const coverHtml = (image ? `<img src="${esc(safeImage(image))}" alt="${external ? "" : esc(item.imageAlt || "")}" ${dimensions} ${index < eagerCount ? 'loading="eager"' : 'loading="lazy"'} decoding="async">` : '<span class="thumb-monogram" aria-hidden="true">AI<span>↗</span></span>') + (external ? `<span class="thumb-editorial"><small>${esc(cover.kicker || "CHANCENOTE")}</small><strong>${esc(cover.headline || item.title)}</strong></span>` : '');
     return `<article class="thumb-card"><a href="${esc(item.url)}"${external || item.newWindow ? ' target="_blank" rel="noopener"' : ''}><div class="thumb-cover thumb-${cover.type}">${coverHtml}</div><div class="thumb-body"><div class="thumb-topline"><span class="thumb-source">${external ? "채널·자료실 ↗" : "인사이트"}</span><span class="sep" aria-hidden="true">·</span><span class="thumb-category">${esc(cover.label)}</span></div><h3>${esc(item.title)}</h3>${!external && (item.audience || item.takeaway) ? `<p class="thumb-brief">${item.audience ? `<span><b>대상</b> ${esc(item.audience)}</span>` : ""}${item.takeaway ? `<span><b>가져갈 것</b> ${esc(item.takeaway)}</span>` : ""}</p>` : ""}<div class="thumb-meta"><span>${external ? "외부 채널에서 보기" : esc(item.date)}${item.newWindow ? " · 새 창" : ""}</span><span aria-hidden="true">${external || item.newWindow ? "↗" : "→"}</span></div></div></a></article>`;
   }).join("\n");

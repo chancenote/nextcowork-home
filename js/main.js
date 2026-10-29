@@ -663,54 +663,6 @@
     });
   });
 
-  /* R9 · 좌측 고정 섹션 내비(.side-nav) 스크롤스파이 — 해당 요소가 있는 페이지에서만 동작 */
-  var sideNav = document.querySelector(".side-nav");
-  if (sideNav && "IntersectionObserver" in window) {
-    var sideLinks = Array.prototype.slice.call(sideNav.querySelectorAll('a[href^="#"]'));
-    var sideMap = {};
-    var sideSections = sideLinks
-      .map(function (a) {
-        var el = document.getElementById(a.getAttribute("href").slice(1));
-        if (el) sideMap[el.id] = a;
-        return el;
-      })
-      .filter(Boolean);
-    var sideSpy = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (en) {
-          if (en.isIntersecting) {
-            sideLinks.forEach(function (a) { a.classList.toggle("active", a === sideMap[en.target.id]); });
-          }
-        });
-      },
-      { rootMargin: "-35% 0px -55% 0px" }
-    );
-    sideSections.forEach(function (s) { sideSpy.observe(s); });
-  }
-
-  /* R10 · Public v2 — 좌측 레일(.px-rail)·모바일 칩바(.px-chipbar) 스크롤스파이.
-     섹션이 길어 IO 대신 스크롤 위치 기준(참조 설계안 방식)으로 활성화한다. */
-  var pxSpyLinks = Array.prototype.slice.call(document.querySelectorAll(".px-rail a.spy, .px-chipbar a.spy"));
-  if (pxSpyLinks.length) {
-    var pxIds = [];
-    pxSpyLinks.forEach(function (a) {
-      var id = a.getAttribute("href").slice(1);
-      if (pxIds.indexOf(id) === -1) pxIds.push(id);
-    });
-    var pxSecs = pxIds.map(function (id) { return document.getElementById(id); }).filter(Boolean);
-    var pxOnScroll = function () {
-      var y = window.scrollY + 150;
-      var cur = null;
-      pxSecs.forEach(function (s) {
-        if (s.getBoundingClientRect().top + window.scrollY <= y) cur = s.id;
-      });
-      pxSpyLinks.forEach(function (a) {
-        a.classList.toggle("active", a.getAttribute("href") === "#" + cur);
-      });
-    };
-    window.addEventListener("scroll", pxOnScroll, { passive: true });
-    pxOnScroll();
-  }
   /* 연출 영상(data-autoplay-inview) — 화면에 40% 이상 보일 때만 소리 없이 재생, 벗어나거나 탭이 숨으면 정지.
      preload="none"이라 화면 근처에 오기 전에는 내려받지 않는다. 동작 줄이기·데이터 절약이면 자동 재생 안 함(기본 컨트롤 유지). */
   Array.prototype.forEach.call(document.querySelectorAll("video[data-autoplay-inview]"), function (v) {

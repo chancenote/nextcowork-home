@@ -190,6 +190,12 @@ function parseFrontMatter(source, filePath) {
   return { meta, body };
 }
 
+function imageSizeAttributes(src) {
+  const { width, height } = localImageSize(src);
+  return Number.isFinite(width) && width > 0 && Number.isFinite(height) && height > 0
+    ? ` width="${width}" height="${height}"` : "";
+}
+
 function renderInline(raw) {
   let text = escapeHtml(raw);
   text = text.replace(/`([^`]+)`/g, "<code>$1</code>");
@@ -197,7 +203,7 @@ function renderInline(raw) {
   // 이미지가 링크보다 먼저 — 순서가 바뀌면 ![alt](src)가 "!" + 링크로 깨진다.
   text = text.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (_m, alt, src) => {
     const url = src.replace(/&amp;/g, "&");
-    return `<img src="${escapeAttr(url)}" alt="${escapeAttr(alt)}" loading="lazy" decoding="async">`;
+    return `<img src="${escapeAttr(url)}" alt="${escapeAttr(alt)}"${imageSizeAttributes(url)} loading="lazy" decoding="async">`;
   });
   text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, label, href) => {
     const url = href.replace(/&amp;/g, "&");
@@ -369,7 +375,7 @@ function renderMarkdown(markdown, label = "", output = "article") {
         throw new Error(`${label || "본문"}: 이미지 alt 텍스트가 비어 있습니다 (${src}). 접근성상 alt는 필수입니다.`);
       }
       html.push(
-        `<figure class="post-figure"><img src="${escapeAttr(src)}" alt="${escapeAttr(alt)}" loading="lazy" decoding="async">`
+        `<figure class="post-figure"><img src="${escapeAttr(src)}" alt="${escapeAttr(alt)}"${imageSizeAttributes(src)} loading="lazy" decoding="async">`
         + (caption ? `<figcaption>${renderInline(caption)}</figcaption>` : "")
         + "</figure>"
       );
@@ -554,7 +560,7 @@ async function computeAssetVersion(posts) {
   }))));
 
   const pageCss = (await readdir(join(root, "css"))).filter((name) => /^page-[\w-]+\.css$/.test(name)).sort().map((name) => `css/${name}`);
-  for (const path of ["css/style.css", "js/main.js", "js/analytics.js", "scripts/build-insights.mjs", "css/insights-magazine.css", "js/insights-cards.js", "js/insights-magazine.js", "js/insights-share.js", "img/insights/aside-browser-workflow/demo.html", "img/insights/aside-browser-workflow/demo.css", "img/insights/aside-browser-workflow/demo.js", "img/insights/ax-one-workflow-playbook/demo.html", "img/insights/ax-one-workflow-playbook/demo.css", "img/insights/ax-one-workflow-playbook/demo.js", ...pageCss]) {
+  for (const path of ["css/style.css", "css/fonts.css", "js/fonts.js", "js/main.js", "js/analytics.js", "scripts/build-insights.mjs", "css/insights-magazine.css", "js/insights-cards.js", "js/insights-magazine.js", "js/insights-share.js", "img/insights/aside-browser-workflow/demo.html", "img/insights/aside-browser-workflow/demo.css", "img/insights/aside-browser-workflow/demo.js", "img/insights/ax-one-workflow-playbook/demo.html", "img/insights/ax-one-workflow-playbook/demo.css", "img/insights/ax-one-workflow-playbook/demo.js", ...pageCss]) {
     hash.update(await readFile(join(root, path), "utf8"));
   }
 
@@ -584,6 +590,8 @@ async function updateHtmlAssetVersions(assetVersion) {
     let html = await readFile(file, "utf8");
     const before = html;
     html = html
+      .replace(/\/js\/fonts\.js(?:\?v=[^"]*)?/g, versioned("/js/fonts.js", assetVersion))
+      .replace(/\/css\/fonts\.css(?:\?v=[^"]*)?/g, versioned("/css/fonts.css", assetVersion))
       .replace(/\/css\/style\.css(?:\?v=[^"]*)?/g, versioned("/css/style.css", assetVersion))
       .replace(/\/js\/analytics\.js(?:\?v=[^"]*)?/g, versioned("/js/analytics.js", assetVersion))
       .replace(/\/js\/insights-data\.js(?:\?v=[^"]*)?/g, versioned("/js/insights-data.js", assetVersion))
@@ -686,7 +694,7 @@ async function resolveOgImage(post) {
   return { url: path, ...imageSize(await readFile(join(root, path))) };
 }
 
-/* JPG·PNG 헤더에서 가로·세로를 읽는다(외부 의존성 없음). 읽지 못하면 빈 값. */
+/* JPG·PNG·WebP 헤더와 SVG 루트에서 실제 가로·세로를 읽는다. 읽지 못하면 빈 값. */
 function imageSize(buf) {
   if (buf[0] === 0x89 && buf.toString("ascii", 1, 4) === "PNG") {
     return { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) };
@@ -717,6 +725,16 @@ function imageSize(buf) {
         return { width: (bits & 0x3fff) + 1, height: ((bits >>> 14) & 0x3fff) + 1 };
       }
       offset = data + size + (size % 2);
+    }
+  }
+  const svg = buf.toString("utf8", 0, Math.min(buf.length, 4096)).match(/<svg\b[^>]*>/i)?.[0];
+  if (svg) {
+    const width = Number(svg.match(/\bwidth=["']([\d.]+)(?:px)?["']/i)?.[1]);
+    const height = Number(svg.match(/\bheight=["']([\d.]+)(?:px)?["']/i)?.[1]);
+    if (Number.isFinite(width) && width > 0 && Number.isFinite(height) && height > 0) return { width, height };
+    const viewBox = svg.match(/\bviewBox=["']([^"']+)["']/i)?.[1].trim().split(/[\s,]+/).map(Number);
+    if (viewBox?.length === 4 && viewBox.every(Number.isFinite) && viewBox[2] > 0 && viewBox[3] > 0) {
+      return { width: viewBox[2], height: viewBox[3] };
     }
   }
   return {};
@@ -794,10 +812,9 @@ function renderArticle(post, assetVersion) {
 <link rel="alternate" type="application/rss+xml" title="넥스트코웍 인사이트" href="/rss.xml">
 <meta name="theme-color" content="#302D7C">
 <script src="${versioned("/js/analytics.js", assetVersion)}" defer></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+<link rel="preload" as="style" href="${versioned("/css/fonts.css", assetVersion)}" data-font-styles>
+<noscript><link rel="stylesheet" href="${versioned("/css/fonts.css", assetVersion)}"></noscript>
+<script src="${versioned("/js/fonts.js", assetVersion)}" defer></script>
 <link rel="stylesheet" href="${versioned("/css/style.css", assetVersion)}">
 <link rel="stylesheet" href="${versioned("/css/insights-magazine.css", assetVersion)}">${post.slug === "aside-browser-workflow" ? `
 <link rel="stylesheet" href="${versioned("/img/insights/aside-browser-workflow/demo.css", assetVersion)}">
