@@ -51,13 +51,14 @@ window.NCW_FEED = [
     "image": "/img/insights/nextcowork-space-ai-intersection/og-cover.jpg",
     "thumbnail": "/img/insights/nextcowork-space-ai-intersection/cover.webp",
     "imageAlt": "SPACE와 AI 두 원이 겹치는 자리에 곱하기 기호가 있고, 넥스트코웍, 공유오피스와 AI의 교차점에서라는 제목이 적힌 보라색 표지",
+    "thumbnailCard": "/img/insights/nextcowork-space-ai-intersection/cover-720w.webp",
     "thumbnailSize": {
       "width": 1200,
       "height": 630
     },
     "thumbnailCardSize": {
-      "width": 1200,
-      "height": 630
+      "width": 720,
+      "height": 378
     },
     "topic": "공간과 AI",
     "tags": [
@@ -82,13 +83,14 @@ window.NCW_FEED = [
     "image": "/img/insights/claude-motion-dashboards-workflow/hero.webp",
     "thumbnail": "/img/insights/claude-motion-dashboards-workflow/hero.webp",
     "imageAlt": "Claude Dashboards와 Motion 카드뉴스 표지·기능 비교·대시보드 예시 카드 세 장을 나란히 놓은 이미지",
+    "thumbnailCard": "/img/insights/claude-motion-dashboards-workflow/hero-720w.webp",
     "thumbnailSize": {
       "width": 1600,
       "height": 900
     },
     "thumbnailCardSize": {
-      "width": 1600,
-      "height": 900
+      "width": 720,
+      "height": 405
     },
     "topic": "AI 업무전환",
     "tags": [
@@ -112,13 +114,14 @@ window.NCW_FEED = [
     "image": "/img/insights/aside-browser-workflow/hero.webp",
     "thumbnail": "/img/insights/aside-browser-workflow/hero.webp",
     "imageAlt": "개념 일러스트: 흩어진 여러 탭이 자료와 결과물을 나란히 둔 하나의 작업 화면으로 모이는 모습",
+    "thumbnailCard": "/img/insights/aside-browser-workflow/hero-720w.webp",
     "thumbnailSize": {
       "width": 1200,
       "height": 630
     },
     "thumbnailCardSize": {
-      "width": 1200,
-      "height": 630
+      "width": 720,
+      "height": 378
     },
     "topic": "AI 업무전환",
     "tags": [
@@ -172,13 +175,14 @@ window.NCW_FEED = [
     "image": "/img/insights/development-finance-ai-review-im/cover.webp",
     "thumbnail": "/img/insights/development-finance-ai-review-im/cover.webp",
     "imageAlt": "개발금융과 AI라는 제목 아래 자료 대조, 담당자 검증, 회의와 IM 반영의 흐름을 보여주는 설명용 개념도. AI의 도움으로 제작.",
+    "thumbnailCard": "/img/insights/development-finance-ai-review-im/cover-720w.webp",
     "thumbnailSize": {
       "width": 1200,
       "height": 675
     },
     "thumbnailCardSize": {
-      "width": 1200,
-      "height": 675
+      "width": 720,
+      "height": 405
     },
     "topic": "AI 업무전환",
     "tags": [
@@ -203,13 +207,14 @@ window.NCW_FEED = [
     "image": "/img/insights/chatgpt-space-10-features/hero-official.webp",
     "thumbnail": "/img/insights/chatgpt-space-10-features/hero-official.webp",
     "imageAlt": "OpenAI 공식 Space 소개 이미지: 공유 페이지의 온보딩 프로토타입과 협업 커서. 제품 안내용 연출 이미지.",
+    "thumbnailCard": "/img/insights/chatgpt-space-10-features/hero-official-720w.webp",
     "thumbnailSize": {
       "width": 1600,
       "height": 910
     },
     "thumbnailCardSize": {
-      "width": 1600,
-      "height": 910
+      "width": 720,
+      "height": 410
     },
     "topic": "AI 업무전환",
     "tags": [
@@ -233,13 +238,14 @@ window.NCW_FEED = [
     "image": "/img/insights/ai-cowork-six-conditions/og-cover.jpg",
     "thumbnail": "/img/insights/ai-cowork-six-conditions/hero.webp",
     "imageAlt": "People × Agents 아래 큰 글자 COWORK와 Compass·Outcome·Workspace·Orchestration·Record·Knowledge 여섯 단어, 그리고 AI를 쓰는 회사에서 함께 일하는 회사로라는 문장이 적힌 넥스트코웍 대표 이미지",
+    "thumbnailCard": "/img/insights/ai-cowork-six-conditions/hero-720w.webp",
     "thumbnailSize": {
       "width": 1600,
       "height": 900
     },
     "thumbnailCardSize": {
-      "width": 1600,
-      "height": 900
+      "width": 720,
+      "height": 405
     },
     "topic": "AI 업무전환",
     "tags": [
@@ -264,13 +270,14 @@ window.NCW_FEED = [
     "image": "/img/insights/frontier-model-settings-skills-update/hero.webp",
     "thumbnail": "/img/insights/frontier-model-settings-skills-update/hero.webp",
     "imageAlt": "AI 생성 개념 이미지: 사업가와 셰프가 업무 기준과 도구를 함께 정리하는 모습",
+    "thumbnailCard": "/img/insights/frontier-model-settings-skills-update/hero-720w.webp",
     "thumbnailSize": {
       "width": 1672,
       "height": 941
     },
     "thumbnailCardSize": {
-      "width": 1672,
-      "height": 941
+      "width": 720,
+      "height": 406
     },
     "topic": "AI 업무전환",
     "tags": [
@@ -326,13 +333,14 @@ window.NCW_FEED = [
     "image": "/img/insights/gpt6-intelligent-ui/hero.webp",
     "thumbnail": "/img/insights/gpt6-intelligent-ui/hero.webp",
     "imageAlt": "텍스트 채팅 화면이 차트, 슬라이더, 지도, 체크리스트를 갖춘 시각적 AI 인터페이스로 확장되는 개념 이미지",
+    "thumbnailCard": "/img/insights/gpt6-intelligent-ui/hero-720w.webp",
     "thumbnailSize": {
       "width": 1672,
       "height": 941
     },
     "thumbnailCardSize": {
-      "width": 1672,
-      "height": 941
+      "width": 720,
+      "height": 406
     },
     "topic": "AI 업무전환",
     "tags": [

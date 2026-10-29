@@ -27,13 +27,12 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="넥스트코웍 인사이트" href="/rss.xml">
 <meta name="theme-color" content="#302D7C">
-<script src="/js/analytics.js?v=ncw-2d41bff21e" defer></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=ncw-2d41bff21e">
-<link rel="stylesheet" href="/css/insights-magazine.css?v=ncw-2d41bff21e">
+<script src="/js/analytics.js?v=ncw-5294eea013" defer></script>
+<link rel="preload" as="style" href="/css/fonts.css?v=ncw-5294eea013" data-font-styles>
+<noscript><link rel="stylesheet" href="/css/fonts.css?v=ncw-5294eea013"></noscript>
+<script src="/js/fonts.js?v=ncw-5294eea013" defer></script>
+<link rel="stylesheet" href="/css/style.css?v=ncw-5294eea013">
+<link rel="stylesheet" href="/css/insights-magazine.css?v=ncw-5294eea013">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.nextcw.com/#org","name":"넥스트코웍","alternateName":"NEXT COWORK","url":"https://www.nextcw.com/","logo":"https://www.nextcw.com/img/og.png","email":"ceo@nextcw.com","telephone":"+82-10-9765-7749","sameAs":["https://brunch.co.kr/@chancenote","https://www.threads.com/@chancenote","https://blog.naver.com/chancenote"]},{"@type":"BlogPosting","headline":"GPT·Claude 새 모델이 나왔나요? 전역 설정과 스킬, 이렇게 점검하세요","description":"한글날, AI 설정을 다시 정리하며 확인한 OpenAI·Anthropic 공식 가이드. 전역 지침과 프로젝트 지침을 나누고, 플러그인·스킬을 점검하는 방법과 복사해서 쓸 양식을 소개합니다.","datePublished":"2026-10-09","dateModified":"2026-10-09","url":"https://www.nextcw.com/insights/frontier-model-settings-skills-update/","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.nextcw.com/insights/frontier-model-settings-skills-update/"},"inLanguage":"ko","image":"https://www.nextcw.com/img/insights/frontier-model-settings-skills-update/hero.og.jpg","author":{"@type":"Person","@id":"https://www.nextcw.com/about/#person","name":"이종찬"},"publisher":{"@id":"https://www.nextcw.com/#org"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://www.nextcw.com/"},{"@type":"ListItem","position":2,"name":"인사이트","item":"https://www.nextcw.com/insights/"},{"@type":"ListItem","position":3,"name":"GPT·Claude 새 모델이 나왔나요? 전역 설정과 스킬, 이렇게 점검하세요","item":"https://www.nextcw.com/insights/frontier-model-settings-skills-update/"}]},{"@type":"FAQPage","@id":"https://www.nextcw.com/insights/frontier-model-settings-skills-update/#faq","mainEntity":[{"@type":"Question","name":"새 모델이 나오면 기존 지침을 모두 지워야 하나요?","acceptedAnswer":{"@type":"Answer","text":"모두 지우기보다 원본을 보관한 뒤, 공식 안내와 실제 결과를 기준으로 필요한 부분부터 바꿔보세요. 지금도 유효한 업무 기준과 권한 경계는 유지할 이유가 있습니다."}},{"@type":"Question","name":"지침 충돌을 없애면 AI의 환각도 없어지나요?","acceptedAnswer":{"@type":"Answer","text":"지침을 정리했다고 사실 오류가 사라진다고 보장할 수는 없습니다. 중요한 주장과 수치는 원본 자료에 대조하고, 확인되지 않은 내용은 구분해서 사용해 주세요."}},{"@type":"Question","name":"ChatGPT와 Claude의 설정을 똑같이 복사해도 되나요?","acceptedAnswer":{"@type":"Answer","text":"공통으로 원하는 말투와 업무 원칙은 재사용할 수 있지만, 지침을 읽는 위치와 적용 범위는 제품별로 확인해야 합니다. 특히 Codex·Claude Code의 파일 설정을 일반 대화 앱의 설정과 동일하게 취급하지 마세요."}}]}]}</script>
 </head>
 <body class="theme-ai">
@@ -93,7 +92,7 @@
 <p>한글날 휴일을 맞아 미뤄두었던 GPT와 Claude의 전역 설정, 맞춤 설정을 다시 정리했습니다. 새 모델이 나올 때마다 반가운 마음으로 써보지만, 정작 AI에게 건네는 업무 지침은 예전에 작성한 그대로일 수 있잖아요.</p>
 <p>혹시 여러분도 이런 경험이 있으신가요? 보고서를 부탁했는데 원하지 않는 형식이 계속 나오거나, 간단한 수정을 맡겼는데 질문과 확인이 끝없이 이어지는 경험 말입니다. 저는 이럴 때 모델 이름과 함께 <strong>AI가 지금 어떤 지침을 읽고 있는지</strong>도 살펴보시길 권합니다.</p>
 <p>사업을 운영하는 대표님, 제안서와 보고서를 만드는 팀장님, 직원들의 AI 활용을 돕는 교육 담당자님을 떠올리며 이 글을 썼습니다. 읽고 나시면 내 설정을 어디에 나눠 담을지 판단하고, 아래 양식을 복사해 직접 정리해 보실 수 있습니다.</p>
-<figure class="post-figure"><img src="/img/insights/frontier-model-settings-skills-update/hero.webp" alt="AI 생성 개념 이미지: 사업가와 셰프가 업무 기준과 도구를 함께 정리하는 모습" loading="lazy" decoding="async"><figcaption>AI로 제작한 개념 이미지입니다. 실제 고객이나 제품 화면을 표현한 것이 아닙니다.</figcaption></figure>
+<figure class="post-figure"><img src="/img/insights/frontier-model-settings-skills-update/hero.webp" alt="AI 생성 개념 이미지: 사업가와 셰프가 업무 기준과 도구를 함께 정리하는 모습" width="1672" height="941" loading="lazy" decoding="async"><figcaption>AI로 제작한 개념 이미지입니다. 실제 고객이나 제품 화면을 표현한 것이 아닙니다.</figcaption></figure>
 <p>동네 식당에 실력 좋은 셰프가 새로 왔다고 생각해 볼까요? 셰프에게는 우리 손님이 누구인지, 오늘 어떤 메뉴를 내야 하는지, 어떤 재료를 쓸 수 있는지 알려줘야겠죠. 모든 요리에 똑같은 조리법을 적용하라고 하면 곤란하고요.</p>
 <p>AI와 일할 때도 저는 이 비유가 도움이 된다고 생각합니다. 다만 설정을 바꾸면 성능이 몇 배 좋아진다거나, 긴 지침을 지우면 무조건 좋아진다고 말씀드리려는 건 아닙니다. <strong>공식 문서에서 확인한 내용과 제가 업무에 적용하기 쉽게 만든 양식을 구분해서</strong> 설명드릴게요. 공식 문서 확인 기준일은 2026년 10월 9일입니다.</p>
 <h2>1. 새 모델이 나오면 무엇부터 확인하면 좋을까요?</h2>
@@ -120,7 +119,7 @@
 <p>ChatGPT는 프로젝트 지침이 그 프로젝트 안에서 전역 맞춤 지침보다 우선한다고 안내합니다. Claude도 계정 전체 지침과 프로젝트 안에서만 쓰는 지침을 구분합니다. <a href="https://help.openai.com/en/articles/10169521-projects-in-chatgpt" target="_blank" rel="noopener">ChatGPT 프로젝트 안내</a>, <a href="https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features" target="_blank" rel="noopener">Claude 개인화 안내</a></p>
 <p>Codex는 전역과 프로젝트의 AGENTS.md를 단계적으로 읽습니다. Claude Code는 여러 위치의 CLAUDE.md를 함께 문맥에 넣는 방식이므로, ChatGPT의 우선순위 설명을 그대로 적용하면 안 됩니다. 위 파일 경로는 기본적인 배치 예이며, 실제로 읽는 범위는 해당 도구의 설정도 확인하셔야 합니다. <a href="https://learn.chatgpt.com/docs/agent-configuration/agents-md" target="_blank" rel="noopener">Codex 지침 파일 안내</a>, <a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener">Claude Code 메모리·지침 안내</a></p>
 <p>개발 도구를 쓰지 않으신다면 파일 이름까지 외우실 필요는 없습니다. “쉽고 친절한 한국어로 설명해 주세요”는 공통 기준이고, “이번 고객 제안서는 이 가격표와 이 양식을 사용해 주세요”는 프로젝트 기준이라고 이해하시면 돼요.</p>
-<figure class="post-figure"><img src="/img/insights/frontier-model-settings-skills-update/settings-map.svg" alt="전역 지침, 프로젝트 지침, 스킬, 이번 요청에 담을 내용을 구분한 AI 작성 도식" loading="lazy" decoding="async"><figcaption>AI가 작성한 설명용 도식입니다. 업무 정보를 분류하는 방법이며, 제품의 실제 화면이나 공통 명령 우선순위를 뜻하지 않습니다.</figcaption></figure>
+<figure class="post-figure"><img src="/img/insights/frontier-model-settings-skills-update/settings-map.svg" alt="전역 지침, 프로젝트 지침, 스킬, 이번 요청에 담을 내용을 구분한 AI 작성 도식" width="1320" height="1120" loading="lazy" decoding="async"><figcaption>AI가 작성한 설명용 도식입니다. 업무 정보를 분류하는 방법이며, 제품의 실제 화면이나 공통 명령 우선순위를 뜻하지 않습니다.</figcaption></figure>
 <p><a href="/img/insights/frontier-model-settings-skills-update/settings-map.svg">도식 크게 보기</a></p>
 <h2>3. ‘하지 마세요’라는 문장은 어떻게 바꾸면 좋을까요?</h2>
 <p><strong>원하는 결과가 보이도록 구체적인 행동과 답변 형태를 적어보세요.</strong></p>
@@ -308,7 +307,7 @@
     </div>
   </div>
 </footer>
-<script src="/js/main.js?v=ncw-2d41bff21e" defer></script>
-<script src="/js/insights-share.js?v=ncw-2d41bff21e" defer></script>
+<script src="/js/main.js?v=ncw-5294eea013" defer></script>
+<script src="/js/insights-share.js?v=ncw-5294eea013" defer></script>
 </body>
 </html>

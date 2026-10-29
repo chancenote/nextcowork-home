@@ -6,7 +6,7 @@
     <atom:link href="https://www.nextcw.com/rss.xml" rel="self" type="application/rss+xml"/>
     <description>AI 실무활용과 워크스페이스 인사이트 — 넥스트코웍이 발행하는 콘텐츠.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 29 Oct 2026 06:02:58 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 11:04:49 GMT</lastBuildDate>
     <item>
       <title>티커 ANT, 우리가 사게 될 건 주식이 아니라 ‘일하는 방식’입니다</title>
       <link>https://www.nextcw.com/insights/anthropic-ipo-s1/</link>
@@ -44,7 +44,7 @@
 <p>안녕하세요. 넥스트코웍 대표 이종찬, 찬스입니다. 오늘은 회사소개서 한 권을 펼쳐 놓고, 저희가 어떤 일을 왜 이렇게 하는지 말씀드리려 합니다.</p>
 <p>먼저 두 가지를 여쭙겠습니다. 새 건물을 지었는데, 왜 층이 비어 있을까요? AI를 들였는데, 왜 일은 그대로일까요?</p>
 <p>저는 이렇게 비유합니다. 최신 주방을 지어도 요리하는 방식이 그대로면 맛은 그대로입니다. 좋은 레시피가 있어도 주방이 맞지 않으면 손님을 받을 수 없죠. <strong>넥스트코웍은 주방(공간)과 레시피(일하는 방식)를 한 테이블에서 함께 바꿉니다.</strong></p>
-<p><a href="https://www.nextcw.com/files/nextcowork-company-profile-2026.pdf"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/banner-download-top.webp" alt="넥스트코웍 회사소개서 2026 PDF 내려받기 — 24쪽, 2.5MB, 무료" loading="lazy" decoding="async"></a></p>
+<p><a href="https://www.nextcw.com/files/nextcowork-company-profile-2026.pdf"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/banner-download-top.webp" alt="넥스트코웍 회사소개서 2026 PDF 내려받기 — 24쪽, 2.5MB, 무료" width="1600" height="600" loading="lazy" decoding="async"></a></p>
 <p><strong><a href="https://www.nextcw.com/files/nextcowork-company-profile-2026.pdf">회사소개서 PDF 내려받기 (24쪽 · 2.5MB)</a></strong> · <a href="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck.html">브라우저에서 바로 넘겨보기</a></p>
 <h2>이 글은 누구에게 쓰는 편지인가요?</h2>
 <p>이 글은 넥스트코웍이 현장에서 자주 만나는 다섯 분께 드리는 편지입니다. 다섯 분은 실제 고객이 아니라, 여러 현장에서 들은 고민을 한 사람의 이야기로 엮은 가상 인물입니다. 내 자리와 가장 가까운 분을 찾아 그 대목부터 읽으셔도 됩니다.</p>
@@ -64,7 +64,7 @@
 <li>강연·자문·코칭 <strong>115회 이상</strong> — 공공기관·대학·기업</li>
 <li><strong>2009년</strong> 건설 그룹사 스마트워크 도입으로 일하는 방식의 변화를 시작했습니다.</li>
 </ul>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-02.webp" alt="넥스트코웍 회사 개요 슬라이드 — 공유오피스 개발·운영 컨설팅, 기업·기관 AI 실무교육, 공공 공간 자문 세 영역과 개발사업 PM 누계 5,100억, 공유오피스 4개 지점 직영 9년, 누적 고객사 1,000곳 이상, 강연·자문·코칭 115회 이상" loading="lazy" decoding="async"><figcaption>회사소개서 2쪽 — 짓고, 운영하고, 가르쳐 본 경험이 한 회사 안에 있습니다</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-02.webp" alt="넥스트코웍 회사 개요 슬라이드 — 공유오피스 개발·운영 컨설팅, 기업·기관 AI 실무교육, 공공 공간 자문 세 영역과 개발사업 PM 누계 5,100억, 공유오피스 4개 지점 직영 9년, 누적 고객사 1,000곳 이상, 강연·자문·코칭 115회 이상" width="1600" height="900" loading="lazy" decoding="async"><figcaption>회사소개서 2쪽 — 짓고, 운영하고, 가르쳐 본 경험이 한 회사 안에 있습니다</figcaption></figure>
 <h2>왜 공간과 AI를 함께 다루나요?</h2>
 <p>일의 성과는 ‘어디서 일하는가’와 ‘어떻게 일하는가’가 함께 바뀔 때 오르기 때문입니다. 그래서 넥스트코웍은 성과를 <strong>자산의 수익성 × 조직의 생산성</strong>으로 정의합니다. 한쪽이 0이면 결과도 0입니다.</p>
 <p>지금 이 두 가지가 동시에 바뀌고 있습니다.</p>
@@ -73,7 +73,7 @@
 <li><strong>공간 운영의 손익 구조가 바뀌었습니다.</strong> 공유오피스는 부동산업처럼 보이지만 실제로는 서비스업입니다. 입주 문의·대관·멤버십 업무를 AI로 처리하는 운영 체계가 수익성을 좌우하는 요인이 됩니다.</li>
 <li><strong>일하는 방식이 바뀌었습니다.</strong> AI 도구를 사는 것만으로는 생산성이 오르지 않습니다. 실제 업무 단위로 다시 설계하고 정착시켜야 합니다.</li>
 </ul>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-03.webp" alt="어디서 일하는가와 어떻게 일하는가를 곱하면 자산의 수익성 곱하기 조직의 생산성이 된다는 슬라이드와 오피스 수요, 공간 운영 손익, 일하는 방식의 세 가지 변화" loading="lazy" decoding="async"><figcaption>회사소개서 3쪽 — 공간과 AI는 덧셈이 아니라 곱셈입니다</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-03.webp" alt="어디서 일하는가와 어떻게 일하는가를 곱하면 자산의 수익성 곱하기 조직의 생산성이 된다는 슬라이드와 오피스 수요, 공간 운영 손익, 일하는 방식의 세 가지 변화" width="1600" height="900" loading="lazy" decoding="async"><figcaption>회사소개서 3쪽 — 공간과 AI는 덧셈이 아니라 곱셈입니다</figcaption></figure>
 <h2>넥스트코웍의 서비스는 어떻게 나뉘나요?</h2>
 <p>공간과 일하는 방식, 두 축에서 네 개의 상품이 나오고 두 축이 만나는 자리에 결합 상품이 하나 있습니다. 필요한 상품 하나만 고르셔도 되고, 묶어서 맡기셔도 됩니다.</p>
 <div class="post-table" tabindex="0" role="region" aria-label="표 (가로로 스크롤)"><table><thead><tr><th>축</th><th>서비스</th><th>누구를 위한가</th><th>남는 산출물</th><th>시작가(부가세 별도)</th></tr></thead><tbody>
@@ -83,7 +83,7 @@
 <tr><td>일하는 방식</td><td>CEO AI 코칭</td><td>CEO·임원</td><td>AI 에이전트·업무 도구·90일 계획</td><td>300만 원(2시간×5회)</td></tr>
 <tr><td>결합</td><td>Smart FlexOffice</td><td>공유오피스를 새로 여는 자산·개발 주체</td><td>공간 설계 + 운영팀 AI 업무 체계</td><td>5,500만 원부터</td></tr>
 </tbody></table></div>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-04.webp" alt="공간 축의 FlexOffice 컨설팅·Public Advisory, 일하는 방식 축의 AI Campus·CEO AI 코칭, 두 축이 만나는 Smart FlexOffice 결합 상품을 보여 주는 서비스 구조도" loading="lazy" decoding="async"><figcaption>회사소개서 4쪽 — 하나만 고르셔도 되고, 묶으면 더 단단해집니다</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-04.webp" alt="공간 축의 FlexOffice 컨설팅·Public Advisory, 일하는 방식 축의 AI Campus·CEO AI 코칭, 두 축이 만나는 Smart FlexOffice 결합 상품을 보여 주는 서비스 구조도" width="1600" height="900" loading="lazy" decoding="async"><figcaption>회사소개서 4쪽 — 하나만 고르셔도 되고, 묶으면 더 단단해집니다</figcaption></figure>
 <h2>빈 층이 오래 비어 있다면, 공유오피스가 답일까요?</h2>
 <p>답이 될 수도 있습니다. 그래서 넥스트코웍은 설계보다 <strong>넣을지 말지</strong>를 먼저 따지는 도입 타당성 진단부터 시작합니다.</p>
 <p><strong>윤 팀장님께 드리는 이야기</strong> (가상 인물 · 오피스 자산 운용역)</p>
@@ -94,32 +94,32 @@
 <li>2단계 컨셉·운영모델 설계 — 5,000만 원부터. 도입을 확정하고 설계에 들어갈 때입니다.</li>
 <li>3단계 PF 사업계획 — 1억 원부터. 4단계 개관 동행 — 월 500만 원부터.</li>
 </ul>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-06.webp" alt="FlexOffice 4단계 용역 구조 — 도입 타당성 진단, 컨셉·운영모델 설계, PF 사업계획, 개관 동행의 단계별 적합한 시점·산출물·시작가와 진단 단계에서 검토하는 다섯 가지 지표" loading="lazy" decoding="async"><figcaption>회사소개서 6쪽 — 설계부터 하지 마시고, 진단부터 하십시오</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-06.webp" alt="FlexOffice 4단계 용역 구조 — 도입 타당성 진단, 컨셉·운영모델 설계, PF 사업계획, 개관 동행의 단계별 적합한 시점·산출물·시작가와 진단 단계에서 검토하는 다섯 가지 지표" width="1600" height="900" loading="lazy" decoding="async"><figcaption>회사소개서 6쪽 — 설계부터 하지 마시고, 진단부터 하십시오</figcaption></figure>
 <p>이 진단의 근거는 제가 직접 운영해 본 숫자입니다. 스페이스코웍 네 개 지점을 9년간 직영하며 연매출은 <strong>17.9억 원</strong>(2023년)까지 늘었고, 모임공간 대관은 7,000건을 넘었습니다. 건물주께 돌아간 임대수익은 누계 60억 원 이상입니다. 임대만이 아니라 대관·교육·커뮤니티를 엮은 복합 수익모델로 운영했습니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-07.webp" alt="스페이스코웍 4개 지점 사진과 누적 고객사 1,000곳 이상, 연매출 17.9억 원, 모임공간 대관 7,000건 이상, 건물주 임대수익 누계 60억 원 이상 등 운영 실적" loading="lazy" decoding="async"><figcaption>회사소개서 7쪽 — 컨설팅의 숫자는 운영해 본 손에서 나옵니다</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-07.webp" alt="스페이스코웍 4개 지점 사진과 누적 고객사 1,000곳 이상, 연매출 17.9억 원, 모임공간 대관 7,000건 이상, 건물주 임대수익 누계 60억 원 이상 등 운영 실적" width="1600" height="900" loading="lazy" decoding="async"><figcaption>회사소개서 7쪽 — 컨설팅의 숫자는 운영해 본 손에서 나옵니다</figcaption></figure>
 <p>실제 프로젝트 하나를 보여 드리겠습니다. 송도 센트럴비즈 한라(지상 27층 복합업무시설, 섹션오피스 882실)에서 5~6층을 어떻게 쓸지가 과제였습니다. 입지·수요 진단, 코워킹 라운지와 공유오피스를 결합한 컨셉, 공간 프로그램, 운영 구조별 수지 비교, 운영사 제안 요청과 협상 지원까지 다섯 단계로 접근했고, 전문 공유오피스 브랜드 F사의 위탁운영계약으로 이어졌습니다. 고객사와 계약 조건은 비공개라 브랜드는 이니셜로 적습니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-08.webp" alt="송도 센트럴비즈 한라 조감도와 입지·수요 진단부터 운영사 유치·협상까지 다섯 단계 수행 절차, 공유오피스 브랜드 F사 유치 결과" loading="lazy" decoding="async"><figcaption>회사소개서 8쪽 — 빈 층을 채운 것이 아니라 건물의 얼굴을 바꿨습니다</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-08.webp" alt="송도 센트럴비즈 한라 조감도와 입지·수요 진단부터 운영사 유치·협상까지 다섯 단계 수행 절차, 공유오피스 브랜드 F사 유치 결과" width="1600" height="900" loading="lazy" decoding="async"><figcaption>회사소개서 8쪽 — 빈 층을 채운 것이 아니라 건물의 얼굴을 바꿨습니다</figcaption></figure>
 <p>빈 층의 활용 방향이 궁금하시면 <a href="https://www.nextcw.com/flexoffice/">FlexOffice 컨설팅</a>에서 단계별 산출물을 보시거나, <a href="https://www.nextcw.com/contact/?s=flexoffice&amp;t=precheck&amp;cta=company_profile_insight">건물 개요와 공실 현황을 한 줄로 보내 주세요</a>.</p>
 <h2>공공 공간은 개관한 뒤 무엇으로 평가받나요?</h2>
 <p>공공 공간은 개관식이 아니라 개관 이후의 <strong>운영 성과</strong>로 평가받습니다. 그래서 넥스트코웍은 기획·건립 준비·개관·운영·활성화 다섯 단계마다 남는 문서를 기준으로 자문합니다.</p>
 <p><strong>한 주무관님께 드리는 이야기</strong> (가상 인물 · 공공 거점공간 담당)</p>
 <p>주무관님은 내년 개관을 앞둔 거점공간을 맡고 계십니다. 건물은 거의 다 지어졌는데, 누가 운영할지, 운영사를 무엇으로 평가할지, 의회와 투자심사에는 어떤 자료를 낼지가 아직 막막합니다.</p>
 <p>저희는 공간기획 보고서, 타당성 검토자료, 운영 매뉴얼, 민간위탁 제안요청서와 평가지표를 단계별로 함께 작성합니다. 지방재정 투자심사나 공유재산 관리계획 같은 행정 절차 자료도 포함됩니다. 한 가지는 분명히 말씀드립니다. <strong>넥스트코웍은 운영을 대행하지 않습니다.</strong> 발주기관이 좋은 운영사를 고르고 관리할 수 있도록 판단 근거를 드립니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-10.webp" alt="Public Advisory의 공간 자문·공공 AI 교육·정책 자문 세 영역과 기획부터 활성화까지 다섯 단계별 산출물, 행정 절차 대응 자료" loading="lazy" decoding="async"><figcaption>회사소개서 10쪽 — 테이프 커팅은 시작일 뿐, 평가는 그다음입니다</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-10.webp" alt="Public Advisory의 공간 자문·공공 AI 교육·정책 자문 세 영역과 기획부터 활성화까지 다섯 단계별 산출물, 행정 절차 대응 자료" width="1600" height="900" loading="lazy" decoding="async"><figcaption>회사소개서 10쪽 — 테이프 커팅은 시작일 뿐, 평가는 그다음입니다</figcaption></figure>
 <p>저는 공공 과업을 세 자리에서 해 봤습니다. 짓는 쪽에서는 충남 내포혁신플랫폼 설계 자문위원으로, 운영과 정책 쪽에서는 공유 관련 위원회 위원으로, 심사하는 쪽에서는 위탁운영기관 심사위원으로 참여했습니다. 세 자리에 모두 앉아 봤기 때문에 각자의 걱정을 압니다. 자세한 실적은 <a href="https://www.nextcw.com/public/">Public Advisory</a>에 정리해 두었습니다.</p>
 <h2>복합개발 단계에서 공간과 운영 방식을 함께 설계할 수 있나요?</h2>
 <p>네. Smart FlexOffice는 공유오피스 공간 설계와 운영팀의 AI 업무 체계를 한 번에 만드는 결합 상품입니다. 보통은 공간을 먼저 짓고 사람을 뽑은 뒤 운영 방식을 만드는데, 저희는 그 <strong>순서를 바꿉니다.</strong></p>
 <p><strong>강 이사님께 드리는 이야기</strong> (가상 인물 · 복합개발 시행사·시공사 개발 담당)</p>
 <p>이사님은 업무·상업·주거가 섞인 복합개발의 상품기획을 맡고 계십니다. 분양과 임대를 함께 고민해야 하고, 금융기관은 저층부와 어메니티 계획을 구체적으로 묻습니다.</p>
 <p>FlexOffice 2단계(컨셉·운영모델 설계)와 함께 운영팀 AI 워크숍 8회를 진행해, 입주 문의 응대·대관 안내·멤버십 만기 관리·마케팅 콘텐츠 초안을 AI로 처리하는 체계까지 개관 전에 만듭니다. 적은 인력으로도 빠르고 일관되게 응대하도록 체계를 만듭니다. 시작가는 5,500만 원부터이며 범위에 따라 산정합니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-17.webp" alt="FlexOffice 2단계와 운영팀 AI 워크숍 8회를 더해 운영팀이 AI로 일하는 공유오피스를 만드는 Smart FlexOffice 구조와 입주 문의·대관·멤버십·마케팅 네 가지 운영 업무" loading="lazy" decoding="async"><figcaption>회사소개서 17쪽 — 문을 열기 전에, 일하는 방식까지 완성합니다</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-17.webp" alt="FlexOffice 2단계와 운영팀 AI 워크숍 8회를 더해 운영팀이 AI로 일하는 공유오피스를 만드는 Smart FlexOffice 구조와 입주 문의·대관·멤버십·마케팅 네 가지 운영 업무" width="1600" height="900" loading="lazy" decoding="async"><figcaption>회사소개서 17쪽 — 문을 열기 전에, 일하는 방식까지 완성합니다</figcaption></figure>
 <p>이 방식은 오피스에만 해당하지 않습니다. 주거 커뮤니티, 복합개발·상업시설, 공공·창업시설, 호텔·워케이션센터, 산업단지·물류센터까지 자산 유형마다 수요층과 수익모델을 따로 설계합니다. 손님이 다르면 메뉴도 달라야 하니까요.</p>
 <h2>AI를 들였는데 왜 일은 그대로일까요?</h2>
 <p>AI 도구를 사는 것과 일하는 방식을 바꾸는 것은 다른 일이기 때문입니다. 실제 업무 단위로 다시 설계하고, 매일 쓰는 도구로 남겨야 일이 바뀝니다.</p>
 <p><strong>오 대표님께 드리는 이야기</strong> (가상 인물 · AI 전환을 준비하는 중견기업 대표)</p>
 <p>대표님 회사는 올해 AI 구독을 전사에 열었습니다. 직원들은 초안을 빨리 만들지만, 보고와 결재는 예전 속도 그대로입니다. 대표님 자신도 AI에게 질문은 하지만, 일을 맡기지는 못하고 계시죠.</p>
 <p>조직 전체보다 대표님 한 분부터 시작하셔도 됩니다. CEO AI 코칭은 2시간씩 5회, 대표님의 실제 업무로만 진행합니다. 업무 진단으로 시작해 리서치·요약, 문서·보고를 거쳐 4회차에 반복 업무를 맡을 <strong>대표님만의 AI 에이전트</strong>를 만들고, 마지막 회차에 업무 도구 하나와 90일 실행계획으로 마무리합니다. 비용은 300만 원이고, 끝난 뒤 30일 동안 팔로업합니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-16.webp" alt="CEO AI 코칭 1:1 세션 사진과 진단·환경 구성부터 업무 도구 제작·정착까지 다섯 회차별 산출물, 질문하기에서 에이전트 협업까지 AI 활용 4단계" loading="lazy" decoding="async"><figcaption>회사소개서 16쪽 — AI에게 묻는 경영자에서, AI와 일하는 경영자로</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-16.webp" alt="CEO AI 코칭 1:1 세션 사진과 진단·환경 구성부터 업무 도구 제작·정착까지 다섯 회차별 산출물, 질문하기에서 에이전트 협업까지 AI 활용 4단계" width="1600" height="900" loading="lazy" decoding="async"><figcaption>회사소개서 16쪽 — AI에게 묻는 경영자에서, AI와 일하는 경영자로</figcaption></figure>
 <p>대표님이 먼저 길을 낸 뒤에는 조직으로 넓힐 수 있습니다. 넥스트코웍은 조직의 업무를 정보 수집·지식 관리·문서 작성·반복 업무 자동화·회의와 보고·조직 정착의 여섯 모듈로 나누고, 부서마다 필요한 모듈만 조합합니다. 모든 부서에 같은 약을 처방하지 않습니다. 자세한 내용은 <a href="https://www.nextcw.com/coaching/">CEO AI 코칭</a>에서 보실 수 있습니다.</p>
 <h2>AI 교육이 끝난 뒤에는 무엇이 남아야 할까요?</h2>
 <p>업무 자동화와 템플릿처럼 다음 주 월요일에도 쓰는 결과물이 남아야 합니다. 교육은 들은 것이 아니라 남은 것으로 평가받아야 하기에, AI Campus는 임직원의 실제 업무 자료로 실습합니다.</p>
@@ -131,12 +131,12 @@
 <li>사내 AI 캠퍼스 — 8주~·전사, 2,000만 원부터. 진단·부서별 워크숍·사내 전파자 양성·성과 보고까지 이어집니다.</li>
 </ul>
 <p>내부 자료는 비식별 샘플이나 기관이 승인한 자료로만 실습하고, 필요하면 비밀유지계약을 먼저 맺습니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-12.webp" alt="AI Campus 실무 워크숍 사진과 AI 실무 특강·부서 실무 워크숍·사내 AI 캠퍼스 세 프로그램의 기간·대상·결과물, 사내 AI 캠퍼스 8주 표준 일정" loading="lazy" decoding="async"><figcaption>회사소개서 12쪽 — 교육이 끝나면 업무 자동화와 템플릿이 남습니다</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-12.webp" alt="AI Campus 실무 워크숍 사진과 AI 실무 특강·부서 실무 워크숍·사내 AI 캠퍼스 세 프로그램의 기간·대상·결과물, 사내 AI 캠퍼스 8주 표준 일정" width="1600" height="900" loading="lazy" decoding="async"><figcaption>회사소개서 12쪽 — 교육이 끝나면 업무 자동화와 템플릿이 남습니다</figcaption></figure>
 <p>숫자와 문장 하나가 틀리면 안 되는 조직들도 넥스트코웍과 AI 교육을 함께했습니다. 청와대(대통령실)에서는 2025년 AI·디지털협업툴 특강을, 신영증권 투자개발부에서는 부동산금융 실무자와 AI 프론티어모델 활용을, 전북연구원 박사급 연구진과는 보고서·데이터 분석 실습을 진행했습니다. 프로그램 비교는 <a href="https://www.nextcw.com/ai-campus/">AI Campus</a>에서 같은 기준으로 확인하실 수 있습니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-15.webp" alt="청와대(대통령실) AI·디지털협업툴 특강, 신영증권 투자개발부 AI 실무활용 세미나, 전북연구원 박사급 연구진 AI 세미나 세 곳의 대표 레퍼런스" loading="lazy" decoding="async"><figcaption>회사소개서 15쪽 — 정확해야 하는 곳일수록 AI는 제대로 배워야 합니다</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-15.webp" alt="청와대(대통령실) AI·디지털협업툴 특강, 신영증권 투자개발부 AI 실무활용 세미나, 전북연구원 박사급 연구진 AI 세미나 세 곳의 대표 레퍼런스" width="1600" height="900" loading="lazy" decoding="async"><figcaption>회사소개서 15쪽 — 정확해야 하는 곳일수록 AI는 제대로 배워야 합니다</figcaption></figure>
 <h2>이 일은 누가 직접 맡나요?</h2>
 <p>모든 과업은 대표 컨설턴트인 제가 직접 맡고 최종 검토합니다. 개발사업 PM(2006~2014), 공유오피스 창업·운영(2015~2023), 업무 디지털 전환(2009~), AI 교육·자문(2023~)까지 네 개의 현장을 지나며 사업성을 보는 눈, 운영 손익을 보는 눈, 업무 정착을 보는 눈을 함께 길렀습니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-19.webp" alt="이종찬 대표 컨설턴트의 개발사업 PM, 공유오피스 창업·운영, 업무 디지털 전환, AI 교육·자문 네 가지 경력과 위원·자문 이력" loading="lazy" decoding="async"><figcaption>회사소개서 19쪽 — 네 개의 현장을 지나 한 사람의 판단이 됐습니다</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-19.webp" alt="이종찬 대표 컨설턴트의 개발사업 PM, 공유오피스 창업·운영, 업무 디지털 전환, AI 교육·자문 네 가지 경력과 위원·자문 이력" width="1600" height="900" loading="lazy" decoding="async"><figcaption>회사소개서 19쪽 — 네 개의 현장을 지나 한 사람의 판단이 됐습니다</figcaption></figure>
 <h2>넥스트코웍과는 어떻게 시작하나요?</h2>
 <p>과제를 한 줄로 보내 주시면 영업일 1일 안에 회신드리고, 무료 사전진단 미팅으로 시작합니다. 그다음 범위·일정·산출물·비용을 적은 제안서로 합의하고 계약합니다.</p>
 <ol>
@@ -147,7 +147,7 @@
 <li>납품·사후 점검 — 결과 보고와 정착 확인</li>
 </ol>
 <p>제안서·견적서, 계약서, 세금계산서, 결과보고서까지 결재와 정산에 필요한 서류는 모두 드립니다. 결재가 쉬워야 실행이 빨라지니까요.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-22.webp" alt="문의·사전진단, 제안·견적, 계약, 수행·중간 보고, 납품·사후 점검의 5단계 진행 절차와 결재·정산에 필요한 제공 서류 목록" loading="lazy" decoding="async"><figcaption>회사소개서 22쪽 — 문의부터 사후 점검까지 5단계로 진행합니다</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck/slide-22.webp" alt="문의·사전진단, 제안·견적, 계약, 수행·중간 보고, 납품·사후 점검의 5단계 진행 절차와 결재·정산에 필요한 제공 서류 목록" width="1600" height="900" loading="lazy" decoding="async"><figcaption>회사소개서 22쪽 — 문의부터 사후 점검까지 5단계로 진행합니다</figcaption></figure>
 <h2>자주 묻는 질문</h2>
 <h3>비용은 어떻게 정해지나요?</h3>
 <p>상품별 시작가를 공개해 두었고, 무료 사전진단에서 범위를 확인한 뒤 연면적·인원·과업 범위에 맞춰 확정 견적을 드립니다. FlexOffice 진단은 1,000만 원부터, AI 실무 특강은 150만 원부터, CEO AI 코칭은 300만 원이며 견적은 부가세 별도입니다. Public Advisory는 과업 범위별로 산정합니다.</p>
@@ -160,7 +160,7 @@
 <h2>주방과 레시피를 한 번에 바꾸는 첫걸음</h2>
 <p>처음에 드린 두 질문의 답은 같습니다. 빈 층도, 그대로인 일도 주방과 레시피를 따로 바꿨기 때문에 생깁니다. 공간을 바꿀 때는 일하는 방식까지, 일하는 방식을 바꿀 때는 공간까지 함께 보셔야 합니다.</p>
 <p>회사소개서는 내부 보고나 품의에 그대로 첨부하실 수 있도록 24쪽 PDF로 준비했습니다.</p>
-<p><a href="https://www.nextcw.com/files/nextcowork-company-profile-2026.pdf"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/banner-download-bottom.webp" alt="품의·보고에 바로 붙일 넥스트코웍 회사소개서 PDF 내려받기 — 서비스 4종, 단계별 비용, 실적, 진행 절차" loading="lazy" decoding="async"></a></p>
+<p><a href="https://www.nextcw.com/files/nextcowork-company-profile-2026.pdf"><img src="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/banner-download-bottom.webp" alt="품의·보고에 바로 붙일 넥스트코웍 회사소개서 PDF 내려받기 — 서비스 4종, 단계별 비용, 실적, 진행 절차" width="1600" height="600" loading="lazy" decoding="async"></a></p>
 <p><strong><a href="https://www.nextcw.com/files/nextcowork-company-profile-2026.pdf">회사소개서 PDF 내려받기 (24쪽 · 2.5MB)</a></strong> · <a href="https://www.nextcw.com/img/insights/nextcowork-space-ai-intersection/deck.html">브라우저에서 바로 넘겨보기</a></p>
 <p>첫걸음은 가볍습니다. 지금 고민하시는 과제를 한 줄만 적어 <a href="https://www.nextcw.com/contact/?s=general&amp;t=diagnosis&amp;cta=company_profile_insight">무료 사전진단을 신청해 주세요</a>. 영업일 1일 안에 회신드리겠습니다.</p>]]></content:encoded>
     </item>
@@ -174,12 +174,12 @@
       <content:encoded><![CDATA[<p>Dashboards는 데이터를 보고 판단하는 화면을, Motion은 그 판단을 다른 사람에게 설명하는 짧은 애니메이션을 만듭니다.</p>
 <p>Anthropic은 2026년 10월 8일 Claude에 두 기능을 베타로 추가했습니다. 연결한 데이터에 질문하면 차트가 담긴 대시보드가 만들어지고, 보고서나 자료를 주면 설명용 애니메이션이 만들어집니다. <a href="https://claude.com/resources/articles/dashboards-and-motion" target="_blank" rel="noopener">Anthropic 발표</a></p>
 <p>새 기능 소식이 나오면 “무엇을 할 수 있나”보다 “내 업무 어디에 끼우나”가 더 궁금합니다. 이 글은 두 기능을 하나의 흐름으로 묶어 봅니다. <strong>숫자를 보고(Dashboards), 그 이야기를 움직여 전달한다(Motion).</strong> 끝에는 플랜별 사용 가능 여부와 바로 붙여 쓸 요청문 두 개를 정리했습니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-01.webp" alt="카드뉴스 표지. 숫자를 보고, 이야기를 움직입니다라는 제목 아래 Dashboards는 데이터에서 판단으로, Motion은 자료에서 설명으로 이어진다는 두 개의 카드가 놓여 있다" loading="lazy" decoding="async"><figcaption>Dashboards는 데이터 → 판단, Motion은 자료 → 설명을 돕습니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-01.webp" alt="카드뉴스 표지. 숫자를 보고, 이야기를 움직입니다라는 제목 아래 Dashboards는 데이터에서 판단으로, Motion은 자료에서 설명으로 이어진다는 두 개의 카드가 놓여 있다" width="900" height="1125" loading="lazy" decoding="async"><figcaption>Dashboards는 데이터 → 판단, Motion은 자료 → 설명을 돕습니다.</figcaption></figure>
 <p>카드뉴스 10장은 넥스트코웍이 공식 안내를 바탕으로 독립 제작한 기능 소개입니다. 카드 속 도표는 개념도와 예시 데이터이며, 실제 제품 화면이나 고객 성과가 아닙니다.</p>
 <h2>두 기능은 무엇이 다를까?</h2>
 <p>Dashboards는 “무엇이 달라졌지?”에, Motion은 “어떻게 설명할까?”에 답합니다.</p>
 <p>같은 분기 자료라도 목적에 따라 필요한 결과물이 다릅니다. 내가 상황을 파악하려면 비교와 추이를 볼 수 있는 화면이 필요하고, 팀이나 고객에게 전하려면 핵심 메시지 서너 개를 순서대로 보여주는 설명이 필요합니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-02.webp" alt="대시보드는 판단을, 모션은 전달을 돕는다는 카드. Dashboards는 연결한 데이터에 질문하고 차트로 살펴보며, Motion은 자료 속 핵심 메시지를 짧은 애니메이션으로 만든다고 비교한다" loading="lazy" decoding="async"><figcaption>분석에서 찾은 내용을 설명 애니메이션의 소재로 이어 쓸 수 있습니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-02.webp" alt="대시보드는 판단을, 모션은 전달을 돕는다는 카드. Dashboards는 연결한 데이터에 질문하고 차트로 살펴보며, Motion은 자료 속 핵심 메시지를 짧은 애니메이션으로 만든다고 비교한다" width="900" height="1125" loading="lazy" decoding="async"><figcaption>분석에서 찾은 내용을 설명 애니메이션의 소재로 이어 쓸 수 있습니다.</figcaption></figure>
 <div class="post-table" tabindex="0" role="region" aria-label="표 (가로로 스크롤)"><table><thead><tr><th>구분</th><th>Dashboards</th><th>Motion</th></tr></thead><tbody>
 <tr><td>답하는 질문</td><td>무엇이 달라졌나</td><td>어떻게 설명할까</td></tr>
 <tr><td>입력</td><td>연결한 데이터 웨어하우스·앱</td><td>보고서·차트·제품 자료와 요청</td></tr>
@@ -190,15 +190,15 @@
 <h2>Motion은 보고서를 어떻게 영상으로 바꿀까?</h2>
 <p>보고 내용과 대상, 길이를 알려주면 Claude가 장면을 나눈 설명 애니메이션을 코드로 만듭니다.</p>
 <p>예를 들어 분기 보고서를 주고 “문제 제시 → 변화 설명 → 다음 행동” 세 장면으로 만들어 달라고 요청할 수 있습니다. 결과는 짧은 영상처럼 재생되고 MP4 파일로 내려받을 수 있습니다. <a href="https://support.claude.com/en/articles/17454997-get-started-with-claude-motion" target="_blank" rel="noopener">Motion 시작 안내</a></p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-03.webp" alt="보고서가 짧은 영상이 된다는 카드. 분기 보고서·차트·제품 자료를 입력하면 문제 제시, 변화 설명, 다음 행동 세 장면으로 나뉜다" loading="lazy" decoding="async"><figcaption>장면 구성은 활용 예시입니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-03.webp" alt="보고서가 짧은 영상이 된다는 카드. 분기 보고서·차트·제품 자료를 입력하면 문제 제시, 변화 설명, 다음 행동 세 장면으로 나뉜다" width="900" height="1125" loading="lazy" decoding="async"><figcaption>장면 구성은 활용 예시입니다.</figcaption></figure>
 <p>애니메이션이 코드로 만들어진다는 점이 실무에서 중요합니다. 숫자 하나나 장면 타이밍 하나를 바꿔도 나머지는 그대로 남습니다. “두 번째 장면을 조금 천천히 보여줘”처럼 말로 고치거나 편집기에서 직접 손볼 수 있습니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-04.webp" alt="바꾸고 싶은 부분을 말로 고친다는 카드. 두 번째 장면을 조금 천천히 보여줘라는 수정 요청 예시와 도입, 핵심 설명, 마무리 세 장면이 나란히 있다" loading="lazy" decoding="async"><figcaption>문구·숫자·장면 타이밍을 대화나 편집기에서 수정합니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-04.webp" alt="바꾸고 싶은 부분을 말로 고친다는 카드. 두 번째 장면을 조금 천천히 보여줘라는 수정 요청 예시와 도입, 핵심 설명, 마무리 세 장면이 나란히 있다" width="900" height="1125" loading="lazy" decoding="async"><figcaption>문구·숫자·장면 타이밍을 대화나 편집기에서 수정합니다.</figcaption></figure>
 <p>움직이는 대상은 텍스트·차트·도형·이미지입니다. Motion은 영상 생성 모델을 쓰지 않기 때문에 사실적인 촬영 장면이나 AI가 만든 인물은 나오지 않습니다. 홍보 영상보다는 <strong>보고·교육·제품 설명</strong>처럼 내용을 정확히 전해야 하는 자리에 맞습니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-05.webp" alt="텍스트와 도표를 코드로 움직인다는 카드. 텍스트, 차트, 도형, 이미지 네 가지 요소와 완성한 애니메이션을 MP4 영상 파일로 내려받는다는 안내가 있다" loading="lazy" decoding="async"><figcaption>사실적인 인물·촬영 영상을 생성하는 기능은 아닙니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-05.webp" alt="텍스트와 도표를 코드로 움직인다는 카드. 텍스트, 차트, 도형, 이미지 네 가지 요소와 완성한 애니메이션을 MP4 영상 파일로 내려받는다는 안내가 있다" width="900" height="1125" loading="lazy" decoding="async"><figcaption>사실적인 인물·촬영 영상을 생성하는 기능은 아닙니다.</figcaption></figure>
 <h2>Dashboards는 어떤 데이터에 질문할 수 있을까?</h2>
 <p>Amazon Redshift, BigQuery, ClickHouse, Databricks, Snowflake 같은 데이터 웨어하우스와 Salesforce처럼 Claude에 연결한 앱의 데이터에 질문할 수 있습니다.</p>
 <p>“이번 달 채널별 실적을 지난달과 비교해줘”라고 물으면 Claude가 쿼리를 작성하고 차트로 보여줍니다. 필터를 추가하거나 차트를 바꾸는 것도 대화로 요청합니다. <a href="https://support.claude.com/en/articles/17454700-get-started-with-claude-dashboards" target="_blank" rel="noopener">Dashboards 시작 안내</a></p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-06.webp" alt="질문하면 데이터가 화면이 된다는 카드. BigQuery, Snowflake, Salesforce 연결 예시와 이번 달 채널별 실적을 지난달과 비교해줘라는 질문, 채널 A·B·C의 지난달과 이번 달 막대 비교 개념도가 있다" loading="lazy" decoding="async"><figcaption>개념도·예시 데이터입니다. 실제 연동은 데이터 접근 권한과 조직 설정에 따릅니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-06.webp" alt="질문하면 데이터가 화면이 된다는 카드. BigQuery, Snowflake, Salesforce 연결 예시와 이번 달 채널별 실적을 지난달과 비교해줘라는 질문, 채널 A·B·C의 지난달과 이번 달 막대 비교 개념도가 있다" width="900" height="1125" loading="lazy" decoding="async"><figcaption>개념도·예시 데이터입니다. 실제 연동은 데이터 접근 권한과 조직 설정에 따릅니다.</figcaption></figure>
 <p>공식 안내는 Dashboards를 빠른 탐색용 질문에 쓰고, 더 깊은 분석은 다른 도구로 옮기라고 설명합니다. 첫 화면을 빨리 보는 도구로 이해하면 기대치를 맞추기 쉽습니다.</p>
 <h2>대시보드 숫자는 믿어도 될까?</h2>
 <p>차트마다 Claude가 작성한 쿼리와 마지막 갱신 시점을 확인할 수 있으니, 중요한 판단 전에는 그 두 가지를 먼저 봅니다.</p>
@@ -208,7 +208,7 @@
 <tr><td>2</td><td>어느 기간의 숫자인가요? (집계 기간·비교 조건)</td><td>차트의 쿼리</td></tr>
 <tr><td>3</td><td>언제 갱신됐나요?</td><td>차트의 마지막 갱신 시점</td></tr>
 </tbody></table></div>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-07.webp" alt="숫자 뒤의 기준까지 확인할 수 있다는 카드. 무엇을 집계했나요, 어느 기간의 숫자인가요, 언제 갱신됐나요 세 가지 질문이 번호와 함께 있고 빠르게 탐색하고 중요한 판단 전에는 기준을 검토하라고 정리한다" loading="lazy" decoding="async"><figcaption>체크리스트는 넥스트코웍의 실무 활용 제안입니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-07.webp" alt="숫자 뒤의 기준까지 확인할 수 있다는 카드. 무엇을 집계했나요, 어느 기간의 숫자인가요, 언제 갱신됐나요 세 가지 질문이 번호와 함께 있고 빠르게 탐색하고 중요한 판단 전에는 기준을 검토하라고 정리한다" width="900" height="1125" loading="lazy" decoding="async"><figcaption>체크리스트는 넥스트코웍의 실무 활용 제안입니다.</figcaption></figure>
 <h2>우리 업무에서는 어디부터 시작할까?</h2>
 <p>질문 하나와 원천 데이터 하나로 작은 실험부터 시작합니다. Dashboards로 살펴보고, 찾은 내용을 Motion으로 전달하는 순서입니다.</p>
 <div class="post-table" tabindex="0" role="region" aria-label="표 (가로로 스크롤)"><table><thead><tr><th>업무</th><th>Dashboards로 볼 것</th><th>Motion으로 전할 것</th></tr></thead><tbody>
@@ -216,7 +216,7 @@
 <tr><td>공간 운영</td><td>기간별 입주·이용 현황</td><td>이해관계자용 현황 설명</td></tr>
 <tr><td>세일즈</td><td>상담 단계별 기회</td><td>팀 주간 브리핑</td></tr>
 </tbody></table></div>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-08.webp" alt="우리 업무에서는 이렇게 시작해 보라는 카드. 교육 운영은 모집 채널별 신청 흐름에서 운영 보고로, 공간 운영은 기간별 입주·이용 현황에서 현황 설명으로, 세일즈는 상담 단계별 기회에서 팀 브리핑으로 이어진다" loading="lazy" decoding="async"><figcaption>활용 제안입니다. 연결 가능한 소스와 필요한 데이터가 전제입니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-08.webp" alt="우리 업무에서는 이렇게 시작해 보라는 카드. 교육 운영은 모집 채널별 신청 흐름에서 운영 보고로, 공간 운영은 기간별 입주·이용 현황에서 현황 설명으로, 세일즈는 상담 단계별 기회에서 팀 브리핑으로 이어진다" width="900" height="1125" loading="lazy" decoding="async"><figcaption>활용 제안입니다. 연결 가능한 소스와 필요한 데이터가 전제입니다.</figcaption></figure>
 <p>세 가지 모두 넥스트코웍의 제안이며, 실제로 하려면 해당 데이터가 Claude에 연결 가능한 곳에 있어야 합니다. 데이터가 엑셀 파일에 흩어져 있다면 대시보드보다 데이터 위치를 정리하는 일이 먼저입니다. 이런 순서를 팀과 함께 잡는 과정은 <a href="https://www.nextcw.com/ai-campus/">AI Campus 기업 교육</a>의 실습 과제로 다룹니다.</p>
 <h2>내 플랜에서 쓸 수 있을까?</h2>
 <p>Dashboards는 Pro·Max·Team·Enterprise에서, Motion은 Team·Enterprise에서 베타로 제공되며 Free 플랜에서는 둘 다 쓸 수 없습니다.</p>
@@ -226,7 +226,7 @@
 <tr><td>Team</td><td>제공(베타)</td><td>제공(베타)</td></tr>
 <tr><td>Enterprise</td><td>제공(베타)·관리자 활성화 필요</td><td>제공(베타)·관리자 활성화 필요</td></tr>
 </tbody></table></div>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-09.webp" alt="내 플랜에서 쓸 수 있는지 확인하라는 카드. Free는 둘 다 미제공, Pro·Max는 Dashboards만 제공, Team은 둘 다 제공, Enterprise는 둘 다 제공이지만 기본 비활성화라 조직 관리자가 켜야 한다는 표" loading="lazy" decoding="async"><figcaption>2026.10.15 공식 안내 기준 · 플랜 사용량 한도 적용</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-09.webp" alt="내 플랜에서 쓸 수 있는지 확인하라는 카드. Free는 둘 다 미제공, Pro·Max는 Dashboards만 제공, Team은 둘 다 제공, Enterprise는 둘 다 제공이지만 기본 비활성화라 조직 관리자가 켜야 한다는 표" width="900" height="1125" loading="lazy" decoding="async"><figcaption>2026.10.15 공식 안내 기준 · 플랜 사용량 한도 적용</figcaption></figure>
 <p>Enterprise는 기본으로 꺼져 있어 조직 소유자가 Organization settings &gt; Artifacts에서 켜야 하고, 특정 그룹에만 열어 둘 수도 있습니다. 두 기능 모두 플랜 사용량 한도에 포함되며, 길고 복잡한 애니메이션일수록 한도를 더 씁니다. 베타 기능이므로 제공 범위는 바뀔 수 있으니 도입 전에 공식 안내를 다시 확인하세요.</p>
 <h2>자주 묻는 질문</h2>
 <h3>Claude Motion으로 홍보 영상을 만들 수 있나요</h3>
@@ -239,7 +239,7 @@
 <p>오늘 만들 보고나 설명 하나를 골라 작은 실습으로 바꿔 보세요. 아래 두 요청문을 그대로 붙여 넣고 데이터와 자료만 바꾸면 됩니다.</p>
 <blockquote>Dashboards: “연결한 영업 데이터로 이번 달 상담 단계를 비교하고, 집계 기준과 갱신 시점을 보여줘.”</blockquote>
 <blockquote>Motion: “첨부 보고서를 바탕으로 고객용 30초 설명 영상을 만들어줘. 핵심 메시지는 3개로 정리해줘.”</blockquote>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-10.webp" alt="자료 하나로 첫 결과물을 만들라는 마지막 카드. Dashboards와 Motion 요청 예시 두 개와 AI 교육·AX 적용 상담 버튼이 있다" loading="lazy" decoding="async"><figcaption>이 콘텐츠는 NEXT COWORK의 독립적인 기능 소개입니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/card-10.webp" alt="자료 하나로 첫 결과물을 만들라는 마지막 카드. Dashboards와 Motion 요청 예시 두 개와 AI 교육·AX 적용 상담 버튼이 있다" width="900" height="1125" loading="lazy" decoding="async"><figcaption>이 콘텐츠는 NEXT COWORK의 독립적인 기능 소개입니다.</figcaption></figure>
 <p>10장 전체를 순서대로 넘겨 보거나 팀에 공유하려면 <a href="https://www.nextcw.com/img/insights/claude-motion-dashboards-workflow/cardnews.html">움직이는 카드뉴스로 보기</a>를 열어 보세요. 자동 재생·이전/다음·키보드 이동을 지원합니다. 카드뉴스의 모션은 넥스트코웍이 별도로 제작한 것으로, Claude Motion의 실행 결과가 아닙니다.</p>
 <p>새 기능을 팀 업무 흐름에 맞게 정리하는 일은 <a href="https://www.nextcw.com/ai-campus/">AI Campus</a> 교육과 <a href="https://www.nextcw.com/coaching/">CEO AI 코칭</a>에서 함께 합니다. 화면을 오가며 자료를 모으는 흐름이 궁금하다면 <a href="https://www.nextcw.com/insights/aside-browser-workflow/">Aside Browser 업무 흐름 글</a>도 이어서 읽어 보세요.</p>
 <p>참고한 공식 자료: <a href="https://claude.com/resources/articles/dashboards-and-motion" target="_blank" rel="noopener">Anthropic 발표 — Dashboards and Motion</a> · <a href="https://support.claude.com/en/articles/17454997-get-started-with-claude-motion" target="_blank" rel="noopener">Claude Motion 시작 안내</a> · <a href="https://support.claude.com/en/articles/17454700-get-started-with-claude-dashboards" target="_blank" rel="noopener">Claude Dashboards 시작 안내</a> (2026년 10월 16일 확인)</p>]]></content:encoded>
@@ -259,13 +259,13 @@
 <li>회의 준비에 실제로 써볼 만한 시연은 무엇일까?</li>
 </ol>
 <p>끝에는 그대로 복사해 시험할 수 있는 요청문과 도입 판단 기준을 남겼습니다. 움직이는 장면은 제품 화면 녹화가 아니라 기능과 업무 흐름을 설명하기 위해 만든 개념 시연입니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/aside-browser-workflow/hero.svg" alt="개념 일러스트: 흩어진 여러 탭이 자료와 결과물을 나란히 둔 하나의 작업 화면으로 모이는 모습" loading="lazy" decoding="async"><figcaption>넥스트코웍이 만든 개념 일러스트입니다. 실제 Aside 화면이 아닙니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/aside-browser-workflow/hero.svg" alt="개념 일러스트: 흩어진 여러 탭이 자료와 결과물을 나란히 둔 하나의 작업 화면으로 모이는 모습" width="1200" height="630" loading="lazy" decoding="async"><figcaption>넥스트코웍이 만든 개념 일러스트입니다. 실제 Aside 화면이 아닙니다.</figcaption></figure>
 <h2>장면 1. Aside는 어떻게 움직일까?</h2>
 <p>저는 필요한 페이지와 작업을 눈앞에 두는 배치에서, 다음 행동을 찾기가 한결 편해졌습니다.</p>
 <p>자료를 읽다가 다른 페이지를 열고, 내용을 복사한 뒤 작성 중인 문서로 돌아가는 일은 익숙합니다. 그런데 돌아올 때마다 “어디까지 읽었지?”, “어느 문장을 옮기려 했지?”를 다시 떠올려야 하는 순간이 생깁니다. 작업은 이어지고 있지만 생각은 잠깐씩 끊기는 셈입니다.</p>
 <p>제가 Aside Browser에서 반가웠던 것은 그 작은 끊김을 덜 느끼게 해주는 화면 구성이었습니다. 사이드바를 통해 필요한 곳으로 이동하고, 곁에 둔 자료를 보며 작업을 이어가는 경험이 브라우저를 하나의 작업 공간처럼 느끼게 했습니다.</p>
 <p>여기서 중요한 구분이 있습니다. 제가 이동에 쓴 사이드바, 현재 페이지를 AI에게 연결하는 사이드 패널, 두 페이지를 나란히 보는 화면 분할은 각각 역할이 다릅니다. 공식 문서는 사이드바를 여닫는 단축키와 화면 분할, AI 질문 시작 기능을 안내합니다. 사이드바가 일을 이어가기 쉽게 해준 것은 제 경험이며, 이 기능들이 집중에 얼마나 도움이 되는지는 자신의 업무에서 확인할 문제입니다. <a href="https://docs.aside.com/help/browser-basics" target="_blank" rel="noopener">Aside 브라우저 기본 사용법</a></p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/aside-browser-workflow/roles-map.svg" alt="사이드바, 사이드 패널, 화면 분할의 역할을 나눠 보여주는 도식" loading="lazy" decoding="async"><figcaption>세 기능은 하려는 일에 따라 먼저 여는 화면이 다릅니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/aside-browser-workflow/roles-map.svg" alt="사이드바, 사이드 패널, 화면 분할의 역할을 나눠 보여주는 도식" width="800" height="890" loading="lazy" decoding="async"><figcaption>세 기능은 하려는 일에 따라 먼저 여는 화면이 다릅니다.</figcaption></figure>
 <p><strong>페이지를 본다 → 현재 페이지를 작업에 붙인다 → AI에게 결과물을 요청한다 → 원문과 결과를 대조한다.</strong> 사이드바는 탐색, 사이드 패널은 요청, 화면 분할은 비교를 맡습니다. 서로 다른 세 기능이 하나의 업무를 이어주는 방식입니다.</p>
 <p><a href="https://www.nextcw.com/insights/aside-browser-workflow/#aside-demo-flow">작동 방식 개념 시연을 글에서 보기</a></p>
 <p>움직이는 장면 1 | 공식 안내 페이지를 보다가 사이드 패널에서 페이지를 첨부하고 비교표 초안을 요청합니다. 결과가 나오면 원문과 나란히 놓고 확인합니다. 실제 Aside 화면 녹화가 아닌 기능 흐름의 개념 시연입니다.</p>
@@ -336,7 +336,7 @@
 
 완료 기준
 결과물을 보여주고 사용한 자료와 남은 확인 사항을 알려주세요.</code></pre>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/aside-browser-workflow/request-form.svg" alt="첫 요청에 넣을 여섯 가지 항목을 순서대로 보여주는 도식. 작업 범위 단계에서 신청·발송·게시 전에 멈춥니다." loading="lazy" decoding="async"><figcaption>위 요청 양식의 항목 순서와 같습니다. 다섯 번째 작업 범위가 멈출 지점을 정하는 칸입니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/aside-browser-workflow/request-form.svg" alt="첫 요청에 넣을 여섯 가지 항목을 순서대로 보여주는 도식. 작업 범위 단계에서 신청·발송·게시 전에 멈춥니다." width="800" height="1020" loading="lazy" decoding="async"><figcaption>위 요청 양식의 항목 순서와 같습니다. 다섯 번째 작업 범위가 멈출 지점을 정하는 칸입니다.</figcaption></figure>
 <h2>장면 3. 내일 회의에 가져갈 1장짜리 비교표 만들기</h2>
 <p>가장 좋은 첫 시연은 <strong>이미 해야 하는 작은 업무</strong>를 그대로 맡겨보는 것입니다. 예를 들어, 사내 AI 교육을 검토하는 회의가 내일이고 공식 프로그램 안내 페이지 두 개가 있다고 가정해보겠습니다. 공개 자료만 읽어도 판단의 출발점이 되는 비교표와 확인 질문을 만들 수 있습니다.</p>
 <p><a href="https://www.nextcw.com/insights/aside-browser-workflow/#aside-demo-case">공개 프로그램 비교 시연을 글에서 보기</a></p>
@@ -365,7 +365,7 @@
 <p>경영자에게는 이 판단이 특히 중요합니다. 자신의 반복 업무에서 무엇을 맡기고 무엇을 직접 확인할지 정하는 과정은 <a href="https://www.nextcw.com/coaching/">CEO AI 코칭</a>에서도 다루는 업무 적용의 출발점이 될 수 있습니다.</p>
 <h2>업무에 도입하기 전에 무엇을 확인해야 할까?</h2>
 <p>자료 접근 범위와 변경 권한을 정하면, AI가 할 일과 사람이 확인할 일을 나누기 쉽습니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/aside-browser-workflow/permission-ladder.svg" alt="Read only, Guard, Full access 세 가지 작업 권한을 좁은 순서로 보여주는 도식" loading="lazy" decoding="async"><figcaption>Guard가 새 작업의 기본값입니다. 맡길 일의 범위에 맞춰 선택하세요.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/aside-browser-workflow/permission-ladder.svg" alt="Read only, Guard, Full access 세 가지 작업 권한을 좁은 순서로 보여주는 도식" width="800" height="960" loading="lazy" decoding="async"><figcaption>Guard가 새 작업의 기본값입니다. 맡길 일의 범위에 맞춰 선택하세요.</figcaption></figure>
 <p>Aside 공식 문서는 작업별 권한과 폴더 접근 범위를 설정하는 방법을 안내합니다. 읽기 전용인 Read only, 승인된 폴더에서 작업하는 Guard, 파일 접근 범위가 넓은 Full access가 있으며, 도구별 허용·질문·차단 규칙도 설정할 수 있습니다. <a href="https://docs.aside.com/help/security" target="_blank" rel="noopener">Aside 권한 설정 안내</a></p>
 <p>공개 자료 비교는 읽기 전용으로 시작해볼 수 있습니다. 파일을 작성해야 한다면 사용할 작업 폴더를 정하고, 원본을 바꿀지 새 초안을 만들지도 요청에 적어두세요. 고객 자료를 사용하는 조직은 자료 취급 기준과 허용된 AI 사용 범위에 맞춰 설정을 확인하면 됩니다.</p>
 <p>로그인 추가 인증이나 사람의 승인이 필요한 단계에서는 작업이 기다릴 수 있습니다. 그때는 현재 상태와 요청 내용을 확인하고 이어가야 합니다. <a href="https://docs.aside.com/help/troubleshooting#task-is-waiting-for-you" target="_blank" rel="noopener">Aside 대기 작업 안내</a></p>
@@ -394,7 +394,7 @@
 <p>“직원들은 AI를 잘 쓰는데, 왜 고객 답변은 여전히 늦을까요?”</p>
 <p>오늘은 이 질문을 가진 가상의 박 대표와 함께 업무 한 건을 펼쳐보겠습니다. 어려운 기술 목록을 외우기보다, 자료를 찾고 초안을 만들고 승인하고 다음 연락을 남기는 장면을 따라가 보세요.</p>
 <p>이 글에서 AX는 <strong>AI를 활용해 실제 일하는 흐름을 바꾸는 것</strong>이라는 뜻으로 쓰겠습니다. 네 개의 움직이는 장면을 따라가며 병목, 첫 과제, 역할과 승인, 성과 판단을 확인해보세요. 글 끝에는 팀 회의에서 바로 채울 <strong>‘첫 AX 시험 1장’</strong>을 남깁니다. 움직이는 장면은 가상 업무를 설명하는 개념 시연이며 실제 고객 사례나 구현된 서비스 화면이 아닙니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/hero.webp" alt="AI 생성 일러스트: 가상의 경영진이 업무를 함께 검토하는 장면" loading="lazy" decoding="async"><figcaption>AI 생성 일러스트. 등장인물·회사·문의·화면·수치는 이해를 돕는 가상 예시이며, 실제 고객 사례나 성과가 아닙니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/hero.webp" alt="AI 생성 일러스트: 가상의 경영진이 업무를 함께 검토하는 장면" width="1672" height="941" loading="lazy" decoding="async"><figcaption>AI 생성 일러스트. 등장인물·회사·문의·화면·수치는 이해를 돕는 가상 예시이며, 실제 고객 사례나 성과가 아닙니다.</figcaption></figure>
 <h2>AI를 쓰는데 왜 일은 그대로일까요?</h2>
 <p>초안이 빨라져도 자료 확인·승인 대기·후속 연락이 그대로면 전체 업무는 여전히 늦을 수 있습니다.</p>
 <p>월요일 오전, 고객에게 이런 문의가 왔다고 해보겠습니다.</p>
@@ -449,9 +449,9 @@
 <h2>자료와 결과는 어떻게 이어져야 하나요?</h2>
 <p>어떤 자료를 기준으로 답했는지, 누가 확인했는지, 다음 행동이 무엇인지 같은 문의 안에서 볼 수 있어야 합니다.</p>
 <p>최 이사가 고객관리표와 별도 문서의 상태가 다르다는 것을 발견합니다. 이때는 “전부 연결하자”에 앞서 <strong>고객 상태는 어느 기록을 기준으로 삼을지</strong> 정해야 합니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/v2/card-04-evidence.webp" alt="AI 생성 요약 카드: 최신 가격표·사용 가능한 사례·고객 기록의 기준을 정하는 장면" loading="lazy" decoding="async"><figcaption>AI 생성 요약 카드. 자료마다 출처·확인일·담당자와 사용 범위를 붙입니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/v2/card-04-evidence.webp" alt="AI 생성 요약 카드: 최신 가격표·사용 가능한 사례·고객 기록의 기준을 정하는 장면" width="1086" height="1448" loading="lazy" decoding="async"><figcaption>AI 생성 요약 카드. 자료마다 출처·확인일·담당자와 사용 범위를 붙입니다.</figcaption></figure>
 <p>예를 들어 문의 번호 ‘024’에 고객 질문, 승인 가격표, 답변 초안, 확인 담당자, 다음 연락일이 함께 보이도록 정리할 수 있습니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/v2/inquiry-board.webp" alt="가상 업무 화면 예시: 문의 024의 고객 질문과 자료·확인할 항목을 한곳에서 보는 화면" loading="lazy" decoding="async"><figcaption>설명용 가상 화면입니다. 실제 제품 화면이나 구현된 서비스가 아닙니다. 제품 A·수량·가격·날짜는 작성 예시입니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/v2/inquiry-board.webp" alt="가상 업무 화면 예시: 문의 024의 고객 질문과 자료·확인할 항목을 한곳에서 보는 화면" width="1200" height="1480" loading="lazy" decoding="async"><figcaption>설명용 가상 화면입니다. 실제 제품 화면이나 구현된 서비스가 아닙니다. 제품 A·수량·가격·날짜는 작성 예시입니다.</figcaption></figure>
 <p>이 화면에서 단가 20,000원과 수량 20개가 확인됐다면 금액은 계산식으로 400,000원이 됩니다. 하지만 납품일은 별도 확인이 필요하므로 AI가 확정해서 쓰면 안 됩니다. 가격은 가상 값이며 실제 판매 조건이 아닙니다.</p>
 <p>대표님이 개발자에게 모든 코드를 설명할 필요는 없습니다. 다음 네 가지를 설명하고 확인할 수 있으면 방향이 선명해집니다.</p>
 <p><strong>무엇을 읽나요? 어디에 남기나요? 누가 바꿀 수 있나요? 실패하면 누가 이어서 하나요?</strong></p>
@@ -460,7 +460,7 @@
 <p>발송 여부와 다음 행동이 실제 기록에 남았는지까지 확인해야 합니다.</p>
 <p>박 대표가 승인한 답변을 이 팀장이 발송했습니다. 여기서 끝내면 다음 문의 때 같은 자료를 다시 찾고, 후속 연락도 놓칠 수 있습니다. 문의 024의 상태를 ‘발송 완료’로 바꾸고 담당자와 다음 연락일을 남깁니다.</p>
 <p>아래처럼 초안 옆에 확인할 항목과 다음 행동이 보이면 검토하기가 쉬워집니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/v2/review-board.webp" alt="가상 검토 화면 예시: 답변 초안과 가격·납품일·수신자 확인, 승인 대기와 후속 행동" loading="lazy" decoding="async"><figcaption>설명용 가상 화면입니다. ‘확인 중’인 납품일은 확정되지 않았고, 승인 대기는 실제 발송 완료와 다릅니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/v2/review-board.webp" alt="가상 검토 화면 예시: 답변 초안과 가격·납품일·수신자 확인, 승인 대기와 후속 행동" width="1200" height="1480" loading="lazy" decoding="async"><figcaption>설명용 가상 화면입니다. ‘확인 중’인 납품일은 확정되지 않았고, 승인 대기는 실제 발송 완료와 다릅니다.</figcaption></figure>
 <p>승인한 뒤 가격·수신자·조건을 바꾸면 다시 확인해야 합니다. 중요한 실행은 실제 시스템에서도 권한과 승인을 확인해야 하며, AI에게 “승인받아라”라고 적는 것만으로 충분하지 않습니다. <a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/" target="_blank" rel="noopener">OWASP의 실행 권한 지침</a></p>
 <p><strong>오늘 해볼 일:</strong> 한 건을 처리한 뒤 ‘무엇이 남으면 완료라고 볼지’를 적어보세요. 저장·발송·담당자·다음 연락일처럼 눈으로 확인할 수 있는 증거로 정하면 좋겠습니다.</p>
 <h2>대표님과 팀은 어떤 역량을 길러야 할까요?</h2>
@@ -490,11 +490,11 @@
 <p>Anthropic은 초기 평가를 실제 실패에서 가져온 20~50개 과제로 시작할 수 있다고 설명합니다. 작은 시험의 출발점이지 운영 안전 보증은 아닙니다. <a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents" target="_blank" rel="noopener">에이전트 평가 가이드</a></p>
 <h2>이번 주에는 무엇부터 해보면 좋을까요?</h2>
 <p>최근 업무 한 건을 보고, 역할을 나누고, 가상 자료로 함께 시험하는 세 가지부터 해보세요.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/v2/card-06-first-week.webp" alt="AI 생성 요약 카드: 최근 업무 한 건 관찰·역할 분담·가상 자료 시험의 세 단계" loading="lazy" decoding="async"><figcaption>AI 생성 요약 카드. 이 세 가지를 팀 회의의 첫 안건으로 가져가 보세요.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/v2/card-06-first-week.webp" alt="AI 생성 요약 카드: 최근 업무 한 건 관찰·역할 분담·가상 자료 시험의 세 단계" width="1086" height="1448" loading="lazy" decoding="async"><figcaption>AI 생성 요약 카드. 이 세 가지를 팀 회의의 첫 안건으로 가져가 보세요.</figcaption></figure>
 <p><strong>1. 최근 문의 한 건을 펼칩니다.</strong> 어디에서 자료를 다시 찾고, 누구의 확인을 기다리고, 무엇을 기록하지 않았는지 보세요.</p>
 <p><strong>2. AI와 사람이 할 일을 적습니다.</strong> AI는 자료 정리와 초안, 사람은 중요한 조건 확인과 승인처럼 작은 범위로 시작합니다.</p>
 <p><strong>3. 가상 자료로 함께 시험합니다.</strong> 실제 사용자에게 써보게 하고, 빠진 정보나 오류가 있을 때 어떻게 처리되는지 확인합니다. 실제 고객 자료 사용과 외부 실행은 조직의 권한·승인 조건을 확인한 뒤 진행하세요.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/workflow.webp" alt="설명용 업무 흐름도: 접수부터 근거 확인·초안·승인·발송·다음 행동까지 연결" loading="lazy" decoding="async"><figcaption>팀이 업무를 정리할 때 참고할 전체 흐름입니다. 처음부터 모든 단계를 자동화할 필요는 없습니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ax-one-workflow-playbook/workflow.webp" alt="설명용 업무 흐름도: 접수부터 근거 확인·초안·승인·발송·다음 행동까지 연결" width="1200" height="1755" loading="lazy" decoding="async"><figcaption>팀이 업무를 정리할 때 참고할 전체 흐름입니다. 처음부터 모든 단계를 자동화할 필요는 없습니다.</figcaption></figure>
 <p>다음 한 장을 복사해 회의에서 채워보셔도 좋겠습니다.</p>
 <pre tabindex="0"><code class="language-text">우리 팀의 첫 AX 시험
 
@@ -538,7 +538,7 @@
 <p>김 과장은 이 상황을 설명하기 위한 가상 인물입니다. 40분은 회의 준비에 배정한 시간이며, AI로 검토를 끝낼 수 있는 시간이나 절약한 실측 시간이 아니에요.</p>
 <p>안녕하세요. 여러분의 CEO AI 코치, <strong>넥스트코웍 찬스</strong>입니다.</p>
 <p>저는 <strong>신영증권 투자개발부에서 AI 교육을 진행했습니다.</strong> 개발금융 실무에 AI를 적용할 때 중요한 것은 결과물의 근거와 수치, 반복 작성하는 문서의 품질을 함께 관리하는 일이에요.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/development-finance-ai-review-im/shinyoung-investment-development-training.webp" alt="신영증권 투자개발부 AI 교육 현장에서 노트북을 펼친 실무진과 강사가 회의 테이블에서 함께 이야기하는 모습" loading="lazy" decoding="async"><figcaption>신영증권 투자개발부 AI 교육 현장. 실제 교육 사진 · 찬스 제공.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/development-finance-ai-review-im/shinyoung-investment-development-training.webp" alt="신영증권 투자개발부 AI 교육 현장에서 노트북을 펼친 실무진과 강사가 회의 테이블에서 함께 이야기하는 모습" width="1100" height="1403" loading="lazy" decoding="async"><figcaption>신영증권 투자개발부 AI 교육 현장. 실제 교육 사진 · 찬스 제공.</figcaption></figure>
 <p>10월 8일 Google이 소개한 업무용 에이전트에는 흥미로운 변화가 있습니다. 목표를 맡기면 클라우드에서 작업을 이어가고, 노트북을 닫아도 계속 진행한다는 설명이에요. <a href="https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026" target="_blank" rel="noopener">Google Cloud 공식 발표</a></p>
 <p>금융 실무교육에서 받은 실제 질문을 정리하면, 핵심은 다음 두 가지였습니다.</p>
 <ul>
@@ -559,7 +559,7 @@
 <p><strong>제 해석은 이렇습니다. 오래 일하는 AI를 쓰려면, 무엇을 끝내야 하는지와 어디서 멈춰야 하는지를 함께 정해야 합니다.</strong> 개발사업 검토도 자료 범위와 기준 버전, 결과물, 담당자의 검토 지점을 먼저 정하면 맡길 일이 선명해집니다.</p>
 <h2>부동산개발금융 업무는 어디까지 맡길 수 있나요?</h2>
 <p><strong>회사에서 사용을 승인한 자료를 대조하고, 근거와 미확인을 표시한 검토 초안을 만드는 일부터 맡겨 보세요.</strong> 인허가 적용 판단, 금융 계산의 타당성, 투자 의사결정은 담당자가 검토해야 합니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/development-finance-ai-review-im/responsibility-map.webp" alt="회사에서 사용을 승인한 사업자료를 AI가 대조하고 초안을 정리한 뒤, 실무진이 숫자와 인허가 조건을 검증하고 투자 판단을 하는 역할 분담 도식" loading="lazy" decoding="async"><figcaption>AI는 자료 대조·초안, 실무진은 검증·판단을 맡습니다. 설명용 개념도 · AI의 도움으로 제작.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/development-finance-ai-review-im/responsibility-map.webp" alt="회사에서 사용을 승인한 사업자료를 AI가 대조하고 초안을 정리한 뒤, 실무진이 숫자와 인허가 조건을 검증하고 투자 판단을 하는 역할 분담 도식" width="1200" height="720" loading="lazy" decoding="async"><figcaption>AI는 자료 대조·초안, 실무진은 검증·판단을 맡습니다. 설명용 개념도 · AI의 도움으로 제작.</figcaption></figure>
 <div class="post-table" tabindex="0" role="region" aria-label="표 (가로로 스크롤)"><table><thead><tr><th>검토 업무</th><th>AI에 맡겨볼 일</th><th>실무진이 확인할 일</th></tr></thead><tbody>
 <tr><td>사업자료 정리</td><td>문서별 기준일·버전·핵심 내용과 누락 자료를 표로 정리</td><td>이번 물건의 자료가 맞는지, 최신 문서와 충돌하는지</td></tr>
 <tr><td>인허가 검토 준비</td><td>제공한 근거자료에서 적용 조건과 확인할 쟁점 추출</td><td>관할·시점·필지·용도에 적용되는지, 실제 허가 상태가 무엇인지</td></tr>
@@ -570,7 +570,7 @@
 <p>지난 <a href="https://www.nextcw.com/insights/chatgpt-space-10-features/">ChatGPT Space 글</a>에서는 같은 결과물을 보며 AI와 일을 이어가는 방법을 살펴봤습니다. 이번에는 그 결과물에 어떤 사업자료를 넣고, 누가 숫자와 조건을 검토할지를 정해 보겠습니다.</p>
 <h2>투자검토회의 전 40분을 어떻게 나눠볼까요?</h2>
 <p><strong>회의 전에 쟁점·근거·미확인을 정리하고, 검토할 항목을 나누는 데 시간을 배정해 보세요.</strong> 아래는 김 과장의 회의 준비를 다시 나눠본 운영 예시입니다. 사업 전체의 투자검토나 인허가 확인을 40분에 끝낸다는 뜻은 아니에요.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/development-finance-ai-review-im/meeting-40min.webp" alt="08시 20분 자료와 버전 지정부터 08시 30분 수치 대조, 08시 40분 조건과 미확인 검토, 08시 50분 회의 질문 정리를 거쳐 09시 회의를 준비하는 흐름" loading="lazy" decoding="async"><figcaption>40분은 가상 회의 준비에 배정한 시간입니다. 전체 검토 완료나 시간 절감을 보장하지 않습니다. 설명용 도식 · AI의 도움으로 제작.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/development-finance-ai-review-im/meeting-40min.webp" alt="08시 20분 자료와 버전 지정부터 08시 30분 수치 대조, 08시 40분 조건과 미확인 검토, 08시 50분 회의 질문 정리를 거쳐 09시 회의를 준비하는 흐름" width="1200" height="1320" loading="lazy" decoding="async"><figcaption>40분은 가상 회의 준비에 배정한 시간입니다. 전체 검토 완료나 시간 절감을 보장하지 않습니다. 설명용 도식 · AI의 도움으로 제작.</figcaption></figure>
 <div class="post-table" tabindex="0" role="region" aria-label="표 (가로로 스크롤)"><table><thead><tr><th>시간</th><th>혼자 준비하는 흐름</th><th>AI와 나눠 준비하는 흐름</th></tr></thead><tbody>
 <tr><td>08:20~08:30</td><td>사업자료 7개를 열어 최신 버전 찾기</td><td>허용된 자료 목록·버전·검토 범위를 지정해 초안 요청</td></tr>
 <tr><td>08:30~08:40</td><td>사업수지표와 기존 IM의 숫자 대조</td><td>초안이 준비되면 원자료·계산표·IM의 수치와 단위 대조</td></tr>
@@ -634,7 +634,7 @@
 <h2>출처가 붙은 초안은 무엇을 확인해야 하나요?</h2>
 <p><strong>숫자를 원문과 대조하는 일과, 그 숫자의 가정·계산·적용 조건을 검토하는 일을 나눠야 합니다.</strong> 출처가 붙어 있어도 오래된 자료일 수 있고, 숫자를 정확히 옮겼어도 다른 물건의 조건을 잘못 적용했을 수 있어요.</p>
 <p>금융 실무자의 첫 번째 질문에는 아래 검증표로 접근해 보세요. 이는 제가 제안하는 업무 검토 방법이며, 개별 사업의 인허가나 투자 타당성을 확정하는 판정은 아닙니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/development-finance-ai-review-im/verification-chain.webp" alt="원자료 대조, 확정과 가정 등 상태 구분, 계산 검산, 인허가 적용 확인의 네 단계를 거쳐 근거와 확인자 및 미확인을 기록하는 검증 도식" loading="lazy" decoding="async"><figcaption>숫자 복사와 가정·계산·적용 조건의 타당성은 각각 확인합니다. 설명용 개념도 · AI의 도움으로 제작.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/development-finance-ai-review-im/verification-chain.webp" alt="원자료 대조, 확정과 가정 등 상태 구분, 계산 검산, 인허가 적용 확인의 네 단계를 거쳐 근거와 확인자 및 미확인을 기록하는 검증 도식" width="1200" height="1260" loading="lazy" decoding="async"><figcaption>숫자 복사와 가정·계산·적용 조건의 타당성은 각각 확인합니다. 설명용 개념도 · AI의 도움으로 제작.</figcaption></figure>
 <div class="post-table" tabindex="0" role="region" aria-label="표 (가로로 스크롤)"><table><thead><tr><th>검증할 항목</th><th>사람이 확인할 질문</th><th>남겨둘 근거</th></tr></thead><tbody>
 <tr><td>원자료</td><td>숫자·단위·기준일·문서 버전이 원문과 같은가요? 면적 단위, 원·만원·억원, 총액과 단가, 연간과 월간 기준을 섞지 않았나요?</td><td>원문 위치·기준일·확인자</td></tr>
 <tr><td>수치의 상태</td><td>확정 자료, 계획·제안, 계산을 위한 가정, 아직 모르는 값을 구분했나요? 가정이 본문에서 확정 사실로 바뀌지 않았나요?</td><td>입력값별 상태와 출처</td></tr>
@@ -649,7 +649,7 @@
 <h2>개발사업 IM을 같은 품질로 반복 작성하려면 어떻게 해야 하나요?</h2>
 <p><strong>기준 템플릿을 고정하고, 물건별 입력자료와 검산한 숫자표를 분리해서 사용해 보세요.</strong> “지난번처럼 잘 써 줘”라는 요청만으로는 목차와 표현, 수치 기준이 매번 유지된다고 보장할 수 없습니다.</p>
 <p>두 번째 세미나 질문에 대한 제안은 다음 네 단계입니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/development-finance-ai-review-im/im-reuse.webp" alt="고정한 기준 템플릿, 이번 물건의 입력표, 검산한 숫자표를 같은 버전의 IM에 반영하고 누락과 충돌 및 서식을 검토하는 재사용 구조" loading="lazy" decoding="async"><figcaption>템플릿·물건 입력·계산표의 기준을 함께 관리합니다. 설명용 개념도 · AI의 도움으로 제작.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/development-finance-ai-review-im/im-reuse.webp" alt="고정한 기준 템플릿, 이번 물건의 입력표, 검산한 숫자표를 같은 버전의 IM에 반영하고 누락과 충돌 및 서식을 검토하는 재사용 구조" width="1200" height="1170" loading="lazy" decoding="async"><figcaption>템플릿·물건 입력·계산표의 기준을 함께 관리합니다. 설명용 개념도 · AI의 도움으로 제작.</figcaption></figure>
 <ol>
 <li>기준 템플릿의 버전을 정합니다. 필수 목차·표·용어·숫자 단위·작성 예시를 고정하고, 무엇을 바꿔도 되는지 표시하세요.</li>
 <li>새 물건의 입력자료를 별도로 정리합니다. 정보마다 출처·기준일·확정 여부를 붙이고, 없는 값은 비워 두세요.</li>
@@ -725,38 +725,38 @@
 <p>이 표는 이해를 돕기 위한 활용 구분입니다. 세 기능이 자동으로 연결된다는 뜻은 아니에요. Space는 접근 가능한 계정에서 기존 Library를 대체하지만, <strong>Projects는 별도로 유지됩니다.</strong> <a href="https://help.openai.com/en/articles/20001549-getting-started-with-space-in-chatgpt" target="_blank" rel="noopener">Space 시작 안내</a>, <a href="https://learn.chatgpt.com/docs/features" target="_blank" rel="noopener">공식 기능 안내</a></p>
 <h2>1. 전에 만든 자료를 쉽게 다시 찾을 수 있나요?</h2>
 <p><strong>내 작업물과 공유받은 자료를 한곳에서 찾아볼 수 있습니다.</strong> 자신이 만든 항목, 공유받은 항목, 최근 사용한 콘텐츠를 구분해 다시 여는 방식이에요. <a href="https://learn.chatgpt.com/docs/space/getting-started" target="_blank" rel="noopener">공식 시작 안내</a></p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/02-space-library.jpg" alt="Space의 All 화면에 검색창과 Your items, Shared with you 탭이 보이는 OpenAI 공식 안내 그림" loading="lazy" decoding="async"><figcaption>내 자료와 공유 자료를 찾아보는 출발점입니다. OpenAI 공식 안내용 그림. <a href="https://learn.chatgpt.com/docs/space" target="_blank" rel="noopener">출처</a></figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/02-space-library.jpg" alt="Space의 All 화면에 검색창과 Your items, Shared with you 탭이 보이는 OpenAI 공식 안내 그림" width="738" height="406" loading="lazy" decoding="async"><figcaption>내 자료와 공유 자료를 찾아보는 출발점입니다. OpenAI 공식 안내용 그림. <a href="https://learn.chatgpt.com/docs/space" target="_blank" rel="noopener">출처</a></figcaption></figure>
 <p>대표님께 중요한 건 저장한 양보다 <strong>필요할 때 다시 찾을 수 있느냐</strong>입니다. 문서 제목에 고객사·주제·상태를 넣어 보세요. ‘최종’, ‘진짜 최종’보다 구분하기 쉽겠죠.</p>
 <p>처음부터 회사 자료를 모두 옮기실 필요는 없습니다. 이번 주에 다시 열어볼 제안서 한 건부터 정리해 보세요.</p>
 <blockquote>이렇게 요청해 보세요: 이 페이지 제목을 ‘고객사명 — AI 활용 제안 — 검토 중’으로 바꿔 줘.</blockquote>
 <h2>2. 좋은 대화를 바로 업무 문서로 만들 수 있나요?</h2>
 <p><strong>대화 내용을 바탕으로 Page, 즉 편집 가능한 문서를 만들 수 있습니다.</strong> 직접 쓰거나 템플릿에서 시작하는 것도 가능합니다. <a href="https://help.openai.com/en/articles/20001549-getting-started-with-space-in-chatgpt" target="_blank" rel="noopener">페이지 만들기 안내</a></p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/12-templates.webp" alt="Space 시작 페이지와 일일 할 일, 프로젝트 대시보드 템플릿을 보여 주는 OpenAI 공식 소개 이미지" loading="lazy" decoding="async"><figcaption>빈 페이지나 템플릿에서 시작하고, 기존 대화도 페이지로 정리할 수 있습니다. OpenAI 공식 제품 소개 이미지. <a href="https://chatgpt.com/ko-KR/features/space/" target="_blank" rel="noopener">출처</a></figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/12-templates.webp" alt="Space 시작 페이지와 일일 할 일, 프로젝트 대시보드 템플릿을 보여 주는 OpenAI 공식 소개 이미지" width="1144" height="1144" loading="lazy" decoding="async"><figcaption>빈 페이지나 템플릿에서 시작하고, 기존 대화도 페이지로 정리할 수 있습니다. OpenAI 공식 제품 소개 이미지. <a href="https://chatgpt.com/ko-KR/features/space/" target="_blank" rel="noopener">출처</a></figcaption></figure>
 <p>대화에는 생각의 과정이 길게 남습니다. 하지만 고객에게 보여 줄 제안서에는 고객의 문제와 우리의 제안이 먼저 보여야 하죠.</p>
 <p>그래서 “대화를 그대로 옮겨 줘”보다 <strong>누가 읽고, 무엇을 결정할 문서인지</strong> 알려 주세요. 제안 배경, 제공할 결과물, 아직 확인할 사항으로 정리하면 검토도 수월해집니다.</p>
 <blockquote>이렇게 요청해 보세요: 이 대화를 바탕으로 고객에게 설명할 제안서 페이지를 만들어 줘. 확정한 내용과 아직 확인할 사항을 나눠 줘.</blockquote>
 <h2>3. 마음에 들지 않는 문장만 고칠 수 있나요?</h2>
 <p><strong>고칠 문장을 선택하고 해당 부분의 수정을 요청할 수 있습니다.</strong> 화면에 제공되는 Ask for change를 활용하는 방식이에요. <a href="https://learn.chatgpt.com/docs/space/agents" target="_blank" rel="noopener">선택 수정 안내</a></p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/04-selected-text.jpg" alt="선택한 문장 위에 Ask for change와 Comment 도구가 표시된 OpenAI 공식 안내 그림" loading="lazy" decoding="async"><figcaption>고칠 부분을 지정해 요청합니다. 그림의 날짜는 OpenAI 안내 예시입니다. <a href="https://learn.chatgpt.com/docs/space/pages#work-with-selected-text" target="_blank" rel="noopener">출처</a></figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/04-selected-text.jpg" alt="선택한 문장 위에 Ask for change와 Comment 도구가 표시된 OpenAI 공식 안내 그림" width="738" height="141" loading="lazy" decoding="async"><figcaption>고칠 부분을 지정해 요청합니다. 그림의 날짜는 OpenAI 안내 예시입니다. <a href="https://learn.chatgpt.com/docs/space/pages#work-with-selected-text" target="_blank" rel="noopener">출처</a></figcaption></figure>
 <p>제안서 전체는 괜찮은데 도입부가 너무 딱딱할 때가 있죠. 문서 전체를 다시 쓰게 하면 마음에 들었던 부분까지 달라질 수 있습니다.</p>
 <p><strong>대상과 바꿀 기준을 함께 지정해 보세요.</strong> 가격·일정·제공 범위는 표현을 다듬는 과정에서 의미가 바뀌지 않았는지 확인하시면 좋겠습니다.</p>
 <blockquote>이렇게 요청해 보세요: 선택한 문장만 처음 읽는 대표님도 이해하기 쉽게 줄여 줘. 수치와 제공 범위는 그대로 유지해.</blockquote>
 <h2>4. 빈 문서에서 무엇부터 써야 할지 막막하다면요?</h2>
 <p><strong><code>/</code> 메뉴로 제목·목록·표 등을 넣고, Generate로 초안을 작성할 수 있습니다.</strong> 페이지를 작은 내용 단위인 블록으로 구성하는 방식입니다. <a href="https://learn.chatgpt.com/docs/space/pages#add-content-with-the-insert-menu" target="_blank" rel="noopener">페이지 편집 안내</a></p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/09-slash-menu.jpg" alt="슬래시 메뉴에 Generate, Visualize, Image가 표시된 OpenAI 공식 안내 그림" loading="lazy" decoding="async"><figcaption>글 초안, 시각자료, 이미지 등 필요한 내용을 문서 안에서 추가합니다. OpenAI 공식 안내용 그림. <a href="https://learn.chatgpt.com/docs/space/agents#use-slash-commands" target="_blank" rel="noopener">출처</a></figcaption></figure>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/05-generate.jpg" alt="문서 초안을 만드는 Generate 요청 입력창의 OpenAI 공식 안내 그림" loading="lazy" decoding="async"><figcaption>Generate에서 목적과 보존할 정보를 알려 주며 새 본문을 작성하는 예시입니다. <a href="https://learn.chatgpt.com/docs/space/pages#draft-content-with-generate" target="_blank" rel="noopener">출처</a></figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/09-slash-menu.jpg" alt="슬래시 메뉴에 Generate, Visualize, Image가 표시된 OpenAI 공식 안내 그림" width="738" height="243" loading="lazy" decoding="async"><figcaption>글 초안, 시각자료, 이미지 등 필요한 내용을 문서 안에서 추가합니다. OpenAI 공식 안내용 그림. <a href="https://learn.chatgpt.com/docs/space/agents#use-slash-commands" target="_blank" rel="noopener">출처</a></figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/05-generate.jpg" alt="문서 초안을 만드는 Generate 요청 입력창의 OpenAI 공식 안내 그림" width="738" height="142" loading="lazy" decoding="async"><figcaption>Generate에서 목적과 보존할 정보를 알려 주며 새 본문을 작성하는 예시입니다. <a href="https://learn.chatgpt.com/docs/space/pages#draft-content-with-generate" target="_blank" rel="noopener">출처</a></figcaption></figure>
 <p>고객제안서라면 ‘고객 상황 → 해결할 문제 → 제안 내용 → 다음 단계’처럼 뼈대를 먼저 잡아 보세요. 그다음 필요한 곳에 비교표나 체크리스트를 넣으면 됩니다.</p>
 <p>한 번에 긴 완성본을 요구하기보다 <strong>목차부터 확인</strong>하면, 방향이 다른 초안을 읽고 고치는 부담을 줄일 수 있어요.</p>
 <blockquote>이렇게 요청해 보세요: 고객 상황, 해결할 문제, 제안 내용, 다음 단계 순서로 목차를 만들고 각 항목에 확인 질문을 하나씩 넣어 줘.</blockquote>
 <h2>5. 이미지와 근거 자료도 함께 볼 수 있나요?</h2>
 <p><strong>페이지에 이미지·파일·링크를 두고, 접근 가능한 연결 자료를 참고하도록 요청할 수 있습니다.</strong> 사용할 수 있는 앱과 자료는 연결 상태와 권한에 따릅니다. <a href="https://learn.chatgpt.com/docs/space#connect-your-sources" target="_blank" rel="noopener">자료 연결 안내</a></p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/08-mention.jpg" alt="멘션 메뉴에 사람, 페이지, 대화와 에이전트 항목이 표시된 OpenAI 공식 안내 그림" loading="lazy" decoding="async"><figcaption>@ 메뉴로 관련 자료와 대화를 참조하거나 도움을 요청할 대상을 찾습니다. 실제 항목은 계정에 따라 다릅니다. <a href="https://learn.chatgpt.com/docs/space/agents" target="_blank" rel="noopener">출처</a></figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/08-mention.jpg" alt="멘션 메뉴에 사람, 페이지, 대화와 에이전트 항목이 표시된 OpenAI 공식 안내 그림" width="738" height="223" loading="lazy" decoding="async"><figcaption>@ 메뉴로 관련 자료와 대화를 참조하거나 도움을 요청할 대상을 찾습니다. 실제 항목은 계정에 따라 다릅니다. <a href="https://learn.chatgpt.com/docs/space/agents" target="_blank" rel="noopener">출처</a></figcaption></figure>
 <p>제안서의 설득력은 문장만으로 만들어지지 않습니다. 고객 요구사항, 조사 근거, 설명에 필요한 이미지를 가까이 두면 <strong>왜 이런 제안을 했는지</strong> 확인하기 쉬워져요.</p>
 <p>다만 자료를 연결했다고 읽는 사람 모두가 원본 파일을 열 수 있는 것은 아닙니다. 원본의 접근 권한은 별도로 확인해야 합니다. 또 비공개 자료를 요약해 공유 페이지에 적으면 그 요약은 다른 독자에게 보입니다.</p>
 <blockquote>이렇게 요청해 보세요: 첨부한 고객 요구사항을 근거로 제안을 점검하고, 핵심 주장마다 확인할 출처를 연결해 줘.</blockquote>
 <h2>6. 숫자를 바꿔 보는 계산기도 만들 수 있나요?</h2>
 <p><strong>Visualize로 계산기·다이어그램·화면 시안 같은 상호작용 자료를 만들 수 있습니다.</strong> 읽는 사람이 값을 바꾸거나 내용을 탐색하도록 만드는 기능이에요. <a href="https://learn.chatgpt.com/docs/space/pages#add-interactive-visualizations" target="_blank" rel="noopener">시각화 안내</a></p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/06-visualize.jpg" alt="팀 규모, 기간, 주간 인건비를 바꾸는 예산 계산기를 요청하는 OpenAI 공식 Visualize 안내 그림" loading="lazy" decoding="async"><figcaption>계산기에서 바꿀 값과 보여 줄 결과를 구체적으로 요청하는 예시입니다. 완성된 계산기의 검증 결과를 뜻하지 않습니다. <a href="https://learn.chatgpt.com/docs/space/pages#add-interactive-visualizations" target="_blank" rel="noopener">출처</a></figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/06-visualize.jpg" alt="팀 규모, 기간, 주간 인건비를 바꾸는 예산 계산기를 요청하는 OpenAI 공식 Visualize 안내 그림" width="738" height="247" loading="lazy" decoding="async"><figcaption>계산기에서 바꿀 값과 보여 줄 결과를 구체적으로 요청하는 예시입니다. 완성된 계산기의 검증 결과를 뜻하지 않습니다. <a href="https://learn.chatgpt.com/docs/space/pages#add-interactive-visualizations" target="_blank" rel="noopener">출처</a></figcaption></figure>
 <p>고객에게 프로그램을 제안할 때 참여 인원과 운영 횟수를 바꾸며 비용을 비교하면, 조건의 차이를 설명하기 쉬워지겠죠.</p>
 <p>처음에는 <strong>조건에 따른 차이를 검토하는 도구</strong>로 써보세요. 계산식과 단위를 명확히 주고, 간단한 값을 직접 넣어 결과를 확인해야 합니다. 화면이 그럴듯하다는 이유만으로 계산까지 맞다고 볼 수는 없어요.</p>
 <blockquote>이렇게 요청해 보세요: 인원·횟수·단가를 바꾸며 총액을 비교하는 계산기를 만들어 줘. 적용한 계산식과 가정도 함께 보여 줘.</blockquote>
@@ -767,20 +767,20 @@
 <blockquote>이렇게 요청해 보세요: 이 제안서의 불명확한 표현, 근거가 부족한 주장, 고객의 다음 행동을 점검하는 재사용 Prompt 블록을 만들어 줘.</blockquote>
 <h2>8. 문서가 길어지면 어떻게 정리하나요?</h2>
 <p><strong>관련 작업은 스페이스로 묶고, 상세 자료는 하위 페이지로 나눌 수 있습니다.</strong> 요약과 세부 내용을 함께 관리하는 방식이에요. <a href="https://learn.chatgpt.com/docs/space/getting-started#group-related-pages-in-a-space" target="_blank" rel="noopener">정리 방법 안내</a></p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/13-create-space.jpg" alt="이름을 정하고 사람을 초대해 새 스페이스를 만드는 OpenAI 공식 안내 그림" loading="lazy" decoding="async"><figcaption>고객이나 업무 주제로 공간을 만들고 관련 페이지를 모읍니다. 하위 페이지는 그 안의 문서를 세부 주제로 나눌 때 활용합니다. <a href="https://learn.chatgpt.com/docs/space/getting-started" target="_blank" rel="noopener">출처</a></figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/13-create-space.jpg" alt="이름을 정하고 사람을 초대해 새 스페이스를 만드는 OpenAI 공식 안내 그림" width="738" height="280" loading="lazy" decoding="async"><figcaption>고객이나 업무 주제로 공간을 만들고 관련 페이지를 모읍니다. 하위 페이지는 그 안의 문서를 세부 주제로 나눌 때 활용합니다. <a href="https://learn.chatgpt.com/docs/space/getting-started" target="_blank" rel="noopener">출처</a></figcaption></figure>
 <p>제안서 본문에 모든 회의록과 조사 자료를 넣으면 중요한 제안이 묻힙니다. 의사결정자가 먼저 볼 요약은 위에 두고, 고객 요구사항·조사 근거·세부 운영안은 나눠 보세요.</p>
 <p>페이지 이름만 읽어도 무엇이 들어 있는지 알 수 있게 붙이는 것이 좋겠습니다. 문서를 옮길 때는 <strong>상위 페이지나 스페이스에서 이어받는 공유 권한</strong>도 함께 살펴보세요.</p>
 <blockquote>이렇게 요청해 보세요: 이 제안서 아래에 ‘고객 요구사항’, ‘조사 근거’, ‘세부 운영안’ 하위 페이지를 만들고 현재 내용을 정리해 줘. 이동으로 공유 범위가 달라지면 먼저 알려 줘.</blockquote>
 <h2>9. 동료들과 동시에 검토할 수 있나요?</h2>
 <p><strong>편집 권한을 받은 사람은 같은 페이지를 실시간으로 함께 수정할 수 있습니다.</strong> 댓글로 특정 부분을 논의하고, 사람별로 필요한 접근 권한을 정할 수 있어요. <a href="https://learn.chatgpt.com/docs/space/collaboration" target="_blank" rel="noopener">공동 작업 안내</a></p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/07-comments.jpg" alt="출시 계획의 특정 날짜에 확인 질문과 답변을 남긴 OpenAI 공식 댓글 안내 그림" loading="lazy" decoding="async"><figcaption>문장 가까이에 질문을 남기면 무엇을 확인할지 분명해집니다. OpenAI의 가상 출시 계획 예시입니다. <a href="https://learn.chatgpt.com/docs/space/pages#comment-and-collaborate" target="_blank" rel="noopener">출처</a></figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/07-comments.jpg" alt="출시 계획의 특정 날짜에 확인 질문과 답변을 남긴 OpenAI 공식 댓글 안내 그림" width="357" height="297" loading="lazy" decoding="async"><figcaption>문장 가까이에 질문을 남기면 무엇을 확인할지 분명해집니다. OpenAI의 가상 출시 계획 예시입니다. <a href="https://learn.chatgpt.com/docs/space/pages#comment-and-collaborate" target="_blank" rel="noopener">출처</a></figcaption></figure>
 <p>고객제안서라면 영업 담당자는 고객 요구사항, 운영 담당자는 실행 가능성, 대표님은 제안 방향과 조건을 확인하는 식으로 역할을 나눠 보세요.</p>
 <p>댓글도 “이상해요”보다 “이 일정은 고객과 확인했나요?”처럼 <strong>판단에 필요한 질문</strong>으로 남기면 좋습니다. 댓글 전용 공유 권한은 계정과 초대 대상에 따라 표시되지 않을 수 있어요.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/10-sharing.jpg" alt="페이지 소유자와 상위 스페이스에서 상속받은 보기 권한을 보여 주는 OpenAI 공식 공유창 안내 그림" loading="lazy" decoding="async"><figcaption>페이지 권한뿐 아니라 상위 공간에서 이어받은 접근 권한도 확인합니다. <a href="https://learn.chatgpt.com/docs/space/collaboration#understand-inherited-access" target="_blank" rel="noopener">출처</a></figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/10-sharing.jpg" alt="페이지 소유자와 상위 스페이스에서 상속받은 보기 권한을 보여 주는 OpenAI 공식 공유창 안내 그림" width="357" height="368" loading="lazy" decoding="async"><figcaption>페이지 권한뿐 아니라 상위 공간에서 이어받은 접근 권한도 확인합니다. <a href="https://learn.chatgpt.com/docs/space/collaboration#understand-inherited-access" target="_blank" rel="noopener">출처</a></figcaption></figure>
 <blockquote>이렇게 요청해 보세요: 고객 확인이 필요한 항목을 검토 질문으로 정리해 줘. 이미 합의한 가격과 일정은 바꾸지 마.</blockquote>
 <h2>10. 문서 안에서 AI에게 일을 맡길 수 있나요?</h2>
 <p><strong>본문이나 댓글에서 <code>@ChatGPT</code>, 이용 가능한 경우 <code>@dot</code>을 호출해 도움을 요청할 수 있습니다.</strong> dot과 연결 도구의 이용 범위는 계정에 따라 달라집니다. <a href="https://learn.chatgpt.com/docs/space/agents" target="_blank" rel="noopener">에이전트와 작업하기</a></p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/11-dot-collaboration.webp" alt="출시 계획에서 Alfred라는 dot이 문맥을 읽고 작업 결과를 댓글로 남긴 OpenAI 공식 소개 이미지" loading="lazy" decoding="async"><figcaption>문서의 맥락을 바탕으로 AI에게 일을 맡기는 공식 제품 소개 장면입니다. dot은 별도 제공 조건과 연결 설정을 확인해야 합니다. <a href="https://chatgpt.com/ko-KR/features/space/" target="_blank" rel="noopener">출처</a></figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/chatgpt-space-10-features/11-dot-collaboration.webp" alt="출시 계획에서 Alfred라는 dot이 문맥을 읽고 작업 결과를 댓글로 남긴 OpenAI 공식 소개 이미지" width="1144" height="1144" loading="lazy" decoding="async"><figcaption>문서의 맥락을 바탕으로 AI에게 일을 맡기는 공식 제품 소개 장면입니다. dot은 별도 제공 조건과 연결 설정을 확인해야 합니다. <a href="https://chatgpt.com/ko-KR/features/space/" target="_blank" rel="noopener">출처</a></figcaption></figure>
 <p>“이 자료를 보면서 이 부분을 도와주세요”라고 동료에게 부탁하는 방식과 닮았습니다. 다만 문장을 다듬을지, 빠진 질문을 찾을지, 출처와 대조할지를 구분해 주세요.</p>
 <p><strong>AI를 부르는 위치와 요청 범위가 함께 중요해집니다.</strong> 문서 검토를 맡겼다고 고객에게 보내는 일까지 맡긴 것은 아니니까요. 실제 발송과 약속은 별도 결정으로 남겨두시면 좋겠습니다.</p>
 <blockquote>이렇게 요청해 보세요: @ChatGPT 이 제안서를 고객 담당자 관점에서 검토해 줘. 본문은 수정하지 말고, 결정 전에 답이 필요한 질문을 정리해 줘.</blockquote>
@@ -841,12 +841,12 @@
 <h2>AI를 들였는데 왜 회사는 그대로일까요?</h2>
 <p>회사가 그대로인 이유는 AI가 아니라 일하는 판에 있습니다. McKinsey의 「The State of AI in 2026」(2026년 8월)에 따르면 응답자의 열에 아홉 가까이가 적어도 한 개 업무 기능에서 AI를 정기적으로 쓴다고 답했습니다. 그런데 이익(EBIT)의 5% 이상을 AI 덕분으로 보고 AI가 만든 가치가 상당하다고 답한 고성과 조직은 약 6%, 백 곳 중 여섯 곳뿐입니다.</p>
 <p>흔한 오해는 &quot;에이전트를 더 쓰면 회사가 바뀐다&quot;는 생각입니다. 쓰는 곳은 열에 아홉인데 버는 곳은 백에 여섯이라는 숫자는, 도구를 더 들이는 것만으로는 성과가 따라오지 않는다는 뜻입니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-cowork-six-conditions/card-2.webp" alt="흔한 오해 ‘에이전트를 더 쓰면 회사가 바뀐다?’를 반박하는 카드. AI를 쓰는 회사 88%와 AI로 돈 버는 회사(EBIT 5% 이상) 6%를 막대로 비교하고, 쓰는 곳은 열에 아홉, 버는 곳은 백에 여섯이라고 정리한다. 출처는 McKinsey, The State of AI in 2026(2026년 8월)" loading="lazy" decoding="async"><figcaption>AI를 쓰는 곳은 열에 아홉, AI로 버는 곳은 백에 여섯입니다. 출처: McKinsey, The State of AI in 2026(2026.08)</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-cowork-six-conditions/card-2.webp" alt="흔한 오해 ‘에이전트를 더 쓰면 회사가 바뀐다?’를 반박하는 카드. AI를 쓰는 회사 88%와 AI로 돈 버는 회사(EBIT 5% 이상) 6%를 막대로 비교하고, 쓰는 곳은 열에 아홉, 버는 곳은 백에 여섯이라고 정리한다. 출처는 McKinsey, The State of AI in 2026(2026년 8월)" width="1080" height="1350" loading="lazy" decoding="async"><figcaption>AI를 쓰는 곳은 열에 아홉, AI로 버는 곳은 백에 여섯입니다. 출처: McKinsey, The State of AI in 2026(2026.08)</figcaption></figure>
 <p>예를 들어 작업 자체는 하루면 끝나는데, 인계와 승인을 기다리느라 2주가 걸리는 업무가 있다고 해 봅시다. 에이전트를 붙여 작업 시간을 반나절로 줄여도 전체 기간은 거의 줄지 않습니다. 기다리는 시간이 그대로이기 때문입니다. 병목은 일 자체가 아니라 일과 일 사이에 있습니다.</p>
 <p>판이 없는 회사에 에이전트를 들이는 것은 깜깜한 방에 똑똑한 직원을 잔뜩 데려다 놓는 것과 같습니다. 그래서 순서를 바꿔야 합니다. 에이전트보다 먼저, 사람과 에이전트가 함께 일할 판을 다시 짜야 합니다.</p>
 <h2>사람과 에이전트가 함께 일하는 여섯 가지 조건은 무엇인가요?</h2>
 <p>여섯 조건은 판을 세우는 세 가지(Compass·Outcome·Workspace)와 판을 돌리고 쌓는 세 가지(Orchestration·Record·Knowledge)입니다. 먼저 왜 하는지와 무엇을 결과로 볼지를 정하고 에이전트가 일할 자리를 만든 뒤, 상태로 일을 잇고, 판단과 실행을 남기고, 그 기록을 회사만의 자산으로 바꿉니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-cowork-six-conditions/card-3.webp" alt="에이전트보다 먼저 일하는 판을 다시 짠다는 제목 아래 C·O·W·O·R·K 여섯 글자 타일에 Compass, Outcome, Workspace, Orchestration, Record, Knowledge가 적혀 있고, 사람과 에이전트가 함께 일하는 여섯 조건의 합이 COWORK라고 정리한 카드" loading="lazy" decoding="async"><figcaption>COWORK는 사람과 에이전트가 함께 일하는 여섯 조건의 머리글자입니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-cowork-six-conditions/card-3.webp" alt="에이전트보다 먼저 일하는 판을 다시 짠다는 제목 아래 C·O·W·O·R·K 여섯 글자 타일에 Compass, Outcome, Workspace, Orchestration, Record, Knowledge가 적혀 있고, 사람과 에이전트가 함께 일하는 여섯 조건의 합이 COWORK라고 정리한 카드" width="1080" height="1350" loading="lazy" decoding="async"><figcaption>COWORK는 사람과 에이전트가 함께 일하는 여섯 조건의 머리글자입니다.</figcaption></figure>
 <div class="post-table" tabindex="0" role="region" aria-label="표 (가로로 스크롤)"><table><thead><tr><th>구분</th><th>조건</th><th>한 줄 정의</th><th>판의 역할</th><th>점검 질문</th></tr></thead><tbody>
 <tr><td>판을 세운다</td><td>C · Compass(북극성)</td><td>왜 하는지부터 정한다</td><td>방향</td><td>우리 회사의 북극성은 에이전트가 읽을 수 있는 곳에 적혀 있는가?</td></tr>
 <tr><td>판을 세운다</td><td>O · Outcome(결과)</td><td>시간 말고 결과로 잰다</td><td>기준</td><td>지난달 고객이 돈을 내고 받아 간 결과물은 몇 건인가?</td></tr>
@@ -858,7 +858,7 @@
 <p>이 여섯의 합이 COWORK입니다. AI를 쓰는 회사와 AI와 함께 일하는 회사를 가르는 여섯 글자입니다. 마지막 Knowledge는 다시 Compass와 규칙을 고치기 때문에, 여섯 조건은 한 번 세우고 끝나는 목록이 아니라 매주 도는 순환입니다.</p>
 <h2>판을 세우는 세 조건, C·O·W는 무엇인가요?</h2>
 <p>판을 세우는 세 조건은 방향(Compass), 기준(Outcome), 환경(Workspace)입니다. 판이 서야 에이전트가 일을 끝까지 합니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-cowork-six-conditions/card-4.webp" alt="먼저 판을 세운다는 제목 아래 세 줄. C Compass 북극성은 왜 하는지부터 정한다(에이전트가 읽는 회사의 방향), O Outcome 결과는 시간 말고 결과로 잰다(고객이 돈 내고 받은 결과물), W Workspace 일할 자리는 에이전트에게 자리를 준다(상태·규칙·권한이 보이는 실행 세계). 판이 서야 에이전트가 끝까지 일한다는 결론" loading="lazy" decoding="async"><figcaption>판을 세우는 세 조건: 방향(Compass), 기준(Outcome), 환경(Workspace).</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-cowork-six-conditions/card-4.webp" alt="먼저 판을 세운다는 제목 아래 세 줄. C Compass 북극성은 왜 하는지부터 정한다(에이전트가 읽는 회사의 방향), O Outcome 결과는 시간 말고 결과로 잰다(고객이 돈 내고 받은 결과물), W Workspace 일할 자리는 에이전트에게 자리를 준다(상태·규칙·권한이 보이는 실행 세계). 판이 서야 에이전트가 끝까지 일한다는 결론" width="1080" height="1350" loading="lazy" decoding="async"><figcaption>판을 세우는 세 조건: 방향(Compass), 기준(Outcome), 환경(Workspace).</figcaption></figure>
 <h3>C · Compass(북극성): 왜 하는지부터 정한다</h3>
 <p><strong>정의.</strong> 회사가 지금 푸는 문제, 지향점, 북극성 지표를 다시 쓰고, 에이전트가 매일 읽는 문서 맨 위에 둡니다. 에이전트가 읽는 회사의 방향입니다.</p>
 <p><strong>왜 중요한가.</strong> 방향을 모르는 에이전트는 빠르게, 엉뚱한 곳으로 갑니다. 창업 때의 문제와 지금 고객의 문제는 다릅니다. 그래서 에이전트 조직을 만들기보다 회사가 푸는 문제를 다시 정의하는 일(리파운딩)이 먼저입니다.</p>
@@ -873,7 +873,7 @@
 <p><strong>점검 질문.</strong> 에이전트가 지금 이 상태에서 해도 되는 일이 문서로 정해져 있는가?</p>
 <h2>판을 돌리고 쌓는 세 조건, O·R·K는 무엇인가요?</h2>
 <p>판을 돌리고 쌓는 세 조건은 연결(Orchestration), 축적(Record), 자산(Knowledge)입니다. 기록이 쌓일수록 에이전트는 경험에서 배웁니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-cowork-six-conditions/card-5.webp" alt="그리고 돌리고 쌓는다는 제목 아래 세 줄이 화살표로 이어진다. O Orchestration 조율은 대화 말고 상태로 잇는다, R Record 기록은 판단과 실행을 남긴다, K Knowledge 자산은 남은 것이 해자가 된다. K에서 다시 O로 돌아가는 화살표가 순환을 보여 주고, 기록이 쌓일수록 에이전트는 경험에서 배운다는 결론이 붙어 있다" loading="lazy" decoding="async"><figcaption>상태로 잇고, 남기고, 쌓은 지식이 다시 판을 돌립니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-cowork-six-conditions/card-5.webp" alt="그리고 돌리고 쌓는다는 제목 아래 세 줄이 화살표로 이어진다. O Orchestration 조율은 대화 말고 상태로 잇는다, R Record 기록은 판단과 실행을 남긴다, K Knowledge 자산은 남은 것이 해자가 된다. K에서 다시 O로 돌아가는 화살표가 순환을 보여 주고, 기록이 쌓일수록 에이전트는 경험에서 배운다는 결론이 붙어 있다" width="1080" height="1350" loading="lazy" decoding="async"><figcaption>상태로 잇고, 남기고, 쌓은 지식이 다시 판을 돌립니다.</figcaption></figure>
 <h3>O · Orchestration(조율): 대화 말고 상태로 잇는다</h3>
 <p><strong>정의.</strong> 에이전트끼리 메시지를 주고받게 하지 않고, 공유 상태판을 보고 상태가 바뀌면 다음 에이전트가 깨어나게 합니다. 한 업무의 담당은 하나이고, 충돌은 사람에게 올립니다.</p>
 <p><strong>왜 중요한가.</strong> 병목은 일이 아니라 일과 일 사이입니다. 여러 에이전트를 함께 쓸 때 큰 장애물은 지능이 아니라 서로 일을 넘기는 규약입니다. 그래서 작은 팀부터 계단식으로 넓힙니다.</p>
@@ -888,7 +888,7 @@
 <p><strong>점검 질문.</strong> 우리 회사만 가진, 경쟁사가 따라 할 수 없는 지식은 무엇인가?</p>
 <h2>이번 주에 무엇부터 시작하면 되나요?</h2>
 <p>북극성 한 장을 쓰는 것부터 시작하면 됩니다. 여섯 조건을 한 번에 갖추려 하지 말고, 두 조건씩 묶어 이번 주 3단계로 시작해 보세요.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-cowork-six-conditions/card-6.webp" alt="이번 주 COWORK 3단계 체크리스트 카드. 북극성 한 장 쓰기(C·O), 업무 1건 대기시간 재기(W·O), 판단·결과 기록 남기기(R·K)에 체크 표시가 있고, 작게 하나씩 그러나 매주 돌린다는 문장으로 끝난다" loading="lazy" decoding="async"><figcaption>이번 주 3단계: 북극성 한 장, 대기시간 재기, 판단·결과 기록.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-cowork-six-conditions/card-6.webp" alt="이번 주 COWORK 3단계 체크리스트 카드. 북극성 한 장 쓰기(C·O), 업무 1건 대기시간 재기(W·O), 판단·결과 기록 남기기(R·K)에 체크 표시가 있고, 작게 하나씩 그러나 매주 돌린다는 문장으로 끝난다" width="1080" height="1350" loading="lazy" decoding="async"><figcaption>이번 주 3단계: 북극성 한 장, 대기시간 재기, 판단·결과 기록.</figcaption></figure>
 <div class="post-table" tabindex="0" role="region" aria-label="표 (가로로 스크롤)"><table><thead><tr><th>단계</th><th>해당 조건</th><th>이번 주 할 일</th><th>끝나면 남는 것</th></tr></thead><tbody>
 <tr><td>1단계</td><td>C · O</td><td>북극성 한 장 쓰기: 지금 푸는 문제, 지향점, 고객이 받아 갈 결과물 1개를 한 장에 적고 에이전트가 읽는 문서 맨 위에 둔다</td><td>에이전트가 읽는 방향 문서 1장</td></tr>
 <tr><td>2단계</td><td>W · O</td><td>업무 1건, 대기시간 재기: 반복 업무 하나를 골라 단계별 작업 시간과 기다린 시간을 나눠 적는다</td><td>병목이 보이는 업무 흐름 1개</td></tr>
@@ -930,7 +930,7 @@
 <p>한글날 휴일을 맞아 미뤄두었던 GPT와 Claude의 전역 설정, 맞춤 설정을 다시 정리했습니다. 새 모델이 나올 때마다 반가운 마음으로 써보지만, 정작 AI에게 건네는 업무 지침은 예전에 작성한 그대로일 수 있잖아요.</p>
 <p>혹시 여러분도 이런 경험이 있으신가요? 보고서를 부탁했는데 원하지 않는 형식이 계속 나오거나, 간단한 수정을 맡겼는데 질문과 확인이 끝없이 이어지는 경험 말입니다. 저는 이럴 때 모델 이름과 함께 <strong>AI가 지금 어떤 지침을 읽고 있는지</strong>도 살펴보시길 권합니다.</p>
 <p>사업을 운영하는 대표님, 제안서와 보고서를 만드는 팀장님, 직원들의 AI 활용을 돕는 교육 담당자님을 떠올리며 이 글을 썼습니다. 읽고 나시면 내 설정을 어디에 나눠 담을지 판단하고, 아래 양식을 복사해 직접 정리해 보실 수 있습니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/frontier-model-settings-skills-update/hero.webp" alt="AI 생성 개념 이미지: 사업가와 셰프가 업무 기준과 도구를 함께 정리하는 모습" loading="lazy" decoding="async"><figcaption>AI로 제작한 개념 이미지입니다. 실제 고객이나 제품 화면을 표현한 것이 아닙니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/frontier-model-settings-skills-update/hero.webp" alt="AI 생성 개념 이미지: 사업가와 셰프가 업무 기준과 도구를 함께 정리하는 모습" width="1672" height="941" loading="lazy" decoding="async"><figcaption>AI로 제작한 개념 이미지입니다. 실제 고객이나 제품 화면을 표현한 것이 아닙니다.</figcaption></figure>
 <p>동네 식당에 실력 좋은 셰프가 새로 왔다고 생각해 볼까요? 셰프에게는 우리 손님이 누구인지, 오늘 어떤 메뉴를 내야 하는지, 어떤 재료를 쓸 수 있는지 알려줘야겠죠. 모든 요리에 똑같은 조리법을 적용하라고 하면 곤란하고요.</p>
 <p>AI와 일할 때도 저는 이 비유가 도움이 된다고 생각합니다. 다만 설정을 바꾸면 성능이 몇 배 좋아진다거나, 긴 지침을 지우면 무조건 좋아진다고 말씀드리려는 건 아닙니다. <strong>공식 문서에서 확인한 내용과 제가 업무에 적용하기 쉽게 만든 양식을 구분해서</strong> 설명드릴게요. 공식 문서 확인 기준일은 2026년 10월 9일입니다.</p>
 <h2>1. 새 모델이 나오면 무엇부터 확인하면 좋을까요?</h2>
@@ -957,7 +957,7 @@
 <p>ChatGPT는 프로젝트 지침이 그 프로젝트 안에서 전역 맞춤 지침보다 우선한다고 안내합니다. Claude도 계정 전체 지침과 프로젝트 안에서만 쓰는 지침을 구분합니다. <a href="https://help.openai.com/en/articles/10169521-projects-in-chatgpt" target="_blank" rel="noopener">ChatGPT 프로젝트 안내</a>, <a href="https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features" target="_blank" rel="noopener">Claude 개인화 안내</a></p>
 <p>Codex는 전역과 프로젝트의 AGENTS.md를 단계적으로 읽습니다. Claude Code는 여러 위치의 CLAUDE.md를 함께 문맥에 넣는 방식이므로, ChatGPT의 우선순위 설명을 그대로 적용하면 안 됩니다. 위 파일 경로는 기본적인 배치 예이며, 실제로 읽는 범위는 해당 도구의 설정도 확인하셔야 합니다. <a href="https://learn.chatgpt.com/docs/agent-configuration/agents-md" target="_blank" rel="noopener">Codex 지침 파일 안내</a>, <a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener">Claude Code 메모리·지침 안내</a></p>
 <p>개발 도구를 쓰지 않으신다면 파일 이름까지 외우실 필요는 없습니다. “쉽고 친절한 한국어로 설명해 주세요”는 공통 기준이고, “이번 고객 제안서는 이 가격표와 이 양식을 사용해 주세요”는 프로젝트 기준이라고 이해하시면 돼요.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/frontier-model-settings-skills-update/settings-map.svg" alt="전역 지침, 프로젝트 지침, 스킬, 이번 요청에 담을 내용을 구분한 AI 작성 도식" loading="lazy" decoding="async"><figcaption>AI가 작성한 설명용 도식입니다. 업무 정보를 분류하는 방법이며, 제품의 실제 화면이나 공통 명령 우선순위를 뜻하지 않습니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/frontier-model-settings-skills-update/settings-map.svg" alt="전역 지침, 프로젝트 지침, 스킬, 이번 요청에 담을 내용을 구분한 AI 작성 도식" width="1320" height="1120" loading="lazy" decoding="async"><figcaption>AI가 작성한 설명용 도식입니다. 업무 정보를 분류하는 방법이며, 제품의 실제 화면이나 공통 명령 우선순위를 뜻하지 않습니다.</figcaption></figure>
 <p><a href="https://www.nextcw.com/img/insights/frontier-model-settings-skills-update/settings-map.svg">도식 크게 보기</a></p>
 <h2>3. ‘하지 마세요’라는 문장은 어떻게 바꾸면 좋을까요?</h2>
 <p><strong>원하는 결과가 보이도록 구체적인 행동과 답변 형태를 적어보세요.</strong></p>
@@ -1083,7 +1083,7 @@
 <h2>왜 같은 기준으로 비교해야 하나요?</h2>
 <p>기준이 다르면 가장 말을 잘한 제안서가 뽑히기 쉽기 때문입니다. 어떤 업체는 강사 이력을, 어떤 업체는 도구 목록을, 어떤 업체는 가격을 앞에 둡니다. 그대로 나란히 놓으면 내부 보고에서 &quot;왜 이 업체인가&quot;를 설명하기 어렵습니다.</p>
 <p>같은 표를 쓰면 두 가지가 좋아집니다. 빈칸이 곧 업체에 다시 물어볼 질문이 되고, 선정 사유를 품의 문서에 그대로 옮길 수 있습니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-training-vendor-selection/diagram-01-selection-steps.svg" alt="AI 교육 업체 선정 3단계: 제안서 2~3곳을 12항목 비교표에 채우고, 빈칸을 미팅 질문으로 확인하고, 표의 항목 이름 그대로 선정 사유를 품의에 보고한다" loading="lazy" decoding="async"><figcaption>표를 채우면 빈칸이 질문이 되고, 항목 이름이 그대로 선정 사유가 됩니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-training-vendor-selection/diagram-01-selection-steps.svg" alt="AI 교육 업체 선정 3단계: 제안서 2~3곳을 12항목 비교표에 채우고, 빈칸을 미팅 질문으로 확인하고, 표의 항목 이름 그대로 선정 사유를 품의에 보고한다" width="1200" height="520" loading="lazy" decoding="async"><figcaption>표를 채우면 빈칸이 질문이 되고, 항목 이름이 그대로 선정 사유가 됩니다.</figcaption></figure>
 <h2>무엇부터 확인해야 하나요?</h2>
 <p>가장 먼저 <strong>교육 뒤 달라질 업무를 업체가 구체적으로 적었는지</strong> 확인합니다. &quot;생성형 AI 이해&quot;, &quot;프롬프트 기초&quot;처럼 주제만 있고 우리 팀의 어떤 업무를 다룰지가 없다면, 교육이 끝난 뒤 현업에 남는 것이 적을 가능성이 큽니다.</p>
 <p>다음으로 실습에 무엇을 쓰는지, 끝나고 무엇이 남는지를 봅니다. 실제 업무 자료(또는 비식별 샘플)로 실습하고, 참여자가 바로 다시 쓸 수 있는 결과물이 남는 제안이 현업 적용에 유리합니다.</p>
@@ -1138,7 +1138,7 @@
       <pubDate>Thu, 08 Oct 2026 00:00:00 +0900</pubDate>
       <category>AI &amp; Work</category>
       <description>ChatGPT 답변을 읽는 데서 직접 바꿔 보는 데로. 넥스트코웍 대표 컨설턴트 찬스가 GPT-6 Intelligent UI의 변화와 업무 활용법을 쉽게 설명합니다.</description>
-      <content:encoded><![CDATA[<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/gpt6-intelligent-ui/hero.webp" alt="텍스트 채팅에서 비교표·차트·조절 화면으로 확장되는 AI 인터페이스 개념 이미지" loading="lazy" decoding="async"><figcaption>이해를 돕기 위해 제작한 개념 이미지이며 실제 OpenAI 제품 화면이 아닙니다.</figcaption></figure>
+      <content:encoded><![CDATA[<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/gpt6-intelligent-ui/hero.webp" alt="텍스트 채팅에서 비교표·차트·조절 화면으로 확장되는 AI 인터페이스 개념 이미지" width="1672" height="941" loading="lazy" decoding="async"><figcaption>이해를 돕기 위해 제작한 개념 이미지이며 실제 OpenAI 제품 화면이 아닙니다.</figcaption></figure>
 <p><strong>GPT-6 Intelligent UI는 ChatGPT의 답변을 읽는 데서, 직접 값을 바꾸고 결과를 살펴보는 데까지 넓혀주는 기능입니다.</strong></p>
 <p>안녕하세요. 넥스트코웍 찬스입니다.</p>
 <p>ChatGPT에 사업안을 비교해 달라고 해보셨나요? 답변을 읽다 보면 이런 생각이 들 수 있어요. “좋아요. 그런데 예산이 줄면요? 인원이 늘면 결과가 어떻게 달라지죠?” 그때마다 조건을 바꿔 다시 질문하게 됩니다.</p>
@@ -1153,7 +1153,7 @@
 <tr><td>“예산을 바꾸면 결과가 어떻게 달라져?”</td><td>금액을 조절하며 결과를 확인하는 계산기</td></tr>
 <tr><td>“이 개념이 어떻게 작동해?”</td><td>부분을 눌러 탐색하는 설명 화면</td></tr>
 </tbody></table></div>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/gpt6-intelligent-ui/before-after.svg" alt="기존 텍스트 중심 답변과 질문 맞춤형 인터랙티브 답변 비교" loading="lazy" decoding="async"><figcaption>읽는 답변에서 직접 탐색하는 답변으로 바뀌는 모습을 재구성했습니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/gpt6-intelligent-ui/before-after.svg" alt="기존 텍스트 중심 답변과 질문 맞춤형 인터랙티브 답변 비교" width="1200" height="630" loading="lazy" decoding="async"><figcaption>읽는 답변에서 직접 탐색하는 답변으로 바뀌는 모습을 재구성했습니다.</figcaption></figure>
 <p><a href="https://www.nextcw.com/img/insights/gpt6-intelligent-ui/before-after.svg">도식 1 크게 보기</a></p>
 <p>글로 읽던 답변을 직접 탐색하는 모습을 재구성한 도식입니다.</p>
 <p>저는 <strong>지금 풀고 싶은 문제에 맞는 작은 도구를 대화 안에서 받는 것</strong>이라고 설명드리고 싶어요. 예산을 검토하다 계산기가 필요해지면, 그 자리에서 요청하는 식이죠.</p>
@@ -1170,7 +1170,7 @@
 <h3>⑤ 답변을 기다리는 방식도 달라졌어요</h3>
 <p>GPT-6는 생각하거나 도구를 사용하는 중에도 준비된 내용을 먼저 보여주고, 뒤이어 답변을 보강할 수 있습니다. Intelligent UI와 함께 발표된 별도의 응답 방식 개선이에요.</p>
 <p>OpenAI 내부 평가에서는 웹 검색이 필요한 질문에 <strong>GPT-6 Instant가 GPT-5.6 Instant보다 평균 44% 빨리 답변을 시작했습니다.</strong> [1] 여기서 44%는 첫 답변을 보여주기까지의 시간입니다. 전체 업무 시간이 그만큼 줄었다는 의미로 읽으시면 안 됩니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/gpt6-intelligent-ui/ui-formats.svg" alt="Intelligent UI의 대표적 활용 화면을 네 가지 유형으로 분류한 도식" loading="lazy" decoding="async"><figcaption>비교·이해·조건 변경·진행 확인에 따라 화면을 구성할 수 있습니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/gpt6-intelligent-ui/ui-formats.svg" alt="Intelligent UI의 대표적 활용 화면을 네 가지 유형으로 분류한 도식" width="1200" height="630" loading="lazy" decoding="async"><figcaption>비교·이해·조건 변경·진행 확인에 따라 화면을 구성할 수 있습니다.</figcaption></figure>
 <p><a href="https://www.nextcw.com/img/insights/gpt6-intelligent-ui/ui-formats.svg">도식 2 크게 보기</a></p>
 <p>비교하기, 이해하기, 조건 바꿔보기, 진행 상황 확인하기. 필요한 작업에 따라 화면도 달라질 수 있습니다.</p>
 <h2>3. 우리 업무에는 어디부터 써보면 좋을까요?</h2>
@@ -1208,7 +1208,7 @@
 <p>질문의 초점이 조금 달라졌죠? <strong>“설명해 줘”에 “제가 무엇을 바꿔볼 수 있어야 하는지”를 더한 겁니다.</strong> 요청한 화면이 항상 그대로 나오는 것은 아니니, 부족한 부분은 이어서 조정해보세요.</p>
 <h2>5. 화면이 어떻게 달라지는지 먼저 보고 싶으신가요?</h2>
 <p>아래 <strong>12초 개념 영상</strong>으로 글에서 조작 화면으로 넘어가는 모습을 살펴보실 수 있습니다.</p>
-<p><a href="https://www.nextcw.com/img/insights/gpt6-intelligent-ui/video.html"><img src="https://www.nextcw.com/img/insights/gpt6-intelligent-ui/video-poster.webp" alt="Intelligent UI 변화 설명 영상 대표 이미지" loading="lazy" decoding="async"></a></p>
+<p><a href="https://www.nextcw.com/img/insights/gpt6-intelligent-ui/video.html"><img src="https://www.nextcw.com/img/insights/gpt6-intelligent-ui/video-poster.webp" alt="Intelligent UI 변화 설명 영상 대표 이미지" width="960" height="540" loading="lazy" decoding="async"></a></p>
 <p><strong><a href="https://www.nextcw.com/img/insights/gpt6-intelligent-ui/video.html">▶ 12초 개념 설명 영상 재생</a></strong></p>
 <p><a href="https://www.nextcw.com/img/insights/gpt6-intelligent-ui/interactive-ui-demo.mp4">영상 파일 직접 열기 (MP4)</a></p>
 <p>이 영상은 글의 이해를 돕기 위해 자체 제작했습니다. 실제 OpenAI 제품 화면이나 공식 시연 영상은 아닙니다.</p>
@@ -1216,7 +1216,7 @@
 <h2>6. 내 업무에 맞게 질문을 바꾸려면 어떻게 하나요?</h2>
 <p><strong>목적, 근거 자료, 바꿀 값, 판단 기준을 함께 적어주세요.</strong> 화면이 보기 좋다고 정보까지 정확해지는 건 아니니까요.</p>
 <p>저는 업무용 질문을 만들 때 이 네 가지를 먼저 정하는 방식이 유용하다고 봅니다. 누구를 위한 화면인지까지 적으면 설명의 수준도 맞추기 쉬워요.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/gpt6-intelligent-ui/workflow.svg" alt="질문에서 데이터, 인터랙티브 탐색, 최종 판단으로 이어지는 실무 사용 흐름도" loading="lazy" decoding="async"><figcaption>자료 확인, 조건 변경, 결과 검토를 거쳐 판단하는 흐름입니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/gpt6-intelligent-ui/workflow.svg" alt="질문에서 데이터, 인터랙티브 탐색, 최종 판단으로 이어지는 실무 사용 흐름도" width="1200" height="630" loading="lazy" decoding="async"><figcaption>자료 확인, 조건 변경, 결과 검토를 거쳐 판단하는 흐름입니다.</figcaption></figure>
 <p><a href="https://www.nextcw.com/img/insights/gpt6-intelligent-ui/workflow.svg">도식 3 크게 보기</a></p>
 <p>자료를 확인하고, 값을 바꿔보고, 결과를 검토한 뒤 판단하는 흐름입니다.</p>
 <p>아래 양식의 대괄호 부분만 내 업무에 맞게 바꿔보세요.</p>
@@ -1366,12 +1366,12 @@
 <li><strong>AI 회고 프롬프트 3종:</strong> 작업 직후·급할 때·기록이 쌓였을 때 붙여 넣는 지시문</li>
 </ul>
 <p>팀의 AI 활용을 맡은 실무자와 교육 담당자, 자신의 업무부터 바꾸고 싶은 대표님을 위해 정리했습니다. 카드뉴스를 따라 읽고, 마지막에는 이번 주 끝낸 업무 하나에 적용해 보세요.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-fast-failure-lesson1/cover-ai-retrospective-photo.webp" alt="따뜻한 업무 공간의 나무 테이블 위 노트북, 제안서 시안 세 장과 회고 노트를 표현한 AI 생성 이미지" loading="lazy" decoding="async"><figcaption>일이 잘되는 공간에서, 다음 일이 더 나아지는 방식을 만듭니다. AI 생성 이미지.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-fast-failure-lesson1/cover-ai-retrospective-photo.webp" alt="따뜻한 업무 공간의 나무 테이블 위 노트북, 제안서 시안 세 장과 회고 노트를 표현한 AI 생성 이미지" width="1672" height="941" loading="lazy" decoding="async"><figcaption>일이 잘되는 공간에서, 다음 일이 더 나아지는 방식을 만듭니다. AI 생성 이미지.</figcaption></figure>
 <h2>1. 완성하기 전에, 작게 틀려볼 수 있습니다</h2>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-fast-failure-lesson1/card-02.webp" alt="시험의 정답 찾기와 정답이 정해지지 않은 업무의 차이를 설명한 카드뉴스" loading="lazy" decoding="async"><figcaption>시험에는 정답지가 있지만, 제안서와 사업 기획은 반응을 보며 방향을 찾아갑니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-fast-failure-lesson1/card-02.webp" alt="시험의 정답 찾기와 정답이 정해지지 않은 업무의 차이를 설명한 카드뉴스" width="1440" height="1800" loading="lazy" decoding="async"><figcaption>시험에는 정답지가 있지만, 제안서와 사업 기획은 반응을 보며 방향을 찾아갑니다.</figcaption></figure>
 <p>학교에서는 틀리지 않는 것이 중요했죠. 그런데 업무에는 정답지가 없는 일이 많습니다. 제안서 첫 문장, 교육 안내문 제목, 고객에게 보낼 이메일처럼요.</p>
 <p>이런 일은 한 가지 안을 오래 붙잡는 것보다 <strong>작은 초안 여러 개를 비교하는 편이 판단에 도움이 될 수 있습니다.</strong> 최종 결과물을 대충 만들자는 뜻이 아닙니다. 방향을 고르는 단계를 작게 나누자는 거예요.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-fast-failure-lesson1/card-03.webp" alt="AI로 시안 세 개를 만들어 비교하며 작은 실험의 비용을 낮춘다는 카드뉴스" loading="lazy" decoding="async"><figcaption>‘반나절’은 작은 시안 작업을 설명하기 위한 예시입니다. 실제 소요시간은 업무 범위에 따라 달라집니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-fast-failure-lesson1/card-03.webp" alt="AI로 시안 세 개를 만들어 비교하며 작은 실험의 비용을 낮춘다는 카드뉴스" width="1440" height="1800" loading="lazy" decoding="async"><figcaption>‘반나절’은 작은 시안 작업을 설명하기 위한 예시입니다. 실제 소요시간은 업무 범위에 따라 달라집니다.</figcaption></figure>
 <p>제안서 첫 장을 쓴다고 해볼까요? AI에게 “좋게 써줘”라고 하기보다 세 가지 방향을 줍니다.</p>
 <pre tabindex="0"><code class="language-text">이 제안서를 읽을 사람은 [대상 고객]이고,
 제안의 목적은 [고객이 결정할 일]이야.
@@ -1388,7 +1388,7 @@ C안: 지금 결정해야 할 이유부터 설명
 <p>세 안을 보고 “누가 읽는지 바로 알 수 있나?”, “무엇을 제안하는지 분명한가?”를 비교합니다. 동료 한 명에게 보여주고 어떤 안이 이해하기 쉬웠는지 물어보면 더 좋습니다.</p>
 <p>여기서 얻을 지식은 간단합니다. <strong>AI를 잘 쓴다는 것은 결과물을 많이 뽑는 것뿐 아니라, 비교할 기준을 먼저 정하는 일</strong>이기도 합니다.</p>
 <h2>2. 27시간의 작업도, 다음에 쓸 규칙을 남길 수 있습니다</h2>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-fast-failure-lesson1/card-06.webp" alt="만들고 틀리고 AI와 기록하고 고치는 순환을 설명한 카드뉴스" loading="lazy" decoding="async"><figcaption>핵심은 만들기 → 확인하기 → 기록하기 → 고치기입니다. 카드의 27시간은 작성자의 개인 작업 경험입니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-fast-failure-lesson1/card-06.webp" alt="만들고 틀리고 AI와 기록하고 고치는 순환을 설명한 카드뉴스" width="1440" height="1800" loading="lazy" decoding="async"><figcaption>핵심은 만들기 → 확인하기 → 기록하기 → 고치기입니다. 카드의 27시간은 작성자의 개인 작업 경험입니다.</figcaption></figure>
 <p>최근 결과물 하나를 만드는 데 27시간이 걸렸습니다. 같은 작업을 여러 AI 도구로 해보고, 작업 순서와 확인 기준을 미리 정한 방식과 대화하면서 진행하는 방식도 비교해봤어요.</p>
 <p>빠르게 끝낸 작업은 아니었습니다. 그런데 끝나고 에이전트에게 이렇게 물었습니다.</p>
 <p><strong>“비슷한 작업을 다시 한다면 어디서 줄일 수 있어?”</strong></p>
@@ -1476,7 +1476,7 @@ C안: 지금 결정해야 할 이유부터 설명
 팀 작업 지침에 반영할 후보로 정리하고, 문서를 자동 수정하지는 마.</code></pre>
 <p>처음부터 세 가지를 모두 쓸 필요는 없습니다. <strong>이번 주 끝낸 업무 하나에 기본형을 쓰고, 규칙 한 줄만 가져가는 것</strong>으로 시작하세요.</p>
 <h2>5. 팀에서는 ‘작게 만들고, 적고, 보여주기’로 시작합니다</h2>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-fast-failure-lesson1/card-08.webp" alt="작게 만들고 틀린 점을 적고 완성 전에 보여주는 세 가지 행동을 정리한 카드뉴스" loading="lazy" decoding="async"><figcaption>카드는 학생 과제로 설명했지만, 업무에서는 제안서·보고서·안내문 초안에 같은 순서를 적용할 수 있습니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-fast-failure-lesson1/card-08.webp" alt="작게 만들고 틀린 점을 적고 완성 전에 보여주는 세 가지 행동을 정리한 카드뉴스" width="1440" height="1800" loading="lazy" decoding="async"><figcaption>카드는 학생 과제로 설명했지만, 업무에서는 제안서·보고서·안내문 초안에 같은 순서를 적용할 수 있습니다.</figcaption></figure>
 <p>카드 속 세 가지 행동을 업무 언어로 바꾸면 다음과 같습니다.</p>
 <ol>
 <li><strong>작게 만든다:</strong> 보고서 전체 대신 목차와 요약 한 문단을 먼저 만든다.</li>
@@ -1525,7 +1525,7 @@ C안: 지금 결정해야 할 이유부터 설명
 <p>손익분기 계산에서 좌석 단가만 분모에 넣으면 필요 점유율이 비현실적으로 높게 나옵니다. 실제 운영에서는 좌석 외 수익원이 함께 작동합니다.</p>
 <p>넥스트코웍이 <a href="https://www.spacecw.com/" target="_blank" rel="noopener">스페이스코웍</a>을 4개 지점 직영으로 운영하며 누적한 <strong>모임공간 대관 7,000건 이상</strong>이라는 숫자는, 좌석 임대 바깥의 수익이 운영에서 얼마나 큰 축이었는지를 보여줍니다. 회의실·세미나실 대관, 교육 프로그램, 커뮤니티 이벤트, 제휴 매출이 붙어야 비로소 수지가 성립하는 구조입니다.</p>
 <p>특히 지방 중소도시일수록 이 비중이 커집니다. 좌석 수요만으로 채우기 어려운 대신, 그 지역에 대관·교육 수요를 흡수할 대안 공간이 적기 때문입니다. <strong>수도권 모델을 그대로 옮기면 실패하고, 복합 수익 모델을 설계하면 됩니다.</strong></p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/coworking-lounge-amenity.webp" alt="좌석 구역과 라운지, 카페 카운터가 한 층에서 이어지는 코워킹 공간" loading="lazy" decoding="async"><figcaption>좌석·회의실·라운지·카페의 면적 배분이 곧 수익구조가 됩니다</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/coworking-lounge-amenity.webp" alt="좌석 구역과 라운지, 카페 카운터가 한 층에서 이어지는 코워킹 공간" width="1672" height="941" loading="lazy" decoding="async"><figcaption>좌석·회의실·라운지·카페의 면적 배분이 곧 수익구조가 됩니다</figcaption></figure>
 <h2>준공 전인가, 준공 후인가</h2>
 <p>같은 &quot;도입 검토&quot;라도 시점에 따라 다룰 수 있는 변수가 완전히 다릅니다.</p>
 <div class="post-table" tabindex="0" role="region" aria-label="표 (가로로 스크롤)"><table><thead><tr><th>시점</th><th>조정 가능한 것</th><th>검토의 초점</th></tr></thead><tbody>
@@ -1572,11 +1572,11 @@ C안: 지금 결정해야 할 이유부터 설명
 <h2>Build the Next Workspace!</h2>
 <p><strong>넥스트코웍의 영문 슬로건은 Build the Next Workspace입니다.</strong> 사이트 상단 로고 옆, 푸터, 회사 소개 문장이 모두 이 문장으로 바뀌었습니다.</p>
 <p>제목의 AI Workspace Builder는 이제 대표 이종찬을 소개하는 말로 남았습니다. Builder는 사람을 가리키는 명사이고, 회사가 하는 일은 그보다 넓기 때문입니다. 자산주는 자기 건물에서, 교육 담당자는 자기 팀에서, 대표는 자기 업무에서 다음 일터를 짓습니다. 넥스트코웍은 그 옆에서 <strong>함께 짓습니다(Build).</strong></p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-workspace-builder.webp" alt="오피스 평면 모형과 펼친 도면, 업무 화면이 켜진 노트북이 한 테이블에 놓인 프로젝트 룸을 표현한 AI 생성 이미지" loading="lazy" decoding="async"><figcaption>공간의 도면과 일하는 방식의 화면을 한 테이블에서 함께 봅니다. (AI 생성 이미지)</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-workspace-builder.webp" alt="오피스 평면 모형과 펼친 도면, 업무 화면이 켜진 노트북이 한 테이블에 놓인 프로젝트 룸을 표현한 AI 생성 이미지" width="1600" height="900" loading="lazy" decoding="async"><figcaption>공간의 도면과 일하는 방식의 화면을 한 테이블에서 함께 봅니다. (AI 생성 이미지)</figcaption></figure>
 <h2>왜 Workspace에 주목하나요?</h2>
 <p><strong>AI 시대의 일터는 두 겹이기 때문입니다.</strong> 하나는 사람이 모이는 물리적 공간(SPACE)입니다. 책상과 회의실과 라운지, 출근해서 동료를 만나고 집중하는 곳이죠. 다른 하나는 문서와 데이터, 협업 도구, 그리고 이제는 <strong>AI 에이전트와 함께 일하는 공간(Workspace)</strong>입니다.</p>
 <p>예전에는 두 번째 일터가 첫 번째 일터를 거드는 역할에 가까웠습니다. 지금은 다릅니다. 회의실에서 나눈 이야기를 에이전트가 회의록과 할 일로 정리하고, 공간으로 들어온 문의에 에이전트가 먼저 응대하고 예약을 잡습니다. 사람이 하던 일의 상당 부분이 Workspace에서 처리되기 시작했습니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-workspace-builder/diagram-02-two-workspaces.svg" alt="AI 시대의 두 일터: 사람이 모이는 물리적 공간(SPACE)과 문서·데이터·AI 에이전트와 함께 일하는 공간(Workspace)이 사람을 가운데 두고 연결된다" loading="lazy" decoding="async"><figcaption>사람은 SPACE에서 만나고, 일은 Workspace에서 이어집니다. 둘이 끊기면 어느 쪽도 제 몫을 못 합니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-workspace-builder/diagram-02-two-workspaces.svg" alt="AI 시대의 두 일터: 사람이 모이는 물리적 공간(SPACE)과 문서·데이터·AI 에이전트와 함께 일하는 공간(Workspace)이 사람을 가운데 두고 연결된다" width="1200" height="580" loading="lazy" decoding="async"><figcaption>사람은 SPACE에서 만나고, 일은 Workspace에서 이어집니다. 둘이 끊기면 어느 쪽도 제 몫을 못 합니다.</figcaption></figure>
 <p>그래서 둘 중 하나만 바꾸면 효과가 반으로 줄어듭니다.</p>
 <ul>
 <li><strong>공간만 바꾸면</strong> — 라운지와 회의실은 새것인데, 일하는 방식은 그대로입니다. 보기 좋은 사무실에서 예전처럼 일하게 됩니다.</li>
@@ -1591,7 +1591,7 @@ C안: 지금 결정해야 할 이유부터 설명
 <h3>팀이 AI와 함께 일하게 만듭니다 — AI Campus</h3>
 <p>목표는 프롬프트 몇 개를 외우는 것이 아닙니다. 반복 업무를 줄이고, 의사결정을 빠르게 하고, 조직 안에 새 일하는 방식을 심는 것입니다.</p>
 <p>그래서 교육은 도구 소개에서 끝나지 않습니다. 그 팀의 실제 문서, 회의, 리서치, 보고서 작성 흐름에 AI를 붙여 실습하고, <strong>업무용 프롬프트·템플릿·검토 기준을 결과물로 남깁니다.</strong> 청와대 특강, 증권사 투자개발부 세미나, 연구원 박사급 연구진 교육처럼 틀리면 곤란한 현장에서 해 왔기 때문에 &quot;AI가 써 준 것을 어떻게 검토하는가&quot;를 빼놓지 않습니다. → <a href="https://www.nextcw.com/ai-campus/">AI Campus</a></p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/reference/ref-02.webp" alt="대형 강의장에서 진행한 AI 실무교육 현장" loading="lazy" decoding="async"><figcaption>AI 실무교육 현장. 실습 결과물이 남는 방식으로 진행합니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/reference/ref-02.webp" alt="대형 강의장에서 진행한 AI 실무교육 현장" width="1200" height="900" loading="lazy" decoding="async"><figcaption>AI 실무교육 현장. 실습 결과물이 남는 방식으로 진행합니다.</figcaption></figure>
 <h3>공공의 공간과 조직을 함께 봅니다 — Public Advisory</h3>
 <p>지자체와 공공기관의 코워킹스페이스·워케이션센터·거점시설을 기획부터 건립 자문, 운영모델, 개관 후 활성화까지 하나의 흐름으로 자문합니다. 공공의 공간은 준공이 아니라 운영에서 평가받기 때문입니다. 위탁운영기관 심사석에 앉아 본 경험과 공유오피스를 직접 운영한 경험이 함께 쓰입니다. 같은 기관의 공무원·연구진을 대상으로 한 AI 역량강화 교육도 합니다. → <a href="https://www.nextcw.com/public/">Public Advisory</a></p>
 <h3>대표의 Workspace부터 바꿉니다 — CEO AI 코칭</h3>
@@ -1606,7 +1606,7 @@ C안: 지금 결정해야 할 이유부터 설명
 <p>두 일터를 한 번에 짓는 상품도 있습니다. <strong>Smart FlexOffice</strong>는 공유오피스 컨셉·운영모델 설계에 운영팀 대상 AI Campus 워크샵(온보딩 3회 + 정착 5회)을 묶은 것으로, 5,500만원부터입니다. 공간을 설계하는 단계부터 <strong>운영팀이 AI 에이전트와 함께 일하는 공유오피스</strong>를 같이 그립니다.</p>
 <h2>2006년부터 한 줄로 이어진 일입니다</h2>
 <p>공간 컨설팅과 AI 교육은 따로 노는 두 사업처럼 보일 수 있습니다. 대표의 이력을 시간순으로 놓으면 SPACE에서 Workspace로 한 줄로 이어집니다.</p>
-<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-workspace-builder/diagram-01-journey.svg" alt="넥스트코웍의 여정: 2006–2014 공간을 짓다(개발사업 PM, 누계 5,100억), 2015–2023 공간을 열다(공유오피스 4개 지점, 고객사 1,000+), 2018–현재 성장을 돕다(㈜리슬 AI 전환 자문), 2023–현재 방법을 찾다(넥스트코웍 설립)" loading="lazy" decoding="async"><figcaption>지은 경험, 운영한 숫자, 바꾼 방식이 하나의 문장으로 모입니다.</figcaption></figure>
+<figure class="post-figure"><img src="https://www.nextcw.com/img/insights/ai-workspace-builder/diagram-01-journey.svg" alt="넥스트코웍의 여정: 2006–2014 공간을 짓다(개발사업 PM, 누계 5,100억), 2015–2023 공간을 열다(공유오피스 4개 지점, 고객사 1,000+), 2018–현재 성장을 돕다(㈜리슬 AI 전환 자문), 2023–현재 방법을 찾다(넥스트코웍 설립)" width="1200" height="560" loading="lazy" decoding="async"><figcaption>지은 경험, 운영한 숫자, 바꾼 방식이 하나의 문장으로 모입니다.</figcaption></figure>
 <ul>
 <li><strong>공간을 짓다(2006–2014)</strong> — 우림건설 신규사업 PM으로 서울 상암 카이저팰리스(사업규모 2,900억), 아파트, 지식산업센터 등 누계 5,100억 규모 개발사업을 맡았습니다. 공간이 기획되고 PF를 거쳐 지어지기까지의 과정을 이때 배웠습니다.</li>
 <li><strong>공간을 열다(2015–2023)</strong> — 스페이스코웍을 창업해 호남권 최대 민간투자 공유오피스로 키웠습니다. 4개 지점, 고객사 1,000곳 이상, 모임공간 대관 7,000건 이상. 이 시기에 SaaS·협업 도구 30여 종을 직접 검토하고 들여 쓰며 공간 뒤의 Workspace를 먼저 겪었습니다.</li>

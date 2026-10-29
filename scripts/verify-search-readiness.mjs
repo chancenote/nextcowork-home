@@ -47,7 +47,24 @@ for (const [from, html] of pages) {
   }
 }
 assert.ok((await read('about/index.html')).includes('href="/public/#scope-space"'));
-const expected = { 'claude-motion-dashboards-workflow':[1600,900], 'aside-browser-workflow':[1200,630], 'ax-one-workflow-playbook':[720,405], 'development-finance-ai-review-im':[1200,675], 'chatgpt-space-10-features':[1600,910], 'ai-cowork-six-conditions':[1600,900], 'frontier-model-settings-skills-update':[1672,941], 'ai-training-vendor-selection':[720,405], 'gpt6-intelligent-ui':[1672,941], 'ai-training-request-brief':[720,406], 'ai-fast-failure':[720,406], 'flexoffice-feasibility-checklist':[720,406], 'ai-workspace-builder':[720,405] };
+// Measured from the served image files with sips, independently of the publisher.
+const expected = {
+  'anthropic-ipo-s1': [720, 405],
+  'nextcowork-space-ai-intersection': [720, 378],
+  'claude-motion-dashboards-workflow': [720, 405],
+  'aside-browser-workflow': [720, 378],
+  'ax-one-workflow-playbook': [720, 405],
+  'development-finance-ai-review-im': [720, 405],
+  'chatgpt-space-10-features': [720, 410],
+  'ai-cowork-six-conditions': [720, 405],
+  'frontier-model-settings-skills-update': [720, 406],
+  'ai-training-vendor-selection': [720, 405],
+  'gpt6-intelligent-ui': [720, 406],
+  'ai-training-request-brief': [720, 406],
+  'ai-fast-failure': [720, 406],
+  'flexoffice-feasibility-checklist': [720, 406],
+  'ai-workspace-builder': [720, 405]
+};
 const feedJs = await read('js/insights-data.js');
 const feed = JSON.parse(feedJs.match(/window\.NCW_FEED = ([\s\S]*);\s*$/)[1]);
 for (const item of feed.filter(item => item.src === 'insight')) {
@@ -57,7 +74,9 @@ for (const item of feed.filter(item => item.src === 'insight')) {
   assert.ok(rendered.includes('width="' + dimensions.width + '" height="' + dimensions.height + '"'));
 }
 const latest = feed.find(item => item.src === 'insight');
-const latestSize = latest.thumbnailCard ? latest.thumbnailCardSize : latest.thumbnailSize;
+// The Latest Note hero uses the full thumbnail, not its smaller card variant.
+const latestSize = latest.thumbnailSize;
+assert.deepEqual([latestSize.width, latestSize.height], [1600, 900], 'latest hero size');
 assert.ok(renderLatestNote(feed).includes('width="' + latestSize.width + '" height="' + latestSize.height + '"'));
 const build = await read('scripts/build-insights.mjs');
 const hashSource = build.match(/function contentHash\(text\) \{[\s\S]*?\n\}/)[0];
