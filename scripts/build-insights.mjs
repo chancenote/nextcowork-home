@@ -747,6 +747,7 @@ function renderArticle(post, assetVersion) {
   const faq = extractFaq(post.body);
   const blogPosting = {
     "@type": "BlogPosting",
+    "@id": `${absoluteUrl(post.url)}#article`,
     headline: post.title,
     description: post.description,
     datePublished: post.date,
@@ -755,7 +756,7 @@ function renderArticle(post, assetVersion) {
     mainEntityOfPage: { "@type": "WebPage", "@id": absoluteUrl(post.url) },
     inLanguage: "ko",
     image: absoluteUrl(post.og.url),
-    author: { "@type": "Person", "@id": "https://www.nextcw.com/about/#person", name: "이종찬" },
+    author: { "@type": "Person", "@id": "https://www.nextcw.com/about/#person", name: "이종찬", url: "https://www.nextcw.com/about/" },
     publisher: { "@id": "https://www.nextcw.com/#org" }
   };
   const breadcrumb = {

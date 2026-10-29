@@ -44,3 +44,16 @@ Lighthouse 재현 명령(기준/변경본을 별도 로컬 포트에서 제공):
 ```sh
 npx lighthouse@13.5.0 http://127.0.0.1:4317/ --only-categories=performance --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" --output=json --output-path=after-home.json
 ```
+
+## 최신 SEO 통합 검증 (2026-10-29)
+
+SEO PR #9가 반영된 `main` (`544af8714af19932d9ceaef6784c569cf9f543fb`)을 PR #10에 통합했습니다. 수동 페이지의 충돌은 성능 개선의 로컬 폰트와 리소스 로딩을 유지했고, 글 페이지는 두 변경이 합쳐진 생성기로 다시 만들었습니다. 이미지 검사는 `main`의 실제 파일 크기 판독 방식을 유지합니다.
+
+- `VERCEL=1 npm run build`, `npm run verify:seo`, 문의 문맥 18개 검사, 검색 전환 검사, `git diff --check` 통과.
+- 공개 HTML 31개, 색인 대상 24개, Article 15개, Service 6개, LocalBusiness 2개, 크롤링 경로 191개, 내부 링크 737개 검증 통과.
+- 공개 HTML 31개의 title·description·canonical·og:image와 JSON-LD 전체가 SEO 병합본과 정확히 같습니다. 본문과 가격은 변경하지 않았습니다.
+- 같은 운영 CSP를 적용한 로컬 브라우저에서 390px·1440px 각각 홈·대표 소개·문의·인사이트 목록·Public·글 상세를 검수했습니다. 메뉴/Escape, 서비스 4종의 문의 자동 입력, 검색 결과와 서비스 연결, 결과 없음/초기화/필터/뒤로가기, Public 탭, 글 공유 패널/URL 복사가 통과했습니다. 실제 문의나 외부 공유는 전송하지 않았습니다.
+- 12개 화면에서 가로 넘침·JS 예외·CSP 위반·로컬 HTTP 오류가 없었으며 로컬 폰트와 표시 이미지가 정상입니다. 모바일에서 기존 스타일로 숨긴 소개 사진 4개는 파일의 HTTP 200 응답도 확인했습니다. 각 화면 스크린샷을 확인했습니다.
+- 다시 빌드했을 때 RSS `lastBuildDate` 외에 결과가 달라지지 않았습니다. 위 Lighthouse 수치는 최초 성능 측정값이며, 이번 SEO 통합 후 운영 사용자 실측을 새로 측정한 값은 아닙니다.
+
+문의 오류 경계도 모의 응답으로 확인했습니다. HTTP 500·네트워크 실패·Accepted(저장 미확정)·15초 시간초과(실측 15.021초)에서는 성공 카드를 숨기고 입력·요청키를 유지하며 버튼을 다시 활성화합니다. 같은 접수번호의 saved 응답을 두 번 받아도 `inquiry_saved`·`generate_lead`는 각각 한 번만 기록됩니다. 이 검사는 Make와 GA4 등 모든 외부 요청을 차단했으며 운영 요청·운영 이벤트를 만들지 않았습니다.
