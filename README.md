@@ -1,5 +1,28 @@
 # nextcw.com 웹사이트 — 운영 가이드
 
+## CHANGELOG
+
+### 2026-10-29 — 태스크 A: 전체 페이지 SEO 보완
+
+- 추적 중인 HTML 32개를 점검했습니다. 검색 대상 24개(기본 페이지 9개·인사이트 15개)는 기존 고유 title·description·절대 canonical·OG 이미지·한국어 `lang`을 유지합니다. PDF 생성 원본 `files/_src/` 1개는 배포 제외 대상입니다.
+- 보조 뷰어 6개와 404의 누락된 검색·공유 메타를 보완했습니다. 보조 뷰어는 `noindex`와 부모 인사이트 canonical을 사용하고, 404는 `noindex`를 유지합니다. 두 데모의 검색 노출 제외도 명시했습니다.
+- 홈의 Organization을 유지하고 홈·문의 페이지에 전주 본사 LocalBusiness를 연결했습니다. 공개된 주소·전화·이메일만 사용하며 영업시간·위경도·우편번호를 추정하지 않습니다.
+- 4개 서비스 페이지의 Service 식별자·URL·제공 조직 연결을 보완했습니다. 인사이트 15편은 Article 하위 타입인 BlogPosting을 유지하고 글·저자·발행처 식별자를 일관화했습니다. 일반 글 14편은 생성기에서, 단독 레이아웃 1편은 해당 HTML에서 관리합니다.
+- 사이트맵은 검색 대상 24개 canonical만 포함하도록 재생성합니다. 글의 발행·수정일은 원고의 명시 날짜를 유지하고, 빌드 시각을 글 수정일로 사용하지 않습니다. `robots.txt`는 공개 페이지·CSS·JS·이미지를 허용하고 작업·원고 경로를 제외하며 기존 검색엔진 인증 주석을 보존합니다. robots 규칙은 접근 통제가 아닙니다.
+- `npm run verify:seo`로 공개 HTML 메타·JSON-LD 관계·이미지·사이트맵·robots 정합성을 검사합니다. 기존 검색 준비 검사는 새 글마다 고정 썸네일 목록을 추가하는 대신 실제 이미지 크기를 확인하도록 보완했습니다.
+
+검증 명령:
+
+```sh
+npm run build
+npm run verify:seo
+node scripts/verify-search-conversion.mjs
+```
+
+검증 결과: 공개 HTML 31개·색인 대상 24개·인사이트 15개·Service 6개·내부 링크 737개 검사 통과. 본문은 캐시 버전값을 제외하면 변경 전과 동일합니다.
+
+이번 변경은 SEO PR 범위입니다. Google의 실제 색인·리치 결과 노출은 배포 후 Search Console에서 별도로 확인합니다. 구조화 데이터 기준: [Organization](https://developers.google.com/search/docs/appearance/structured-data/organization), [LocalBusiness](https://developers.google.com/search/docs/appearance/structured-data/local-business), [Article](https://developers.google.com/search/docs/appearance/structured-data/article). 사이트맵 기준: [Google Search Central](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap).
+
 ## 0. 작업 흐름과 담당 (2026-10-09 현행)
 
 **ops 준비 → 대표 결정 → Claude Code 사이트 실행.** 역할·승인 기준은 `../nextcw-ops/00_brief/CLAUDE.md`가 정본입니다.
