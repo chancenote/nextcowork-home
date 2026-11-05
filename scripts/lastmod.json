@@ -1,7 +1,7 @@
 {
   "/": {
-    "hash": "7483402f19ab",
-    "date": "2026-10-29"
+    "hash": "b76971066987",
+    "date": "2026-11-06"
   },
   "/flexoffice/": {
     "hash": "eda0623342d2",
@@ -24,8 +24,8 @@
     "date": "2026-10-29"
   },
   "/insights/": {
-    "hash": "c97ad1546fca",
-    "date": "2026-10-29"
+    "hash": "c68b0f80a789",
+    "date": "2026-11-06"
   },
   "/contact/": {
     "hash": "a3b7425a40b3",
@@ -34,6 +34,10 @@
   "/privacy/": {
     "hash": "1776fe827101",
     "date": "2026-10-29"
+  },
+  "/insights/ax-consulting-vs-ai-training/": {
+    "hash": "706e2245ff8f",
+    "date": "2026-11-06"
   },
   "/insights/anthropic-ipo-s1/": {
     "hash": "3fdb58d68a9f",

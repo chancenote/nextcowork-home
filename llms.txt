@@ -54,6 +54,8 @@ https://www.nextcw.com/coaching/
 ## 인사이트 아티클 (최신순)
 
 <!-- INSIGHTS:START -->
+- AX 컨설팅이란? AI 교육과 업무 전환의 차이 (2026-11-06): https://www.nextcw.com/insights/ax-consulting-vs-ai-training/
+  AX 컨설팅과 AI 교육의 차이는 개인의 활용 역량과 조직의 실행 체계를 다루는 범위에 있습니다. 보고서 작성 흐름을 따라 자료·초안·검토·승인·재사용의 기준을 살펴보고, 우리 조직에 필요한 교육과 업무 전환 과제를 체크리스트로 정리해 보세요.
 - 티커 ANT, 우리가 사게 될 건 주식이 아니라 ‘일하는 방식’입니다 (2026-10-28): https://www.nextcw.com/insights/anthropic-ipo-s1/
   앤트로픽이 공개 제출한 상장 신청서(S-1)를 숫자·실리콘밸리 평가·SK의 두 번의 베팅·클로드 제품 지도·지배구조로 해부하고, 2027년 일터의 변화와 개인·조직의 90일 대비책까지 정리했습니다.
 - 넥스트코웍, 공유오피스와 AI의 교차점에서 (2026-10-20): https://www.nextcw.com/insights/nextcowork-space-ai-intersection/
