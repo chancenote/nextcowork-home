@@ -8,6 +8,7 @@ tags: ["AX 컨설팅", "AI 교육", "AI 전환", "업무 프로세스"]
 slug: "ax-consulting-vs-ai-training"
 image: "/img/insights/ax-consulting-vs-ai-training/01-hero.png"
 thumbnail: "/img/insights/ax-consulting-vs-ai-training/01-hero.png"
+thumbnail_position: "top"
 image_alt: "개별 작업 공간이 연결된 조직의 업무 구조로 이어지는 모습. AI 생성 개념 일러스트."
 cta_service: "general"
 audience: "공공기관·금융기관·대학·중소기업의 교육·혁신 담당자와 의사결정자"

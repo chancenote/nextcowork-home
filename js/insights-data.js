@@ -18,13 +18,15 @@ window.NCW_FEED = [
     "image": "/img/insights/ax-consulting-vs-ai-training/01-hero.png",
     "thumbnail": "/img/insights/ax-consulting-vs-ai-training/01-hero.png",
     "imageAlt": "개별 작업 공간이 연결된 조직의 업무 구조로 이어지는 모습. AI 생성 개념 일러스트.",
+    "thumbnailPosition": "top",
+    "thumbnailCard": "/img/insights/ax-consulting-vs-ai-training/01-hero-720w.webp",
     "thumbnailSize": {
       "width": 2160,
       "height": 1620
     },
     "thumbnailCardSize": {
-      "width": 2160,
-      "height": 1620
+      "width": 720,
+      "height": 540
     },
     "topic": "AI 업무전환",
     "tags": [

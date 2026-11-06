@@ -523,6 +523,8 @@ function normalizePost(meta, body, filePath) {
     image: meta.image || "/img/og.png",
     thumbnail: meta.thumbnail || meta.image || "/img/og.png",
     imageAlt: meta.image_alt || "",
+    // 카드 비율이 이미지보다 납작해 위아래가 잘릴 때 보여 줄 기준 위치(허용값만 사용).
+    thumbnailPosition: ["top", "center", "bottom"].includes(meta.thumbnail_position) ? meta.thumbnail_position : "",
     ctaService: meta.cta_service || "general",
     audience: optionalText("audience"),
     takeaway: optionalText("takeaway"),
@@ -1008,6 +1010,7 @@ function buildFeed(posts) {
     date: formatDate(post.date),
     description: post.description, category: post.category, image: post.image,
     thumbnail: post.thumbnail, imageAlt: post.imageAlt,
+    ...(post.thumbnailPosition ? { thumbnailPosition: post.thumbnailPosition } : {}),
     ...(cardVariant(post.thumbnail) ? { thumbnailCard: cardVariant(post.thumbnail) } : {}),
     // Both server-rendered and browser-filtered cards use the actual file dimensions.
     thumbnailSize: localImageSize(post.thumbnail || post.image),
