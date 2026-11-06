@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="/js/analytics.js?v=ncw-92feba65c4" defer></script>
+<script src="/js/analytics.js?v=ncw-7d8b194fb8" defer></script>
 <title>문의하기 | 공유오피스·AI 교육·공공 자문·CEO 코칭 상담 — 넥스트코웍</title>
 <meta name="description" content="공유오피스 컨설팅, 기업 AI 교육, 공공 자문, CEO AI 코칭 문의. 이름·이메일·과제만 적어 주시면 접수번호를 드리고 영업일 1일 내 회신합니다. 사전 진단 미팅 무료.">
 <link rel="canonical" href="https://www.nextcw.com/contact/">
@@ -26,10 +26,10 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#302D7C">
-<link rel="preload" as="style" href="/css/fonts.css?v=ncw-92feba65c4" data-font-styles>
-<noscript><link rel="stylesheet" href="/css/fonts.css?v=ncw-92feba65c4"></noscript>
-<script src="/js/fonts.js?v=ncw-92feba65c4" defer></script>
-<link rel="stylesheet" href="/css/style.css?v=ncw-92feba65c4">
+<link rel="preload" as="style" href="/css/fonts.css?v=ncw-7d8b194fb8" data-font-styles>
+<noscript><link rel="stylesheet" href="/css/fonts.css?v=ncw-7d8b194fb8"></noscript>
+<script src="/js/fonts.js?v=ncw-7d8b194fb8" defer></script>
+<link rel="stylesheet" href="/css/style.css?v=ncw-7d8b194fb8">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -98,7 +98,7 @@
         </li>
         <li><a href="/about/">대표 스토리</a></li>
         <li><a href="/insights/">인사이트</a></li>
-        <li><a class="nav-cta" href="/contact/" aria-current="page">프로젝트 문의하기</a></li>
+        <li><a class="nav-cta" href="/contact/" aria-current="page">문의하기</a></li>
       </ul>
     </nav>
     <button class="nav-burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
@@ -110,8 +110,8 @@
   <section class="page-hero" style="--accent:var(--indigo);--accent-soft:rgba(48,45,124,.07)">
     <div class="container">
       <div class="crumb reveal">Contact / <b id="contact-crumb">프로젝트 문의</b></div>
-      <h1 class="reveal" data-delay="1">일하는 공간과 방식,<br><span class="accent" style="color:var(--point)">함께 바꿔볼까요?</span></h1>
-      <p class="answer reveal" data-delay="2">아래 온라인 문의를 기본 접수 경로로 사용합니다. 프로젝트 개요를 남겨주시면 <strong>영업일 1일 내에 회신</strong>드리며, 사전 진단 미팅(온라인 가능)은 <strong>무료</strong>입니다. 간단한 질문은 <a class="link-accent" href="mailto:ceo@nextcw.com">ceo@nextcw.com</a>으로 보내주셔도 됩니다.</p>
+      <h1 class="reveal" data-delay="1">과제를 알려주세요.<br><span class="accent" style="color:var(--point)">대표가 직접 회신합니다.</span></h1>
+      <p class="answer reveal" data-delay="2">보내시면 ① 화면에 접수번호가 바로 표시되고, ② <strong>영업일 1일 내</strong> <strong>무료</strong> 사전진단 미팅(온라인 가능)을 제안드리며, ③ 범위·일정·비용을 담은 제안서로 이어집니다. 간단한 질문은 <a class="link-accent" href="mailto:ceo@nextcw.com">ceo@nextcw.com</a>으로 보내주셔도 됩니다.</p>
     </div>
   </section>
 
@@ -137,7 +137,8 @@
             <input type="hidden" id="cf-origin-article" name="origin_article_slug" value="">
             <input type="hidden" id="cf-tracking-version" name="tracking_version" value="">
             <h3 class="form-card-title">온라인으로 바로 문의하기</h3>
-            <p class="form-card-lead">필수 정보만 먼저 남겨주세요. 서비스·상품 문맥은 자동으로 함께 기록됩니다.</p>
+            <p class="form-card-lead">필수 정보만 먼저 남겨주세요. 검토 중인 업무와 궁금한 점을 두세 줄로 적어주시면 충분하고, 예산과 일정은 아직 미정이어도 괜찮습니다.</p>
+            <p class="form-context" id="cf-context" hidden>문의 서비스: <b id="cf-context-text"></b> <button type="button" class="form-context-change" id="cf-context-change" aria-controls="cf-service">변경</button></p>
             <p class="form-required-note"><em>*</em> 는 필수 항목입니다.</p>
             <div class="form-row">
               <div class="field"><label for="cf-name">이름 <em>*</em></label><input id="cf-name" name="name" maxlength="50" type="text" required autocomplete="name"></div>
@@ -195,8 +196,8 @@
                 </div>
                 <div class="field">
                   <label for="cf-timeline">희망 일정</label>
-                  <input id="cf-timeline" name="timeline" type="text" placeholder="예: 8월 중 특강, 3분기 내 컨설팅 착수, 아직 미정">
-                  <p class="field-help">정확하지 않아도 괜찮습니다. 긴급도와 준비 기간을 판단하는 용도입니다.</p>
+                  <input id="cf-timeline" name="timeline" type="text" aria-describedby="cf-timeline-help" placeholder="예: 8월 중 특강, 3분기 내 컨설팅 착수, 아직 미정">
+                  <p class="field-help" id="cf-timeline-help">정확하지 않아도 괜찮습니다. 긴급도와 준비 기간을 판단하는 용도입니다.</p>
                 </div>
               </div>
             </details>
@@ -213,13 +214,13 @@
               <label for="cf-marketing">넥스트코웍 소식·자료 안내를 이메일로 받는 데 동의합니다. (선택)</label>
             </div>
             <button type="submit" class="btn btn-primary form-action" id="cf-submit">문의 보내기 <span class="arr">→</span></button>
-            <button type="button" class="btn btn-ghost btn-utility form-action" id="cf-copy" aria-label="입력한 문의 내용을 클립보드에 복사">내용 복사 <span aria-hidden="true">⧉</span></button>
+            <button type="button" class="btn btn-ghost btn-utility form-action" id="cf-copy" aria-label="내용 복사: 입력한 문의 내용을 클립보드에 복사">내용 복사 <span aria-hidden="true">⧉</span></button>
             <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
             <p class="form-meta-note">보내신 뒤 화면에 접수번호가 표시되면 접수가 완료된 것입니다. 영업일 1일 내 회신드립니다. 전송이 어려우면 위 ‘내용 복사’로 복사해 <a class="link-accent" href="mailto:ceo@nextcw.com">ceo@nextcw.com</a> 으로 보내주세요.</p>
           </form>
 
           <!-- Wave3 D4 · 폼 성공 카드 (16_cx M7) — 접수 확신 + 다음 단계 안내. js/main.js 성공 콜백에서 hidden 해제 -->
-          <div class="callout" id="cf-success" hidden style="margin-top:20px;background:var(--accent-soft)">
+          <div class="callout" id="cf-success" tabindex="-1" role="region" aria-labelledby="cf-success-title" hidden style="margin-top:20px;background:var(--accent-soft)">
             <p style="margin:0 0 10px;font-size:17px;font-weight:800;color:var(--ink)" id="cf-success-title">문의가 접수되었습니다. 감사합니다!</p>
             <p id="cf-inquiry-id" hidden style="margin:0 0 10px;font-size:15px;font-weight:700;color:var(--ink)"></p>
             <ul style="margin:0;padding-left:18px;font-size:14px;line-height:1.9;color:var(--text)">
@@ -321,6 +322,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=ncw-92feba65c4" defer></script>
+<script src="/js/main.js?v=ncw-7d8b194fb8" defer></script>
 </body>
 </html>

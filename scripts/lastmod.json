@@ -1,39 +1,39 @@
 {
   "/": {
-    "hash": "30d007ec14de",
-    "date": "2026-11-06"
+    "hash": "6935ee133b9f",
+    "date": "2026-11-07"
   },
   "/flexoffice/": {
-    "hash": "eda0623342d2",
-    "date": "2026-10-29"
+    "hash": "32c50e9e9fd2",
+    "date": "2026-11-07"
   },
   "/ai-campus/": {
-    "hash": "f71194394116",
-    "date": "2026-10-29"
+    "hash": "3efd769815ac",
+    "date": "2026-11-07"
   },
   "/public/": {
-    "hash": "8bbec47e2827",
-    "date": "2026-10-29"
+    "hash": "362f62079041",
+    "date": "2026-11-07"
   },
   "/coaching/": {
-    "hash": "9c48713ca8c3",
-    "date": "2026-10-29"
+    "hash": "1eb4c56aa6c2",
+    "date": "2026-11-07"
   },
   "/about/": {
-    "hash": "a1122414a4f0",
-    "date": "2026-10-29"
+    "hash": "dd7788410393",
+    "date": "2026-11-07"
   },
   "/insights/": {
-    "hash": "a51c25ae49e2",
-    "date": "2026-11-06"
+    "hash": "2a98616108ce",
+    "date": "2026-11-07"
   },
   "/contact/": {
-    "hash": "a3b7425a40b3",
-    "date": "2026-10-29"
+    "hash": "55b6fdf1c445",
+    "date": "2026-11-07"
   },
   "/privacy/": {
-    "hash": "1776fe827101",
-    "date": "2026-10-29"
+    "hash": "97d41fa954d4",
+    "date": "2026-11-07"
   },
   "/insights/ax-consulting-vs-ai-training/": {
     "hash": "6024fc4c6c61",
@@ -96,7 +96,7 @@
     "date": "2026-08-04"
   },
   "/insights/ai-workspace-builder/": {
-    "hash": "135ff0c2b62b",
+    "hash": "d8cc9d22fc20",
     "date": "2026-10-10"
   }
 }

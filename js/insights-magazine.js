@@ -92,7 +92,13 @@ if (root && discovery && data.length) {
       tagsRoot.append(empty,clearTerm);
     } else if(expanded && matching.length>visible.length) {
       const more=document.createElement('button');more.type='button';more.className='tag-more';more.textContent='태그 '+tagStep+'개 더 보기';
-      more.addEventListener('click',()=>{tagLimit+=tagStep;renderTags();tagsRoot.querySelector('.tag-more')?.focus();});
+      more.addEventListener('click',()=>{
+        const previousCount=tagsRoot.querySelectorAll('.tag-choice').length;
+        tagLimit+=tagStep;renderTags();
+        // Continue at the newly revealed choices, even when this was the final batch.
+        const choices=[...tagsRoot.querySelectorAll('.tag-choice')];
+        (choices.slice(previousCount).find(choice=>!choice.disabled) || tagsRoot.querySelector('.tag-more') || (showTags.hidden?tagQuery:showTags)).focus();
+      });
       tagsRoot.append(more);
     }
     document.getElementById('tag-match-count').textContent=tagTerm ? '일치하는 태그 '+matching.length+'개' : '태그 '+tags.length+'개';
@@ -137,9 +143,14 @@ if (root && discovery && data.length) {
     pagination.replaceChildren();pagination.hidden=pages<=1;
     for(let number=1;number<=pages;number++) {
       const link=document.createElement('a');const url=new URL(location.href);url.searchParams.set('page',number);url.hash='latest-content';
-      link.href=url.pathname+url.search+url.hash;link.textContent=number;
+      link.href=url.pathname+url.search+url.hash;link.textContent=number;link.setAttribute('aria-label',number+'페이지');
       if(number===state.page)link.setAttribute('aria-current','page');
-      link.addEventListener('click',event=>{if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;event.preventDefault();state.page=number;saveState(true);render();document.getElementById('latest-content').scrollIntoView();});pagination.append(link);
+      link.addEventListener('click',event=>{
+        if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+        event.preventDefault();state.page=number;saveState(true);render();
+        // The old page link was replaced. Put focus at the updated results, not the document body.
+        count.setAttribute('tabindex','-1');count.focus({preventScroll:true});count.scrollIntoView({block:'start'});
+      });pagination.append(link);
     }
     document.getElementById('empty-reset')?.addEventListener('click',clear);
     imageFallbacks();

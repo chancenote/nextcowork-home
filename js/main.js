@@ -82,11 +82,28 @@
     if (!trigger) return;
     trigger.setAttribute("aria-haspopup", "true");
     trigger.setAttribute("aria-expanded", "false");
+    var sub = li.querySelector(".sub");
+    /* Escape hides the hover/focus panel; the panel's own CSS (:hover/:focus-within) takes over again on the next pointer or focus move. */
+    function dismiss(on) {
+      if (!sub) return;
+      sub.style.visibility = on ? "hidden" : "";
+      sub.style.opacity = on ? "0" : "";
+    }
     function set(open) { trigger.setAttribute("aria-expanded", open ? "true" : "false"); }
-    li.addEventListener("mouseenter", function () { set(true); });
-    li.addEventListener("mouseleave", function () { set(false); });
-    li.addEventListener("focusin", function () { set(true); });
-    li.addEventListener("focusout", function () { set(false); });
+    li.addEventListener("mouseenter", function () { dismiss(false); set(true); });
+    li.addEventListener("mouseleave", function () { dismiss(false); set(false); });
+    li.addEventListener("focusin", function (e) {
+      if (e.target === trigger && li.hasAttribute("data-dismissed")) return; // stay closed after Escape returns focus here
+      li.removeAttribute("data-dismissed"); dismiss(false); set(true);
+    });
+    li.addEventListener("focusout", function (e) { if (!li.contains(e.relatedTarget)) { li.removeAttribute("data-dismissed"); dismiss(false); set(false); } });
+    li.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape" || trigger.getAttribute("aria-expanded") !== "true") return;
+      if (burger && menu && menu.classList.contains("open")) return; // mobile menu handles its own Escape
+      e.stopPropagation();
+      li.setAttribute("data-dismissed", "true");
+      dismiss(true); set(false); trigger.focus();
+    });
   });
 
   /* Reveal on scroll */
@@ -288,7 +305,7 @@
       ["lecture", "AI 실무활용 특강"],
       ["workshop", "실무 워크샵"],
       ["campus", "사내 AI 캠퍼스 구축"],
-      ["sprint", "8주 파일럿 (업무 전환)"],
+      ["sprint", "사내 AI 캠퍼스 — 한 팀 8주 파일럿으로 시작"],
       ["proposal", "교육 제안요청"]
     ],
     "public": [
@@ -317,10 +334,31 @@
       opt.textContent = item[1];
       tierSelect.appendChild(opt);
     });
-    if (selectedTier) {
-      var target = tierSelect.querySelector('option[data-t="' + selectedTier + '"]');
-      if (target) tierSelect.value = target.value;
+    /* Query parameters are values, never CSS selectors. Unknown keys keep the default. */
+    Array.prototype.forEach.call(tierSelect.options, function (option) {
+      if (selectedTier && option.getAttribute("data-t") === selectedTier) tierSelect.value = option.value;
+    });
+  }
+
+  function updateContactLabels() {
+    var serviceKey = serviceKeyFromSelect(document.getElementById("cf-service")) || "general";
+    var crumbEl = document.getElementById("contact-crumb");
+    if (crumbEl) crumbEl.textContent = crumbLabels[serviceKey] || crumbLabels.general;
+    var message = document.getElementById("cf-message");
+    var tierSelect = document.getElementById("cf-tier");
+    var selectedTier = tierSelect ? tierSelect.value : "";
+    /* 서비스 페이지에서 넘어온 경우 무엇을 문의하는지 폼 위에 한 줄로 보여준다(값은 아래 선택 칸과 같다). */
+    var contextEl = document.getElementById("cf-context");
+    var contextText = document.getElementById("cf-context-text");
+    var svcSelect = document.getElementById("cf-service");
+    if (contextEl && contextText && svcSelect) {
+      var svcLabel = svcSelect.options[svcSelect.selectedIndex] ? svcSelect.options[svcSelect.selectedIndex].textContent : "";
+      contextText.textContent = svcLabel + (selectedTier && selectedTier !== "선택 안 함" ? " · " + selectedTier : "");
+      contextEl.hidden = serviceKey === "general";
     }
+    if (message) message.placeholder = serviceKey !== "general" && selectedTier ?
+      selectedTier + " 관련 문의입니다. 대상·규모·희망 일정 등을 자유롭게 남겨주세요." :
+      "대상·규모·희망 일정 등을 자유롭게 남겨주세요.";
   }
 
   function readContext(extra) {
@@ -348,13 +386,11 @@
   }
 
   function fillContactContext() {
-    var crumbEl = document.getElementById("contact-crumb");
-    if (crumbEl && crumbLabels[sParam]) crumbEl.textContent = crumbLabels[sParam];
-
     var svcSelect = document.getElementById("cf-service");
     if (svcSelect && sParam) {
-      var preOpt = svcSelect.querySelector('option[data-s="' + sParam + '"]');
-      if (preOpt) svcSelect.value = preOpt.value;
+      Array.prototype.forEach.call(svcSelect.options, function (option) {
+        if (option.getAttribute("data-s") === sParam) svcSelect.value = option.value;
+      });
     }
 
     var serviceKey = serviceKeyFromSelect(svcSelect) || sParam || "general";
@@ -371,18 +407,20 @@
     setFieldValue("cf-origin-article", originArticleSlug());
     setFieldValue("cf-tracking-version", TRACKING_VERSION);
 
-    var message = document.getElementById("cf-message");
-    if (message && !message.value && serviceKey !== "general") {
-      var selectedTier = document.getElementById("cf-tier") ? document.getElementById("cf-tier").value : "";
-      message.placeholder = selectedTier ?
-        selectedTier + " 관련 문의입니다. 대상·규모·희망 일정 등을 자유롭게 남겨주세요." :
-        "대상·규모·희망 일정 등을 자유롭게 남겨주세요.";
-    }
+    updateContactLabels();
 
     if (svcSelect && svcSelect.getAttribute("data-context-bound") !== "true") {
       svcSelect.setAttribute("data-context-bound", "true");
       svcSelect.addEventListener("change", function () {
         updateTierOptions(serviceKeyFromSelect(svcSelect) || "general", "");
+        updateContactLabels();
+      });
+      var tierSelect = document.getElementById("cf-tier");
+      if (tierSelect) tierSelect.addEventListener("change", updateContactLabels);
+      var changeBtn = document.getElementById("cf-context-change");
+      if (changeBtn) changeBtn.addEventListener("click", function () {
+        svcSelect.focus();
+        try { svcSelect.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" }); } catch (e) {}
       });
     }
   }
@@ -401,6 +439,17 @@
     var path = a.getAttribute("href").split(/[?#]/)[0];
     if (!/\.pdf$/i.test(path)) return;
     track("file_download", { file_name: path.split("/").pop(), link_url: path, source_page: currentPath });
+  });
+  /* 과제별 자료 묶음(F01) — 묶음 이름·역할·도착 경로만 기록. 개인정보·검색어 없음. */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[data-bundle]");
+    if (!a) return;
+    track("resource_bundle_click", {
+      source_page: currentPath,
+      bundle_key: a.getAttribute("data-bundle") || "",
+      bundle_role: a.getAttribute("data-bundle-role") || "article",
+      link_url: (a.getAttribute("href") || "").split(/[?#]/)[0]
+    });
   });
   /* Delegation also covers inquiry links rendered after a search/filter change.
      Preserve the existing event/fields; never include the visitor's search text. */
@@ -459,8 +508,16 @@
       return { subject: subject, body: body, service: service, tier: tier };
     }
 
-    /* 요청키: 한 번의 문의에 붙는 고유값. 실패·재시도에도 유지하고, 원장 저장이 확인된 뒤에만 새로 만든다. */
+    /* 같은 내용의 재시도는 같은 키, 내용이 바뀐 문의는 새 키로 보낸다.
+       문의 내용은 비교를 위해 이 페이지 메모리에만 보관한다. */
     var requestKeyEl = document.getElementById("cf-request-key");
+    var lastSubmittedContent = null;
+    function inquiryContent() {
+      var data = new FormData(form);
+      return JSON.stringify(["name", "org", "email", "phone", "service", "tier", "org_type", "budget", "timeline", "message", "privacy_agree", "marketing_agree"].map(function (name) {
+        return data.get(name) || "";
+      }));
+    }
     function newRequestKey() {
       var key;
       try { key = (window.crypto && window.crypto.randomUUID) ? window.crypto.randomUUID() : null; } catch (e) { key = null; }
@@ -474,8 +531,17 @@
     var submitLabel = submitBtn ? submitBtn.innerHTML : "";
     var sending = false;
     var lastSavedId = "";
+    var lockedFields = [];
     function setSending(on, label) {
       sending = on;
+      form.setAttribute("aria-busy", on ? "true" : "false");
+      if (on) {
+        lockedFields = Array.prototype.filter.call(form.querySelectorAll("input:not([type=hidden]), select, textarea, #cf-copy"), function (field) { return !field.disabled; });
+        lockedFields.forEach(function (field) { field.disabled = true; });
+      } else {
+        lockedFields.forEach(function (field) { field.disabled = false; });
+        lockedFields = [];
+      }
       if (!submitBtn) return;
       submitBtn.disabled = on;
       submitBtn.innerHTML = on ? "전송 중…" : (label || submitLabel);
@@ -494,7 +560,8 @@
       }
       if (done) {
         done.hidden = false;
-        try { done.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) { /* older browsers */ }
+        done.focus({ preventScroll: true });
+        try { done.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" }); } catch (e) { /* older browsers */ }
       }
     }
     function parseSaved(r) {
@@ -502,23 +569,55 @@
       return r.text().then(function (txt) {
         var data = null;
         try { data = JSON.parse(txt); } catch (e) { data = null; }
-        if (data && data.status === "saved" && data.inquiry_id) return { saved: true, id: String(data.inquiry_id) };
+        if (data && data.status === "saved" && typeof data.inquiry_id === "string" && data.inquiry_id.trim() && data.inquiry_id.length <= 120) return { saved: true, id: data.inquiry_id.trim() };
         if (data && data.status === "failed") throw new Error("failed");
         return { saved: false, id: "" };
       });
     }
 
-    // Native validation blocks submit before the handler below runs, so announce and mark fields here.
+    function validateText(field) {
+      if (!field || !field.matches || !field.matches('input[required][type="text"], textarea[required]')) return;
+      field.setCustomValidity(field.value && !field.value.trim() ? "공백을 제외한 내용을 입력해주세요." : "");
+    }
+    function validationMessage(field) {
+      var label = field.labels && field.labels[0] ? field.labels[0].textContent.replace(/\*/g, "").trim() : "필수 항목";
+      if (field.validity.typeMismatch && field.type === "email") return "이메일 주소 형식을 확인해주세요. 예: name@example.com";
+      if (field.validity.customError) return label + ": " + field.validationMessage;
+      if (field.validity.tooLong) return label + ": " + field.maxLength + "자 이내로 입력해주세요.";
+      if (field.type === "checkbox") return "문의 처리를 위한 개인정보 수집·이용 동의가 필요합니다.";
+      return label + " 항목을 입력해주세요.";
+    }
+    // Native validation blocks submit before the handler runs; report the first invalid field.
+    /* The status line carries the error text; point the invalid field at it so screen readers read it with the field. */
+    function linkError(field, on) {
+      var ids = (field.getAttribute("aria-describedby") || "").split(/\s+/).filter(function (id) { return id && id !== "cf-status"; });
+      if (on) ids.push("cf-status");
+      if (ids.length) field.setAttribute("aria-describedby", ids.join(" ")); else field.removeAttribute("aria-describedby");
+    }
+    function clearErrors() {
+      form.querySelectorAll("[aria-invalid]").forEach(function (field) { field.removeAttribute("aria-invalid"); linkError(field, false); });
+    }
     form.addEventListener("invalid", function (ev) {
       ev.target.setAttribute("aria-invalid", "true");
-      setStatus("입력하지 않은 필수 항목이 있습니다. 표시된 칸을 확인해주세요.");
+      var firstInvalid = form.querySelector(":invalid");
+      form.querySelectorAll('[aria-describedby~="cf-status"]').forEach(function (field) { if (field !== firstInvalid) linkError(field, false); });
+      if (firstInvalid === ev.target) { linkError(ev.target, true); setStatus(validationMessage(ev.target)); }
     }, true);
-    form.addEventListener("input", function (ev) {
-      if (ev.target.getAttribute("aria-invalid") === "true" && ev.target.checkValidity()) ev.target.removeAttribute("aria-invalid");
-    });
-    form.addEventListener("change", function (ev) {
-      if (ev.target.getAttribute("aria-invalid") === "true" && ev.target.checkValidity()) ev.target.removeAttribute("aria-invalid");
-    });
+    function onFieldEdit(ev) {
+      validateText(ev.target);
+      if (ev.target.getAttribute("aria-invalid") === "true" && ev.target.checkValidity()) { ev.target.removeAttribute("aria-invalid"); linkError(ev.target, false); }
+      if (sending) return;
+      if (lastSubmittedContent !== null) {
+        setStatus(inquiryContent() !== lastSubmittedContent ?
+          "내용을 변경하면 새 문의로 접수됩니다. 이전 문의가 이미 접수됐을 수 있으니 추가·정정 문의임을 적어주세요." :
+          "같은 내용으로 다시 보내셔도 중복 접수되지 않습니다.");
+      } else {
+        var done = document.getElementById("cf-success");
+        if (done && !done.hidden) { hideSuccessCard(); setStatus(""); }
+      }
+    }
+    form.addEventListener("input", onFieldEdit);
+    form.addEventListener("change", onFieldEdit);
 
     form.addEventListener("submit", function (ev) {
       var endpoint = form.getAttribute("data-endpoint");
@@ -526,18 +625,19 @@
 
       if (sending) { ev.preventDefault(); return; }
 
+      form.querySelectorAll('input[required][type="text"], textarea[required]').forEach(validateText);
       if (typeof form.checkValidity === "function" && !form.checkValidity()) {
         ev.preventDefault();
         var firstInvalid = form.querySelector(":invalid");
         if (firstInvalid && typeof firstInvalid.focus === "function") firstInvalid.focus();
         if (typeof form.reportValidity === "function") form.reportValidity();
-        setStatus("입력하지 않은 필수 항목이 있습니다. 표시된 칸을 확인해주세요.");
+        if (firstInvalid) setStatus(validationMessage(firstInvalid));
         return;
       }
 
       if (honeypotFilled(form)) {
         ev.preventDefault();
-        setStatus("접수를 보냈습니다. 저장 확인 중입니다 — 같은 내용으로 다시 보내도 중복 저장되지 않습니다.");
+        setStatus("접수를 보냈습니다. 접수 확인 중입니다 — 같은 내용으로 다시 보내도 중복 접수되지 않습니다.");
         return;
       }
       markElapsed(form);
@@ -548,37 +648,44 @@
       if (endpoint && endpoint !== "") {
         /* Real POST endpoint configured (Make etc.) — JS 없이도 action/method=post 로 같은 곳에 전송된다. */
         ev.preventDefault();
+        var content = inquiryContent();
+        if (lastSubmittedContent !== null && lastSubmittedContent !== content) newRequestKey();
+        lastSubmittedContent = content;
+        /* Capture before disabling the fields so every submitted value is preserved. */
+        var submittedData = new FormData(form);
         setSending(true);
         hideSuccessCard();
         setStatus("전송 중입니다...");
         var controller = (typeof AbortController === "function") ? new AbortController() : null;
         var timer = controller ? setTimeout(function () { controller.abort(); }, 15000) : null;
-        var opts = { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } };
+        var opts = { method: "POST", body: submittedData, headers: { "Accept": "application/json" } };
         if (controller) opts.signal = controller.signal;
         fetch(endpoint, opts)
           .then(function (r) {
-            if (timer) clearTimeout(timer);
             if (!r.ok) throw new Error("status_" + r.status);
             return parseSaved(r);
           })
           .then(function (res) {
+            if (timer) clearTimeout(timer);
             if (res.saved) {
               if (res.id !== lastSavedId) {
                 lastSavedId = res.id;
                 track("inquiry_saved", readContext({ endpoint_type: "post_endpoint" }));
                 track("generate_lead", readContext({ endpoint_type: "post_endpoint" }));
               }
-              form.reset();
-              fillContactContext();
-              newRequestKey();
               setSending(false);
-              setStatus("문의가 저장되었습니다. 영업일 1일 내 회신드립니다.");
+              form.reset();
+              clearErrors();
+              fillContactContext();
+              lastSubmittedContent = null;
+              newRequestKey();
+              setStatus("문의가 접수되었습니다. 영업일 1일 내 회신드립니다.");
               showSuccessCard(res.id);
             } else {
               track("inquiry_sent_unconfirmed", readContext({ endpoint_type: "post_endpoint" }));
               setSending(false);
               hideSuccessCard();
-              setStatus("전송했습니다 — 저장 확인 중입니다. 접수번호가 표시되지 않았다면 잠시 후 같은 내용으로 다시 보내 주세요(중복 저장되지 않습니다). 영업일 1일 내 회신이 없으면 ceo@nextcw.com 또는 010-9765-7749로 알려 주세요.");
+              setStatus("전송했습니다 — 접수 확인 중입니다. 접수번호가 표시되지 않았다면 잠시 후 같은 내용으로 다시 보내 주세요(중복 접수되지 않습니다). 영업일 1일 내 회신이 없으면 ceo@nextcw.com 또는 010-9765-7749로 알려 주세요.");
             }
           })
           .catch(function (err) {
@@ -588,9 +695,9 @@
             setSending(false, "다시 보내기 <span class=\"arr\">→</span>");
             hideSuccessCard();
             if (reason === "timeout" || reason === "network" || reason === "Failed to fetch" || /fetch/i.test(reason)) {
-              setStatus("저장 확인이 안 됐습니다. 잠시 후 ‘다시 보내기’를 누르거나 ceo@nextcw.com으로 보내주세요.");
+              setStatus("접수 확인이 안 됐습니다. 입력하신 내용은 그대로 있으니 잠시 후 ‘다시 보내기’를 누르거나, ‘내용 복사’로 복사해 ceo@nextcw.com으로 보내주세요.");
             } else {
-              setStatus("전송에 실패했습니다. ‘다시 보내기’를 누르거나 아래 ‘내용 복사’로 복사해 ceo@nextcw.com 으로 보내주세요.");
+              setStatus("전송에 실패했습니다. 입력하신 내용은 그대로 있으니 ‘다시 보내기’를 누르거나, ‘내용 복사’로 복사해 ceo@nextcw.com 으로 보내주세요.");
             }
           });
         return;

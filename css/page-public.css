@@ -127,9 +127,9 @@
 .pa-history-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
 .pa-history-head h3 { font-size: 18px; margin: 0; color: var(--ink); }
 .pa-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
-.pa-tab { height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--hairline); background: #fff; font-size: 14px; font-weight: 600; color: var(--text); cursor: pointer; font-family: inherit; }
+.pa-tab { min-height: var(--touch-target); padding: 8px 14px; border-radius: 999px; border: 1px solid var(--hairline); background: #fff; font-size: 14px; font-weight: 600; color: var(--text); cursor: pointer; font-family: inherit; }
 .pa-tab.is-active { background: var(--indigo); border-color: var(--indigo); color: #fff; }
-.pa-copy { height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--accent-ink); background: #fff; color: var(--accent-ink); font-size: 14px; font-weight: 700; cursor: pointer; font-family: inherit; }
+.pa-copy { min-height: var(--touch-target); padding: 8px 14px; border-radius: 999px; border: 1px solid var(--accent-ink); background: #fff; color: var(--accent-ink); font-size: 14px; font-weight: 700; cursor: pointer; font-family: inherit; }
 .pa-copy:hover { background: var(--accent-soft); }
 .pa-copy-status { font-size: 13px; color: var(--accent-ink); margin: 0 0 8px; }
 .pa-hist-group { margin-top: 14px; }
@@ -215,4 +215,31 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .pa-subnav-inner, .pa-core-card, .pa-core-visual img { transition: none; }
+}
+
+/* ---------- 내부 검토용 바로가기 (R12) — 기존 섹션 앵커만 모은다 ---------- */
+.pa-brief { margin-top: 28px; padding: 24px 26px; background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius); }
+.pa-brief-title { font-size: 19px; line-height: 1.4; font-weight: 800; color: var(--ink); margin: 0 0 16px; letter-spacing: -0.01em; word-break: keep-all; }
+.pa-brief-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.pa-brief-col { display: flex; flex-direction: column; min-width: 0; background: var(--bg-soft); border-radius: var(--radius-md); padding: 18px 20px 20px; }
+.pa-brief-col h3 { font-size: 16px; line-height: 1.45; color: var(--ink); margin: 0 0 6px; word-break: keep-all; }
+.pa-brief-col h3 .pa-core-tag { display: block; margin-bottom: 2px; }
+.pa-brief-col ul { list-style: none; margin: 0 0 16px; padding: 0; }
+.pa-brief-col li { border-bottom: 1px solid var(--hairline); }
+/* style.css의 모바일 본문 링크 inline-flex 규칙(≤720px)보다 우선해 행 전체를 누를 수 있게 한다. */
+.pa-brief .pa-brief-col li > a:not(.btn) { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 12px; align-items: center; min-height: var(--touch-target); padding: 8px 0; font-size: 15px; line-height: 1.5; font-weight: 600; color: var(--ink); text-decoration: none; word-break: keep-all; }
+.pa-brief-col li a::after { content: "↓"; color: var(--accent-ink); font-weight: 700; }
+.pa-brief-col li a[target="_blank"]::after { content: "↗"; }
+.pa-brief-col li a:hover { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+.pa-brief-col .btn { margin-top: auto; align-self: flex-start; }
+.pa-copy-status:empty { margin: 0; }
+/* 데스크톱에서는 고정 서브내비(52px)가 앵커 대상을 가리지 않도록 여백을 더 둔다. */
+@media (min-width: 769px) {
+  .page-public main [id] { scroll-margin-top: calc(var(--header-h) + 68px); }
+}
+@media (max-width: 768px) {
+  .pa-brief { padding: 20px 18px; }
+  .pa-brief-grid { grid-template-columns: 1fr; gap: 14px; }
+  .pa-brief-col { padding: 16px 16px 18px; }
+  .pa-brief-col .btn { align-self: stretch; justify-content: center; white-space: normal; text-align: center; }
 }

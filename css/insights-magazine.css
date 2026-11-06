@@ -3,6 +3,12 @@
 .thumbnail-feed .thumb-card { min-width:0; background:var(--bg); border:1px solid var(--hairline); border-radius:var(--radius-sm); overflow:hidden; box-shadow:var(--shadow-card); transition:transform .2s ease,box-shadow .2s ease; }
 .thumbnail-feed .thumb-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lift); }
 .thumbnail-feed .thumb-card>a { display:flex; flex-direction:column; height:100%; }
+.thumbnail-feed .thumb-card { position:relative; }
+/* Paint above the cover as well as the body; overflow clipping must not hide focus. */
+.thumbnail-feed .thumb-card:has(>a:focus-visible)::after {
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:inherit;
+  border:3px solid var(--focus-ring);box-shadow:inset 0 0 0 3px var(--focus-halo);
+}
 .thumbnail-feed .thumb-cover { position:relative; aspect-ratio:16/8; overflow:hidden; background:var(--indigo); }
 .thumbnail-feed .thumb-cover img { width:100%; height:100%; object-fit:cover; transition:transform .35s ease; }
 .thumbnail-feed .thumb-card:hover img { transform:scale(1.04); }
@@ -130,3 +136,21 @@
  .insights-subscribe .newsletter-row { flex-wrap:wrap; }.insights-subscribe .newsletter-input { flex-basis:100%; }.insights-subscribe .btn { width:100%; }
 }
 @media(prefers-reduced-motion:reduce) { #insights-tags .tag-choice { transition:none; } }
+
+/* 과제별 자료 묶음 (R10·F01) — selector-card의 --c/--c-ink 관례와 상단 색 띠를 따른다. */
+.task-bundles { margin-top:36px; }
+.task-bundles-head { margin-bottom:18px; }
+.task-bundles-head h2 { font-size:1.5rem;line-height:1.4;font-weight:700;color:var(--ink);letter-spacing:-.02em; }
+.task-bundles-head p { margin-top:6px;font-size:1rem;line-height:1.7;color:var(--text);word-break:keep-all; }
+.task-bundle-grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px; }
+.task-bundle { display:flex;flex-direction:column;min-width:0;background:var(--bg);border:1px solid var(--hairline);border-top:3px solid var(--c,var(--indigo));border-radius:var(--radius-sm);padding:20px 22px 18px;box-shadow:var(--shadow-card); }
+.task-bundle h3 { font-size:1.125rem;line-height:1.4;font-weight:700;color:var(--ink); }
+.task-bundle-when { margin-top:6px;font-size:.9375rem;line-height:1.65;color:var(--caption-strong,var(--caption));word-break:keep-all; }
+.task-bundle-links { list-style:none;margin:12px 0 0;padding:0; }
+.task-bundle-links li { border-top:1px solid var(--hairline); }
+/* style.css의 모바일 본문 링크 inline-flex 규칙(≤720px)보다 우선해 행 전체를 누를 수 있게 한다. */
+.task-bundle .task-bundle-links li>a:not(.btn) { display:flex;width:100%;align-items:center;min-height:var(--touch-target);padding:9px 0;font-size:1rem;line-height:1.55;font-weight:600;color:var(--ink);word-break:keep-all; }
+.task-bundle-links a:hover { color:var(--c-ink,var(--accent-ink));text-decoration:underline;text-underline-offset:3px; }
+.task-bundle-service { display:inline-flex;align-items:center;gap:6px;min-height:var(--touch-target);margin-top:auto;padding-top:8px;font-size:1rem;font-weight:700;color:var(--c-ink,var(--accent-ink));text-decoration:underline;text-underline-offset:3px; }
+@media(max-width:1023px) { .task-bundle-grid { grid-template-columns:1fr; gap:12px; } }
+@media(max-width:767px) { .task-bundles { margin-top:28px; }.task-bundles-head h2 { font-size:1.375rem; }.task-bundle { padding:18px 18px 14px; } }
