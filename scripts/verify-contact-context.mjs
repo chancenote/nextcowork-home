@@ -23,5 +23,16 @@ const count=events.length;
 handler({target:{closest:()=>null}});handler({target:{closest:()=>({getAttribute:()=> 'https://example.com/contact/?s=coaching'})}});
 assert.equal(events.length,count);checks++;
 assert.equal(Object.keys(events[0].params).sort().join(','),'cta_location,service_key,source_page,tier_key');checks++;
-assert.ok(main.includes('data.status === "saved" && data.inquiry_id'));checks++;
+const parserStart=main.indexOf('    function parseSaved(r) {');
+const parserEnd=main.indexOf('\n    function validateText',parserStart);
+assert.ok(parserStart>0&&parserEnd>parserStart);
+const parseSaved=runInNewContext('('+main.slice(parserStart,parserEnd).trim()+')');
+for(const [body,saved] of [
+ [JSON.stringify({status:'saved',inquiry_id:'NCW-TEST-000001'}),true],
+ [JSON.stringify({status:'saved',inquiry_id:' '}),false],
+ [JSON.stringify({status:'saved',inquiry_id:{id:'wrong-type'}}),false],
+ [JSON.stringify({status:'accepted',inquiry_id:'NCW-TEST-000001'}),false],
+ ['Accepted',false]
+]){assert.equal((await parseSaved({text:()=>Promise.resolve(body)})).saved,saved);checks++;}
+await assert.rejects(parseSaved({text:()=>Promise.resolve('{"status":"failed"}')}));checks++;
 console.log(JSON.stringify({result:'PASS',checks,scope:'service navigation, coaching CTA, dynamic inquiry event delegation; no form submit'}));

@@ -42,8 +42,8 @@
   }
   openFor(location.hash);
   window.addEventListener("hashchange", function () { openFor(location.hash); });
-  /* 히어로 Core 카드 → 자문 영역 행을 펼친 채로 이동 */
-  Array.prototype.forEach.call(document.querySelectorAll(".pa-core-card[href^='#scope-']"), function (a) {
+  /* 히어로 Core 카드·내부 검토용 바로가기 → 자문 영역 행을 펼친 채로 이동 (같은 해시를 다시 눌러도 펼침) */
+  Array.prototype.forEach.call(document.querySelectorAll(".pa-core-card[href^='#scope-'], .pa-brief a[href^='#scope-']"), function (a) {
     a.addEventListener("click", function () {
       var el = document.getElementById(a.getAttribute("href").slice(1));
       var det = el && el.querySelector("details");
@@ -63,11 +63,15 @@
   if (hist) {
     var tabs = hist.querySelectorAll(".pa-tab");
     var groups = hist.querySelectorAll(".pa-hist-group");
-    var setTab = function (key) {
-      tabs.forEach(function (t) { var on = t.getAttribute("data-tab") === key; t.classList.toggle("is-active", on); t.setAttribute("aria-selected", on ? "true" : "false"); });
-      groups.forEach(function (g) { g.hidden = key !== "all" && g.getAttribute("data-group") !== key; });
+    var filterStatus = hist.querySelector(".pa-filter-status");
+    var setTab = function (key, label) {
+      var shown = 0;
+      tabs.forEach(function (t) { var on = t.getAttribute("data-tab") === key; t.classList.toggle("is-active", on); t.setAttribute("aria-pressed", on ? "true" : "false"); });
+      groups.forEach(function (g) { g.hidden = key !== "all" && g.getAttribute("data-group") !== key; if (!g.hidden) shown += g.querySelectorAll("li").length; });
+      /* 화면낭독기에 현재 선택과 표시 건수를 알린다(화면에는 보이지 않는 상태 문구). */
+      if (filterStatus && label) filterStatus.textContent = label + " 수행 이력 " + shown + "건을 표시합니다.";
     };
-    tabs.forEach(function (t) { t.addEventListener("click", function () { setTab(t.getAttribute("data-tab")); }); });
+    tabs.forEach(function (t) { t.addEventListener("click", function () { setTab(t.getAttribute("data-tab"), t.textContent.trim()); }); });
     var copyBtn = hist.querySelector(".pa-copy");
     var status = hist.querySelector(".pa-copy-status");
     if (copyBtn) {
@@ -81,7 +85,7 @@
         });
         var text = lines.join("\n");
         var done = function (ok) {
-          if (status) { status.textContent = ok ? "복사했습니다. 보고 문서에 붙여넣으세요." : "복사에 실패했습니다. 목록을 드래그해 복사해 주세요."; status.hidden = false; }
+          if (status) { status.textContent = ok ? "복사했습니다. 보고 문서에 붙여넣으세요." : "복사에 실패했습니다. 목록을 드래그해 복사해 주세요."; }
           copyBtn.textContent = ok ? "복사됨" : "보고용으로 복사";
           setTimeout(function () { copyBtn.textContent = "보고용으로 복사"; }, 2200);
         };

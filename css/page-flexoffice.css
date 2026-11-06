@@ -51,6 +51,13 @@
 /* 아직 상담 단계가 아니라면 */
 .fx-notready { margin-top: 28px; }
 .fx-notready > p { margin: 6px 0 14px; font-size: 14px; line-height: 1.8; color: var(--caption); }
+/* R09 · 타당성 자료 먼저 → 사전진단. .note a(accent-ink)가 채운 버튼 글자색을 덮지 않게 되돌림 */
+.fx-resource-actions { gap: 10px; margin: 0 0 16px; }
+.fx-notready .fx-resource-actions .btn-accent { color: #fff; }
+.fx-notready > p.fx-resource-more { margin: 0 0 12px; font-size: 13.5px; }
+
+/* A02 · 비교표 스크롤 영역(키보드 포커스 가능) 포커스 표시 */
+.compare-wrap:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 2px; }
 
 @media (max-width: 720px) {
   .page-hero .hero-facts { font-size: 14px; margin-bottom: 18px; }

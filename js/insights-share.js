@@ -52,6 +52,8 @@
 
   function closePanel(returnFocus) {
     if (panel.hidden) return;
+    // A chosen share action must not leave keyboard focus inside a hidden panel.
+    returnFocus = returnFocus || panel.contains(document.activeElement);
     panel.hidden = true;
     toggle.setAttribute("aria-expanded", "false");
     root.classList.remove("is-open");
@@ -66,6 +68,7 @@
       legacyCopy();
     }
     function legacyCopy() {
+      var focused = document.activeElement;
       var input = document.createElement("textarea");
       input.value = data.url;
       input.setAttribute("readonly", "");
@@ -76,6 +79,7 @@
       var ok = false;
       try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
       document.body.removeChild(input);
+      if (focused && focused.isConnected) focused.focus({ preventScroll: true });
       if (ok) done(); else window.prompt("아래 링크를 복사하세요", data.url);
     }
   }

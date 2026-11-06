@@ -42,6 +42,7 @@
   --control-border: #8E9198;
   --focus-ring: #302D7C;
   --focus-halo: #FFFFFF;
+  --touch-target: 44px;
 
   /* Page accent (overridden per page) */
   --accent: var(--violet);
@@ -877,7 +878,7 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
 .post-share-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
 .post-share-head strong { font-size: 1rem; color: var(--ink); }
 .post-share-close {
-  width: 36px; height: 36px; border: 0; border-radius: 50%; background: transparent;
+  width: var(--touch-target); height: var(--touch-target); border: 0; border-radius: 50%; background: transparent;
   color: var(--caption-strong); font-size: 24px; line-height: 1; cursor: pointer;
 }
 .post-share-close:hover, .post-share-close:focus-visible { background: var(--bg-soft); }
@@ -1074,9 +1075,11 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
 .field label { display: block; font-size: 13.5px; font-weight: 700; color: var(--ink); margin-bottom: 7px; }
 .field label em { color: var(--point); font-style: normal; }
 .field input, .field select, .field textarea {
-  width: 100%; padding: 13px 16px; border: 1.5px solid var(--control-border); border-radius: var(--radius-sm);
+  width: 100%; min-height: 44px; padding: 13px 16px; border: 1.5px solid var(--control-border); border-radius: var(--radius-sm);
   font: inherit; font-size: 16px; color: var(--ink); background: #fff; transition: border-color .2s, box-shadow .2s;
 }
+/* Native WebKit selects ignore padding/min-height; retain their arrow and scale with text. */
+.field select { height: 3.5em; }
 .field input:focus, .field select:focus, .field textarea:focus {
   border-color: var(--violet); box-shadow: 0 0 0 4px rgba(105,85,186,.1);
 }
@@ -1105,6 +1108,11 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
 .form-stack { display: grid; gap: 20px; }
 .form-card-title { font-size: 21px; margin-bottom: 6px; }
 .form-card-lead { font-size: 14px; color: var(--caption-strong); margin-bottom: 14px; }
+.form-context { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 8px; margin: 0 0 14px; padding: 4px 6px 4px 14px; border-radius: var(--radius-sm); background: var(--bg-soft); border-left: 3px solid var(--violet); font-size: 14px; color: var(--caption-strong); }
+.form-context[hidden] { display: none; }
+.form-context b { color: var(--ink); }
+.form-context-change { min-height: 44px; min-width: 44px; padding: 0 10px; margin-left: auto; border: 0; background: none; font: inherit; font-weight: 700; color: var(--violet); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.form-context-change:hover { color: var(--ink); }
 .form-action { width: 100%; justify-content: center; }
 .form-action + .form-action { margin-top: 10px; }
 .form-status { min-height: 1px; margin-top: 12px; color: var(--ink); font-size: 13px; text-align: center; }
@@ -1776,6 +1784,16 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
   transition: border-color .2s, color .2s;
 }
 .quick-links a:hover { border-color: var(--accent); color: var(--accent-ink); }
+.quick-links a { min-height: var(--touch-target); }
+
+/* Mobile text links retain their text flow, with real (non-overlapping) hit areas. */
+@media (max-width: 720px) {
+  :is(main p, main li, main td, main figcaption, .consent-field, .bridge-note, .footer-bottom) a:not(.btn):not(.footer-phone) {
+    display: inline-flex; align-items: center; gap: .25em;
+    min-width: var(--touch-target); min-height: var(--touch-target);
+    max-width: 100%; overflow-wrap: anywhere; vertical-align: middle;
+  }
+}
 
 /* 홈 Space×AI 벤 도식 — 데스크톱 가로판, ≤768px 세로판 (가로 스크롤·안내 문구 없음) */
 .venn-figure .visual-home-intersection--stack { display: none; }

@@ -42,3 +42,31 @@
 @media (prefers-reduced-motion: reduce) {
   #services .bento--compact, #latest .home-latest-feed { scroll-behavior: auto; }
 }
+
+/* ---- 2026-11-07 첫 화면 위계 정리 ----
+   배지=서비스 종류 · 제목=차별점 · 설명=고객 과제와 결과 · 버튼=다음 행동 · 수행 기관 한 줄.
+   브랜드 영상은 첫 화면에서 빼 후반 블록으로 옮겼다(.brand-moment). */
+.hero-badge { text-transform: none; letter-spacing: .01em; font-family: inherit; }
+.hero-note { margin: 16px 0 0; font-size: 14.5px; color: var(--caption-strong); }
+.hero-refs {
+  margin: 22px 0 0; padding-top: 16px; max-width: 640px; border-top: 1px solid var(--hairline);
+  font-size: 14.5px; font-weight: 600; color: var(--ink); word-break: keep-all;
+}
+
+.brand-moment-grid {
+  display: grid; grid-template-columns: minmax(0, 560px) minmax(0, 1fr);
+  gap: 48px; align-items: center;
+}
+.brand-moment .quote-wrap { max-width: none; margin: 0; text-align: left; }
+.brand-moment .quote-cite { justify-content: flex-start; margin-top: 22px; }
+.brand-moment .quote-mark { margin-bottom: 16px; }
+
+@media (max-width: 900px) {
+  .brand-moment-grid { grid-template-columns: 1fr; gap: 24px; }
+  .brand-moment .fx-film-frame { max-width: 560px; }
+}
+@media (max-width: 720px) {
+  .hero .lead br.br-wide { display: none; }
+  .hero-refs { margin-top: 18px; padding-top: 14px; font-size: 13.5px; }
+}
+@media (max-width: 359px) { .hero-badge { font-size: 12px; padding: 8px 12px; gap: 8px; } }
