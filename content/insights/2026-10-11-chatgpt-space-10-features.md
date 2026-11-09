@@ -1,15 +1,15 @@
 ---
-title: "ChatGPT 스페이스, 무엇이 달라졌을까요? AI 동료와 일하는 핵심 기능 10가지"
-description: "넥스트코웍 찬스가 ChatGPT Space의 핵심 기능 10가지를 공식 이미지와 업무 예시로 설명합니다. UI 변화의 의미, 초기 사용자 반응, AI를 동료로 활용하는 방법까지 살펴보세요."
+title: "ChatGPT 스페이스 사용법: 핵심 기능 10가지와 고객제안서 예시"
+description: "ChatGPT 스페이스(Space)와 Projects의 차이, 핵심 기능 10가지, 고객제안서에 쓰는 요청문을 정리했습니다. 이용 조건과 공유 권한 확인사항도 함께 살펴보세요."
 date: "2026-10-11"
 category: "AI & Work"
 topic: "AI 업무전환"
-tags: ["ChatGPT", "스페이스", "AI 에이전트", "업무 생산성", "CEO AI 코칭"]
+tags: ["ChatGPT", "스페이스", "AI 에이전트", "업무 생산성", "기업 AI 교육"]
 slug: "chatgpt-space-10-features"
 image: "/img/insights/chatgpt-space-10-features/hero-official.webp"
 thumbnail: "/img/insights/chatgpt-space-10-features/hero-official.webp"
 image_alt: "OpenAI 공식 Space 소개 이미지: 공유 페이지의 온보딩 프로토타입과 협업 커서. 제품 안내용 연출 이미지."
-cta_service: "coaching"
+cta_service: "ai-campus"
 audience: "ChatGPT를 고객 제안·보고·팀 협업에 활용하고 싶은 대표와 실무 리더"
 takeaway: "Space 핵심 기능 10가지, 공식 기능 이미지, 고객제안서에 바로 쓸 요청문과 적용 순서"
 author: "넥스트코웍 찬스"
@@ -236,6 +236,8 @@ AI가 업무에 깊이 들어오려면 답변을 보여 주는 것뿐 아니라 
 
 페이지 공유만으로 개인 채팅과 Memory 전체에 대한 접근이 열리지는 않습니다. 다만 페이지에 적거나 요약한 정보는 독자에게 보입니다. 원본 파일 권한과 페이지 권한을 각각 확인해 주세요. 참여자별 학습·메모리 설정도 적용되므로 팀 자료는 조직의 이용 기준에 맞춰 다루시는 게 좋겠습니다. [공유와 데이터 안내](https://help.openai.com/en/articles/20001549-getting-started-with-space-in-chatgpt)
 
-새 화면을 모두 익히는 것보다 **우리 회사의 문서 한 건을 더 쉽게 완성하는 경험**이 먼저입니다. 우리 업무에서 무엇을 맡기고 무엇을 확인할지 함께 정하고 싶으시면 [CEO AI 코칭](/coaching/)을 살펴보세요. 팀원들과 공통된 활용 방식을 익히려는 경우에는 [AI Campus 기업교육](/ai-campus/)이 연결됩니다.
+## 우리 업무에 적용하려면
+
+새 화면을 모두 익히는 것보다 **우리 회사의 문서 한 건을 더 쉽게 완성하는 경험**이 먼저입니다. 팀원들과 공통된 활용 방식을 익히고 싶다면 [AI Campus 기업·공공기관 AI 교육](/ai-campus/)에서 교육 대상과 프로그램을 살펴보세요.
 
 여러분의 CEO AI 코치, **넥스트코웍 찬스**였습니다.

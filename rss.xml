@@ -6,7 +6,7 @@
     <atom:link href="https://www.nextcw.com/rss.xml" rel="self" type="application/rss+xml"/>
     <description>AI 실무활용과 워크스페이스 인사이트 — 넥스트코웍이 발행하는 콘텐츠.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 06 Nov 2026 18:35:14 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 13:32:45 GMT</lastBuildDate>
     <item>
       <title>AX 컨설팅이란? AI 교육과 업무 전환의 차이</title>
       <link>https://www.nextcw.com/insights/ax-consulting-vs-ai-training/</link>
@@ -757,12 +757,12 @@
 <p><a href="https://www.nextcw.com/contact/?s=ai-campus&amp;t=diagnosis&amp;cta=insight-development-finance-ai-review-im">개발금융팀 맞춤 AI 실무교육 문의</a></p>]]></content:encoded>
     </item>
     <item>
-      <title>ChatGPT 스페이스, 무엇이 달라졌을까요? AI 동료와 일하는 핵심 기능 10가지</title>
+      <title>ChatGPT 스페이스 사용법: 핵심 기능 10가지와 고객제안서 예시</title>
       <link>https://www.nextcw.com/insights/chatgpt-space-10-features/</link>
       <guid isPermaLink="true">https://www.nextcw.com/insights/chatgpt-space-10-features/</guid>
       <pubDate>Sun, 11 Oct 2026 00:00:00 +0900</pubDate>
       <category>AI &amp; Work</category>
-      <description>넥스트코웍 찬스가 ChatGPT Space의 핵심 기능 10가지를 공식 이미지와 업무 예시로 설명합니다. UI 변화의 의미, 초기 사용자 반응, AI를 동료로 활용하는 방법까지 살펴보세요.</description>
+      <description>ChatGPT 스페이스(Space)와 Projects의 차이, 핵심 기능 10가지, 고객제안서에 쓰는 요청문을 정리했습니다. 이용 조건과 공유 권한 확인사항도 함께 살펴보세요.</description>
       <content:encoded><![CDATA[<p><strong>ChatGPT 스페이스는 AI와 나눈 대화를, 함께 고치고 이어 갈 수 있는 업무 문서로 남기는 공간입니다.</strong> 좋은 답변을 얻는 데서 한 걸음 더 나아가, 사람과 AI가 같은 결과물을 보며 일하도록 돕는 변화예요.</p>
 <p>안녕하세요. 여러분의 CEO AI 코치, <strong>넥스트코웍 찬스</strong>입니다.</p>
 <p>ChatGPT로 꽤 좋은 답변을 얻었는데, 막상 업무에 쓰려니 다시 정리해야 했던 적 있으시죠? 예전 대화를 찾고, 문서에 복사하고, 직원에게 전달하며 같은 설명을 반복하기도 합니다.</p>
@@ -881,7 +881,8 @@
 <p>그 문구만으로 예약이 설정되지는 않습니다. 공식 안내는 Keep updated가 출시 시점에는 제공되지 않는다고 명시합니다. 반복 업무는 별도로 설정한 뒤 저장된 일정, 활성 상태, 실제 실행과 페이지 변경을 확인해야 합니다. <a href="https://learn.chatgpt.com/docs/space/agents#verify-recurring-work-separately" target="_blank" rel="noopener">반복 업무 안내</a></p>
 <h3>페이지를 공유하면 개인 대화와 메모리도 모두 공개되나요?</h3>
 <p>페이지 공유만으로 개인 채팅과 Memory 전체에 대한 접근이 열리지는 않습니다. 다만 페이지에 적거나 요약한 정보는 독자에게 보입니다. 원본 파일 권한과 페이지 권한을 각각 확인해 주세요. 참여자별 학습·메모리 설정도 적용되므로 팀 자료는 조직의 이용 기준에 맞춰 다루시는 게 좋겠습니다. <a href="https://help.openai.com/en/articles/20001549-getting-started-with-space-in-chatgpt" target="_blank" rel="noopener">공유와 데이터 안내</a></p>
-<p>새 화면을 모두 익히는 것보다 <strong>우리 회사의 문서 한 건을 더 쉽게 완성하는 경험</strong>이 먼저입니다. 우리 업무에서 무엇을 맡기고 무엇을 확인할지 함께 정하고 싶으시면 <a href="https://www.nextcw.com/coaching/">CEO AI 코칭</a>을 살펴보세요. 팀원들과 공통된 활용 방식을 익히려는 경우에는 <a href="https://www.nextcw.com/ai-campus/">AI Campus 기업교육</a>이 연결됩니다.</p>
+<h2>우리 업무에 적용하려면</h2>
+<p>새 화면을 모두 익히는 것보다 <strong>우리 회사의 문서 한 건을 더 쉽게 완성하는 경험</strong>이 먼저입니다. 팀원들과 공통된 활용 방식을 익히고 싶다면 <a href="https://www.nextcw.com/ai-campus/">AI Campus 기업·공공기관 AI 교육</a>에서 교육 대상과 프로그램을 살펴보세요.</p>
 <p>여러분의 CEO AI 코치, <strong>넥스트코웍 찬스</strong>였습니다.</p>]]></content:encoded>
     </item>
     <item>
