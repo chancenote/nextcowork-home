@@ -17,6 +17,15 @@
   else{
     fit();addEventListener('resize',fit);
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var c=e.target;c.classList.remove('play');void c.offsetWidth;c.classList.add('play');}})},{threshold:.6});
-    frames.forEach(function(f){io.observe(f);f.addEventListener('click',function(){this.classList.remove('play');void this.offsetWidth;this.classList.add('play');});});
+    frames.forEach(function(f,index){
+      io.observe(f);
+      function replay(){f.classList.remove('play');void f.offsetWidth;f.classList.add('play');}
+      f.addEventListener('click',replay);
+      // Keep the card's headings readable; a separate native control adds keyboard replay.
+      var replayButton=document.createElement('button');
+      replayButton.type='button';replayButton.className='card-replay';replayButton.textContent='다시 재생';
+      replayButton.setAttribute('aria-label',(index+1)+'번 카드 다시 재생');
+      f.appendChild(replayButton);
+    });
   }
 })();

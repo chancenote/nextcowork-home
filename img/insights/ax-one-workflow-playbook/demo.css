@@ -3,6 +3,8 @@
   --ax-violet: var(--violet, #6955BA);
   --ax-lavender: var(--violet-light, #9178E2);
   --ax-point: var(--point, #E54B78);
+  --ax-point-ink: var(--point-action, #B51F52);
+  --ax-point-on-dark: var(--lavender-pale, #E3C5FF);
   --ax-teal: var(--line-public, #25C5A8);
   --ax-ink: var(--ink, #1C1C22);
   --ax-text: var(--text, #545659);
@@ -35,7 +37,7 @@
 .ax-demo-kicker span { width: 7px; height: 7px; border-radius: 50%; background: var(--ax-point); box-shadow: 0 0 0 4px rgba(229,75,120,.13); }
 .ax-demo h1, .ax-demo h3 { margin: 0; color: var(--ax-indigo); font-size: clamp(23px, 3.1vw, 32px); line-height: 1.22; letter-spacing: -.04em; }
 .ax-demo-deck { margin-top: 6px !important; color: var(--ax-text); font-size: 14px; line-height: 1.55; }
-.ax-motion-toggle { flex: none; padding: 8px 12px; border: 1px solid var(--ax-border); border-radius: 999px; background: var(--ax-bg); color: var(--ax-indigo); font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
+.ax-motion-toggle { flex: none; min-width: 44px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--ax-border); border-radius: 999px; background: var(--ax-bg); color: var(--ax-indigo); font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
 .ax-motion-toggle:hover { border-color: var(--ax-violet); }
 .ax-motion-toggle:focus-visible { outline: 3px solid var(--ax-indigo); outline-offset: 3px; }
 .ax-motion-toggle[hidden], .ax-scene { display: none; }
@@ -59,7 +61,7 @@
 .ax-route small { color: var(--ax-caption); font-size: 10px; }
 .ax-route strong { color: var(--ax-indigo); font-size: 12px; line-height: 1.3; }
 .ax-route li div span { color: var(--ax-text); font-size: 10px; line-height: 1.4; }
-.ax-route em { position: absolute; bottom: 10px; right: 9px; color: var(--ax-point); font-size: 9px; font-style: normal; font-weight: 800; }
+.ax-route em { position: absolute; bottom: 10px; right: 9px; color: var(--ax-point-ink); font-size: 9px; font-style: normal; font-weight: 800; }
 .ax-route li:first-child em { color: var(--ax-violet); }
 .ax-bottleneck-callout { display: flex; align-items: center; gap: 12px; margin: 0 20px 20px; padding: 16px 18px; border-radius: 12px; background: var(--ax-indigo); color: white; }
 .ax-bottleneck-callout div { display: flex; flex-direction: column; gap: 3px; }
@@ -93,8 +95,8 @@
 .ax-handoff-flow li:nth-child(2) { animation-delay: 3s; }
 .ax-handoff-flow li:nth-child(3) { animation-delay: 6s; }
 .ax-handoff-flow li:nth-child(4) { animation-delay: 9s; }
-.ax-handoff-marker { display: inline-block; margin-bottom: 13px; color: var(--ax-teal); font: 800 12px var(--font-num, Inter, sans-serif); }
-.ax-handoff-hold .ax-handoff-marker { color: var(--ax-point); }
+.ax-handoff-marker { display: inline-block; margin-bottom: 13px; color: white; font: 800 12px var(--font-num, Inter, sans-serif); }
+.ax-handoff-hold .ax-handoff-marker { color: white; }
 .ax-handoff-flow small { display: block; margin-bottom: 6px; color: rgba(255,255,255,.86); font-size: 10px; }
 .ax-handoff-flow strong { display: block; margin-bottom: 7px; color: white; font-size: 12px; line-height: 1.4; }
 .ax-handoff-flow p { color: rgba(255,255,255,.92); font-size: 10px; line-height: 1.55; }
@@ -108,7 +110,7 @@
 .ax-measure-row > div { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 7px; font-size: 13px; }
 .ax-measure-row strong { color: var(--ax-indigo); }
 .ax-measure-row span { color: var(--ax-violet); font-weight: 800; }
-.ax-measure-row:nth-child(2) span { color: var(--ax-point); }
+.ax-measure-row:nth-child(2) span { color: var(--ax-point-ink); }
 .ax-bar-track { display: block; width: 100%; height: 15px; overflow: hidden; border-radius: 99px; background: var(--ax-bg); }
 .ax-bar-track i { display: block; height: 100%; border-radius: inherit; transform-origin: left center; animation: ax-bar-fill 7s ease-in-out infinite; }
 .ax-bar-save { width: 66.6667%; background: var(--ax-violet); }
@@ -116,7 +118,7 @@
 .ax-measure-result { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin: 0 23px 18px; padding: 15px 18px; border-radius: 12px; background: var(--ax-indigo); color: white; animation: ax-result-breathe 7s ease-in-out infinite; }
 .ax-measure-result > span { color: rgba(255,255,255,.72); font-size: 11px; }
 .ax-measure-result strong { font-size: 21px; }
-.ax-measure-result em { color: var(--ax-point); font-style: normal; }
+.ax-measure-result em { color: var(--ax-point-on-dark); font-style: normal; }
 .ax-measure-result small { flex-basis: 100%; color: rgba(255,255,255,.8); font-size: 10px; }
 .ax-measure-checks { padding: 0 23px 22px; }
 .ax-measure-checks > span { display: block; margin-bottom: 8px; color: var(--ax-indigo); font-size: 12px; font-weight: 800; }

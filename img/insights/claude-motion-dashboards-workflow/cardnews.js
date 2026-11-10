@@ -1,6 +1,6 @@
 const cards=[...document.querySelectorAll('.card')], stage=document.querySelector('.stage'),deck=document.querySelector('.deck'),play=document.querySelector('#play'),count=document.querySelector('.count');
 let index=0,playing=false,timer=null;const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,record=new URLSearchParams(location.search).has('record');
-function resize(){deck.style.transform='scale('+stage.clientWidth/1080+')'}
+function resize(){const scale=stage.clientWidth/1080;stage.style.setProperty('--deck-scale',scale);deck.style.transform='scale('+scale+')'}
 function show(i){cards[index].classList.remove('active');index=(i+10)%10;cards[index].classList.add('active');count.textContent=(index+1)+' / 10';if(playing)schedule()}
 function schedule(){clearTimeout(timer);timer=setTimeout(()=>{if(index===9){stop();return}show(index+1)},8000)}
 function stop(){playing=false;clearTimeout(timer);document.body.classList.remove('playing');play.textContent='자동 재생';play.setAttribute('aria-pressed','false')}

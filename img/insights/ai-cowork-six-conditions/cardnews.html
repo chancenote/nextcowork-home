@@ -178,6 +178,13 @@ h2{font-size:80px;margin-top:30px}
 .play .c7 .eq{animation:eqIn .8s var(--ease) 1.2s both}
 @keyframes eqIn{from{opacity:0;transform:scale(.7);letter-spacing:.4em}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.play *{animation:none!important}}
+/* Controls remain unscaled so the touch/focus area stays usable on phones. */
+.back a{display:inline-flex;align-items:center;min-width:44px;min-height:44px}
+.back a:focus-visible,.card-replay:focus-visible{outline:3px solid var(--mist);outline-offset:4px}
+.frame:has(.card-replay){margin-bottom:56px}
+.card-replay{position:absolute;top:calc(100% + 8px);right:0;min-width:44px;min-height:44px;padding:10px 16px;border:1px solid var(--mist);border-radius:12px;background:var(--ink);color:#fff;font:700 14px/1.4 Pretendard,sans-serif;cursor:pointer}
+.strip span{color:var(--brand)}
+.gauge .row:not(.k) .v{color:var(--brand)}
 </style>
 </head>
 <body>
