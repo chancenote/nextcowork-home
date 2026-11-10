@@ -32,7 +32,7 @@
   .demo .demo-kicker-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--point); box-shadow: 0 0 0 4px rgba(229, 75, 120, .13); }
   .demo h1, .demo h3 { margin: 0; color: var(--indigo); font-size: clamp(23px, 3.2vw, 34px); line-height: 1.22; letter-spacing: -.04em; }
   .demo .demo-deck { margin: 7px 0 0; color: var(--text); font-size: clamp(12px, 1.6vw, 15px); line-height: 1.55; }
-  .demo .motion-toggle { flex: none; padding: 8px 12px; border: 1px solid var(--hairline); border-radius: 999px; background: var(--bg); color: var(--indigo); font-size: 12px; font-weight: 700; cursor: pointer; }
+  .demo .motion-toggle { flex: none; min-width: 44px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--hairline); border-radius: 999px; background: var(--bg); color: var(--indigo); font-size: 12px; font-weight: 700; cursor: pointer; }
   .demo .motion-toggle:hover { border-color: var(--violet); }
   .demo .motion-toggle:focus-visible { outline: 3px solid var(--indigo); outline-offset: 3px; }
   .demo .motion-toggle[hidden] { display: none; }
