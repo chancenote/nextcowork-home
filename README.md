@@ -127,6 +127,20 @@ image: "/img/og.png"
 첫 문단부터 바로 본문을 씁니다. 큰 제목은 front matter의 title로 자동 생성됩니다.
 ```
 
+### 오퍼 랜딩(/go/…) 고치는 법 (2026-11-13)
+
+특정 요청 하나만 받는 한 장짜리 신청 페이지입니다(특강 섭외, 멘토링·심사 위촉, CEO 코칭 등 8장). 홈·서비스 페이지와 달리 상단 메뉴가 없고, 버튼 문구가 한 가지이며, 입력 4칸 폼으로 바로 접수합니다.
+
+- **원고**: `content/landings/<주소>.json` 한 개가 `/go/<주소>/` 한 장입니다. `go/*/index.html`은 생성물이라 직접 고치지 않습니다.
+- **빌드**: `npm run build`(랜딩 생성 → 인사이트 빌드 순). 랜딩만 다시 만들려면 `npm run landings:build`.
+- **글자 예산**: 속말 28 · 약속 24 · 버튼 12 · 문제 18 · 받는 것 16 · 절차 14 · FAQ 질문 24·답 60자 등. 넘으면 빌드가 어디가 넘었는지 알려 주고 멈춥니다.
+- **가격·실적**: 원고에 적는 가격·기관명·수치는 서비스 페이지의 공개 표기와 같아야 합니다. 서비스 페이지의 가격을 바꾸면 해당 랜딩 원고도 함께 고칩니다.
+- **그림**: `img/go/<주소>/f1-scene.webp`(+`-720w`)는 필수, `f2-change`·`f3-deliverable`은 선택(원고의 `figures.f2`·`f3`가 `null`이면 글만 나옵니다). 그림 원본과 브리프는 `../nextcw-ops/04_assets/images/landings/`에 있습니다. 증거·대표 자리는 실사진만 씁니다.
+- **자동 반영**: `sitemap.xml`과 `llms.txt`의 랜딩 절(`LANDINGS:START~END`)은 원고에서 만들어집니다. 색인에서 빼려면 원고에 `"index": false`.
+- **수동 반영**: 홈 '3개의 문'의 링크(`index.html`의 `.doors`)와 인사이트 글 끝 버튼의 도착지(`scripts/build-insights.mjs`의 `ARTICLE_LANDING_BY_SERVICE`).
+- **접수·추적**: 폼은 문의 페이지와 같은 접수 로직(`js/main.js`)을 씁니다. 어느 랜딩에서 왔는지는 `source_page`(`/go/<주소>/`)와 이벤트의 `landing` 값으로 구분합니다.
+- **복원 기준점**: 랜딩 층을 올리기 직전 운영본은 태그 `backup/pre-offer-landing-20261113`. 절차는 `../nextcw-ops/_backup/site-20261113-pre-offer-landing/RESTORE.md`.
+
 ## 4. Google Analytics 연결
 
 사이트에는 GA4 로더가 연결되어 있습니다. 현재 측정 ID는 `G-T2JVBW1JTD`입니다.
