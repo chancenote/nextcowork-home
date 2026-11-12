@@ -1,0 +1,255 @@
+/* ==========================================================
+   NEXT COWORK — 오퍼 랜딩 (/go/…) 공통 틀
+   8블록: 히어로 · 문제 3 · 받는 것 3 · 증거 · 가격·절차 · 대표 · FAQ · 전용 폼
+   규칙: 상단 메뉴 없음, 다른 서비스 링크 0, 버튼 문구는 랜딩당 1종, 모바일 하단 고정 버튼.
+   색은 공식 팔레트와 파생 2톤(paper·night)만 쓴다.
+   ========================================================== */
+
+.lp {
+  --header-h: 68px;
+  --lp-paper: #F8F0FF;
+  --lp-night: #1D1B4A;
+  --lp-cta: #7950E8;
+  --lp-line: #B99EFF;
+  --lp-mark: #00AEB7;
+  --accent: var(--lp-cta);
+  --accent-ink: var(--indigo);
+  --accent-soft: var(--lp-paper);
+  background: #fff;
+}
+.lp [hidden] { display: none !important; }
+.lp h1, .lp h2, .lp h3 { color: var(--indigo); }
+
+/* ---------- 상단: 로고 + 버튼 하나 ---------- */
+.lp .nav-inner { height: var(--header-h); gap: 12px; }
+.lp .nav-logo-img { height: 50px; }
+.lp-nav-cta { min-height: 44px; padding: 10px 20px; font-size: 15px; white-space: nowrap; }
+
+.lp .btn-primary { background: var(--lp-cta); }
+.lp .btn-primary:hover { background: var(--indigo); box-shadow: 0 12px 28px rgba(48, 45, 124, .28); }
+
+/* ---------- 공통 섹션 ---------- */
+.lp-section { padding: 56px 0; }
+.lp-section--paper { background: var(--lp-paper); }
+.lp .lp-h2 {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 15px; font-weight: 800; letter-spacing: .02em; color: var(--indigo);
+  margin-bottom: 20px;
+}
+.lp-h2::before { content: ""; width: 22px; height: 2px; background: var(--lp-cta); flex: 0 0 auto; }
+.lp-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 48px; align-items: center; }
+
+.lp-figure { margin: 0; }
+.lp-figure img {
+  display: block; width: 100%; height: auto;
+  border-radius: var(--radius); background: var(--lp-paper);
+}
+/* 그림 비율은 img의 width·height 속성에서 온다. 파일이 없을 때는 종이색 바탕이 자리 표시가 된다. */
+.lp-figure--art img { object-fit: cover; }
+.lp-ai-note { margin-top: 12px; font-size: 12.5px; line-height: 1.6; color: var(--caption); }
+
+/* ---------- B1 히어로 ---------- */
+.lp-hero { padding: 44px 0 52px; background: linear-gradient(180deg, var(--lp-paper) 0%, #fff 100%); }
+.lp-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 48px; align-items: center; }
+.lp-voice {
+  font-size: clamp(17px, 1.9vw, 21px); font-weight: 700; line-height: 1.5; color: var(--lp-cta);
+  margin-bottom: 14px;
+}
+.lp-hero h1 {
+  font-size: clamp(30px, 4.2vw, 50px); line-height: 1.2; letter-spacing: -0.035em;
+  margin-bottom: 20px;
+}
+.lp-terms { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin-bottom: 26px; }
+.lp-terms li {
+  padding: 7px 14px; border-radius: 999px; background: #fff; border: 1px solid var(--lp-line);
+  font-size: 14.5px; font-weight: 700; color: var(--indigo); line-height: 1.4;
+}
+.lp-cta { padding: 16px 34px; font-size: 17px; }
+
+/* ---------- B2 문제 3가지 ---------- */
+.lp-problems { list-style: none; display: grid; gap: 12px; }
+.lp-problems li {
+  position: relative; padding: 16px 18px 16px 50px;
+  border: 1px solid var(--hairline); border-radius: var(--radius-md); background: #fff;
+  font-size: clamp(17px, 1.7vw, 20px); font-weight: 700; line-height: 1.45; color: var(--ink);
+}
+.lp-problems li::before {
+  content: ""; position: absolute; left: 20px; top: 50%; width: 14px; height: 2px;
+  margin-top: -1px; background: var(--lp-cta); border-radius: 2px;
+}
+.lp-change-labels {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px;
+  margin-top: 12px; font-size: 14px; font-weight: 800; color: var(--indigo); text-align: center;
+}
+.lp-change-labels .arr { color: var(--lp-cta); font-family: var(--font-num); }
+.lp-change-labels .before { color: var(--caption-strong); }
+
+/* ---------- B3 받는 것 3가지 ---------- */
+.lp-split--gets { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
+.lp-gets { list-style: none; counter-reset: get; display: grid; gap: 12px; }
+.lp-gets li {
+  counter-increment: get; display: flex; align-items: center; gap: 14px; padding: 18px 20px;
+  border-radius: var(--radius-md); background: #fff; border: 1px solid var(--lp-line);
+  font-size: clamp(16px, 1.6vw, 19px); font-weight: 800; line-height: 1.45; color: var(--indigo);
+}
+.lp-gets li::before {
+  content: counter(get); display: grid; place-items: center; flex: 0 0 auto;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--indigo); color: #fff; font-family: var(--font-num); font-size: 14px; font-weight: 800;
+}
+
+/* 변화·결과물 그림이 없는 랜딩(첫 화면 그림만 있는 6장)은 세 항목을 가로로 놓는다 */
+.lp-problems--row, .lp-gets--row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.lp-figure figcaption .lp-ai-note { margin-top: 8px; }
+
+/* ---------- B4 증거 ---------- */
+.lp-proof-orgs { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 0; margin-bottom: 14px; }
+.lp-proof-orgs li { font-size: clamp(20px, 2.3vw, 27px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.4; color: var(--indigo); }
+/* 구분점은 앞 항목 뒤에 붙인다 — 줄이 바뀌어도 줄 머리에 점이 오지 않는다 */
+.lp-proof-orgs li:not(:last-child)::after { content: "·"; margin: 0 14px; color: var(--lp-line); }
+.lp-proof-num { font-size: 16px; line-height: 1.7; color: var(--text); }
+.lp-proof-num b { font-family: var(--font-num); font-size: 22px; font-weight: 800; color: var(--indigo); letter-spacing: -0.01em; }
+.lp-proof-list { list-style: none; display: grid; gap: 8px; margin-top: 16px; }
+.lp-proof-list li { position: relative; padding-left: 16px; font-size: 15px; line-height: 1.65; color: var(--text); }
+.lp-proof-list li::before { content: ""; position: absolute; left: 0; top: .72em; width: 6px; height: 6px; border-radius: 50%; background: var(--lp-cta); }
+.lp-photo img { aspect-ratio: 16 / 10; object-fit: cover; }
+.lp-photo figcaption { margin-top: 10px; font-size: 13px; line-height: 1.6; color: var(--caption); }
+
+/* ---------- B5 가격·절차 ---------- */
+.lp-steps { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.lp-steps li {
+  position: relative; padding: 20px 18px; border-radius: var(--radius-md);
+  background: #fff; border: 1px solid var(--hairline); text-align: center;
+  font-size: clamp(15px, 1.5vw, 18px); font-weight: 800; line-height: 1.45; color: var(--ink);
+}
+.lp-steps svg { display: block; width: 56px; height: 56px; margin: 0 auto 12px; }
+.lp-steps li + li::before {
+  content: "→"; position: absolute; left: -7px; top: 50%; transform: translate(-50%, -50%);
+  font-family: var(--font-num); font-size: 16px; font-weight: 700; color: var(--lp-cta);
+}
+.lp-price {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px;
+  margin-top: 18px; padding: 20px 24px; border-radius: var(--radius-md);
+  background: var(--indigo); color: #fff;
+}
+.lp-price strong { font-size: clamp(19px, 2.2vw, 25px); font-weight: 800; letter-spacing: -0.02em; color: #fff; }
+.lp-price span { font-size: 14px; color: rgba(255, 255, 255, .82); }
+
+/* ---------- B6 대표 ---------- */
+.lp-person { display: flex; align-items: center; gap: 22px; max-width: 760px; }
+.lp-person img {
+  flex: 0 0 auto; width: 104px; height: 104px; border-radius: 50%;
+  object-fit: cover; object-position: 50% 18%; background: var(--lp-paper);
+}
+.lp-person p { font-size: clamp(16px, 1.6vw, 19px); line-height: 1.65; color: var(--text); }
+.lp-person b { display: block; margin-bottom: 4px; font-size: clamp(17px, 1.7vw, 20px); color: var(--indigo); }
+
+/* ---------- B7 FAQ ---------- */
+.lp .faq summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  min-height: 56px; padding: 14px 4px; cursor: pointer; list-style: none;
+  font-size: clamp(16px, 1.6vw, 18px); font-weight: 700; color: var(--ink);
+}
+.lp .faq .faq-a { font-size: 15.5px; }
+
+/* ---------- B8 전용 폼 ---------- */
+.lp-apply { padding: 56px 0 64px; background: var(--lp-paper); }
+.lp-apply-inner { max-width: 620px; margin: 0 auto; }
+.lp-apply .form-card { border-color: var(--lp-line); padding: 30px; }
+.lp-apply .form-card-title { font-size: clamp(21px, 2.4vw, 26px); margin-bottom: 8px; }
+.lp-apply .form-card-lead { font-size: 15.5px; line-height: 1.6; margin-bottom: 20px; }
+.lp-apply .field { margin-bottom: 14px; }
+.lp-apply .field textarea { min-height: 88px; }
+.lp-apply .consent-field { margin-top: 4px; }
+.lp-apply .form-status { font-size: 14px; }
+.lp-apply .form-status:empty { margin-top: 0; }
+.lp-done {
+  margin-top: 16px; padding: 22px 24px; border-radius: var(--radius);
+  background: #fff; border: 2px solid var(--lp-cta);
+}
+.lp-done-title { font-size: 18px; font-weight: 800; color: var(--indigo); margin-bottom: 8px; }
+.lp-done-id { font-family: var(--font-num); font-size: 16px; font-weight: 800; color: var(--ink); margin-bottom: 8px; }
+.lp-done p:last-child { font-size: 15px; line-height: 1.7; color: var(--text); }
+.lp-done a { color: var(--indigo); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- 푸터: 슬로건은 여기 한 번만 ---------- */
+.lp-footer { background: var(--indigo); color: rgba(255, 255, 255, .82); padding: 32px 0 28px; }
+.lp-footer-inner { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 20px 40px; }
+.lp-footer img { display: block; height: 56px; width: auto; }
+.lp-footer p { font-size: 13px; line-height: 1.8; color: var(--caption-on-dark); }
+.lp-footer a { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.lp-footer .lp-slogan { margin-top: 10px; font-family: var(--font-num); font-size: 13px; font-weight: 700; letter-spacing: .08em; color: #fff; }
+.lp-footer { --focus-ring: #FFFFFF; --focus-halo: var(--point-action); }
+
+/* ---------- 모바일 하단 고정 버튼 ---------- */
+.lp-sticky { display: none; }
+
+@media (max-width: 900px) {
+  .lp-hero-grid, .lp-split { grid-template-columns: 1fr; gap: 20px; }
+}
+
+@media (max-width: 720px) {
+  .lp { --header-h: 62px; }
+  .lp .nav-inner { padding: 0 16px; }
+  .lp .nav-logo-img { height: 50px; }
+  .lp-nav-cta { padding: 8px 14px; font-size: 14px; }
+  .lp .container { padding: 0 20px; }
+
+  .lp-hero { padding: 24px 0 30px; }
+  .lp-hero-grid { gap: 20px; }
+  .lp-voice { margin-bottom: 10px; }
+  .lp-hero h1 { margin-bottom: 14px; }
+  .lp-terms { gap: 6px; margin-bottom: 18px; }
+  .lp-terms li { padding: 6px 11px; font-size: 13.5px; }
+  .lp-cta { width: 100%; justify-content: center; padding: 15px 20px; }
+
+  .lp-section { padding: 34px 0; }
+  .lp .lp-h2 { margin-bottom: 14px; font-size: 14px; }
+  .lp-figure img { border-radius: var(--radius-md); }
+  .lp-problems { gap: 8px; }
+  .lp-problems li { padding: 12px 14px 12px 42px; }
+  .lp-problems li::before { left: 16px; }
+
+  .lp-problems--row, .lp-gets--row { grid-template-columns: 1fr; }
+  .lp-gets { gap: 8px; }
+  .lp-gets li { gap: 12px; padding: 12px 14px; }
+
+  .lp-proof-orgs { gap: 2px 0; margin-bottom: 10px; }
+  .lp-proof-orgs li:not(:last-child)::after { margin: 0 9px; }
+  .lp-proof-num { font-size: 15px; }
+  .lp-proof-list { margin-top: 12px; gap: 6px; }
+  .lp-proof-list li { font-size: 14.5px; }
+
+  .lp-steps { gap: 8px; }
+  .lp-steps li { padding: 14px 6px; font-size: 14px; }
+  .lp-steps svg { width: 44px; height: 44px; margin-bottom: 8px; }
+  .lp-steps li + li::before { left: -4px; font-size: 13px; }
+  .lp-price { margin-top: 12px; padding: 16px 18px; }
+
+  .lp-person { gap: 16px; }
+  .lp-person img { width: 76px; height: 76px; }
+
+  .lp .faq summary { min-height: 52px; padding: 12px 2px; }
+
+  .lp-apply { padding: 34px 0 40px; }
+  .lp-apply .form-card { padding: 22px 18px; }
+  .lp-apply .field { margin-bottom: 12px; }
+
+  .lp-footer { padding: 26px 0 96px; }
+  .lp-footer img { height: 50px; }
+
+  .lp-sticky {
+    display: block; position: fixed; inset: auto 0 0 0; z-index: 90;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, .94);
+    -webkit-backdrop-filter: saturate(180%) blur(14px); backdrop-filter: saturate(180%) blur(14px);
+    border-top: 1px solid var(--hairline);
+    transition: transform .25s ease, visibility .25s;
+  }
+  .lp-sticky .btn { width: 100%; justify-content: center; padding: 14px 20px; }
+  .lp-sticky.is-hidden { transform: translateY(110%); visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-sticky { transition: none; }
+}

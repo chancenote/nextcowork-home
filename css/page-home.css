@@ -70,3 +70,30 @@
   .hero-refs { margin-top: 18px; padding-top: 14px; font-size: 13.5px; }
 }
 @media (max-width: 359px) { .hero-badge { font-size: 12px; padding: 8px 12px; gap: 8px; } }
+
+/* ---------- 3개의 문 — 방문자 기준으로 오퍼 랜딩(/go/…)에 연결 (FS-20261113-01) ---------- */
+.doors-grid { display: grid; grid-template-columns: 1.7fr 1fr 1fr; gap: 12px; }
+.door-card {
+  min-width: 0; background: #fff; border: 1px solid var(--hairline); border-top: 3px solid var(--c, var(--indigo));
+  border-radius: var(--radius-sm); padding: 16px 16px 14px; box-shadow: var(--shadow-card);
+}
+.door-who { display: block; margin-bottom: 10px; font-size: 15.5px; font-weight: 800; line-height: 1.45; color: var(--ink); word-break: keep-all; }
+.door-links { list-style: none; display: grid; gap: 6px; }
+.door-links--2col { grid-template-columns: 1fr 1fr; }
+/* 본문 링크의 모바일 공통 규칙(인라인 배치)보다 우선해야 해서 선택자를 길게 쓴다 */
+.selector.doors .door-card .door-links a {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  min-height: 44px; padding: 9px 12px; border-radius: 10px; background: var(--bg-soft);
+  font-size: 14.5px; font-weight: 700; line-height: 1.4; color: var(--c-ink, var(--indigo)); word-break: keep-all;
+  transition: background .2s, transform .2s;
+}
+.selector.doors .door-card .door-links a:hover, .selector.doors .door-card .door-links a:focus-visible { background: var(--accent-soft); transform: translateY(-1px); }
+.door-links .arr { flex: 0 0 auto; transition: transform .2s; }
+.door-links a:hover .arr { transform: translateX(3px); }
+@media (max-width: 1024px) { .doors-grid { grid-template-columns: 1fr 1fr; } .doors-grid > :first-child { grid-column: 1 / -1; } }
+@media (max-width: 720px) {
+  .doors-grid { grid-template-columns: 1fr; gap: 10px; }
+  .doors-grid > :first-child { grid-column: auto; }
+  .door-card { padding: 14px 14px 12px; }
+  .selector.doors .door-card .door-links a { font-size: 14px; padding: 9px 10px; }
+}

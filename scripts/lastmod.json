@@ -1,6 +1,6 @@
 {
   "/": {
-    "hash": "12876043153b",
+    "hash": "4f596a8e8404",
     "date": "2026-11-13"
   },
   "/flexoffice/": {
@@ -18,6 +18,38 @@
   "/coaching/": {
     "hash": "1eb4c56aa6c2",
     "date": "2026-11-07"
+  },
+  "/go/ai-lecture/": {
+    "hash": "c05b179c106c",
+    "date": "2026-11-13"
+  },
+  "/go/leader-workshop/": {
+    "hash": "f64d1593ffd4",
+    "date": "2026-11-13"
+  },
+  "/go/public-ai-training/": {
+    "hash": "7bd2218466b5",
+    "date": "2026-11-13"
+  },
+  "/go/mentor-judge/": {
+    "hash": "7d54f4430fb8",
+    "date": "2026-11-13"
+  },
+  "/go/ceo-coaching/": {
+    "hash": "efdaee1e0397",
+    "date": "2026-11-13"
+  },
+  "/go/ai-campus-pilot/": {
+    "hash": "60c82d9156d6",
+    "date": "2026-11-13"
+  },
+  "/go/flexoffice-feasibility/": {
+    "hash": "9cb1e93f4090",
+    "date": "2026-11-13"
+  },
+  "/go/public-space-advisory/": {
+    "hash": "3654e2a4e4ac",
+    "date": "2026-11-13"
   },
   "/about/": {
     "hash": "50b0eb2c3d8b",
