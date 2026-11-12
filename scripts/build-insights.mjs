@@ -625,14 +625,14 @@ function contactPath(post, cta) {
   return `/contact/?s=${post.ctaService}&t=${CTA_TIER_BY_SERVICE[post.ctaService] || "diagnosis"}&cta=${cta}`;
 }
 
-/* 글 끝 버튼의 도착지 — 서비스 문의 폼 대신 주제가 맞는 오퍼 랜딩(/go/…)으로 보낸다(FS-20261113-01).
-   랜딩이 없는 주제(general)는 기존 문의 경로를 그대로 쓴다. 버튼 문구는 도착 랜딩의 버튼과 같은 약속을 쓴다.
+/* 글 끝 버튼의 도착지 — 주제에 꼭 맞는 오퍼 랜딩(/go/…)이 하나로 정해지는 서비스만 랜딩으로 보낸다(FS-20261113-01).
+   AI Campus 글은 특강·워크숍·사내 캠퍼스 중 무엇이 맞는지가 글마다 달라 기존 사전진단 문의 경로를 그대로 쓴다.
+   랜딩으로 보내는 글은 버튼 위 문장과 버튼 문구도 도착 랜딩의 약속에 맞춘다.
    카카오톡 공유 카드의 문의 버튼은 바꾸지 않는다(contactPath 그대로). */
 const ARTICLE_LANDING_BY_SERVICE = {
-  "ai-campus": { path: "/go/ai-lecture/", label: "AI 특강 일정·견적 받기" },
-  flexoffice: { path: "/go/flexoffice-feasibility/", label: "우리 건물 검토 요청" },
-  public: { path: "/go/public-space-advisory/", label: "과업 범위 상담 요청" },
-  coaching: { path: "/go/ceo-coaching/", label: "CEO AI 코칭 적합성 상담" }
+  flexoffice: { path: "/go/flexoffice-feasibility/", label: "우리 건물 검토 요청", lead: "우리 건물에 공유오피스가 맞는지 먼저 확인하고 싶다면, 도입 타당성 진단으로 시작할 수 있습니다." },
+  public: { path: "/go/public-space-advisory/", label: "과업 범위 상담 요청", lead: "공공 공간의 운영계획과 과업 범위를 정리하고 싶다면, 무료 사전 협의로 시작할 수 있습니다." },
+  coaching: { path: "/go/ceo-coaching/", label: "CEO AI 코칭 적합성 상담", lead: "대표님의 실제 업무에서 무엇부터 AI에 맡길지 정하고 싶다면, CEO AI 코칭 적합성 상담으로 시작할 수 있습니다." }
 };
 function articleCtaPath(post) {
   const landing = ARTICLE_LANDING_BY_SERVICE[post.ctaService];
@@ -641,6 +641,10 @@ function articleCtaPath(post) {
 function articleCtaLabel(post) {
   const landing = ARTICLE_LANDING_BY_SERVICE[post.ctaService];
   return landing ? landing.label : "무료 사전진단 신청";
+}
+function articleCtaLead(post) {
+  const landing = ARTICLE_LANDING_BY_SERVICE[post.ctaService];
+  return landing ? landing.lead : "AI 실무교육, CEO 코칭, 워크스페이스 컨설팅으로 연결해 드립니다.";
 }
 
 /* 채널별 유입을 GA4에서 구분하는 UTM. campaign은 글 slug. URL 복사는 붙이지 않는다(CR-20261012-02 D1). */
@@ -901,7 +905,7 @@ ${articleBody}
       </div>
       <div class="post-cta reveal">
         <strong>${isAxPlaybook ? "첫 AX 회의를 준비해보세요" : "이 주제를 조직에 맞게 적용하고 싶다면"}</strong>
-        <p>${isAxPlaybook ? "최근 업무 한 건을 고르고, 위 도입 결정서에 책임자·자료·승인·완료 기준을 적어보세요." : post.slug === "aside-browser-workflow" ? "대표님의 실제 업무에서 AI에게 맡길 범위와 결과 확인 방법을 정하고 싶다면, CEO AI 코칭에서 함께 정리할 수 있습니다." : post.slug === "chatgpt-space-10-features" ? "ChatGPT를 우리 팀 업무에 적용하고 싶다면, AI Campus 기업교육에서 교육 대상·프로그램·비용을 확인해 보세요." : post.slug === "ai-fast-failure" ? "팀의 실제 업무에 AI를 적용하고 싶다면, AI Campus 교육에서 우리 조직에 맞는 활용 방법을 함께 살펴보세요." : "AI 실무교육, CEO 코칭, 워크스페이스 컨설팅으로 연결해 드립니다."}</p>
+        <p>${isAxPlaybook ? "최근 업무 한 건을 고르고, 위 도입 결정서에 책임자·자료·승인·완료 기준을 적어보세요." : post.slug === "aside-browser-workflow" ? "대표님의 실제 업무에서 AI에게 맡길 범위와 결과 확인 방법을 정하고 싶다면, CEO AI 코칭에서 함께 정리할 수 있습니다." : post.slug === "chatgpt-space-10-features" ? "ChatGPT를 우리 팀 업무에 적용하고 싶다면, AI Campus 기업교육에서 교육 대상·프로그램·비용을 확인해 보세요." : post.slug === "ai-fast-failure" ? "팀의 실제 업무에 AI를 적용하고 싶다면, AI Campus 교육에서 우리 조직에 맞는 활용 방법을 함께 살펴보세요." : articleCtaLead(post)}</p>
         <div class="btn-row">
           ${isAxPlaybook ? "" : `<a class="btn btn-primary" href="${post.slug === "chatgpt-space-10-features" ? "/ai-campus/" : escapeAttr(articleCtaPath(post))}">${post.slug === "chatgpt-space-10-features" ? "기업·공공기관 AI 교육 살펴보기" : post.slug === "aside-browser-workflow" ? "CEO AI 코칭 문의하기" : post.slug === "ai-fast-failure" ? "우리 팀 AI 교육 문의하기" : articleCtaLabel(post)} <span class="arr">→</span></a>`}
           <a class="btn btn-ghost" href="/insights/">인사이트 더 보기 <span class="arr">→</span></a>
