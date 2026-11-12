@@ -220,12 +220,17 @@
 
   function serviceKeyFromSelect(select) {
     if (!select) return "";
+    /* 오퍼 랜딩(/go/…)은 서비스를 숨김 값으로 고정한다 — select가 아니면 data-s를 그대로 읽는다. */
+    if (!select.options) return select.getAttribute("data-s") || "";
     var opt = select.options[select.selectedIndex];
     return opt ? (opt.getAttribute("data-s") || "") : "";
   }
 
   var sParam = searchParam("s");
   var tParam = searchParam("t");
+  /* 오퍼 랜딩의 전용 폼은 form[data-landing]으로 표시한다. 값은 랜딩 주소의 마지막 마디(예: ai-lecture). */
+  var landingForm = document.querySelector("form[data-landing]");
+  var landingKey = landingForm ? (landingForm.getAttribute("data-landing") || "") : "";
   var ctaParam = searchParam("cta");
   var currentPath = window.location.pathname || "/";
   var inferredSourcePath = currentPath;
@@ -324,7 +329,7 @@
 
   function updateTierOptions(serviceKey, selectedTier) {
     var tierSelect = document.getElementById("cf-tier");
-    if (!tierSelect) return;
+    if (!tierSelect || !tierSelect.options) return;
     var options = tierOptions[serviceKey] || tierOptions.general;
     tierSelect.innerHTML = "";
     options.forEach(function (item) {
@@ -356,7 +361,7 @@
       contextText.textContent = svcLabel + (selectedTier && selectedTier !== "선택 안 함" ? " · " + selectedTier : "");
       contextEl.hidden = serviceKey === "general";
     }
-    if (message) message.placeholder = serviceKey !== "general" && selectedTier ?
+    if (message && !landingKey) message.placeholder = serviceKey !== "general" && selectedTier ?
       selectedTier + " 관련 문의입니다. 대상·규모·희망 일정 등을 자유롭게 남겨주세요." :
       "대상·규모·희망 일정 등을 자유롭게 남겨주세요.";
   }
@@ -365,12 +370,12 @@
     var svcSelect = document.getElementById("cf-service");
     var tierSelect = document.getElementById("cf-tier");
     var serviceKey = serviceKeyFromSelect(svcSelect) || sParam || "general";
-    var tierOpt = tierSelect && tierSelect.options[tierSelect.selectedIndex];
+    var tierOpt = tierSelect && tierSelect.options && tierSelect.options[tierSelect.selectedIndex];
     var params = {
       service: svcSelect ? svcSelect.value : serviceKey,
       service_key: serviceKey,
       tier: tierSelect ? tierSelect.value : "",
-      tier_key: tierOpt ? (tierOpt.getAttribute("data-t") || "") : tParam,
+      tier_key: tierOpt ? (tierOpt.getAttribute("data-t") || "") : ((tierSelect && tierSelect.getAttribute("data-t")) || tParam),
       source_page: document.getElementById("cf-source-page") ? document.getElementById("cf-source-page").value : currentPath,
       cta_location: document.getElementById("cf-cta-location") ? document.getElementById("cf-cta-location").value : ctaParam,
       utm_source: attrValue("utm_source"),
@@ -379,6 +384,7 @@
       utm_content: attrValue("utm_content"),
       origin_article_slug: originArticleSlug()
     };
+    if (landingKey) params.landing = landingKey;
     if (extra) {
       Object.keys(extra).forEach(function (key) { params[key] = extra[key]; });
     }
@@ -387,7 +393,7 @@
 
   function fillContactContext() {
     var svcSelect = document.getElementById("cf-service");
-    if (svcSelect && sParam) {
+    if (svcSelect && svcSelect.options && sParam) {
       Array.prototype.forEach.call(svcSelect.options, function (option) {
         if (option.getAttribute("data-s") === sParam) svcSelect.value = option.value;
       });
@@ -396,8 +402,9 @@
     var serviceKey = serviceKeyFromSelect(svcSelect) || sParam || "general";
     updateTierOptions(serviceKey, tParam);
 
-    setFieldValue("cf-source-page", searchParam("source_page") || inferredSourcePath);
-    setFieldValue("cf-cta-location", ctaParam || "direct");
+    /* 랜딩 폼은 어느 랜딩에서 접수됐는지가 기준이다 — 직전 페이지가 아니라 랜딩 주소를 남긴다. */
+    setFieldValue("cf-source-page", landingKey ? currentPath : (searchParam("source_page") || inferredSourcePath));
+    setFieldValue("cf-cta-location", ctaParam || (landingKey ? "landing_form" : "direct"));
     setFieldValue("cf-landing-page", window.location.href);
     setFieldValue("cf-referrer", document.referrer || "");
     setFieldValue("cf-utm-source", attrValue("utm_source"));
@@ -409,7 +416,7 @@
 
     updateContactLabels();
 
-    if (svcSelect && svcSelect.getAttribute("data-context-bound") !== "true") {
+    if (svcSelect && svcSelect.options && svcSelect.getAttribute("data-context-bound") !== "true") {
       svcSelect.setAttribute("data-context-bound", "true");
       svcSelect.addEventListener("change", function () {
         updateTierOptions(serviceKeyFromSelect(svcSelect) || "general", "");
@@ -425,6 +432,39 @@
     }
   }
   fillContactContext();
+
+  /* 오퍼 랜딩: 같은 페이지의 전용 폼으로 내려가는 버튼도 기존 service_cta_click으로 센다(이벤트 이름은 그대로, landing 값만 추가).
+     하단 고정 버튼은 첫 화면 버튼과 폼이 보이는 동안 숨긴다. */
+  if (landingKey) {
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest("a[data-landing-cta]");
+      if (!a) return;
+      track("service_cta_click", {
+        source_page: currentPath,
+        service_key: landingForm.getAttribute("data-service-key") || "general",
+        tier_key: landingForm.getAttribute("data-tier-key") || "",
+        cta_location: "landing_" + (a.getAttribute("data-landing-cta") || "cta"),
+        landing: landingKey
+      });
+    });
+    var stickyBar = document.getElementById("lp-sticky");
+    var heroCta = document.getElementById("lp-hero-cta");
+    var applySection = document.getElementById("apply");
+    if (stickyBar && "IntersectionObserver" in window) {
+      var stickyState = { hero: true, apply: false };
+      var stickyObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.target === heroCta) stickyState.hero = entry.isIntersecting;
+          if (entry.target === applySection) stickyState.apply = entry.isIntersecting;
+        });
+        stickyBar.classList.toggle("is-hidden", stickyState.hero || stickyState.apply);
+      }, { threshold: 0 });
+      if (heroCta) stickyObserver.observe(heroCta); else stickyState.hero = false;
+      if (applySection) stickyObserver.observe(applySection);
+    } else if (stickyBar) {
+      stickyBar.classList.remove("is-hidden");
+    }
+  }
 
   /* Conversion link tracking (no-op until GA4 is enabled) */
   document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
@@ -694,6 +734,8 @@
             track("inquiry_error", readContext({ endpoint_type: "post_endpoint", reason: reason }));
             setSending(false, "다시 보내기 <span class=\"arr\">→</span>");
             hideSuccessCard();
+            /* 랜딩 폼은 ‘내용 복사’를 평소에 숨겨 두고, 전송이 안 될 때만 보여 준다. */
+            if (copyBtn && copyBtn.hidden) copyBtn.hidden = false;
             if (reason === "timeout" || reason === "network" || reason === "Failed to fetch" || /fetch/i.test(reason)) {
               setStatus("접수 확인이 안 됐습니다. 입력하신 내용은 그대로 있으니 잠시 후 ‘다시 보내기’를 누르거나, ‘내용 복사’로 복사해 ceo@nextcw.com으로 보내주세요.");
             } else {

@@ -129,6 +129,9 @@ const staticRoutes = [
   { path: "/ai-campus/", file: "ai-campus/index.html", priority: "0.9" },
   { path: "/public/", file: "public/index.html", priority: "0.9" },
   { path: "/coaching/", file: "coaching/index.html", priority: "0.9" },
+  // 오퍼 랜딩(/go/…) — 색인 대상만 싣는다. 기관 전용·제안 후속 변형은 넣지 않는다.
+  { path: "/go/ai-lecture/", file: "go/ai-lecture/index.html", priority: "0.8" },
+  { path: "/go/mentor-judge/", file: "go/mentor-judge/index.html", priority: "0.8" },
   { path: "/about/", file: "about/index.html", priority: "0.8" },
   { path: "/insights/", file: "insights/index.html", priority: "0.8" },
   { path: "/contact/", file: "contact/index.html", priority: "0.7" },
