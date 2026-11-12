@@ -1,7 +1,7 @@
 import { renderMagazine, renderLatestNote } from "../js/insights-cards.js";
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFile } from "node:child_process";
@@ -121,6 +121,16 @@ const orgNode = {
   ]
 };
 
+function landingRoutes() {
+  const dir = join(root, "content", "landings");
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir).filter((name) => name.endsWith(".json")).sort()
+    .map((name) => JSON.parse(readFileSync(join(dir, name), "utf8")))
+    .filter((landing) => landing.index !== false)
+    .sort((a, b) => a.order - b.order)
+    .map((landing) => ({ path: `/go/${landing.slug}/`, file: `go/${landing.slug}/index.html`, priority: "0.8" }));
+}
+
 /* lastmod는 하드코딩하지 않는다. 각 페이지의 실제 내용이 바뀐 날을
    scripts/lastmod.json에 기록해 두고 재사용한다(계산 방식은 resolveLastmod 참고). */
 const staticRoutes = [
@@ -129,9 +139,8 @@ const staticRoutes = [
   { path: "/ai-campus/", file: "ai-campus/index.html", priority: "0.9" },
   { path: "/public/", file: "public/index.html", priority: "0.9" },
   { path: "/coaching/", file: "coaching/index.html", priority: "0.9" },
-  // 오퍼 랜딩(/go/…) — 색인 대상만 싣는다. 기관 전용·제안 후속 변형은 넣지 않는다.
-  { path: "/go/ai-lecture/", file: "go/ai-lecture/index.html", priority: "0.8" },
-  { path: "/go/mentor-judge/", file: "go/mentor-judge/index.html", priority: "0.8" },
+  // 오퍼 랜딩(/go/…) — content/landings/*.json 에서 읽는다. 색인 대상(index !== false)만 싣는다.
+  ...landingRoutes(),
   { path: "/about/", file: "about/index.html", priority: "0.8" },
   { path: "/insights/", file: "insights/index.html", priority: "0.8" },
   { path: "/contact/", file: "contact/index.html", priority: "0.7" },
@@ -616,6 +625,24 @@ function contactPath(post, cta) {
   return `/contact/?s=${post.ctaService}&t=${CTA_TIER_BY_SERVICE[post.ctaService] || "diagnosis"}&cta=${cta}`;
 }
 
+/* 글 끝 버튼의 도착지 — 서비스 문의 폼 대신 주제가 맞는 오퍼 랜딩(/go/…)으로 보낸다(FS-20261113-01).
+   랜딩이 없는 주제(general)는 기존 문의 경로를 그대로 쓴다. 버튼 문구는 도착 랜딩의 버튼과 같은 약속을 쓴다.
+   카카오톡 공유 카드의 문의 버튼은 바꾸지 않는다(contactPath 그대로). */
+const ARTICLE_LANDING_BY_SERVICE = {
+  "ai-campus": { path: "/go/ai-lecture/", label: "AI 특강 일정·견적 받기" },
+  flexoffice: { path: "/go/flexoffice-feasibility/", label: "우리 건물 검토 요청" },
+  public: { path: "/go/public-space-advisory/", label: "과업 범위 상담 요청" },
+  coaching: { path: "/go/ceo-coaching/", label: "CEO AI 코칭 적합성 상담" }
+};
+function articleCtaPath(post) {
+  const landing = ARTICLE_LANDING_BY_SERVICE[post.ctaService];
+  return landing ? `${landing.path}?cta=insight_article` : contactPath(post, "insight_article");
+}
+function articleCtaLabel(post) {
+  const landing = ARTICLE_LANDING_BY_SERVICE[post.ctaService];
+  return landing ? landing.label : "무료 사전진단 신청";
+}
+
 /* 채널별 유입을 GA4에서 구분하는 UTM. campaign은 글 slug. URL 복사는 붙이지 않는다(CR-20261012-02 D1). */
 function withUtm(url, source, medium, campaign, content) {
   return `${url}${url.includes("?") ? "&" : "?"}utm_source=${source}&utm_medium=${medium}&utm_campaign=${campaign}${content ? `&utm_content=${content}` : ""}`;
@@ -876,7 +903,7 @@ ${articleBody}
         <strong>${isAxPlaybook ? "첫 AX 회의를 준비해보세요" : "이 주제를 조직에 맞게 적용하고 싶다면"}</strong>
         <p>${isAxPlaybook ? "최근 업무 한 건을 고르고, 위 도입 결정서에 책임자·자료·승인·완료 기준을 적어보세요." : post.slug === "aside-browser-workflow" ? "대표님의 실제 업무에서 AI에게 맡길 범위와 결과 확인 방법을 정하고 싶다면, CEO AI 코칭에서 함께 정리할 수 있습니다." : post.slug === "chatgpt-space-10-features" ? "ChatGPT를 우리 팀 업무에 적용하고 싶다면, AI Campus 기업교육에서 교육 대상·프로그램·비용을 확인해 보세요." : post.slug === "ai-fast-failure" ? "팀의 실제 업무에 AI를 적용하고 싶다면, AI Campus 교육에서 우리 조직에 맞는 활용 방법을 함께 살펴보세요." : "AI 실무교육, CEO 코칭, 워크스페이스 컨설팅으로 연결해 드립니다."}</p>
         <div class="btn-row">
-          ${isAxPlaybook ? "" : `<a class="btn btn-primary" href="${post.slug === "chatgpt-space-10-features" ? "/ai-campus/" : escapeAttr(contactPath(post, "insight_article"))}">${post.slug === "chatgpt-space-10-features" ? "기업·공공기관 AI 교육 살펴보기" : post.slug === "aside-browser-workflow" ? "CEO AI 코칭 문의하기" : post.slug === "ai-fast-failure" ? "우리 팀 AI 교육 문의하기" : "무료 사전진단 신청"} <span class="arr">→</span></a>`}
+          ${isAxPlaybook ? "" : `<a class="btn btn-primary" href="${post.slug === "chatgpt-space-10-features" ? "/ai-campus/" : escapeAttr(articleCtaPath(post))}">${post.slug === "chatgpt-space-10-features" ? "기업·공공기관 AI 교육 살펴보기" : post.slug === "aside-browser-workflow" ? "CEO AI 코칭 문의하기" : post.slug === "ai-fast-failure" ? "우리 팀 AI 교육 문의하기" : articleCtaLabel(post)} <span class="arr">→</span></a>`}
           <a class="btn btn-ghost" href="/insights/">인사이트 더 보기 <span class="arr">→</span></a>
         </div>
       </div>

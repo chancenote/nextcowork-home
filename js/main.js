@@ -433,6 +433,24 @@
   }
   fillContactContext();
 
+  /* 다른 페이지에서 오퍼 랜딩(/go/…)으로 가는 링크 — 홈 ‘3개의 문’, 인사이트 글 끝 버튼.
+     기존 service_cta_click 이름 그대로, 어느 랜딩으로 갔는지만 landing 값으로 남긴다. */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="/go/"]');
+    if (!a) return;
+    var url;
+    try { url = new URL(a.getAttribute("href"), window.location.origin); } catch (error) { return; }
+    var match = url.pathname.match(/^\/go\/([a-z0-9-]+)\/$/);
+    if (!match) return;
+    track("service_cta_click", {
+      source_page: currentPath,
+      service_key: a.getAttribute("data-service-key") || "",
+      tier_key: "",
+      cta_location: url.searchParams.get("cta") || "",
+      landing: match[1]
+    });
+  });
+
   /* 오퍼 랜딩: 같은 페이지의 전용 폼으로 내려가는 버튼도 기존 service_cta_click으로 센다(이벤트 이름은 그대로, landing 값만 추가).
      하단 고정 버튼은 첫 화면 버튼과 폼이 보이는 동안 숨긴다. */
   if (landingKey) {

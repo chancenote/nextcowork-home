@@ -4,12 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build-insights.mjs",
+    "build": "node scripts/build-landings.mjs && node scripts/build-insights.mjs",
     "insights:build": "node scripts/build-insights.mjs",
     "sync": "node scripts/sync-insights.mjs && node scripts/build-insights.mjs",
     "sync:dry": "node scripts/sync-insights.mjs --dry",
     "verify:seo": "node scripts/verify-seo.mjs && node scripts/verify-search-readiness.mjs",
-    "deploy": "bash scripts/deploy.sh"
+    "deploy": "bash scripts/deploy.sh",
+    "landings:build": "node scripts/build-landings.mjs"
   },
   "dependencies": {
     "playwright": "^1.61.1"

@@ -98,6 +98,10 @@
   background: var(--indigo); color: #fff; font-family: var(--font-num); font-size: 14px; font-weight: 800;
 }
 
+/* 변화·결과물 그림이 없는 랜딩(첫 화면 그림만 있는 6장)은 세 항목을 가로로 놓는다 */
+.lp-problems--row, .lp-gets--row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.lp-figure figcaption .lp-ai-note { margin-top: 8px; }
+
 /* ---------- B4 증거 ---------- */
 .lp-proof-orgs { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 0; margin-bottom: 14px; }
 .lp-proof-orgs li { font-size: clamp(20px, 2.3vw, 27px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.4; color: var(--indigo); }
@@ -206,6 +210,7 @@
   .lp-problems li { padding: 12px 14px 12px 42px; }
   .lp-problems li::before { left: 16px; }
 
+  .lp-problems--row, .lp-gets--row { grid-template-columns: 1fr; }
   .lp-gets { gap: 8px; }
   .lp-gets li { gap: 12px; padding: 12px 14px; }
 
