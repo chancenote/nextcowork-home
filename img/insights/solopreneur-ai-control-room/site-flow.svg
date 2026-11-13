@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1080" viewBox="0 0 800 1080" role="img" aria-labelledby="title desc">
+<title id="title">넥스트코웍 홈페이지 반영 흐름</title><desc id="desc">AI가 원고와 요청서를 준비하고, 대표가 범위를 승인하고, AI가 사이트에 반영해 미리보기를 열고, 대표가 운영 반영을 승인하고, AI가 공개 후 실제 주소와 처리 내용을 기록하는 다섯 단계입니다.</desc>
+<rect width="800" height="1080" fill="#F8F0FF"/>
+<g font-family="Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif">
+<text x="40" y="76" fill="#302D7C" font-size="42" font-weight="700">준비·결정·실행을 나눈</text><text x="40" y="128" fill="#302D7C" font-size="42" font-weight="700">홈페이지 반영 흐름</text>
+<rect x="80" y="240" width="8" height="670" fill="#B99EFF"/>
+<rect x="32" y="168" width="736" height="150" rx="22" fill="#fff"/><circle cx="84" cy="243" r="30" fill="#302D7C"/><text x="84" y="253" fill="#fff" font-size="28" font-weight="700" text-anchor="middle">1</text>
+<text x="136" y="230" fill="#302D7C" font-size="34" font-weight="700">준비</text><text x="136" y="276" fill="#545659" font-size="25">원고·이미지·변경 요청서를 만듭니다</text>
+<rect x="640" y="194" width="104" height="44" rx="22" fill="#F8F0FF"/><text x="692" y="224" fill="#302D7C" font-size="22" font-weight="700" text-anchor="middle">AI</text>
+<rect x="32" y="334" width="736" height="150" rx="22" fill="#fff"/><circle cx="84" cy="409" r="30" fill="#7950E8"/><text x="84" y="419" fill="#fff" font-size="28" font-weight="700" text-anchor="middle">2</text>
+<text x="136" y="396" fill="#302D7C" font-size="34" font-weight="700">범위 승인</text><text x="136" y="442" fill="#545659" font-size="25">무엇을 어디까지 바꿀지 정합니다</text>
+<rect x="640" y="360" width="104" height="44" rx="22" fill="#7950E8"/><text x="692" y="390" fill="#fff" font-size="22" font-weight="700" text-anchor="middle">대표</text>
+<rect x="32" y="500" width="736" height="150" rx="22" fill="#fff"/><circle cx="84" cy="575" r="30" fill="#302D7C"/><text x="84" y="585" fill="#fff" font-size="28" font-weight="700" text-anchor="middle">3</text>
+<text x="136" y="562" fill="#302D7C" font-size="34" font-weight="700">반영과 미리보기</text><text x="136" y="608" fill="#545659" font-size="25">승인된 범위만 반영하고 미리보기를 엽니다</text>
+<rect x="640" y="526" width="104" height="44" rx="22" fill="#F8F0FF"/><text x="692" y="556" fill="#302D7C" font-size="22" font-weight="700" text-anchor="middle">AI</text>
+<rect x="32" y="666" width="736" height="150" rx="22" fill="#fff"/><circle cx="84" cy="741" r="30" fill="#7950E8"/><text x="84" y="751" fill="#fff" font-size="28" font-weight="700" text-anchor="middle">4</text>
+<text x="136" y="728" fill="#302D7C" font-size="34" font-weight="700">운영 반영 승인</text><text x="136" y="774" fill="#545659" font-size="25">미리보기를 보고 공개를 결정합니다</text>
+<rect x="640" y="692" width="104" height="44" rx="22" fill="#7950E8"/><text x="692" y="722" fill="#fff" font-size="22" font-weight="700" text-anchor="middle">대표</text>
+<rect x="32" y="832" width="736" height="150" rx="22" fill="#fff"/><circle cx="84" cy="907" r="30" fill="#302D7C"/><text x="84" y="917" fill="#fff" font-size="28" font-weight="700" text-anchor="middle">5</text>
+<text x="136" y="894" fill="#302D7C" font-size="34" font-weight="700">공개와 기록</text><text x="136" y="940" fill="#545659" font-size="25">실제 주소와 처리 내용을 남깁니다</text>
+<rect x="640" y="858" width="104" height="44" rx="22" fill="#F8F0FF"/><text x="692" y="888" fill="#302D7C" font-size="22" font-weight="700" text-anchor="middle">AI</text>
+<text x="40" y="1040" fill="#545659" font-size="24">넥스트코웍 작성 도식 · 보라색 단계는 대표 승인</text>
+</g></svg>

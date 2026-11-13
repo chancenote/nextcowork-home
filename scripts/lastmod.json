@@ -1,6 +1,6 @@
 {
   "/": {
-    "hash": "4f596a8e8404",
+    "hash": "9fce8e766337",
     "date": "2026-11-13"
   },
   "/flexoffice/": {
@@ -56,8 +56,8 @@
     "date": "2026-11-13"
   },
   "/insights/": {
-    "hash": "f227d0d582b3",
-    "date": "2026-11-09"
+    "hash": "3d946390bce4",
+    "date": "2026-11-13"
   },
   "/contact/": {
     "hash": "55b6fdf1c445",
@@ -66,6 +66,10 @@
   "/privacy/": {
     "hash": "97d41fa954d4",
     "date": "2026-11-07"
+  },
+  "/insights/solopreneur-ai-control-room/": {
+    "hash": "bb340278a9e0",
+    "date": "2026-11-10"
   },
   "/insights/ax-consulting-vs-ai-training/": {
     "hash": "6024fc4c6c61",

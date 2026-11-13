@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">솔로프리너의 AI 관제실</title><desc id="desc">솔로프리너의 AI 관제실이라는 제목 옆에 상황판, 승인 게이트, 인계 문서, 기록 네 줄이 놓인 관제 화면 개념도입니다.</desc>
+<rect width="1200" height="675" fill="#F8F0FF"/>
+<g font-family="Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif">
+<text x="72" y="170" fill="#7950E8" font-size="24" font-weight="700" letter-spacing="2">SOLOPRENEUR × AI AGENTS</text>
+<text x="72" y="262" fill="#302D7C" font-size="70" font-weight="800">솔로프리너의</text>
+<text x="72" y="350" fill="#302D7C" font-size="70" font-weight="800">AI 관제실</text>
+<text x="72" y="424" fill="#545659" font-size="30">맡긴 일의 상태와 승인을</text>
+<text x="72" y="468" fill="#545659" font-size="30">한곳에서 봅니다</text>
+<text x="72" y="590" fill="#545659" font-size="22">넥스트코웍 작성 개념도</text>
+<rect x="640" y="72" width="488" height="531" rx="28" fill="#fff" stroke="#B99EFF" stroke-width="2"/>
+<text x="676" y="128" fill="#302D7C" font-size="26" font-weight="700">관제실</text>
+<circle cx="1036" cy="119" r="7" fill="#B99EFF"/><circle cx="1062" cy="119" r="7" fill="#B99EFF"/><circle cx="1088" cy="119" r="7" fill="#B99EFF"/>
+<rect x="664" y="156" width="440" height="96" rx="16" fill="#F8F0FF"/><rect x="664" y="156" width="10" height="96" rx="5" fill="#302D7C"/>
+<text x="696" y="198" fill="#302D7C" font-size="28" font-weight="700">상황판</text><text x="696" y="232" fill="#545659" font-size="21">지금 누가 무엇을 하고 있나</text><circle cx="1068" cy="204" r="11" fill="#00AEB7"/>
+<rect x="664" y="264" width="440" height="96" rx="16" fill="#F8F0FF"/><rect x="664" y="264" width="10" height="96" rx="5" fill="#7950E8"/>
+<text x="696" y="306" fill="#302D7C" font-size="28" font-weight="700">승인 게이트</text><text x="696" y="340" fill="#545659" font-size="21">발송·게시·결제 전에 멈춤</text><circle cx="1068" cy="312" r="11" fill="#FFBC55"/>
+<rect x="664" y="372" width="440" height="96" rx="16" fill="#F8F0FF"/><rect x="664" y="372" width="10" height="96" rx="5" fill="#00AEB7"/>
+<text x="696" y="414" fill="#302D7C" font-size="28" font-weight="700">인계 문서</text><text x="696" y="448" fill="#545659" font-size="21">다음 담당이 읽을 한 장</text><circle cx="1068" cy="420" r="11" fill="#00AEB7"/>
+<rect x="664" y="480" width="440" height="96" rx="16" fill="#F8F0FF"/><rect x="664" y="480" width="10" height="96" rx="5" fill="#B99EFF"/>
+<text x="696" y="522" fill="#302D7C" font-size="28" font-weight="700">기록</text><text x="696" y="556" fill="#545659" font-size="21">실수와 통한 방식을 남김</text><circle cx="1068" cy="528" r="11" fill="#B99EFF"/>
+</g></svg>

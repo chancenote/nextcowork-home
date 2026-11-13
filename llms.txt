@@ -90,6 +90,8 @@ https://www.nextcw.com/go/public-space-advisory/
 ## 인사이트 아티클 (최신순)
 
 <!-- INSIGHTS:START -->
+- 솔로프리너의 AI 관제실, 혼자서 여러 AI의 일을 어떻게 지휘할까? (2026-11-10): https://www.nextcw.com/insights/solopreneur-ai-control-room/
+  AI에게 맡긴 일이 늘수록 병목은 작업에서 대표의 확인으로 옮겨 갑니다. 상황판·승인 게이트·인계 문서·기록 네 가지로 AI 관제실을 만드는 방법과 넥스트코웍이 홈페이지를 운영하는 실제 흐름, 복사해 쓸 양식을 정리했습니다.
 - AX 컨설팅이란? AI 교육과 업무 전환의 차이 (2026-11-06): https://www.nextcw.com/insights/ax-consulting-vs-ai-training/
   AX 컨설팅과 AI 교육의 차이는 개인의 활용 역량과 조직의 실행 체계를 다루는 범위에 있습니다. 보고서 작성 흐름을 따라 자료·초안·검토·승인·재사용의 기준을 살펴보고, 우리 조직에 필요한 교육과 업무 전환 과제를 체크리스트로 정리해 보세요.
 - 티커 ANT, 우리가 사게 될 건 주식이 아니라 ‘일하는 방식’입니다 (2026-10-28): https://www.nextcw.com/insights/anthropic-ipo-s1/

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1100" viewBox="0 0 800 1100" role="img" aria-labelledby="title desc">
+<title id="title">AI 관제실은 네 가지 판으로 돌아갑니다</title><desc id="desc">상황판은 지금 누가 무엇을 하고 있나, 승인 게이트는 어디서 멈추고 물어야 하나, 인계 문서는 다음 담당이 무엇을 읽나, 기록은 같은 실수를 어떻게 막나에 답합니다.</desc>
+<rect width="800" height="1100" fill="#F8F0FF"/>
+<g font-family="Apple SD Gothic Neo, Noto Sans CJK KR, sans-serif">
+<text x="40" y="76" fill="#302D7C" font-size="42" font-weight="700">AI 관제실은</text><text x="40" y="128" fill="#302D7C" font-size="42" font-weight="700">네 가지 판으로 돌아갑니다</text>
+<rect x="32" y="168" width="736" height="196" rx="22" fill="#fff"/><rect x="32" y="168" width="12" height="196" rx="6" fill="#302D7C"/>
+<text x="68" y="208" fill="#302D7C" font-size="24" font-weight="700">01 · 상태</text><text x="68" y="256" fill="#302D7C" font-size="40" font-weight="700">상황판</text><text x="68" y="300" fill="#302D7C" font-size="28" font-weight="600">지금 누가 무엇을 하고 있나</text><text x="68" y="338" fill="#545659" font-size="26">일 한 줄에 담당·상태·다음 행동</text>
+<rect x="32" y="384" width="736" height="196" rx="22" fill="#fff"/><rect x="32" y="384" width="12" height="196" rx="6" fill="#7950E8"/>
+<text x="68" y="424" fill="#7950E8" font-size="24" font-weight="700">02 · 멈춤</text><text x="68" y="472" fill="#302D7C" font-size="40" font-weight="700">승인 게이트</text><text x="68" y="516" fill="#302D7C" font-size="28" font-weight="600">어디서 멈추고 물어야 하나</text><text x="68" y="554" fill="#545659" font-size="26">삭제·발송·결제·외부 게시 전</text>
+<rect x="32" y="600" width="736" height="196" rx="22" fill="#fff"/><rect x="32" y="600" width="12" height="196" rx="6" fill="#00AEB7"/>
+<text x="68" y="640" fill="#302D7C" font-size="24" font-weight="700">03 · 연결</text><text x="68" y="688" fill="#302D7C" font-size="40" font-weight="700">인계 문서</text><text x="68" y="732" fill="#302D7C" font-size="28" font-weight="600">다음 담당은 무엇을 읽고 시작하나</text><text x="68" y="770" fill="#545659" font-size="26">한 일·확인한 것·남은 일</text>
+<rect x="32" y="816" width="736" height="196" rx="22" fill="#fff"/><rect x="32" y="816" width="12" height="196" rx="6" fill="#B99EFF"/>
+<text x="68" y="856" fill="#302D7C" font-size="24" font-weight="700">04 · 축적</text><text x="68" y="904" fill="#302D7C" font-size="40" font-weight="700">기록</text><text x="68" y="948" fill="#302D7C" font-size="28" font-weight="600">같은 실수를 어떻게 막나</text><text x="68" y="986" fill="#545659" font-size="26">교훈 한 건마다 한 줄 요약과 이유</text>
+<text x="40" y="1062" fill="#545659" font-size="24">넥스트코웍 작성 도식</text>
+</g></svg>
