@@ -1018,6 +1018,34 @@ a.price-card:hover, a.price-card:focus-visible { transform: translateY(-4px); bo
 .about-bridge-card h3 { margin-bottom: 10px; font-size: 18px; line-height: 1.45; word-break: keep-all; }
 .about-bridge-card p { min-height: 56px; color: var(--caption); font-size: 14px; line-height: 1.7; word-break: keep-all; }
 .about-bridge-card b { display: block; margin-top: 16px; color: var(--accent-ink); font-size: 13px; line-height: 1.5; word-break: keep-all; }
+/* About · Case Study (2026-11-18) — 사진 + 전환 단계 + 핵심 수치 카드 2장. 색은 카드별 --accent(서비스 라인 토큰) */
+.about-case-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.about-case { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--hairline); border-radius: var(--radius); background: var(--bg); box-shadow: var(--shadow-card); }
+.about-case-photo { position: relative; margin: 0; aspect-ratio: 16 / 10; background: var(--bg-soft); }
+.about-case-photo img { width: 100%; height: 100%; object-fit: cover; }
+.about-case-no { position: absolute; left: 18px; top: 18px; padding: 6px 12px; border-radius: 999px; background: var(--accent-ink); color: #fff; font-family: var(--font-num); font-size: 12px; font-weight: 800; letter-spacing: .14em; }
+.about-case-body { display: flex; flex: 1; flex-direction: column; padding: 26px 28px 28px; border-top: 3px solid var(--accent); }
+.about-case-kicker { color: var(--accent-ink); font-family: var(--font-num); font-size: 12.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.about-case h3 { margin: 6px 0 4px; font-size: 24px; letter-spacing: -0.02em; }
+.about-case-role { margin-bottom: 12px; color: var(--caption); font-size: 14px; font-weight: 600; }
+.about-case-role .subject-tag { margin: 0 0 0 6px; }
+.about-case-body > p:not(.about-case-role) { font-size: 15px; line-height: 1.75; word-break: keep-all; }
+.about-case-steps { display: grid; gap: 8px; margin: 18px 0 20px; padding: 0; list-style: none; }
+.about-case-steps li { display: grid; grid-template-columns: 64px 1fr; gap: 10px; align-items: baseline; padding: 10px 14px; border-radius: var(--radius-xs); background: var(--bg-soft); color: var(--text); font-size: 14px; line-height: 1.6; word-break: keep-all; }
+.about-case-steps b { color: var(--accent-ink); font-family: var(--font-num); font-size: 13px; font-weight: 800; }
+.about-case-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: auto 0 0; padding: 16px 0 0; border-top: 1px solid var(--hairline); list-style: none; }
+.about-case-stats li { display: flex; flex-direction: column; gap: 2px; }
+.about-case-stats strong { color: var(--ink); font-family: var(--font-num); font-size: clamp(20px, 2.2vw, 26px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+.about-case-stats span { color: var(--caption); font-size: 13px; line-height: 1.4; word-break: keep-all; }
+@media (max-width: 1024px) {
+  .about-case-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .about-case-body { padding: 20px 18px 22px; }
+  .about-case h3 { font-size: 21px; }
+  .about-case-role .subject-tag { margin: 4px 0 0; }
+  .about-case-steps li { grid-template-columns: 1fr; gap: 2px; }
+}
 .about-delivery { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(360px, .9fr); gap: 44px; align-items: center; padding: 42px; border-radius: var(--radius); background: linear-gradient(135deg, var(--indigo), var(--violet)); color: #fff; box-shadow: var(--shadow-lift); }
 .about-delivery .eyebrow { color: rgba(255,255,255,.75); }
 .about-delivery-copy h2 { margin: 14px 0 12px; color: #fff; font-size: clamp(23px, 2.8vw, 33px); line-height: 1.3; letter-spacing: -0.03em; word-break: keep-all; }
