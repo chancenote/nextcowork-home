@@ -12,12 +12,10 @@
   "tierKey": "workshop",
   "service": "AI Campus 기업 AI 교육",
   "tier": "실무 워크샵",
-  "pageName": "임원·리더 AI 실무 워크숍",
   "serviceName": "임원·리더 AI 실무 워크숍",
   "serviceType": "Corporate AI Training Workshop",
   "serviceDescription": "임원·리더가 팀의 실제 업무로 실습하는 AI 실무 워크숍. 반일~1일(연속 과정 가능)로 진행하며 실습 결과물과 업무 템플릿을 남기고 30일 질의 팔로업을 합니다.",
   "offer": {
-    "name": "실무 워크샵 (반일~1일)",
     "price": 3000000,
     "description": "반일~1일 워크숍 300만원부터 (부가세 별도, 회차·인원에 따라 산정)"
   },

@@ -40,7 +40,7 @@ const SIZES_WIDE = "(max-width: 900px) calc(100vw - 40px), 620px";
 
 function jsonLd(d) {
   const url = `${siteUrl}/go/${d.slug}/`;
-  const offer = { "@type": "Offer", name: d.offer.name };
+  const offer = { "@type": "Offer", name: d.serviceName };
   if (d.offer.price) {
     offer.priceCurrency = "KRW";
     offer.price = String(d.offer.price);
@@ -51,7 +51,7 @@ function jsonLd(d) {
   return JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "WebPage", "@id": `${url}#webpage`, url, name: d.pageName, inLanguage: "ko", isPartOf: { "@id": `${siteUrl}/#website` }, about: { "@id": `${url}#service` } },
+      { "@type": "WebPage", "@id": `${url}#webpage`, url, name: d.serviceName, inLanguage: "ko", isPartOf: { "@id": `${siteUrl}/#website` }, about: { "@id": `${url}#service` } },
       { "@type": "Service", "@id": `${url}#service`, url, name: d.serviceName, serviceType: d.serviceType, provider: { "@id": `${siteUrl}/#org` }, areaServed: "KR", description: d.serviceDescription, offers: offer },
       { "@type": "FAQPage", mainEntity: d.faq.map((item) => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })) }
     ]
@@ -127,6 +127,7 @@ ${jsonLd(d)}
   <section class="lp-hero">
     <div class="container lp-hero-grid">
       <div>
+        <p class="lp-kicker">${esc(d.serviceName)}</p>
         <p class="lp-voice">${esc(d.voice)}</p>
         <h1>${d.h1.map(esc).join("<br>")}</h1>
         <ul class="lp-terms" aria-label="조건">

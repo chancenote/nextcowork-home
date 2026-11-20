@@ -12,12 +12,10 @@
   "tierKey": "ai",
   "service": "Public Advisory 공공 자문",
   "tier": "공공조직 AI 역량강화 교육",
-  "pageName": "공공기관 AI 역량강화 교육",
   "serviceName": "공공기관·대학 AI 역량강화 교육",
   "serviceType": "Public Sector AI Training",
   "serviceDescription": "공무원·기관 실무자·연구진·대학 교직원의 업무에 맞춰 설계하는 AI 역량강화 교육. 보고서 작성·자료 조사·데이터 분석 같은 실제 업무로 실습하며, 자료는 공개자료나 기관이 승인한 자료만 씁니다.",
   "offer": {
-    "name": "공공기관 AI 역량강화 교육",
     "description": "기관 예산 협의"
   },
   "cta": "강의계획서·견적 받기",

@@ -12,12 +12,10 @@
   "tierKey": "diagnosis",
   "service": "FlexOffice 컨설팅",
   "tier": "① 도입 타당성 진단",
-  "pageName": "공유오피스 도입 타당성 진단",
   "serviceName": "공유오피스 도입 타당성 진단",
   "serviceType": "Flexible Workspace Feasibility Study",
   "serviceDescription": "입지·수요·경쟁 분석과 직영(자산주 직접 운영) 중심 수지 시나리오를 담은 타당성 보고서 1부. 도입하지 않는 경우를 포함한 대안과 비교합니다.",
   "offer": {
-    "name": "도입 타당성 진단",
     "price": 10000000,
     "description": "1,000만원부터 (연면적·범위에 따라 산정, 설계 진행 시 진단비 전액 공제)"
   },
