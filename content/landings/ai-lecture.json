@@ -12,12 +12,10 @@
   "tierKey": "lecture",
   "service": "AI Campus 기업 AI 교육",
   "tier": "AI 실무활용 특강",
-  "pageName": "기업 AI 특강 섭외 — 2시간 AI 실무 특강",
   "serviceName": "2시간 AI 실무 특강",
   "serviceType": "Corporate AI Training",
   "serviceDescription": "기업·기관 임직원을 위한 2시간 AI 실무 특강. 사전 설문으로 조직의 업무 맥락을 파악해 실습에 반영하고, 실습 프롬프트 킷과 강의자료, 강의계획서와 견적서를 제공합니다.",
   "offer": {
-    "name": "AI 실무활용 특강 (2시간)",
     "price": 1500000,
     "description": "2시간 특강 150만원부터 (부가세 별도, 인원·장소에 따라 산정)"
   },

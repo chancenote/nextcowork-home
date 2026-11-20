@@ -12,12 +12,10 @@
   "tierKey": "space",
   "service": "Public Advisory 공공 자문",
   "tier": "공유공간 건립 자문",
-  "pageName": "공공 공유공간 건립·운영 자문",
   "serviceName": "공공 공유공간·거점시설 기획·건립·운영 자문",
   "serviceType": "Public Space Advisory",
   "serviceDescription": "창업지원공간·코워킹스페이스·워케이션센터·혁신플랫폼·생활SOC 거점의 기획·건립·운영 자문. 운영모델과 민간위탁 기준·평가지표·성과지표 설계를 돕습니다. 운영 대행은 하지 않습니다.",
   "offer": {
-    "name": "공공 공유공간 건립·운영 자문",
     "description": "기관 예산·조달 방식 협의"
   },
   "cta": "과업 범위 상담 요청",

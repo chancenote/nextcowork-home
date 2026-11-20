@@ -51,6 +51,8 @@
 /* ---------- B1 히어로 ---------- */
 .lp-hero { padding: 44px 0 52px; background: linear-gradient(180deg, var(--lp-paper) 0%, #fff 100%); }
 .lp-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 48px; align-items: center; }
+/* 서비스 이름 — 검색으로 들어온 방문자와 구조화 데이터(Service·Offer name)가 같은 이름을 보게 한다 */
+.lp-kicker { font-size: 14px; font-weight: 700; line-height: 1.4; letter-spacing: -0.01em; color: var(--indigo); margin-bottom: 10px; }
 .lp-voice {
   font-size: clamp(17px, 1.9vw, 21px); font-weight: 700; line-height: 1.5; color: var(--lp-cta);
   margin-bottom: 14px;
@@ -197,6 +199,7 @@
 
   .lp-hero { padding: 24px 0 30px; }
   .lp-hero-grid { gap: 20px; }
+  .lp-kicker { font-size: 13px; margin-bottom: 8px; }
   .lp-voice { margin-bottom: 10px; }
   .lp-hero h1 { margin-bottom: 14px; }
   .lp-terms { gap: 6px; margin-bottom: 18px; }

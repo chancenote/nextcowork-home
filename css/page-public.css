@@ -230,6 +230,7 @@
 .pa-brief .pa-brief-col li > a:not(.btn) { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 12px; align-items: center; min-height: var(--touch-target); padding: 8px 0; font-size: 15px; line-height: 1.5; font-weight: 600; color: var(--ink); text-decoration: none; word-break: keep-all; }
 .pa-brief-col li a::after { content: "↓"; color: var(--accent-ink); font-weight: 700; }
 .pa-brief-col li a[target="_blank"]::after { content: "↗"; }
+.pa-brief-col li a[href^="/go/"]::after { content: "→"; }
 .pa-brief-col li a:hover { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
 .pa-brief-col .btn { margin-top: auto; align-self: flex-start; }
 .pa-copy-status:empty { margin: 0; }

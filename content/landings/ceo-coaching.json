@@ -12,12 +12,10 @@
   "tierKey": "consult",
   "service": "CEO AI 코칭",
   "tier": "10분 무료 상담",
-  "pageName": "CEO AI 코칭 적합성 상담",
   "serviceName": "CEO AI 코칭 (2시간×5회)",
   "serviceType": "Executive AI Coaching",
   "serviceDescription": "경영자의 실제 업무로 진행하는 1:1 비공개 AI 코칭. 2시간×5회, 회차마다 산출물이 남고 마지막 회차에 직접 만든 업무 도구와 90일 실행 계획을 남깁니다.",
   "offer": {
-    "name": "CEO AI 코칭 (2시간×5회)",
     "price": 3000000,
     "from": false,
     "description": "2시간×5회, 300만원(부가세 별도). AI 도구 구독료는 고객 계정으로 별도 결제"
