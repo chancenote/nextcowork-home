@@ -732,6 +732,9 @@ async function resolveOgImage(post) {
 
 /* JPG·PNG·WebP 헤더와 SVG 루트에서 실제 가로·세로를 읽는다. 읽지 못하면 빈 값. */
 function imageSize(buf) {
+  if (buf.toString("ascii", 0, 4) === "GIF8") {
+    return { width: buf.readUInt16LE(6), height: buf.readUInt16LE(8) };
+  }
   if (buf[0] === 0x89 && buf.toString("ascii", 1, 4) === "PNG") {
     return { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) };
   }

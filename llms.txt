@@ -90,6 +90,8 @@ https://www.nextcw.com/go/public-space-advisory/
 ## 인사이트 아티클 (최신순)
 
 <!-- INSIGHTS:START -->
+- AI가 써준 보고서, 그대로 보내도 될까요? 보내기 전 확인할 5가지 (2026-11-27): https://www.nextcw.com/insights/ai-output-review-checklist/
+  AI 답변은 매끄러울수록 그대로 믿기 쉽습니다. 요청 대조, 출처 열기, 숫자·날짜 대조, 근거 문장 요청, 사람의 최종 확인까지 AI 결과물을 보내기 전에 확인할 5가지와 바로 쓰는 요청 문장, 체크리스트를 정리했습니다.
 - 솔로프리너의 AI 관제실, 혼자서 여러 AI의 일을 어떻게 지휘할까? (2026-11-10): https://www.nextcw.com/insights/solopreneur-ai-control-room/
   AI에게 맡긴 일이 늘수록 병목은 작업에서 대표의 확인으로 옮겨 갑니다. 상황판·승인 게이트·인계 문서·기록 네 가지로 AI 관제실을 만드는 방법과 넥스트코웍이 홈페이지를 운영하는 실제 흐름, 복사해 쓸 양식을 정리했습니다.
 - AX 컨설팅이란? AI 교육과 업무 전환의 차이 (2026-11-06): https://www.nextcw.com/insights/ax-consulting-vs-ai-training/

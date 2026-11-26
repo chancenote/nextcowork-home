@@ -1,15 +1,15 @@
 {
   "/": {
-    "hash": "9fce8e766337",
-    "date": "2026-11-13"
+    "hash": "9a1532ecccae",
+    "date": "2026-11-27"
   },
   "/flexoffice/": {
     "hash": "43758adb964d",
     "date": "2026-11-21"
   },
   "/ai-campus/": {
-    "hash": "fded4115013a",
-    "date": "2026-11-21"
+    "hash": "5bddfae6ad6f",
+    "date": "2026-11-27"
   },
   "/public/": {
     "hash": "0d1d28ff7021",
@@ -56,8 +56,8 @@
     "date": "2026-11-18"
   },
   "/insights/": {
-    "hash": "3d946390bce4",
-    "date": "2026-11-13"
+    "hash": "8f0701ece7a2",
+    "date": "2026-11-27"
   },
   "/contact/": {
     "hash": "55b6fdf1c445",
@@ -66,6 +66,10 @@
   "/privacy/": {
     "hash": "97d41fa954d4",
     "date": "2026-11-07"
+  },
+  "/insights/ai-output-review-checklist/": {
+    "hash": "68720eac38b2",
+    "date": "2026-11-27"
   },
   "/insights/solopreneur-ai-control-room/": {
     "hash": "bb340278a9e0",
